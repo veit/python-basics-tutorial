@@ -1,17 +1,17 @@
 import sqlite3
 
 
-def update_author(old_name, new_name):
+def update_license(old_name, new_name):
     conn = sqlite3.connect("library.db")
     cursor = conn.cursor()
     sql = f"""
     UPDATE books
-    SET author = '{new_name}'
-    WHERE author = '{old_name}'
+    SET license = '{new_name}'
+    WHERE license = '{old_name}'
     """
     cursor.execute(sql)
     conn.commit()
 
 if __name__ == '__main__':
-    update_author(old_name='Mike Driscoll',
-                  new_name='Michael Driscoll')
+    update_license(old_name='BSD',
+                  new_name='BSD-3-Clause')
