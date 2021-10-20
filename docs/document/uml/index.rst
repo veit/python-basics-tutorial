@@ -1,0 +1,37 @@
+Unified Markup Language (UML)
+=============================
+
+Installation
+------------
+
+#. Install `plantuml <https://plantuml.com/starting>`_:
+
+   * Download the file `plantuml.jar
+     <http://sourceforge.net/projects/plantuml/files/plantuml.jar/download>`_.
+
+#. Install `sphinxcontrib-plantuml
+   <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
+
+   .. code-block:: console
+
+        $ python -m pip install sphinxcontrib-plantuml
+
+#. We then configure the ``conf.py``:
+
+   .. code-block:: python
+
+    extensions = [
+        ...,
+        'sphinxcontrib.plantuml',
+        ]
+
+    plantuml = 'java -jar /PATH/TO/plantuml.jar'
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   sequence-diagram
+   use-case-diagram
+   activity-diagram
+   class-diagram
