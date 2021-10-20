@@ -5,7 +5,7 @@ A ``README`` file in the root directory should contain general information for
 both users and maintainers of a project.
 
 * It should be written in a very easy to read markup, such as
-  :doc:`jupyter-tutorial:productive/documenting/rest` or Markdown.
+  :doc:`rest` or Markdown.
 * It should explain the purpose of the project or library in a
   non-presuppositional way.
 * It should include links to the main sources of the software.
@@ -87,12 +87,11 @@ used in almost all Python projects, including `NumPy and SciPy
 The Sphinx `autodoc
 <http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ feature,
 which can be used to create documentation from Python
-:doc:`jupyter-tutorial:productive/documenting/docstrings`, may also be conducive
-to the spread of Sphinx among Python developers. Overall, Sphinx allows
-developers to create complete documentation in place. Often the documentation is
-also stored in the same :doc:`Git <jupyter-tutorial:productive/git/index>`
-repository, so that the creation of the latest software documentation remains
-easy.
+:doc:`docstrings`, may also be conducive to the spread of Sphinx among Python
+developers. Overall, Sphinx allows developers to create complete documentation
+in place. Often the documentation is also stored in the same :doc:`Git
+<jupyter-tutorial:productive/git/index>` repository, so that the creation of the
+latest software documentation remains easy.
 
 Sphinx is also used in projects outside the Python community, e.g. for the
 documentation of the Linux kernel: `Kernel documentation update
