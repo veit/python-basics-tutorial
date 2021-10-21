@@ -138,13 +138,13 @@ Numbered lists
 Unnumbered lists
 ~~~~~~~~~~~~~~~~
 
-* Each entry in a list begins with an asterisl.
+* Each entry in a list begins with an Asterisk (``*``).
 * List items can be displayed for multiple lines as long as the list items
   remain indented.
 
 .. code-block:: rest
 
-   * Each entry in a list begins with an asterisl.
+   * Each entry in a list begins with an Asterisk (``*``).
    * List items can be displayed for multiple lines as long as the list items
      remain indented.
 
