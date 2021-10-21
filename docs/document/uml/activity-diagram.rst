@@ -23,6 +23,22 @@ Activity diagram
 ``if``, ``then``, ``else``
     Keywords for the definition of branches.
 
+    Example:
+
+    .. code-block:: rest
+
+       .. uml::
+
+           (*) --> "Initialisation"
+           if "a test" then
+           -->[true] "An activity"
+           --> "Another activity"
+           -right-> (*)
+           else
+           ->[false] "Something else"
+           -->[end the processes] (*)
+           endif
+
     .. uml::
 
         (*) --> "Initialisation"
@@ -37,6 +53,19 @@ Activity diagram
 
 ``=== code ===``
     Synchronisation bar
+
+    Example:
+
+    .. code-block:: rest
+
+        . uml::
+        
+           (*) --> ===B1===
+           --> "First parallel activity"
+           --> ===B2===
+           ===B1=== --> "Parallel activity 2"
+           --> ===B2===
+           --> (*)
 
     .. uml::
     
