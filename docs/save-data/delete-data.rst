@@ -1,7 +1,7 @@
 Delete data
 ===========
 
-#. Delete all books from an author
+#. Delete all books in a specific language:
 
    .. literalinclude:: delete_data.py
       :language: python
