@@ -1,7 +1,7 @@
 Update data
 ===========
 
-#. Change an author
+#. Change a license
 
    .. literalinclude:: update_data.py
       :language: python
