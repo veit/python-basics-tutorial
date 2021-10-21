@@ -151,14 +151,14 @@ Unnumbered lists
 Definition lists
 ~~~~~~~~~~~~~~~~
 
-term
+Term
     Definition of the term
 Different term
     …and its definition
 
 .. code-block:: rest
 
-   term
+   Term
        Definition of the term
    Different term
        …and its definition
