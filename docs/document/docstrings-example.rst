@@ -1,7 +1,10 @@
 :orphan:
 
+Docstrings example
+==================
+
 Developer Interface
-===================
+-------------------
 
 .. module:: requests
 

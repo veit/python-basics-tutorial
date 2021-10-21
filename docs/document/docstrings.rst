@@ -55,28 +55,9 @@ Examples
 Here are some examples from the API documentation for the `requests
 <https://docs.python-requests.org>`_ module:
 
-.. code-block:: rest
-
-    Developer Interface
-    ===================
-
-    .. module:: requests
-    …
-    Main Interface
-    --------------
-    …
-    .. autofunction:: head
-    …
-    Exceptions
-    ----------
-
-    .. autoexception:: requests.RequestException
-    …
-    Request Sessions
-    ----------------
-    …
-    .. autoclass:: Session
-       :inherited-members:
+.. literalinclude:: docstrings-example.rst
+   :language: rest
+   :lines: 3-
 
 This leads to the :doc:`docstrings-example`, generated from the following
 docstrings:
