@@ -6,7 +6,7 @@ Activity diagram
 
     ``(*top)``
         In some cases, this can be used to move the start point to the beginning
-        of the diagram. of the diagram.
+        of the diagram.
 
 ``-->``
     defines an activity
