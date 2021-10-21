@@ -1,5 +1,5 @@
-Unified Markup Language (UML)
-=============================
+Unified Modeling Language (UML)
+===============================
 
 Installation
 ------------
