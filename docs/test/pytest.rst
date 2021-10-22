@@ -35,7 +35,8 @@ Features
    ``lambda``
     Function that in case of ``sorted`` only takes one parameter.
 
-#. Write a text fixture with the ``@pytest.fixture`` decorator:
+#. Write a :term:`test fixture <Test Fixture>` with the ``@pytest.fixture``
+   decorator:
 
    .. literalinclude:: test_pytest.py
       :language: python
