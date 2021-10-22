@@ -14,14 +14,14 @@ def dict_list():
     ]
 
 def test_sorted__key_example_1(dict_list):
-    assert sorted(dict_list, key=lambda d: d['a']) == [
+    assert sorted(dict_list, key=lambda dicts: dicts['a']) == [
         dict(a='a', b=3),
         dict(a='b', b=2),
         dict(a='c', b=1),
     ]
 
 def test_sorted__key_example_2(dict_list):
-    assert sorted(dict_list, key=lambda d: d['b']) == [
+    assert sorted(dict_list, key=lambda dicts: dicts['b']) == [
         dict(a='c', b=1),
         dict(a='b', b=2),
         dict(a='a', b=3),
