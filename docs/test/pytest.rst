@@ -29,12 +29,6 @@ Features
       :lines: 1-2,4-5
       :lineno-start: 1
 
-   ``key``
-    function that will be called to transform the collection’s items before they are
-    compared. The parameter passed to key must be something that is callable.
-   ``lambda``
-    Function that in case of ``sorted`` only takes one parameter.
-
 #. Write a text fixture with the ``@pytest.fixture`` decorator:
 
    .. literalinclude:: test_pytest.py
