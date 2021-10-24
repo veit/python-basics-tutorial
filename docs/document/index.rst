@@ -32,12 +32,14 @@ apply.
    start
    rest
    code-blocks
+   placeholder
    ui-elements
    directives
    docstrings
    intersphinx
    uml/index
    extensions
+   test
 
 Badges
 ------

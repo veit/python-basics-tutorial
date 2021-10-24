@@ -1,0 +1,43 @@
+Testing
+=======
+
+Build error
+-----------
+
+You have the option of checking that your content is built correctly before
+publishing your changes. For this purpose, Sphinx has a nitpicky mode that can
+be invoked with the ``-n`` option, for example with:
+
+.. code-block:: console
+
+    python -m sphinx -nb html docs/ docs/_build/
+
+Check links
+-----------
+
+You can also automatically ensure that the link targets you specify are
+accessible. Sphinx uses a linkcheck builder for this purpose, which you can call
+with:
+
+.. code-block:: console
+
+    python -m sphinx -b linkcheck docs/ docs/_build/
+
+The output may then look like this:
+
+.. code-block:: console
+
+    $ python -m sphinx -b linkcheck docs/ docs/_build/
+    Running Sphinx v3.5.2
+    loading translations [de]... done
+    …
+    building [mo]: targets for 0 po files that are out of date
+    building [linkcheck]: targets for 27 source files that are out of date
+    …
+    (content/accessibility: line   89) ok        https://bbc.github.io/subtitle-guidelines/
+    (content/writing-style: line  164) ok        http://disabilityinkidlit.com/2016/07/08/introduction-to-disability-terminology/
+
+    …
+    (   index: line    5) redirect  https://cusy-design-system.readthedocs.io/ - with Found to https://cusy-design-system.readthedocs.io/de/latest/
+    …
+    (accessibility/color: line  114) broken    https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl - 404 Client Error: Not Found for url: https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl
