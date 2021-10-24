@@ -33,6 +33,10 @@ Meta information
    .. sectionauthor:: Veit Schiele <veit@cusy.io>
    .. codeauthor:: Veit Schiele <veit@cusy.io>
 
+.. note::
+   By default, this information is not included in the output until you set the
+   configuration for ``show_authors`` to ``True``.
+
 See also
 ~~~~~~~~
 
