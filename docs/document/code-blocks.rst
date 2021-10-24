@@ -90,6 +90,11 @@ with
       .. literalinclude:: main.py
          :diff: main.py.orig
 
+.. _deprecated:
+
+Obsolete code
+-------------
+
 .. rst:directive:: .. deprecated:: version
 
    Describes when the function became obsolete. An explanation can also be
