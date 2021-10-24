@@ -41,20 +41,21 @@ Activity diagram
 
    .. image:: activity-diagram.svg
 
-``=== code ===``
-    Synchronisation bar
+``fork``, ``fork again`` and ``end fork`` or ``end merge``
+    Keywords for parallel processing.
 
     Example:
 
     .. code-block:: rest
 
-        . uml::
+       .. uml::
         
-           (*) --> ===B1===
-           --> "First parallel activity"
-           --> ===B2===
-           ===B1=== --> "Parallel activity 2"
-           --> ===B2===
-           --> (*)
+          start
+          fork
+            :action 1;
+          fork again
+            :action 2;
+          end fork
+          stop
 
-   .. image:: sync-bar.svg
+    .. image:: parallel.svg
