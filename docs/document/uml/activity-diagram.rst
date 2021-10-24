@@ -39,17 +39,7 @@ Activity diagram
            -->[end the processes] (*)
            endif
 
-    .. uml::
-
-        (*) --> "Initialisation"
-        if "a test" then
-        -->[true] "An activity"
-        --> "Another activity"
-        -right-> (*)
-        else
-        ->[false] "Something else"
-        -->[end the processes] (*)
-        endif
+   .. image:: activity-diagram.svg
 
 ``=== code ===``
     Synchronisation bar
@@ -67,11 +57,4 @@ Activity diagram
            --> ===B2===
            --> (*)
 
-    .. uml::
-    
-        (*) --> ===B1===
-        --> "First parallel activity"
-        --> ===B2===
-        ===B1=== --> "Parallel activity 2"
-        --> ===B2===
-        --> (*)
+   .. image:: sync-bar.svg

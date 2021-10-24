@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="42px" preserveAspectRatio="none" style="width:48px;height:42px;background:#FFFFFF;" version="1.1" viewBox="0 0 48 42" width="48px" zoomAndPan="magnify"><defs><filter height="300%" id="f11tt3bk9lq9la" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><polygon fill="#FEFECE" filter="url(#f11tt3bk9lq9la)" points="19,7,31,19,19,31,7,19,19,7" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[6d9c06e87c94319a5ba60e58d802afc1]
+@startuml
+diamond         Association
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>
