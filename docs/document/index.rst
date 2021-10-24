@@ -32,6 +32,7 @@ apply.
    start
    rest
    code-blocks
+   ui-elements
    directives
    docstrings
    intersphinx
