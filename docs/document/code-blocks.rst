@@ -89,3 +89,21 @@ with
 
       .. literalinclude:: main.py
          :diff: main.py.orig
+
+.. rst:directive:: .. deprecated:: version
+
+   Describes when the function became obsolete. An explanation can also be
+   given to inform what should be used instead. For example
+
+   .. code-block:: rest
+
+      .. deprecated:: 4.1
+         instead use :func:`new_function`.
+
+   .. deprecated:: 4.1
+      instead use :func:`new_function`.
+
+.. rst:directive:option:: py:module:deprecated
+
+   Marks a Python module as obsolete; it is then marked as such in various
+   places.
