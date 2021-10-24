@@ -217,6 +217,9 @@ Blocks of code are introduced and indented with a colon::
 
    >>> print 'But doctests start with ">>>" and don’t need to be indented.'
 
+.. seealso::
+   :doc:`code-blocks`
+
 Tables
 ------
 

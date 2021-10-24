@@ -35,29 +35,6 @@ Meta information
    .. sectionauthor:: Veit Schiele <veit@cusy.io>
    .. codeauthor:: Veit Schiele <veit@cusy.io>
 
-Code block
-~~~~~~~~~~
-
-.. code-block:: python
-   :emphasize-lines: 3,5
-
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.'
-
-.. code-block:: rest
-
-   .. code-block:: python
-      :emphasize-lines: 3,5
-
-      def some_function():
-          interesting = False
-          print 'This line is highlighted.'
-          print 'This one is not...'
-          print '...but this one is.'
-
 See also
 ~~~~~~~~
 

@@ -31,6 +31,7 @@ apply.
 
    start
    rest
+   code-blocks
    directives
    docstrings
    intersphinx
