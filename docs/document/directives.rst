@@ -12,7 +12,6 @@ Table of Contents
    :maxdepth: 2
 
    start
-   rest
    docstrings
 
 .. code-block:: rest
@@ -21,7 +20,6 @@ Table of Contents
       :maxdepth: 2
 
       start
-      rest
       docstrings
 
 Meta information
