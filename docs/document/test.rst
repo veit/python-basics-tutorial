@@ -1,6 +1,8 @@
 Testing
 =======
 
+.. _build-errors:
+
 Build error
 -----------
 
@@ -11,6 +13,8 @@ be invoked with the ``-n`` option, for example with:
 .. code-block:: console
 
     python -m sphinx -nb html docs/ docs/_build/
+
+.. _link-checks:
 
 Check links
 -----------
