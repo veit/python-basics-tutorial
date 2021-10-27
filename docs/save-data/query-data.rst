@@ -8,6 +8,9 @@ Query data
       :lines: 7-11
       :lineno-start: 7
 
+   For the ``print`` output, we use a formatted string literal or
+   :term:`python3:f-string` by prefixing it with an ``f``.
+
 #. Select all records sorted by author:
 
    .. literalinclude:: query_data.py
