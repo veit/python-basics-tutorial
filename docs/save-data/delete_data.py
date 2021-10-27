@@ -11,5 +11,4 @@ def delete_by_language(language):
     cursor.execute(sql)
     conn.commit()
 
-if __name__ == '__main__':
-    delete_by_language(language='de')
+delete_by_language(language='de')

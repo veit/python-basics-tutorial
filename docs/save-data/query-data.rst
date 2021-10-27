@@ -5,8 +5,8 @@ Query data
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 7-11
-      :lineno-start: 7
+      :lines: 6-10
+      :lineno-start: 6
 
    For the ``print`` output, we use a formatted string literal or
    :term:`python3:f-string` by prefixing it with an ``f``.
@@ -15,12 +15,19 @@ Query data
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 13-16
-      :lineno-start: 13
+      :lines: 12-15
+      :lineno-start: 12
 
 #. Select titles containing Python:
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 18-24
-      :lineno-start: 18
+      :lines: 17-23
+      :lineno-start: 17
+
+#. Finally, the data can be queried with:
+
+   .. literalinclude:: query_data.py
+      :language: python
+      :lines: 26-28
+      :lineno-start: 26

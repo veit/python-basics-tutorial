@@ -13,10 +13,10 @@ cursor.execute("""INSERT INTO books
 conn.commit()
 
 # insert multiple records using the more secure "?" method
-books = [('Jupyter Tutorial', 'en', 'Veit Schiele', 'BSD-3-Clause',
+new_books = [('Jupyter Tutorial', 'en', 'Veit Schiele', 'BSD-3-Clause',
           '2019-06-27'),
          ('Jupyter Tutorial', 'de', 'Veit Schiele', 'BSD-3-Clause',
           '2020-10-26'),
          ('PyViz Tutorial', 'en', 'Veit Schiele', 'BSD-3-Clause', '2020-04-13')]
-cursor.executemany("INSERT INTO books VALUES (?,?,?,?,?)", books)
+cursor.executemany("INSERT INTO books VALUES (?,?,?,?,?)", new_books)
 conn.commit()
