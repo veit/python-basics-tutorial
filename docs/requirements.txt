@@ -1,2 +1,4 @@
 Sphinx
 sphinxcontrib.plantuml
+# packaging 21.2 depends on pyparsing<3
+pyparsing<3
