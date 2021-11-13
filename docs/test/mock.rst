@@ -2,7 +2,9 @@ Mock
 ====
 
 `Mock objects <https://en.wikipedia.org/wiki/Mock_object>`_ promote tests based
-on the behaviour of objects.
+on the behaviour of objects. The Python library :doc:`mock
+<python3:library/unittest.mock>` enables you to replace parts of the system to
+be tested with mock objects and to make assertions about their use.
 
 Installation
 ------------
@@ -10,9 +12,19 @@ Installation
 :doc:`python3:library/unittest.mock` has been in the standard library since
 Python 3.3. For older versions of Python you can install it with:
 
-.. code-block:: console
+.. tabs::
 
-   $ python3 -m pip install mock
+   .. tab:: Linux/MacOS
+
+      .. code-block:: console
+
+         $ bin/python -m pip install mock
+
+   .. tab:: Windows
+
+      .. code-block:: ps1con
+
+         C:> Scripts\python -m pip install mock
 
 Example
 -------
