@@ -61,29 +61,63 @@ Suppose you implemented the following method for adding:
 
 #. Finally, all tests in :download:`test_arithmetic.py` can be executed with:
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python test_arithmetic.py
-      ....
-      ----------------------------------------------------------------------
-      Ran 4 tests in 0.000s
+      .. tab:: Linux/MacOS
 
-      OK
+         .. code-block:: console
+
+            $ bin/python test_arithmetic.py
+            ....
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+            C:> python test_arithmetic.py
+            ....
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
 
    … or a little more verbose:
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python test_arithmetic.py -v
-      test_addition (__main__.TestArithmetic) ... ok
-      test_division (__main__.TestArithmetic) ... ok
-      test_multiplication (__main__.TestArithmetic) ... ok
-      test_subtraction (__main__.TestArithmetic) ... ok
+      .. tab:: Linux/MacOS
 
-      ----------------------------------------------------------------------
-      Ran 4 tests in 0.000s
+         .. code-block:: ps1con
 
-      OK
+            $ python test_arithmetic.py -v
+            test_addition (__main__.TestArithmetic) ... ok
+            test_division (__main__.TestArithmetic) ... ok
+            test_multiplication (__main__.TestArithmetic) ... ok
+            test_subtraction (__main__.TestArithmetic) ... ok
+
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+            C:> Scripts\python test_arithmetic.py -v
+            test_addition (__main__.TestArithmetic) ... ok
+            test_division (__main__.TestArithmetic) ... ok
+            test_multiplication (__main__.TestArithmetic) ... ok
+            test_subtraction (__main__.TestArithmetic) ... ok
+
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
 
 .. seealso::
    * :doc:`python3:library/unittest`
