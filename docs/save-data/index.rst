@@ -31,6 +31,7 @@ least then you should take a look at
    :hidden:
 
    pickle
+   xml
    sqlite
    create-db
    create-data
