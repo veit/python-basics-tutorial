@@ -15,12 +15,25 @@ Features
 
 #. Install pytest:
 
-   .. code-block:: console
+   .. tabs::
 
-    $ python -m pip install pytest
-    Collecting pytest
-    …
-    Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
+      .. tab:: Linux/MacOS
+
+         .. code-block:: console
+
+          $ bin/python -m pip install pytest
+          Collecting pytest
+          …
+          Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+          C:> Scripts\python -m pip install pytest
+          Collecting pytest
+          …
+          Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
 
 #. Write a single test:
 
@@ -45,19 +58,42 @@ Features
 
 #. Run pytest:
 
-   .. code-block:: console
+   .. tabs::
 
-    python -m pytest -v
-    ============================= test session starts ==============================
-    platform darwin -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /Users/veit/python-basics/bin/python
-    cachedir: .pytest_cache
-    rootdir: /Users/veit/python-basics/docs/test
-    collected 5 items
+      .. tab:: Linux/MacOS
 
-    test_pytest.py::test_sorted PASSED                                       [ 20%]
-    test_pytest.py::test_sorted__key_example_1 PASSED                        [ 40%]
-    test_pytest.py::test_sorted__key_example_2 PASSED                        [ 60%]
-    test_pytest.py::test_examples[input0-expected0] PASSED                   [ 80%]
-    test_pytest.py::test_examples[zasdqw-expected1] PASSED                   [100%]
+         .. code-block:: console
 
-    ============================== 5 passed in 0.02s ===============================
+            $ bin/python -m pytest -v
+            ============================= test session starts ==============================
+            platform darwin -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /Users/veit/python-basics/bin/python
+            rootdir: /Users/veit/python-basics/docs/test
+            plugins: hypothesis-6.23.2
+            collected 5 items
+
+            test_pytest.py::test_sorted PASSED                                       [ 20%]
+            test_pytest.py::test_sorted__key_example_1 PASSED                        [ 40%]
+            test_pytest.py::test_sorted__key_example_2 PASSED                        [ 60%]
+            test_pytest.py::test_examples[input0-expected0] PASSED                   [ 80%]
+            test_pytest.py::test_examples[zasdqw-expected1] PASSED                   [100%]
+
+            ============================== 5 passed in 0.02s ===============================
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+            C:> Scripts\python -m pytest -v
+            ============================= test session starts ==============================
+            platform win32 -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+            rootdir: C:\Users\veit\python-basics\docs\test
+            plugins: hypothesis-6.23.2
+            collected 5 items
+
+            test_pytest.py::test_sorted PASSED                                       [ 20%]
+            test_pytest.py::test_sorted__key_example_1 PASSED                        [ 40%]
+            test_pytest.py::test_sorted__key_example_2 PASSED                        [ 60%]
+            test_pytest.py::test_examples[input0-expected0] PASSED                   [ 80%]
+            test_pytest.py::test_examples[zasdqw-expected1] PASSED                   [100%]
+
+            ============================== 5 passed in 0.02s ===============================
