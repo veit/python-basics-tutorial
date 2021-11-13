@@ -7,8 +7,9 @@ Build error
 -----------
 
 You have the option of checking that your content is built correctly before
-publishing your changes. For this purpose, Sphinx has a nitpicky mode that can
-be invoked with the ``-n`` option, for example with:
+publishing your changes. For this purpose, `Sphinx
+<https://www.sphinx-doc.org/>`_ has a nitpicky mode that can be invoked with the
+``-n`` option, for example with:
 
 .. code-block:: console
 
