@@ -30,6 +30,7 @@ least then you should take a look at
    :titlesonly:
    :hidden:
 
+   pickle
    sqlite
    create-db
    create-data
