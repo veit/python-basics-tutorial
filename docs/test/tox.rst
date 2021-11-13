@@ -6,9 +6,19 @@ management and testing with multiple interpreter configurations.
 
 #. Installation
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python -m pip install tox
+      .. tab:: Linux/MacOS
+
+         .. code-block:: console
+
+            $ bin/python -m pip install tox
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+            C:> Scripts\python -m pip install tox
 
 #. Configuration
 
