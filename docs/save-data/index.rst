@@ -55,4 +55,6 @@ least then you should take a look at
    query-data
    update-data
    delete-data
+   normalise
+   query-normalised
    psycopg
