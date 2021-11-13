@@ -93,11 +93,11 @@ Link to a document, not rendered by Sphinx, for example
 Images
 ------
 
-.. image:: python-logo.png
+.. image:: uml/activity-diagram.svg
 
 .. code-block:: rest
 
-   .. image:: python-logo.png
+   .. image:: uml/activity-diagram.svg
 
 Other semantic markup
 ~~~~~~~~~~~~~~~~~~~~~
