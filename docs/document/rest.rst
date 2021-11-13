@@ -45,6 +45,9 @@ External links
 
    .. _link: http://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
 
+.. note::
+   A directive starting with ``..`` must always be preceded by a blank line.
+
 Internal links
 ~~~~~~~~~~~~~~
 
