@@ -1,25 +1,6 @@
 Testing
 =======
 
-Concepts
---------
-
-.. glossary::
-   Test Case
-       tests a single scenario.
-
-   Test Fixture
-       is a consistent test environment.
-
-       .. seealso::
-          `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
-
-   Test Suite
-       is a collection of several :term:`test cases <Test Case>`.
-
-   Test Runner
-       runs through a :term:`test suite <Test Suite>` and displays the results.
-
 Python test modules
 -------------------
 

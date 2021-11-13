@@ -1,6 +1,31 @@
 Unittest
 ========
 
+:doc:`unittest <python3:library/unittest>` helps you in test automation with
+shared setup and tear down code as well as aggregation and independence of
+tests.
+
+For this it provides the following test concepts:
+
+.. glossary::
+   Test Case
+       tests a single scenario.
+
+   Test Fixture
+       is a consistent test environment.
+
+       .. seealso::
+          `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
+
+   Test Suite
+       is a collection of several :term:`test cases <Test Case>`.
+
+   Test Runner
+       runs through a :term:`test suite <Test Suite>` and displays the results.
+
+Example
+-------
+
 Suppose you implemented the following method for adding:
 
 .. literalinclude:: arithmetic.py
