@@ -22,71 +22,99 @@ Installation
 
 #. Download and unpack:
 
+   … on Linux/MacOS:
+
    .. code-block:: console
 
-    $ curl -O https://codeload.github.com/veit/python-basics-tutorial/zip/main
-    $ unzip main
-    Archive:  main
-    …
-       creating: python-basics-tutorial-main/
-    …
+      $ curl -O https://codeload.github.com/veit/python-basics-tutorial/zip/main
+      $ unzip main
+      Archive:  main
+      …
+         creating: python-basics-tutorial-main/
+      …
+
+   … on Windows:
+
+   .. code-block:: ps1con
+
+      C:> curl.exe -o main.zip -O https://codeload.github.com/veit/python-basics-tutorial-de/zip/main
+      C:> tar -xvzf main.zip
+      python-basics-tutorial-de-main/
+      python-basics-tutorial-de-main/.gitignore
+      python-basics-tutorial-de-main/.pyup.yml
+      …
 
 #. Install Python packages:
 
+   … on Linux/MacOS:
+
    .. code-block:: console
 
-    $ python3 -m venv .
-    $ source bin/activate
-    $ python -m pip install --upgrade pip
-    $ python -m pip install -r docs/requirements.txt
+      $ python3 -m venv .
+      $ source bin/activate
+      $ python -m pip install --upgrade pip
+      $ python -m pip install -r docs/requirements.txt
+
+   … on Windows:
+
+   .. code-block:: ps1con
+
+      C:> python -m venv .
+      C:> Scripts\python -m pip install --upgrade pip
+      C:> Scripts\python -m pip install -r docs/requirements.txt
 
 #. Create HTML documentation:
 
-   Note that pandoc has to be installed. On Debian/Ubuntu you can just run
+   .. note::
+      pandoc has to be installed.
+
+   … on Debian/Ubuntu
 
    .. code-block:: console
 
-    $  sudo apt-get install pandoc
+      $  sudo apt-get install pandoc
 
-    To create the HTML documentation run these commands:
+   To create the HTML documentation run these commands:
 
    .. code-block:: console
 
-    $ sphinx-build -ab html docs/ docs/_build/
+      $ sphinx-build -ab html docs/ docs/_build/
 
 #. Create a PDF:
 
    For the creation of a PDF file you need additional packages.
+   To create a PDF documentation you need additional packages, which you can
+   install
 
-   For Debian/Ubuntu you get them with the following command:
+   … on Debian/Ubuntu with
 
    .. code-block:: console
 
-    $ sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+      $ sudo apt install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
 
    or for macOS with:
 
    .. code-block:: console
 
-    $ brew cask install mactex
-    …
-    🍺  mactex was successfully installed!
-    $ curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-    $ sudo texlua install-getnonfreefonts
-    …
-    mktexlsr: Updating /usr/local/texlive/2020/texmf-dist/ls-R...
-    mktexlsr: Done.
+      $ brew cask install mactex
+      …
+      🍺  mactex was successfully installed!
+      $ curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
+      $ sudo texlua install-getnonfreefonts
+      …
+      mktexlsr: Updating /usr/local/texlive/2020/texmf-dist/ls-R...
+      mktexlsr: Done.
 
    Then you can generate a PDF with:
 
    .. code-block:: console
 
-    $ cd docs/
-    $ make latexpdf
-    …
-    The LaTeX files are in _build/latex.
-    Run 'make' in that directory to run these through (pdf)latex
-    …
+      $ cd docs/
+      $ make latexpdf
+      …
+      The LaTeX files are in _build/latex.
+      Run 'make' in that directory to run these through (pdf)latex
+      …
 
    You can find the PDF at ``docs/_build/latex/pythonbasics.pdf``.
 
