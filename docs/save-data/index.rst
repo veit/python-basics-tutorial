@@ -1,6 +1,22 @@
 Save and access data
 ====================
 
+To store data persistently, a process called serialisation or marshalling can be
+used. In it, data structures are converted into a linear form and stored. The
+reverse process is then called deserialisation or unmarshalling. Python offers
+several modules in the standard library that you can be used to serialise and
+deserialise objects:
+
+the :doc:`marshal <python3:library/marshal>` module
+    is mainly used internally by Python and should not be used to store data in
+    a backwards compatible way.
+the :doc:`pickle <pickle>` module
+    if you don’t need a readable format or interoperability.
+the :doc:`json <python3:library/json>` module
+    you can use to exchange data for different languages in a readable form.
+the :doc:`xml <xml>` module
+    you can also use to exchange data in different languages in a readable form.
+
 The Python Database API
 -----------------------
 
