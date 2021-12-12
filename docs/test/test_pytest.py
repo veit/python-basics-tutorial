@@ -1,5 +1,6 @@
 import pytest
 
+
 # Single test case
 def test_sorted():
     assert sorted([4, 2, 1, 3]) == [1, 2, 3, 4]
@@ -32,6 +33,7 @@ def test_sorted__key_example_2(dict_list):
     ([2, 1], [1, 2]),
     ('zasdqw', list('adqswz')),
 ])
+
 def test_examples(input, expected):
     actual = sorted(input)
     assert actual == expected
