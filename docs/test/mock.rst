@@ -79,3 +79,27 @@ from Monday to Friday.
       :language: python
       :lines: 19,21
       :lineno-start: 19
+
+``patch`` decorator
+-------------------
+
+To create mock classes or objects, the ``patch`` decorator can be used. In the
+following examples, the output of ``os.listdir`` is mocked. For this, the file
+``example.txt`` does not have to be present in the directory:
+
+.. code-block:: python
+
+    import os
+    from unittest import mock
+    @mock.patch("os.listdir", mock.MagicMock(return_value="example.txt"))
+    def test_listdir():
+        assert "example.txt" == os.listdir()
+
+Alternatively, the return value can also be defined separately:
+
+.. code-block:: python
+
+    @mock.patch("os.listdir")
+    def test_listdir(mock_listdir):
+        mock_listdir.return_value = "example.txt"
+        assert "example.txt" == os.listdir()
