@@ -50,9 +50,9 @@ Basically, a distinction is made between static and dynamic test procedures.
    :hidden:
 
    unittest
+   sqlite
    mock
    doctest
    hypothesis
    pytest
    tox
-   sqlite

@@ -48,7 +48,7 @@ Third-party extensions
     Napoleon is a pre-processor for parsing NumPy- and Google-style docstrings
 `Sphinx-autodoc-typehints <https://github.com/agronholm/sphinx-autodoc-typehints>`_
     Type hints support for the Sphinx autodoc extension
-`sphinx-git <sphinx-git>`_
+`sphinx-git <https://sphinx-git.readthedocs.io/en/latest/>`_
     `git <https://git-scm.com/>`_-Changelog for Sphinx
 `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
     Sphinx extension for translations
