@@ -26,7 +26,8 @@ For this it provides the following test concepts:
 Example
 -------
 
-Suppose you implemented the following method for adding:
+Suppose you have implemented the following method for adding in the module
+:download:`test_arithmetic.py`:
 
 .. literalinclude:: arithmetic.py
    :language: python
