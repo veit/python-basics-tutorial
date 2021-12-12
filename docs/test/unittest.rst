@@ -52,8 +52,8 @@ Suppose you have implemented the following method for adding in the module
       :lineno-start: 4
 
 
-#. So that the code can be executed from the command line, we add the following
-   method:
+#. In order to be able to import the unit tests into other modules as well, you
+   should add the following lines:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
