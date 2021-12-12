@@ -64,6 +64,10 @@ decorator:
 Test parameterisation
 ---------------------
 
+.. literalinclude:: test_pytest.py
+   :language: python
+   :lines: 31-
+   :lineno-start: 31
 
 Run pytest
 ----------
