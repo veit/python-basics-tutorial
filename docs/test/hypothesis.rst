@@ -123,3 +123,7 @@ find errors with little effort.
               =========================== short test summary info ============================
               FAILED test_hypothesis.py::test_mean - assert inf <= 1.7976931348623157e+308
               ============================== 1 failed in 0.44s ===============================
+
+.. seealso::
+   `Hypothesis for the Scientific Stack
+   <https://hypothesis.readthedocs.io/en/latest/numpy.html>`_
