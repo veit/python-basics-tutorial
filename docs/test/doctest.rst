@@ -51,8 +51,8 @@ specified in a docstring are fulfilled.
           1 passed and 0 failed.
           Test passed.
 
-#. If you want to run a doctest inside a module, you should add the following
-   lines:
+#. So that the doctests can also be imported into other modules, you should add
+   the following lines:
 
    .. literalinclude:: arithmetic.py
       :language: python
