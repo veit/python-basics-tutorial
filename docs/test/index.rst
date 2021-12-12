@@ -57,3 +57,4 @@ Basically, a distinction is made between static and dynamic test procedures.
    pytest
    tox
    unittest2
+   coverage/index
