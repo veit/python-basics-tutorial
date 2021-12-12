@@ -6,6 +6,13 @@ on the behaviour of objects. The Python library :doc:`mock
 <python3:library/unittest.mock>` enables you to replace parts of the system to
 be tested with mock objects and to make assertions about their use.
 
+.. seealso::
+
+   With  `responses <https://github.com/getsentry/responses>`_ you can create
+   mock objects for the `Requests
+   <https://jupyter-tutorial.readthedocs.io/de/latest/data-processing/requests/index.html>`_
+   library.
+
 Installation
 ------------
 
