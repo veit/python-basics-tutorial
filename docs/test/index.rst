@@ -56,3 +56,4 @@ Basically, a distinction is made between static and dynamic test procedures.
    hypothesis
    pytest
    tox
+   unittest2
