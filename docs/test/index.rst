@@ -41,6 +41,10 @@ Basically, a distinction is made between static and dynamic test procedures.
         :doc:`unittest`, :doc:`hypothesis` can also be used in Python for such
         tests.
 
+.. seealso::
+   * `Python Testing and Continuous Integration
+     <http://carpentries-incubator.github.io/python-testing/>`_
+
 .. toctree::
    :titlesonly:
    :hidden:
