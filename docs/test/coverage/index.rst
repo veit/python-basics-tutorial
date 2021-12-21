@@ -128,6 +128,8 @@ the workflow summary page.
 .. seealso::
    * `structlog main.yml
      <https://github.com/hynek/structlog/blob/main/.github/workflows/main.yml>`_
+   * `Coverage.py plugins
+     <https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_
 
  .. toctree::
     :hidden:
