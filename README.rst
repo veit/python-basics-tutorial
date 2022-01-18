@@ -72,7 +72,7 @@ Installation
 
    .. code-block:: console
 
-      $  sudo apt-get install pandoc
+      $  sudo apt install pandoc
 
    To create the HTML documentation run these commands:
 
