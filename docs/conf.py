@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# gfn.lf8 documentation build configuration file, created by
+# Python basics documentation build configuration file, created by
 # sphinx-quickstart on Thu Aug 30 09:17:41 2017.
 #
 # This file is execfile()d with the current directory set to its
