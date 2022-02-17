@@ -25,15 +25,14 @@ without having to change any further code.
 Installation
 ------------
 
-   .. tabs::
 
-      .. tab:: Linux/MacOS
+    .. tab:: Linux/MacOS
 
          .. code-block:: console
 
             $ bin/python -m pip install unittest2
 
-      .. tab:: Windows
+    .. tab:: Windows
 
          .. code-block:: ps1con
 

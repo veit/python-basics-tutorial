@@ -35,7 +35,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinxcontrib.plantuml',
-    'sphinx_tabs.tabs',
+    'sphinx_inline_tabs',
     "sphinxcontrib.rsvgconverter"
     ]
 

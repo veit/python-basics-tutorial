@@ -9,19 +9,17 @@ management and testing with multiple interpreter configurations.
 
 #. Installation
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
+         $ bin/python -m pip install tox
 
-            $ bin/python -m pip install tox
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
-
-            C:> Scripts\python -m pip install tox
+         C:> Scripts\python -m pip install tox
 
 #. Configuration
 
@@ -82,28 +80,29 @@ The pre-filled YAML file is not very useful for our purposes. You can replace
 the text, for example with:
 
    .. code-block:: yaml
-    name: CI
-    on:
-      push:
-        branches: ["main"]
-      pull_request:
-        branches: ["main"]
-      workflow_dispatch:
-    jobs:
-      tests:
-        name: "Python ${{ matrix.python-version }}"
-        runs-on: "ubuntu-latest"
-        env:
-          USING_COVERAGE: '3.6,3.8'
-        strategy:
-          matrix:
-            python-version: ["3.6", "3.7", "3.8"]
-        steps:
-          - uses: "actions/checkout@v2"
-          - uses: "actions/setup-python@v2"
-            with:
-              python-version: "${{ matrix.python-version }}"
-          - name: "Install dependencies"
-            run: |
-              set -xe
-              python -VV
+
+      name: CI
+      on:
+        push:
+          branches: ["main"]
+        pull_request:
+          branches: ["main"]
+        workflow_dispatch:
+      jobs:
+        tests:
+          name: "Python ${{ matrix.python-version }}"
+          runs-on: "ubuntu-latest"
+          env:
+            USING_COVERAGE: '3.6,3.8'
+          strategy:
+            matrix:
+              python-version: ["3.6", "3.7", "3.8"]
+          steps:
+            - uses: "actions/checkout@v2"
+            - uses: "actions/setup-python@v2"
+              with:
+                python-version: "${{ matrix.python-version }}"
+            - name: "Install dependencies"
+              run: |
+                set -xe
+                python -VV

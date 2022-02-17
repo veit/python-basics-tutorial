@@ -1,6 +1,5 @@
 Sphinx
+wheel
 sphinxcontrib.plantuml
-# sphinx-tabs 3.2.0 depends on docutils~=0.16.0
-docutils~=0.16.0
-sphinx-tabs
+sphinx-inline-tabs
 sphinxcontrib-svg2pdfconverter

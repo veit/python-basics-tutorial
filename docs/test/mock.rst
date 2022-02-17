@@ -19,19 +19,17 @@ Installation
 :doc:`python3:library/unittest.mock` has been in the standard library since
 Python 3.3. For older versions of Python you can install it with:
 
-.. tabs::
+.. tab:: Linux/MacOS
 
-   .. tab:: Linux/MacOS
+   .. code-block:: console
 
-      .. code-block:: console
+      $ bin/python -m pip install mock
 
-         $ bin/python -m pip install mock
+.. tab:: Windows
 
-   .. tab:: Windows
+   .. code-block:: ps1con
 
-      .. code-block:: ps1con
-
-         C:> Scripts\python -m pip install mock
+      C:> Scripts\python -m pip install mock
 
 Example
 -------

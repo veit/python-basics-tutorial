@@ -13,43 +13,41 @@ specified in a docstring are fulfilled.
 
 #. Then you can test it with
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
+       $ bin/python -m doctest arithmetic.py -v
+       Trying:
+           add(7,6)
+       Expecting:
+           13
+       ok
+       1 items had no tests:
+           arithmetic
+       1 items passed all tests:
+          1 tests in arithmetic.add
+       1 tests in 2 items.
+       1 passed and 0 failed.
+       Test passed.
 
-          $ bin/python -m doctest arithmetic.py -v
-          Trying:
-              add(7,6)
-          Expecting:
-              13
-          ok
-          1 items had no tests:
-              arithmetic
-          1 items passed all tests:
-             1 tests in arithmetic.add
-          1 tests in 2 items.
-          1 passed and 0 failed.
-          Test passed.
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: console
 
-         .. code-block:: console
-
-          C:> Scripts\python -m doctest arithmetic.py -v
-          Trying:
-              add(7,6)
-          Expecting:
-              13
-          ok
-          1 items had no tests:
-              arithmetic
-          1 items passed all tests:
-             1 tests in arithmetic.add
-          1 tests in 2 items.
-          1 passed and 0 failed.
-          Test passed.
+       C:> Scripts\python -m doctest arithmetic.py -v
+       Trying:
+           add(7,6)
+       Expecting:
+           13
+       ok
+       1 items had no tests:
+           arithmetic
+       1 items passed all tests:
+          1 tests in arithmetic.add
+       1 tests in 2 items.
+       1 passed and 0 failed.
+       Test passed.
 
 #. So that the doctests can also be imported into other modules, you should add
    the following lines:
