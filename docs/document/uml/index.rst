@@ -6,7 +6,15 @@ Installation
 
 #. Install `plantuml <https://plantuml.com/starting>`_:
 
-   * Download the file `plantuml.jar
+   * Install the Java and Graphviz dependencies:
+
+     .. tab:: Linux
+
+        .. code-block:: console
+
+           $ sudo apt install openjdk-11-jdk graphviz
+
+* Download the file `plantuml.jar
      <http://sourceforge.net/projects/plantuml/files/plantuml.jar/download>`_.
 
 #. Install `sphinxcontrib-plantuml
