@@ -35,3 +35,7 @@ version.
 
    This role has no special meaning by default. You can therefore use it for
    anything, for example also for variable names.
+
+.. seealso::
+   * `Sphinx awesome sampdirective
+     <https://github.com/kai687/sphinxawesome-sampdirective>`_
