@@ -1,5 +1,4 @@
 Sphinx
-wheel
-sphinxcontrib.plantuml
 sphinx-inline-tabs
 sphinxcontrib-svg2pdfconverter
+sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
