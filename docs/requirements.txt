@@ -1,4 +1,4 @@
 Sphinx
 sphinx-inline-tabs
-sphinxcontrib-svg2pdfconverter
+sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
