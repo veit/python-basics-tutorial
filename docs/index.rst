@@ -9,6 +9,7 @@ Python basics
    :hidden:
 
    install
+   editors
    save-data/index
    test/index
    document/index
