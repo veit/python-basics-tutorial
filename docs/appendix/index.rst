@@ -1,0 +1,7 @@
+Appendix
+========
+
+.. toctree::
+   :titlesonly:
+
+   regex

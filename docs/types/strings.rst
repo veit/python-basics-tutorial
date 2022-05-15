@@ -223,6 +223,9 @@ expressions:
 |                       | ``\2``, …, to refer to the elements of the match group.                       |
 +-----------------------+-------------------------------------------------------------------------------+
 
+.. seealso::
+   * :doc:`../appendix/regex`
+
 ``print()``
 -----------
 
