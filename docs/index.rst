@@ -8,6 +8,7 @@ Python basics
    :titlesonly:
    :hidden:
 
+   install
    save-data/index
    test/index
    document/index
