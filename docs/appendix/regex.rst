@@ -1,6 +1,9 @@
 Regular expressions
 ===================
 
+.. seealso::
+   * `www.regular-expressions.info <https://www.regular-expressions.info/>`_
+
 ``[]``
 ------
 
@@ -16,8 +19,8 @@ Square brackets define a list or range of characters to search for:
 ``[A-Za-z0-9]``
     corresponds to any letter or digit
 
-Special characters
-------------------
+Number
+------
 
 ``.``
     corresponds to a single character
@@ -37,13 +40,33 @@ Special characters
 ``{N,M}``
     corresponds at least ``N`` times to the preceding element, but not more than
     ``M`` times.
-``\``
-    is used to search for a special character, for example to find ``.org`` you
-    have to use the regular expression ``\.org`` because ``.`` is the special
-    character that matches every character.
+
+Position
+--------
+
 ``^``
     puts the position at the beginning of the line.
 ``$``
     puts the position at the end of the line.
+
+Link
+----
+
 ``|``
     means *or*.
+
+Escape characters and literals
+------------------------------
+
+``\``
+    is used to search for a special character, for example to find ``.org`` you
+    have to use the regular expression ``\.org`` because ``.`` is the special
+    character that matches every character.
+``\d``
+    matches every single digit.
+``\w``
+    matches any part of a word character and is equivalent to ``[A-Za-z0-9]``.
+``\s``
+    matches any space, tab or newline.
+``\b``
+    matches a pattern on a word boundary.

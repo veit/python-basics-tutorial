@@ -225,6 +225,8 @@ expressions:
 
 .. seealso::
    * :doc:`../appendix/regex`
+   * :doc:`python3:howto/regex`
+   * :doc:`python3:library/re`
 
 ``print()``
 -----------
