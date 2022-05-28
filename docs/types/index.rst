@@ -1,10 +1,11 @@
 Data types
 ==========
 
-Python has several built-in data types, such as numbers (integers, floating
-point numbers, complex numbers), :doc:`strings <strings>`, lists, tuples,
-dictionaries and files. These data types can be manipulated using language
-operators, built-in functions, library functions or a data type’s own methods.
+Python has several built-in data types, such as :doc:`numbers` (integers,
+floating point numbers, complex numbers), :doc:`strings <strings>`, lists,
+tuples, dictionaries and files. These data types can be manipulated using
+language operators, built-in functions, library functions or a data type’s own
+methods.
 
 You can also define your own classes and create your own class instances. For
 these class instances, you can define methods as well as manipulate them using
@@ -24,4 +25,5 @@ values to more complex structures like lists, dictionaries and files.
    :titlesonly:
    :hidden:
 
+   numbers
    strings
