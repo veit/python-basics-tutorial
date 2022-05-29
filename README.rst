@@ -68,11 +68,11 @@ Installation
    .. note::
       pandoc has to be installed.
 
-   … on Debian/Ubuntu
+      … on Debian/Ubuntu
 
-   .. code-block:: console
+      .. code-block:: console
 
-      $  sudo apt install pandoc
+         $  sudo apt install pandoc
 
    To create the HTML documentation run these commands:
 
