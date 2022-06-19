@@ -11,6 +11,8 @@ Python basics
    install
    editors
    explore
+   style
+   variables-expressions
    types/index
    control-flows/index
    modules/index
