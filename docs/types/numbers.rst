@@ -129,6 +129,24 @@ functions available in this section by importing everything from ``math``:
 
     from math import *
 
+Built-in functions are always available and are called using standard function
+call syntax. In the following code, ``round`` is called with a float as the
+input argument.
+
+.. code-block:: python
+
+    >>> round(1.49)
+    1
+
+With ``ceil`` from the standard library ``math`` and the attribute notation
+:samp:`MODUL.FUNKTION(ARGUMENT)` is rounded up:
+
+.. code-block:: python
+
+    >>> import math
+    >>> math.ceil(1.49)
+    2
+
 The ``math`` module provides, among other things
 
 * the number theoretic and representation functions :func:`python3:math.ceil`,
@@ -149,25 +167,8 @@ The ``math`` module provides, among other things
 There is also the library module :doc:`cmath <python3:library/cmath>` which
 contains functions for complex numbers.
 
-.. code-block:: python
-
-    >>> round(1.49)
-    1
-
-.. code-block:: python
-
-    >>> import math
-    >>> math.ceil(1.49)
-    2
-
-Built-in functions are always available and are called using standard function
-call syntax. In the preceding code, `` is called with a float as the input
-argument.
-
-The functions in library modules are made available using the ``import``
-instruction. In the last example, the ``math`` library module is imported, and
-its ceil function is called with the attribute notation:
-:samp:`MODULE.FUNCTION(ARGUMENT)`.
+Boolean values
+--------------
 
 Boolean values are used in the following examples:
 
