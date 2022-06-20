@@ -14,6 +14,7 @@ Python basics
    style
    variables-expressions
    types/index
+   input
    control-flows/index
    modules/index
    oop/index
