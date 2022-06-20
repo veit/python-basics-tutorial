@@ -80,6 +80,9 @@ Complex numbers consist of a real part and an imaginary part with the suffix
 number. You can get its „real“ part with the attribute notation ``x.real`` and
 the „imaginary“ part with ``x.imag``.
 
+Built-in numerical functions
+----------------------------
+
 Several built-in functions can work with numbers:
 
 :func:`python3:abs`
@@ -113,9 +116,38 @@ Several built-in functions can work with numbers:
     returns a number rounded to *ndigits* after the decimal point. If *ndigits*
     is omitted or is *None*, the nearest integer to the input is returned.
 
-There is also the library module :doc:`cmath <python3:library/cmath>` (which
-contains functions for complex numbers) and the library module :doc:`math
-<python3:library/math>` (which contains functions for the other three types):
+Advanced numerical functions
+----------------------------
+
+More advanced numerical functions such as trigonometry, as well as some useful
+constants, are not built into Python, but are provided in a standard module
+called :doc:`math <python3:library/math>`. Modules will be explained in more
+detail later. For now, suffice it to say that you need to make the maths
+functions available in this section by importing everything from ``math``:
+
+.. code-block:: python
+
+    from math import *
+
+The ``math`` module provides, among other things
+
+* the number theoretic and representation functions :func:`python3:math.ceil`,
+  :func:`python3:math.modf`, :func:`python3:math.frexp` and
+  :func:`python3:math.ldexp`,
+* the power and logarithmic functions :func:`python3:math.exp`,
+  :func:`python3:math.log`, :func:`python3:math.log10`, :func:`python3:math.pow`
+  and :func:`python3:math.sqrt`,
+* the trigonometric functions :func:`python3:math.acos`,
+  :func:`python3:math.asin`, :func:`python3:math.atan`,
+  :func:`python3:math.atan2`, :func:`python3:math.ceil`,
+  :func:`python3:math.cos`, :func:`python3:math.hypot` and
+  :func:`python3:math.sin`,
+* the hyperbolic functions :func:`python3:math.cosh`,
+  :func:`python3:math.sinh` and :func:`python3:math.tanh`
+* and the constants :data:`python3:math.e` und :data:`python3:math.pi`.
+
+There is also the library module :doc:`cmath <python3:library/cmath>` which
+contains functions for complex numbers.
 
 .. code-block:: python
 
