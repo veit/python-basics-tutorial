@@ -160,11 +160,11 @@ More advanced numerical functions such as trigonometry, as well as some useful
 constants, are not built into Python, but are provided in a standard module
 called :doc:`math <python3:library/math>`. Modules will be explained in more
 detail later. For now, suffice it to say that you need to make the maths
-functions available in this section by importing everything from ``math``:
+functions available in this section by importing ``math``:
 
 .. code-block:: python
 
-    from math import *
+    import math
 
 Built-in functions are always available and are called using standard function
 call syntax. In the following code, ``round`` is called with a float as the
@@ -180,7 +180,6 @@ With ``ceil`` from the standard library ``math`` and the attribute notation
 
 .. code-block:: python
 
-    >>> import math
     >>> math.ceil(1.49)
     2
 
@@ -201,8 +200,35 @@ The ``math`` module provides, among other things
   :func:`python3:math.sinh` and :func:`python3:math.tanh`
 * and the constants :data:`python3:math.e` und :data:`python3:math.pi`.
 
-There is also the library module :doc:`cmath <python3:library/cmath>` which
-contains functions for complex numbers.
+Advanced functions for complex numbers
+--------------------------------------
+
+The functions in the :doc:`cmath <python3:library/math>` module are not
+applicable to complex numbers; one of the reasons for this is probably that the
+square root of ``-1`` is supposed to produce an error. Therefore, similar
+functions for complex numbers have been provided in the :doc:`cmath
+<python3:library/cmath>` module:
+
+:func:`python3:cmath.acos`, :func:`python3:cmath.acosh`, :func:`python3:cmath.asin`, :func:`python3:cmath.asinh`, :func:`python3:cmath.atan`, :func:`python3:cmath.atanh`, :func:`python3:cmath.cos`, :func:`python3:cmath.cosh`, :func:`python3:cmath.e`, :func:`python3:cmath.exp`, :func:`python3:cmath.log`, :func:`python3:cmath.log10`, :func:`python3:cmath.pi`, :func:`python3:cmath.sin`, :func:`python3:cmath.sinh`, :func:`python3:cmath.sqrt`, :func:`python3:cmath.tan`, :func:`python3:cmath.tanh`.
+
+To make it clear in the code that these functions are special functions for
+complex numbers, and to avoid name conflicts with the more normal equivalents,
+it is recommended to simply import the module to explicitly refer to the
+``cmath`` package when using the function, for example:
+
+.. code-block:: python
+
+    >>> import cmath
+    >>> cmath.sqrt(-2)
+    1.4142135623730951j
+
+.. warning::
+
+    Now it becomes clearer why we do not recommend importing all functions of a
+    module with :samp:`from {MODULE} import *`. If you would import the module
+    ``math`` first and then the module ``cmath``, the functions in ``cmath``
+    would have priority over those of ``math``. Also, when understanding the
+    code, it is much more tedious to find out the source of the functions used.
 
 Numerical calculations
 ----------------------
