@@ -167,6 +167,16 @@ The ``math`` module provides, among other things
 There is also the library module :doc:`cmath <python3:library/cmath>` which
 contains functions for complex numbers.
 
+Numerical calculations
+----------------------
+
+The standard Python installation is not well suited for intensive numerical
+calculations due to speed limitations. But the powerful Python extension
+:doc:`jupyter-tutorial:workspace/numpy/index` provide highly efficient
+implementations of many advanced numerical operations. The focus is on array
+operations, including multi-dimensional matrices and advanced functions such as
+the fast Fourier transform.
+
 Boolean values
 --------------
 
