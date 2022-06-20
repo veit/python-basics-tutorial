@@ -116,6 +116,28 @@ Several built-in functions can work with numbers:
     returns a number rounded to *ndigits* after the decimal point. If *ndigits*
     is omitted or is *None*, the nearest integer to the input is returned.
 
+Boolean values
+--------------
+
+Boolean values are used in the following examples:
+
+.. code-block:: python
+
+    >>> x = False
+    >>> x
+    False
+    >>> not x
+    True
+
+.. code-block:: python
+
+    >>> y = True * 2
+    >>> y
+    2
+
+Apart from their representation as ``True`` and ``False``, Boolean values
+behave like the numbers ``1`` (``True``) and ``0`` (``False``).
+
 Advanced numerical functions
 ----------------------------
 
@@ -176,25 +198,3 @@ calculations due to speed limitations. But the powerful Python extension
 implementations of many advanced numerical operations. The focus is on array
 operations, including multi-dimensional matrices and advanced functions such as
 the fast Fourier transform.
-
-Boolean values
---------------
-
-Boolean values are used in the following examples:
-
-.. code-block:: python
-
-    >>> x = False
-    >>> x
-    False
-    >>> not x
-    True
-
-.. code-block:: python
-
-    >>> y = True * 2
-    >>> y
-    2
-
-Apart from their representation as ``True`` and ``False``, Boolean values
-behave like the numbers ``1`` (``True``) and ``0`` (``False``).
