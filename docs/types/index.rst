@@ -32,3 +32,4 @@ values to more complex structures like lists, dictionaries and files.
    dicts
    sets
    files
+   none
