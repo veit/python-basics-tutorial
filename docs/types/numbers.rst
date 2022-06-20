@@ -58,7 +58,22 @@ Examples:
     >>> -5e-3 ** 3
     -1.2500000000000002e-07
 
-The following examples use complex numbers:
+Complex numbers
+---------------
+
+Complex numbers consist of a real part and an `imaginary part
+<https://en.wikipedia.org/wiki/Imaginary_number>`_, which is given the suffix
+``j`` in Python.
+
+.. code-block:: python
+
+    >>> 7 + 2j
+    (7+2j)
+
+.. note::
+
+    Python expresses the resulting complex number in parentheses to indicate
+    that the output represents the value of a single object:
 
 .. code-block:: python
 
