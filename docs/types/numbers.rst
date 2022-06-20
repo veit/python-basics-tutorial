@@ -80,10 +80,42 @@ Complex numbers consist of a real part and an imaginary part with the suffix
 number. You can get its „real“ part with the attribute notation ``x.real`` and
 the „imaginary“ part with ``x.imag``.
 
-Several built-in functions can work with numbers. There is also the library
-module :doc:`cmath <python3:library/cmath>` (which contains functions for
-complex numbers) and the library module :doc:`math <python3:library/math>`
-(which contains functions for the other three types):
+Several built-in functions can work with numbers:
+
+:func:`python3:abs`
+    returns the absolute value of a number. Here, as argument can be an integer,
+    a floating point number or an object that implements ``__abs__()``. With
+    complex numbers as arguments, their absolute value is returned.
+:func:`python3:divmod`
+    takes two (non-complex) numbers as arguments and returns a pair of numbers
+    consisting of their quotient and the remainder if integer division is used.
+:class:`python3:float`
+    returns a floating point number formed from a number or string ``x``.
+:func:`python3:hex`
+    converts an integer number to a lowercase hexadecimal string with the
+    prefix ``0x``.
+:class:`python3:int`
+    returns an integer object constructed from a number or string ``x``, or
+    ``0`` if no arguments are given.
+:func:`python3:max`
+    returns the largest element in an :term:`python3:iterable` or the largest of
+    two or more arguments.
+:func:`python3:min`
+    returns the smallest element in an iterable or the smallest of two or more
+    arguments.
+:func:`python3:oct`
+    converts an integer number to an octal string with the prefix ``0o``. The
+    result is a valid Python expression. If ``x`` is not a Python :func:`int`
+    object, it must define an ``__index__()`` method that returns an integer.
+:func:`python3:pow`
+    returns *base* as a power of *exp*.
+:func:`python3:round`
+    returns a number rounded to *ndigits* after the decimal point. If *ndigits*
+    is omitted or is *None*, the nearest integer to the input is returned.
+
+There is also the library module :doc:`cmath <python3:library/cmath>` (which
+contains functions for complex numbers) and the library module :doc:`math
+<python3:library/math>` (which contains functions for the other three types):
 
 .. code-block:: python
 
