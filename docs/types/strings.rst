@@ -14,7 +14,25 @@ delimiting strings:
 
 Strings can be separated by single i(``' '``), double (``" "``), triple single
 (``''' '''``) or triple double (``""" """``) quotes and can contain tab (``\t``)
-and newline (``\n``) characters.
+and newline (``\n``) characters. In general, backslashes ``\`` can be used as
+escape characters. For example, ``\\`` can be used for a single backslash and
+``\"`` can be used for a single quote, making it not terminate the string:
+
+.. code-block:: python
+
+    "You don't need a backslash here."
+    'However, this wouldn\'t work without a backslash.'
+
+A normal string cannot be split across multiple lines. The following code will
+not work:
+
+.. code-block::
+
+    "This is an erroneous attempt to insert a newline in
+    a string without using \n."
+
+However, Python provides strings in triple quotes (``"""``) that allow this and
+can contain single and double quotes without backslashes.
 
 Strings are also immutable. The operators and functions that work with them
 return new strings derived from the original. The operators (``in``, ``+`` and
