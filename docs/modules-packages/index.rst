@@ -1,5 +1,8 @@
+Modules and packages
+====================
+
 Creating modules
-================
+----------------
 
 It is easy to create your own modules that can be imported and used in the same
 way as Python's built-in library modules. The example in this listing is a
@@ -40,10 +43,15 @@ functions.
         >>> imp.reload(wc)
         <module 'wc'>
 
+Packages
+~~~~~~~~
+
 For larger projects, there is a generalisation of the module concept called
 packages that allows you to group modules in a directory or subdirectory and
 then import and refer to them hierarchically using a
 ``package.subpackage.module`` syntax. This doesn’t require much more than
 creating a possibly empty initialisation file for each package or subpackage.
-You can find a template for this in my `ccokiecutter-namespace-template
-<https://github.com/veit/cookiecutter-namespace-template>`_.
+The current standard format for distributing Python modules and applications is
+to use `Wheels <https://pythonwheels.com/>`_. Wheels were developed to make the
+installation of Python code more reliable and to make dependency management
+easier. However, the details of creating wheels are beyond the scope of this section, but full details of the requirements and the process for creating wheels can be found in doc:`jupyter-tutorial:productive/packaging/distribution`.
