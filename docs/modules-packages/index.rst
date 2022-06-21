@@ -51,7 +51,24 @@ packages that allows you to group modules in a directory or subdirectory and
 then import and refer to them hierarchically using a
 ``package.subpackage.module`` syntax. This doesn’t require much more than
 creating a possibly empty initialisation file for each package or subpackage.
+
+Wheel
+~~~~~
+
 The current standard format for distributing Python modules and applications is
 to use `Wheels <https://pythonwheels.com/>`_. Wheels were developed to make the
 installation of Python code more reliable and to make dependency management
-easier. However, the details of creating wheels are beyond the scope of this section, but full details of the requirements and the process for creating wheels can be found in doc:`jupyter-tutorial:productive/packaging/distribution`.
+easier. However, the details of creating wheels are beyond the scope of this
+section, but full details of the requirements and the process for creating
+wheels can be found in doc:`jupyter-tutorial:productive/packaging/distribution`.
+
+``py2exe`` and ``py2app``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`py2exe <https://www.py2exe.org/>`_ creates standalone Windows applications and
+`py2app <https://py2app.readthedocs.io/en/latest/>`_ does the same for macOS. In
+both cases, these are single executables that can run on machines that do not
+have Python installed. In many ways, however, standalone executables are not
+ideal, as they tend to be larger and less flexible than native Python
+applications, but in some in some situations they can also be the best or only
+solution.
