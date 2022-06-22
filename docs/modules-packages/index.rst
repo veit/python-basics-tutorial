@@ -72,3 +72,19 @@ have Python installed. In many ways, however, standalone executables are not
 ideal, as they tend to be larger and less flexible than native Python
 applications, but in some in some situations they can also be the best or only
 solution.
+
+``freeze``
+~~~~~~~~~~
+
+The ``freeze`` tool also creates an executable Python programme that runs on
+computers that do not have Python installed. If you want to use the ``freeze``
+tool, you will probably need to download the Python source code.
+
+*Freezing* a Python program creates C files that are then compiled and linked
+with a C compiler that you must have installed on your system. The application
+thus frozen will only run on platforms for which the C compiler used provides
+its executables.
+
+.. seealso::
+
+    * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
