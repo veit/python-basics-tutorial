@@ -133,3 +133,23 @@ You can see the effect of the standard argument in the following example:
     729
     >>> power(3)
     243
+
+Parameter names
+~~~~~~~~~~~~~~~
+
+You can also pass arguments to a function by using the name of the corresponding
+function parameter rather than its position. Similar to the previous example,
+you can enter the following:
+
+.. code-block:: python
+
+    >>> power(y=6, x=2)
+    64
+
+Since the arguments for the power are named ``x`` and ``y`` in the last call,
+their order is irrelevant; the arguments are linked to the parameters of the
+same name in the definition of the power, and you get back ``2^6``. This type of
+argument passing is called keyword passing. Keyword passing can be very useful
+in combination with the default arguments of Python functions when you define
+functions with a large number of possible arguments, most of which have common
+default values.
