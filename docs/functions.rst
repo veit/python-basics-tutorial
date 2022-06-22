@@ -64,3 +64,72 @@ Line 2
     The value of the ``fact`` function is only output in the interpreter.
 Line 3
     The return value is linked to the variable ``x``.
+
+Options for function parameters
+-------------------------------
+
+Most functions need parameters. Python offers three options for defining
+function parameters.
+
+Positional parameters
+~~~~~~~~~~~~~~~~~~~~~
+
+The simplest way to pass parameters to a function in Python is to pass them at
+the position. On the first line of the function, you specify the variable name
+for each parameter; when the function is called, the parameters used in the
+calling code are assigned to the function’s parameter variables based on their
+order. The following function calculates ``x`` as a power of ``y``:
+
+.. code-block:: python
+
+    >>> def power(x, y):
+    ...     p = 1
+    ...     while y > 0:
+    ...             p = p * x
+    ...             y = y - 1
+    ...     return p
+    ...
+    >>> power(2, 5)
+    32
+
+This method requires that the number of parameters used by the calling code
+exactly matches the number of parameters in the function definition; otherwise,
+a type error exception is thrown:
+
+.. code-block:: python
+
+    >>> power(2)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: power() missing 1 required positional argument: 'y'
+
+Function parameters can have default values, which you can declare by assigning
+a default value in the first line of the function definition, like this:
+
+.. code-block:: python
+
+    def function_name(param1, param2=Standardwert2, param3=Standardwert3, ...)
+
+Any number of parameters can be given default values, but parameters with
+default values must be defined as the last in the parameter list.
+
+The following function also calculates ``x`` as a power of ``y``. However, if
+``y`` is not specified in a function call, the default value ``5`` is used:
+
+.. code-block:: python
+
+    >>> def power(x, y=5):
+    ...     p = 1
+    ...     while y > 0:
+    ...             p = p * x
+    ...             y = y - 1
+    ...     return p
+
+You can see the effect of the standard argument in the following example:
+
+.. code-block:: python
+
+    >>> power(3, 6)
+    729
+    >>> power(3)
+    243
