@@ -222,3 +222,14 @@ the same time, although this can be confusing if you don’t do it carefully.
 Positional arguments should come first, then named arguments, followed by
 indefinite positional arguments with a simple ``*``, and finally indefinite
 keyword arguments with ``**``.
+
+Mutable objects as arguments
+----------------------------
+
+Arguments are passed by object reference. The parameter becomes a new reference
+to the object. With immutable objects such as :doc:`types/tuples`,
+:doc:`types/strings` and :doc:`types/numbers`, what is done with a parameter has
+no effect outside the function. However, if you pass a mutable object, such as a
+:doc:`types/lists`, a :doc:`types/dicts` or a class instance, any change to the
+object changes what the argument refers to outside the function. Reassigning the
+parameter has no effect on the argument.
