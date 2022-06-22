@@ -233,3 +233,21 @@ no effect outside the function. However, if you pass a mutable object, such as a
 :doc:`types/lists`, a :doc:`types/dicts` or a class instance, any change to the
 object changes what the argument refers to outside the function. Reassigning the
 parameter has no effect on the argument.
+
+
+.. code-block:: python
+
+    >>> def my_func(n, l):
+    ...     l.append(1)
+    ...     n = n + 1
+    ...
+    >>> x = 5
+    >>> y = [2, 4, 6]
+    >>> my_func(x, y)
+    >>> x, y
+    (5, [2, 4, 6, 1])
+
+The variable ``x`` is not changed because it is unchangeable. Instead, the
+function parameter ``n`` is set so that it refers to the new value ``6``.
+However, there is a change in ``y`` because the list it refers to has been
+changed.
