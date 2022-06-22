@@ -153,3 +153,63 @@ argument passing is called keyword passing. Keyword passing can be very useful
 in combination with the default arguments of Python functions when you define
 functions with a large number of possible arguments, most of which have common
 default values.
+
+Variable number of arguments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Python functions can also be defined to handle a variable number of arguments.
+This is possible in two ways. One method collects an unknown number of arguments
+in a :doc:`list <types/lists>`. The other method can collect an arbitrary number
+of arguments passed with a keyword that has no correspondingly named parameter
+in the function parameter list in a :doc:`dict <types/dicts>`.
+
+For an indeterminate number of positional arguments, prefixing the function’s
+final parameter name with a ``*`` causes all excess non-keyword arguments in a
+function call, that is, the positional arguments that are not assigned to any
+other parameter, to be collected and assigned as a tuple to the specified
+parameter. This is, for example, a simple way to implement a function that finds
+the mean in a list of numbers:
+
+.. code-block:: python
+
+    >>> def mean(*numbers):
+    ...     if len(numbers) == 0:
+    ...         return None
+    ...     else:
+    ...         m = sum(numbers) / len(numbers)
+    ...     return m
+
+Now you can test the behaviour of the function, for example with:
+
+.. code-block:: python
+
+    >>> mean(3, 5, 2, 4, 6)
+    4.0
+
+Any number of keyword arguments can also be processed if the last parameter in
+the parameter list is prefixed with ``**``. Then all arguments passed with a
+keyword are collected in a :doc:`dict <types/dicts>`. The key for each entry in
+the dict is the keyword (parameter name) for the argument. The value of this
+entry is the argument itself. An argument passed by keyword is superfluous in
+this context if the keyword with which it was passed does not match one of the
+parameter names in the function definition, for example:
+
+.. code-block:: python
+
+    >>> def server(ip, port, **other):
+    ...     print("ip: {0}, port: {1}, keys in 'other': {2}".format(ip,
+    ...           port, list(other.keys())))
+    ...     total = 0
+    ...     for k in other.keys():
+    ...         total = total + other[k]
+    ...     print("The sum of the other values is {0}".format(total))
+
+Trying out this function shows that it can add the arguments passed under the
+keywords ``foo``, ``bar`` and ``baz``, even though ``foo``, ``bar`` and ``baz``
+are not parameter names in the function definition:
+
+.. code-block:: python
+
+    >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
+    ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
+    The sum of the other values is 10
