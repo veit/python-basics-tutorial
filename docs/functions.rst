@@ -213,3 +213,12 @@ are not parameter names in the function definition:
     >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
     ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
     The sum of the other values is 10
+
+Mixing argument passing techniques
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is possible to use all the argument passing techniques of Python functions at
+the same time, although this can be confusing if you don’t do it carefully.
+Positional arguments should come first, then named arguments, followed by
+indefinite positional arguments with a simple ``*``, and finally indefinite
+keyword arguments with ``**``.
