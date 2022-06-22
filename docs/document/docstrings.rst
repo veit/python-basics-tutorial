@@ -130,6 +130,8 @@ Types in Docstrings:
    are currently not supported by Sphinx and do not appear in the generated
    documentation.
 
+.. _napoleon:
+
 ``sphinx.ext.napoleon``
 -----------------------
 
