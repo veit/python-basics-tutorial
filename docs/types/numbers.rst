@@ -158,10 +158,9 @@ Advanced numerical functions
 
 More advanced numerical functions such as trigonometry, as well as some useful
 constants, are not built into Python, but are provided in a standard module
-called :doc:`math <python3:library/math>`. :doc:`Module
-</modules-packages/index>` will be explained in more detail later. For now,
-suffice it to say that you need to make the maths functions available in this
-section by importing ``math``:
+called :doc:`math <python3:library/math>`. :doc:`Module </modules/index>` will
+be explained in more detail later. For now, suffice it to say that you need to
+make the maths functions available in this section by importing ``math``:
 
 .. code-block:: python
 

@@ -1,5 +1,5 @@
-Modules and packages
-====================
+Modules
+=======
 
 Modules are used in Python to organise larger projects. The Python standard
 library is divided into modules to make it more manageable. You don’t have to
@@ -109,49 +109,3 @@ you must use the ``reload`` function from the :doc:`importlib
     >>> import wc, importlib
     >>> importlib.reload(wc)
     <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
-
-Packages
-~~~~~~~~
-
-For larger projects, there is a generalisation of the module concept called
-packages that allows you to group modules in a directory or subdirectory and
-then import and refer to them hierarchically using a
-``package.subpackage.module`` syntax. This doesn’t require much more than
-creating a possibly empty initialisation file for each package or subpackage.
-
-Wheel
-~~~~~
-
-The current standard format for distributing Python modules and applications is
-to use `Wheels <https://pythonwheels.com/>`_. Wheels were developed to make the
-installation of Python code more reliable and to make dependency management
-easier. However, the details of creating wheels are beyond the scope of this
-section, but full details of the requirements and the process for creating
-wheels can be found in doc:`jupyter-tutorial:productive/packaging/distribution`.
-
-``py2exe`` and ``py2app``
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`py2exe <https://www.py2exe.org/>`_ creates standalone Windows applications and
-`py2app <https://py2app.readthedocs.io/en/latest/>`_ does the same for macOS. In
-both cases, these are single executables that can run on machines that do not
-have Python installed. In many ways, however, standalone executables are not
-ideal, as they tend to be larger and less flexible than native Python
-applications, but in some in some situations they can also be the best or only
-solution.
-
-``freeze``
-~~~~~~~~~~
-
-The ``freeze`` tool also creates an executable Python programme that runs on
-computers that do not have Python installed. If you want to use the ``freeze``
-tool, you will probably need to download the Python source code.
-
-*Freezing* a Python program creates C files that are then compiled and linked
-with a C compiler that you must have installed on your system. The application
-thus frozen will only run on platforms for which the C compiler used provides
-its executables.
-
-.. seealso::
-
-    * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
