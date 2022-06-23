@@ -57,6 +57,8 @@ Exiting the interactive shell
 To exit the interactive shell, simply use :kbd:`Ctrl-d` on Linux and MacOS or
 :kbd:`Ctrl-z` on Windows. Alternatively, you can type ``exit()``.
 
+.. _idle:
+
 IDLE
 ----
 
