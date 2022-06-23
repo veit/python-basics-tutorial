@@ -61,8 +61,25 @@ Lines 20 and 21
     ``python3 wc.py`` in the command line.
 
 First save this code in one of the directories of the module search path, which
-can be found with ``sys.path``. We recommend ``.py`` as the file name extension,
-as this identifies the file as Python source code.
+can be found in the list of ``sys.path``. We recommend ``.py`` as the file name
+extension, as this identifies the file as Python source code.
+
+.. note::
+   The list of directories displayed with ``sys.path`` depends on your system
+   configuration. This list of directories is searched by Python in the order
+   when an import statement is executed. The first module found that matches the
+   import request is used. If there is no matching module in this search path,
+   an ``ImportError`` is raised.
+
+   If you are using :ref:`idle`, you can view the search path and the modules it
+   contains graphically by using the :menuselection:`File --> Path Browser`
+   window.
+
+   The variable ``sys.path`` is initialised with the value of the environment
+   variable ``PYTHONPATH``, if it exists. When you run a Python script, the
+   ``sys.path`` variable for that script will have the directory where the
+   script is located as the first element, so you can conveniently find out
+   where the executing Python programme is located.
 
 Now start the Python shell and enter the following:
 
