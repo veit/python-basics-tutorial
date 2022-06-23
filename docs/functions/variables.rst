@@ -57,5 +57,15 @@ true for ``y``; the local variable ``y`` inside ``my_func`` initially refers to
 the same value as the variable ``y`` outside ``my_func``, but the assignment
 causes ``y`` to refer to a new value that is local to the ``my_func`` function.
 
+.. seealso::
+
+    * :ref:`python3:global`
+
 While ``global`` is used for a top-level variable, ``nonlocal`` refers to any
 variable in an enclosing area.
+
+.. seealso::
+
+    * :ref:`python3:nonlocal`
+    * `PEP 3104 – Access to Names in Outer Scopes
+      <https://peps.python.org/pep-3104/>`_
