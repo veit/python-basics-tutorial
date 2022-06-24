@@ -59,7 +59,8 @@ Line 16
 Lines 19 to 20
     With this ``if``-statement you can use the programme in two ways:
 
-    * to import in the Python shell or another Python script:
+    * for importing in the Python shell or another Python script ``__name__`` is
+      the filename:
 
       .. code-block:: python
 
@@ -90,7 +91,8 @@ Lines 19 to 20
          >>> import wc, importlib
          >>> importlib.reload(wc)
          <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
-    * as a script:
+    * as a script it is executed with the name ``__main__`` and the function
+      ``words_occur()```` is called:
 
       .. code-block:: console
 
