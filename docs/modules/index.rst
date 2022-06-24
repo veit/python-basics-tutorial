@@ -119,3 +119,63 @@ extension, as this identifies the file as Python source code.
    ``sys.path`` variable for that script will have the directory where the
    script is located as the first element, so you can conveniently find out
    where the executing Python programme is located.
+
+Command line arguments
+----------------------
+
+In our example, if you want to pass the file name as a command line argument,
+for example
+
+.. code-block:: console
+
+    $ python3 wc.py README.rst
+
+you can easily do this with the following modification of our script:
+
+.. literalinclude:: wcargv.py
+   :diff: wc.py
+
+:data:`python3:sys.argv` 
+    returns a list of command line arguments passed to a Python script.
+    ``argv[0]`` is the script name.
+:ref:`.pop <python3:tut-morelists>`
+    removes the element at the given position in the list and returns it. If no
+    index is specified, ``.pop()`` removes the last element in the list and
+    returns it.
+
+The ``argparse`` module
+-----------------------
+
+You can configure a script to accept command line options as well as arguments.
+The :doc:`argparse <python3:library/argparse>` module supports parsing of
+different argument types and can even generate messages. To use the ``argparse``
+module, create an instance of :class:`ArgumentParser
+<python3:argparse.ArgumentParser>`, fill it with arguments, and then read both
+the optional and positional arguments. The following example illustrates the use
+of the module:
+
+.. literalinclude:: wcargparse.py
+   :diff: wc.py
+
+This code creates an instance of ``ArgumentParser`` and then adds the filename
+argument. The ``argparse`` module returns a namespace object that contains the
+arguments as attributes. You can retrieve the values of the arguments with dot
+notation, in our case with ``args.filename``.
+
+You can now call the script with:
+
+.. code-block:: console
+
+   $ python3 wcargparse.py -f index.rst
+
+In addition, a help option ``-h`` or ``--help`` is automatically generated:
+
+.. code-block:: console
+
+   $ python3 wcargparse.py -h
+   usage: wcargparse.py [-h] [-f FILENAME]
+
+   optional arguments:
+     -h, --help            show this help message and exit
+     -f FILENAME, --file FILENAME
+                           read data from the file

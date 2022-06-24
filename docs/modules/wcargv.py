@@ -1,8 +1,9 @@
 """wc module. Contains function: words_occur()"""
+import sys
 def words_occur():
     """words_occur() - count the occurrences of words in a file."""
     # Prompt user for the name of the file to use.
-    file_name = input("Enter the name of the file: ")
+    file_name = sys.argv.pop()
     # Open the file, read it and store its words in a list.
     f = open(file_name, 'r')
     word_list = f.read().split()

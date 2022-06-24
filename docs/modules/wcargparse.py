@@ -1,8 +1,12 @@
 """wc module. Contains function: words_occur()"""
+from argparse import ArgumentParser
 def words_occur():
     """words_occur() - count the occurrences of words in a file."""
+    parser = ArgumentParser()
     # Prompt user for the name of the file to use.
-    file_name = input("Enter the name of the file: ")
+    parser.add_argument("-f", "--file", dest="filename", help="read data from the file")
+    args = parser.parse_args()
+    file_name = args.filename
     # Open the file, read it and store its words in a list.
     f = open(file_name, 'r')
     word_list = f.read().split()
