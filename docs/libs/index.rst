@@ -12,4 +12,4 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
    :titlesonly:
    :hidden:
 
-   packages
+   packages-programmes
