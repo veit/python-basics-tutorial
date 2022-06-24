@@ -48,15 +48,15 @@ words in this file.
 .. literalinclude:: wc.py
    :linenos:
 
-Lines 1,2 and 4
+Lines 1 and 3
     :doc:`../document/docstrings` are standard methods for documenting modules,
     functions, methods and classes.
-Line 9
+Line 8
     ``read`` returns a string containing all the characters in a file, and
     ``split`` returns a list of the words in a string using spaces.
-Line 17
+Line 16
     You can use an ``\`` to split a long statement over several lines.
-Lines 20 and 21
+Lines 19 to 20
     With this ``if``-statement you can use the programme in two ways:
 
     * to import in the Python shell or another Python script:
