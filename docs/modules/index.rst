@@ -41,9 +41,9 @@ below into this text file. If you use :ref:`idle`, select :menuselection:`File
 --> New Window` and start typing.
 
 It is easy to create your own modules that can be imported and used in the same
-way as Python's built-in library modules. The example in this listing is a
-simple module with a function that prompts for a file name and determines the
-number of words that occur in that file.
+way as Python's built-in library modules. The following example is a simple
+module with a function that prompts for a file name and determines the number of
+words in this file.
 
 .. literalinclude:: wc.py
    :linenos:
@@ -57,8 +57,47 @@ Line 9
 Line 17
     You can use an ``\`` to split a long statement over several lines.
 Lines 20 and 21
-    With this ``if``-statement you can execute the program as a script by typing
-    ``python3 wc.py`` in the command line.
+    With this ``if``-statement you can use the programme in two ways:
+
+    * to import in the Python shell or another Python script:
+
+      .. code-block:: python
+
+         >>> import wc
+         >>> wc.words_occur()
+         Enter the name of the file: README.rst
+         File README.rst has 350 words (187 are unique)
+         {'Quick': 1, ...}
+
+      Alternatively, you can also import ``words_occur`` directly:
+
+      .. code-block:: python
+
+         >>> from wc import words_occur
+         >>> words_occur()
+         Enter the name of the file: README.rst
+         File README.rst has 350 words (187 are unique)
+         {'Quick': 1, ...}
+
+      You can use the interactive mode of the Python shell or :ref:`idle` to
+      incrementally test a module as you create it. However, if you change your
+      module on disk, entering the import command again will not reload it. For
+      this purpose, you must use the ``reload`` function from the
+      :doc:`importlib <python3:library/importlib>` module:
+
+      .. code-block:: python
+
+         >>> import wc, importlib
+         >>> importlib.reload(wc)
+         <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
+    * as a script:
+
+      .. code-block:: console
+
+         $ python3 wc.py
+         Enter the name of the file: README.rst
+         File README.rst has 350 words (187 are unique)
+         {'Quick': 1, ...}
 
 First save this code in one of the directories of the module search path, which
 can be found in the list of ``sys.path``. We recommend ``.py`` as the file name
@@ -80,32 +119,3 @@ extension, as this identifies the file as Python source code.
    ``sys.path`` variable for that script will have the directory where the
    script is located as the first element, so you can conveniently find out
    where the executing Python programme is located.
-
-Now start the Python shell and enter the following:
-
-.. code-block:: python
-
-    >>> import wc
-    >>> wc.words_occur()
-    Enter the name of the file: README.rst
-    File README.rst has 350 words (187 are unique)
-    {'Quick': 1, ...}
-
-Alternatively, you can also import ``words_occur`` directly:
-
-.. code-block:: python
-
-    >>> from wc import words_occur
-    >>> words_occur()
-
-You can use the interactive mode of the Python shell or :ref:`idle` to
-incrementally test a module as you create it. However, if you change your module
-on disk, entering the import command again will not reload it. For this purpose,
-you must use the ``reload`` function from the :doc:`importlib
-<python3:library/importlib>` module:
-
-.. code-block:: python
-
-    >>> import wc, importlib
-    >>> importlib.reload(wc)
-    <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
