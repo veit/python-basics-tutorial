@@ -13,3 +13,5 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
    :hidden:
 
    packages-programmes
+   distribution
+   glossary
