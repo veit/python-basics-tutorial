@@ -131,6 +131,13 @@ module and referencing the ``name`` property that was previously ntered in
     >>> minimal_example.name
     'minimal_example'
 
+.. note::
+
+    The packages on *Test-PyPI* are only stored temporarily. If you want to
+    upload a package to the real :term:`Python Package Index (PyPI)`, you can do
+    so by creating an account on https://pypi.org and following the same
+    instructions, but using ``twine upload dist/*``.
+
 README
 ~~~~~~
 
