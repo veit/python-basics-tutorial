@@ -16,4 +16,5 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
    distribution
    upload-install
    binary-extensions
+   cibuildwheel
    glossary
