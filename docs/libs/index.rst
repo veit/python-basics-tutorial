@@ -14,4 +14,5 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
 
    packages-programmes
    distribution
+   upload-install
    glossary
