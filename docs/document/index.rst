@@ -1,17 +1,26 @@
 Document
 ========
 
-A ``README`` file in the root directory should contain general information for
-both users and maintainers of a project.
+In order for your software package to be useful, documentation is required that
+describes how your software can be installed, operated, used and improved:
 
-* It should be written in a very easy to read markup, such as
-  :doc:`rest` or Markdown.
-* It should explain the purpose of the project or library in a
-  non-presuppositional way.
-* It should include links to the main sources of the software.
+* Those who want to use your package need information,
 
-A ``LICENSE`` file should always be present to make clear which rights of use
-apply.
+  * what problems your software solves and what the main features and
+    limitations of the software are (``README``)
+  * how the software can be used as an example
+  * what changes have come in more recent software versions (``CHANGELOG``)
+
+* Those who want to run the software need an installation guide for your
+  software and the required dependencies.
+
+* Those who want to improve the software need information about
+
+  * how to help improve the product with bug fixes (``CONTRIBUTING``)
+  * how to communicate with others (``CODE_OF_CONDUCT``)
+
+All together need information on how the product is licensed (``LICENSE`` file
+or ``LICENSES`` folder) and how to get help if needed.
 
 .. seealso::
    * `Eric Holscher: Why You Shouldn’t Use “Markdown” for Documentation
