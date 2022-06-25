@@ -40,6 +40,7 @@ apply.
    uml/index
    extensions
    test
+   shot-scraper
 
 Badges
 ------
