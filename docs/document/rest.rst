@@ -1,6 +1,9 @@
 reStructuredText
 ================
 
+Headlines
+---------
+
 .. code-block:: rest
 
     Underline the title with punctuation marks
