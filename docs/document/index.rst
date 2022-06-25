@@ -105,6 +105,11 @@ documentation of the Linux kernel: `Kernel documentation update
 documentation. Read the Docs makes it easy to create and publish documentation
 after each commit.
 
+For project documentation, visualising :doc:`Git feature branches
+<jupyter-tutorial:productive/git/workflows/feature-branches>` and :doc:`tags
+<jupyter-tutorial:productive/git/tagging>` with
+:doc:`jupyter-tutorial:productive/git/git-big-picture` can be helpful.
+
 .. note::
    If the content of ``long_description`` in ``setuptools.setup()`` is written
    in reStructured Text, it is displayed as well-formatted HTML on the
