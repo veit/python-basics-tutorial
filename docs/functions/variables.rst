@@ -5,7 +5,7 @@ Local, non-local and global variables
 -------------------------------------
 
 Here you return to the definition of ``fact`` from the beginning of this
-chapter:
+:doc:`index` chapter:
 
 .. code-block:: python
 
