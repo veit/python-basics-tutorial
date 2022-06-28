@@ -5,3 +5,4 @@ Appendix
    :titlesonly:
 
    regex
+   glossary
