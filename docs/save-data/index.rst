@@ -46,6 +46,7 @@ least then you should take a look at
    :titlesonly:
    :hidden:
 
+   filesystem
    pickle
    xml
    sqlite
