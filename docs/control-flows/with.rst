@@ -3,9 +3,9 @@ Context management with ``with``
 
 A more rational way to encapsulate the ``try-except-finally`` pattern is to use
 the keyword ``with`` and a context manager. Python defines context managers for
-things like file access and custom context managers. One advantage of context
-managers is that they can define default clean-up actions that are always
-executed, whether an exception occurs or not.
+things like :doc:`file </types/files>` access and custom context managers. One
+advantage of context managers is that they can define default clean-up actions
+that are always executed, whether an exception occurs or not.
 
 The following listing shows opening and reading a file using ``with`` and a
 context manager.
