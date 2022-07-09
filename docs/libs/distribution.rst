@@ -176,7 +176,7 @@ with ``.. include:: ../../README.rst``.
 
 .. seealso::
    * `Keep a Changelog <https://keepachangelog.com>`_
-   * `towncrier <https://pypi.org/project/towncrier/>`_
+   * `scriv <https://pypi.org/project/scriv/>`_
 
 Build
 -----
