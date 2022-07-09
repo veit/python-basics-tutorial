@@ -51,6 +51,8 @@ Lines 8 und 9
 Line 5
     ``continue`` terminates the current iteration of the loop.
 
+.. _for-loop:
+
 ``for`` loop
 ------------
 
