@@ -1,11 +1,10 @@
-Object-oriented programming
-===========================
+Object Orientation
+==================
 
-Python offers full support for OOP. The following listing is an example that
-could be the beginning of a simple shapes module for a drawing program. It is
-mainly intended as a reference if you are already familiar with OOP. In the
-notes, the syntax and semantics of Python are compared with the standard
-functions of other languages.
+Python offers full support for `object-oriented programming
+<https://en.wikipedia.org/wiki/Object-oriented_programming>`_ :abbr:`OOP
+(object-oriented programming)`. The following listing is an example that could
+be the beginning of a simple shapes module for a drawing program.
 
 .. literalinclude:: form.py
     :linenos:
