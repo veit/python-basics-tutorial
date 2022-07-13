@@ -1,27 +1,62 @@
-Exception handling
-==================
+Exceptions
+==========
 
-Exceptions or errors can be caught and handled using the compound statement
-``try``-``except``-``else``-``finally``. This statement can also catch and
-handle exceptions that you can define and raise yourself. Any exception that is
-not caught will cause the programme to terminate. The following examples show
-the basic handling of exceptions.
+This section is about exceptions, that is, language functions that specifically
+handle unusual circumstances during the execution of a programme. The most
+common exception is to handle errors, but they can also be used effectively for
+many other purposes. Python provides a comprehensive set of exceptions, and you can define new exceptions for your own purposes.
+
+The entire exception mechanism in Python is object-oriented: An exception is an
+object that is automatically created by Python functions with a ``raise``
+statement. This ``raise`` statement causes the Python programme to be executed
+in a different way than usually intended: The current call chain is searched for
+a handler that can handle the generated exception. If such a handler is found,
+it is called and can access the exception object to obtain further information.
+If no suitable exception handler is found, the programme terminates with an
+error message.
+
+It is possible to create different types of exceptions to reflect the actual
+cause of the reported error or unusual circumstance. For an overview of the
+class hierarchy of built-in exceptions, see `Exception hierarchy
+<https://docs.python.org/3/library/exceptions.html#exception-hierarchy>`_ in the
+Python documentation. Each exception type is a Python class that inherits from
+its parent exception type. For example, a ``ZeroDivisionError`` is also an
+``ArithmeticError``, an ``Exception`` and also a ``BaseException`` by
+inheritance. This hierarchy is intentional: most exceptions inherit from
+``Exception``, and it is strongly recommended that all user-defined exceptions
+also subclass ``Exception``, and not ``BaseException``:
 
 .. literalinclude:: exceptions.py
-   :linenos:
+   :language: python
+   :lines: 1-2
 
-Line 1
-    Here you define your own exception type, which inherits from the basic type
-    ``Exception``.
-Line 5
+This defines your own exception type, which inherits from the ``Exception`` base
+type.
+
+.. literalinclude:: exceptions.py
+   :language: python
+   :lines: 3
+
+A list of different file types is defined.
+
+Finally, exceptions or errors are caught and handled using the compound
+statement ``try``-``except``-``else``-``finally``. Any exception that is not
+caught will cause the programme to terminate.
+
+.. literalinclude:: exceptions.py
+   :language: python
+   :linenos:
+   :lines: 4-
+
+Line 2
     If an ``IOError`` or ``EmptyFileError`` occurs during the execution of the
     instructions in the ``try`` block, the corresponding ``except`` block is
     executed.
-Line 7
+Line 3
     An ``IOError`` could be triggered here.
-Line 10
+Line 7
     Here you trigger the ``EmptyFileError``.
-Line 15
+Line 12
     The ``else`` clause is optional; it is executed if no exception occurs in
     the ``try`` block.
 
@@ -29,6 +64,6 @@ Line 15
        In this example, ``continue`` statements could have been used in the
        ``except`` blocks instead.
 
-Line 17
+Line 14
     The ``finally`` clause is optional; it is executed at the end of the block,
     regardless of whether an exception was thrown or not.
