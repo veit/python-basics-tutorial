@@ -225,7 +225,7 @@ it is recommended to simply import the module to explicitly refer to the
 .. warning::
 
     Now it becomes clearer why we do not recommend importing all functions of a
-    module with :samp:`from {MODULE} import *`. If you would import the module
+    module with :samp:`from {MODULE} import \*`. If you would import the module
     ``math`` first and then the module ``cmath``, the functions in ``cmath``
     would have priority over those of ``math``. Also, when understanding the
     code, it is much more tedious to find out the source of the functions used.
