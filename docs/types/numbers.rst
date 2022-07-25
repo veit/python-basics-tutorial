@@ -246,6 +246,8 @@ Built-in modules for numbers
 The Python standard library contains a number of built-in modules that you can
 use to manage numbers:
 
+.. _number-modules:
+
 +-----------------------+-------------------------------------------------------------------------------+
 | Module                | Description                                                                   |
 +=======================+===============================================================================+

@@ -277,6 +277,8 @@ Built-in modules for strings
 The Python standard library contains a number of built-in modules that you can
 use to manage strings:
 
+.. _string-modules:
+
 +-----------------------+-------------------------------------------------------------------------------+
 | Module                | Description                                                                   |
 +=======================+===============================================================================+

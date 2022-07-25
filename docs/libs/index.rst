@@ -12,6 +12,7 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
    :titlesonly:
    :hidden:
 
+   batteries
    packages-programmes
    distribution
    templating/index
