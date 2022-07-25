@@ -18,3 +18,4 @@ be the beginning of a simple shapes module for a drawing program.
    private
    property
    namespaces
+   types
