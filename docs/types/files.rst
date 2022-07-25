@@ -222,15 +222,49 @@ Line 5
    streams often behave like files, but must be interpreted as bytes and not
    strings.
 
-There are several other input and output options:
+Built-in modules for files
+--------------------------
 
-:doc:`fileinput <python3:library/fileinput>`
-    allows you to quickly write a loop over standard input or a list of files.
-:doc:`sys <python3:library/sys>`
-    allows you to access ``stdin``, ``stdout`` and ``stderr``.
-:doc:`struct <python3:library/struct>`
-    provides support for reading and writing files created by or to be used by C
-    programs.
-:doc:`pickle <python3:library/pickle>`
-    persists Python data types, :abbr:`s.a. (see also)`
-    :doc:`../save-data/pickle`.
+The Python standard library contains a number of built-in modules that you can
+use to manage files:
+
++-----------------------+-------------------------------------------------------------------------------+
+| Module                | Description                                                                   |
++=======================+===============================================================================+
+| :py:mod:`os.path`     | performs common pathname manipulations                                        |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`pathlib`     | manipulates pathnames                                                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`fileinput`   | iterates over multiple input files                                            |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`filecmp`     | compares files and directories                                                |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`tempfile`    | creates temporary files and directories                                       |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`glob`,       | use UNIX-like path and file name patterns                                     |
+| :py:mod:`fnmatch`     |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`linecache`   | randomly accesses lines of text                                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`shutil`      | performs higher level file operations                                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`pickle`,     | enable Python object serialisation and persistence, see also                  |
+| :py:mod:`shelve`      | :doc:`../save-data/pickle`                                                    |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`sqlite3`     | provides a DB-API 2.0 interface for SQLite databases, see also                |
+|                       | :doc:`../save-data/sqlite`                                                    |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`xml`         | reads and writes XML files, see also :doc:`../save-data/xml`                  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`csv`         | reads and writes CSV files                                                    |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`configparser`| reads and writes Windows-like configuration files (``.ini``)                  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`struct`      | reads and writes structured data to and from files                            |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`zlib`,       | for working with archive files and compressions                               |
+| :py:mod:`gzip`,       |                                                                               |
+| :py:mod:`bz2`,        |                                                                               |
+| :py:mod:`zipfile`,    |                                                                               |
+| :py:mod:`tarfile`     |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+

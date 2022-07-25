@@ -285,8 +285,7 @@ use to manage strings:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`re`          | searches and replaces text with regular expressions                           |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`struct`      | interprets bytes as packed binary data, reads and writes structured data to   |
-|                       | and from files                                                                |
+| :py:mod:`struct`      | interprets bytes as packed binary data                                        |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`difflib`     | helps to calculate deltas, find differences between strings or sequences and  |
 |                       | create patches and diff files                                                 |
