@@ -239,3 +239,33 @@ calculations due to speed limitations. But the powerful Python extension
 implementations of many advanced numerical operations. The focus is on array
 operations, including multi-dimensional matrices and advanced functions such as
 the fast Fourier transform.
+
+Built-in modules for numbers
+----------------------------
+
+The Python standard library contains a number of built-in modules that you can
+use to manage numbers:
+
++-----------------------+-------------------------------------------------------------------------------+
+| Module                | Description                                                                   |
++=======================+===============================================================================+
+| :py:mod:`numbers`     | for numeric abstract base classes                                             |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`math`,       | for mathematical functions for real and complex numbers                       |
+| :py:mod:`cmath`       |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`decimal`     | for decimal fixed-point and floating-point arithmetic                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`statistics`  | for functions for calculating mathematical statistics                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`fractions`   | for rational numbers                                                          |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`random`      | for generating pseudo-random numbers and selections and for shuffling         |
+|                       | sequences                                                                     |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`itertools`   | for functions that create iterators for efficient loops                       |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`functools`   | for higher-order functions and operations on callable objects                 |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`operator`    | for standard operators as functions                                           |
++-----------------------+-------------------------------------------------------------------------------+
