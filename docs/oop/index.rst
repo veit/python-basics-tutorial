@@ -15,3 +15,5 @@ be the beginning of a simple shapes module for a drawing program.
    methods
    inheritance
    summary
+   private
+   property
