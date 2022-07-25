@@ -1,13 +1,12 @@
 *„Batteries included“*
 ======================
 
-In Python kann eine Bibliothek aus mehreren Komponenten bestehen, einschließlich
-eingebauter Datentypen und Konstanten, die ohne eine Importanweisung verwendet
-werden können, wie :abbr:`z.B. (zum Beispiel)` :doc:`/types/numbers` und
-:doc:`/types/lists`, sowie einiger eingebauter :doc:`/functions/index` und
-:doc:`/control-flows/exceptions`. Der größte Teil der Bibliothek ist eine
-umfangreiche Sammlung von :doc:`Modulen </modules/index>`. Wenn ihr Python
-installiert habt, stehen euch auch verschiedene Bibliotheken zur Verfügung zum
+In Python, a library can consist of several components, including built-in data
+types and constants that can be used without an import statement, such as
+:doc:`/types/numbers` and :doc:`/types/lists`, as well as some built-in
+:doc:`/functions/index` and :doc:`/control-flows/exceptions`. The largest part
+of the library is an extensive collection of :doc:`/modules/index`. If you have
+Python installed, there are also several libraries available for you to use.
 
 * :ref:`data-types`
 * :ref:`files-storage`
@@ -17,175 +16,174 @@ installiert habt, stehen euch auch verschiedene Bibliotheken zur Verfügung zum
 
 .. _data-types:
 
-Managen von Datentypen
-----------------------
+Managing data types
+-------------------
 
-Die Standardbibliothek enthält natürlich Unterstützung für die in Python
-eingebauten Typen. Darüber hinaus gibt es in der Standardbibliothek drei
-Kategorien, die sich mit verschiedenen Datentypen befassen: Module für Strings,
-Datentypen und Zahlen.
+The standard library naturally contains support for the types built into Python.
+In addition, there are three categories in the standard library that deal with
+different data types: Modules for strings, datatypes and numbers.
 
-String-Module
-~~~~~~~~~~~~~
+String modules
+~~~~~~~~~~~~~~
 
 .. include:: ../types/strings.rst
    :start-after: string-modules
 
-Module für Datentypen
-~~~~~~~~~~~~~~~~~~~~~
+Modules for data types
+~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------+-------------------------------------------------------------------------------+
-| Modul                 | Beschreibung                                                                  |
+| Module                | Description                                                                   |
 +=======================+===============================================================================+
-| :py:mod:`datetime`,   | Zeit- und Kalenderoperationen                                                 |
+| :py:mod:`datetime`,   | Time and calendar operations                                                  |
 | :py:mod:`calendar`    |                                                                               |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`collections` | Container-Datentypen                                                          |
+| :py:mod:`collections` | Container data types                                                          |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`enum`        | ermöglicht die Erstellung von Aufzählungsklassen, die symbolische Namen an    |
-|                       | konstante Werte binden                                                        |
+| :py:mod:`enum`        | allows the creation of enumeration classes that bind symbolic names to        |
+|                       | constant values                                                               |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`array`       | Effiziente Arrays von numerischen Werten                                      |
+| :py:mod:`array`       | Efficient arrays of numeric values                                            |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`sched`       | Event-Scheduler                                                               |
+| :py:mod:`sched`       | Event scheduler                                                               |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`queue`       | Synchronisierte Queue-Klasse                                                  |
+| :py:mod:`queue`       | Synchronised queue class                                                      |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`copy`        | Flache und tiefe Kopieroperationen                                            |
+| :py:mod:`copy`        | Shallow and deep copy operations                                              |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`pprint`      | druckt Python-Datenstrukturen „hübsch“ aus                                    |
+| :py:mod:`pprint`      | prints Python data structures „pretty“.                                       |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`typing`      | unterstützt die Kommentierung von Code mit Hinweisen auf die Typen von        |
-|                       | Objekten, insbesondere von Funktionsparametern und Rückgabewerten             |
+| :py:mod:`typing`      | supports commenting code with hints about the types of objects, especially    |
+|                       | function parameters and return values                                         |
 +-----------------------+-------------------------------------------------------------------------------+
 
-Module für Zahlen
-~~~~~~~~~~~~~~~~~
+Modules for numbers
+~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../types/numbers.rst
    :start-after: number-modules
 
 .. _files-storage:
 
-Ändern von Dateien
-------------------
+Changing files
+--------------
 
 .. include:: ../types/files.rst
    :start-after: file-modules
 
 .. _os:
 
-Interagieren mit dem Betriebssystem
------------------------------------
+Interacting with the operating system
+-------------------------------------
 
 +-------------------------------+-------------------------------------------------------------------------------+
-| Modul                         | Beschreibung                                                                  |
+| Module                        | Description                                                                   |
 +===============================+===============================================================================+
-| :py:mod:`os`                  | Verschiedene Betriebssystemschnittstellen                                     |
+| :py:mod:`os`                  | Various operating system interfaces                                           |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`platform`            | Zugang zu den Identifizierungsdaten der zugrunde liegenden Plattform          |
+| :py:mod:`platform`            | Access to the identification data of the underlying platform                  |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`time`                | Zeitzugriff und Konvertierungen                                               |
+| :py:mod:`time`                | Time access and conversions                                                   |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`io`                  | Werkzeuge für die Arbeit mit Datenströmen                                     |
+| :py:mod:`io`                  | Tools for working with data streams                                           |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`select`              | Warten auf I/O-Abschluss                                                      |
+| :py:mod:`select`              | Waiting for I/O completion                                                    |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`optparse`            | Parser für Befehlszeilenoptionen                                              |
+| :py:mod:`optparse`            | Parser for command line options                                               |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`curses`              | Terminal-Handling für Zeichenzellen-Displays                                  |
+| :py:mod:`curses`              | Terminal handling for character cell displays                                 |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`getpass`             | Portable Passworteingabe                                                      |
+| :py:mod:`getpass`             | Portable password entry                                                       |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`ctypes`              | bietet C-kompatible Datentypen                                                |
+| :py:mod:`ctypes`              | provides C-compatible data types                                              |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`threading`           | High-Level Threading-Interface                                                |
+| :py:mod:`threading`           | high-level threading interface                                                |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`multiprocessing`     | Prozessbasierte Threading-Schnittstelle                                       |
+| :py:mod:`multiprocessing`     | Process-based threading interface                                             |
 +-------------------------------+-------------------------------------------------------------------------------+
-| :doc:`subprocess              | Verwaltung von Unterprozessen                                                 |
+| :doc:`subprocess              | Management of subprocesses                                                    |
 | <python3:library/subprocess>` |                                                                               |
 +-------------------------------+-------------------------------------------------------------------------------+
 
 .. _internet:
 
-Verwenden von Internet-Protokollen
-----------------------------------
+Use of Internet protocols
+-------------------------
 
 +-----------------------------------+-------------------------------------------------------------------------------+
-| Modul                             | Beschreibung                                                                  |
+| Module                            | descriptiong                                                                  |
 +===================================+===============================================================================+
-| :py:mod:`socket`,                 | Low-Level-Netzwerkschnittstelle und SSL-Wrapper für Socket-Objekte            |
+| :py:mod:`socket`,                 | Low-level network interface and SSL wrapper for socket objects                |
 | :py:mod:`ssl`                     |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`email`                   | E-Mail- und MIME-Verarbeitungspaket                                           |
+| :py:mod:`email`                   | Email and MIME processing package                                             |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`mailbox`                 | Manipulation von Postfächern in verschiedenen Formaten                        |
+| :py:mod:`mailbox`                 | Manipulation of mailboxes in various formats                                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`cgi`,                    | Common Gateway Interface-Unterstützung                                        |
+| :py:mod:`cgi`,                    | Common Gateway Interface support                                              |
 | :py:mod:`cgitb`                   |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`wsgiref`                 | WSGI-Dienstprogramme und Referenzimplementierung                              |
+| :py:mod:`wsgiref`                 | WSGI utilities and reference implementation                                   |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`urllib.request`,         | Öffnen und Parsen von URLs                                                    |
+| :py:mod:`urllib.request`,         | Open and parse URLs                                                           |
 | :py:mod:`urllib.parse`            |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`ftplib`,                 | Clients für verschiedene Internetprotokolle                                   |
+| :py:mod:`ftplib`,                 | Clients for various Internet protocols                                        |
 | :py:mod:`poplib`,                 |                                                                               |
 | :py:mod:`imaplib`,                |                                                                               |
 | :py:mod:`nntplib`,                |                                                                               |
 | :py:mod:`smtplib`,                |                                                                               |
 | :py:mod:`telnetlib`               |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`socketserver`            | Framework für Netzwerkserver                                                  |
+| :py:mod:`socketserver`            | Framework for network servers                                                 |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`http.server`             | HTTP-Server                                                                   |
+| :py:mod:`http.server`             | HTTP server                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`xmlrpc.client`,          | XML-RPC-Client und -Server                                                    |
+| :py:mod:`xmlrpc.client`,          | XML-RPC client and server                                                     |
 | :py:mod:`xmlrpc.server`           |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
 
 
 .. _dev-debug:
 
-Entwickeln und Debuggen
------------------------
+Developing and debugging
+------------------------
 
 +-----------------------------------+-------------------------------------------------------------------------------+
-| Modul                             | Beschreibung                                                                  |
+| Module                            | Description                                                                   |
 +===================================+===============================================================================+
-| :py:mod:`pydoc`                   | Dokumentationsgenerator und Online-Hilfesystem                                |
+| :py:mod:`pydoc`                   | Documentation generator and online help system                                |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`doctest`                 | Beispiele aus Python-Docstrings testen                                        |
+| :py:mod:`doctest`                 | Test examples from Python docstrings                                          |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`unittest`                | Framework für Unittests, :abbr:`s.a. (siehe auch)` :doc:`/test/unittest`      |
+| :py:mod:`unittest`                | Framework for unittests, see also :doc:`/test/unittest`                       |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`test.support`            | Utility-Funktionen für Tests                                                  |
+| :py:mod:`test.support`            | Utility functions for tests                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`trace`                   | verfolgt die Ausführung von Python-Anweisungen                                |
+| :py:mod:`trace`                   | traces the execution of Python statements                                     |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`pdb`                     | Python-Debugger                                                               |
+| :py:mod:`pdb`                     | Python debugger                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`logging`                 | Protokollierungsfunktion für Python                                           |
+| :py:mod:`logging`                 | logging function for Python                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`timeit`                  | misst die Ausführungszeit von kleinen Codeschnipseln                          |
+| :py:mod:`timeit`                  | measures the execution time of small code snippets                            |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`profile`,                | Python-Profiler                                                               |
+| :py:mod:`profile`,                | Python profiler                                                               |
 | :py:mod:`cProfile`                |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`sys`                     | Systemspezifische Parameter und Funktionen                                    |
+| :py:mod:`sys`                     | System-specific parameters and functions                                      |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`gc`                      | Funktionen des Python-Garbage-Collectors                                      |
+| :py:mod:`gc`                      | Functions of the Python garbage collector                                     |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`inspect`                 | inspiziert Objekte live                                                       |
+| :py:mod:`inspect`                 | inspects objects live                                                         |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`atexit`                  | Exit-Handler                                                                  |
+| :py:mod:`atexit`                  | exit handler                                                                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`__future__`              | Zukünftige Statement-Definitionen                                             |
+| :py:mod:`__future__`              | Future statement definitions                                                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`imp`                     | erlaubt den Zugriff auf die Import-Interna                                    |
+| :py:mod:`imp`                     | allows access to the import internals                                         |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`zipimport`               | importiert von Modulen aus Zip-Archiven                                       |
+| :py:mod:`zipimport`               | imports modules from zip archives                                             |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`modulefinder`            | findet Module, die von einem Skript verwendet werden                          |
+| :py:mod:`modulefinder`            | finds modules used by a script                                                |
 +-----------------------------------+-------------------------------------------------------------------------------+
