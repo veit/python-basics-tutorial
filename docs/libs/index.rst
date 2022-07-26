@@ -1,12 +1,11 @@
-Programmbibliotheken
-====================
+Programme libraries
+===================
 
-Mehrere :doc:`/modules/index` können in einer Programmbibliothek zusammengefasst
-werden. Solche Bibliotheken ermöglichen euch, Module in Verzeichnissen und
-Unterverzeichnissen zu gruppieren und dann zu importieren und hierarchisch auf
-sie zu verweisen, indem ihr eine ``package.subpackage.module``-Syntax verwendet.
-Dies erfordert nicht viel mehr als die Erstellung einer möglicherweise leeren
-Initialisierungsdatei für jedes Paket oder Unterpaket.
+Several :doc:`/modules/index` can be grouped together in a programme library.
+Such libraries allow you to group modules into directories and subdirectories
+and then import and hierarchically reference them using a
+``package.subpackage.module`` syntax. This does not require much more than the
+creation of a possibly empty initialisation file for each package or subpackage.
 
 .. toctree::
    :titlesonly:
