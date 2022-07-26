@@ -6,12 +6,12 @@ Sphinx distinguishes the following placeholder variables:
 .. rst:role:: envvar
 
     Environment variable that also creates a reference to the appropriate
-   :rst:dir:`envvar` directive if it exists.
+    :rst:dir:`envvar` directive if it exists.
 
 .. rst:role:: file
 
     The name of a file or directory. Curly brackets can be used to specify a
-   variable part, for example::
+    variable part, for example::
    
         … is installed in :file:`/usr/lib/python3.{x}/site-packages` …
 
