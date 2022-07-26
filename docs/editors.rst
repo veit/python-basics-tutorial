@@ -20,7 +20,7 @@ file as a module.
       Type "help", "copyright", "credits" or "license" for more information.
       >>> 
 
-.. tab:: MacOS
+.. tab:: macOS
 
    Open a terminal window and enter ``python3``:
 
@@ -54,7 +54,7 @@ key.
 Exiting the interactive shell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To exit the interactive shell, simply use :kbd:`Ctrl-d` on Linux and MacOS or
+To exit the interactive shell, simply use :kbd:`Ctrl-d` on Linux and macOS or
 :kbd:`Ctrl-z` on Windows. Alternatively, you can type ``exit()``.
 
 .. _idle:
@@ -66,7 +66,7 @@ IDLE is the acronym for integrated development environment and combines an
 interactive interpreter with code editing and debugging tools. It is very easy
 to execute on the various platforms:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    Enter the following into your terminal:
 

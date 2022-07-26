@@ -16,7 +16,7 @@ Features
 Installation
 ------------
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -70,7 +70,7 @@ Test parameterisation
 Run pytest
 ----------
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

@@ -13,7 +13,7 @@ specified in a docstring are fulfilled.
 
 #. Then you can test it with
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

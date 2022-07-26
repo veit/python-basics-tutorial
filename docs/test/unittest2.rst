@@ -26,7 +26,7 @@ Installation
 ------------
 
 
-    .. tab:: Linux/MacOS
+    .. tab:: Linux/macOS
 
          .. code-block:: console
 

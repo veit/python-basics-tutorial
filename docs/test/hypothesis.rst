@@ -8,7 +8,7 @@ find errors with little effort.
 
 #. Install Hypothesis:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -22,7 +22,7 @@ find errors with little effort.
 
    Alternatively, Hypothesis can also be installed with extensions, for example:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -52,7 +52,7 @@ find errors with little effort.
 
 #. Run test:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

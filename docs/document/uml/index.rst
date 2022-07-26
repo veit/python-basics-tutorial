@@ -20,7 +20,7 @@ Installation
 #. Install `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

@@ -12,7 +12,7 @@ publishing your changes. For this purpose, `Sphinx
 ``-n`` option, for example with:
 
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -34,7 +34,7 @@ accessible. Sphinx uses a linkcheck builder for this purpose, which you can call
 with:
 
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -49,7 +49,7 @@ with:
 The output may then look like this:
 
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

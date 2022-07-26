@@ -9,7 +9,7 @@ management and testing with multiple interpreter configurations.
 
 #. Installation
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

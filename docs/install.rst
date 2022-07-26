@@ -12,9 +12,9 @@ installed, that is no problem either.
    version of Python exists in your Linux distribution, I recommend you to use
    it.
 
-.. tab:: MacOS
+.. tab:: macOS
 
-   You need a Python version that matches your MacOS and processor. Once you
+   You need a Python version that matches your macOS and processor. Once you
    have determined the correct version, you can download the image file, mount
    it with a double click and then start the installation programme contained
    in it. Python will then be in the :file:`Applications` folder.

@@ -62,7 +62,7 @@ Suppose you have implemented the following method for adding in the module
 
 #. Finally, all tests in :download:`test_arithmetic.py` can be executed with:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -86,7 +86,7 @@ Suppose you have implemented the following method for adding in the module
 
    … or a little more verbose:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: ps1con
 

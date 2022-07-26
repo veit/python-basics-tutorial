@@ -6,7 +6,7 @@ Installation and start
 
 #. Create a virtual environment for your documentation project:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -20,7 +20,7 @@ Installation and start
 
 #. Switch to the virtual environment and install Sphinx there:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -41,7 +41,7 @@ Installation and start
 
 #. Create your Sphinx documentation project:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -128,7 +128,7 @@ Generate the documentation
 
 You can now generate the documentation, for example with:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
