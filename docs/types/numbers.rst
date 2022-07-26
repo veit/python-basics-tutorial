@@ -198,7 +198,7 @@ The ``math`` module provides, among other things
   :func:`python3:math.sin`,
 * the hyperbolic functions :func:`python3:math.cosh`,
   :func:`python3:math.sinh` and :func:`python3:math.tanh`
-* and the constants :data:`python3:math.e` und :data:`python3:math.pi`.
+* and the constants :data:`python3:math.e` and :data:`python3:math.pi`.
 
 Advanced functions for complex numbers
 --------------------------------------

@@ -24,7 +24,7 @@ Sequence diagram
     declared explicitly.
 ``-->``
      is used to draw a dotted line.
-``<- und <--``
+``<-`` and ``<--``
     do not change the drawing, but may increase readability.
     
     .. note::

@@ -31,7 +31,7 @@ Line 4
     ``if`` condition where ``x`` is to be exactly ``4``.
 Line 5
     ``break`` ends the loop.
-Lines 8 und 9
+Lines 8 and 9
     outputs the results of the ``while`` loop before execution was interrupted
     with ``break``.
 
