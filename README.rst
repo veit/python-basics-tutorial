@@ -22,7 +22,7 @@ Installation
 
 #. Download and unpack:
 
-   … on Linux/MacOS:
+   … on Linux/macOS:
 
    .. code-block:: console
 
@@ -46,7 +46,7 @@ Installation
 
 #. Install Python packages:
 
-   … on Linux/MacOS:
+   … on Linux/macOS:
 
    .. code-block:: console
 
