@@ -203,7 +203,7 @@ The ``math`` module provides, among other things
 Advanced functions for complex numbers
 --------------------------------------
 
-The functions in the :doc:`cmath <python3:library/math>` module are not
+The functions in the :doc:`math <python3:library/math>` module are not
 applicable to complex numbers; one of the reasons for this is probably that the
 square root of ``-1`` is supposed to produce an error. Therefore, similar
 functions for complex numbers have been provided in the :doc:`cmath
