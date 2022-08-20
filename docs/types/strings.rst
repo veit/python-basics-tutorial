@@ -297,6 +297,13 @@ easily be converted into strings and formatted, for example:
 Objects are automatically converted to strings for printing, with string
 literals prefixed with ``f`` providing additional formatting options.
 
+However, the index and slice notation cannot be used to add, remove or replace elements:
+
+In ``{pi:.3f}``, the format specification ``f`` is used to limit the number Pi
+to three decimal places. For more information on the format specificationeb see
+`Format Specification Mini-Language
+<https://docs.python.org/3/library/string.html#format-specification-mini-language>`_.
+
 .. seealso::
    * :ref:`python3:f-strings`
    * `PEP 498 – Literal String Interpolation
