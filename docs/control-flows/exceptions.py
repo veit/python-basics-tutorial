@@ -7,7 +7,7 @@ for file in filenames:
         line = f.readline()
         if line == "":
             f.close()
-            raise EmptyFileError("%s: is empty" % file)
+            raise EmptyFileError(f"{file} is empty")
     except IOError as error:
         print(f"Cannot open file {file}: {error.strerror}")
     except EmptyFileError as error:
