@@ -25,7 +25,7 @@ Variables, for example, can be validated in a pre-generate hook:
     module_name = '{{ cookiecutter.module_name }}'
 
     if not re.match(MODULE_REGEX, module_name):
-        print('ERROR: %s is not a valid Python module name!' % module_name)
+        print(f'ERROR: {module_name} is not a valid Python module name!')
 
         # exits with status 1 to indicate failure
         sys.exit(1)

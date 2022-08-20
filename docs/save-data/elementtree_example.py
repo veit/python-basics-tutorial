@@ -7,7 +7,7 @@ def parseXML(xml_file):
     tree = ET.ElementTree(file=xml_file)
     print(tree.getroot())
     root = tree.getroot()
-    print("tag=%s, attrib=%s" % (root.tag, root.attrib))
+    print(f"tag={root.tag}, attrib={root.attrib}")
 
     for child in root:
         print(child.tag, child.attrib)
@@ -23,7 +23,7 @@ def parseXML(xml_file):
     for book in books:
         book_children = book.iter()
         for book_child in book_children:
-            print("%s=%s" % (book_child.tag, book_child.text))
+            print(f"{book_child.tag}={book_child.text}")
 
 if __name__ == "__main__":
     parseXML("books.xml")
