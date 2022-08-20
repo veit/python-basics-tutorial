@@ -37,9 +37,40 @@ can contain single and double quotes without backslashes.
 Strings are also immutable. The operators and functions that work with them
 return new strings derived from the original. The operators (``in``, ``+`` and
 ``*``) and built-in functions (``len``, ``max`` and ``min``) work with strings
-in the same way as with lists and tuples. Index and slice notation work in the
-same way to get elements or slices, but cannot be used to add, remove or replace
-elements.
+in the same way as with lists and tuples.
+
+.. code-block:: python
+
+    >>> welcome = "Hello pythonistas!\n"
+    >>> 2 * welcome
+    'Hello pythonistas!\nHello pythonistas!\n'
+    >>> welcome + welcome
+    'Hello pythonistas!\nHello pythonistas!\n'
+    >>> 'python' in welcome
+    True
+    >>> max(welcome)
+    'y'
+    >>> min(welcome)
+    '\n'
+
+Index and slice notation work in the same way to get elements or slices:
+
+.. code-block:: python
+
+    >>> welcome[0:5]
+    'Hello'
+    >>> welcome[6:-1]
+    'pythonistas!'
+
+However, index and slice notation cannot be used to add, remove or replace
+elements:
+
+.. code-block:: python
+
+    >>> welcome[6:-1] = 'everybody!'
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'str' object does not support item assignment
 
 ``string``
 ----------
