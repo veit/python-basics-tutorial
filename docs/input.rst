@@ -21,9 +21,9 @@ with the :class:`python3:int` or :class:`python3:float` function, for example, f
     >>> import datetime
     >>>
     >>> currentDateTime = datetime.datetime.now()
-    >>> date = currentDateTime.date()
+    >>> year = currentDateTime.year
     >>> year_birth = input("Year of birth? ")
     Year of birth? 1964
-    >>> age = date.year - int(year_birth)
+    >>> age = year - int(year_birth)
     >>> print('Age:', age, 'years')
     Age: 58 years
