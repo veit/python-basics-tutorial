@@ -6,11 +6,11 @@ Opening files
 
 In Python, you open and read a file using the built-in :func:`python3:open`
 function and various built-in read operations. The following short Python
-program reads a line from a text file called :samp:`{myfile}`:
+program reads a line from a text file called :samp:`{myfile.txt}`:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> line = f.readline()
 
 :func:`python3:open` does not read anything from the file, but returns a
@@ -31,7 +31,7 @@ Documents\\myfile}`:
 .. code-block:: python
 
     >>> import os
-    >>> pathname = os.path.join('C:', 'Users', 'Veit', 'Documents', 'myfile')
+    >>> pathname = os.path.join('C:', 'Users', 'Veit', 'Documents', 'myfile.txt')
     >>> with open(pathname, 'r') as f:
     ...     line = f.readline()
 
@@ -56,7 +56,7 @@ file object is no longer needed:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> line = f.readline()
     >>> f.close()
 
@@ -65,7 +65,7 @@ automatically close files when you are done:
 
 .. code-block:: python
 
-    >>> with open('docs/types/myfile', 'r') as f:
+    >>> with open('docs/types/myfile.txt', 'r') as f:
     ...     line = f.readline()
 
 Opening files in write or other modes
@@ -80,7 +80,7 @@ Pythonistas!` to a file:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'w')
+    >>> f = open('docs/types/myfile.txt', 'w')
     >>> f.write('Hi, Pythonistas!\n')
     18
     >>> f.close()
@@ -107,7 +107,7 @@ determine, for example, the number of lines in a file:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> lc = 0
     >>> while f.readline() != '':
     ...     lc = lc + 1
@@ -122,7 +122,7 @@ with one string per line:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> print(len(f.readlines()))
     2
     >>> f.close()
@@ -137,7 +137,7 @@ treat the file object as an iterator in a :ref:`for-loop`:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
@@ -158,7 +158,7 @@ parameter when opening the file and specifying ``newline='\n'``, ``\r`` or
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', newline='\n')
+    >>> f = open('docs/types/myfile.txt', newline='\n')
 
 In this example, only ``\n`` is considered a line break. However, if the file
 was opened in binary mode, the ``newline`` parameter is not necessary, as all
@@ -181,7 +181,16 @@ breaks added to the file object; otherwise they are concatenated. ``writelines``
 is thus the exact inverse of ``readlines``, since it can be applied to the list
 returned by ``readlines`` to write a file identical to the source file. Assuming
 that ``myfile.txt`` exists and is a text file, the following example creates an
-exact copy of :file:`myfile` named :file:`myfile2`:
+exact copy of :file:`myfile.txt` named :file:`myfile2.txt`:
+
+.. code-block:: python
+
+    >>> input_file = open("myfile.txt", 'r')
+    >>> lines = input_file.readlines()
+    >>> input_file.close()
+    >>> output = open("myfile2.txt", 'w')
+    >>> output.writelines(lines)
+    >>> output.close()
 
 Using binary mode
 ~~~~~~~~~~~~~~~~~
@@ -196,7 +205,7 @@ specified size:
 .. code-block:: python
     :linenos:
 
-    >>> f = open('myfile', 'rb')
+    >>> f = open('myfile.txt', 'rb')
     >>> head = f.read(16)
     >>> print(head)
     b'Hi, Pythonistas!'
