@@ -15,4 +15,15 @@ string you want to display as a parameter for ``input``:
 
 This is a fairly simple way to get data input. The only catch is that the input
 comes in as a string. So if you want to use a number, you have to convert it
-with the :class:`python3:int` or :class:`python3:float` function.
+with the :class:`python3:int` or :class:`python3:float` function, for example, for calculating the age from the year of birth:
+
+.. code-block:: python
+    >>> import datetime
+    >>>
+    >>> currentDateTime = datetime.datetime.now()
+    >>> date = currentDateTime.date()
+    >>> year_birth = input("Year of birth? ")
+    Year of birth? 1964
+    >>> age = date.year - int(year_birth)
+    >>> print('Age:', age, 'years')
+    Age: 58 years
