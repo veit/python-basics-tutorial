@@ -82,7 +82,7 @@ Pythonistas!` to a file:
 
     >>> f = open('docs/types/myfile.txt', 'w')
     >>> f.write('Hi, Pythonistas!\n')
-    18
+    17
     >>> f.close()
 
 Depending on the operating system, :func:`python3:open` may also have access to
@@ -113,7 +113,7 @@ determine, for example, the number of lines in a file:
     ...     lc = lc + 1
     ... 
     >>> print(lc)
-    2
+    1
     >>> f.close()
 
 A shorter way to count all lines is with the ``readlines`` method, which is also
@@ -124,7 +124,7 @@ with one string per line:
 
     >>> f = open('docs/types/myfile.txt', 'r')
     >>> print(len(f.readlines()))
-    2
+    1
     >>> f.close()
 
 If you count all the lines in a large file, this method may cause the memory to
@@ -143,7 +143,7 @@ treat the file object as an iterator in a :ref:`for-loop`:
     ...     lc = lc + 1
     ... 
     >>> print(lc)
-    2
+    1
     >>> f.close()
 
 This method has the advantage that the lines are read into the memory as needed, so that even with large files there is no need to fear a lack of memory. The other advantage of this method is that it is simpler and more readable.
@@ -158,7 +158,7 @@ parameter when opening the file and specifying ``newline='\n'``, ``\r`` or
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', newline='\n')
+    >>> f = open('docs/types/myfile.txt', 'r', newline='\n')
 
 In this example, only ``\n`` is considered a line break. However, if the file
 was opened in binary mode, the ``newline`` parameter is not necessary, as all
@@ -188,9 +188,9 @@ exact copy of :file:`myfile.txt` named :file:`myfile2.txt`:
     >>> input_file = open("myfile.txt", 'r')
     >>> lines = input_file.readlines()
     >>> input_file.close()
-    >>> output = open("myfile2.txt", 'w')
-    >>> output.writelines(lines)
-    >>> output.close()
+    >>> output_file = open("myfile2.txt", 'w')
+    >>> output_file.writelines(lines)
+    >>> output_file.close()
 
 Using binary mode
 ~~~~~~~~~~~~~~~~~
