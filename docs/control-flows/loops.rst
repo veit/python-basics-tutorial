@@ -60,8 +60,9 @@ The ``for`` loop is simple but powerful because it can iterate over any iterable
 type, such as a list or a tuple. Unlike many other languages, the ``for`` loop
 in Python iterates over every element in a sequence for example a :doc:`list
 <../types/lists>` or a :doc:`tuple <../types/tuples>`), which makes it more like
-a foreach loop. The following loop finds the first occurrence of an integer that
-is divisible by ``5``:
+a foreach loop. The following loop uses the `Modulo
+<https://en.wikipedia.org/wiki/Modulo_operation>`_ operator ``%`` as a condition
+for the first occurrence of an integer divisible by ``5``:
 
 .. code-block:: python
     :linenos:
