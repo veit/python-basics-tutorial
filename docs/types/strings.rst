@@ -81,16 +81,28 @@ For strings, there are several methods in the standard Python library
 
 .. code-block:: python
 
-    >>> welcome = "Hello pythonistas!\n"
+    >>> welcome = "hello pythonistas!\n"
+    >>> welcome.isupper()
+    False
+    >>> welcome.isalpha()
+    False
+    >>> welcome[0:5].isalpha()
+    True
+    >>> welcome.capitalize()
+    'Hello pythonistas!\n'
+    >>> welcome.title()
+    'Hello Pythonistas!\n'
     >>> welcome.strip()
     'Hello pythonistas!'
     >>> welcome.split(' ')
-    ['Hello', 'pythonistas!\n']
+    ['hello', 'pythonistas!\n']
     >>> chunks = [x.strip() for x in welcome.split(' ')]
     >>> chunks
-    ['Hello', 'pythonistas!']
+    ['hello', 'pythonistas!']
     >>> ' '.join(chunks)
-    'Hello pythonistas!'
+    'hello pythonistas!'
+    >>> welcome.replace('\n', '')
+    'hello pythonistas!'
 
 The following is an overview of all ``string`` methods:
 
