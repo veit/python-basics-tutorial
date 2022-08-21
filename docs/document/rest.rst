@@ -1,6 +1,12 @@
 reStructuredText
 ================
 
+.. seealso::
+   * `reStructuredText Primer
+     <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
+   * `reStructuredText Quick Reference
+     <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_
+
 Headlines
 ---------
 

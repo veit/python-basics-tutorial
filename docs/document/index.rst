@@ -125,12 +125,6 @@ For project documentation, visualising :doc:`Git feature branches
    in reStructured Text, it is displayed as well-formatted HTML on the
    :term:`Python Package Index (PyPI)`.
 
-.. seealso::
-   * `reStructuredText Primer
-     <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
-   * `reStructuredText Quick Reference
-     <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_
-
 Other documentation tools
 -------------------------
 
