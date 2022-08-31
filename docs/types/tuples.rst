@@ -42,3 +42,14 @@ function:
     >>> x = (1, 2, 3, 4)
     >>> list(x)
     [1, 2, 3, 4]
+
+The advantages of tuples over :doc:`lists` are:
+
+* Tuples are faster than lists.
+
+  If you want to define a constant set of values and just cycle through them,
+  you should use a tuple instead of a list.
+
+* Tuples can not be modified and are therefore *write-protected*.
+
+* Tuples can be used as keys in :doc:`dicts` and values in :doc:`sets`.
