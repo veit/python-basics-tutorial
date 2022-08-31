@@ -24,3 +24,12 @@ Line 3
     When a sequence is made into a set, duplicates are removed.
 Line 4 and 6
     The keyword is used to check whether an object belongs to a set.
+
+Summary
+-------
+
++---------------+---------------+---------------+---------------+---------------+
+| data type     | mutable       | ordered       | indexed       | duplicates    |
++===============+===============+===============+===============+===============+
+| set           | ✅            | ❌            | ❌            | ❌            |
++---------------+---------------+---------------+---------------+---------------+

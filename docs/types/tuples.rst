@@ -53,3 +53,12 @@ The advantages of tuples over :doc:`lists` are:
 * Tuples can not be modified and are therefore *write-protected*.
 
 * Tuples can be used as keys in :doc:`dicts` and values in :doc:`sets`.
+
+Summary
+-------
+
++---------------+---------------+---------------+---------------+---------------+
+| data type     | mutable       | ordered       | indexed       | duplicates    |
++===============+===============+===============+===============+===============+
+| tuple         | ❌            | ✅            | ✅            | ✅            |
++---------------+---------------+---------------+---------------+---------------+

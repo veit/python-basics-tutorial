@@ -98,3 +98,12 @@ Line 6
 
 Some of these operations repeat functions that can be performed using slice
 notation, but they improve the readability of the code.
+
+Summary
+-------
+
++---------------+---------------+---------------+---------------+---------------+
+| data type     | mutable       | ordered       | indexed       | duplicates    |
++===============+===============+===============+===============+===============+
+| list          | ✅            | ✅            | ✅            | ✅            |
++---------------+---------------+---------------+---------------+---------------+
