@@ -28,8 +28,8 @@ values to more complex structures like lists, dictionaries and files.
    numbers
    lists
    tuples
-   strings
-   dicts
    sets
+   dicts
+   strings
    files
    none
