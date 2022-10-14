@@ -5,4 +5,5 @@ Appendix
    :titlesonly:
 
    regex
+   encodings
    glossary
