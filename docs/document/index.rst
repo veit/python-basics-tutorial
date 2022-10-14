@@ -117,7 +117,7 @@ after each commit.
 
 For project documentation, visualising :doc:`Git feature branches
 <jupyter-tutorial:productive/git/workflows/feature-branches>` and :doc:`tags
-<jupyter-tutorial:productive/git/tagging>` with
+<jupyter-tutorial:productive/git/tag>` with
 :doc:`jupyter-tutorial:productive/git/git-big-picture` can be helpful.
 
 .. note::
