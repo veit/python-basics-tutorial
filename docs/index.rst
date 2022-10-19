@@ -8,6 +8,7 @@ Python basics
    :titlesonly:
    :hidden:
 
+   intro
    install
    editors
    explore
