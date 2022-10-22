@@ -161,6 +161,10 @@ You can find detailed information on this in the
 ~~~~~~~~~~~~~~
 
 This file briefly tells those who are interested in the package how to use it.
+
+.. seealso::
+    * `README 101 <https://www.makeareadme.com>`_
+
 If you write the document in :doc:`/document/rest`, you can also include the
 contents as a detailed description in your package:
 
