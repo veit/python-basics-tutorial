@@ -42,7 +42,7 @@ the template used as well as the specified parameters.
     Certain files are rarely suitable for updating, for example test cases or
     :file:`__init__` files. You can tell cruft to always skip updating these
     files in a project by creating the project with the arguments
-    :samp:`--skip cruft/__init__.py --skip tests` or manually adding them to a
+    :samp:`--skip vsc/__init__.py --skip tests` or manually adding them to a
     skip section in your :file:`.cruft.json` file:
 
     .. code-block:: javascript
