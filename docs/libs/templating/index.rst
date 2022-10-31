@@ -12,3 +12,4 @@ can be created which simplify the creation of Python packages significantly.
    overview
    install
    advanced
+   cruft
