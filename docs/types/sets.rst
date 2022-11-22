@@ -18,8 +18,8 @@ associated values:
     False
 
 Line 1
-    You can create a set by applying ``set`` to a sequence like a
-    :doc:`Liste <lists>`.
+    You can create a set by applying ``set`` to a sequence like a :doc:`list
+    <lists>`.
 Line 3
     When a sequence is made into a set, duplicates are removed.
 Line 4 and 6
