@@ -18,6 +18,7 @@ comes in as a string. So if you want to use a number, you have to convert it
 with the :class:`python3:int` or :class:`python3:float` function, for example, for calculating the age from the year of birth:
 
 .. code-block:: python
+
     >>> import datetime
     >>>
     >>> currentDateTime = datetime.datetime.now()
