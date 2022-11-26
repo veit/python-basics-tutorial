@@ -24,7 +24,14 @@ prototypes. In the process, there are countless software libraries to make your
 work easier.
 
 Python is a modern programming language developed by Guido van Rossum in the
-1990s. Some strengths of Python are
+1990s.
+
+.. seealso::
+    * `The Origins of Python
+      <https://inference-review.com/article/the-origins-of-python>`_ by Lambert
+      Meertens
+
+Some strengths of Python are
 
 ease of use
     Some of the reasons for this are that types are associated with objects, not
