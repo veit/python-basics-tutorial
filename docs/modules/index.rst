@@ -32,6 +32,9 @@ Modules are also used to make Python itself more manageable. Most of Python’s
 standard functions are not integrated into the core of the language, but are
 provided via special modules that you can load as needed.
 
+.. seealso::
+    * :ref:`python3:py-modindex`
+
 Creating modules
 ----------------
 
