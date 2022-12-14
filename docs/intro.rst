@@ -38,6 +38,12 @@ ease of use
     variables; a variable can be assigned values of any type and a list can
     contain objects of different types. Also, the syntax rules are very simple
     and you can quickly learn to write useful code.
+
+    .. figure:: python.png
+       :alt: Python – and programming is fun again!
+
+       `XKCD: Python <https://xkcd.com/353>`_
+
 Expressive power
     Often you can achieve much more in a few lines of code than in other
     languages. As a result, you can complete your projects more quickly, and
