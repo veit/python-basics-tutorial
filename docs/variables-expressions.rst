@@ -60,7 +60,6 @@ calculates the average of ``x`` and ``y`` and stores the result in the variable
 ``z``:
 
 .. code-block:: python
-   :linenos:
 
     >>> x = 1
     >>> y = 2
