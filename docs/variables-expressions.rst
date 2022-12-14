@@ -23,7 +23,6 @@ for the first time.
    the following example:
 
    .. code-block:: python
-      :linenos:
 
       >>> x = [1, 2, 3]
       >>> y = x
@@ -34,7 +33,6 @@ for the first time.
    However, variables can also refer to constants:
 
    .. code-block:: python
-      :linenos:
 
       >>> x = 1
       >>> y = x
@@ -43,10 +41,10 @@ for the first time.
       >>> print(x,y,z)
       1 4 1
 
-   In this case, after the third line, ``a``, ``b`` and ``c`` all refer to the
-   same immutable integer object with the value ``1``. The next line, ``y = 5``,
-   causes ``b`` to refer to the integer object ``5``, but this does not change
-   the references of ``a`` or ``c``.
+   In this case, after the third line, ``x``, ``y`` and ``z`` all refer to the
+   same immutable integer object with the value ``1``. The next line, ``y = 4``,
+   causes ``y`` to refer to the integer object ``4``, but this does not change
+   the references of ``x`` or ``z``.
 
 Python variables can be set to any object, whereas in many other languages
 variables can only be stored in the declared type.
