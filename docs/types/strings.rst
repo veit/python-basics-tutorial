@@ -96,7 +96,7 @@ For strings, there are several methods in the standard Python library
     'Hello pythonistas!'
     >>> welcome.split(' ')
     ['hello', 'pythonistas!\n']
-    >>> chunks = [x.strip() for x in welcome.split(' ')]
+    >>> chunks = [snippet.strip() for snippet in welcome.split(' ')]
     >>> chunks
     ['hello', 'pythonistas!']
     >>> ' '.join(chunks)
@@ -167,7 +167,7 @@ possibilities for pattern extraction and substitution than ``string``.
 .. code-block:: python
 
     >>> import re
-    >>> re.sub('\n', '', x)
+    >>> re.sub('\n', '', welcome)
     'Hello pythonistas!'
 
 Here, the regular expression is first compiled and then its
@@ -178,7 +178,7 @@ object that reduces CPU cycles when applied to different strings:
 .. code-block:: python
 
     >>> regex = re.compile('\n')
-    >>> regex.sub('', x)
+    >>> regex.sub('', welcome)
     'Hello pythonistas!'
 
 If instead you want to get a list of all patterns that match the ``regex``
@@ -186,7 +186,7 @@ object, you can use the :py:meth:`re.Pattern.findall` method:
 
 .. code-block:: python
 
-    >>> regex.findall(x)
+    >>> regex.findall(welcome)
     ['\n']
 
 .. note::
