@@ -3,6 +3,7 @@ Regular expressions
 
 .. seealso::
    * `www.regular-expressions.info <https://www.regular-expressions.info/>`_
+   * `AutoRegex <https://www.autoregex.xyz>`_
 
 ``[]``
 ------
