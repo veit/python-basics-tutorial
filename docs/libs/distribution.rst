@@ -133,9 +133,10 @@ universal ``wheel`` packages with the ``options`` keyword argument, for example
 <https://peps.python.org/pep-0518/>`_ brought extensible build backends,
 isolated builds and `pyproject.toml
 <https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_. The
-file uses the :doc:`jupyter-tutorial:data-processing/serialisation-formats/toml`
-format and since we use ``setuptools``, the file should look like this or
-something similar:
+file uses the
+:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index` format
+and since we use ``setuptools``, the file should look like this or something
+similar:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
