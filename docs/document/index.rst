@@ -81,6 +81,12 @@ example:
    https://readthedocs.org/projects/cookiecutter-namespace-template/badge/?version=latest
    :target: https://cookiecutter-namespace-template.readthedocs.io/en/latest/
 
+You can also create your own badges, for example:
+
+ .. image:: https://img.shields.io/badge/dynamic/json?label=Mastodon&query=totalItems&url=https%3A%2F%2Fmastodon.social%2F@JupyterTutorial%2Ffollowers.json&logo=mastodon
+    :alt: Mastodon
+    :target: https://mastodon.social/@JupyterTutorial
+
 .. seealso::
     * `shields.io <https://shields.io>`_
 
