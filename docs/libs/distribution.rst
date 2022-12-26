@@ -200,8 +200,15 @@ with ``.. include:: ../../README.rst``.
 ~~~~~~~~~~~~~~~~~
 
 .. seealso::
-   * `Keep a Changelog <https://keepachangelog.com>`_
-   * `scriv <https://pypi.org/project/scriv/>`_
+    * `Keep a Changelog <https://keepachangelog.com/>`_
+    * `Scriv <https://github.com/nedbat/scriv>`_
+    * `changelog_manager <https://github.com/masukomi/changelog_manager>`_
+    * `github-activity <https://github.com/executablebooks/github-activity>`_
+    * `Dinghy <https://github.com/nedbat/dinghy>`_
+    * `Python core-workflow blurb
+      <https://github.com/python/core-workflow/tree/master/blurb>`_
+    * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
+    * `towncrier <https://github.com/twisted/towncrier>`_
 
 Build
 -----
