@@ -4,6 +4,19 @@ Creating a distribution package
 :term:`Distribution Packages <Distribution Package>` are archives that can be
 uploaded to a package index and installed with :term:`Pip`.
 
+.. seealso::
+
+    for packaging and distributing Python libraries with `setuptools
+    <https://packaging.python.org/key_projects/#setuptools>`_: `Packaging and
+    distributing projects
+    <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+
+    If you want to look at alternatives to ``setuptools``:
+
+    * `flit <https://packaging.python.org/key_projects/#flit>`_
+    * `hatch <https://github.com/ofek/hatch>`_
+    * `poetry <https://github.com/python-poetry/poetry>`_
+
 Structure
 ---------
 
@@ -286,16 +299,3 @@ You can then call Python and import your loaders module:
     `anti-pattern <https://twitter.com/pganssle/status/1152695229105000453>`_ by
     parts of the `Python Packaging Authority (PyPA)
     <https://github.com/pypa/>`_.
-
-.. seealso::
-
-    for packaging and distributing Python libraries with `setuptools
-    <https://packaging.python.org/key_projects/#setuptools>`_: `Packaging and
-    distributing projects
-    <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
-
-    If you want to look at alternatives to ``setuptools``:
-
-    * `flit <https://packaging.python.org/key_projects/#flit>`_
-    * `hatch <https://github.com/ofek/hatch>`_
-    * `poetry <https://github.com/python-poetry/poetry>`_
