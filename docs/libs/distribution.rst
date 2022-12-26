@@ -171,6 +171,12 @@ similar:
 You can find detailed information on this in the
 :doc:`jupyter-tutorial:productive/licensing` section.
 
+ ``CONTRIBUTORS.rst``
+ ~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+    * `allcontributors.org <https://allcontributors.org/>`_
+
 ``README.rst``
 ~~~~~~~~~~~~~~
 
