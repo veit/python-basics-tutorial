@@ -175,7 +175,7 @@ You can find detailed information on this in the
  ~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
-    * `allcontributors.org <https://allcontributors.org/>`_
+    * `All contributors <https://allcontributors.org/>`_
 
 ``README.rst``
 ~~~~~~~~~~~~~~
