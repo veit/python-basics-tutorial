@@ -28,3 +28,6 @@ as :doc:`lists` and :doc:`dicts`. If you try to access the value of a key that
 is not in the dictionary, a ``KeyError`` exception is thrown. To avoid this
 error, the dictionary method ``get`` optionally returns a custom value if a key
 is not contained in a dictionary.
+
+.. seealso::
+   * `python-benedict <https://github.com/fabiocaccamo/python-benedict>`_
