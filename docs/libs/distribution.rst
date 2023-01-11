@@ -6,9 +6,10 @@ uploaded to a package index and installed with :term:`Pip`.
 
 .. seealso::
 
-    for packaging and distributing Python libraries with `setuptools
-    <https://packaging.python.org/key_projects/#setuptools>`_: `Packaging and
-    distributing projects
+    Packaging and distributing Python libraries with `setuptools
+    <https://packaging.python.org/key_projects/#setuptools>`_:
+
+    * `Packaging and distributing projects
     <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
     If you want to look at alternatives to ``setuptools``:
