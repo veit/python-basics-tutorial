@@ -36,8 +36,8 @@ and then uses this value to calculate the total edge length:
 
     >>> my_square = Square()
     >>> my_square.length = 3
-    >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
-    Der Umfang des Quadrats ist 12.
+    >>> print(f"The perimeter of the square is {4 * my_square.length}.")
+    The perimeter of the square is 12.
 
 As in Java and many other languages, the fields of an instance are addressed
 using dot notation.
@@ -57,8 +57,8 @@ argument ``self``. Unlike in Java and C++, Python classes can also have only one
     ...         self.length = 1
     ...
     >>> my_square = Square()
-    >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
-    Der Umfang des Quadrats ist 4.
+    >>> print(f"The perimeter of the square is {4 * my_square.length}.")
+    The perimeter of the square is 4.
 
 Line 2
     By convention, ``self`` is always the name of the first argument of
@@ -77,5 +77,5 @@ Line 6
     .. code-block:: python
 
         >>> my_square.length = 3
-        >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
-        Der Umfang des Quadrats ist 12.
+        >>> print(f"The perimeter of the square is {4 * my_square.length}.")
+        The perimeter of the square is 12.
