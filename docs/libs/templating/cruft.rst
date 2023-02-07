@@ -79,8 +79,8 @@ Checking a project
 To see if a project has missed a template update, you can easily call ``cruft
 check``. If the project is out of date, an error and exit code 1 will be
 returned. ``cruft check`` can also be added to
-:doc:`jupyter-tutorial:productive/git/pre-commit` and CI pipelines to ensure
-projects don’t become unintentionally stale.
+:ref:`jupyter-tutorial:pre-commit-framework` and CI pipelines to ensure projects
+don’t become unintentionally stale.
 
 Linking an existing project
 ---------------------------
