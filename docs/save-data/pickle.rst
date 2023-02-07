@@ -89,7 +89,7 @@ You can then output the data from ``c`` with
    >>> with open('data.pickle', 'rb') as f:
    ...     saved_data = pickle.load(f)
    ...     print(saved_data['c'])
-   ... 
+   ...
    {False, None, True}
 
 In addition to :py:func:`pickle.dump` and :py:func:`pickle.load`, there are also

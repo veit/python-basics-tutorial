@@ -9,18 +9,18 @@ will now summarise these basics in a single example:
     .. literalinclude:: form.py
         :language: python
         :linenos:
-        :lines: 1-9
-        :lineno-start: 1
+        :lines: 4-13
+        :lineno-start: 4
 
-    Line 4
+    Line 7
         The ``__init__`` method requires one instance (``self``) and two
         parameters.
-    Lines 5 and 6
+    Lines 8 and 9
         The two instance variables ``x`` and ``y``, which are accessed via
         ``self``.
-    Line 7
+    Line 11
         The ``move`` method requires one instance (``self``) and two parameters.
-    Lines 8 and 9
+    Lines 12 and 13
         Instance variables that are set in the ``move`` method.
 
 #. Next, create a subclass that inherits from the base class ``Form``:
@@ -28,15 +28,15 @@ will now summarise these basics in a single example:
     .. literalinclude:: form.py
         :language: python
         :linenos:
-        :lines: 11-17
-        :lineno-start: 11
+        :lines: 16-21
+        :lineno-start: 16
 
-    Line 11
+    Line 16
         The class ``Square`` inherits from the class ``Form``.
-    Line 13
+    Line 19
         ``Square``’s ``__init__`` takes one instance (``self``) and three
         parameters, all with defaults.
-    Line 14
+    Line 20
         ``Circle``’s ``__init__`` uses ``super()`` to call ``Form``’s
         ``__init__``.
 
@@ -45,18 +45,18 @@ will now summarise these basics in a single example:
     .. literalinclude:: form.py
         :language: python
         :linenos:
-        :lines: 19-35
-        :lineno-start: 19
+        :lines: 27-
+        :lineno-start: 27
 
-    Lines 21 and 22
+    Lines 30 and 31
         ``pi`` and ``circles`` are class variables for ``Circle``.
-    Line 26
+    Line 33
         In the ``__init__`` method, the instance inserts itself into the
         ``circles`` list.
-    Lines 29 and 30
+    Lines 38 and 39
         ``circumferences`` is a class method and takes the class itself
         (``cls``) as a parameter.
-    Line 33
+    Line 42
         uses the parameter ``cls`` to access the class variable ``circles``.
 
 Now you can create some instances of the class ``Circle`` and analyse them.

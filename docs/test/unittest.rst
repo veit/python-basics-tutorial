@@ -31,7 +31,7 @@ Suppose you have implemented the following method for adding in the module
 
 .. literalinclude:: arithmetic.py
    :language: python
-   :lines: 1,6
+   :lines: 1-6
    :lineno-start: 1
 
 … then you can test this method with a unittest.
@@ -40,7 +40,7 @@ Suppose you have implemented the following method for adding in the module
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 1-2
+      :lines: 1-3
       :lineno-start: 1
 
 #. Afterwards, you can write a test method that exemplifies your addition
@@ -48,8 +48,8 @@ Suppose you have implemented the following method for adding in the module
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 4-7
-      :lineno-start: 4
+      :lines: 6-8
+      :lineno-start: 6
 
 
 #. In order to be able to import the unit tests into other modules as well, you
@@ -57,8 +57,8 @@ Suppose you have implemented the following method for adding in the module
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 21-22
-      :lineno-start: 21
+      :lines: 23-
+      :lineno-start: 23
 
 #. Finally, all tests in :download:`test_arithmetic.py` can be executed with:
 

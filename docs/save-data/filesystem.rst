@@ -369,7 +369,7 @@ topdown=True, onerror=None, followlinks= False)``.
     ...     print("{0} has {1} files".format(root, len(files)))
     ...     if ".ipynb_checkpoints" in dirs:
     ...         dirs.remove(".ipynb_checkpoints")
-    ... 
+    ...
     . has 13 files
     ./control-flows has 13 files
     ./save-data has 30 files

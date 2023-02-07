@@ -51,15 +51,13 @@ words in this file.
 .. literalinclude:: wc.py
    :linenos:
 
-Lines 1 and 3
+Lines 1 and 5
     :doc:`../document/docstrings` are standard methods for documenting modules,
     functions, methods and classes.
-Line 8
+Line 10
     ``read`` returns a string containing all the characters in a file, and
     ``split`` returns a list of the words in a string using spaces.
-Line 16
-    You can use an ``\`` to split a long statement over several lines.
-Lines 19 to 20
+Lines 25 to 26
     With this ``if``-statement you can use the programme in two ways:
 
     * for importing in the Python shell or another Python script ``__name__`` is
@@ -140,7 +138,7 @@ you can easily do this with the following modification of our script:
 .. literalinclude:: wcargv.py
    :diff: wc.py
 
-:data:`python3:sys.argv` 
+:data:`python3:sys.argv`
     returns a list of command line arguments passed to a Python script.
     ``argv[0]`` is the script name.
 :ref:`.pop <python3:tut-morelists>`

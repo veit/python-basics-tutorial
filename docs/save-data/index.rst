@@ -38,7 +38,7 @@ SQLAlchemy and serves as a database migration tool.
 NoSQL databases
 ---------------
 
-There is data that is difficult to transfer into a relational data model. At the 
+There is data that is difficult to transfer into a relational data model. At the
 least then you should take a look at
 :doc:`jupyter-tutorial:data-processing/nosql/index`.
 

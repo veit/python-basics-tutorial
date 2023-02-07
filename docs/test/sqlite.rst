@@ -22,7 +22,7 @@ Example: Testing the SQLite database
 
 #. In it, we then define the test method ``test_db_exists``, in which we use
    ``assert`` to assume that the file exists in :doc:`os.path
-   <python3:library/os.path>`: 
+   <python3:library/os.path>`:
 
       .. literalinclude:: ../save-data/test_sqlite.py
          :language: python

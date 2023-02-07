@@ -18,7 +18,7 @@ file as a module.
       Python 3.10.4 (default, Mar 23 2022, 17:29:05)
       [GCC 9.4.0] on linux
       Type "help", "copyright", "credits" or "license" for more information.
-      >>> 
+      >>>
 
 .. tab:: macOS
 

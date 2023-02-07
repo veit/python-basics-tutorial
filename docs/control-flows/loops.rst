@@ -16,7 +16,7 @@ true:
     ...     if x == 4:
     ...         break
     ...     print(x)
-    ... 
+    ...
     5
 
 Line 1
@@ -44,7 +44,7 @@ Lines 8 and 9
     ...     if x == 4:
     ...         continue
     ...     print(x)
-    ... 
+    ...
     5
     3
 
@@ -75,7 +75,7 @@ for the first occurrence of an integer divisible by ``5``:
     ...     if not i % d:
     ...         print(f"First integer found that is divisible by {d}: {i}")
     ...         break
-    ... 
+    ...
     First integer found that is divisible by 5: 10
 
 ``x`` is assigned each value in the list in turn. If ``x`` is not an integer,

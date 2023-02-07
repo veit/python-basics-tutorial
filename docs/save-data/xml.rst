@@ -29,23 +29,23 @@ In the following example we analyse :download:`books.xml`:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 3-9
-      :lineno-start: 3
+      :lines: 4-10
+      :lineno-start: 4
 
 #. Then we create an empty list called ``titles``, which is filled with the
    title objects:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 11-14
-      :lineno-start: 11
+      :lines: 12-15
+      :lineno-start: 12
 
 #. Now the title is output in nested ``for``-loops:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 16-20
-      :lineno-start: 16
+      :lines: 17-21
+      :lineno-start: 17
 
 #. Finally, we set the ``__name__`` variable like ``__main__`` so that the
    module can be executed like the main program. Then we apply our ``getTitles``
@@ -53,8 +53,8 @@ In the following example we analyse :download:`books.xml`:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 22-
-      :lineno-start: 22
+      :lines: 24-
+      :lineno-start: 24
 
 Parsing with ElementTree
 ------------------------
@@ -74,8 +74,8 @@ Parsing with ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 3-10
-      :lineno-start: 3
+      :lines: 4-11
+      :lineno-start: 4
 
    .. code-block:: py
 
@@ -86,8 +86,8 @@ Parsing with ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 12-16
-      :lineno-start: 12
+      :lines: 13-17
+      :lineno-start: 13
 
    .. code-block:: py
 
@@ -104,8 +104,8 @@ Parsing with ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 19-26
-      :lineno-start: 19
+      :lines: 20-27
+      :lineno-start: 20
 
    .. code-block:: py
 

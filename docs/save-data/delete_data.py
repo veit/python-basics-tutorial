@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def delete_by_language(language):
     conn = sqlite3.connect("library.db")
     cursor = conn.cursor()
@@ -11,4 +12,5 @@ def delete_by_language(language):
     cursor.execute(sql)
     conn.commit()
 
-delete_by_language(language='de')
+
+delete_by_language(language="de")

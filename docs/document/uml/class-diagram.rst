@@ -34,7 +34,7 @@ Class diagram
 
     .. image:: circle.svg
 
-``class`` 
+``class``
 
     .. code-block:: rest
 
@@ -66,7 +66,7 @@ Class diagram
 
     .. image:: entity.svg
 
-``enum`` 
+``enum``
 
     .. code-block:: rest
 

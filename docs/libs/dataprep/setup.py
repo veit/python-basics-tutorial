@@ -1,7 +1,7 @@
 import codecs
-from setuptools import find_packages, setup
-from Cython.Build import cythonize
 
+from Cython.Build import cythonize
+from setuptools import find_packages, setup
 
 with codecs.open("README.rst", "r") as fh:
     long_description = fh.read()

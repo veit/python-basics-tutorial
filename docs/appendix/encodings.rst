@@ -76,7 +76,7 @@ are the methods of transition from one to the other:
 
 .. code-block:: python
 
-    >>> "You’re welcome!".encode("utf-8") 
+    >>> "You’re welcome!".encode("utf-8")
     b'You\xe2\x80\x99re welcome!'
     >>> b"You\xe2\x80\x99re welcome!".decode("utf-8")
     'You’re welcome!'

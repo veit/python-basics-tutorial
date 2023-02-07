@@ -1,6 +1,6 @@
 import psycopg2
 
-conn = psycopg2.connect(dbname='my_db', user='username')
+conn = psycopg2.connect(dbname="my_db", user="username")
 cursor = conn.cursor()
 
 # Execute a query

@@ -1,5 +1,6 @@
 import xml.dom.minidom as minidom
 
+
 def getTitles(xml):
     """
     Print all titles found in books.xml
@@ -19,6 +20,7 @@ def getTitles(xml):
             if node.nodeType == node.TEXT_NODE:
                 print(node.data)
 
+
 if __name__ == "__main__":
-    document = 'books.xml'
+    document = "books.xml"
     getTitles(document)

@@ -49,7 +49,7 @@ Activity diagram
     .. code-block:: rest
 
        .. uml::
-        
+
           start
           fork
             :action 1;

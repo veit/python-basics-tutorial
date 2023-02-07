@@ -39,7 +39,7 @@ Single test
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 1-2,4-5
+   :lines: 1-4, 19-24
    :lineno-start: 1
 
 ``key``
@@ -56,16 +56,16 @@ decorator:
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 8-28
-   :lineno-start: 8
+   :lines: 9-16
+   :lineno-start: 9
 
 Test parameterisation
 ---------------------
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 31-
-   :lineno-start: 31
+   :lines: 35-
+   :lineno-start: 35
 
 Run pytest
 ----------

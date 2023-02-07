@@ -5,12 +5,12 @@ Delete data
 
    .. literalinclude:: delete_data.py
       :language: python
-      :lines: 3-12
-      :lineno-start: 3
+      :lines: 4-13
+      :lineno-start: 4
 
 #. Call the method with the parameter of the language to be deleted:
 
    .. literalinclude:: delete_data.py
       :language: python
-      :lines: 14
-      :lineno-start: 14
+      :lines: 16
+      :lineno-start: 16

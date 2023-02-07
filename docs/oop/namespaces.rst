@@ -21,8 +21,8 @@ You can get an overview of the methods that are available in a namespace with
 .. literalinclude:: form_ns.py
     :language: python
     :linenos:
-    :lines: 48-53
-    :lineno-start: 48
+    :lines: 65-70
+    :lineno-start: 65
 
 .. code-block:: python
 
@@ -64,8 +64,8 @@ You can now analyse the namespace of the instance with the method
 .. literalinclude:: form_ns.py
     :language: python
     :linenos:
-    :lines: 54-56
-    :lineno-start: 54
+    :lines: 72-
+    :lineno-start: 72
 
 .. code-block:: python
 

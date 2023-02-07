@@ -31,36 +31,36 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.intersphinx',
-    'sphinxcontrib.plantuml',
-    'sphinx_inline_tabs',
-    "sphinxcontrib.rsvgconverter"
-    ]
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.intersphinx",
+    "sphinxcontrib.plantuml",
+    "sphinx_inline_tabs",
+    "sphinxcontrib.rsvgconverter",
+]
 
-plantuml = 'java -jar /Users/veit/cusy/trn/python-basics-tutorial/plantuml.jar'
-plantuml_output_format = 'svg'
+plantuml = "java -jar /Users/veit/cusy/trn/python-basics-tutorial/plantuml.jar"
+plantuml_output_format = "svg"
 
 intersphinx_mapping = {
-    'python3': ('https://docs.python.org/3/', None),
-    'jupyter-tutorial': ('https://jupyter-tutorial.readthedocs.io/en/latest/', None),
+    "python3": ("https://docs.python.org/3/", None),
+    "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
-project = 'Python basics'
+project = "Python basics"
 copyright = "2021-2023, Veit Schiele"
 author = "Veit Schiele"
 
@@ -79,10 +79,10 @@ language = "en"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -94,7 +94,7 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = "alabaster"
-html_title ="Python basics 0.1.0"
+html_title = "Python basics 0.1.0"
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
@@ -111,7 +111,7 @@ html_title ="Python basics 0.1.0"
 # -- Options for HTMLHelp output ---------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'python-basics'
+htmlhelp_basename = "python-basics"
 
 
 # -- Options for LaTeX output ------------------------------------------
@@ -136,10 +136,10 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        'python-basics.tex',
-        'Python basics',
-        'Veit Schiele',
-        'manual',
+        "python-basics.tex",
+        "Python basics",
+        "Veit Schiele",
+        "manual",
     ),
 ]
 
@@ -148,9 +148,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'python-basics', 'Python basics', [author], 1)
-]
+man_pages = [(master_doc, "python-basics", "Python basics", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------
@@ -161,11 +159,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        'python-basics',
-        'Python basics',
+        "python-basics",
+        "Python basics",
         author,
-        'python-basics',
-        'Python basics.',
-        'Miscellaneous',
+        "python-basics",
+        "Python basics.",
+        "Miscellaneous",
     ),
 ]

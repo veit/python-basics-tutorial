@@ -10,7 +10,7 @@ uploaded to a package index and installed with :term:`Pip`.
     <https://packaging.python.org/key_projects/#setuptools>`_:
 
     * `Packaging and distributing projects
-    <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+      <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
     If you want to look at alternatives to ``setuptools``:
 
@@ -41,7 +41,7 @@ for example:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
-   :lines: 2,4-5,9-12,15-21,41-
+   :lines: 4-5, 9-12, 15-21,41
    :lineno-start: 1
 
 ``src`` package
@@ -79,7 +79,6 @@ created on the :term:`Python Package Index (PyPI)`:
 .. literalinclude:: dataprep/setup.py
    :language: python
    :lines: 22-38
-   :lineno-start: 16
 
 Furthermore, PyPI has a useful additional function: it rejects unknown
 classifiers, so that an accidental upload can be avoided.
@@ -96,7 +95,6 @@ Dependencies are specified with ``install_requires``:
 .. literalinclude:: dataprep/setup.py
    :language: python
    :lines: 39
-   :lineno-start: 32
 
 .. note::
     Version numbers of dependencies should usually not be written in the
@@ -193,7 +191,7 @@ contents as a detailed description in your package:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
-   :lines: 1,4-9,13-14,41
+   :lines: 4-5, 9-21,41
 
 You can also include them in your :doc:`Sphinx documentation </document/start>`
 with ``.. include:: ../../README.rst``.

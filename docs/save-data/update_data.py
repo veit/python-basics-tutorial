@@ -12,5 +12,5 @@ def update_license(old_name, new_name):
     cursor.execute(sql)
     conn.commit()
 
-update_license(old_name='BSD',
-               new_name='BSD-3-Clause')
+
+update_license(old_name="BSD", new_name="BSD-3-Clause")

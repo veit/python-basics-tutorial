@@ -8,7 +8,7 @@ The psycopg module
       $ python3 -m pip install psycopg
       Collecting psycopg
         Downloading psycopg-3.0.1-py3-none-any.whl (140 kB)
-           |████████████████████████████████| 140 kB 3.4 MB/s            
+           |████████████████████████████████| 140 kB 3.4 MB/s
       Installing collected packages: psycopg
       Successfully installed psycopg-3.0.1
 

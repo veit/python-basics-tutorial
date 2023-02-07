@@ -111,7 +111,7 @@ determine, for example, the number of lines in a file:
     >>> lc = 0
     >>> while f.readline() != '':
     ...     lc = lc + 1
-    ... 
+    ...
     >>> print(lc)
     1
     >>> f.close()
@@ -141,7 +141,7 @@ treat the file object as an iterator in a :ref:`for-loop`:
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
-    ... 
+    ...
     >>> print(lc)
     1
     >>> f.close()

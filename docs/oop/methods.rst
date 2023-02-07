@@ -110,7 +110,7 @@ has been created. To create a static method, use the :func:`@staticmethod
 .. literalinclude:: circle.py
     :linenos:
 
-Line 8
+Line 11
     defines the class variable ``circles`` as an initially empty list of all
     ``Circle`` instances.
 Line 14
@@ -138,14 +138,14 @@ first parameter:
 .. literalinclude:: circle_cm.py
     :language: python
     :linenos:
-    :lines: 18-
-    :lineno-start: 18
+    :lines: 23-
+    :lineno-start: 23
 
-Line 18
+Line 23
     The ``@classmethod`` decorator is used before the ``def`` method.
-Line 19
+Line 24
     The class parameter is traditionally ``cls``.
-Line 22
+Line 27
     You can use ``cls`` instead of ``self.__class__``.
 
     By using a class method instead of a static method, you don’t have to

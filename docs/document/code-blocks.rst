@@ -7,11 +7,13 @@ highlight the syntax. You can specify the appropriate language for a code block
 with
 
 .. rst:directive:: .. code-block:: LANGUAGE
+
    You can use this for example like this:
 
    .. code-block:: rest
 
       .. code-block:: python
+
          import this
 
    .. rubric:: Optionen
@@ -24,13 +26,13 @@ with
       .. code-block:: rest
 
          .. code-block:: python
-
             :linenos:
+
             import this
 
       .. code-block:: python
-
          :linenos:
+
          import this
 
    .. rst:directive:option:: lineno-start
@@ -70,13 +72,13 @@ with
       .. code-block:: rest
 
           .. literalinclude:: main.py
-             :emphasize-lines: 3,7-10,20-22
+             :emphasize-lines: 4, 9-12, 20-22
              :linenos:
 
       .. literalinclude:: main.py
-         :emphasize-lines: 3,7-10,20-22
+         :emphasize-lines: 4, 9-12, 20-22
          :linenos:
-      
+
    .. rst:directive:option:: diff
 
       If you want to show the diff of your code, you can specify the old file

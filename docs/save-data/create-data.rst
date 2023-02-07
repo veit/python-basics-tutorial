@@ -12,13 +12,13 @@ Create data
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 13
-      :lineno-start: 13
+      :lines: 14
+      :lineno-start: 14
 
 #. Insert multiple records using the more secure ``?`` method where the number
    of  ``?`` should correspond to the number of columns:
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 16-
-      :lineno-start: 16
+      :lines: 17-
+      :lineno-start: 17

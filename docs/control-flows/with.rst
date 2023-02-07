@@ -1,4 +1,4 @@
-Context management with ``with`` 
+Context management with ``with``
 ================================
 
 A more rational way to encapsulate the ``try-except-finally`` pattern is to use

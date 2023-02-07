@@ -5,9 +5,11 @@ from unittest.mock import Mock
 monday = datetime(year=2021, month=10, day=11)
 saturday = datetime(year=2021, month=10, day=16)
 
+
 def is_workingday():
     today = datetime.today()
-    return (0 <= today.weekday() < 5)
+    return 0 <= today.weekday() < 5
+
 
 datetime = Mock()
 

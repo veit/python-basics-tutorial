@@ -12,7 +12,7 @@ Sphinx distinguishes the following placeholder variables:
 
     The name of a file or directory. Curly brackets can be used to specify a
     variable part, for example::
-   
+
         … is installed in :file:`/usr/lib/python3.{x}/site-packages` …
 
 In the generated HTML documentation, the ``x`` is specially marked with ``em
@@ -27,7 +27,7 @@ version.
 
    Text example, such as code within which curly braces can be used to indicate
    a variable part, as in :rst:role:`file` or in :samp:`print 1+{VARIABLE}`.
-  
+
    As of Sphinx≥1.8, curly braces can be displayed with a backslash (``\``).
 
 .. note::

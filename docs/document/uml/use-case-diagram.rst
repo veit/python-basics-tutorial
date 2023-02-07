@@ -2,7 +2,7 @@ Use Case diagram
 ================
 
 .. uml::
-    
+
    :User: --> (Use)
    "Group of\nAdministrators " as Admin
    "Using the\napplication" as (Use)
@@ -11,7 +11,7 @@ Use Case diagram
 .. code-block:: rest
 
    .. uml::
-    
+
       :User: --> (Use)
       "Group of\nAdministrators " as Admin
       "Using the\napplication" as (Use)

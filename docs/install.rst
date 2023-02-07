@@ -32,7 +32,7 @@ installed, that is no problem either.
    Python installer in three steps:
 
    #. Download the latest `Python Releases for Windows
-      <https://www.python.org/downloads/windows/>`_ installer, for example 
+      <https://www.python.org/downloads/windows/>`_ installer, for example
       `Windows installer (64-bit)
       <https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe>`_.
    #. Start the installation programme. If you have the necessary permissions,

@@ -5,8 +5,8 @@ Query normalised data
 
    .. literalinclude:: query_normalised.py
       :language: python
-      :lines: 6-10
-      :lineno-start: 6
+      :lines: 7-13
+      :lineno-start: 7
 
    .. code-block:: rest
 
@@ -23,8 +23,8 @@ Query normalised data
 
    .. literalinclude:: query_normalised.py
       :language: python
-      :lines: 12-16
-      :lineno-start: 12
+      :lines: 16-24
+      :lineno-start: 16
 
    .. code-block:: rest
 

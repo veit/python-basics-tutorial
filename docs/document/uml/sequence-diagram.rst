@@ -26,7 +26,7 @@ Sequence diagram
      is used to draw a dotted line.
 ``<-`` and ``<--``
     do not change the drawing, but may increase readability.
-    
+
     .. note::
        This applies only to sequence diagrams. In other diagrams other rules may
        apply.
