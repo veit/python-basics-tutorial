@@ -48,7 +48,7 @@ Single test
 ``lambda``
     Function that in case of ``sorted`` only takes one parameter.
 
-Test ficture
+Test fixture
 ------------
 
 Write a :term:`test fixture <Test Fixture>` with the ``@pytest.fixture``
