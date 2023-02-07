@@ -43,8 +43,9 @@ Single test
    :lineno-start: 1
 
 ``key``
-    function that will be called to transform the collection’s items before they are
-    compared. The parameter passed to key must be something that is callable.
+    function that will be called to transform the collection’s items before they
+    are compared. The parameter passed to key must be something that is
+    callable.
 ``lambda``
     Function that in case of ``sorted`` only takes one parameter.
 
