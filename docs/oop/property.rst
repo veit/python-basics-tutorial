@@ -18,8 +18,8 @@ the property:
 .. literalinclude:: form_pr.py
     :language: python
     :linenos:
-    :lines: 11-18
-    :lineno-start: 11
+    :lines: 23-25
+    :lineno-start: 23
 
 Without a setter, however, the *property* ``length`` is read-only:
 
@@ -36,8 +36,8 @@ To change this, you need to add a setter:
 .. literalinclude:: form_pr.py
     :language: python
     :linenos:
-    :lines: 19-21
-    :lineno-start: 19
+    :lines: 27-29
+    :lineno-start: 27
 
 Now you can use the dot notation to both get and set the property ``length``.
 Note that the name of the method remains the same, but the decorator changes to
