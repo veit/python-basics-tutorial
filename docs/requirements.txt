@@ -1,4 +1,4 @@
 -c constraints.txt
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
-sphinxcontrib-svg2pdfconverter[CairoSVG]
+sphinxcontrib-svg2pdfconverter
