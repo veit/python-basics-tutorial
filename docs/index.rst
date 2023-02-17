@@ -2,7 +2,14 @@
 Python basics
 =============
 
-.. include:: ../README.rst
+Welcome to Python Basics! I have written this book to provide an easy and
+practical introduction to Python. The book is not intended to be a comprehensive
+reference guide to Python, but rather the goal is to give you a basic
+familiarity with Python and enable you to quickly write your own programs.
+
+.. note::
+   If you have suggestions for improvements, I would be happy to
+   :doc:`receive <contribute>` them.
 
 .. toctree::
    :titlesonly:
