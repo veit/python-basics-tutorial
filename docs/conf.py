@@ -35,8 +35,8 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.plantuml",
+    "sphinxcontrib.cairosvgconverter",
     "sphinx_inline_tabs",
-    "sphinxcontrib.rsvgconverter",
 ]
 
 plantuml = "java -jar /Users/veit/cusy/trn/python-basics-tutorial/plantuml.jar"
