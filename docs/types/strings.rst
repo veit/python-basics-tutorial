@@ -329,7 +329,7 @@ literals prefixed with ``f`` providing additional formatting options.
 However, the index and slice notation cannot be used to add, remove or replace elements:
 
 In ``{pi:.3f}``, the format specification ``f`` is used to limit the number Pi
-to three decimal places. For more information on the format specificationeb see
+to three decimal places. For more information on the format specification see
 `Format Specification Mini-Language
 <https://docs.python.org/3/library/string.html#format-specification-mini-language>`_.
 
