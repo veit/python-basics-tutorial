@@ -172,16 +172,16 @@ input argument.
 
 .. code-block:: python
 
-    >>> round(1.49)
-    1
+    >>> round(2.5)
+    2
 
 With ``ceil`` from the standard library ``math`` and the attribute notation
 :samp:`MODUL.FUNKTION(ARGUMENT)` is rounded up:
 
 .. code-block:: python
 
-    >>> math.ceil(1.49)
-    2
+    >>> math.ceil(2.5)
+    3
 
 The ``math`` module provides, among other things
 
@@ -229,6 +229,20 @@ it is recommended to simply import the module to explicitly refer to the
     ``math`` first and then the module ``cmath``, the functions in ``cmath``
     would have priority over those of ``math``. Also, when understanding the
     code, it is much more tedious to find out the source of the functions used.
+
+Commercial rounding
+-------------------
+
+:class:`Decimal <python3:decimal.Decimal>` and :data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>`
+from the :py:mod:`decimal` module are required for commercial rounding:
+
+.. code-block:: python
+
+    >>> import decimal
+    >>> num = decimal.Decimal('2.5')
+    >>> rounded = num.quantize(decimal.Decimal('0'), rounding = decimal.ROUND_HALF_UP)
+    >>> rounded
+    Decimal('3')
 
 Numerical calculations
 ----------------------
