@@ -10,15 +10,15 @@ Example: Testing the SQLite database
 
       .. literalinclude:: ../save-data/test_sqlite.py
          :language: python
-         :lines: 1-4
+         :lines: 1-5
          :lineno-start: 1
 
 #. Then we first define a test class ``TestCreateDB``:
 
       .. literalinclude:: ../save-data/test_sqlite.py
          :language: python
-         :lines: 6
-         :lineno-start: 6
+         :lines: 8
+         :lineno-start: 8
 
 #. In it, we then define the test method ``test_db_exists``, in which we use
    ``assert`` to assume that the file exists in :doc:`os.path
@@ -26,8 +26,8 @@ Example: Testing the SQLite database
 
       .. literalinclude:: ../save-data/test_sqlite.py
          :language: python
-         :lines: 8-9
-         :lineno-start: 8
+         :lines: 9-10
+         :lineno-start: 9
 
 #. Now we also check whether the ``books`` table was created. To do this, we try
    to create the table again and use ``assertRaises`` to expect ``sqlite`` to
@@ -35,16 +35,16 @@ Example: Testing the SQLite database
 
    .. literalinclude:: ../save-data/test_sqlite.py
       :language: python
-      :lines: 11-13
-      :lineno-start: 11
+      :lines: 12-14
+      :lineno-start: 12
 
 #. We do not want to carry out further tests on a database in the file system
    but in an SQLite database in the working memory:
 
    .. literalinclude:: ../save-data/test_sqlite.py
       :language: python
-      :lines: 15-19
-      :lineno-start: 15
+      :lines: 17-20
+      :lineno-start: 17
 
 .. seealso::
    You can find more examples for testing your SQLite database functions in the

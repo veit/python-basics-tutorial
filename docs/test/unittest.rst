@@ -57,7 +57,7 @@ Suppose you have implemented the following method for adding in the module
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 23-
+      :lines: 23-24
       :lineno-start: 23
 
 #. Finally, all tests in :download:`test_arithmetic.py` can be executed with:
