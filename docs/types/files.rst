@@ -31,7 +31,7 @@ Documents\\myfile}`:
 .. code-block:: python
 
     >>> import os
-    >>> pathname = os.path.join('C:', 'Users', 'Veit', 'Documents', 'myfile.txt')
+    >>> pathname = os.path.join("C:/", "Users", "Veit", "Documents", "myfile.txt")
     >>> with open(pathname, 'r') as f:
     ...     line = f.readline()
 
