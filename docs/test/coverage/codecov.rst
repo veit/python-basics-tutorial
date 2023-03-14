@@ -17,7 +17,7 @@ Codecov can be easily installed with
 
 .. code-block:: console
 
-    $ pipenv install codecov
+    $ python -m pip install codecov
 
 Use
 ---

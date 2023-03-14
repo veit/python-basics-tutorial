@@ -13,7 +13,7 @@ Installation
 
 .. code-block:: console
 
-    $ pipenv install coverage
+    $ python -m pip install coverage
 
 .. note::
    If you want to determine the test coverage for Python 2 and Python<3.6, you
@@ -28,13 +28,13 @@ You can run your usual test runner together with coverage with
 
   .. code-block:: console
 
-    $ pipenv install pytest-cov
+    $ python -m pip install pytest-cov
 
   or for distributed tests
 
   .. code-block:: console
 
-    $ pipenv install pytest-xdist
+    $ python -m pip install pytest-xdist
 
   Afterwards you can check the test coverage with
 

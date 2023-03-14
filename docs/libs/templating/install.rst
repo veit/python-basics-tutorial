@@ -39,11 +39,9 @@ Requirements
         `Configuring Python
         <https://docs.python.org/3/using/windows.html#configuring-python>`_
 
-* :term:`pipenv`
-
 Installation
 ------------
 
 .. code-block:: console
 
-    $ pipenv install --user cookiecutter
+    $ python -m pip install --user cookiecutter

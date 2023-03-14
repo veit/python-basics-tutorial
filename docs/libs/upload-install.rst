@@ -32,7 +32,7 @@ you must first install twine with:
 
 .. code-block:: console
 
-    $ pipenv update pip build twine
+    $ python -m pip update pip build twine
     …
     All dependencies are now up-to-date!
 
@@ -46,14 +46,14 @@ Now you can create your *Distribution Packages* with:
 
     $ cd /path/to/your/distribution_package
     $ rm -rf build dist
-    $ pipenv run pyproject-build .
+    $ pyproject-build .
 
 After installing Twine you can upload all archives in ``/dist`` to the Python
 Package Index with:
 
 .. code-block:: console
 
-    $ pipenv run twine upload -r test -s dist/*
+    $ twine upload -r test -s dist/*
 
 ``-r``, ``--repository``
     The repository to upload the package.
@@ -95,14 +95,14 @@ Check
 Installation
 ~~~~~~~~~~~~
 
-You can use :term:`pipenv` to install your package and check if it works. Create
+You can use ``pip`` to install your package and check if it works. Create
 a new :term:`virtual environment` and install your package on *Test PyPI*:
 
 .. code-block:: console
 
     $ mkdir test
     $ cd !$
-    $ pipenv install --extra-index-url https://test.pypi.org/simple/ minimal_example
+    $ python -m pip install --extra-index-url https://test.pypi.org/simple/ minimal_example
 
 .. note::
    If you have used a different package name, replace it with your package name
@@ -124,7 +124,7 @@ module and referencing the ``name`` property that was previously ntered in
 
 .. code-block:: console
 
-    $ pipenv run python
+    $ python
     Python 3.7.0 (default, Aug 22 2018, 15:22:29)
     …
     >>> import minimal_example
@@ -179,7 +179,7 @@ Finally, you can publish your package on PyPI:
 
 .. code-block:: console
 
-    $ pipenv run twine upload -r pypi -s dist/*
+    $ twine upload -r pypi -s dist/*
 
 .. note::
     You cannot simply replace releases as you cannot re-upload packages with the

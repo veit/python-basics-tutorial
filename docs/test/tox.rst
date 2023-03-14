@@ -39,7 +39,7 @@ management and testing with multiple interpreter configurations.
 
       .. code-block:: console
 
-           $ pipenv run python setup.py sdist
+           $ python setup.py sdist
 
    #. Creating the environments specified in ``envlist``
 

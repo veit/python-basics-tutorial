@@ -196,7 +196,7 @@ whether the Cython file ends up in the package as expected:
 
 .. code-block:: console
 
-    $ pipenv run pyproject-build ../dataprep
+    $ pyproject-build .
     * Creating venv isolated environment...
     * Installing packages in isolated environment... (cython, setuptools>=40.6.0, wheel)
     * Getting dependencies for sdist...
@@ -215,7 +215,7 @@ Finally, we can check our package with ``check-wheel-contents``:
 
 .. code-block:: console
 
-    $ pipenv run check-wheel-contents dataprep/dist/*.whl
+    $ check-wheel-contents dataprep/dist/*.whl
     dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl: OK
 
 
@@ -223,8 +223,8 @@ Alternatively, you can install our ``dataprep`` package and use ``mean``:
 
 .. code-block:: console
 
-    $ pipenv run python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
-    $ pipenv run python
+    $ python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
+    $ python
 
 .. code-block:: python
 
