@@ -185,11 +185,13 @@ dependencies in the :download:`dataprep/pyproject.toml` file. The setup tools
 use file to include non-Python files in a package. With the ``graft`` directive,
 all files from the ``src/`` directory are included.
 
-Now we can specify our external module in :download:`dataprep/setup.py` with:
+Now we can specify our external module in :download:`dataprep/pyproject.toml`
+with:
 
-.. literalinclude:: dataprep/setup.py
-   :language: python
-   :lines: 3-5,9,40-
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 2
+   :lineno-start: 2
 
 Now you can run the build process with the ``pyproject-build`` command and check
 whether the Cython file ends up in the package as expected:
