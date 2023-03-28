@@ -271,7 +271,8 @@ example:
 <https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
 points to the ``src`` directory, which can contain one or more packages. You can
 then use setuptools’s `find_packages()
-<https://setuptools.readthedocs.io/en/latest/userguide/package_discovery.html#using-find-or-find-packages>`_ to find all packages in this directory.
+<https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
+to find all packages in this directory.
 
 .. note::
     ``find_packages()`` without ``src/`` directory would package all directories
