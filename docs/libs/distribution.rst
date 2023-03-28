@@ -348,6 +348,7 @@ Now run the command in the same directory where ``pyproject.toml`` is located:
    .. code-block:: ps1
 
       > python -m pip install build
+      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
       > rm -rf build dist
       > python -m build
 
@@ -416,7 +417,7 @@ Testing
       > mkdir test_env
       > cd test_env
       > python -m venv .
-      > source bin/activate
+      > Scripts\activate.bat
       > python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
       Processing ./dist/dataprep-0.1.0-py3-none-any.whl
       Collecting pandas
