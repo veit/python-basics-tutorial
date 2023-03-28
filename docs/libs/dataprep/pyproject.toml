@@ -16,10 +16,25 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
 ]
-
 dependencies = [
     "Cython",
     "pandas",
+]
+
+[project.optional-dependencies]
+tests = [
+    "coverage[toml]",
+    "pytest>=6.0",
+]
+docs = [
+    "furo",
+    "sphinxext-opengraph",
+    "sphinx-copybutton",
+    "sphinx_inline_tabs"
+]
+dev = [
+    "dataprep[tests, docs]",
+    "pre-commit"
 ]
 
 [project.urls]

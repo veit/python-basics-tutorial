@@ -97,7 +97,7 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-19, 21-23, 31-
+   :lines: 5-19, 21-23, 40-
    :lineno-start: 5
 
 ``name``
@@ -166,6 +166,27 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
      <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
    * `PEP 345 – Metadata for Python Software Packages 1.2
      <https://peps.python.org/pep-0345/>`_
+
+Optional dependencies
+---------------------
+
+``project.optional-dependencies``
+    allows you to specify optional dependencies for your package. You can also
+    distinguish between different sets:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 24-34
+   :lineno-start: 34
+
+Recursive optional dependencies are also possible with pip ≥ 21.2. For example,
+for ``dev`` you can take over all dependencies from ``docs`` and ``test`` in
+addition to ``pre-commit``:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 35-39
+   :lineno-start: 35
 
 ``src`` package
 ---------------
