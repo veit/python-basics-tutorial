@@ -1,15 +1,17 @@
 Packages and programmes
 =======================
 
-Wheels
+.. _wheels:
+
+wheels
 ~~~~~~
 
-The current standard format for distributing Python modules and applications is
-to use `Wheels <https://pythonwheels.com/>`_. Wheels were developed to make the
-installation of Python code more reliable and to make dependency management
-easier. However, the details of creating wheels are beyond the scope of this
-section, but full details of the requirements and the process for creating
-wheels can be found in doc:`jupyter-tutorial:productive/packaging/distribution`.
+The current standard format for distributing Python libraries and programs is
+the use of :term:`wheels <wheel>`. wheels are designed to make the installation
+of Python code more reliable and to make dependency management easier. However,
+the details of creating wheels are beyond the scope of this section, but full
+details of the requirements and process for creating wheels can be found in
+:doc:`distribution`.
 
 ``py2exe`` and ``py2app``
 ~~~~~~~~~~~~~~~~~~~~~~~~~

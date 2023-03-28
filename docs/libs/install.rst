@@ -66,17 +66,20 @@ you:
 
    * :doc:`python3:installing/index`
 
+.. _virtual-environments:
+
 Virtual environments
 ~~~~~~~~~~~~~~~~~~~~
 
 However, there is an even better option if you want to avoid installing
 libraries in the Python system. This option is called a *virtual environment*
-(``virtualenv``). It is a self-contained directory structure that contains both
-an installation of Python and the additional packages. Because the entire Python
-environment is contained in the virtual environment, the libraries and modules
-installed there cannot collide with those in the main system or in other virtual
-environments, so different applications can use different versions of Python and
-its packages. Creating and using a virtual environment is a two-step process:
+:term:`virtualenv`). It is a self-contained directory structure that contains
+both an installation of Python and the additional packages. Because the entire
+Python environment is contained in the virtual environment, the libraries and
+modules installed there cannot collide with those in the main system or in other
+virtual environments, so different applications can use different versions of
+Python and its packages. Creating and using a virtual environment is a two-step
+process:
 
 #. First we create the environment:
 

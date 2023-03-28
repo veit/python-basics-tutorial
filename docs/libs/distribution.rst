@@ -42,6 +42,8 @@ A minimal distribution package can look like this, for example:
             ├── __init__.py
             └── loaders.py
 
+.. _pyproject-toml:
+
 ``pyproject.toml``
 ------------------
 
@@ -50,9 +52,9 @@ A minimal distribution package can look like this, for example:
 <https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ in
 :doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index` format.
 
-Among other things, ``pyproject.toml`` tells :term:`pip` and ``build`` which
-backend tool to use to build distribution packages for your project. You can
-choose from a number of backends, though this tutorial uses ``hatchling`` by
+Among other things, :file:`pyproject.toml` tells :term:`pip` and :term:`build`
+which backend tool to use to build distribution packages for your project. You
+can choose from a number of backends, though this tutorial uses ``hatchling`` by
 default.
 
 A minimal yet functional :download:`dataprep/pyproject.toml` file will then look
@@ -85,15 +87,16 @@ like this, for example:
 .. seealso::
    If you want to look at alternatives to ``setuptools``:
 
-   * `setuptools <https://packaging.python.org/key_projects/#setuptools>`_
-   * `flit <https://packaging.python.org/key_projects/#flit>`_
+   * :term:`setuptools`
+   * :term:`Flit`
    * `poetry <https://github.com/python-poetry/poetry>`_
    * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 Metadata
 ~~~~~~~~
 
-In ``pyproject.toml`` you can also specify metadata for your package, such as:
+In :file:`pyproject.toml` you can also specify metadata for your package, such
+as:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
@@ -359,7 +362,8 @@ installed by :term:`pip`.
 
 Make sure you have the latest version of ``build`` installed:
 
-Now run the command in the same directory where ``pyproject.toml`` is located:
+Now run the command in the same directory where :file:`pyproject.toml` is
+located:
 
 .. tab:: Linux/macOS
 

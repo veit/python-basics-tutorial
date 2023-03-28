@@ -130,8 +130,8 @@ For project documentation, visualising :doc:`Git feature branches
 :doc:`jupyter-tutorial:productive/git/git-big-picture` can be helpful.
 
 .. note::
-   If the content of ``long_description`` in ``setuptools.setup()`` is written
-   in reStructured Text, it is displayed as well-formatted HTML on the
+   If the content of ``long_description`` in ``setup()`` is written in
+   reStructured Text, it is displayed as well-formatted HTML on ther
    :term:`Python Package Index (PyPI)`.
 
 Other documentation tools

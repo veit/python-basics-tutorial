@@ -1,11 +1,11 @@
 ``cibuildwheel``
 ================
 
-``cibuildwheel`` simplifies the creation of :term:`Python Wheels <wheel>` for
-the different platforms and Python versions through Continuous Integration (CI)
-workflows. More precisely it builds manylinux, macOS 10.9+, and Windows wheels
-for CPython and PyPy with GitHub Actions, Azure Pipelines, Travis CI, AppVeyor,
-CircleCI, or GitLab CI.
+:term:`cibuildwheel` simplifies the creation of :term:`Python Wheels <wheel>`
+for the different platforms and Python versions through Continuous Integration
+(CI) workflows. More precisely it builds manylinux, macOS 10.9+, and Windows
+wheels for CPython and PyPy with GitHub Actions, Azure Pipelines, Travis CI,
+AppVeyor, CircleCI, or GitLab CI.
 
 In addition, it bundles shared library dependencies on Linux and macOS through
 `auditwheel <https://github.com/pypa/auditwheel>`_ and `delocate

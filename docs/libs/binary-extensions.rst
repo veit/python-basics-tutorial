@@ -189,8 +189,8 @@ have to fall back on ``build_meta`` of the :term:`setuptools`:
    :lineno-start: 19
    :emphasize-lines: 2
 
-The setuptools use :download:`dataprep/setup.py` to include non-Python files in
-a package.
+The :term:`setuptools` use :download:`dataprep/setup.py` to include non-Python
+files in a package.
 
 .. literalinclude:: dataprep/setup.py
     :language: python
