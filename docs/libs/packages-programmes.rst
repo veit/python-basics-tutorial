@@ -4,7 +4,7 @@ Packages and programmes
 .. _wheels:
 
 wheels
-~~~~~~
+------
 
 The current standard format for distributing Python libraries and programs is
 the use of :term:`wheels <wheel>`. wheels are designed to make the installation
@@ -18,7 +18,7 @@ details of the requirements and process for creating wheels can be found in
      <https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/>`_
 
 ``py2exe`` and ``py2app``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 `py2exe <https://www.py2exe.org/>`_ creates standalone Windows applications and
 `py2app <https://py2app.readthedocs.io/en/latest/>`_ does the same for macOS. In
@@ -29,7 +29,7 @@ applications, but in some in some situations they can also be the best or only
 solution.
 
 ``freeze``
-~~~~~~~~~~
+----------
 
 The ``freeze`` tool also creates an executable Python programme that runs on
 computers that do not have Python installed. If you want to use the ``freeze``
