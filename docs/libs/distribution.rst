@@ -58,10 +58,13 @@ default.
 A minimal yet functional :download:`dataprep/pyproject.toml` file will then look
 like this, for example:
 
-.. literalinclude:: dataprep/pyproject.toml
-   :language: toml
-   :lines: 1-3
+.. code-block:: toml
+   :linenos:
    :lineno-start: 1
+
+   [build-system]
+   requires = ["hatchling"]
+   build-backend = "hatchling.build"
 
 ``build-system``
     defines a section describing the build system
@@ -94,7 +97,7 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-
+   :lines: 5-19, 21-23, 31-
    :lineno-start: 5
 
 ``name``
@@ -146,6 +149,12 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
     .. seealso::
        `Add invalid classifier for non open source license to avoid upload to…
        <https://github.com/veit/cookiecutter-namespace-template/commit/f4fff8ee8595ae2e59e5feb92211c8e3f1252461>`_
+
+``dependencies``
+    gibt die Abhängigkeiten für euer Paket in einem Array an.
+
+    .. seealso::
+       :pep:`631`
 
 ``urls``
     lets you list any number of additional links that are displayed on the

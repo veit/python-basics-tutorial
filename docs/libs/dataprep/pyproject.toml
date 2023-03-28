@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling", "Cython"]
-build-backend = "hatchling.build"
+requires = ["Cython", "setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "dataprep"
@@ -15,6 +15,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "Cython",
+    "pandas",
 ]
 
 [project.urls]

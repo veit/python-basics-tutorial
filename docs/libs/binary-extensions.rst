@@ -180,13 +180,28 @@ this we use `Cython <https://cython.org/>`__ to translate the Python code from
 build process. Cython files have the suffix ``pyx`` and can contain both Python
 and C code.
 
-Since Cython itself is a Python package, it can simply be added to the list of
-dependencies in the :download:`dataprep/pyproject.toml` file. The setup tools
-use file to include non-Python files in a package. With the ``graft`` directive,
-all files from the ``src/`` directory are included.
+However, we cannot currently use ``hatchling.build`` as a build backend, but
+have to fall back on ``build_meta`` of the :term:`setuptools`:
 
-Now we can specify our external module in :download:`dataprep/pyproject.toml`
-with:
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 19-22
+   :lineno-start: 19
+   :emphasize-lines: 2
+
+The setuptools use :download:`dataprep/setup.py` to include non-Python files in
+a package.
+
+.. literalinclude:: dataprep/setup.py
+    :language: python
+    :lines: 3-5,9,40-
+
+.. note::
+   With`extensionlib <https://github.com/ofek/extensionlib>`_ there is a toolkit
+   for extension modules, which does not yet contain a ``hatchling`` plugin.
+
+Since Cython itself is a Python package, it can simply be added to the list of
+dependencies in the :download:`dataprep/pyproject.toml` file:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
