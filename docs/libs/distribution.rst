@@ -45,10 +45,10 @@ A minimal distribution package can look like this, for example:
 ``pyproject.toml``
 ------------------
 
-`PEP 517 <https://peps.python.org/pep-0517/>`_ and `PEP 518
-<https://peps.python.org/pep-0518/>`_ brought extensible build backends,
-isolated builds and `pyproject.toml
-<https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ in :doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index` format.
+:pep:`517` and :pep:`518` brought extensible build backends, isolated builds and
+`pyproject.toml
+<https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ in
+:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index` format.
 
 Among other things, ``pyproject.toml`` tells :term:`pip` and ``build`` which
 backend tool to use to build distribution packages for your project. You can
@@ -108,8 +108,7 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
     is the version of the package.
 
     .. seealso::
-       * `PEP 440 – Version Identification and Dependency Specification
-         <https://peps.python.org/pep-0440/>`_
+       * :pep:`440`
        * `Semantic Versioning <https://semver.org>`_
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
@@ -164,8 +163,7 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
 .. seealso::
    * `Declaring project metadata
      <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
-   * `PEP 345 – Metadata for Python Software Packages 1.2
-     <https://peps.python.org/pep-0345/>`_
+   * :pep:`345`
 
 Optional dependencies
 ~~~~~~~~~~~~~~~~~~~~~
@@ -390,7 +388,7 @@ in the ``dist`` directory when finished:
 
     For more information on ``sdist``, see `Creating a Source Distribution
     <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__
-    and `PEP 376 <https://www.python.org/dev/peps/pep-0376/>`_.
+    and :pep:`376`
 
 Testing
 -------

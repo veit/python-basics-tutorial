@@ -21,9 +21,9 @@ The Python Database API
 -----------------------
 
 The Python Database :abbr:`API (Application Programming Interface)` defines a
-standard interface for Python database access modules. It’s defined in `PEP 249
-<https://www.python.org/dev/peps/pep-0249/>`_ and widely used, e.g. by
-:doc:`sqlite <sqlite>`, :doc:`psycopg <psycopg>`, and `mysql-python
+standard interface for Python database access modules. It’s defined in
+:pep:`249` and widely used, for example by :doc:`sqlite <sqlite>`,
+:doc:`psycopg <psycopg>`, and `mysql-python
 <https://sourceforge.net/projects/mysql-python/>`_.
 
 SQLAlchemy

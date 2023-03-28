@@ -309,8 +309,7 @@ which versions of the distributions deliver which library:
 
 The `PYPA/Manylinux <https://github.com/pypa/manylinux>`_ project facilitates
 the distribution of Binary extensions as :term:`Wheels <wheel>` for most Linux
-platforms. This also resulted in `PEP 513
-<https://www.python.org/dev/peps/pep-0513/>`_, which defines the
+platforms. This also resulted in :pep:`513`, which defines the
 ``manylinux1_x86_64`` and ``manylinux1_i686`` platform tags.
 
 Binary Extensions for Mac

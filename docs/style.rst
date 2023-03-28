@@ -82,7 +82,7 @@ Python conventions can be found in the following table:
 
 .. seealso::
 
-    * `PEP 8 – Style Guide for Python Code <https://peps.python.org/pep-0008/>`_
+    * :pep:`8`
 
 I strongly recommend following the conventions of PEP 8. They are tried and
 tested, and make your code easier to understand for yourself and others.

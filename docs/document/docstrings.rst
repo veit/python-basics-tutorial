@@ -72,19 +72,16 @@ docstrings:
 .. note::
    You should follow these guidelines when writing docstrings:
 
-   * `Python Style Guide: comments
-     <https://www.python.org/dev/peps/pep-0008/#comments>`_
-   * `The Docstring Conventions Guide
-     <https://www.python.org/dev/peps/pep-0257/#specification>`_
+   * :pep:`8#comments`
+   * :pep:`257#specification`
 
 ``sphinx-autodoc-typehints``
 ----------------------------
 
-With `PEP 484 <https://www.python.org/dev/peps/pep-0484/>`_ a standard method
-for expressing types in Python code was introduced. This also allows types to be
-expressed differently in docstrings. The variant with types according to PEP 484
-has the advantage that type testers and IDEs can be used for static code
-analysis.
+With :pep:`484` a standard method for expressing types in Python code was
+introduced. This also allows types to be expressed differently in docstrings.
+The variant with types according to :pep:`484` has the advantage that type
+testers and IDEs can be used for static code analysis.
 
 Python 3 type annotations:
 
@@ -125,10 +122,8 @@ Types in Docstrings:
             return True
 
 .. note::
-   `Python 2/3 compatible annotations
-   <https://www.python.org/dev/peps/pep-0484/#suggested-syntax-for-python-2-7-and-straddling-code>`_
-   are currently not supported by Sphinx and do not appear in the generated
-   documentation.
+   :pep:`484#suggested-syntax-for-python-2-7-and-straddling-code` are currently
+    not supported by Sphinx and do not appear in the generated documentation.
 
 .. _napoleon:
 

@@ -112,8 +112,7 @@ Glossary
        hosted on `pypi.org`_.
 
    wheel
-       Distribution format introduced with `PEP 427
-       <https://www.python.org/dev/peps/pep-0427/>`_. It is intended to replace
+       Distribution format introduced with :pep:`427`. It is intended to replace
        the :term:`Egg` format and is supported by current :term:`pip`
        installations.
 
@@ -123,6 +122,6 @@ Glossary
 
        `Home <https://pythonwheels.com/>`_ |
        `Docs <https://wheel.readthedocs.io/>`__ |
-       `PEP <https://www.python.org/dev/peps/pep-0427/>`_ |
+       :pep:`427` |
        `GitHub <https://github.com/pypa/wheel>`__ |
        `PyPI <https://pypi.org/project/wheel/>`__ |

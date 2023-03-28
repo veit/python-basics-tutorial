@@ -335,8 +335,7 @@ to three decimal places. For more information on the format specification see
 
 .. seealso::
    * :ref:`python3:f-strings`
-   * `PEP 498 – Literal String Interpolation
-     <https://peps.python.org/pep-0498/>`_
+   * :pep:`498`
 
 Built-in modules for strings
 ----------------------------
