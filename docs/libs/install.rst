@@ -122,7 +122,6 @@ easily lose track of which virtual environment is currently active.
 PyPI
 ~~~~
 
-The :term:`Python Package Index (PyPI)` is the standard package index, but by
-no means the only repository for Python code. You can access it directly at
-https://pypi.python.org and search for packages or filter the packages by
-category.
+The :term:`Python Package Index` (:term:`PyPI`) is the standard package index,
+but by no means the only repository for Python code. You can access it directly
+at :term:`pypi.org` and search for packages or filter the packages by category.
