@@ -79,6 +79,16 @@ Glossary
        community. All Python developers can use and distribute their
        distributions.
 
+   Python Packaging Authority
+   PyPA
+       The `Python Packaging Authority <https://www.pypa.io/en/latest/>`_ is a
+       working group that manages several software projects for packaging,
+       distributing and installing Python libraries. However, the goals stated
+       in `PyPA Goals <https://www.pypa.io/en/latest/future/>`_ were created
+       during discussions around :pep:`516`, :pep:`517` and :pep:`518`, which
+       allowed competing workflows with the :term:`pyproject.toml-based build
+       system that do not need to be interoperable.
+
    release
        The snapshot of a project at a specific point in time, identified by a
        version identifier.
