@@ -295,15 +295,16 @@ Now run the command in the same directory where ``pyproject.toml`` is located:
 
    .. code-block:: console
 
+      $ python -m pip install build
       $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
       $ rm -rf build dist
-      $ python3 -m build
+      $ python -m build
 
 .. tab:: Windows
 
    .. code-block:: ps1
 
-      > cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
+      > python -m pip install build
       > rm -rf build dist
       > python -m build
 
@@ -401,7 +402,7 @@ Then you can check the wheel with:
 .. code-block:: console
 
     $ python -m pip install check-wheel-contents
-    $ python check-wheel-contents dist/*.whl
+    $ check-wheel-contents dist/*.whl
     dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternatively, you can also install the package:
