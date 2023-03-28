@@ -283,16 +283,9 @@ suitable compiler available. On Windows, Visual C is used to create the official
 CPython interpreter, and it should also be used to create compatible binary
 extensions:
 
-for Python 3.4
-    #. install `Microsoft Windows SDK for Windows 7 and .NET Framework 4
-       <https://www.microsoft.com/en-gb/download/details.aspx?id=8279>`_
-    #. work with the SDK command prompt (with the environment variables and the
-           SDK in ``PATH``).
-    #. set ``DISTUTILS_USE_SDK=1``.
-for Python 3.5+
-    #. install `Visual Studio Code <https://code.visualstudio.com/>`_ with
-       `Python Extension
-       <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_
+For Python ≥ 3.5 install `Visual Studio Code
+<https://code.visualstudio.com/>`_ with `Python Extension
+<https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_
 
     .. note::
         Visual Studio is backwards compatible from Python 3.5, which means that
