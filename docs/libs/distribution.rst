@@ -168,7 +168,7 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
      <https://peps.python.org/pep-0345/>`_
 
 Optional dependencies
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 ``project.optional-dependencies``
     allows you to specify optional dependencies for your package. You can also
@@ -187,6 +187,28 @@ addition to ``pre-commit``:
    :language: toml
    :lines: 35-39
    :lineno-start: 35
+
+You can install these optional dependencies, for example with:
+
+.. tab:: Linux/macOS
+
+   .. code-block:: console
+
+      $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
+      $ python3 -m venv .
+      $ source bin/activate
+      $ python -m pip install --upgrade pip
+      $ python -m pip install -e '.[dev]'
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
+      > python3 -m venv .
+      > Scripts\activate.bat
+      > python -m pip install --upgrade pip
+      > python -m pip install -e '.[dev]'
 
 ``src`` package
 ---------------
