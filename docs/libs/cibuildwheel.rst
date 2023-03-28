@@ -124,4 +124,3 @@ Examples
   <https://github.com/mypyc/mypy_mypyc-wheels/blob/master/.github/workflows/build.yml>`__
 * psutil: `.github/workflows/build.yml
   <https://github.com/giampaolo/psutil/blob/master/.github/workflows/build.yml>`__
-  <https://github.com/scikit-learn/scikit-learn/blob/main/build_tools/github/build_wheels.sh>`_
