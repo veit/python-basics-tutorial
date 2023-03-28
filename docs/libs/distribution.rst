@@ -107,15 +107,44 @@ In ``pyproject.toml`` you can also specify metadata for your package, such as:
 ``version``
     is the version of the package.
 
+    In our example, the version number has been set statically. However, there
+    is also the possibility to specify the version dynamically, for example by a
+    file:
+
+    .. code-block:: toml
+
+       [project]
+       ...
+       dynamic = ["version"]
+       [tool.hatch.version]
+       path = "src/dataprep/__about__.py"
+
+    The default pattern looks for a variable called :samp:`__version__` or
+    :samp:`VERSION`, which contains the version, optionally preceded by the
+    lower case letter :samp:`v`. The default pattern is based on :pep:`440`.
+
+    If this is not the way you want to store versions, you can define a
+    different regular expression with the :samp:`pattern` option.
+
+    However, there are other version scheme plug-ins, such as `hatch-semver
+    <https://github.com/Nagidal/hatch-semver>`_ for `semantic Versioning
+    <https://semver.org>`_.
+
+    With the version source plugin `hatch-vcs
+    <https://github.com/ofek/hatch-vcs>`_ you can also use
+    :doc:`jupyter-tutorial:productive/git/tag`:
+
+     .. code-block:: toml
+        [build-system]
+        requires = ["hatchling", "hatch-vcs"]
+        ...
+        [tool.hatch.version]
+        source = "vcs"
+
     .. seealso::
-       * :pep:`440`
-       * `Semantic Versioning <https://semver.org>`_
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
        * `bump2version <https://pypi.org/project/bump2version/>`_
-
-    Some build backends allow you to specify the version in other ways, such as
-    by file or :doc:`jupyter-tutorial:productive/git/tag`.
 
 ``authors``
     is used to identify the authors of the package by name and email address.
