@@ -308,7 +308,7 @@ in the ``dist`` directory when finished:
    ├── dataprep-0.1.0-py3-none-any.whl
    └── dataprep-0.1.0.tar.gz
 
-``wheel``
+``dataprep-0.1.0-py3-none-any.whl``
     is a binary distribution format with the suffix ``..whl``., where the
     filename is composed as follows:
 
@@ -327,9 +327,8 @@ in the ``dist`` directory when finished:
         other hand only for chips with the x86 instruction set and a 64-bit
         architecture
 
-``sdist``
-    with ``dataprep-0.1.0.tar.gz`` the sources were made available in a
-    distribution package.
+``dataprep-0.1.0.tar.gz``
+    is a source distribution.
 
 .. seealso::
     The reference for the file names can be found in `File name convention
