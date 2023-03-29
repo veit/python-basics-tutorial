@@ -42,3 +42,17 @@ its executables.
 .. seealso::
 
     * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
+
+PyInstaller and PyOxidizer
+--------------------------
+
+`PyInstaller <https://pyinstaller.org/en/stable/index.html#>`_ and `PyOxidizer
+<https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bundle a
+Python application and all its dependencies into a single package.
+
+Briefcase
+---------
+
+`Briefcase <https://beeware.org/project/projects/tools/briefcase/>`_ is a tool
+for converting a Python project into a standalone native application for Mac,
+Windows, Linux, iPhone/iPad and Android.
