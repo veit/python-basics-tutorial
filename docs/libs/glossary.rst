@@ -290,6 +290,10 @@ Glossary
        `GitHub <https://github.com/pypa/setuptools>`__ |
        `PyPI <https://pypi.org/project/setuptools>`__
 
+       .. seealso::
+          `Packaging and distributing projects
+          <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+
    scikit-build
        Build system generator for ``C``, ``C++``, ``Fortran`` and ``Cython``
        extensions that integrates :term:`setuptools`, :term:`wheel` and

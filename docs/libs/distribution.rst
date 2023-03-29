@@ -21,13 +21,6 @@ sure you have the latest version installed:
 
       > python  -m pip install --upgrade pip
 
-.. seealso::
-   Packaging and distributing Python libraries with `setuptools
-   <https://packaging.python.org/key_projects/#setuptools>`_:
-
-   * `Packaging and distributing projects
-     <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
-
 Structure
 ---------
 
