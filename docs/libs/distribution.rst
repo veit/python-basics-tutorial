@@ -236,6 +236,21 @@ You can install these optional dependencies, for example with:
 ``src`` package
 ---------------
 
+When you create a new package, you shouldn’t use a flat layout but the ``src``
+layout, which is also recommended in `Packaging Python Projects
+<https://packaging.python.org/en/latest/tutorials/packaging-projects/>`_ of the
+:term:`PyPA`. A major advantage of this layout is that tests are run with the
+installed version of your package and not with the files in your working
+directory.
+
+.. seealso::
+   * Hynek Schlawack: `Testing & Packaging
+     <https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html>`_
+
+.. note::
+   In Python ≥ 3.11 :envvar:`PYTHONSAFEPATH` can be used to ensure that the
+   installed packages are used first.
+
 ``dataprep``
     is the directory that contains the Python files. The name should match the
     project name to simplify configuration and be more recognisable to those
