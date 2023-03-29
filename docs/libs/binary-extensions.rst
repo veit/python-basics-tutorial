@@ -201,9 +201,11 @@ files in a package.
    toolkit for extension modules, which does not yet contain a ``hatchling``
    plugin.
 
-.. note::
-   Alternatively, you can use :term:`Meson <meson-python>`, which also supports
-   Cython and C++: `Cython <https://mesonbuild.com/Cython.html>`_.
+.. seealso::
+   * :term:`Meson <meson-python>`: `Cython Support
+     <https://mesonbuild.com/Cython.html>`_
+   * :term:`scikit-build`: `C Runtime, Compiler and Build System Generator
+     <https://scikit-build.readthedocs.io/en/latest/generators.html>`_
 
 Since Cython itself is a Python package, it can simply be added to the list of
 dependencies in the :download:`dataprep/pyproject.toml` file:

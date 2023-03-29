@@ -294,12 +294,13 @@ Glossary
           <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
    scikit-build
-       Build system generator for ``C``, ``C++``, ``Fortran`` and ``Cython``
+       Build system generator for ``C``-, ``C++``-, ``Fortran``- and ``Cython``
        extensions that integrates :term:`setuptools`, :term:`wheel` and
        :term:`pip`. It uses ``CMake`` internally to provide better support for
        additional compilers, build systems, cross-compilation and finding
        dependencies and their associated build requirements. To speed up and
-       parallelise the creation of large projects, Ninja can be installed.
+       parallelise the creation of large parallelisation, Ninja can also be
+       installed. can be installed.
 
        `Docs <https://scikit-build.readthedocs.io/en/latest/>`__ |
        `GitHub <https://github.com/scikit-build/scikit-build/>`__ |
