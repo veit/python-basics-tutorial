@@ -197,8 +197,9 @@ files in a package.
     :lines: 3-5,9,40-
 
 .. note::
-   With`extensionlib <https://github.com/ofek/extensionlib>`_ there is a toolkit
-   for extension modules, which does not yet contain a ``hatchling`` plugin.
+   With `extensionlib <https://github.com/ofek/extensionlib>`_ there is a
+   toolkit for extension modules, which does not yet contain a ``hatchling``
+   plugin.
 
 Since Cython itself is a Python package, it can simply be added to the list of
 dependencies in the :download:`dataprep/pyproject.toml` file:

@@ -14,8 +14,8 @@ Installation
 
            $ sudo apt install openjdk-11-jdk graphviz
 
-* Download the file `plantuml.jar
-     <http://sourceforge.net/projects/plantuml/files/plantuml.jar/download>`_.
+* Download the :download:`plantuml.jar
+  <http://sourceforge.net/projects/plantuml/files/plantuml.jar/download>`.
 
 #. Install `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
