@@ -32,7 +32,7 @@ Glossary
    conda
        Package management tool for the `Anaconda
        <https://docs.continuum.io/anaconda/index.html>`_ distribution from
-       `Continuum Analytics <https://www.anaconda.com/>`_. Itâ€™s specifically
+       `Continuum Analytics <https://www.anaconda.com/>`_. It’s specifically
        aimed at the scientific community, particularly Windows, where installing
        binary extensions is often difficult.
 
