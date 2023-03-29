@@ -267,8 +267,8 @@ Other files
 ``setup.py``
 ~~~~~~~~~~~~
 
-A minimal and yet functional :download:`dataprep/setup.py` looks like this, for
-example:
+A minimal and yet functional :download:`dataprep/setup.py` can look like this,
+for example:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
