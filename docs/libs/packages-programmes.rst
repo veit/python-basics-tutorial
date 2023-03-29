@@ -25,8 +25,7 @@ details of the requirements and process for creating wheels can be found in
 both cases, these are single executables that can run on machines that do not
 have Python installed. In many ways, however, standalone executables are not
 ideal, as they tend to be larger and less flexible than native Python
-applications, but in some in some situations they can also be the best or only
-solution.
+applications, but in some situations they can also be the best or only solution.
 
 ``freeze``
 ----------
