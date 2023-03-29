@@ -118,10 +118,9 @@ Glossary
        packages.
 
    meson-python
-       Build backend that uses the `Meson
-       <https://github.com/mesonbuild/meson>`_ build system. It supports a
-       variety of languages, including C, and is able to meet the requirements
-       of most complex build configurations.
+       Build backend that uses the `Meson <https://mesonbuild.com>`_ build
+       system. It supports a variety of languages, including C, and is able to
+       meet the requirements of most complex build configurations.
 
        `Docs <https://meson-python.readthedocs.io/en/latest/>`__ |
        `GitHub <https://github.com/mesonbuild/meson-python>`__ |
