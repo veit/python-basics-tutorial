@@ -83,12 +83,35 @@ process:
 
 #. First we create the environment:
 
-   .. code-block:: console
+   .. tab:: Linux/macOS
 
-      $ python3.8 -m venv myenv
+      .. code-block:: console
 
-   This creates the environment with Python and ``pip`` in a directory called
-   ``myenv``.
+         $ python3 -m venv myenv
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         > python -m venv myenv
+
+   This creates the environment with Python and :term:`pip` in a directory
+   called ``myenv``.
+
+#. You can then activate this environment so that the next time you call
+   ``python``, it will use the Python from your new environment:
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         $ source myenv/bin/activate
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         > myenv\Scripts\activate.bat
 
 #. You can then install Python packages for this virtual environment only:
 
@@ -96,25 +119,28 @@ process:
 
       .. code-block:: console
 
-         $ cd myenv
-         $ bin/python3.8 -m pip install requests
+         (myenv) $ python -m pip install requests
 
    .. tab:: Windows
 
       .. code-block:: console
 
-         > cd myenv
-         > Scripts\python.exe -m pip install requests
+         (myenv) > python.exe -m pip install requests
 
-   .. note::
-      The Python version you used to create the environment is the default
-      Python version for that environment, so you can just use ``python``
-      instead of ``python3`` or ``python3.8``.
+#. If you want to finish your work on this project, you can deactivate the
+   virtual environment again with
 
-Virtual environments are very useful and common practice for managing projects
-and their dependencies, especially for working on multiple projects. This is
-also the reason why I don’t recommend activating a virtual environment: you can
-easily lose track of which virtual environment is currently active.
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         (myenv) $ deactivate
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         (myenv) > deactivate
 
 .. seealso::
    * :doc:`python3:tutorial/venv`
