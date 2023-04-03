@@ -131,6 +131,7 @@ as:
     :doc:`jupyter-tutorial:productive/git/tag`:
 
      .. code-block:: toml
+
         [build-system]
         requires = ["hatchling", "hatch-vcs"]
         ...
