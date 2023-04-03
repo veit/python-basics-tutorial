@@ -1,8 +1,8 @@
 Upload package
 ==============
 
-Finally, you should provide the package on the :term:`Python Package Index
-(PyPI)` or another index.
+Finally, you should provide the package on the :term:`Python Package Index`
+(:term:`PyPI`) or another index.
 
 For this you should register on *Test PyPI*. *Test-PyPI* is a separate instance
 that is intended for testing and experimentation. To set up an account there, go
@@ -134,9 +134,9 @@ module and referencing the ``name`` property that was previously ntered in
 .. note::
 
     The packages on *Test-PyPI* are only stored temporarily. If you want to
-    upload a package to the real :term:`Python Package Index (PyPI)`, you can do
-    so by creating an account on https://pypi.org and following the same
-    instructions, but using ``twine upload dist/*``.
+    upload a package to the real :term:`Python Package Index` (:term:`PyPI`),
+    you can do so by creating an account on :term:`pypi.org` and following the
+    same instructions, but using ``twine upload dist/*``.
 
 README
 ~~~~~~
@@ -147,8 +147,8 @@ page.
 PyPI
 ----
 
-Now register on the :term:`Python Package Index (PyPI)` and make sure that
-`two-factor authentication
+Now register on the :term:`Python Package Index` (:term:`PyPI`) and make sure
+that `two-factor authentication
 <https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_
 is activated by adding the following to the ``~/.pypirc`` file:
 

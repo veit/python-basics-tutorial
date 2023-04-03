@@ -132,7 +132,7 @@ For project documentation, visualising :doc:`Git feature branches
 .. note::
    If the content of ``long_description`` in ``setup()`` is written in
    reStructured Text, it is displayed as well-formatted HTML on ther
-   :term:`Python Package Index (PyPI)`.
+   :term:`Python Package Index` (:term:`PyPI`).
 
 Other documentation tools
 -------------------------

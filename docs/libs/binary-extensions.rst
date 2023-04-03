@@ -83,9 +83,9 @@ alternatives should also be considered:
   contains a number of optimised data structures and algorithms, especially in
   the builtins and the modules ``collections`` and ``itertools``.
 
-  Occasionally the :term:`Python Package Index (PyPI)` also offers additional
-  alternatives. Sometimes a third-party module can avoid the need to create your
-  own accelerator module.
+  Occasionally the :term:`Python Package Index` (:term:`PyPI`) also offers
+  additional alternatives. Sometimes a third-party module can avoid the need to
+  create your own accelerator module.
 
 * For long-running applications, the JIT-compiled `PyPy
   <https://www.pypy.org/>`__ interpreter can be a suitable alternative to the
@@ -333,13 +333,13 @@ Python distributions, see the  `MacPython Spinning Wheels-Wiki
 Deployment of binary extensions
 -------------------------------
 
-In the following, the deployment on the :term:`Python Package Index (PyPI)`
-or another index will be described.
+In the following, the deployment on the :term:`Python Package Index`
+(:term:`PyPI`) or another index will be described.
 
 .. note::
    When deploying on Linux distributions, it should be noted that these make
    demands on the specific build system. Therefore, :term:`Source Distributions
-   (sdist) <Source Distribution (sdist)>` should also be provided in addition to
+   (sdist) <Source Distribution>` should also be provided in addition to
    :term:`Wheels <wheel>`.
 
 .. seealso::

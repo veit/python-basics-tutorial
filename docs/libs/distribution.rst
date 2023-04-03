@@ -99,7 +99,7 @@ as:
 ``name``
     is the distribution name of your package. This can be any name as long as it
     contains only letters, numbers, ``.``, ``_`` and ``-``. It should also not
-    already be assigned on the :term:`Python Package Index (PyPI)`.
+    already be assigned on the :term:`Python Package Index` (:term:`PyPI`).
 ``version``
     is the version of the package.
 
@@ -151,14 +151,14 @@ as:
     is a short summary of the package, consisting of one sentence.
 ``readme``
     is a path to a file containing a detailed description of the package. This
-    is displayed on the package details page on :term:`Python Package Index
-    (PyPI)`. In this case, the description is loaded from ``README.rst``.
+    is displayed on the package details page on :term:`Python Package Index`
+    (:term:`PyPI`). In this case, the description is loaded from ``README.rst``.
 ``requires-python``
     specifies the versions of Python that are supported by your project. This
     will cause installers like :term:`pip` to search through older versions of
     packages until they find one that has a matching Python version.
 ``classifiers``
-    gives the :term:`Python Package Index (PyPI)` and :term:`pip` some
+    gives the :term:`Python Package Index` (:term:`PyPI`) and :term:`pip` some
     additional metadata about your package. In this case, the package is only
     compatible with Python 3, is under the BSD licence and is OS independent.
     You should always at least specify the versions of Python your package runs
@@ -167,7 +167,7 @@ as:
     https://pypi.org/classifiers/.
 
     They also have a useful additional function: the :term:`Python Package
-    Index (PyPI)` rejects packages with unknown classifiers, so that an
+    Index` (:term:`PyPI`) rejects packages with unknown classifiers, so that an
     accidental upload can be avoided.
 
     .. seealso::
@@ -182,8 +182,8 @@ as:
 
 ``urls``
     lets you list any number of additional links that are displayed on the
-    :term:`Python Package Index (PyPI)`. In general, this could lead to source
-    code, documentation, task managers, :abbr:`etc (et cetera)`.
+    :term:`Python Package Index` (:term:`PyPI`). In general, this could lead to
+    source code, documentation, task managers, :abbr:`etc (et cetera)`.
 
 .. seealso::
    * `Declaring project metadata
@@ -366,8 +366,8 @@ Build
 -----
 
 The next step is to create distribution packages for the package. These are
-archives that can be uploaded to the :term:`Python Package Index (PyPI)` and
-installed by :term:`pip`.
+archives that can be uploaded to the :term:`Python Package Index` (:term:`PyPI`)
+and installed by :term:`pip`.
 
 Make sure you have the latest version of ``build`` installed:
 

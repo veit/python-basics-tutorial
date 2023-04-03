@@ -25,8 +25,8 @@ will have to turn to its source distribution. However, this brings two problems:
 #. Certain Python paths and permissions on your system are expected.
 
 Python offers :term:`pip` as a current solution to both problems. ``pip`` tries
-to find the module in the :term:`Python Package Index (PyPI)`, downloads it and
-all dependencies, and takes care of the installation. The basic syntax of
+to find the module in the :term:`Python Package Index` (:term:`PyPI`), downloads
+it and all dependencies, and takes care of the installation. The basic syntax of
 ``pip`` is quite simple: for example, to install the popular ``requests``
 library from the command line, all you have to do is the following:
 
