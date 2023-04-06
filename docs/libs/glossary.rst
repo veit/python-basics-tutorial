@@ -135,8 +135,8 @@ Glossary
            possibly associated ``.pyc``- and/or ``.pyo`` files).
 
        extension module
-           Usually a single dynamically loadable precompiled file, e.g. a common
-           object file (``.so``).
+           Usually a single dynamically loadable precompiled file, for example a
+           common object file (``.so``).
 
    multibuild
        ``multibuild`` is a set of CI scripts for building and testing Python
