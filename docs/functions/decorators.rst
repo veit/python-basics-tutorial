@@ -60,3 +60,71 @@ Line 1
     The function ``my_func`` is decorated with ``@inf``.
 Line 7
     The wrapped function is called after the decorator function is finished.
+
+``functools``
+-------------
+
+The Python :mod:`functools` module is intended for higher-order functions, for
+example functions that act on or return other functions. Mostly you can use them
+as decorators, such as:
+
+:func:`functools.cache`
+    Simple, lightweight, function cache as of Python ≥ 3.9, sometimes called
+    *memoize*. It returns the same as :func:`functools.lru_cache` with the
+    parameter ``maxsize=None``, additionally creating a :doc:`/types/dicts` with
+    the function arguments. Since old values never need to be deleted, this
+    function is then also smaller and faster. Example:
+
+    .. code-block:: Python
+        :linenos:
+
+        >>> from functools import cache
+        >>> @cache
+        ... def factorial(n):
+        ...     return n * factorial(n-1) if n else 1
+        ...
+        >>> factorial(8)
+        40320
+        >>> factorial(10)
+        3628800
+
+    Line 6
+        Since there is no previously stored result, nine recursive calls are
+        made.
+    Line 8
+        makes only two new calls, as the other results come from the cache.
+
+:func:`functools.wraps`
+    This decorator makes the wrapper function look like the original function
+    with its name and properties.
+
+    .. code-block:: Python
+
+        >>> from functools import wraps
+        >>> def my_decorator(f):
+        ...     @wraps(f)
+        ...     def wrapper(*args, **kwargs):
+        ...         """Wrapper docstring"""
+        ...         print('Call decorated function')
+        ...         return f(*args, **kwargs)
+        ...     return wrapper
+        ...
+        >>> @my_decorator
+        ... def example():
+        ...     """Example docstring"""
+        ...     print('Call example function')
+        ...
+        >>> example.__name__
+        'example'
+        >>> example.__doc__
+        'Example docstring'
+
+    Without ``@wraps`` decorator, the name and docstring of the wrapper method
+    would have been returned instead:
+
+    .. code-block:: Python
+
+        >>> example.__name__
+        'wrapper'
+        >>> example.__doc__
+        'Wrapper docstring'
