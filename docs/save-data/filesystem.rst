@@ -22,13 +22,14 @@ The character used to separate consecutive file or directory names in a
 Linux/macOS pathname is ``/``, while in a Windows pathname it is ``\``. Also,
 the Linux file system has a single root directory referred to by a ``/``
 character as the first character in the path name, while the Windows file system
-has a separate root directory for each drive, referred to as ``C:\``, and so on.
-Because of these differences, files have different path names on different
-operating systems. A file named `:samp:`C:\data\myfile` on Windows could be
-:samp:`/data/myfile` on Linux and macOS. Python provides functions and constants
-that allow you to perform common pathname manipulations without having to worry
-about such syntactical details. With a little care, you can write your Python
-programs to run correctly regardless of the underlying file system.
+has a separate root directory for each drive, referred to as :samp:`{C:\\}`, and
+so on. Because of these differences, files have different path names on
+different operating systems. A file named :samp:`{C:\\DATA\\MYFILE}` on Windows
+could be :samp:`{/DATA/MYFILE}` on Linux and macOS. Python provides functions
+and constants that allow you to perform common pathname manipulations without
+having to worry about such syntactical details. With a little care, you can
+write your Python programs to run correctly regardless of the underlying file
+system.
 
 Absolute and relative paths
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
