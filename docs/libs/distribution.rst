@@ -130,13 +130,13 @@ as:
     <https://github.com/ofek/hatch-vcs>`_ you can also use
     :doc:`jupyter-tutorial:productive/git/tag`:
 
-     .. code-block:: toml
+    .. code-block:: toml
 
-        [build-system]
-        requires = ["hatchling", "hatch-vcs"]
-        ...
-        [tool.hatch.version]
-        source = "vcs"
+       [build-system]
+       requires = ["hatchling", "hatch-vcs"]
+       ...
+       [tool.hatch.version]
+       source = "vcs"
 
     .. seealso::
        * `Calendar Versioning <https://calver.org>`_
