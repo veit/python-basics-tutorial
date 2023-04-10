@@ -167,13 +167,10 @@ as:
     systems your package runs. You can find a complete list of classifiers at
     https://pypi.org/classifiers/.
 
-    They also have a useful additional function: the :term:`Python Package
-    Index` (:term:`PyPI`) rejects packages with unknown classifiers, so that an
-    accidental upload can be avoided.
-
-    .. seealso::
-       `Add invalid classifier for non open source license to avoid upload to…
-       <https://github.com/veit/cookiecutter-namespace-template/commit/f4fff8ee8595ae2e59e5feb92211c8e3f1252461>`_
+    They also have a useful additional feature: to prevent a package from being
+    uploaded to :term:`PyPI`, use the special classifier ``"Private :: Do Not
+    Upload"``. :term:`PyPI` will always reject packages whose classifier starts
+    with ``"Private ::"``.
 
 ``dependencies``
     gibt die Abhängigkeiten für euer Paket in einem Array an.
