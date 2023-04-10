@@ -100,9 +100,9 @@ a new :term:`virtual environment` and install your package on *Test PyPI*:
 
 .. code-block:: console
 
-    $ mkdir test
-    $ cd !$
-    $ python -m pip install --extra-index-url https://test.pypi.org/simple/ minimal_example
+    $ python3 -m venv test_env
+    $ source test_env/bin/activate
+    $ pip install -i https://test.pypi.org/simple/ minimal_example
 
 .. note::
    If you have used a different package name, replace it with your package name
@@ -113,8 +113,9 @@ look something like this:
 
 .. code-block:: console
 
-    Collecting example_pkg
-      Downloading https://test-files.pythonhosted.org/packages/.../minimal_example-0.0.1-py3-none-any.whl
+    Looking in indexes: https://test.pypi.org/simple/
+    Collecting minimal_example
+      ...
     Installing collected packages: minimal_example
     Successfully installed minimal_example-0.0.1
 
