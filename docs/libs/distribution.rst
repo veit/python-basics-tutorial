@@ -137,6 +137,7 @@ as:
        ...
        [tool.hatch.version]
        source = "vcs"
+       raw-options = { local_scheme = "no-local-version" }
 
     .. seealso::
        * `Calendar Versioning <https://calver.org>`_
