@@ -39,7 +39,7 @@ extensions = [
     "sphinx_inline_tabs",
 ]
 
-plantuml = "java -jar /Users/veit/cusy/trn/python-basics-tutorial/plantuml.jar"
+plantuml = "/usr/bin/plantuml"
 plantuml_output_format = "svg"
 
 intersphinx_mapping = {
