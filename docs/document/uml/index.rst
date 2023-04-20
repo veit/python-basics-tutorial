@@ -12,6 +12,12 @@ Installation
 
          $ sudo apt install plantuml
 
+   .. tab:: macOS
+
+      .. code-block:: console
+
+         $ brew install plantuml
+
 #. Install `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
 
@@ -31,15 +37,15 @@ Installation
 
    .. code-block:: python
 
-    extensions = [
-        ...,
-        'sphinxcontrib.plantuml',
-        ]
+      extensions = [
+          ...,
+          'sphinxcontrib.plantuml',
+          ]
 
-    plantuml = 'java -jar /PATH/TO/PLANTUML'
+      plantuml = '/PATH/TO/PLANTUML'
 
    .. note::
-            Also in Windows, the path is specified with ``/``.
+      Also in Windows, the path is specified with ``/``.
 
 .. toctree::
    :titlesonly:
