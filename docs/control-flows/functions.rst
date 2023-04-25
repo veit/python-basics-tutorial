@@ -28,8 +28,8 @@ Python offers flexible mechanisms for passing arguments to functions:
     ...
     >>> func3(7)
     (7, 1, 1)
-    >>> func3(7, 8, 9)
-    (7, 8, 9)
+    >>> func3(1,2,3,4,5)
+    (1, 2, 3, 4, 5)
     >>> def func4(u, v=1, w=1, **kwargs):
     ...     print(u, v, w, kwargs)
     ...
