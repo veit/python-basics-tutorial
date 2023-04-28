@@ -365,8 +365,10 @@ Glossary
        Tool that uses the ``path`` command line environment variable to create
        isolated Python :term:`virtual environments <virtual environment>`,
        similar to :term:`venv`, but provides additional functionality for
-       configuration, maintenance, duplication and debugging, and supports
-       Python 2.7.
+       configuration, maintenance, duplication and debugging.
+
+       As of version 20.22.0, virtualenv no longer supports Python versions 2.7,
+       3.5 and 3.6.
 
    Virtual environment
        An isolated Python environment that allows packages to be installed for a
