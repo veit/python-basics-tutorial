@@ -118,13 +118,13 @@ Test coverage of all tests with GitHub actions
 ----------------------------------------------
 
 After you have checked the test coverage, you can upload the files as GitHub
-actions, for example in a :download:`tests.yaml` as artefacts, to be able to
+actions, for example in a :download:`ci.yaml` as artefacts, to be able to
 reuse them later in other jobs:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 49-54
-   :lineno-start: 49
+   :lines: 47-52
+   :lineno-start: 47
 
 ``if-no-files-found: ignore``
     is useful if the test coverage is not to be measured for all Python versions
@@ -134,10 +134,10 @@ reuse them later in other jobs:
 After all tests have been run, you can define another job that combines the
 results:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 56-94
-   :lineno-start: 56
+   :lines: 54-92
+   :lineno-start: 54
 
 ``needs: tests``
     ensures that all tests are performed. If your job that runs the tests has
@@ -165,16 +165,16 @@ Badge
 You can use GitHub Actions to create a badge with your code coverage. In
 addition, a GitHub Gist is needed to store the parameters for the badge that is
 rendered by `shields.io <https://shields.io>`_. For this we extend our
-:download:`tests.yaml` as follows:
+:download:`ci.yaml` as follows:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 96-
-   :lineno-start: 96
+   :lines: 94-
+   :lineno-start: 94
 
-Line 86
+Line 97
     ``GIST_TOKEN`` is a personal GitHub access token.
-Line 87
+Line 98
     You should replace ``YOUR_GIST_ID`` with your own Gist-ID. If you don’t have
     the Gist ID yet, you can create one with:
 
@@ -192,7 +192,7 @@ Line 87
        :samp:`GIST_SECRET` to :menuselection:`YOUR_REPO --> Settings --> Secrets
        --> Dependabot`.
 
-Lines 91–93
+Lines 102-104
     The badge is automatically coloured:
 
     * ≤ 50 % in red
