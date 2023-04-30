@@ -15,6 +15,7 @@ creation of a possibly empty initialisation file for each package or subpackage.
    install
    packages-programmes
    distribution
+   gitlab
    templating/index
    upload-install
    cibuildwheel

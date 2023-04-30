@@ -1,8 +1,8 @@
 Upload package
 ==============
 
-Finally, you should provide the package on the :term:`Python Package Index`
-(:term:`PyPI`) or another index.
+Finally, you can deploy the package on the :term:`Python Package Index`
+(:term:`PyPI`) or another index, for example :doc:`gitlab` or :term:`devpi`.
 
 For this you should register on *Test PyPI*. *Test-PyPI* is a separate instance
 that is intended for testing and experimentation. To set up an account there, go
