@@ -506,8 +506,8 @@ You can then call Python and import your ``loaders`` module:
     from dataprep import loaders
 
 .. note::
-    There are still many instructions that include a step to call ``setup.py``,
-    for example ``python setup.py sdist``. However, this is now considered
-    `anti-pattern <https://twitter.com/pganssle/status/1152695229105000453>`_ by
-    parts of the `Python Packaging Authority (PyPA)
-    <https://github.com/pypa/>`_.
+   There are still many instructions that include a step to call
+   :file:`setup.py`, for example :samp:`python setup.py sdist`. However, this is
+   now considered `anti-pattern
+   <https://twitter.com/pganssle/status/1152695229105000453>`_ by parts of the
+   `Python Packaging Authority (PyPA) <https://github.com/pypa/>`_.
