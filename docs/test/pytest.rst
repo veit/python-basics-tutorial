@@ -108,3 +108,21 @@ Run pytest
       test_pytest.py::test_examples[zasdqw-expected1] PASSED                   [100%]
 
       ============================== 5 passed in 0.02s ===============================
+
+Plugins
+-------
+
+`pytest-asyncio <https://pypi.org/project/pytest-asyncio/>`_
+    makes code testing easier if you use the
+    :doc:`asyncio <python3:library/asyncio>` library.
+`pytest-cov <https://pypi.org/project/pytest-cov/>`_
+    creates coverage reports.
+:doc:`pytest-grpc <jupyter-tutorial:data-processing/apis/grpc/test>`
+    is a pytest plugin for
+    :doc:`jupyter-tutorial:data-processing/apis/grpc/index`.
+`pytest-icdiff <https://pypi.org/project/pytest-icdiff/>`_
+    improves diffs in Pytest assertion error messages with `ICDiff
+    <https://www.jefftk.com/icdiff>`_.
+
+.. seealso::
+   `Plugin List <https://docs.pytest.org/en/7.1.x/reference/plugin_list.html>`_
