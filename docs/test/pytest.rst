@@ -81,6 +81,28 @@ decorator:
    * `How to use fixtures
      <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
 
+Markers
+-------
+
+:samp:`@pytest.mark.{MYMARKER}`-Markers
+    allows you to group or selectively disable tests.
+:file:`pytest.ini`
+    registers the markers.
+
+    Alternatively, you can use ``pytestmark`` in Python files: :samp:`pytestmark
+    = [pytest.mark.{MYMARKER1}, pytest.mark.{MYMARKER2}]`.
+
+:samp:`--strict-markers`
+    converts missing registrations into errors.
+
+:samp:`--markers`
+    displays all available markers.
+:samp:`xfail`
+    indicates that the test should fail.
+
+    :samp:`-ra` oder :samp:`-rxX`
+        shows the reasons why the test failed.
+
 Test parameterisation
 ---------------------
 
