@@ -169,3 +169,25 @@ Plugins
 
 .. seealso::
    `Plugin List <https://docs.pytest.org/en/7.1.x/reference/plugin_list.html>`_
+
+
+Configuration
+-------------
+
+You should have a configuration file, either :file:`pytest.ini`, or a pytest
+section in :file:`tox.ini`, :file:`pyproject.toml` or in  :file:`setup.cfg`. It defines the top-level directory from which ``pytest`` is started.
+
+Most of my projects start with the following configuration:
+
+.. code-block:: ini
+
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+
+.. seealso::
+   * `Configuration
+     <https://docs.pytest.org/en/latest/reference/customize.html>`_
+   * `Configuration Options
+     <https://docs.pytest.org/en/latest/reference/reference.html#configuration-options>`_
