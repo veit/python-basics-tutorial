@@ -49,6 +49,10 @@ Single test
 ``lambda``
     Function that in case of ``sorted`` only takes one parameter.
 
+
+To structure test functions, you can follow the :abbr:`AAA (Arrange/Act/Assert)`
+or :abbr:`GWT (Given/When/Then)` pattern.
+
 Test fixture
 ------------
 
