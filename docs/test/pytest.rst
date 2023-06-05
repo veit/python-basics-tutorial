@@ -64,6 +64,14 @@ decorator:
    :lines: 9-16
    :lineno-start: 9
 
+.. seealso::
+   * `About fixtures
+     <https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures>`_
+   * `Fixtures reference
+     <https://docs.pytest.org/en/latest/reference/fixtures.html>`_
+   * `How to use fixtures
+     <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
+
 Test parameterisation
 ---------------------
 
