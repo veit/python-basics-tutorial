@@ -53,8 +53,17 @@ Single test
 To structure test functions, you can follow the :abbr:`AAA (Arrange/Act/Assert)`
 or :abbr:`GWT (Given/When/Then)` pattern.
 
-Test fixture
-------------
+Structure the test-suite
+------------------------
+
+Use a directory structure that corresponds to the way you want to run your code,
+because it is easy to run an entire subdirectory. You can subdivide features and
+functions, or use subsystems as a basis, or use the code structure as a guide.
+You can also use :samp:`-k {FILTER}` to filter directories, classes or test
+prefixes.
+
+Test fixtures
+-------------
 
 Write a :term:`test fixture <Test Fixture>` with the ``@pytest.fixture``
 decorator:
