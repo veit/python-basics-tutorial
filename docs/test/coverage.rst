@@ -32,7 +32,7 @@ Use
 
 You can run your usual test runner together with Coverage
 
-* … mit `pytest <https://docs.pytest.org/>`_:
+* … with `pytest <https://docs.pytest.org/>`_:
 
   .. tab:: Linux/macOS
 
