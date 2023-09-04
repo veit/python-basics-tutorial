@@ -21,4 +21,4 @@ sphinxcontrib-plantuml==0.26
 sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
 sphinxcontrib-svg2pdfconverter==1.2.2
-urllib3==2.0.2
+urllib3==2.0.4
