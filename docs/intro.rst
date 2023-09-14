@@ -75,7 +75,7 @@ Speed
     Python modules that use C internally.
 
     .. seealso::
-        * :doc:`jupyter-tutorial:performance/index`
+        * :doc:`Python4DataScience:performance/index`
 
 Diverse libraries
     Python already has a lot of libraries, but in some cases you will only find
@@ -97,4 +97,4 @@ Support for concurrent computation
     Python is not designed to use multiple cores.
 
     .. seealso::
-        * :doc:`jupyter-tutorial:performance/multiprocessing-threading-async`
+        * :doc:`Python4DataScience:performance/multiprocessing-threading-async`

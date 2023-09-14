@@ -29,10 +29,10 @@ standard interface for Python database access modules. It’s defined in
 SQLAlchemy
 ----------
 
-:doc:`jupyter-tutorial:data-processing/postgresql/sqlalchemy` is a widely used
+:doc:`Python4DataScience:data-processing/postgresql/sqlalchemy` is a widely used
 database toolkit. It provides not only an :abbr:`ORM (Object Relational Mapper)`
 but also a generalised API for writing database-agnostic code without SQL.
-:doc:`jupyter-tutorial:data-processing/postgresql/alembic` is based on
+:doc:`Python4DataScience:data-processing/postgresql/alembic` is based on
 SQLAlchemy and serves as a database migration tool.
 
 NoSQL databases
@@ -40,7 +40,7 @@ NoSQL databases
 
 There is data that is difficult to transfer into a relational data model. At the
 least then you should take a look at
-:doc:`jupyter-tutorial:data-processing/nosql/index`.
+:doc:`Python4DataScience:data-processing/nosql/index`.
 
 .. toctree::
    :titlesonly:

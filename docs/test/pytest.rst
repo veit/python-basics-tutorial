@@ -160,9 +160,9 @@ Plugins
     :doc:`asyncio <python3:library/asyncio>` library.
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
     creates coverage reports.
-:doc:`pytest-grpc <jupyter-tutorial:data-processing/apis/grpc/test>`
+:doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
     is a pytest plugin for
-    :doc:`jupyter-tutorial:data-processing/apis/grpc/index`.
+    :doc:`Python4DataScience:data-processing/apis/grpc/index`.
 `pytest-icdiff <https://pypi.org/project/pytest-icdiff/>`_
     improves diffs in Pytest assertion error messages with `ICDiff
     <https://www.jefftk.com/icdiff>`_.

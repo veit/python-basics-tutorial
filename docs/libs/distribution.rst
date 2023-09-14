@@ -43,7 +43,8 @@ A minimal distribution package can look like this, for example:
 :pep:`517` and :pep:`518` brought extensible build backends, isolated builds and
 `pyproject.toml
 <https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ in
-:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index` format.
+:doc:`Python4DataScience:data-processing/serialisation-formats/toml/index`
+format.
 
 Among other things, :file:`pyproject.toml` tells :term:`pip` and :term:`build`
 which backend tool to use to build distribution packages for your project. You
@@ -128,7 +129,7 @@ as:
 
     With the version source plugin `hatch-vcs
     <https://github.com/ofek/hatch-vcs>`_ you can also use
-    :doc:`jupyter-tutorial:productive/git/tag`:
+    :doc:`Python4DataScience:productive/git/tag`:
 
     .. code-block:: toml
 
@@ -320,7 +321,7 @@ universal ``wheel`` packages with the ``options`` keyword argument, for example
 ~~~~~~~~~~~
 
 You can find detailed information on this in the
-:doc:`jupyter-tutorial:productive/licensing` section.
+:doc:`Python4DataScience:productive/licensing` section.
 
  ``CONTRIBUTORS.rst``
  ~~~~~~~~~~~~~~~~~~~~

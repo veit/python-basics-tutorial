@@ -249,7 +249,7 @@ Numerical calculations
 
 The standard Python installation is not well suited for intensive numerical
 calculations due to speed limitations. But the powerful Python extension
-:doc:`jupyter-tutorial:workspace/numpy/index` provide highly efficient
+:doc:`Python4DataScience:workspace/numpy/index` provide highly efficient
 implementations of many advanced numerical operations. The focus is on array
 operations, including multi-dimensional matrices and advanced functions such as
 the fast Fourier transform.

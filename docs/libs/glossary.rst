@@ -333,7 +333,7 @@ Glossary
        `GitHub <https://github.com/spack/spack>`__
 
        .. seealso::
-          * :doc:`jupyter-tutorial:productive/envs/spack/index`
+          * :doc:`Python4DataScience:productive/envs/spack/index`
 
    trove-classifiers
        trove-classifiers are classifiers used in the :term:`Python Package

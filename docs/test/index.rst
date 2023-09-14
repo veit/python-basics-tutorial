@@ -15,9 +15,9 @@ Basically, a distinction is made between static and dynamic test procedures.
 
       There are various Python packages that can help you with static program
       analysis, including including
-      :doc:`jupyter-tutorial:productive/qa/flake8`,
-      :doc:`jupyter-tutorial:productive/qa/pysa` and
-      :doc:`jupyter-tutorial:productive/qa/wily`.
+      :doc:`Python4DataScience:productive/qa/flake8`,
+      :doc:`Python4DataScience:productive/qa/pysa` and
+      :doc:`Python4DataScience:productive/qa/wily`.
 
    Dynamic test procedures
     are used to find errors when executing the source code. Thereby a
