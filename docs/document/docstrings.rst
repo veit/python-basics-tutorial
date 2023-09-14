@@ -193,5 +193,6 @@ NumPy:
             """
             return True
 
-You can find the detailed configuration options in `sphinxcontrib.napoleon.Config
+You can find the detailed configuration options in
+`sphinxcontrib.napoleon.Config
 <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/sphinxcontrib.napoleon.html#sphinxcontrib.napoleon.Config>`_.
