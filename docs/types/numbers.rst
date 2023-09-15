@@ -58,6 +58,13 @@ Examples:
     >>> -5e-3 ** 3
     -1.2500000000000002e-07
 
+.. seealso::
+   * Julia Evans: `Examples of floating point problems
+     <https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/>`_
+   * David Goldberg: `What Every Computer Scientist Should Know About
+     Floating-Point Arithmetic
+     <https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html>`_
+
 Complex numbers
 ---------------
 
@@ -233,14 +240,19 @@ it is recommended to simply import the module to explicitly refer to the
 Commercial rounding
 -------------------
 
-:class:`Decimal <python3:decimal.Decimal>` and :data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>`
-from the :py:mod:`decimal` module are required for commercial rounding:
+Usually Python calculates floating point numbers according to the `IEEE 754
+<https://en.wikipedia.org/wiki/IEEE_754>`_ standard, rounding down numbers in
+the middle half of the time and rounding up in the other half to avoid
+statistical drift in longer calculations. :class:`Decimal
+<python3:decimal.Decimal>` and :data:`ROUND_HALF_UP
+<python3:decimal.ROUND_HALF_UP>` from the decimal module are therefore needed
+for commercial rounding:
 
 .. code-block:: python
 
     >>> import decimal
-    >>> num = decimal.Decimal('2.5')
-    >>> rounded = num.quantize(decimal.Decimal('0'), rounding = decimal.ROUND_HALF_UP)
+    >>> num = decimal.Decimal("2.5")
+    >>> rounded = num.quantize(decimal.Decimal("0"), rounding = decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
 
