@@ -78,6 +78,11 @@ like this, for example:
     identifies the entry point for the build-backend object as a dotted path.
     The ``hatchling`` backend object is available under ``hatchling.build``.
 
+.. note::
+   With `validate-pyproject
+   <https://validate-pyproject.readthedocs.io/en/latest/>`_ you can check your
+   :file:`pyproject.toml` file.
+
 .. seealso::
    If you want to look at alternatives to ``setuptools``:
 
