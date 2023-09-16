@@ -84,7 +84,7 @@ like this, for example:
    :file:`pyproject.toml` file.
 
 .. seealso::
-   If you want to look at alternatives to ``setuptools``:
+   If you want to look at alternatives to ``hatchling``:
 
    * :term:`setuptools`
    * :term:`Flit`
