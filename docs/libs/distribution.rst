@@ -338,8 +338,8 @@ The file contains all files and directories that are not already covered by
 .. literalinclude:: dataprep/MANIFEST.in
    :linenos:
 
-For more instructions in ``Manifest.in``, see `Creating a source distribution
-<https://docs.python.org/3/distutils/commandref.html?highlight=manifest#creating-a-source-distribution-the-sdist-command>`__.
+For more instructions in ``Manifest.in``, see `MANIFEST.in commands
+<https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
 
 .. note::
     People often forget to update the ``Manifest.in`` file. To avoid this, you
