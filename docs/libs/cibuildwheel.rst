@@ -5,7 +5,7 @@
 for the different platforms and Python versions through Continuous Integration
 (CI) workflows. More precisely it builds manylinux, macOS 10.9+, and Windows
 wheels for CPython and PyPy with GitHub Actions, Azure Pipelines, Travis CI,
-AppVeyor, CircleCI, or GitLab CI.
+AppVeyor, CircleCI, or :doc:`Python4DataScience:productive/git/gitlab/ci-cd`.
 
 In addition, it bundles shared library dependencies on Linux and macOS through
 `auditwheel <https://github.com/pypa/auditwheel>`_ and `delocate
@@ -21,99 +21,92 @@ GitHub Actions
 --------------
 
 To build Linux, macOS, and Windows wheels, create a
-``.github/workflows/build_wheels.yml`` file in your GitHub repo:
+:file:`.github/workflows/build_wheels.yml` file in your GitHub repo:
 
-.. code-block:: yaml
+.. literalinclude:: .github/workflows/build_wheels.yml
+   :language: yaml
+   :lines: 1-7
 
-    name: Build
+``workflow_dispatch``
+    allows you to click a button in the graphical user interface to trigger a
+    build. This is perfect for manually testing wheels before a release, as you
+    can easily download them from *artifacts*.
 
-    on: [push, pull_request]
+    .. seealso::
+       * `workflow_dispatch
+         <https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/>`_
 
-    jobs:
-      build_wheels:
-        name: Build wheels on ${{ matrix.os }}
-        runs-on: ${{ matrix.os }}
-        strategy:
-          matrix:
-            os: [ubuntu-20.04, windows-2019, macos-10.15]
+``release``
+    is executed when a tagged version is transferred.
 
-        steps:
-          - uses: actions/checkout@v2
+    .. seealso::
+       * `release
+         <https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release>`_
 
-          - name: Build wheels
-            uses: pypa/cibuildwheel@v1.11.0
-            # to supply options, put them in 'env', like:
-            # env:
-            #   CIBW_SOME_OPTION: value
+Now the :term:`wheels <wheel>` can be built with:
 
-          - uses: actions/upload-artifact@v2
-            with:
-              path: ./wheelhouse/*.whl
+.. literalinclude:: .github/workflows/build_wheels.yml
+   :language: yaml
+   :lines: 9-21
 
 This runs the CI workflow with the following default settings:
 
 * ``package-dir: .``
 * ``output-dir: wheelhouse``
+* ``config-file: "{package}/pyproject.toml"``
 
-You can extend the file to automatically upload the wheels to the :term:`Python
-Package Index` (:term:`PyPI`) with:
+You can also extend the file to automatically upload the wheels to the
+:term:`Python Package Index` (:term:`PyPI`). For this, however, you should first
+create a :term:`source distribution`, for example with:
 
-.. code-block:: yaml
+.. literalinclude:: .github/workflows/build_wheels.yml
+   :language: yaml
+   :lines: 27-41
 
-      upload_pypi:
-        needs: [build_wheels, build_sdist]
-        runs-on: ubuntu-latest
-        # upload to PyPI on every tag starting with 'v'
-        if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/v')
-        # alternatively, to publish when a GitHub Release is created, use the following rule:
-        # if: github.event_name == 'release' && github.event.action == 'published'
-        steps:
-          - uses: actions/download-artifact@v2
-            with:
-              name: artifact
-              path: dist
+In addition, this GitHub workflow must be set in the PyPI settings of your
+project:
 
-          - uses: pypa/gh-action-pypi-publish@master
-            with:
-              user: __token__
-              password: ${{ secrets.pypi_password }}
-              # To test: repository_url: https://test.pypi.org/legacy/
+* `Creating a PyPI project with a trusted publisher
+  <https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc>`_
+* `Adding a trusted publisher to an existing PyPI project
+  <https://docs.pypi.org/trusted-publishers/adding-a-publisher>`_
+
+Now you can finally upload the artefacts of both jobs to the :term:`PyPI`:
+
+.. literalinclude:: .github/workflows/build_wheels.yml
+   :language: yaml
+   :lines: 43-
 
 .. seealso::
    * `Workflow syntax for GitHub Actions
      <https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions>`_
 
-Gitlab CI
----------
+GitLab CI/CD
+------------
 
-To build Linux wheels on Gitlab CI, create a ``.gitlab-ci.yml`` file in your
-repo:
+To build Linux wheels with
+:doc:`Python4DataScience:productive/git/gitlab/ci-cd`, create a
+:file:`.gitlab-ci.yml` file in your repository:
 
-.. code-block:: yaml
-
-    linux:
-      image: python:3.8
-      # make a docker daemon available for cibuildwheel to use
-      services:
-        - name: docker:dind
-          entrypoint: ["env", "-u", "DOCKER_HOST"]
-          command: ["dockerd-entrypoint.sh"]
-      variables:
-        DOCKER_HOST: tcp://docker:2375/
-        DOCKER_DRIVER: overlay2
-        # See https://github.com/docker-library/docker/pull/166
-        DOCKER_TLS_CERTDIR: ""
-      script:
-        - curl -sSL https://get.docker.com/ | sh
-        - python -m pip install cibuildwheel==1.11.0
-        - cibuildwheel --output-dir wheelhouse
-      artifacts:
-        paths:
-          - wheelhouse/
+.. literalinclude:: .gitlab-ci.yml
+   :language: yaml
 
 .. seealso::
    * `Keyword reference for the .gitlab-ci.yml file
      <https://docs.gitlab.com/ee/ci/yaml/>`_
+
+Optionen
+--------
+
+``cibuildwheel`` can be configured either via environment variables or via a
+configuration file such as :file:`pyproject.toml`, for example:
+
+.. literalinclude:: pyproject.toml
+   :language: toml
+
+.. seealso::
+   * `cibuildwheel: Options
+     <https://cibuildwheel.readthedocs.io/en/stable/options/>`_
 
 Examples
 --------
