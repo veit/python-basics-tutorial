@@ -78,6 +78,27 @@ like this, for example:
     identifies the entry point for the build-backend object as a dotted path.
     The ``hatchling`` backend object is available under ``hatchling.build``.
 
+    .. note::
+       However, for Python packages that contain binary extensions with
+       ``Cython``, ``C``, ``C++``, ``Fortran`` or ``Rust``, the
+       :term:`hatchling` backend is not suitable. One of the following backends
+       should be used here:
+
+       * :term:`setuptools`
+       * :term:`scikit-build`
+       * :term:`maturin`
+
+       But thatr’s not all – there are other backends:
+
+       * :term:`Flit`
+       * :term:`whey`
+       * :term:`poetry`
+       * :term:`pybind11`
+       * :term:`meson-python`
+
+    .. seealso::
+       * `pypackaging-native <https://pypackaging-native.github.io>`_
+
 .. note::
    With `validate-pyproject
    <https://validate-pyproject.readthedocs.io/en/latest/>`_ you can check your
