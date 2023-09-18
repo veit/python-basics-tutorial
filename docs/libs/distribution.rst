@@ -306,70 +306,17 @@ directory.
 Other files
 -----------
 
-:file:`setup.py`
-~~~~~~~~~~~~~~~~
+:file:`CONTRIBUTORS.rst`
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-A minimal and yet functional :download:`dataprep/setup.py` can look like this,
-for example:
-
-.. literalinclude:: dataprep/setup.py
-   :language: python
-   :lines: 4-5, 9-12, 15-21,41
-   :lineno-start: 1
-
-`package_dir
-<https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
-points to the ``src`` directory, which can contain one or more packages. You can
-then use setuptools’s `find_packages()
-<https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
-to find all packages in this directory.
-
-.. note::
-    ``find_packages()`` without ``src/`` directory would package all directories
-    with a ``__init__.py`` file, so also ``tests/`` directories.
-
-:file:`MANIFEST.in`
-~~~~~~~~~~~~~~~~~~~
-
-The file contains all files and directories that are not already covered by
-``packages`` or ``py_module``. It can look like this:
-:download:`dataprep/MANIFEST.in`:
-
-.. literalinclude:: dataprep/MANIFEST.in
-   :linenos:
-
-For more instructions in :file:`Manifest.in`, see `MANIFEST.in commands
-<https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
-
-.. note::
-   People often forget to update the :file:`Manifest.in` file. To avoid this,
-   you can use `check-manifest <https://pypi.org/project/check-manifest/>`_ in a
-   pre-commit hook.
-
-.. note::
-   If you want files and directories from :file:`MANIFEST.in` to be installed as
-   well, for example if they are runtime-relevant data, you can specify this
-   with ``include_package_data=True`` in your ``setup()`` call.
-
-:file:`setup.cfg`
-~~~~~~~~~~~~~~~~~
-
-This file is no longer needed, at least not for packaging. ``wheel`` nowadays
-collects all required licence files automatically and ``setuptools`` can build
-universal ``wheel`` packages with the ``options`` keyword argument, for example
-:file:`dataprep-0.1.0-py3-none-any.whl`.
+.. seealso::
+    * `All contributors <https://allcontributors.org/>`_
 
 :file:`LICENSE`
 ~~~~~~~~~~~~~~~
 
 You can find detailed information on this in the
 :doc:`Python4DataScience:productive/licensing` section.
-
-:file:`CONTRIBUTORS.rst`
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. seealso::
-    * `All contributors <https://allcontributors.org/>`_
 
 :file:`README.rst`
 ~~~~~~~~~~~~~~~~~~
@@ -403,6 +350,71 @@ with ``.. include:: ../../README.rst``.
       <https://github.com/python/core-workflow/tree/master/blurb>`_
     * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
     * `towncrier <https://github.com/twisted/towncrier>`_
+
+Historical files or files needed for binary extensions
+------------------------------------------------------
+
+Before the :file:`pyproject.toml` file introduced with :pep:`518` became the
+standard, ``setuptools`` required :file:`setup.py`, :file:`setup.cfg` and
+:file:`MANIFEST.in`. Today, however, these files are only needed for
+:doc:`binary extensions <binary-extensions>` at best.
+
+If you want to replace these files in your packages, you can do so with ``hatch
+new --init`` or `ini2toml
+<https://ini2toml.readthedocs.io/en/latest/setuptools_pep621.html>`_.
+
+:file:`setup.py`
+~~~~~~~~~~~~~~~~
+
+A minimal and yet functional :download:`dataprep/setup.py` can look like this,
+for example:
+
+.. literalinclude:: dataprep/setup.py
+   :language: python
+   :lines: 4-5, 9-12, 15-21,41
+   :lineno-start: 1
+
+`package_dir
+<https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
+points to the ``src`` directory, which can contain one or more packages. You can
+then use setuptools’s `find_packages()
+<https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
+to find all packages in this directory.
+
+.. note::
+    ``find_packages()`` without ``src/`` directory would package all directories
+    with a ``__init__.py`` file, so also ``tests/`` directories.
+
+:file:`setup.cfg`
+~~~~~~~~~~~~~~~~~
+
+This file is no longer needed, at least not for packaging. ``wheel`` nowadays
+collects all required licence files automatically and ``setuptools`` can build
+universal ``wheel`` packages with the ``options`` keyword argument, for example
+:file:`dataprep-0.1.0-py3-none-any.whl`.
+
+:file:`MANIFEST.in`
+~~~~~~~~~~~~~~~~~~~
+
+The file contains all files and directories that are not already covered by
+``packages`` or ``py_module``. It can look like this:
+:download:`dataprep/MANIFEST.in`:
+
+.. literalinclude:: dataprep/MANIFEST.in
+   :linenos:
+
+For more instructions in :file:`Manifest.in`, see `MANIFEST.in commands
+<https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
+
+.. note::
+   People often forget to update the :file:`Manifest.in` file. To avoid this,
+   you can use `check-manifest <https://pypi.org/project/check-manifest/>`_ in a
+   pre-commit hook.
+
+.. note::
+   If you want files and directories from :file:`MANIFEST.in` to be installed as
+   well, for example if they are runtime-relevant data, you can specify this
+   with ``include_package_data=True`` in your ``setup()`` call.
 
 Build
 -----
