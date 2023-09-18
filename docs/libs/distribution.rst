@@ -149,6 +149,11 @@ as:
     If this is not the way you want to store versions, you can define a
     different regular expression with the :samp:`pattern` option.
 
+    .. seealso::
+       * `Calendar Versioning <https://calver.org>`_
+       * `ZeroVer <https://0ver.org/>`_
+       * `bump2version <https://pypi.org/project/bump2version/>`_
+
     However, there are other version scheme plug-ins, such as `hatch-semver
     <https://github.com/Nagidal/hatch-semver>`_ for `semantic Versioning
     <https://semver.org>`_.
@@ -166,10 +171,22 @@ as:
        source = "vcs"
        raw-options = { local_scheme = "no-local-version" }
 
+    The setuptools backend also allows dynamic versioning:
+
+    .. code-block:: toml
+
+       [build-system]
+       requires = ["setuptools", "setuptools-scm"]
+       build-backend = "setuptools.build_meta"
+       [project]
+       ...
+       dynamic = ["version"]
+       [tool.setuptools.dynamic]
+       version = {attr = "dataprep.VERSION"}
+
     .. seealso::
-       * `Calendar Versioning <https://calver.org>`_
-       * `ZeroVer <https://0ver.org/>`_
-       * `bump2version <https://pypi.org/project/bump2version/>`_
+       * `Configuring setuptools using pyproject.toml files: Dynamic Metadata
+         <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>`_
 
 ``authors``
     is used to identify the authors of the package by name and email address.
