@@ -37,8 +37,8 @@ A minimal distribution package can look like this, for example:
 
 .. _pyproject-toml:
 
-``pyproject.toml``
-------------------
+:file:`pyproject.toml`
+----------------------
 
 :pep:`517` and :pep:`518` brought extensible build backends, isolated builds and
 `pyproject.toml
@@ -261,7 +261,7 @@ You can install these optional dependencies, for example with:
 
       $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
       $ python3 -m venv .
-      $ source bin/activate
+      $ . bin/activate
       $ python -m pip install --upgrade pip
       $ python -m pip install -e '.[dev]'
 
@@ -275,11 +275,11 @@ You can install these optional dependencies, for example with:
       > python -m pip install --upgrade pip
       > python -m pip install -e '.[dev]'
 
-``src`` package
----------------
+:file:`src` package
+-------------------
 
-When you create a new package, you shouldn’t use a flat layout but the ``src``
-layout, which is also recommended in `Packaging Python Projects
+When you create a new package, you shouldn’t use a flat layout but the
+:file:`src` layout, which is also recommended in `Packaging Python Projects
 <https://packaging.python.org/en/latest/tutorials/packaging-projects/>`_ of the
 :term:`PyPA`. A major advantage of this layout is that tests are run with the
 installed version of your package and not with the files in your working
@@ -293,21 +293,21 @@ directory.
    In Python ≥ 3.11 :envvar:`PYTHONSAFEPATH` can be used to ensure that the
    installed packages are used first.
 
-``dataprep``
+:file:`dataprep`
     is the directory that contains the Python files. The name should match the
     project name to simplify configuration and be more recognisable to those
     installing the package.
-``__init__.py``
+:file:`__init__.py`
     is required to import the directory as a package. The file should be empty.
-``loaders.py``
+:file:`loaders.py`
     is an example of a module within the package that could contain the logic
     (functions, classes, constants, :abbr:`etc. (et cetera)`) of your package.
 
 Other files
 -----------
 
-``setup.py``
-~~~~~~~~~~~~
+:file:`setup.py`
+~~~~~~~~~~~~~~~~
 
 A minimal and yet functional :download:`dataprep/setup.py` can look like this,
 for example:
@@ -328,8 +328,8 @@ to find all packages in this directory.
     ``find_packages()`` without ``src/`` directory would package all directories
     with a ``__init__.py`` file, so also ``tests/`` directories.
 
-``MANIFEST.in``
-~~~~~~~~~~~~~~~
+:file:`MANIFEST.in`
+~~~~~~~~~~~~~~~~~~~
 
 The file contains all files and directories that are not already covered by
 ``packages`` or ``py_module``. It can look like this:
@@ -338,41 +338,41 @@ The file contains all files and directories that are not already covered by
 .. literalinclude:: dataprep/MANIFEST.in
    :linenos:
 
-For more instructions in ``Manifest.in``, see `MANIFEST.in commands
+For more instructions in :file:`Manifest.in`, see `MANIFEST.in commands
 <https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
 
 .. note::
-    People often forget to update the ``Manifest.in`` file. To avoid this, you
-    can use `check-manifest <https://pypi.org/project/check-manifest/>`_ in a
-    pre-commit hook.
+   People often forget to update the :file:`Manifest.in` file. To avoid this,
+   you can use `check-manifest <https://pypi.org/project/check-manifest/>`_ in a
+   pre-commit hook.
 
 .. note::
-    If you want files and directories from ``MANIFEST.in`` to be installed as
-    well, for example if they are runtime-relevant data, you can specify this
-    with ``include_package_data=True`` in your ``setup()`` call.
+   If you want files and directories from :file:`MANIFEST.in` to be installed as
+   well, for example if they are runtime-relevant data, you can specify this
+   with ``include_package_data=True`` in your ``setup()`` call.
 
-``setup.cfg``
-~~~~~~~~~~~~~
+:file:`setup.cfg`
+~~~~~~~~~~~~~~~~~
 
 This file is no longer needed, at least not for packaging. ``wheel`` nowadays
 collects all required licence files automatically and ``setuptools`` can build
 universal ``wheel`` packages with the ``options`` keyword argument, for example
-``dataprep-0.1.0-py3-none-any.whl``.
+:file:`dataprep-0.1.0-py3-none-any.whl`.
 
-``LICENSE``
-~~~~~~~~~~~
+:file:`LICENSE`
+~~~~~~~~~~~~~~~
 
 You can find detailed information on this in the
 :doc:`Python4DataScience:productive/licensing` section.
 
- ``CONTRIBUTORS.rst``
- ~~~~~~~~~~~~~~~~~~~~
+:file:`CONTRIBUTORS.rst`
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
     * `All contributors <https://allcontributors.org/>`_
 
-``README.rst``
-~~~~~~~~~~~~~~
+:file:`README.rst`
+~~~~~~~~~~~~~~~~~~
 
 This file briefly tells those who are interested in the package how to use it.
 
@@ -390,8 +390,8 @@ contents as a detailed description in your package:
 You can also include them in your :doc:`Sphinx documentation </document/start>`
 with ``.. include:: ../../README.rst``.
 
-``CHANGELOG.rst``
-~~~~~~~~~~~~~~~~~
+:file:`CHANGELOG.rst`
+~~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
     * `Keep a Changelog <https://keepachangelog.com/>`_
@@ -444,8 +444,8 @@ in the ``dist`` directory when finished:
    ├── dataprep-0.1.0-py3-none-any.whl
    └── dataprep-0.1.0.tar.gz
 
-``dataprep-0.1.0-py3-none-any.whl``
-    is a binary distribution format with the suffix ``..whl``., where the
+:file:`dataprep-0.1.0-py3-none-any.whl`
+    is a binary distribution format with the suffix :file:`..whl`, where the
     filename is composed as follows:
 
     ``dataprep``
@@ -463,16 +463,16 @@ in the ``dist`` directory when finished:
         other hand only for chips with the x86 instruction set and a 64-bit
         architecture
 
-``dataprep-0.1.0.tar.gz``
-    is a source distribution.
+:file:`dataprep-0.1.0.tar.gz`
+    is a :term:`source distribution`.
 
 .. seealso::
-    The reference for the file names can be found in `File name convention
-    <https://www.python.org/dev/peps/pep-0427/#file-name-convention>`_.
+   The reference for the file names can be found in `File name convention
+   <https://www.python.org/dev/peps/pep-0427/#file-name-convention>`_.
 
-    For more information on ``sdist``, see `Creating a Source Distribution
-    <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__
-    and :pep:`376`
+   For more information on ``sdist``, see `Creating a Source Distribution
+   <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__
+   and :pep:`376`.
 
 Testing
 -------
