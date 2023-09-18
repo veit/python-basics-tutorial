@@ -152,7 +152,6 @@ as:
     .. seealso::
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
-       * `bump2version <https://pypi.org/project/bump2version/>`_
 
     However, there are other version scheme plug-ins, such as `hatch-semver
     <https://github.com/Nagidal/hatch-semver>`_ for `semantic Versioning
