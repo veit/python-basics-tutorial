@@ -79,3 +79,24 @@ You can now analyse the namespace of the instance with the method
     While you can access the ``move`` method of the superclass ``form`` with
     ``self``, private instance variables, private methods and private class
     variables of the superclass are not accessible in this way.
+
+If you only want to change instances of a certain class, you can do this with
+the :mod:`garbage collector <gc>`, for example:
+
+.. code-block:: python
+
+    >>> import forms
+    >>> c1 = forms.Circle()
+    >>> c2 = forms.Circle(2, 3, 4)
+    >>> s1 = forms.Square(5, 6, 7)
+    >>> import gc
+    >>> for obj in gc.get_objects():
+    ...     if isinstance(obj, forms.Circle):
+    ...         obj.move(3, 0)
+    ...
+    >>> c1.x, c1.y
+    (3, 0)
+    >>> c2.x, c2.y
+    (6, 4)
+    >>> s1.x, s1.y
+    (6, 7)
