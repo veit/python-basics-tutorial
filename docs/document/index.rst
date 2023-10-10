@@ -127,7 +127,8 @@ after each commit.
 For project documentation, visualising :doc:`Git feature branches
 <Python4DataScience:productive/git/workflows/feature-branches>` and :doc:`tags
 <Python4DataScience:productive/git/tag>` with
-:doc:`Python4DataScience:productive/git/git-big-picture` can be helpful.
+:doc:`Python4DataScience:productive/git/advanced/git-big-picture` can be
+helpful.
 
 .. note::
    If the content of ``long_description`` in ``setup()`` is written in
