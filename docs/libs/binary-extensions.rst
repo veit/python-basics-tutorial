@@ -151,8 +151,8 @@ significantly reduce the maintenance effort compared to wrapper modules.
 
 * `pythoncapi_compat <https://github.com/python/pythoncapi_compat>`_ can be used
   to write a C extension that supports multiple Python versions with a single
-  code base. It consists of the header file `pythoncapi_compat.h`` and the
-  script ``upgrade_pythoncapi.py``.
+  code base. It consists of the header file :file:`pythoncapi_compat.h` and the
+  script :file:`upgrade_pythoncapi.py`.
 
 … for low-level system access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
