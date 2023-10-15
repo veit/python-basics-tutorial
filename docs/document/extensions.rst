@@ -81,9 +81,11 @@ Third-party extensions
     generate multiversion and multilanguage `sitemaps
     <https://www.sitemaps.org/protocol.html>`_ for the HTML version
 `Sphinx Lint <https://github.com/sphinx-contrib/sphinx-lint>`_
-     based on `rstlint.py
-     <https://github.com/python/cpython/blob/e0433c1e7/Doc/tools/rstlint.py>`_
-     from CPython.
+    based on `rstlint.py
+    <https://github.com/python/cpython/blob/e0433c1e7/Doc/tools/rstlint.py>`_
+    from CPython.
+`sphinx-toolbox <https://sphinx-toolbox.readthedocs.io/en/stable/index.html>`_
+    Toolbox for Sphinx with many useful tools.
 
 .. seealso::
     `sphinx-contrib <https://github.com/sphinx-contrib/>`_
