@@ -46,6 +46,7 @@ intersphinx_mapping = {
     "python3": ("https://docs.python.org/3/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/en/latest/", None),
     "Python4DataScience": ("https://www.python4data.science/en/latest/", None),
+    "pytest": ("https://docs.pytest.org/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.

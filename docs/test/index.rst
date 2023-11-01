@@ -6,26 +6,25 @@ Basically, a distinction is made between static and dynamic test procedures.
 .. glossary::
 
    Static test procedures
-    are used to check the source code, but it is not executed. They are divided
+    are used to check the source code, but it’s not executed. They are divided
     into
 
-    * `Reviews <https://en.wikipedia.org/wiki/Software_review>`_ and
-    * `Static program analysis
+    * :ref:`reviews <code_reviews>` and
+    * `static program analysis
       <https://en.wikipedia.org/wiki/Static_program_analysis>`_
 
-      There are various Python packages that can help you with static program
-      analysis, including including
-      :doc:`Python4DataScience:productive/qa/flake8`,
+      There are several Python packages that can help you with static program
+      analysis, including :doc:`Python4DataScience:productive/qa/flake8`,
       :doc:`Python4DataScience:productive/qa/pysa` and
       :doc:`Python4DataScience:productive/qa/wily`.
 
-   Dynamic test procedures
-    are used to find errors when executing the source code. Thereby a
-    distinction is made between whitebox and backbox tests.
+   Dynamic testing
+    are used to find errors when executing the source code. A distinction is
+    made between whitebox and backbox tests.
 
     Whitebox tests
         are developed with knowledge of the source code and the software
-        structure. Various modules are available in Python:
+        structure. In Python, various modules are available:
 
         :doc:`unittest`
             supports you in automating tests.
@@ -36,8 +35,8 @@ Basically, a distinction is made between static and dynamic test procedures.
         :doc:`tox`
             allows you to test in different environments.
 
-    Black box tests
-        are developed without knowledge of the source code. Besides
+    Blackbox tests
+        are developed without knowledge of the source code. In addition to
         :doc:`unittest`, :doc:`hypothesis` can also be used in Python for such
         tests.
 
@@ -51,10 +50,11 @@ Basically, a distinction is made between static and dynamic test procedures.
 
    unittest
    sqlite
-   mock
    doctest
    hypothesis
-   pytest
+   pytest/index
+   coverage
+   mock
    tox
    unittest2
-   coverage
+   glossary

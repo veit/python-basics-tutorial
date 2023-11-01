@@ -1,10 +1,10 @@
 Hypothesis
 ==========
 
-`Hypothesis <https://hypothesis.readthedocs.io/>`_ is a library that allows you to
-write tests that are parameterised from a source of examples. Then simple and
-comprehensible examples are generated, which can be used to fail your tests and to
-find errors with little effort.
+`Hypothesis <https://hypothesis.readthedocs.io/>`_ is a library that allows you
+to write tests that are parameterised from a source of examples. It then
+generates simple and understandable examples that can be used to make your tests
+fail and find bugs with little effort.
 
 #. Install Hypothesis:
 
@@ -36,21 +36,21 @@ find errors with little effort.
 
 #. Write a test:
 
-   #. Imports
+   #. Imports:
 
       .. literalinclude:: test_hypothesis.py
          :language: python
          :lines: 1-3
          :lineno-start: 1
 
-   #. Test
+   #. Test:
 
       .. literalinclude:: test_hypothesis.py
          :language: python
          :lines: 6-
          :lineno-start: 6
 
-#. Run test:
+#. Perform test:
 
    .. tab:: Linux/macOS
 
@@ -62,20 +62,27 @@ find errors with little effort.
            rootdir: /Users/veit/cusy/trn/python-basics/docs/test
            plugins: hypothesis-6.23.2
            collected 1 item
+
            test_hypothesis.py F                                                     [100%]
+
            =================================== FAILURES ===================================
            __________________________________ test_mean ___________________________________
+
                @given(lists(floats(allow_nan=False, allow_infinity=False), min_size=1))
            >   def test_mean(ls):
+
            test_hypothesis.py:6:
            _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
            ls = [9.9792015476736e+291, 1.7976931348623157e+308]
+
                @given(lists(floats(allow_nan=False, allow_infinity=False), min_size=1))
                def test_mean(ls):
                    mean = sum(ls) / len(ls)
            >       assert min(ls) <= mean <= max(ls)
            E       assert inf <= 1.7976931348623157e+308
            E        +  where 1.7976931348623157e+308 = max([9.9792015476736e+291, 1.7976931348623157e+308])
+
            test_hypothesis.py:8: AssertionError
            ---------------------------------- Hypothesis ----------------------------------
            Falsifying example: test_mean(
@@ -95,20 +102,27 @@ find errors with little effort.
            rootdir: C:\Users\veit\python-basics\docs\test
            plugins: hypothesis-6.23.2
            collected 1 item
+
            test_hypothesis.py F                                                     [100%]
+
            =================================== FAILURES ===================================
            __________________________________ test_mean ___________________________________
+
                @given(lists(floats(allow_nan=False, allow_infinity=False), min_size=1))
            >   def test_mean(ls):
+
            test_hypothesis.py:6:
            _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
            ls = [9.9792015476736e+291, 1.7976931348623157e+308]
+
                @given(lists(floats(allow_nan=False, allow_infinity=False), min_size=1))
                def test_mean(ls):
                    mean = sum(ls) / len(ls)
            >       assert min(ls) <= mean <= max(ls)
            E       assert inf <= 1.7976931348623157e+308
            E        +  where 1.7976931348623157e+308 = max([9.9792015476736e+291, 1.7976931348623157e+308])
+
            test_hypothesis.py:8: AssertionError
            ---------------------------------- Hypothesis ----------------------------------
            Falsifying example: test_mean(

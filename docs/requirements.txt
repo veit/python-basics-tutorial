@@ -3,3 +3,4 @@ sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
 sphinxcontrib-svg2pdfconverter
 sphinx-lint
+pygments_pytest

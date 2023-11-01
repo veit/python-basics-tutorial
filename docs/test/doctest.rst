@@ -1,17 +1,17 @@
 Doctest
 =======
 
-The Python module  :doc:`doctest <python3:library/doctest>` checks whether tests
-specified in a docstring are fulfilled.
+The Python module :doc:`doctest <python3:library/doctest>` checks whether the
+tests specified in a docstring are fulfilled.
 
-#. In :download:`arithmetic.py` you can add a docstring:
+#. In :download:`arithmetic.py` you can add the following docstring:
 
    .. literalinclude:: arithmetic.py
       :language: python
       :lines: 9-18
       :lineno-start: 9
 
-#. Then you can test it with
+#. Then you can test it with:
 
    .. tab:: Linux/macOS
 

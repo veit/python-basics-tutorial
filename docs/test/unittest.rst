@@ -1,13 +1,14 @@
 Unittest
 ========
 
-:doc:`unittest <python3:library/unittest>` helps you in test automation with
-shared setup and tear down code as well as aggregation and independence of
+:doc:`unittest <python3:library/unittest>` supports you in test automation with
+shared setup and tear-down code as well as aggregation and independence of
 tests.
 
-For this it provides the following test concepts:
+It provides the following test concepts:
 
 .. glossary::
+
    Test Case
        tests a single scenario.
 
@@ -15,52 +16,56 @@ For this it provides the following test concepts:
        is a consistent test environment.
 
        .. seealso::
-          `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
+          * `pytest fixtures <https://docs.pytest.org/en/latest/fixture.html>`_
+          * `About fixtures
+            <https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures>`_
+          * `Fixtures reference
+            <https://docs.pytest.org/en/latest/reference/fixtures.html>`_
+          * `How to use fixtures
+            <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
 
    Test Suite
        is a collection of several :term:`test cases <Test Case>`.
 
    Test Runner
-       runs through a :term:`test suite <Test Suite>` and displays the results.
+       runs through a :term:`Test Suite` and displays the results.
 
 Example
 -------
 
-Suppose you have implemented the following method for adding in the module
-:download:`test_arithmetic.py`:
+Suppose you have implemented the following add method in the
+:download:`test_arithmetic.py` module:
 
 .. literalinclude:: arithmetic.py
    :language: python
    :lines: 1-6
    :lineno-start: 1
 
-… then you can test this method with a unittest.
+… then you can test this method with a Unittest.
 
-#. To do this, first import your module and the unittest module:
+#. To do this, you must first import your module and the unittest module:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 1-3
+      :lines: 1, 6
       :lineno-start: 1
 
-#. Afterwards, you can write a test method that exemplifies your addition
-   method:
+#. Then you can write a test method that illustrates your addition method:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 6-8
+      :lines: 6-9
       :lineno-start: 6
 
-
-#. In order to be able to import the unit tests into other modules as well, you
-   should add the following lines:
+#. In order to import the unittests into other modules, you should add the
+   following lines:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
       :lines: 23-24
       :lineno-start: 23
 
-#. Finally, all tests in :download:`test_arithmetic.py` can be executed with:
+#. Finally, all tests in :download:`test_arithmetic.py` can be executed:
 
    .. tab:: Linux/macOS
 
@@ -84,7 +89,7 @@ Suppose you have implemented the following method for adding in the module
 
          OK
 
-   … or a little more verbose:
+   … or a little more detailed:
 
    .. tab:: Linux/macOS
 
