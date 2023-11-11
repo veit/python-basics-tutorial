@@ -4,6 +4,8 @@ Exploring Python
 Whether you use IDLE or the interactive shell, there are some useful functions
 to explore Python.
 
+.. _help:
+
 ``help()``
 ----------
 

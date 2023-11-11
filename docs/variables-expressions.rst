@@ -53,6 +53,28 @@ Variable names are case-sensitive and can contain any alphanumeric character as
 well as underscores, but must begin with a letter or underscore.
 
 .. note::
+   If you receive a ``SyntaxError``, check whether the variable name is a
+   keyword. Keywords are reserved for use in Python language constructs, so you
+   cannot turn them into variables. After calling :ref:`help` you can enter
+   ``keywords`` to get the keywords:
+
+   .. code-block::
+
+      >>> help()
+      ...
+      help> keywords
+      Here is a list of the Python keywords.  Enter any keyword to get more help.
+      False               class               from                or
+      None                continue            global              pass
+      True                def                 if                  raise
+      and                 del                 import              return
+      as                  elif                in                  try
+      assert              else                is                  while
+      async               except              lambda              with
+      await               finally             nonlocal            yield
+      break               for                 not
+
+.. note::
    You can use a variable name to overwrite built-in functions, types and other
    objects so that they can then only be accessed via the :doc:`builtins
    <python3:library/builtins>` module. These variable names should therefore
