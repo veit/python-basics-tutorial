@@ -9,7 +9,7 @@ create a Vairiable called ``x`` that is to be given the value ``π`` is:
 
 .. code-block:: python
 
-    >>> x = 3.14159
+   >>> pi = 3.14159
 
 In Python, unlike many other programming languages, neither a variable
 declaration nor an end-of-line delimiter is necessary. The line is terminated by
