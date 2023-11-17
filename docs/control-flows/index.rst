@@ -11,6 +11,5 @@ programme flow, including common branches and loops.
    boolean
    if-elif-else
    loops
-   functions
    exceptions
    with
