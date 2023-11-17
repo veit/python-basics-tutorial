@@ -15,7 +15,7 @@ Query data
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 14-15
+      :lines: 14-17
       :lineno-start: 14
 
 #. Select titles containing Python:

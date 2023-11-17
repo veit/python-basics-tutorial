@@ -35,7 +35,7 @@ type.
 
 .. literalinclude:: exceptions.py
    :language: python
-   :lines: 3
+   :lines: 5
 
 A list of different file types is defined.
 
@@ -46,17 +46,18 @@ caught will cause the programme to terminate.
 .. literalinclude:: exceptions.py
    :language: python
    :linenos:
-   :lines: 4-
+   :lines: 7-
+   :lineno-start: 7
 
-Line 2
+Line 7
     If an ``IOError`` or ``EmptyFileError`` occurs during the execution of the
     instructions in the ``try`` block, the corresponding ``except`` block is
     executed.
-Line 3
+Line 9
     An ``IOError`` could be triggered here.
-Line 7
-    Here you trigger the ``EmptyFileError``.
 Line 12
+    Here you trigger the ``EmptyFileError``.
+Line 17
     The ``else`` clause is optional; it is executed if no exception occurs in
     the ``try`` block.
 
@@ -64,6 +65,6 @@ Line 12
        In this example, ``continue`` statements could have been used in the
        ``except`` blocks instead.
 
-Line 14
+Line 19
     The ``finally`` clause is optional; it is executed at the end of the block,
     regardless of whether an exception was thrown or not.
