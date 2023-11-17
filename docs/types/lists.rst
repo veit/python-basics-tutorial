@@ -61,12 +61,12 @@ get an element or a new list that is a slice of it, for example:
     >>> x[1] = "zweitens"
     >>> x[2:3] = []
     >>> x
-    [1, 'zweitens', (5.1, 5.2)]
+    [1, 'zweitens', ['4a', '4b'], (5.1, 5.2)]
     >>> x[2] = [3.1, 3.2, 3.3]
     >>> x
-    [1, 'zweitens', [3.1, 3.2, 3.3]]
+    [1, 'zweitens', [3.1, 3.2, 3.3], (5.1, 5.2)]
     >>> x[2:]
-    [[3.1, 3.2, 3.3]]
+    [[3.1, 3.2, 3.3], (5.1, 5.2)]
 
 Line 3
     The size of the list increases or decreases if the new slice is larger or
