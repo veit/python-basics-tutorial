@@ -237,8 +237,8 @@ it is recommended to simply import the module to explicitly refer to the
     would have priority over those of ``math``. Also, when understanding the
     code, it is much more tedious to find out the source of the functions used.
 
-Commercial rounding
--------------------
+Rounding half to even
+---------------------
 
 Usually Python calculates floating point numbers according to the `IEEE 754
 <https://en.wikipedia.org/wiki/IEEE_754>`_ standard, rounding down numbers in
@@ -246,7 +246,8 @@ the middle half of the time and rounding up in the other half to avoid
 statistical drift in longer calculations. :class:`Decimal
 <python3:decimal.Decimal>` and :data:`ROUND_HALF_UP
 <python3:decimal.ROUND_HALF_UP>` from the decimal module are therefore needed
-for commercial rounding:
+for `rounding half to even
+<https://en.wikipedia.org/wiki/Rounding#Rounding_half_to_even>`_:
 
 .. code-block:: python
 
