@@ -50,6 +50,11 @@ much larger set of characters. Unicode itself is not an encoding but is
 implemented by various character encodings, with UTF-8 probably being the most
 commonly used encoding scheme.
 
+.. note::
+   The Python help documentation has an entry for Unicode: enter ``help()`` and
+   then ``UNICODE``. The various options for creating Python strings are
+   described in detail.
+
 .. seealso::
     * `Unicode HOWTO
       <https://docs.python.org/3/howto/unicode.html#unicode-howto>`_
