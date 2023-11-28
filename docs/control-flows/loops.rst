@@ -83,3 +83,70 @@ the remainder of this iteration is aborted by the ``continue`` statement. The
 flow control is continued with ``x`` being set to the next entry in the list.
 After the first matching integer is found, the loop is terminated with the
 ``break`` statement.
+
+Loops with an index
+-------------------
+
+You can also output the index in a ``for`` loop, for example with
+:py:func:`enumerate()`:
+
+.. code-block:: python
+
+   >>> data_types = ["Data types", "Numbers", "Lists"]
+   >>> for index, title in enumerate(data_types):
+   ...     print(index, title)
+   ...
+   0 Data types
+   1 Numbers
+   2 Lists
+
+List Comprehensions
+-------------------
+
+A list is usually generated as follows:
+
+.. code-block:: python
+
+   >>> squares = []
+   >>> for i in range(8):
+   ...     squares.append(i ** 2)
+   ...
+   >>> squares
+   [0, 1, 4, 9, 16, 25, 36, 49]
+
+Instead of creating an empty list and inserting each element at the end, with
+list comprehensions you simply define the list and its content at the same time
+with just a single line of code:
+
+.. code-block:: python
+
+   >>> squares = [i ** 2 for i in range(8)]
+   >>> squares
+   [0, 1, 4, 9, 16, 25, 36, 49]
+
+The general format for this is:
+
+:samp:`{NEW_LIST} = [{EXPRESSION} for {MEMBER} in {ITERABLE}]`
+
+Each list comprehension in Python contains three elements:
+
+:samp:`{EXPRESSION}`
+    is a call to a method or another valid expression that returns a value. In
+    the example above, the expression ``i ** 2`` is the square of the
+    respective member value.
+:samp:`{MEMBER}`
+    is the object or the value in an :samp:`{ITERABLE}`. In the example above,
+    the value is ``i``.
+:samp:`{ITERABLE}`
+    is a :doc:`list <../types/lists>`, a :doc:`set <../types/sets>`, a generator
+    or another object that can return its elements individually. In the example
+    above, the iterable is ``range(8)``.
+
+You can also use optional conditions with list comprehensions, which are usually
+appended to the end of the expression:
+
+.. code-block:: python
+
+   >>> squares = [i ** 2 for i in range(8) if i >= 4]
+   >>> squares
+   [16, 25, 36, 49]
