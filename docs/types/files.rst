@@ -296,3 +296,21 @@ use to manage files:
 | :py:mod:`zipfile`,                |                                                                               |
 | :py:mod:`tarfile`                 |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
+
+
+.. seealso::
+   * :doc:`Python4DataScience:data-processing/pandas-io`
+   * Examples of serialisation formats :doc:`CSV
+     <Python4DataScience:data-processing/serialisation-formats/csv/example>`,
+     :doc:`JSON
+     <Python4DataScience:data-processing/serialisation-formats/json/example>`,
+     :doc:`Excel
+     <Python4DataScience:data-processing/serialisation-formats/excel>`,
+     :doc:`XML/HTML
+     <Python4DataScience:data-processing/serialisation-formats/xml-html/index>`,
+     :doc:`YAML
+     <Python4DataScience:data-processing/serialisation-formats/yaml/example>`,
+     :doc:`TOML
+     <Python4DataScience:data-processing/serialisation-formats/toml/example>`
+     und :doc:`Pickle
+     <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`.
