@@ -4,6 +4,7 @@ Lists
 Python has a powerful built-in list type:
 
 .. code-block:: python
+   :linenos:
 
     []
     [1]
@@ -72,32 +73,81 @@ Line 3
     The size of the list increases or decreases if the new slice is larger or
     smaller than the slice it replaces.
 
-Some built-in functions (``len``, ``max`` and ``min``), some operators (``in``,
-``+`` and ``*``), the ``del`` statement and the list methods (``append``,
-``count``, ``extend``, ``index``, ``insert``, ``pop``, ``remove``, ``reverse``
-and ``sort``) work with lists:
+Slices also allow a step-by-step selection between the start and end indices.
+The default value for an unspecified stride is ``1``, which takes every element
+from a sequence between the indices. With a stride of ``2``, every second
+element is taken and so on:
 
 .. code-block:: python
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+   >>> x[0:3:2]
+   [1, [3.1, 3.2, 3.3]]
+   >>> x[::2]
+   [1, [3.1, 3.2, 3.3]]
+   >>> x[1::2]
+   ['zweitens', (5.1, 5.2)]
+
+The stride value can also be negative. A ``-1`` stride means counting from right
+to left:
+
+.. code-block:: python
+   :linenos:
+
+   >>> x[3:0:-2]
+   [(5.1, 5.2), 'zweitens']
+   >>> x[::-2]
+   [(5.1, 5.2), 'zweitens']
+   >>> x[::-1]
+   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1]
+
+Line 1
+    To use a negative increment, the start slice should be larger than the end
+    slice.
+Line 3
+    The exception is if you omit the start and end indices.
+Line 5
+    A stride of ``-1`` reverses the order.
+
+Some functions of the slice notation can also be executed with special
+operations, which improves the readability of the code:
+
+.. code-block:: python
+   :linenos:
+
+   >>> x.reverse()
+   >>> x
+   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1]
+
+You can also use the following built-in functions (``len``, ``max`` and
+``min``), some operators (``in``, ``+`` and ``*``), the ``del`` statement and
+the list methods (``append``, ``count``, ``extend``, ``index``, ``insert``,
+``pop``, ``remove``, ``reverse`` and ``sort``) for lists:
+
+.. code-block:: python
+   :linenos:
+
     >>> len(x)
-    5
-    >>> [-1, 0] + x
-    [-1, 0, 1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
+    4
+    >>> x + [0, -1]
+    [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1]
     >>> x.reverse()
     >>> x
-    [(5.1, 5.2), ['4a', '4b'], 3.0, '2.', 1]
+    [1, 'zweitens', [3.1, 3.2, 3.3], (5.1, 5.2)]
 
-Line 4
+Line 3
     The operators ``+`` and ``*`` each create a new list, leaving the original
     list unchanged.
-Line 6
+Line 5
     The methods of a list are called using the attribute notation for the list
-    itself: ``x.METHOD(ARGUMENTS)``.
+    itself: ``:samp:`{LIST}.METHOD(ARGUMENTS)``.
 
 Some of these operations repeat functions that can be performed using slice
 notation, but they improve the readability of the code.
+
+.. seealso::
+   * :doc:`Select and filter data with pandas
+     <Python4DataScience:workspace/pandas/select-filter>`
 
 Summary
 -------
