@@ -10,7 +10,7 @@ program reads a line from a text file called :samp:`{myfile.txt}`:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
 
 :func:`python3:open` does not read anything from the file, but returns a
@@ -32,7 +32,7 @@ Documents\\myfile}`:
 
     >>> import os
     >>> pathname = os.path.join("C:/", "Users", "Veit", "Documents", "myfile.txt")
-    >>> with open(pathname, 'r') as f:
+    >>> with open(pathname, "r") as f:
     ...     line = f.readline()
 
 .. note::
@@ -56,7 +56,7 @@ file object is no longer needed:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
     >>> f.close()
 
@@ -65,23 +65,23 @@ automatically close files when you are done:
 
 .. code-block:: python
 
-    >>> with open('docs/types/myfile.txt', 'r') as f:
+    >>> with open("docs/types/myfile.txt", "r") as f:
     ...     line = f.readline()
 
 Opening files in write or other modes
 -------------------------------------
 
 The second argument of the :func:`python3:open` function is a string that
-specifies how the file should be opened. ``'r'`` opens the file for reading,
-``'w'`` opens the file for writing, and ``'a'`` opens the file for attaching. If
+specifies how the file should be opened. ``"r"`` opens the file for reading,
+``"w"`` opens the file for writing, and ``"a"`` opens the file for attaching. If
 you want to open the file for reading, you can omit the second argument, because
-``'r'`` is the default value. The following short program writes :samp:`Hi,
+``"r"`` is the default value. The following short program writes :samp:`Hi,
 Pythonistas!` to a file:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'w')
-    >>> f.write('Hi, Pythonistas!\n')
+    >>> f = open("docs/types/myfile.txt", "w")
+    >>> f.write("Hi, Pythonistas!\n")
     17
     >>> f.close()
 
@@ -107,9 +107,9 @@ determine, for example, the number of lines in a file:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
-    >>> while f.readline() != '':
+    >>> while f.readline() != "":
     ...     lc = lc + 1
     ...
     >>> print(lc)
@@ -122,7 +122,7 @@ with one string per line:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> print(len(f.readlines()))
     1
     >>> f.close()
@@ -137,7 +137,7 @@ treat the file object as an iterator in a :ref:`for-loop`:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
@@ -153,12 +153,12 @@ done in text mode on Windows and macOS if you use the :func:`open` command in
 text mode, that is without appending a ``b``. In text mode on macOS, each ``\r``
 is converted to ``\n``, while on Windows, ``\r\n`` pairs are converted to
 ``\n``. You can specify how line breaks are handled by using the ``newline``
-parameter when opening the file and specifying ``newline='\n'``, ``\r`` or
+parameter when opening the file and specifying ``newline="\n"``, ``\r`` or
 ``\r\n``, which will cause only that string to be used as a line break:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r', newline='\n')
+    >>> f = open("docs/types/myfile.txt", "r", newline="\n")
 
 In this example, only ``\n`` is considered a line break. However, if the file
 was opened in binary mode, the ``newline`` parameter is not necessary, as all
@@ -171,7 +171,7 @@ embedded in the string, as in the following example:
 
 .. code-block:: python
 
-    f.write('Hi, Pythinistas!\n\n')
+    f.write("Hi, Pythinistas!\n\n")
 
 The ``writelines`` method is confusing, however, because it does not necessarily
 write multiple lines; it takes a list of strings as an argument and writes them
@@ -185,10 +185,10 @@ exact copy of :file:`myfile.txt` named :file:`myfile2.txt`:
 
 .. code-block:: python
 
-    >>> input_file = open("myfile.txt", 'r')
+    >>> input_file = open("myfile.txt", "r")
     >>> lines = input_file.readlines()
     >>> input_file.close()
-    >>> output_file = open("myfile2.txt", 'w')
+    >>> output_file = open("myfile2.txt", "w")
     >>> output_file.writelines(lines)
     >>> output_file.close()
 
@@ -205,7 +205,7 @@ specified size:
 .. code-block:: python
     :linenos:
 
-    >>> f = open('myfile.txt', 'rb')
+    >>> f = open("myfile.txt", "rb")
     >>> head = f.read(16)
     >>> print(head)
     b'Hi, Pythonistas!'
