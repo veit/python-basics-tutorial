@@ -1,4 +1,7 @@
 -c constraints.txt
+furo
+sphinxext.opengraph
+sphinx_copybutton
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
 sphinxcontrib-svg2pdfconverter
