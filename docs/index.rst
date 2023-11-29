@@ -29,6 +29,7 @@ familiarity with Python and enable you to quickly write your own programs.
    libs/index
    oop/index
    save-data/index
+   dataclasses
    test/index
    document/index
    appendix/index
