@@ -229,6 +229,81 @@ This instructs Coverage.py to exclude either a single line or a block of code.
 If, as in this case, the pragma is in the ``if`` statement, you do not have to
 insert it into both lines of code.
 
+Alternatively, this can also be configured for all occurrences:
+
+.. tab:: :file:`.coveragerc`
+
+   .. code-block:: ini
+
+      [run]
+      branch = True
+
+      [report]
+      ; Regexes for lines to exclude from consideration
+      exclude_also =
+
+          ; Don’t complain if tests don’t hit defensive assertion code:
+          raise AssertionError
+          raise NotImplementedError
+
+          ; Don't complain if non-runnable code isn’t run:
+          if __name__ == .__main__.:
+
+      ignore_errors = True
+
+      [html]
+      directory = coverage_html_report
+
+.. tab:: :file:`pyproject.toml`
+
+   .. code-block:: toml
+
+      [tool.coverage.run]
+      branch = true
+
+      [tool.coverage.report]
+      # Regexes for lines to exclude from consideration
+      exclude_also = [
+          # Don’t complain if tests don’t hit defensive assertion code:
+          "raise AssertionError",
+          "raise NotImplementedError",
+
+          # Don’t complain if non-runnable code isn’t run:
+          "if __name__ == .__main__.:",
+          ]
+
+      ignore_errors = true
+
+      [tool.coverage.html]
+      directory = "coverage_html_report"
+
+.. tab:: :file:`setup.cfg`, :file:`tox.ini`
+
+   .. code-block:: ini
+
+      [coverage:run]
+      branch = True
+
+      [coverage:report]
+      ; Regexes for lines to exclude from consideration
+      exclude_also =
+
+          ; Don’t complain if tests don’t hit defensive assertion code:
+          raise AssertionError
+          raise NotImplementedError
+
+          ; Don’t complain if non-runnable code isn’t run:
+          if __name__ == .__main__.:
+
+      ignore_errors = True
+
+      [coverage:html]
+      directory = coverage_html_report
+
+.. seealso::
+   `Configuration reference
+   <https://coverage.readthedocs.io/en/latest/config.html>`_
+
 Extensions
 ----------
 
