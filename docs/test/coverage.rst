@@ -55,7 +55,7 @@ The normal pytest output is followed by the coverage report, as shown here:
 
     $ cd /PATH/TO/items
     $ python3 -m venv .
-    $ . bin/acitvate
+    $ . bin/activate
     $ python -m pip install ".[dev]"
     $ pytest --cov=items
     ============================= test session starts ==============================
