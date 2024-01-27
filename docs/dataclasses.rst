@@ -1,9 +1,9 @@
 ``dataclasses``
 ===============
 
-Data classes were introduced in Python 3.7 and are a special shortcut with which
-we can create classes that store data. Python offers a special :doc:`decorator
-<functions/decorators>` if we want to create such a class.
+:doc:`dataclasses <python3:library/dataclasses>` were introduced in Python 3.7 and are a
+special shortcut with which we can create classes that store data. Python offers a special
+:doc:`decorator <functions/decorators>` if we want to create such a class.
 
 .. note::
    For table data I generally use :doc:`pandas Series or DataFrames
