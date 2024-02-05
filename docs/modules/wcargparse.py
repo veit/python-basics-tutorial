@@ -1,4 +1,5 @@
 """wc module. Contains function: words_occur()"""
+
 from argparse import ArgumentParser
 
 
