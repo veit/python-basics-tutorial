@@ -16,7 +16,7 @@ class Form:
 class Square(Form):
     """Square Class:inherits from Form"""
 
-    def __init__(self, side=1, x=0, y=0):
+    def __init__(self, length=1, x=0, y=0):
         super().__init__(x, y)
         self.length = length
 
