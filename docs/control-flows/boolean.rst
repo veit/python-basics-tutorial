@@ -14,12 +14,28 @@ or ``False``:
 
 .. code-block:: python
 
-    >>> x = 5
-    >>> y = 3
+    >>> x = 3
+    >>> y = 3.0
     >>> z = [3, 4, 5]
+    >>> x == y
+    True
     >>> x is y
     False
-    >>> x is not y
+    >>> x == y
     True
     >>> x in z
     True
+
+However, you should never compare calculated floating point numbers with each
+other:
+
+.. code-block:: python
+
+    >>> u = 0.6 * 7
+    >>> v = 0.7 * 6
+    >>> u == v
+    False
+    >>> u
+    4.2
+    >>> v
+    4.199999999999999
