@@ -7,24 +7,49 @@ example, the empty list ``[]`` or the empty string ``""``) are all considered
 ``False``. The Boolean constant ``True`` and everything else is considered
 ``True``.
 
-You can create comparison expressions by using the comparison operators (``<``,
-``<=``, ``==``, ``>``, ``>=``, ``!=``, ``is``, ``is not``, ``in``, ``not in``)
-and the logical operators (``and``, ``not``, ``or``) , which all return ``True``
-or ``False``:
+``<``, ``<=``, ``==``, ``>``, ``>=``
+    compares values.
+``is``, ``is not``, ``in``, ``not in``
+    checks the identity.
+``and``, ``not``, ``or``
+    are logical operators that can be used to link the above checks.
 
 .. code-block:: python
 
-    >>> x = 3
-    >>> y = 3.0
-    >>> z = [3, 4, 5]
-    >>> x == y
-    True
-    >>> x is y
+   >>> x = 3
+   >>> y = 3.0
+   >>> z = [3, 4, 5]
+   >>> x == y
+   True
+   >>> x is y
+   False
+   >>> x is not y
+   True
+   >>> x in z
+   True
+   >>> id(x)
+   4375911432
+   >>> id(y)
+   4367574480
+   >>> id(z[0])
+   4375911432
+
+If ``x`` and ``z[0]`` have the same ID in memory, this means that we are
+referring to the same object in two places.
+
+Most frequently, ``is`` and ``is not`` are used in conjunction with
+:doc:`../types/none`:
+
+.. code-block:: python
+
+    >>> x is None
     False
-    >>> x == y
+    >>> x is not None
     True
-    >>> x in z
-    True
+
+The Python style guide in :pep:`8` says that you should use identity to compare
+with :doc:`../types/none`. So you should never use ``x == None``, but enter ``x
+is None`` instead.
 
 However, you should never compare calculated floating point numbers with each
 other:

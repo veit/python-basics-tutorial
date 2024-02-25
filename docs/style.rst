@@ -52,33 +52,30 @@ prescribed. However, there are preferred stylistic conventions for Python, which
 are contained in the *Python Enhancement Proposal* (PEP) 8. A selection of
 Python conventions can be found in the following table:
 
-+-----------------------+-----------------------+-------------------------------+
-| Context               | Recommendation        | Example                       |
-+=======================+=======================+===============================+
-| Module and package    | short, lower case,    | ``math``, ``sys``             |
-| names                 | underscores only if   |                               |
-|                       | necessary             |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Function names        | lower case,           | ``my_func()``                 |
-|                       | underscores if        |                               |
-|                       | necessary             |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Variable names        | lower case, with      | ``my_var``                    |
-|                       | underscores if        |                               |
-|                       | necessary             |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Class names           | CamelCase notation    | ``MyClass``                   |
-+-----------------------+-----------------------+-------------------------------+
-| Constant names        | Capital letters with  | ``PI``                        |
-|                       | underscores           |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Indentation           | Four spaces per level,|                               |
-|                       | no tabs               |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Compare               | not explicitly with   | ``if my_var:``,               |
-|                       | ``True`` or           | ``if not my_var:``            |
-|                       | ``False``             |                               |
-+-----------------------+-----------------------+-------------------------------+
++-----------------------+-------------------------------+-------------------------------+
+| Context               | Recommendation                | Example                       |
++=======================+===============================+===============================+
+| Module and package    | short, lower case,            | ``math``, ``sys``             |
+| names                 | underscores only if necessary |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Function names        | lower case, underscores if    | ``my_func()``                 |
+|                       | necessary                     |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Variable names        | lower case, with underscores  | ``my_var``                    |
+|                       | if necessary                  |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Class names           | CamelCase notation            | ``MyClass``                   |
++-----------------------+-------------------------------+-------------------------------+
+| Constant names        | Capital letters with          | ``PI``                        |
+|                       | underscores                   |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Indentation           | Four spaces per level, no     |                               |
+|                       | tabs                          |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Compare               | not explicitly with ``True``  | ``if my_var:``,               |
+|                       | or ``False``, see also        | ``if not my_var:``            |
+|                       | :doc:`control-flows/boolean`  |                               |
++-----------------------+-------------------------------+-------------------------------+
 
 .. seealso::
 
