@@ -552,6 +552,10 @@ The :py:mod:`ipaddress` module of Python also supports the formatting of
 Finally, third-party libraries can also add their own support for formatting
 strings by adding a ``__format__`` method to their objects.
 
+.. seealso::
+   * :ref:`format-codes`
+   * `Python strftime cheatsheet <https://strftime.org>`_
+
 Built-in modules for strings
 ----------------------------
 
