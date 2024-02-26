@@ -31,4 +31,4 @@ sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
 sphinxcontrib-svg2pdfconverter==1.2.2
 sphinxext-opengraph==0.9.1
-urllib3==2.2.0
+urllib3==2.2.1
