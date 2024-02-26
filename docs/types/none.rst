@@ -47,8 +47,8 @@ For example, we can check whether :doc:`../types/strings` are empty in an
 .. code-block:: python
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
-   >>> sets = titles.get("7.3")
-   >>> print(sets)
+   >>> third_title = titles.get("7.3")
+   >>> print(third_title)
    None
 
 The default return value of a function is :class:`None`
