@@ -13,6 +13,23 @@ The versions follow `Semantic Versioning <https://semver.org/lang/de/>`_:
 
 .. _changelog
 
+24.1.0
+
+* 🌱 Add matplotlib for social cards
+* 🔧 Use git tag for versioning the docs
+* 📝 Add links for strftime
+* 📝 Update None type
+* 📝 Update the review of values and identity
+* 📝 Update comparative expressions
+* 📝 Update dataprep example
+* 🎨 pre-commit fixes
+* 📝 Add link to dataclasses
+* 📝 Update publishining gpackages
+
+  * Add trusted publisher
+
+* 📝 Add exclude_also to coverage configs
+
 1.0.0
 
 * 🔖 Update to 1.0.0, add changelog
