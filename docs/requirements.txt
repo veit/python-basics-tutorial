@@ -1,6 +1,8 @@
 -c constraints.txt
 furo
 sphinxext.opengraph
+# matplotlib is required for social cards
+matplotlib
 sphinx_copybutton
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
