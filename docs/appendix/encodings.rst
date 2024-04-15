@@ -89,7 +89,7 @@ The result of ``str.encode()`` is a :ref:`bytes <python3:typebytes>` object.
 Both byte literals (such as ``b'You\xe2\x80\x99re welcome!'``) and
 representations of bytes only allow ASCII characters. For this reason, when
 calling ``"You’re welcome!".encode("utf-8")``, the ASCII-compatible ``'You'``
-may be represented as it is, but the `’ <https://unicode-table.com/en/2019/>`_
+may be represented as it is, but the `’ <https://symbl.cc/en/2019/>`_
 becomes ``'\xe2\x80\x99'``. This chaotic looking sequence represents three
 bytes, ``e2``, ``80`` and ``99`` as hexadecimal values.
 
