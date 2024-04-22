@@ -5,7 +5,7 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 contourpy==1.2.1
 cycler==0.12.1
-docutils==0.20.1
+docutils==0.21.1
 fonttools==4.51.0
 furo==2024.1.29
 idna==3.7
