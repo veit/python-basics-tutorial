@@ -393,6 +393,8 @@ collects all required licence files automatically and ``setuptools`` can build
 universal ``wheel`` packages with the ``options`` keyword argument, for example
 :file:`dataprep-0.1.0-py3-none-any.whl`.
 
+.. _manifest-in:
+
 :file:`MANIFEST.in`
 ~~~~~~~~~~~~~~~~~~~
 
