@@ -5,7 +5,7 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 contourpy==1.2.1
 cycler==0.12.1
-docutils==0.20.1
+docutils==0.21.2
 fonttools==4.51.0
 furo==2024.1.29
 idna==3.7
@@ -22,12 +22,12 @@ Pygments==2.17.2
 pygments-pytest==2.4.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
-regex==2023.12.25
+regex==2024.4.16
 requests==2.31.0
 six==1.16.0
 snowballstemmer==2.2.0
 soupsieve==2.5
-Sphinx==7.2.6
+Sphinx==7.3.7
 sphinx-basic-ng==1.0.0b2
 sphinx-copybutton==0.5.2
 sphinx-lint==0.9.1
