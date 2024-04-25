@@ -12,6 +12,17 @@ installed, that is no problem either.
    version of Python exists in your Linux distribution, I recommend you to use
    it.
 
+   If you still want to install a more up-to-date Python version, you can do
+   this for Debian or Ubuntu, for example, as follows:
+
+   .. code-block:: console
+
+      $ wget https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
+      $ tar xf Python-3.12.3.tgz
+      $ cd Python-3.12.3
+      $ ./configure --enable-optimizations
+      $ sudo make altinstall
+
 .. tab:: macOS
 
    You need a Python version that matches your macOS and processor. Once you
