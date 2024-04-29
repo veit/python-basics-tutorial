@@ -316,14 +316,6 @@ find a number of extensions for Coverage.
 Test coverage of all tests with GitHub actions
 ----------------------------------------------
 
-This instructs Coverage.py to exclude either a single line or a block of code. If, as in this case, the pragma is in the if statement, you do not have to insert it into both lines of code.
-
-Extensions
-In Coverage.py plugins you will also find a number of extensions for Coverage.
-
-Test coverage of all tests with GitHub actions
-----------------------------------------------
-
 After you have checked the test coverage, you can upload the files as GitHub
 actions, for example in a :download:`ci.yaml` as artefacts, so that you can reuse
 them later in other jobs:
