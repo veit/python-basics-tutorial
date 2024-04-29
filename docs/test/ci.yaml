@@ -1,6 +1,4 @@
-# Run CI
-
-name: "CI"
+name: CI
 
 on:
   push:
@@ -10,8 +8,8 @@ on:
 
 jobs:
   tests:
-    name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
-    runs-on: "${{ matrix.os }}"
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
@@ -21,59 +19,59 @@ jobs:
           - macos-latest
           - windows-latest
         python-version:
-          - "3.7"
           - "3.8"
           - "3.9"
           - "3.10"
           - "3.11"
+          - "3.12"
 
     steps:
-      - name: "Check out the repo"
-        uses: "actions/checkout@v3"
+      - name: Check out the repo
+        uses: actions/checkout@v4
 
-      - name: "Set up Python"
-        uses: "actions/setup-python@v4"
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "${{ matrix.python-version }}"
+          python-version: ${{ matrix.python-version }}
 
-      - name: "Install dependencies"
+      - name: Install dependencies
         run: |
           python -m pip install tox tox-gh-actions
 
-      - name: "Run tox for ${{ matrix.python-version }}"
+      - name: Run tox for ${{ matrix.python-version }}
         run: |
           python -m tox
 
-      - name: "Upload coverage data"
-        uses: actions/upload-artifact@v3
+      - name: Upload coverage data
+        uses: actions/upload-artifact@v4
         with:
-          name: "coverage-data"
+          name: coverage-data
           path: .coverage.*
           if-no-files-found: ignore
 
   coverage:
-    name: "Combine and check coverage"
+    name: Combine and check coverage
     needs: tests
     runs-on: ubuntu-latest
     steps:
-      - name: "Check out the repo"
-        uses: "actions/checkout@v3"
+      - name: Check out the repo
+        uses: actions/checkout@v4
 
-      - name: "Set up Python"
-        uses: "actions/setup-python@v4"
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: 3.12
 
-      - name: "Install dependencies"
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade coverage[toml]
 
-      - name: "Download coverage data"
-        uses: actions/download-artifact@v3
+      - name: Download coverage data
+        uses: actions/download-artifact@v4
         with:
-          name: "coverage-data"
+          name: coverage-data
 
-      - name: "Combine coverage and fail it it’s under 100 %"
+      - name: Combine coverage and fail it it’s under 100 %
         run: |
           python -m coverage combine
           python -m coverage html --skip-covered --skip-empty
@@ -84,15 +82,15 @@ jobs:
           # Report again and fail if under 100%.
           python -Im coverage report --fail-under=100
 
-      - name: "Upload HTML report if check failed"
-        uses: actions/upload-artifact@v3
+      - name: Upload HTML report if check failed
+        uses: actions/upload-artifact@v4
         with:
           name: html-report
           path: htmlcov
         if: ${{ failure() }}
 
-      - name: "Create badge"
-        uses: schneegans/dynamic-badges-action@v1.6.0
+      - name: Create badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
         with:
           auth: ${{ secrets.GIST_TOKEN }}
           gistID: YOUR_GIST_ID

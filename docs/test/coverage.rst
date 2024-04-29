@@ -322,8 +322,8 @@ them later in other jobs:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 47-52
-   :lineno-start: 47
+   :lines: 45-50
+   :lineno-start: 45
 
 ``if-no-files-found: ignore``
     is useful if you don’t want to measure the test coverage for all Python
@@ -335,8 +335,8 @@ results:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 54-92
-   :lineno-start: 54
+   :lines: 52-90
+   :lineno-start: 52
 
 ``needs: tests``
     ensures that all tests are performed. If your job that runs the tests has a
@@ -369,8 +369,8 @@ as follows:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 94-
-   :lineno-start: 94
+   :lines: 92-
+   :lineno-start: 92
 
 Line 97
     ``GIST_TOKEN`` is a personal GitHub access token.
