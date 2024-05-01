@@ -211,15 +211,17 @@ other. It is also possible to run them in parallel with the ``-p`` option:
 
 .. code-block:: pytest
 
-    $ tox -p
-    py38: SKIP ⚠ in 0.02 seconds
-    py310: SKIP ⚠ in 0.29 seconds
-    py311: OK ✔ in 1.53 seconds
-      py38: SKIP (0.02 seconds)
-      py39: OK (2.21=setup[1.88]+cmd[0.33] seconds)
-      py310: SKIP (0.29 seconds)
-      py311: OK (1.53=setup[1.24]+cmd[0.29] seconds)
-      congratulations :) (2.24 seconds)
+    $ python -m tox -p
+    py38: SKIP ⚠ in 0.07 seconds
+    py310: SKIP ⚠ in 0.07 seconds
+    py312: OK ✔ in 1.7 seconds
+    py311: OK ✔ in 1.75 seconds
+      py38: SKIP (0.07 seconds)
+      py39: OK (2.42=setup[2.01]+cmd[0.41] seconds)
+      py310: SKIP (0.07 seconds)
+      py311: OK (1.75=setup[1.35]+cmd[0.40] seconds)
+      py312: OK (1.70=setup[1.30]+cmd[0.40] seconds)
+      congratulations :) (2.47 seconds)
 
 .. note::
    The output is not abbreviated; this is the full output you will see if
@@ -235,61 +237,67 @@ the ``pytest-cov`` plugin is installed in the tox test environments. Including
 extend commands to ``pytest --cov=items``:
 
 .. code-block::
-   :emphasize-lines: 10-
+   :emphasize-lines: 12-
 
-   [tox]
-   envlist = py38, py39, py310, py311
-   isolated_build = True
-   skip_missing_interpreters = True
+    [tox]
+    envlist = py3{8,9,10,11,12}
+    isolated_build = True
+    skip_missing_interpreters = True
 
-   [testenv]
-   deps =
-     pytest
+    [testenv]
+    deps =
+     pytest>=6.0
      faker
-     pytest-cov
-   commands = pytest --cov=items
+    commands = pytest
 
-When using Coverage with tox, it can sometimes be useful to set up a
-:file:`.coveragerc` file to tell Coverage which source code paths should be
-considered identical:
+    [testenv:coverage-report]
+    description = Report coverage over all test runs.
+    deps = coverage[toml]
+    skip_install = true
+    allowlist_externals = coverage
+    commands =
+      coverage combine
+      coverage report
+
+When using Coverage with ``tox``, it can sometimes be useful to add a section in
+the :file:`:file:`pyproject.toml`` file to tell Coverage which source code paths
+should be considered identical:
 
 .. code-block:: ini
 
-    [paths]
-    source =
-       src
-       .tox/*/site-packages
+    [tool.coverage.paths]
+    source = ["src", ".tox/py*/**/site-packages"]
 
 The items source code is initially located in :file:`src/items/` before tox
 creates the virtual environments and installs items in the environment. It is
-then located in :file:`.tox/py311/lib/python3.11/site-packages/items`, for
+then located in :file:`.tox/py312/lib/python3.12/site-packages/items`, for
 example.
 
 .. code-block:: pytest
-   :emphasize-lines: 1
+   :emphas:
+   ize-lines: 1
 
-    $ tox -e py311
+    $ python -m tox
     ...
-    py311: commands[0]> pytest --cov=items
-    ...
-    ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
-    Name                                                        Stmts   Miss  Cover
-    -------------------------------------------------------------------------------
-    .tox/py311/lib/python3.11/site-packages/items/__init__.py       3      0   100%
-    .tox/py311/lib/python3.11/site-packages/items/api.py           68      1    99%
-    .tox/py311/lib/python3.11/site-packages/items/cli.py           86      0   100%
-    .tox/py311/lib/python3.11/site-packages/items/db.py            23      0   100%
-    -------------------------------------------------------------------------------
-    TOTAL                                                         180      1    99%
-
-
-    ============================== 49 passed in 0.17s ==============================
-    ...
-      py311: OK (1.85=setup[1.34]+cmd[0.51] seconds)
-      congratulations :) (1.89 seconds)
-
-.. note::
-   We have used the ``-e py311`` option here to select a specific environment.
+    coverage-report: install_deps> python -I -m pip install 'coverage[toml]'
+    coverage-report: commands[0]> coverage combine
+    Combined data file .coverage.fay.local.74688.XgGaASxx
+    Skipping duplicate data .coverage.fay.local.74695.XmMjaOox
+    Skipping duplicate data .coverage.fay.local.74702.XUQUSgdx
+    coverage-report: commands[1]> coverage report
+    Name               Stmts   Miss Branch BrPart  Cover   Missing
+    --------------------------------------------------------------
+    src/items/api.py      68      1     16      1    98%   52
+    --------------------------------------------------------------
+    TOTAL                428      1    118      1    99%
+    27 files skipped due to complete coverage.
+      py38: SKIP (0.02 seconds)
+      py39: OK (6.24=setup[5.06]+cmd[1.18] seconds)
+      py310: SKIP (0.01 seconds)
+      py311: OK (3.97=setup[2.77]+cmd[1.20] seconds)
+      py312: OK (3.80=setup[2.67]+cmd[1.13] seconds)
+      coverage-report: OK (1.53=setup[0.90]+cmd[0.54,0.09] seconds)
+      congratulations :) (15.59 seconds)
 
 Set minimum coverage
 --------------------
@@ -298,47 +306,20 @@ When executing coverage by tox, it also makes sense to define a minimum coverage
 level in order to recognise any coverage failures. This is achieved with the
 ``--cov-fail-under`` option:
 
-.. code-block:: ini
-   :emphasize-lines: 11
+.. code-block:: console
+    :emphasize-lines: 9
 
-   [tox]
-   envlist = py38, py39, py310, py311
-   isolated_build = True
-   skip_missing_interpreters = True
+    $ python -m coverage report --fail-under=100
+    Name               Stmts   Miss Branch BrPart  Cover   Missing
+    --------------------------------------------------------------
+    src/items/api.py      68      1     16      1    98%   52
+    --------------------------------------------------------------
+    TOTAL                428      1    118      1    99%
 
-   [testenv]
-   deps =
-     pytest
-     faker
-     pytest-cov
-   commands = pytest --cov=items --cov-fail-under=100
+    27 files skipped due to complete coverage.
+     overage failure: total of 99 is less than fail-under=100
 
-This adds an additional line to the output:
-
-.. code-block:: pytest
-   :emphasize-lines: 15
-
-    $ tox -e py311
-    ...
-    ============================= test session starts ==============================
-    ...
-    ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
-    Name                                                        Stmts   Miss  Cover
-    -------------------------------------------------------------------------------
-    .tox/py311/lib/python3.11/site-packages/items/__init__.py       3      0   100%
-    .tox/py311/lib/python3.11/site-packages/items/api.py           68      1    99%
-    .tox/py311/lib/python3.11/site-packages/items/cli.py           86      0   100%
-    .tox/py311/lib/python3.11/site-packages/items/db.py            23      0   100%
-    -------------------------------------------------------------------------------
-    TOTAL                                                         180      1    99%
-
-    FAIL Required test coverage of 100% not reached. Total coverage: 99.44%
-
-    ============================== 49 passed in 0.16s ==============================
-    py311: exit 1 (0.43 seconds) /PATH/TO/items> pytest --cov=items --cov-fail-under=100 pid=58109
-    .pkg: _exit> python /PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-      py311: FAIL code 1 (1.65=setup[1.22]+cmd[0.43] seconds)
-      evaluation failed :( (1.68 seconds)
+This adds the highlighted line to the output.
 
 .. _posargs:
 
@@ -349,51 +330,57 @@ We can also call individual tests with tox by making another change so that
 parameters can be passed to pytest:
 
 .. code-block:: ini
-   :emphasize-lines: 11
+   :emphasize-lines: 17
 
     [tox]
-    envlist = py38, py39, py310, py311
+    envlist =
+        pre-commit
+        docs
+        py3{8,9,10,11,12}
+        coverage-report
     isolated_build = True
     skip_missing_interpreters = True
 
     [testenv]
+    extras =
+      tests: tests
     deps =
-      pytest
-      faker
-      pytest-cov
-    commands = pytest --cov=items --cov-fail-under=100  {posargs}
+      tests: coverage[toml]
+    allowlist_externals = coverage
+    commands =
+      coverage run -m pytest {posargs}
 
-To pass arguments to pytest, insert them between the tox arguments and the pytest
-arguments. In this case, we select ``test_version`` tests with the ``-k`` keyword
-option. We also use ``--no-cov`` to disable coverage:
+To pass arguments to pytest, insert them between the tox arguments and the
+pytest arguments. In this case, we select ``test_version`` tests with the ``-k``
+keyword option. We also use ``--no-cov`` to disable coverage:
 
 .. code-block:: pytest
    :emphasize-lines: 1, 3
 
-    $ tox -e py311 -- -k test_version --no-cov
+    $ tox -e py312 -- -k test_version --no-cov
     ...
-    py311: commands[0]> pytest --cov=items --cov-fail-under=100 -k test_version --no-cov
+    py312: commands[0]> coverage run -m pytest -k test_version --no-cov
     ============================= test session starts ==============================
     ...
     configfile: pyproject.toml
     testpaths: tests
-    plugins: cov-4.1.0, Faker-19.11.0
+    plugins: cov-5.0.0, Faker-25.0.0
     collected 49 items / 47 deselected / 2 selected
 
     tests/api/test_version.py .                                              [ 50%]
     tests/cli/test_version.py .                                              [100%]
 
-    ======================= 2 passed, 47 deselected in 0.04s =======================
-    .pkg: _exit> python /PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-      py311: OK (1.51=setup[1.25]+cmd[0.26] seconds)
-      congratulations :) (1.53 seconds)
+    ======================= 2 passed, 47 deselected in 0.09s =======================
+    .pkg: _exit> python /Users/veit/cusy/prj/items_env/lib/python3.12/site-packages/pyproject_api/_backend.py True hatchling.build
+      py312: OK (2.22=setup[1.12]+cmd[1.10] seconds)
+      congratulations :) (2.25 seconds)
 
-tox is not only ideal for the local automation of test processes, but also helps
-with server-based :term:`CI`. Let’s continue with the execution of pytest and tox
-using GitHub actions.
+``tox`` is not only ideal for the local automation of test processes, but also
+helps with server-based :term:`CI`. Let’s continue with the execution of pytest
+and tox using GitHub actions.
 
-Running tox with GitHub actions
--------------------------------
+Running ``tox`` with GitHub actions
+-----------------------------------
 
 If your project is hosted on `GitHub <https://github.com/>`_, you can use GitHub
 actions to automatically run your tests in different environments. A whole range
@@ -406,50 +393,47 @@ of environments are available for GitHub actions:
    :file:`.github/workflows/main.yml` file.
 #. Give this file a more descriptive name. We usually use :file:`ci.yml` for
    this.
-#. The prefilled YAML file is not very helpful for our purposes. You can replace
-   the text, for example with:
+#. The prefilled YAML file is not very helpful for our purposes. You can add a
+   ``coverage`` section, for example with:
 
    .. code-block:: yaml
 
-      name: CI
-      on: [push, pull_request]
       jobs:
-        build:
+        coverage:
+          name: Ensure 99% test coverage
           runs-on: ubuntu-latest
-          strategy:
-            matrix:
-              python: ["3.8", "3.9", "3.10", "3.11"]
+          needs: tests
+          if: always()
           steps:
-            - uses: actions/checkout@v2
-            - name: Setup Python
-              uses: actions/setup-python@v2
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
               with:
-                python-version: ${{ matrix.python }}
-            - name: Install tox and any other packages
-              run: python -m pip install tox tox-gh-actions
-            - name: Run tox for "${{ matrix.python }}"
-              run: python -m tox
+                cache: pip
+                python-version: 3.12
+            - name: Download coverage data
+              uses: actions/download-artifact@v4
+              with:
+                pattern: coverage-data-*
+                merge-multiple: true
+            - name: Combine coverage and fail if it’s <99%.
+              run: |
+                python -m pip install --upgrade coverage[toml]
+                python -m coverage combine
+                python -m coverage html --skip-covered --skip-empty
+                # Report and write to summary.
+                python -m coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+                # Report again and fail if under 99%.
+                python -m coverage report --fail-under=99
 
    ``name``
        can be any name. It is displayed in the GitHub Actions user interface.
-   ``on: [push, pull_request]``
-       instructs Actions to run our tests every time we either push code to the
-       repository or a pull request is created. In the case of pull requests, the
-       result of the test run can be viewed in the pull request interface. All
-       results of the GitHub actions can be seen on the GitHub user interface.
-   ``runs-on: ubuntu-latest``
-       specifies the operating system on which the tests are to be executed. Here
-       the tests only run on Linux, but other operating systems are also
-       available.
-   ``matrix: python: ["3.8", "3.9", "3.10", "3.11"]``
-       specifies which Python version is to be executed.
    ``steps``
        is a list of steps. The name of each step can be arbitrary and is
        optional.
-   ``uses: actions/checkout@v2``
+   ``uses: actions/checkout@v4``
        is a GitHub actions tool that checks out our repository so that the rest
        of the workflow can access it.
-   ``uses: actions/setup-python@v2``
+   ``uses: actions/setup-python@v5``
        is a GitHub actions tool that configures Python and installs it in a build
        environment.
    ``with: python-version: ${{ matrix.python }}``
