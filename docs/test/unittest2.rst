@@ -15,8 +15,9 @@ to port code to newer versions of the module in the future:
 
     import unittest2 as unittest
 
+
     class MyTest(unittest.TestCase):
-        ...
+        pass
 
 This way, if you switch to a newer Python version and no longer need the
 ``unittest2`` module, you can simply change the import in your test module

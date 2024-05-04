@@ -206,7 +206,7 @@ we will need it in many test methods:
 
     @pytest.fixture()
     def mock_itemsdb():
-        with mock.patch.object(items"ItemsDB") as MockItemsDB:
+        with mock.patch.object(items="ItemsDB") as MockItemsDB:
             yield MockItemsDB.return_value
 
 This fixture mocks the ``ItemsDB`` object and returns the ``return_value`` so
@@ -260,7 +260,7 @@ your test code does not. This form of mock drift can be solved by adding
 
     @pytest.fixture()
     def mock_itemsdb():
-        with mock.patch.object(items"ItemsDB", autospec=True) as MockItemsDB:
+        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
             yield MockItemsDB.return_value
 
 Usually, this protection is always built in with ``autospec``. The only exception
@@ -453,7 +453,7 @@ There are also some special mocking libraries:
   - `pytest-mysql <https://pypi.org/project/pytest-mysql/>`_
   - `pytest-dynamodb <https://pypi.org/project/pytest-dynamodb/>`_.
 
-- You can use `pytest-httpserver <https://pypi.org/project/pytest-httpserver/>`_
+- You can use `pytest-httpserver <https://pypi.org/project/pytest_httpserver/>`_
   to test HTTP servers.
 - You can use `responses <https://pypi.org/project/responses/>`_ or `betamax
   <https://pypi.org/project/betamax/>`_ to mock `requests

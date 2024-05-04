@@ -11,7 +11,7 @@ represents). Most other languages use curly braces to do this. In the following
 example, the indentation of lines 3–6 determines that they belong to the
 ``while`` statement:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -20,6 +20,7 @@ example, the indentation of lines 3–6 determines that they belong to the
     ...     if x == 4:
     ...         break
     ...     print(x)
+    ...
 
 Indentations to structure the code instead of curly braces takes a little
 getting used to, but offers significant advantages:
@@ -38,7 +39,7 @@ Most of the time, anything that follows ``#`` is a comment and is ignored when
 the code is executed. The obvious exception is ``#`` in a :doc:`string
 <types/strings>`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = "# This is a string and not a comment"
 

@@ -63,8 +63,7 @@ Lines 25 to 26
     * for importing in the Python shell or another Python script ``__name__`` is
       the filename:
 
-      .. code-block:: python
-
+      .. code-block:: pycon
          >>> import wc
          >>> wc.words_occur()
          Enter the name of the file: README.rst
@@ -73,7 +72,7 @@ Lines 25 to 26
 
       Alternatively, you can also import ``words_occur`` directly:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> from wc import words_occur
          >>> words_occur()
@@ -87,7 +86,7 @@ Lines 25 to 26
       this purpose, you must use the ``reload`` function from the
       :doc:`importlib <python3:library/importlib>` module:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> import wc, importlib
          >>> importlib.reload(wc)

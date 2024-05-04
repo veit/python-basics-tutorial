@@ -63,7 +63,7 @@ Now you can create some instances of the class ``Circle`` and analyse them.
 Since the ``__init__`` method of ``Circle`` has default parameters, you can
 create a circle without specifying any parameters:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> import form
         >>> c1 = form.Circle()
@@ -72,7 +72,7 @@ create a circle without specifying any parameters:
 
 If you specify parameters, they are used to set the values of the instance:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c2 = form.Circle(2, 3, 4)
         >>> c2.diameter, c2.x, c2.y
@@ -82,7 +82,7 @@ When you call the ``move()`` method, Python does not find a ``move()`` method in
 the ``Circle`` class, so it goes up the inheritance hierarchy and uses the
 ``move()`` method of ``Form``:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c2.move(5, 6)
         >>> c2.diameter, c2.x, c2.y
@@ -91,7 +91,7 @@ the ``Circle`` class, so it goes up the inheritance hierarchy and uses the
 You can also call the class method ``circumferences()`` of the class ``Circle``,
 either through the class itself or through an instance:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> form.Circle.circumferences()
         9.424769999999999

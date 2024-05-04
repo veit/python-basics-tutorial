@@ -23,7 +23,7 @@ documentation at your fingertips even offline.
 Alternatively, you can use ``help()`` more specifically by passing a type or
 variable name as a parameter, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = 4.2
     >>> help(x)
@@ -48,7 +48,7 @@ variable name as a parameter, for example:
 find out which methods and data are available locally. Alternatively, it can
 also list objects for a module or type.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> dir()
    ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'x']
@@ -59,7 +59,7 @@ In contrast to :py:func:`dir`, both :py:func:`globals` and :py:func:`locals`
 display the values associated with the objects. Currently, both functions return
 the same thing:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> globals()
    {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'x': 4.2}

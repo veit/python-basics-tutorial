@@ -7,13 +7,13 @@ dynamically typed, which means that the types are determined at runtime, not
 compile time. This is one of the reasons why Python is so easy to use. You can
 simply try the following:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> type(3)
     <class 'int'>
-    >>> type('Hello')
+    >>> type("Hello")
     <class 'str'>
-    >>> type(['Hello', 'Pythonistas'])
+    >>> type(["Hello", "Pythonistas"])
     <class 'list'>
 
 In these examples you can see the built-in :class:`type` function in Python. It
@@ -27,11 +27,11 @@ response to calls to :class:`type`; ``<<class 'int'>``, ``<<class 'str'>`` and
 ``<<class 'list'>`` are the screen representations of the returned objects. So
 you can compare these Python objects with each other:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> type('Hello') == type('Pythonistas!')
+    >>> type("Hello") == type("Pythonistas!")
     True
-    >>> type('Hello') == type('Pythonistas!') == type(['Hello', 'Pythonistas'])
+    >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
     False
 
 With this technique you can, among other things, perform a type check in your
@@ -41,7 +41,7 @@ example with a simple inheritance hierarchy makes this clearer:
 
 #. First, we define two classes with an inheritance hierarchy:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> class Form:
         ...     pass
@@ -51,10 +51,11 @@ example with a simple inheritance hierarchy makes this clearer:
         ...
         >>> class Circle(Form):
         ...     pass
+        ...
 
 #. Now you can create an instance ``c1`` of the class ``Circle``:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1 = Circle()
 
@@ -62,7 +63,7 @@ example with a simple inheritance hierarchy makes this clearer:
    instance of the class ``Circle`` defined in your current ``__main__``
    namespace:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> type(c1)
         <class '__main__.Circle'>
@@ -70,14 +71,14 @@ example with a simple inheritance hierarchy makes this clearer:
 #. You can also get exactly the same information by accessing the ``__class__``
    attribute of the instance:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.__class__
         <class '__main__.Circle'>
 
 #. You can also explicitly check whether the two class objects are identical:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.__class__ == Circle
         True
@@ -91,7 +92,7 @@ example with a simple inheritance hierarchy makes this clearer:
    :func:`python3:issubclass`
         determines whether one class is the subclass of another.
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> issubclass(Circle, Form)
         True
@@ -142,16 +143,16 @@ our ``Form`` class with the standard ``__init__`` method to initialise instances
 of the class, but also a ``__str__`` method to return strings representing
 instances in a readable format:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Form:
     ...     def __init__(self, x, y):
     ...         self.x = x
     ...         self.y = y
     ...     def __str__(self):
-    ...         return "Position: x={0}, y={1}".format (self.x, self.y)
+    ...         return "Position: x={0}, y={1}".format(self.x, self.y)
     ...
-    >>> f = Form(2,3)
+    >>> f = Form(2, 3)
     >>> print(f)
     Position: x=2, y=3
 

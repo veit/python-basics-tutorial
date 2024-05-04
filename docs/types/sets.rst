@@ -5,7 +5,7 @@ A set in Python is an unordered collection of objects used in situations where
 membership and uniqueness to the set are the most important information of the
 object. The ``in`` operator runs faster with sets than with :doc:`lists`:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> x = set([1, 2, 3, 2, 4])

@@ -44,9 +44,9 @@ Links
 External links
 ~~~~~~~~~~~~~~
 
-`hyperlink <http://en.wikipedia.org/wiki/Hyperlink>`_ `link`_
+`hyperlink <https://en.wikipedia.org/wiki/Hyperlink>`_ `link`_
 
-.. _link: http://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
+.. _link: https://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
 
 .. code-block:: rest
 
@@ -92,12 +92,12 @@ Download documents
 ::::::::::::::::::
 
 Link to a document, not rendered by Sphinx, for example
-:download:`docstrings-example.rst`.
+:download:`autodoc-examples.rst`.
 
 .. code-block:: rest
 
    Link to a document, not rendered by Sphinx, for example
-   :download:`docstrings-example.rst`.
+   :download:`autodoc-examples.rst`.
 
 Images
 ------

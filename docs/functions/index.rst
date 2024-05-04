@@ -8,7 +8,7 @@ The basic syntax for a Python function definition is
 
 .. code-block:: python
 
-    def function_name(param1, param2, ...):
+    def function_name(param1, param2):
         body
 
 As with :doc:`control streams </control-flows/index>`, Python uses indentation
@@ -16,7 +16,7 @@ to separate the function from the function definition. The following simple
 example inserts the code into a function so that you can call it to get the
 `factorial <https://en.wikipedia.org/wiki/Factorial>`_ of a number:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> def fact(n):
@@ -26,6 +26,7 @@ example inserts the code into a function so that you can call it to get the
     ...         f = f * n
     ...         n = n - 1
     ...     return f
+    ...
 
 Line 2
     This is an optional documentation string, or ``docstring``. You can get its
@@ -49,7 +50,7 @@ Line 7
 Although all Python functions return values, it is up to you how the return
 value of a function is used:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> fact(3)
@@ -70,14 +71,14 @@ Parameters
 
 Python offers flexible mechanisms for passing arguments to functions:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 2, 3
     >>> def func1(u, v, w):
-    ...     value = u + 2*v + w**2
+    ...     value = u + 2 * v + w**2
     ...     if value > 0:
-    ...         return u + 2*v + w**2
+    ...         return u + 2 * v + w**2
     ...     else:
     ...         return 0
     ...
@@ -86,7 +87,7 @@ Python offers flexible mechanisms for passing arguments to functions:
     >>> func1(x, w=y, v=2)
     15
     >>> def func2(u, v=1, w=1):
-    ...     return u + 4 * v + w ** 2
+    ...     return u + 4 * v + w**2
     ...
     >>> func2(5, w=6)
     45
@@ -95,7 +96,7 @@ Python offers flexible mechanisms for passing arguments to functions:
     ...
     >>> func3(7)
     (7, 1, 1)
-    >>> func3(1,2,3,4,5)
+    >>> func3(1, 2, 3, 4, 5)
     (1, 2, 3, 4, 5)
     >>> def func4(u, v=1, w=1, **kwargs):
     ...     print(u, v, w, kwargs)

@@ -16,13 +16,13 @@ for each parameter; when the function is called, the parameters used in the
 calling code are assigned to the function’s parameter variables based on their
 order. The following function calculates ``x`` as a power of ``y``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def power(x, y):
     ...     p = 1
     ...     while y > 0:
-    ...             p = p * x
-    ...             y = y - 1
+    ...         p = p * x
+    ...         y = y - 1
     ...     return p
     ...
     >>> power(2, 5)
@@ -32,7 +32,7 @@ This method requires that the number of parameters used by the calling code
 exactly matches the number of parameters in the function definition; otherwise,
 a type error exception is thrown:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(2)
     Traceback (most recent call last):
@@ -42,7 +42,7 @@ a type error exception is thrown:
 Function parameters can have default values, which you can declare by assigning
 a default value in the first line of the function definition, like this:
 
-.. code-block:: python
+.. code-block:: pycon
 
     def function_name(param1, param2=Standardwert2, param3=Standardwert3, ...)
 
@@ -52,18 +52,19 @@ default values must be defined as the last in the parameter list.
 The following function also calculates ``x`` as a power of ``y``. However, if
 ``y`` is not specified in a function call, the default value ``5`` is used:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def power(x, y=5):
     ...     p = 1
     ...     while y > 0:
-    ...             p = p * x
-    ...             y = y - 1
+    ...         p = p * x
+    ...         y = y - 1
     ...     return p
+    ...
 
 You can see the effect of the standard argument in the following example:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(3, 6)
     729
@@ -77,7 +78,7 @@ You can also pass arguments to a function by using the name of the corresponding
 function parameter rather than its position. Similar to the previous example,
 you can enter the following:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(y=6, x=2)
     64
@@ -106,7 +107,7 @@ other parameter, to be collected and assigned as a tuple to the specified
 parameter. This is, for example, a simple way to implement a function that finds
 the mean in a list of numbers:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def mean(*numbers):
     ...     if len(numbers) == 0:
@@ -114,10 +115,11 @@ the mean in a list of numbers:
     ...     else:
     ...         m = sum(numbers) / len(numbers)
     ...     return m
+    ...
 
 Now you can test the behaviour of the function, for example with:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> mean(3, 5, 2, 4, 6)
     4.0
@@ -130,23 +132,27 @@ entry is the argument itself. An argument passed by keyword is superfluous in
 this context if the keyword with which it was passed does not match one of the
 parameter names in the function definition, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def server(ip, port, **other):
-    ...     print("ip: {0}, port: {1}, keys in 'other': {2}".format(ip,
-    ...           port, list(other.keys())))
+    ...     print(
+    ...         "ip: {0}, port: {1}, keys in 'other': {2}".format(
+    ...             ip, port, list(other.keys())
+    ...         )
+    ...     )
     ...     total = 0
     ...     for k in other.keys():
     ...         total = total + other[k]
     ...     print("The sum of the other values is {0}".format(total))
+    ...
 
 Trying out this function shows that it can add the arguments passed under the
 keywords ``foo``, ``bar`` and ``baz``, even though ``foo``, ``bar`` and ``baz``
 are not parameter names in the function definition:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
+    >>> server("127.0.0.1", port="8080", foo=3, bar=5, baz=2)
     ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
     The sum of the other values is 10
 
@@ -170,7 +176,7 @@ as a :doc:`/types/lists`, a :doc:`/types/dicts` or a class instance, any change
 to the object changes what the argument refers to outside the function.
 Reassigning the parameter has no effect on the argument.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def my_func(n, l):
     ...     l.append(1)

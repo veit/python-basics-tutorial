@@ -7,7 +7,7 @@ function that takes another function as a parameter, embeds it in another
 function that does something similar, and then returns the new function. This
 new combination can then be used instead of the original function:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> def inf(func):
@@ -44,7 +44,7 @@ much cleaner and easier to read. Using a decorator simply consists of two parts:
 The decorator function should take a function as a parameter and return a
 function, as follows:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> @inf
@@ -75,13 +75,13 @@ as decorators, such as:
     the function arguments. Since old values never need to be deleted, this
     function is then also smaller and faster. Example:
 
-    .. code-block:: Python
+    .. code-block:: pycon
         :linenos:
 
         >>> from functools import cache
         >>> @cache
         ... def factorial(n):
-        ...     return n * factorial(n-1) if n else 1
+        ...     return n * factorial(n - 1) if n else 1
         ...
         >>> factorial(8)
         40320
@@ -98,21 +98,21 @@ as decorators, such as:
     This decorator makes the wrapper function look like the original function
     with its name and properties.
 
-    .. code-block:: Python
+    .. code-block:: pycon
 
         >>> from functools import wraps
         >>> def my_decorator(f):
         ...     @wraps(f)
         ...     def wrapper(*args, **kwargs):
         ...         """Wrapper docstring"""
-        ...         print('Call decorated function')
+        ...         print("Call decorated function")
         ...         return f(*args, **kwargs)
         ...     return wrapper
         ...
         >>> @my_decorator
         ... def example():
         ...     """Example docstring"""
-        ...     print('Call example function')
+        ...     print("Call example function")
         ...
         >>> example.__name__
         'example'
@@ -122,7 +122,7 @@ as decorators, such as:
     Without ``@wraps`` decorator, the name and docstring of the wrapper method
     would have been returned instead:
 
-    .. code-block:: Python
+    .. code-block:: pycon
 
         >>> example.__name__
         'wrapper'

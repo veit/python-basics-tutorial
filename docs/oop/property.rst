@@ -23,7 +23,7 @@ the property:
 
 Without a setter, however, the *property* ``length`` is read-only:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> s1 = form.Square()
     >>> s1.length = 2
@@ -43,7 +43,7 @@ Now you can use the dot notation to both get and set the property ``length``.
 Note that the name of the method remains the same, but the decorator changes to
 the *property* name, in our case to ``length.setter``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> s1 = form.Square()
     >>> s1.length = 2

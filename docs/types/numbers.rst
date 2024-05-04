@@ -42,7 +42,7 @@ They can be manipulated with the arithmetic operators:
 
 Examples:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> 8 + 3 - 5 * 3
     -4
@@ -50,12 +50,12 @@ Examples:
     2.6666666666666665
     >>> 8 // 3
     2
-    >>> x = 4.2 ** 3.4
+    >>> x = 4.2**3.4
     >>> x
     131.53689544409096
     >>> 9e7 * -5e-3
     -450000.0
-    >>> -5e-3 ** 3
+    >>> -(5e-3**3)
     -1.2500000000000002e-07
 
 .. seealso::
@@ -72,7 +72,7 @@ Complex numbers consist of a real part and an `imaginary part
 <https://en.wikipedia.org/wiki/Imaginary_number>`_, which is given the suffix
 ``j`` in Python.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> 7 + 2j
     (7+2j)
@@ -82,14 +82,14 @@ Complex numbers consist of a real part and an `imaginary part
     Python expresses the resulting complex number in parentheses to indicate
     that the output represents the value of a single object:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> (5+3j) ** (3+5j)
+    >>> (5 + 3j) ** (3 + 5j)
     (-7.04464115622119-11.276062812695923j)
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> x = (5+3j) * (6+8j)
+    >>> x = (5 + 3j) * (6 + 8j)
     >>> x
     (6+58j)
     >>> x.real
@@ -143,7 +143,7 @@ Boolean values
 
 Boolean values are used in the following examples:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = False
     >>> x
@@ -151,7 +151,7 @@ Boolean values are used in the following examples:
     >>> not x
     True
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> y = True * 2
     >>> y
@@ -177,7 +177,7 @@ Built-in functions are always available and are called using standard function
 call syntax. In the following code, ``round`` is called with a float as the
 input argument.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> round(2.5)
     2
@@ -185,7 +185,7 @@ input argument.
 With ``ceil`` from the standard library ``math`` and the attribute notation
 :samp:`MODUL.FUNKTION(ARGUMENT)` is rounded up:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> math.ceil(2.5)
     3
@@ -223,7 +223,7 @@ complex numbers, and to avoid name conflicts with the more normal equivalents,
 it is recommended to simply import the module to explicitly refer to the
 ``cmath`` package when using the function, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import cmath
     >>> cmath.sqrt(-2)
@@ -249,11 +249,11 @@ statistical drift in longer calculations. :class:`Decimal
 for `rounding half to even
 <https://en.wikipedia.org/wiki/Rounding#Rounding_half_to_even>`_:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import decimal
     >>> num = decimal.Decimal("2.5")
-    >>> rounded = num.quantize(decimal.Decimal("0"), rounding = decimal.ROUND_HALF_UP)
+    >>> rounded = num.quantize(decimal.Decimal("0"), rounding=decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
 

@@ -48,14 +48,18 @@ or even already "done". Let’s test all three:
 
 
     def test_finish_from_in_prog(items_db):
-        index = items_db.add_item(Item("Update pytest section", state="in progress"))
+        index = items_db.add_item(
+            Item("Update pytest section", state="in progress")
+        )
         items_db.finish(index)
         item = items_db.get_item(index)
         assert item.state == "done"
 
 
     def test_finish_from_done(items_db):
-        index = items_db.add_item(Item("Update cibuildwheel section", state="done"))
+        index = items_db.add_item(
+            Item("Update cibuildwheel section", state="done")
+        )
         items_db.finish(index)
         item = items_db.get_item(index)
         assert item.state == "done"
@@ -350,4 +354,4 @@ example, parameterisation can generate a large number of test cases.
 
 ----
 
-.. [#] https://docs.pytest.org/en/latest/reference.html#metafunc
+.. [#] https://docs.pytest.org/en/latest/reference/reference.html#metafunc

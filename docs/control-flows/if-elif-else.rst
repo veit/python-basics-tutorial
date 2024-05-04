@@ -5,7 +5,7 @@ The code block after the first true condition of an ``if`` or ``elif`` statement
 is executed. If none of the conditions are true, the code block after the
 ``else`` is executed:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x = 1

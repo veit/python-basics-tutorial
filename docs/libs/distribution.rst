@@ -154,7 +154,7 @@ as:
        * `ZeroVer <https://0ver.org/>`_
 
     However, there are other version scheme plug-ins, such as `hatch-semver
-    <https://github.com/Nagidal/hatch-semver>`_ for `semantic Versioning
+    <https://github.com/fleetingbytes/hatch-semver>`_ for `semantic Versioning
     <https://semver.org>`_.
 
     With the version source plugin `hatch-vcs
@@ -229,7 +229,7 @@ as:
 
 .. seealso::
    * `Declaring project metadata
-     <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
+     <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
    * :pep:`345`
 
 Optional dependencies
@@ -330,9 +330,10 @@ This file briefly tells those who are interested in the package how to use it.
 If you write the document in :doc:`/document/rest`, you can also include the
 contents as a detailed description in your package:
 
-.. literalinclude:: dataprep/setup.py
-   :language: python
-   :lines: 4-5, 9-21,41
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lineno-start: 5
+   :lines: 5, 12
 
 You can also include them in your :doc:`Sphinx documentation </document/start>`
 with ``.. include:: ../../README.rst``.
@@ -347,7 +348,7 @@ with ``.. include:: ../../README.rst``.
     * `github-activity <https://github.com/executablebooks/github-activity>`_
     * `Dinghy <https://github.com/nedbat/dinghy>`_
     * `Python core-workflow blurb
-      <https://github.com/python/core-workflow/tree/master/blurb>`_
+      <https://github.com/python/core-workflow/tree/main/blurb>`_
     * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
     * `towncrier <https://github.com/twisted/towncrier>`_
 
@@ -371,11 +372,10 @@ for example:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
-   :lines: 4-5, 9-12, 15-21,41
-   :lineno-start: 1
+   :linenos:
 
 `package_dir
-<https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
+<https://docs.python.org/3.11/distutils/setupscript.html#listing-whole-packages>`_
 points to the ``src`` directory, which can contain one or more packages. You can
 then use setuptools’s `find_packages()
 <https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
@@ -482,7 +482,7 @@ in the ``dist`` directory when finished:
 
 .. seealso::
    The reference for the file names can be found in `File name convention
-   <https://www.python.org/dev/peps/pep-0427/#file-name-convention>`_.
+   <https://peps.python.org/pep-0427/#file-name-convention>`_.
 
    For more information on ``sdist``, see `Creating a Source Distribution
    <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__

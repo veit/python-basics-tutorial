@@ -140,7 +140,7 @@ able to call the test directly from Python, we need to add a block at the end of
 
 If we now run the test with Python, we get the following result:
 
-.. code-block:: python
+.. code-block:: pycon
 
     python tests/test_item_fails.py
     Traceback (most recent call last):

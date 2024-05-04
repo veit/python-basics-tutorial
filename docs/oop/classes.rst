@@ -6,10 +6,11 @@ of Python’s built-in data types are classes, and Python provides you with
 powerful tools to manipulate every aspect of a class’s behaviour. You can define
 a class with the ``class`` statement:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class MyClass:
     ...     STATEMENTS
+    ...
 
 ``MyClass``
     Class identifiers are usually written in capital letters, that mean the
@@ -22,7 +23,7 @@ a class with the ``class`` statement:
 After you have defined the class, you can create a new object of the class type
 (an instance of the class) by calling the class name as a function:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> instance = MyClass()
 
@@ -32,7 +33,7 @@ declared in advance. The following short example defines a class called
 ``Square``, creates a ``Square`` instance, assigns a value to the edge length
 and then uses this value to calculate the total edge length:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> my_square = Square()
     >>> my_square.length = 3
@@ -49,7 +50,7 @@ argument ``self``. Unlike in Java and C++, Python classes can also have only one
 ``__init__`` method. In the following example, squares with an edge length of
 ``1`` are created by default:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Square:
@@ -74,7 +75,7 @@ Line 6
     You can also overwrite the ``length`` field so that the last line gives a
     different result than the previous ``print`` statement:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> my_square.length = 3
         >>> print(f"The perimeter of the square is {4 * my_square.length}.")

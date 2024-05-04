@@ -7,7 +7,7 @@ Loops
 The ``while`` loop is executed as long as the condition (here: ``x > y``) is
 true:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -35,7 +35,7 @@ Lines 8 and 9
     outputs the results of the ``while`` loop before execution was interrupted
     with ``break``.
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -64,7 +64,7 @@ a foreach loop. The following loop uses the `Modulo
 <https://en.wikipedia.org/wiki/Modulo_operation>`_ operator ``%`` as a condition
 for the first occurrence of an integer divisible by ``5``:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> items = [1, "fünf", 5.0, 10, 11, 15]
@@ -90,7 +90,7 @@ Loops with an index
 You can also output the index in a ``for`` loop, for example with
 :py:func:`enumerate()`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> data_types = ["Data types", "Numbers", "Lists"]
    >>> for index, title in enumerate(data_types):
@@ -105,11 +105,11 @@ List Comprehensions
 
 A list is usually generated as follows:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> squares = []
    >>> for i in range(8):
-   ...     squares.append(i ** 2)
+   ...     squares.append(i**2)
    ...
    >>> squares
    [0, 1, 4, 9, 16, 25, 36, 49]
@@ -118,9 +118,9 @@ Instead of creating an empty list and inserting each element at the end, with
 list comprehensions you simply define the list and its content at the same time
 with just a single line of code:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> squares = [i ** 2 for i in range(8)]
+   >>> squares = [i**2 for i in range(8)]
    >>> squares
    [0, 1, 4, 9, 16, 25, 36, 49]
 
@@ -145,8 +145,8 @@ Each list comprehension in Python contains three elements:
 You can also use optional conditions with list comprehensions, which are usually
 appended to the end of the expression:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> squares = [i ** 2 for i in range(8) if i >= 4]
+   >>> squares = [i**2 for i in range(8) if i >= 4]
    >>> squares
    [16, 25, 36, 49]

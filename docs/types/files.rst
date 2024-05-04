@@ -8,7 +8,7 @@ In Python, you open and read a file using the built-in :func:`python3:open`
 function and various built-in read operations. The following short Python
 program reads a line from a text file called :samp:`{myfile.txt}`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
@@ -28,12 +28,13 @@ example, you open a file that you assume is in the current working directory.
 The following example opens a file in an absolute location – :samp:`{C:\\My
 Documents\\myfile}`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import os
     >>> pathname = os.path.join("C:/", "Users", "Veit", "Documents", "myfile.txt")
     >>> with open(pathname, "r") as f:
     ...     line = f.readline()
+    ...
 
 .. note::
 
@@ -54,7 +55,7 @@ programs, too many open file objects can exhaust system resources, causing the
 program to terminate. You close a file object with the ``close`` method when the
 file object is no longer needed:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
@@ -63,10 +64,11 @@ file object is no longer needed:
 However, using a :doc:`/control-flows/with` usually remains the better option to
 automatically close files when you are done:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> with open("docs/types/myfile.txt", "r") as f:
     ...     line = f.readline()
+    ...
 
 Opening files in write or other modes
 -------------------------------------
@@ -78,7 +80,7 @@ you want to open the file for reading, you can omit the second argument, because
 ``"r"`` is the default value. The following short program writes :samp:`Hi,
 Pythonistas!` to a file:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "w")
     >>> f.write("Hi, Pythonistas!\n")
@@ -105,7 +107,7 @@ and returns it, including all line breaks at the end of the line. If there is
 nothing more to read, readline returns an empty string, which makes it easy to
 determine, for example, the number of lines in a file:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
@@ -120,7 +122,7 @@ A shorter way to count all lines is with the ``readlines`` method, which is also
 built in, that reads all lines of a file and returns them as a list of strings
 with one string per line:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> print(len(f.readlines()))
@@ -135,7 +137,7 @@ situations, both methods have an optional argument that affects the amount of
 data read at a time. Another way to iterate over all the lines in a file is to
 treat the file object as an iterator in a :ref:`for-loop`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
@@ -156,7 +158,7 @@ is converted to ``\n``, while on Windows, ``\r\n`` pairs are converted to
 parameter when opening the file and specifying ``newline="\n"``, ``\r`` or
 ``\r\n``, which will cause only that string to be used as a line break:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r", newline="\n")
 
@@ -183,7 +185,7 @@ returned by ``readlines`` to write a file identical to the source file. Assuming
 that ``myfile.txt`` exists and is a text file, the following example creates an
 exact copy of :file:`myfile.txt` named :file:`myfile2.txt`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> input_file = open("myfile.txt", "r")
     >>> lines = input_file.readlines()
@@ -202,7 +204,7 @@ position and returns the data as a byte object. With an integer argument, it
 reads a maximum of this number of bytes and returns a bytes object of the
 specified size:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> f = open("myfile.txt", "rb")

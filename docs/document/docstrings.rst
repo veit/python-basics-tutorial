@@ -21,10 +21,7 @@ file  ``docs/conf.py``:
 
 .. code-block:: python
 
-    extensions = [
-        'sphinx.ext.autodoc',
-        ...
-    ]
+    extensions = ["sphinx.ext.autodoc", ...]
 
 If your package and its documentation are part of the same repository, they will
 always have the same relative position in the filesystem. In this case you can
@@ -33,7 +30,7 @@ path to the package, so:
 
 .. code-block:: python
 
-    sys.path.insert(0, os.path.abspath('..'))
+    sys.path.insert(0, os.path.abspath(".."))
     import requests
 
 If you have installed your Sphinx documentation in a virtual environment, you
@@ -52,22 +49,14 @@ or, if you want to develop the package further with:
 Examples
 --------
 
-Here are some examples from the API documentation for the `requests
-<https://docs.python-requests.org>`_ module:
+Here you can find some examples from the documentation of the Python
+:py:mod:`string` module:
 
-.. literalinclude:: docstrings-example.rst
+.. literalinclude:: autodoc-examples.rst
    :language: rest
    :lines: 3-
 
-This leads to the :doc:`docstrings-example`, generated from the following
-docstrings:
-
-* `requests.head <https://docs.python-requests.org/en/master/_modules/requests/api/#head>`_
-* `requests.RequestException <https://docs.python-requests.org/en/master/_modules/requests/exceptions/#RequestException>`_
-* `requests.Session <https://docs.python-requests.org/en/master/_modules/requests/sessions/#Session>`_
-
-.. autoclass:: Session
-   :inherited-members:
+This leads to the :doc:`autodoc-examples`.
 
 .. note::
    You should follow these guidelines when writing docstrings:

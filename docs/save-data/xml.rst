@@ -73,11 +73,11 @@ Parsing with ElementTree
 #. Then we define the method ``parseXML`` and the ``root`` element:
 
    .. literalinclude:: elementtree_example.py
-      :language: py
+      :language: python
       :lines: 4-11
       :lineno-start: 4
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       <Element 'catalog' at 0x10b009620>
       tag=catalog, attrib={}
@@ -85,11 +85,11 @@ Parsing with ElementTree
 #. Output the XML child elements of ``book``:
 
    .. literalinclude:: elementtree_example.py
-      :language: py
+      :language: python
       :lines: 13-17
       :lineno-start: 13
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       book {'id': '1'}
       title
@@ -107,7 +107,7 @@ Parsing with ElementTree
       :lines: 20-27
       :lineno-start: 20
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       --------------------
       Iterating using iter

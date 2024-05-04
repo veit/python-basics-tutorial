@@ -8,7 +8,7 @@ Python has a powerful built-in list type:
 
     []
     [1]
-    [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
 
 A list can contain a mixture of other types as elements, including strings,
 tuples, lists, dictionaries, functions, file objects and any kind of number.
@@ -16,10 +16,10 @@ tuples, lists, dictionaries, functions, file objects and any kind of number.
 A list can be indexed from the front or the back. You can also refer to a
 sub-segment of a list using slice notation:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
     >>> x[0]
     '1'
     >>> x[1]
@@ -55,10 +55,10 @@ Lines 14, 16 and 18
 You can use this notation to add, remove and replace elements in a list or to
 get an element or a new list that is a slice of it, for example:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
     >>> x[1] = "zweitens"
     >>> x[2:3] = []
     >>> x
@@ -78,7 +78,7 @@ The default value for an unspecified stride is ``1``, which takes every element
 from a sequence between the indices. With a stride of ``2``, every second
 element is taken and so on:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x[0:3:2]
@@ -91,7 +91,7 @@ element is taken and so on:
 The stride value can also be negative. A ``-1`` stride means counting from right
 to left:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x[3:0:-2]
@@ -112,7 +112,7 @@ Line 5
 Some functions of the slice notation can also be executed with special
 operations, which improves the readability of the code:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x.reverse()
@@ -124,7 +124,7 @@ You can also use the following built-in functions (``len``, ``max`` and
 the list methods (``append``, ``count``, ``extend``, ``index``, ``insert``,
 ``pop``, ``remove``, ``reverse`` and ``sort``) for lists:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> len(x)

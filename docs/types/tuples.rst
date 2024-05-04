@@ -17,7 +17,7 @@ change facility.
     ()
     (1,)
     (1, 2, 3, 5)
-    (1, "2.", 3.0, ["4a", "4b"], (5.1,5.2))
+    (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
 
 Line 2
     A tuple with one element requires a comma.
@@ -28,7 +28,7 @@ Line 4
 
 A list can be converted to a tuple using the built-in ``tuple`` function:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = [1, 2, 3, 5]
     >>> tuple(x)
@@ -37,7 +37,7 @@ A list can be converted to a tuple using the built-in ``tuple`` function:
 Conversely, a tuple can be converted into a list using the built-in list
 function:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = (1, 2, 3, 4)
     >>> list(x)

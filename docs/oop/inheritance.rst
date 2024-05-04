@@ -12,7 +12,7 @@ If we now want to use these classes in a drawing program, we need to define
 where on the drawing surface an instance should be located. We can do this by
 defining ``x`` and ``y`` coordinates for each instance:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Square:
@@ -26,6 +26,7 @@ defining ``x`` and ``y`` coordinates for each instance:
     ...         self.diameter = diameter
     ...         self.x = x
     ...         self.y = y
+    ...
 
 This approach works, but leads to a lot of repetitive code when you increase the
 number of shape classes, as you probably want every shape to have this
@@ -35,7 +36,7 @@ each shape class, you can abstract them into a general shape class and have each
 class that defines a particular shape inherit from that general class. In
 Python, this technique looks like this:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Form:
@@ -52,6 +53,7 @@ Python, this technique looks like this:
     ...     def __init__(self, diameter=1, x=0, y=0):
     ...         super().__init__(x, y)
     ...         self.diameter = diameter
+    ...
 
 Lines 6 and 11
     ``Square`` and ``Circle`` inherit from the ``Form`` class.
@@ -78,7 +80,7 @@ defined in the base classes but in the superclass. To see this effect, define
 another method in the ``Form`` class called ``move`` that moves a shape in the
 ``x`` and ``y`` coordinates. The definition for ``Form`` is now:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
     :emphasize-lines: 5-7
 
@@ -89,20 +91,22 @@ another method in the ``Form`` class called ``move`` that moves a shape in the
     ...     def move(self, delta_x, delta_y):
     ...         self.x = self.x + delta_x
     ...         self.y = self.y + delta_y
+    ...
 
 ..
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> class Circle(Form):
         ...     def __init__(self, diameter=1, x=0, y=0, delta_x=0, delta_y=0):
         ...         super().__init__(x, y)
         ...         self.diameter = diameter
+        ...
 
 If you take the parameters ``delta_x`` and ``delta_y`` of the method ``move`` in
 the ``__init__`` methods of ``Circle`` and ``Square``, you can for example
 execute the following interactive session:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> c = Circle(3)
     >>> c.move(4, 5)

@@ -13,13 +13,13 @@ following string constants, all of which fall into the ASCII character set:
 .. code-block:: python
 
     # Some strings for ctype-style character classification
-    whitespace = ' \t\n\r\v\f'
-    ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-    ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    whitespace = " \t\n\r\v\f"
+    ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
+    ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     ascii_letters = ascii_lowercase + ascii_uppercase
-    digits = '0123456789'
-    hexdigits = digits + 'abcdef' + 'ABCDEF'
-    octdigits = '01234567'
+    digits = "0123456789"
+    hexdigits = digits + "abcdef" + "ABCDEF"
+    octdigits = "01234567"
     punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
     printable = digits + ascii_letters + punctuation + whitespace
 
@@ -27,7 +27,7 @@ Most of these constants should be self-explanatory in their identifier names.
 ``hexdigits`` and ``octdigits`` refer to the hexadecimal and octal values
 respectively. You can use these constants for everyday string manipulation:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import string
     >>> hepy = "Hello Pythonistas!"
@@ -78,7 +78,7 @@ human-readable text and can contain all Unicode characters. The :ref:`bytes
 inherently encoded. :meth:`python3:str.encode` and :meth:`python3:bytes.decode`
 are the methods of transition from one to the other:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> "You’re welcome!".encode("utf-8")
     b'You\xe2\x80\x99re welcome!'
@@ -100,9 +100,9 @@ bytes, ``e2``, ``80`` and ``99`` as hexadecimal values.
 With :meth:`python3:bytes.fromhex` you can convert the hexadecimal values into
 bytes:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> bytes.fromhex('e2 80 99')
+    >>> bytes.fromhex("e2 80 99")
     b'\xe2\x80\x99'
 
 UTF-16 and UTF-32
@@ -112,7 +112,7 @@ The difference between these and UTF-8 is considerable in practice. In the
 following, I would like to show you only briefly by means of an example that a
 round-trip conversion can simply fail here:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> hepy = "Hello Pythonistas!"
     >>> hepy.encode("utf-8")
@@ -149,7 +149,7 @@ The only exception could be :func:`open() <python3:open>`, which is platform
 dependent and therefore depends on the value of
 :func:`python3:locale.getpreferredencoding`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import locale
     >>> locale.getpreferredencoding()

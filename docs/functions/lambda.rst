@@ -10,7 +10,7 @@ The syntax of a lambda function is
 
 :samp:`lambda {ARGUMENTS}: {EXPRESSION}`
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> add = lambda x, y: x + y
    >>> add(2, 3)
@@ -23,10 +23,10 @@ The syntax of a lambda function is
 In the next example, a lambda function is created within a function call.
 However, there is no global variable to store the values of the lambda function:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
-   >>> count = ['1', '123', '1000']
+   >>> count = ["1", "123", "1000"]
    >>> max(count)
    '123'
    >>> max(count, key=lambda val: int(val))
