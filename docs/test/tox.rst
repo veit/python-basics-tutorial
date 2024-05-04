@@ -14,12 +14,12 @@ Introduction to tox
 tox is a command line tool that allows you to run your complete test suite in
 different environments. We will use tox to test the Items project in multiple
 Python versions, but tox is not limited to Python versions only. You can use it
-to test with different dependency configurations and different configurations for
-different operating systems. tox uses project information from the
+to test with different dependency configurations and different configurations
+for different operating systems. tox uses project information from the
 :file:`setup.py` or :file:`pyproject.toml` file for the package under test to
-create an installable :doc:`distribution of your package <../libs/distribution>`.
-It searches the :file:`tox.ini` file for a list of environments and then performs
-the following steps for each:
+create an installable :doc:`distribution of your package
+<../libs/distribution>`. It searches the :file:`tox.ini` file for a list of
+environments and then performs the following steps for each:
 
 #. creates a :term:`virtual environment <Virtual environment>`,
 #. installs some dependencies with :term:`pip`,
@@ -116,7 +116,7 @@ Before you can run tox, you must ensure that you have installed it:
 
 To run tox, simply start tox:
 
-.. code-block:: pytest
+.. code-block:: console
 
     $ tox
     .pkg: _optional_hooks> python /PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
@@ -273,9 +273,8 @@ creates the virtual environments and installs items in the environment. It is
 then located in :file:`.tox/py312/lib/python3.12/site-packages/items`, for
 example.
 
-.. code-block:: pytest
-   :emphas:
-   ize-lines: 1
+.. code-block:: console
+   :emphasize-lines: 1
 
     $ python -m tox
     ...
@@ -386,7 +385,7 @@ If your project is hosted on `GitHub <https://github.com/>`_, you can use GitHub
 actions to automatically run your tests in different environments. A whole range
 of environments are available for GitHub actions:
 `github.com/actions/virtual-environments
-<https://github.com/actions/virtual-environments/#readme>`_.
+<https://github.com/actions/runner-images?tab=readme-ov-file>`_.
 
 #. To create a GitHub action in your project, click on :menuselection:`Actions
    --> set up a workflow yourself`. This usually creates a
@@ -552,5 +551,5 @@ example, the following code snippet would define a new ``--my`` :abbr:`CLI
         parser.add_argument("--my", action="store_true", help="my option")
 
 .. seealso::
-   * `Extending tox <https://tox.readthedocs.io/en/latest/plugins.html>`_
+   * `Extending tox <https://tox.wiki/en/latest/plugins.html>`_
    * `tox development team <https://github.com/orgs/tox-dev/repositories>`_

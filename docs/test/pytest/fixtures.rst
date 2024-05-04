@@ -717,6 +717,8 @@ However, Pytest allows you to rename fixtures with the ``name`` parameter to
 
 
     from items import cli
+
+
     @pytest.fixture(scope="session", name="db")
     def _db():
         """The db object"""

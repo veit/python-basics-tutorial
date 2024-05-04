@@ -64,7 +64,7 @@ example:
 
 .. |Downloads| image::
    https://static.pepy.tech/badge/cookiecutter-namespace-template
-   :target: https://pepy.tech/project/cookiecutter-namespace-template
+   :target: https://www.pepy.tech/projects/cookiecutter-namespace-template
 .. |Updates| image::
    https://pyup.io/repos/github/veit/cookiecutter-namespace-template/shield.svg
    :target: https://pyup.io/repos/github/veit/cookiecutter-namespace-template/
@@ -108,7 +108,7 @@ used in almost all Python projects, including `NumPy and SciPy
 <https://docs.sqlalchemy.org/>`_.
 
 The Sphinx `autodoc
-<http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ feature,
+<https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ feature,
 which can be used to create documentation from Python
 :doc:`docstrings`, may also be conducive to the spread of Sphinx among Python
 developers. Overall, Sphinx allows developers to create complete documentation
@@ -120,9 +120,9 @@ Sphinx is also used in projects outside the Python community, e.g. for the
 documentation of the Linux kernel: `Kernel documentation update
 <https://lwn.net/Articles/705224/>`_.
 
-`Read the Docs <https://readthedocs.org/>`_ was developed to forther simplify
-documentation. Read the Docs makes it easy to create and publish documentation
-after each commit.
+`Read the Docs <https://about.readthedocs.com/>`_ was developed to forther
+simplify documentation. Read the Docs makes it easy to create and publish
+documentation after each commit.
 
 For project documentation, visualising :doc:`Git feature branches
 <Python4DataScience:productive/git/workflows/feature-branches>` and :doc:`tags

@@ -2,7 +2,7 @@ Code blocks
 ===========
 
 Code blocks can be easily represented with the :rst:dir:`code-block` directive.
-Together with `Pygments <http://pygments.org/>`_, Sphinx will automatically
+Together with `Pygments <https://pygments.org>`_, Sphinx will automatically
 highlight the syntax. You can specify the appropriate language for a code block
 with
 

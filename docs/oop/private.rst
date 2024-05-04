@@ -22,7 +22,7 @@ not end is private; anything else is not.
 
 As an example, consider the following class definition:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class MyClass:
     ...     def __init__(self):
@@ -42,20 +42,20 @@ As an example, consider the following class definition:
 The ``print_y`` method is not private, and since it is in the ``MyClass`` class,
 it can access and output ``__y``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> m.print_y()
     2
 
 .. note::
 
-    The mechanism used to ensure privacy falsifies the name of private variables
-    and private methods when the code is compiled into bytecode. Specifically,
-    this means that ``_classname`` is prefixed to the variable name:
+   The mechanism used to ensure privacy falsifies the name of private variables
+   and private methods when the code is compiled into bytecode. Specifically,
+   this means that ``_classname`` is prefixed to the variable name:
 
-    .. code-block:: python
+   .. code-block:: pycon
 
-        >>> dir(m)
-        ['_MyClass__y', '__class__', …]
+      >>> dir(m)
+      ['_MyClass__y', '__class__', …]
 
-    So this is only to prevent accidental access.
+   So this is only to prevent accidental access.

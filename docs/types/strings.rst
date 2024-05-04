@@ -8,9 +8,9 @@ options for delimiting character strings:
 
    "A string in double quotes can contain 'single quotes'."
    'A string in single quotes can contain "double quotes"'
-   '''\tA string that starts with a tab and ends with a newline character.\n'''
+   """\tA string that starts with a tab and ends with a newline character.\n"""
    """This is a string in triple double quotes, the only string that contains
-   real line breaks.""""
+   real line breaks."""
 
 Strings can be separated by single (``' '``), double (``" "``), triple single
 (``''' '''``) or triple double (``""" """``) quotes and can contain tab (``\t``)
@@ -18,10 +18,14 @@ and newline (``\n``) characters. In general, backslashes ``\`` can be used as
 escape characters. For example  ``\\`` can be used for a single backslash and
 ``\'`` for a single quote, whereby it does not end the string:
 
+.. blacken-docs:off
+
 .. code-block:: python
 
    "You don't need a backslash here."
    'However, this wouldn\'t work without a backslash.'
+
+.. blacken-docs:on
 
 Here are other characters you can get with the escape character:
 
@@ -66,14 +70,14 @@ return new strings derived from the original. The operators (``in``, ``+`` and
 ``*``) and built-in functions (``len``, ``max`` and ``min``) work with strings
 in the same way as with lists and tuples.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome = "Hello pythonistas!\n"
    >>> 2 * welcome
    'Hello pythonistas!\nHello pythonistas!\n'
    >>> welcome + welcome
    'Hello pythonistas!\nHello pythonistas!\n'
-   >>> 'python' in welcome
+   >>> "python" in welcome
    True
    >>> max(welcome)
    'y'
@@ -82,7 +86,7 @@ in the same way as with lists and tuples.
 
 The index and slice notation works in the same way to obtain elements or slices:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome[0:5]
    'Hello'
@@ -92,12 +96,12 @@ The index and slice notation works in the same way to obtain elements or slices:
 However, the index and slice notation cannot be used to add, remove or replace
 elements:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> welcome[6:-1] = 'everybody!'
-   Traceback (most recent call last):
-     File "<stdin>", line 1, in <module>
-   TypeError: 'str' object does not support item assignment
+   >>> welcome[6:-1] = "everybody!"
+   raceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+   ypeError: 'str' object does not support item assignment
 
 ``string``
 ----------
@@ -106,7 +110,7 @@ For strings, the standard Python library :doc:`string <python3:library/string>`
 contains several methods for working with their content, including
 :py:meth:`str.split`, :py:meth:`str.replace` and :py:meth:`str.strip`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome = "hello pythonistas!\n"
    >>> welcome.isupper()
@@ -119,16 +123,16 @@ contains several methods for working with their content, including
    'Hello pythonistas!\n'
    >>> welcome.title()
    'Hello Pythonistas!\n'
-    >>> welcome.strip()
+   >>> welcome.strip()
    'Hello pythonistas!'
-   >>> welcome.split(' ')
+   >>> welcome.split(" ")
    ['hello', 'pythonistas!\n']
-   >>> chunks = [snippet.strip() for snippet in welcome.split(' ')]
+   >>> chunks = [snippet.strip() for snippet in welcome.split(" ")]
    >>> chunks
    ['hello', 'pythonistas!']
-   >>> ' '.join(chunks)
+   >>> " ".join(chunks)
    'hello pythonistas!'
-   >>> welcome.replace('\n', '')
+   >>> welcome.replace("\n", "")
    'hello pythonistas!'
 
 Below you will find an overview of the most common :ref:`string methods
@@ -211,10 +215,10 @@ The Python standard library :doc:`re <python3:library/re>` also contains
 functions for working with strings. However, ``re`` offers more sophisticated
 options for pattern extraction and replacement than ``string``.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import re
-   >>> re.sub('\n', '', welcome)
+   >>> re.sub("\n", "", welcome)
    'Hello pythonistas!'
 
 Here, the regular expression is first compiled and then its
@@ -222,16 +226,16 @@ Here, the regular expression is first compiled and then its
 the expression itself with :py:func:`re.compile` to create a reusable regex
 object that reduces CPU cycles when applied to different strings:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> regex = re.compile('\n')
-   >>> regex.sub('', welcome)
+   >>> regex = re.compile("\n")
+   >>> regex.sub("", welcome)
    'Hello pythonistas!'
 
 If you want to get a list of all patterns that match the ``regex`` object
 instead, you can use the :py:meth:`re.Pattern.findall` method:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(welcome)
    ['\n']
@@ -247,13 +251,13 @@ to :py:meth:`re.Pattern.findall`. While findall returns all matches in a string,
 the beginning of the string. As a less trivial example, consider a block of text
 and a regular expression that can identify most email addresses:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> addresses = """Veit <veit@cusy.io>
    ... Veit Schiele <veit.schiele@cusy.io>
    ... cusy GmbH <info@cusy.io>
    ... """
-   >>> pattern = r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}'
+   >>> pattern = r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}"
    >>> regex = re.compile(pattern, flags=re.IGNORECASE)
    >>> regex.findall(addresses)
    ['veit@cusy.io', 'veit.schiele@cusy.io', 'info@cusy.io']
@@ -275,14 +279,13 @@ into its three components:
 To do this, you first place round brackets ``()`` around the parts of the
 pattern to be segmented:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> pattern = r'([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})'
+   >>> pattern = r"([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})"
    >>> regex = re.compile(pattern, flags=re.IGNORECASE)
-   >>> match = regex.match('veit@cusy.io')
+   >>> match = regex.match("veit@cusy.io")
    >>> match.groups()
    ('veit', 'cusy', 'io')
-
 
 :py:meth:`re.Match.groups` returns a :doc:`tuples` that contains all subgroups
 of the match.
@@ -290,7 +293,7 @@ of the match.
 :py:meth:`re.Pattern.findall` returns a list of tuples if the pattern contains
 groups:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(addresses)
    [('veit', 'cusy', 'io'), ('veit.schiele', 'cusy', 'io'), ('info', 'cusy', 'io')]
@@ -298,11 +301,11 @@ groups:
 Groups can also be used in :py:meth:`re.Pattern.sub` where ``\1`` stands for the
 first matching group, ``\2`` for the second and so on:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(addresses)
    [('veit', 'cusy', 'io'), ('veit.schiele', 'cusy', 'io'), ('info', 'cusy', 'io')]
-   >>> print(regex.sub(r'Username: \1, Domain: \2, Suffix: \3', addresses))
+   >>> print(regex.sub(r"Username: \1, Domain: \2, Suffix: \3", addresses))
    Veit <Username: veit, Domain: cusy, Suffix: io>
    Veit Schiele <Username: veit.schiele, Domain: cusy, Suffix: io>
    cusy GmbH <Username: info, Domain: cusy, Suffix: io>
@@ -343,13 +346,21 @@ expressions:
 The function :func:`print` outputs character strings, whereby other Python data
 types can easily be converted into strings and formatted, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import math
    >>> pi = math.pi
    >>> d = 28
    >>> u = pi * d
-   >>> print("Pi is", pi, "and the circumference with a diameter of", d, "inches is", u, "inches.")
+   >>> print(
+   ...     "Pi is",
+   ...     pi,
+   ...     "and the circumference with a diameter of",
+   ...     d,
+   ...     "inches is",
+   ...     u,
+   ...     "inches.",
+   ... )
    Pi is 3.141592653589793 and the circumference with a diameter of 28 inches is 87.96459430051421 inches.
 
 F-Strings
@@ -357,7 +368,7 @@ F-Strings
 
 F-strings can be used to shorten numbers that are too detailed for a text:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> print(f"The value of Pi is {pi:.3f}.")
     The value of Pi is 3.142.
@@ -368,7 +379,7 @@ Pi to three decimal places.
 In A/B test scenarios, you often want to display the percentage change in a key
 figure. F strings can be used to formulate them in an understandable way:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> metrics = 0.814172
    >>> print(f"The AUC has increased to {metrics:=+7.2%}")
@@ -382,7 +393,7 @@ value into a percentage. For example, ``0.514172`` is converted to ``+51.42%``.
 
 Values can also be converted into binary and hexadecimal values:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> block_size = 192
    >>> print(f"Binary block size: {block_size:b}")
@@ -393,11 +404,12 @@ Values can also be converted into binary and hexadecimal values:
 There are also formatting specifications that are ideally suited for :abbr:`CLI
 (Command Line Interface)` output, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> data_types = [(7, "Data types", 19), (7.1, "Numbers", 19), (7.2, "Lists", 23)]
    >>> for n, title, page in data_types:
-   ...     print(f"{n:.1f} {title:.<25} {page: >3}")                               ...
+   ...     print(f"{n:.1f} {title:.<25} {page: >3}")
+   ...
    7.0 Data types...............  19
    7.1 Numbers..................  19
    7.2 Lists....................  23
@@ -493,7 +505,7 @@ meaning:
 .. [#] The format identifier ``n`` formats a number in a locally customised way,
     for example:
 
-     .. code-block:: python
+     .. code-block:: pycon
 
         >>> value = 635372
         >>> import locale
@@ -505,7 +517,7 @@ meaning:
 .. tip::
    A good source for F-strings is the help function:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> help()
       help> FORMATTING
@@ -527,7 +539,7 @@ In Python 3.8, a specifier was introduced to help with debugging F-string
 variables. By adding an equals sign ``=``, the code is included within the
 F-string:
 
-.. code-block::
+.. code-block:: pycon
 
    >>> uid = "veit"
    >>> print(f"My name is {uid.capitalize()=}")
@@ -539,7 +551,7 @@ Formatting date and time formats and IP addresses
 :py:mod:`datetime` supports the formatting of strings using the same syntax as
 the :py:meth:`strftime <datetime.datetime.strftime>` method for these objects.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import datetime
    >>> today = datetime.date.today()

@@ -212,7 +212,7 @@ block that looks something like this:
 
 .. code-block:: python
 
-    if __name__ == '__main__':
+    if __name__ == "__main__":
         main()
 
 This command tells Python to execute :func:`main()` when we call the module
@@ -222,7 +222,7 @@ with a simple pragma statement:
 
 .. code-block:: python
 
-    if __name__ == '__main__': # pragma: no cover
+    if __name__ == "__main__":  # pragma: no cover
         main()
 
 This instructs Coverage.py to exclude either a single line or a block of code.

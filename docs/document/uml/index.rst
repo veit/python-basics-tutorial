@@ -39,10 +39,10 @@ Installation
 
       extensions = [
           ...,
-          'sphinxcontrib.plantuml',
-          ]
+          "sphinxcontrib.plantuml",
+      ]
 
-      plantuml = '/PATH/TO/PLANTUML'
+      plantuml = "/PATH/TO/PLANTUML"
 
    .. note::
       Also in Windows, the path is specified with ``/``.

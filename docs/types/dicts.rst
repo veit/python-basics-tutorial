@@ -10,7 +10,7 @@ a key-value pair. As with :doc:`lists` , several dictionary methods
 :py:meth:`update <dict.update>` and :py:meth:`values <dict.values>`) are
 available.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = {1: "eins", 2: "zwei"}
     >>> x[3] = "drei"
@@ -44,7 +44,7 @@ contained in a dictionary.
 :py:meth:`setdefault <dict.setdefault>` can be used to provide counters for the
 keys of a dict, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> titles = ["Data types", "Lists", "Sets", "Lists"]
    >>> for title in titles:
@@ -60,7 +60,7 @@ keys of a dict, for example:
    library. This class can perform the above-mentioned operations much more
    easily:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
@@ -71,7 +71,7 @@ Merging dictionaries
 You can merge two dictionaries into a single dictionary using the
 :py:meth:`dict.update` method:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
    >>> new_titles = {7.0: "Data types", 7.3: "Sets"}

@@ -37,7 +37,7 @@ A class variable is created by an assignment in the class, but outside the
 the class. You can use a class variable to make a value for ``pi`` accessible to
 all instances of the ``Circle`` class:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Circle:
     ...     pi = 3.14159
@@ -45,10 +45,11 @@ all instances of the ``Circle`` class:
     ...         self.diameter = diameter
     ...     def circumference(self):
     ...         return self.diameter * Circle.pi
+    ...
 
 Once you have entered this definition, you can query ``pi`` with:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> Circle.pi
     3.14159
@@ -64,7 +65,7 @@ You can also access a class variable from a method of a class using the class
 name. You do this in the definition of ``Circle.circumference``, where the
 ``circumference`` function contains a special reference to ``Circle.pi``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> c = Circle(3)
     >>> c.circumference()
@@ -76,7 +77,7 @@ this by using the special ``__class__`` attribute, which is available for all
 Python class instances. This attribute returns the class to which the instance
 belongs, for example:
 
-.. code-block::
+.. code-block:: pycon
 
     >>> Circle
     <class '__main__.Circle'>
@@ -89,7 +90,7 @@ attribute of ``c``, an instance of the ``Circle`` class. In this example, you
 can retrieve the value of ``Circle.pi`` from ``c`` without explicitly referring
 to the name of the ``Circle`` class:
 
-.. code-block::
+.. code-block:: pycon
 
     >>> c.__class__.pi
     3.14159
@@ -116,7 +117,7 @@ not aware of it.
     an instance variable and only when it cannot find an instance variable does
     it look for a class variable ``pi`` in ``Circle``:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1 = Circle(1)
         >>> c1.pi
@@ -126,7 +127,7 @@ not aware of it.
     early and you want to replace it with a more precise specification, you
     might be inclined to change it as follows:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.pi = 3.141592653589793
         >>> c1.pi
@@ -136,7 +137,7 @@ not aware of it.
     The class variable ``Circle.pi`` and all other instances derived from it
     still have only five decimal places:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> Circle.pi
         3.14159

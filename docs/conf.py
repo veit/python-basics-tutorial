@@ -19,7 +19,7 @@
 #
 # import os
 # import sys
-# sys.path.insert(0, os.path.abspath('.'))
+# sys.path.insert(0, os.path.abspath("."))
 
 import os
 import re
@@ -28,10 +28,10 @@ import re
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
-# needs_sphinx = '1.0'
+# needs_sphinx = "1.0"
 
 # Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+# extensions coming with Sphinx (named "sphinx.ext.*") or your custom ones.
 extensions = [
     "pygments_pytest",
     "sphinx.ext.autodoc",
@@ -55,20 +55,64 @@ intersphinx_mapping = {
     "Sybil": ("https://sybil.readthedocs.io/en/latest/", None),
 }
 
+linkcheck_ignore = [
+    r".*/_sources/.*/*.txt",
+    # 403 Client Error
+    r"https://anaconda.org/",
+]
+
+# All HTTP redirections from the source URI to the canonical URI will be treated# as "working".
+linkcheck_allowed_redirects = {
+    r"https://devpi\.net/docs/$": r"https://devpi\.net/docs/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://click.palletsprojects.com/$": r"https://click.palletsprojects.com/[-a-z]+/(\d+\.)?(\d+\.)?(x|\d+)/$",
+    # Unfortunately, the following regular expression fails: invalid group
+    # reference 1. Therefore, the redirects for readthedocs must unfortunately
+    # be specified individually.
+    # r"https://([^/?#\.]+)\.readthedocs\.io/$": r"https://\1\.readthedocs\.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://cffi.readthedocs.io/$": r"https://cffi.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://cookiecutter.readthedocs.io/$": r"https://cookiecutter.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://faker.readthedocs.io/$": r"https://faker.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://hypothesis.readthedocs.io/$": r"https://hypothesis.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://nbsphinx.readthedocs.io/$": r"https://nbsphinx.readthedocs.io/[-a-z]+/(\d+\.)?(\d+\.)?(x|\d+)/$",
+    r"https://cibuildwheel.pypa.io/$": r"https://cibuildwheel.pypa.io/[-a-z]+/(?:latest|stable|master)/$",
+    # r"https://docs.pytest.org/$": r"https://docs.pytest.org/[-a-z]+/(\d+\.)?(\d+\.)?(x|\d+)/$",
+    r"https://docs.pytest.org/$": r"https://docs.pytest.org/[-a-z]+/(?:latest|stable|master|(\d+\.)?(\d+\.)?(x|\d+))/$",
+    r"https://docs.python.org/$": r"https://docs.python.org/3/$",
+    r"https://gist.github.com": r"https://gist.github.com/.*",
+    r"https://flit.pypa.io": r"https://flit.pypa.io/.*",
+    r"https://docs.sqlalchemy.org": r"https://docs.sqlalchemy.org/[-a-z]+/(\d+\.)?(\d+\.)?(x|\d+)/$",
+    r"https://github.com/settings/tokens": r"https://github.com/login?.*",
+    r"https://github.com/veit/python-basics-tutorial/fork": r"https://github.com/login?.*",
+    r"https://jinja.palletsprojects.com/$": r"https://jinja.palletsprojects.com/[-a-z]+/(?:latest|stable|master|(\d+\.)?(\d+\.)?(x|\d+))/$",
+    r"https://pdm.fming.dev/$": r"https://pdm-project.org/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://pip.pypa.io/$": r"https://pip.pypa.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://pypi.org/manage/account/publishing/": r"https://pypi.org/account/login/.*",
+    r"https://pytest-cov.readthedocs.io/$": r"https://pytest-cov.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://setuptools.readthedocs.io/$": r"https://setuptools.pypa.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://sphinx-git.readthedocs.io/$": r"https://sphinx-git.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://sphinxcontrib-napoleon.readthedocs.io/$": r"https://sphinxcontrib-napoleon.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://sphinx-needs.readthedocs.io/$": r"https://sphinx-needs.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://tox.readthedocs.io/$": r"https://tox.wiki/[-a-z]+/(\d+\.)?(\d+\.)?(x|\d+)/$",
+    r"https://wheel.readthedocs.io/$": r"https://wheel.readthedocs.io/[-a-z]+/(?:latest|stable|master)/$",
+    r"https://www.sphinx-doc.org/$": r"https://www.sphinx-doc.org/[-a-z]+/(?:latest|stable|master)/$",
+}
+
+linkcheck_exclude_documents = [r".*/dataprep/.*"]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
+# source_suffix = [".rst", ".md"]
 source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
 
 # General information about the project.
-project = "Python basics"
+project = "Python Basics"
 author = "Veit Schiele"
 copyright = f"2021–2024, {author}"
 
@@ -113,7 +157,7 @@ html_title = f"{project} {release}"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
+# html_static_path = ["_static"]
 html_static_path = ["_static"]
 
 html_logo = "_static/images/logo/logo.png"
@@ -129,17 +173,17 @@ htmlhelp_basename = "python-basics"
 # -- Options for LaTeX output ------------------------------------------
 
 latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    # 'papersize': 'letterpaper',
+    # The paper size ("letterpaper" or "a4paper").
+    # "papersize": "letterpaper",
     #
-    # The font size ('10pt', '11pt' or '12pt').
-    # 'pointsize': '10pt',
+    # The font size ("10pt", "11pt" or "12pt").
+    # "pointsize": "10pt",
     #
     # Additional stuff for the LaTeX preamble.
-    # 'preamble': '',
+    # "preamble": "",
     #
     # Latex figure (float) alignment
-    # 'figure_align': 'htbp',
+    # "figure_align": "htbp",
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -149,7 +193,7 @@ latex_documents = [
     (
         master_doc,
         "python-basics.tex",
-        "Python basics",
+        "Python Basics",
         "Veit Schiele",
         "manual",
     ),
@@ -160,7 +204,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "python-basics", "Python basics", [author], 1)]
+man_pages = [(master_doc, "python-basics", "Python Basics", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------
@@ -172,10 +216,10 @@ texinfo_documents = [
     (
         master_doc,
         "python-basics",
-        "Python basics",
+        "Python Basics",
         author,
         "python-basics",
-        "Python basics.",
+        "Python Basics.",
         "Miscellaneous",
     ),
 ]

@@ -24,7 +24,7 @@ You can get an overview of the methods that are available in a namespace with
     :lines: 65-70
     :lineno-start: 65
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import form_ns
     >>> c1 = form_ns.Circle()
@@ -67,7 +67,7 @@ You can now analyse the namespace of the instance with the method
     :lines: 72-
     :lineno-start: 72
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import form_ns
     >>> c1 = form_ns.Circle()
@@ -83,7 +83,7 @@ You can now analyse the namespace of the instance with the method
 If you only want to change instances of a certain class, you can do this with
 the :mod:`garbage collector <gc>`, for example:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import forms
     >>> c1 = forms.Circle()

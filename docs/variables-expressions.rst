@@ -7,7 +7,7 @@ Variables
 The most commonly used command in Python is assignment. The Python code to
 create a Vairiable called ``x`` that is to be given the value ``π`` is:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> pi = 3.14159
 
@@ -22,7 +22,7 @@ for the first time.
    to which all those variables refer. To better understand what this means, see
    the following example:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> x = [1, 2, 3]
       >>> y = x
@@ -32,13 +32,13 @@ for the first time.
 
    However, variables can also refer to constants:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> x = 1
       >>> y = x
       >>> z = y
       >>> y = 4
-      >>> print(x,y,z)
+      >>> print(x, y, z)
       1 4 1
 
    In this case, after the third line, ``x``, ``y`` and ``z`` all refer to the
@@ -58,10 +58,9 @@ well as underscores, but must begin with a letter or underscore.
    cannot turn them into variables. After calling :ref:`help` you can enter
    ``keywords`` to get the keywords:
 
-   .. code-block::
+   .. code-block:: pycon
 
       >>> help()
-      ...
       help> keywords
       Here is a list of the Python keywords.  Enter any keyword to get more help.
       False               class               from                or
@@ -81,7 +80,7 @@ well as underscores, but must begin with a letter or underscore.
    never be used. You can obtain a list of the :mod:`__builtins__` objects
    with :
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> dir(__builtins__)
       ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BaseExceptionGroup', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EncodingWarning', 'EnvironmentError', 'Exception', 'ExceptionGroup', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
@@ -93,7 +92,7 @@ Python supports arithmetic and similar expressions. The following code
 calculates the average of ``x`` and ``y`` and stores the result in the variable
 ``z``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = 1
     >>> y = 2

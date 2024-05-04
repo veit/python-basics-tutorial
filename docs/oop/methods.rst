@@ -9,7 +9,7 @@ circumference for any ``Square`` instance. Like most custom methods,
 ``circumference`` is called with a syntax similar to accessing instance
 variables:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Square:
     ...     def __init__(self):
@@ -30,7 +30,7 @@ practical and is almost never used because the first argument of a method called
 in this way must be an instance of the class in which the method is defined and
 is less clear:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> print(Square.circumference(s))
     20
@@ -45,13 +45,14 @@ arguments. This version of ``Square`` adds an argument to the ``__init__``
 method so that you can create squares with a specific edge length without having
 to set the edge length after creating a square:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Square:
     ...     def __init__(self, length):
     ...         self.length = length
     ...     def circumference(self):
     ...         return 4 * self.length
+    ...
 
 .. warning::
 
@@ -67,7 +68,7 @@ With this definition of ``Square``, you can create squares with arbitrary edge
 lengths with a call to the ``Square`` class. In the following, a square with
 edge length ``3`` is created:
 
-.. code-block:: python
+.. code-block:: pycon
 
     s = Square(3)
 
@@ -75,7 +76,7 @@ All of Python’s standard functions – standard arguments, additional argument
 keyword arguments, :abbr:`etc. (et cetera)` – can be used with methods. You
 could have defined the first line of ``__init__`` as follows:
 
-.. code-block:: python
+.. code-block:: pycon
 
     ...     def __init__(self, length=1):
 
@@ -116,7 +117,7 @@ Line 11
 Line 14
     adds initialised ``Circle`` instances to the ``circles`` list.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import circle
     >>> c1 = circle.Circle(1)
@@ -151,7 +152,7 @@ Line 27
     By using a class method instead of a static method, you don’t have to
     hardcode the class name in ``circumferences``.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import circle_cm
     >>> c1 = circle_cm.Circle(1)

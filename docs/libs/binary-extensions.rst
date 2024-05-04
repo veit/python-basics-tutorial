@@ -130,7 +130,7 @@ significantly reduce the maintenance effort compared to wrapper modules.
   be wrapped by hand, it is not a good choice when wrapping large APIs.
 
 * `cffi <https://cffi.readthedocs.io/>`_ is the project of some `PyPy
-  <https://pypy.org/>`__ developers to give developers who already know both
+  <https://www.pypy.org/>`__ developers to give developers who already know both
   Python and C the possibility to make their C modules available for Python
   applications. It makes wrapping a C module based on its header files
   relatively easy, even if you are not familiar with C itself.
@@ -139,7 +139,7 @@ significantly reduce the maintenance effort compared to wrapper modules.
   so that CFFI wrapper modules can fully participate in the PyPy tracing JIT
   optimisations.
 
-* `SWIG <http://www.swig.org/>`_ is a wrapper interface generator that combines
+* `SWIG <https://www.swig.org/>`_ is a wrapper interface generator that combines
   a variety of programming languages, including Python, with C and C ++ code.
 
 * The ``ctypes`` module of the standard library is useful to get access to C
@@ -149,7 +149,7 @@ significantly reduce the maintenance effort compared to wrapper modules.
   contrast, the alternatives above can all work on the C API and use C header
   files to ensure consistency.
 
-* `pythoncapi_compat <https://github.com/python/pythoncapi_compat>`_ can be used
+* `pythoncapi_compat <https://github.com/python/pythoncapi-compat>`_ can be used
   to write a C extension that supports multiple Python versions with a single
   code base. It consists of the header file :file:`pythoncapi_compat.h` and the
   script :file:`upgrade_pythoncapi.py`.
@@ -194,7 +194,6 @@ files in a package.
 
 .. literalinclude:: dataprep/setup.py
     :language: python
-    :lines: 3-5,9,40-
 
 .. note::
    With `extensionlib <https://github.com/ofek/extensionlib>`_ there is a
@@ -264,7 +263,7 @@ Alternatively, you can install our ``dataprep`` package and use ``mean``:
     $ python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
     $ python
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> from dataprep.mean import mean
     >>> from random import randint
@@ -282,14 +281,14 @@ values between 1 and 1000 was created.
    <https://docs.python.org/3/extending/extending.html>`_. However, please note
    that this introduction only discusses the basic tools for creating extensions
    that are provided as part of CPython. Third-party tools such as `Cython
-   <http://cython.org/>`__, `cffi <https://cffi.readthedocs.io/>`_, `SWIG
-   <http://www.swig.org/>`_, and `Numba <https://numba.pydata.org/>`__  offer
+   <https://cython.org/>`__, `cffi <https://cffi.readthedocs.io/>`_, `SWIG
+   <https://www.swig.org/>`__, and `Numba <https://numba.pydata.org/>`__  offer
    both simpler and more sophisticated approaches to building C and C++
    extensions for Python.
 
    `Python Packaging User Guide: Binary Extensions
-   <https://packaging.python.org/guides/packaging-binary-extensions/>`_ not only
-   covers various available tools that simplify the creation of binary
+   <https://packaging.python.org/en/latest/guides/packaging-binary-extensions/>`_
+   not only covers various available tools that simplify the creation of binary
    extensions, but also explains the various reasons why creating an extension
    module might be desirable.
 
@@ -358,6 +357,6 @@ In the following, the deployment on the :term:`Python Package Index`
 
 .. seealso::
    * `Deploying Python applications
-     <https://packaging.python.org/discussions/deploying-python-applications/>`_
+     <https://packaging.python.org/en/latest/discussions/deploying-python-applications/>`_
    * `Supporting Windows using Appveyor
-     <https://packaging.python.org/guides/supporting-windows-using-appveyor/>`_
+     <https://packaging.python.org/en/latest/guides/supporting-windows-using-appveyor/>`_

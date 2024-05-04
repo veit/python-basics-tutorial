@@ -38,7 +38,7 @@ Third-party extensions
 
 `nbsphinx <https://nbsphinx.readthedocs.io/>`_
     Jupyter Notebooks in Sphinx
-`jupyter-sphinx <https://github.com/jupyter-widgets/jupyter-sphinx>`_
+`jupyter-sphinx <https://github.com/jupyter/jupyter-sphinx>`_
     allows rendering of Jupyter interactive widgets in Sphinx.
 
     .. seealso::
@@ -49,7 +49,7 @@ Third-party extensions
 `Breathe <https://github.com/breathe-doc/breathe>`_
     ReStructuredText and Sphinx bridge to `Doxygen <https://www.doxygen.nl>`_
 `numpydoc <https://github.com/numpy/numpydoc>`_
-    `NumPy <NumPy>`_’s Sphinx extension
+    `NumPy <https://numpy.org/>`_’s Sphinx extension
 `Releases <https://github.com/bitprophet/releases>`_
     writes a changelog file
 `sphinxcontrib-napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/>`_
@@ -62,12 +62,12 @@ Third-party extensions
     `git <https://git-scm.com/>`_-Changelog for Sphinx
 `Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
     inserts a git datestamp into the context
-`sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
+`sphinx-intl <https://pypi.org/project/sphinx-intl/>`_
     Sphinx extension for translations
-`sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_
+`sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_
     monitors a Sphinx repository and creates new documentation as soon as
     changes are made
-`Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io/en/latest/>`_
+`Sphinx-Needs <https://sphinx-needs.readthedocs.io/en/latest/>`_
     allows the definition, linking and filtering of need-objects, for example
     requirements and test cases
 `Sphinx-pyreverse <https://github.com/alendit/sphinx-pyreverse>`_
@@ -106,12 +106,10 @@ If your extension is in the directory ``exts`` in the file ``foo.py``, then the
 
     import sys
     import os
-    sys.path.insert(0, os.path.abspath('exts'))
 
-    extensions = [
-        'foo',
-        ...
-        ]
+    sys.path.insert(0, os.path.abspath("exts"))
+
+    extensions = ["foo", ...]
 
 .. seealso::
     * `Developing extensions for Sphinx

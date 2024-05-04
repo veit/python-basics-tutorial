@@ -7,7 +7,7 @@ Finally, you can deploy the package on the :term:`Python Package Index`
 For this you should register on *Test PyPI*. *Test-PyPI* is a separate instance
 that is intended for testing and experimentation. To set up an account there, go
 to  https://test.pypi.org/account/register/. For more information, see `Using
-TestPyPI <https://packaging.python.org/guides/using-testpypi/>`_.
+TestPyPI <https://packaging.python.org/en/latest/guides/using-testpypi/>`_.
 
 Now you can create the :file:`~/.pypirc` file:
 

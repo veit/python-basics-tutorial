@@ -14,7 +14,7 @@ example, the empty list ``[]`` or the empty string ``""``) are all considered
 ``and``, ``not``, ``or``
     are logical operators that can be used to link the above checks.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> x = 3
    >>> y = 3.0
@@ -40,7 +40,7 @@ referring to the same object in two places.
 Most frequently, ``is`` and ``is not`` are used in conjunction with
 :doc:`../types/none`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x is None
     False
@@ -54,7 +54,7 @@ is None`` instead.
 However, you should never compare calculated floating point numbers with each
 other:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> u = 0.6 * 7
     >>> v = 0.7 * 6

@@ -166,8 +166,8 @@ skip the test for all versions of items lower than 0.2.x as follows:
 
 
     @pytest.mark.skipif(
-    parse(items.__version__).minor < 2,
-    reason="The comparison with < is not yet supported in version 0.1.x.",
+        parse(items.__version__).minor < 2,
+        reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
         i1 = Item("Update pytest section")
@@ -211,7 +211,7 @@ parameters for this fixture is the same as for  ``skipif``.
 Let’s take a look at an example:
 
 .. code-block:: python
-   :emphasize-lines: 8-15, 17-21, 23-
+   :emphasize-lines: 8-15, 18-22, 25-
 
     import pytest
     from packaging.version import parse
@@ -221,19 +221,21 @@ Let’s take a look at an example:
 
 
     @pytest.mark.xfail(
-    parse(items.__version__).minor < 2,
-    reason="The comparison with < is not yet supported in version 0.1.x.",
+        parse(items.__version__).minor < 2,
+        reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
         i1 = Item("Update pytest section")
         i2 = Item("Update cibuildwheel section")
         assert i1 < i2
 
+
     @pytest.mark.xfail(reason="Feature #17: not implemented yet")
     def test_xpass():
         i1 = Item("Update pytest section")
         i2 = Item("Update pytest section")
         assert i1 == i2
+
 
     @pytest.mark.xfail(reason="Feature #17: not implemented yet", strict=True)
     def test_xfail_strict():
@@ -471,7 +473,9 @@ and use markers at class level:
             assert s.state == "done"
 
         def test_finish_from_in_prog(self, items_db):
-            i = items_db.add_item(Item("Update pytest section", state="in progress"))
+            i = items_db.add_item(
+                Item("Update pytest section", state="in progress")
+            )
             items_db.finish(i)
             s = items_db.get_item(i)
             assert s.state == "done"
@@ -530,7 +534,9 @@ also mark fixtures in the same way:
 
 
     def test_finish(items_db, start_state_fixture):
-        i = items_db.add_item(Item("Update pytest section", state=start_state_fixture))
+        i = items_db.add_item(
+            Item("Update pytest section", state=start_state_fixture)
+        )
         items_db.finish(i)
         s = items_db.get_item(i)
         assert s.state == "done"
@@ -548,7 +554,7 @@ them. For example, :func:`test_finish_non_existent()` is marked with both
     @pytest.mark.smoke
     @pytest.mark.exception
     def test_finish_non_existent(items_db):
-        i = 44 # any_number will be invalid, db is empty
+        i = 44  # any_number will be invalid, db is empty
         with pytest.raises(InvalidItemId):
             items_db.finish(i)
 
@@ -665,7 +671,7 @@ cleans up the database for each test that wants to use it:
 .. code-block:: python
 
     @pytest.fixture(scope="function")
-        def items_db(session_items_db):
+    def items_db(session_items_db):
         db = session_items_db
         db.delete_all()
         return db
@@ -747,7 +753,7 @@ have. This requires three steps:
 
    .. code-block:: python
       :linenos:
-      :emphasize-lines: 5, 12-
+      :emphasize-lines: 5, 13-
 
       import os
       from pathlib import Path
@@ -760,6 +766,7 @@ have. This requires three steps:
 
       ...
 
+
       @pytest.fixture(scope="function")
       def items_db(session_items_db, request, faker):
           db = session_items_db
@@ -770,7 +777,9 @@ have. This requires three steps:
           if m and len(m.args) > 0:
               num_items = m.args[0]
               for _ in range(num_items):
-                  db.add_item(Item(summary=faker.sentence(), owner=faker.first_name()))
+                  db.add_item(
+                      Item(summary=faker.sentence(), owner=faker.first_name())
+                  )
           return db
 
    There are a lot of changes here that we want to go through now.
