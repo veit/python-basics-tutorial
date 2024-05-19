@@ -55,6 +55,75 @@ blacken-docs currently supports the following black options:
 * `target-version
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version>`_
 
+.. _docstrings-coverage:
+
+Docstrings coverage
+-------------------
+
+`interrogate <https://interrogate.readthedocs.io/en/latest/>`_ checks your
+codebase for missing documentation strings and generates a `shields.io-like
+badge <https://interrogate.readthedocs.io/en/latest/#other-usage>`_.
+
+You can configure ``interrogate`` in the :ref:`pyproject-toml` file, for examle:
+
+.. code-block:: toml
+   :caption: pyproject.toml
+   :emphasize-lines: 4, 8-
+
+   [project.optional-dependencies]
+   tests = [
+       "coverage[toml]",
+       "interrogate",
+       "pytest>=6.0",
+   ]
+
+   [tool.interrogate]
+   ignore-init-method = true
+   ignore-init-module = false
+   ignore-magic = false
+   ignore-semiprivate = false
+   ignore-private = false
+   ignore-module = false
+   ignore-property-decorators = false
+   fail-under = 95
+   exclude = ["tests/functional/sample", "setup.py", "docs"]
+   verbose = 0
+   omit-covered-files = false
+   quiet = false
+   whitelist-regex = []
+   ignore-regex = []
+   color = true
+
+.. seealso::
+
+   * `Configuration <https://interrogate.readthedocs.io/en/latest/index.html#configuration>`_
+
+You can now insert ``interrogate`` into your :doc:`../test/tox` file, for
+example with
+
+.. code-block:: ini
+   :caption: tox.ini
+
+   [testenv:doc]
+   deps = interrogate
+   skip_install = true
+   commands =
+       interrogate --quiet --fail-under 95 src tests
+
+You can also use ``interrogate`` with :doc:`pre-commit
+<Python4DataScience:productive/git/advanced/hooks/pre-commit>`:
+
+.. code-block:: yaml
+   :caption: .pre-commit-config.yaml
+
+   repos:
+     - repo: https://github.com/econchick/interrogate
+       rev: 1.7.0
+       hooks:
+         - id: interrogate
+           args: [--quiet, --fail-under=95]
+           pass_filenames: false
+
 .. _build-errors:
 
 Build errors
