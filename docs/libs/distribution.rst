@@ -566,5 +566,5 @@ You can then call Python and import your ``loaders`` module:
    There are still many instructions that include a step to call
    :file:`setup.py`, for example :samp:`python setup.py sdist`. However, this is
    now considered `anti-pattern
-   <https://twitter.com/pganssle/status/1152695229105000453>`_ by parts of the
+   <https://x.com/pganssle/status/1152695229105000453>`_ by parts of the
    `Python Packaging Authority (PyPA) <https://github.com/pypa/>`_.
