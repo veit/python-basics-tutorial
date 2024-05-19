@@ -64,6 +64,7 @@ Lines 25 to 26
       the filename:
 
       .. code-block:: pycon
+
          >>> import wc
          >>> wc.words_occur()
          Enter the name of the file: README.rst

@@ -56,7 +56,7 @@ can’t use ``function`` scope fixtures. However, we can use ``tmp_path_factory`
    We can also remove two import statements because we don’t need to import
    ``pathlib`` or ``tempfile``.
 
-.. tipp::
+.. tip::
    Do not use :ref:`tmpdir <pytest:tmpdir>` or :ref:`tmpdir_factory
    <pytest:tmpdir>` as they provide :class:`py.path.local` objects, a legacy
    type.
@@ -384,7 +384,7 @@ we can also patch the home attribute of ``pathlib.Path``:
 
 However, *monkey patching* and *mocking* complicate testing, so we will look for
 ways to avoid this whenever possible. In our case, it might be useful to set an
-environment variable :envar:`ITEMS_DB_DIR` that can be easily patched:
+environment variable :envvar:`ITEMS_DB_DIR` that can be easily patched:
 
 .. code-block:: python
 
