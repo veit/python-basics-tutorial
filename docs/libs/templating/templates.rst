@@ -42,7 +42,7 @@ C
 
 `bootstrap.c <https://github.com/vincentbernat/bootstrap.c>`_
     Template for projects written in C with `Autotools
-    <https://www.lrde.epita.fr/~adl/autotools.html>`_
+    <https://en.wikipedia.org/wiki/GNU_Autotools>`_
 `cookiecutter-avr <https://github.com/solarnz/cookiecutter-avr>`_
     Template for AVR development
 
