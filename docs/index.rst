@@ -8,8 +8,8 @@ reference guide to Python, but rather the goal is to give you a basic
 familiarity with Python and enable you to quickly write your own programs.
 
 .. note::
-   If you have suggestions for improvements, I would be happy to
-   :doc:`receive <contribute>` them.
+   If you have suggestions for improvements, I would be happy to :doc:`receive
+   <contribute>` them.
 
 .. toctree::
    :titlesonly:
