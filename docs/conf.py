@@ -55,6 +55,9 @@ intersphinx_mapping = {
     "Sybil": ("https://sybil.readthedocs.io/en/latest/", None),
 }
 
+# http://peak.telecommunity.com delays crawling by 60 seconds.
+linkcheck_timeout = 60
+
 linkcheck_ignore = [
     r".*/_sources/.*/*.txt",
     # 403 Client Error
