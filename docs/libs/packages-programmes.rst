@@ -21,11 +21,11 @@ details of the requirements and process for creating wheels can be found in
 -------------------------
 
 `py2exe <https://www.py2exe.org/>`_ creates standalone Windows applications and
-`py2app <https://py2app.readthedocs.io/en/latest/>`_ does the same for macOS. In
-both cases, these are single executables that can run on machines that do not
-have Python installed. In many ways, however, standalone executables are not
-ideal, as they tend to be larger and less flexible than native Python
-applications, but in some situations they can also be the best or only solution.
+`py2app <https://py2app.readthedocs.io/>`_ does the same for macOS. In both
+cases, these are single executables that can run on machines that do not have
+Python installed. In many ways, however, standalone executables are not ideal,
+as they tend to be larger and less flexible than native Python applications, but
+in some situations they can also be the best or only solution.
 
 ``freeze``
 ----------
