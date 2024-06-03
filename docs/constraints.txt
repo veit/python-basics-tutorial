@@ -23,7 +23,7 @@ pygments-pytest==2.4.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 regex==2024.5.15
-requests==2.32.2
+requests==2.32.3
 six==1.16.0
 snowballstemmer==2.2.0
 soupsieve==2.5
