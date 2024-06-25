@@ -14,7 +14,7 @@ Jinja2==3.1.4
 kiwisolver==1.4.5
 MarkupSafe==2.1.5
 matplotlib==3.9.0
-numpy==1.26.4
+numpy==2.0.0
 packaging==24.1
 pillow==10.3.0
 polib==1.2.0
@@ -41,4 +41,4 @@ sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
 sphinxcontrib-svg2pdfconverter==1.2.2
 sphinxext-opengraph==0.9.1
-urllib3==2.2.1
+urllib3==2.2.2
