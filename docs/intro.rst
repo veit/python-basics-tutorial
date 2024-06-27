@@ -87,10 +87,23 @@ Variable types
     more. Some find it a disadvantage that Python does not simply perform type
     validation here, but the number of type errors is usually manageable and the
     flexibility of dynamic typing usually outweighs the problems.
+
+.. _mobile:
+
 Support for mobile devices
-    Even though mobile devices have proliferated in recent years, Python does
-    not have a strong presence in this area. While there are a few options to
-    deploy and run Python on mobile devices, this is not always easy.
+    There are now several options for running Python on mobile devices, for
+    example with :ref:`briefcase` or :ref:`beeware`. Python itself will offer
+    `Tier 3 <https://peps.python.org/pep-0011/#tier-3>`_ support for Windows,
+    iOS and Pi OS, among others, from version 3.13. It will also be easier to
+    create wheels for mobile devices in the future by extending tools such as
+    :doc:`libs/cibuildwheel` and :term:`setuptools`.
+
+    .. seealso::
+       * `The Python Language Summit 2024: Python on Mobile
+         <https://pyfound.blogspot.com/2024/06/python-language-summit-2024-python-on-mobile.html>`_
+       * :pep:`730`
+       * :pep:`738`
+
 Support for concurrent computation
     Processors with multiple cores are now widespread and lead to significant
     performance gains in many areas. However, the standard implementation of
