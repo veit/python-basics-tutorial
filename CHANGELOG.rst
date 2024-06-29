@@ -13,6 +13,16 @@ The versions follow `Semantic Versioning <https://semver.org/lang/de/>`_:
 
 .. _changelog
 
+24.2.0
+
+* 📝 Update Python on mobile devices
+* 📝 Add design patterns
+* 📝 Update Tiobe Index
+* 📝 Add frozenset
+* 📝 Add git filter for pytest
+* 📝 Add interrogate for docstring coverage
+* 📝 Expand section for testing the documentation
+
 24.1.0
 
 * 🌱 Add matplotlib for social cards
