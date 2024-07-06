@@ -24,6 +24,17 @@ instances of some classes with simple functions and thus reducing a lot of
 boilerplate code. In the following :doc:`strategy pattern <strategy>` section,
 we will refactor the strategy pattern using function objects.
 
+.. seealso::
+   * `Architecture Patterns with Python
+     <https://www.oreilly.com/library/view/architecture-patterns-with/9781492052197/>`_
+     by Harry Percival and Bob Gregory
+   * `Clean Architectures in Python
+     <https://www.thedigitalcatbooks.com/pycabook-introduction/>`_ by Leonardo
+     Giordani
+   * `Enterprise Integration Patterns
+     <https://www.pearson.de/enterprise-integration-patterns-designing-building-and-deploying-messaging-solutions-9780133065107>`_
+     by Gregor Hohpe and Bobby Woolf
+
 ----
 
 .. [#] Ralph Johnson, co-author of the `design pattern
