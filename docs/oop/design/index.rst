@@ -1,14 +1,20 @@
-Design patterns
-===============
+Object-orientated designs
+=========================
+
+In software development, a design pattern describes a relatively small,
+well-defined aspect of a computer program in terms of how code is to be written.
+The purpose of using a pattern is to utilise an existing concept rather than
+reinventing it. This can reduce the time required for software development and
+increase the quality of the resulting programme.
 
     Conformity to patterns is not a measure of quality. [#]_
 
-Although design patterns are language-independent, this does not mean that every
-pattern is suitable for every language. In his 1996 talk *Design Patterns in
-Dynamic Languages*, Peter Norvig notes that 16 of the 23 patterns from the
-original `Design Patterns <https://en.wikipedia.org/wiki/Design_Patterns>`_ book
-become either invisible or simpler in a dynamic language [#]_. The authors of
-*Design Patterns* recognise in their introduction that the implementation
+Although `design patterns <https://en.wikipedia.org/wiki/Design_Patterns>`_ are
+language-independent, this does not mean that every pattern is suitable for
+every language. In his talk *Design Patterns in Dynamic Languages* from 1996,
+Peter Norvig states that 16 of the 23 patterns from the classic book *Design
+Patterns* become either invisible or simpler in a dynamic language [#]_. The
+authors of the book also recognise in their introduction that the implementation
 language determines which patterns are relevant:
 
     The choice of programming language is important because it influences the
@@ -23,6 +29,10 @@ Norvig suggests, among other things, replacing the strategy pattern with
 instances of some classes with simple functions and thus reducing a lot of
 boilerplate code. In the following :doc:`strategy pattern <strategy>` section,
 we will refactor the strategy pattern using function objects.
+
+:doc:`SOLID <solid>` is an acronym for five design principles that are intended
+to make object-orientated designs more comprehensible, flexible and
+maintainable.
 
 .. seealso::
    * `Architecture Patterns with Python
@@ -46,6 +56,7 @@ we will refactor the strategy pattern using function objects.
    :titlesonly:
    :hidden:
 
+   solid
    factory
    decorator
    strategy
