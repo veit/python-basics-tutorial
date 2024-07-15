@@ -3,68 +3,139 @@ Adding more Python libraries
 
 Although Python’ :doc:`batteries` philosophy means that you can already do a lot
 with the default installation of Python, there will inevitably come a situation
-where you need functionality that is not included in Python. This section gives
-an overview of the options available to you.
-
-If you are lucky, you will find the extra functionality you need in a package
-for your operating system – with a Windows or macOS executable installer, or a
-package for your Linux distribution.
-
-This is one of the easiest ways to add a library to your Python installation, as
-the installer or your package manager will take care of all the details to
-correctly add the module to your system. In general, however, such pre-built
-packages are not the norm for Python software.
-
-Installing Python libraries with ``pip`` and ``venv``
------------------------------------------------------
+where you need functionality that is not included in Python.
 
 If you need a third-party module that is not pre-built for your platform, you
-will have to turn to its source distribution. However, this brings two problems:
+must use its source distribution. However, this causes two problems:
 
-#. To install the source distribution, you need to find and download it.
-#. Certain Python paths and permissions on your system are expected.
+* To install the source distribution, you need to find and download it.
+* Certain Python paths and authorisations of your system are expected.
 
-Python offers :term:`pip` as a current solution to both problems. ``pip`` tries
+Python offers :ref:`pip` as a current solution for both problems. ``pip`` tries
 to find the module in the :term:`Python Package Index` (:term:`PyPI`), downloads
-it and all dependencies, and takes care of the installation. The basic syntax of
-``pip`` is quite simple: for example, to install the popular ``requests``
-library from the command line, all you have to do is the following:
+it and all dependencies and takes care of the installation. You can also call
+:term:`pypi.org` directly and search for packages or filter the packages by
+category.
+
+.. warning::
+   Never install anything with ``pip`` into the global Python, not even with the
+   ``--user`` flag. Always use :ref:`virtual-environments`. This way you avoid
+   contaminating your Python installation with libraries that you install and
+   then forget about. Every time you need to do something new, you should create
+   a new virtual environment. This will also avoid library conflicts between
+   different projects.
+
+.. tip::
+   We recommend that you configure ``pip`` so that it is not possible to install
+   Python packages globally. To do this, you can enter the following in your
+   :file:`~/.config/pip/pip.conf`:
+
+   .. code-block:: ini
+
+      [global]
+      require-virtualenv = true
+
+.. _virtual-environments:
+
+Virtual environments
+--------------------
+
+A virtual environment (``virtualenv``) is a self-contained directory structure
+that contains both an installation of Python and the additional packages. Since
+the entire Python environment is contained in this directory, the libraries and
+modules installed there cannot collide with those in the main system or in other
+virtual environments, so that different applications can use different versions
+of Python and its packages. Creating and using a virtual environment is a
+two-step process:
+
+#. First, we create the environment:
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         $ python3 -m venv myenv
+
+   .. tab:: Windows
+
+      .. code-block:: ps1
+
+         > py -m venv myenv
+
+   This creates the environment with Python and :term:`pip` in a directory
+   called :samp:`myenv`.
+
+#. You can then activate this environment so that the next time you call
+   ``python``, it will use the Python from your new environment:
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         $ . myenv/bin/activate
+
+   .. tab:: Windows
+
+      .. code-block:: ps1
+
+         > myenv\Scripts\activate.bat
+
+#. Install Python packages only for this virtual environment, for example the
+   popular ``pandas`` library:
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         (myenv) $ python -m pip install pandas
+
+   .. tab:: Windows
+
+      .. code-block:: ps1
+
+         (myenv) > python.exe -m pip install pandas
+
+#. If you want to finish your work on this project, you can deactivate the
+   virtual environment again with
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         (myenv) $ deactivate
+
+   .. tab:: Windows
+
+      .. code-block:: ps1
+
+         (myenv) > deactivate
+
+.. seealso::
+   * :doc:`python3:tutorial/venv`
+
+.. _pip:
+
+``pip``
+-------
+
+The basic syntax of ``pip`` is quite simple:
 
 .. code-block:: console
 
-    $ python3.8 -m pip install requests
+   $ python -m pip install pandas
 
 If you want to specify a particular version of a package, you can simply append
 the version numbers:
 
 .. code-block:: console
 
-    $ python3.8 -m pip install requests==2.28.1
+   $ python -m pip install pandas==2.2.2
 
 or
 
 .. code-block:: console
 
-    $ python3.8 -m pip install requests>=2.28.0
-
-Installing with the ``--user`` option
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Often, however, you will not be able or willing to install a Python package in
-the main Python instance. Maybe you need a more recent version of a library, but
-another application still needs an older version. Or maybe you don’t have
-sufficient administrator rights to change the system’s default Python. In such
-cases, one possibility is to install the library with the ``--user`` flag: this
-installs the library in the home directory, where it can then only be used by
-you:
-
-.. code-block:: console
-
-    $ python3.8 -m pip install --user requests
-
-.. seealso::
-
-   * :doc:`python3:installing/index`
+   $ python -m pip install "pandas>=2"
 
 Proxy server
 ~~~~~~~~~~~~
@@ -82,8 +153,7 @@ You can also save the proxy server permanently as an environment variable:
 
    .. code-block:: bash
 
-      HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
-      Export HTTP_PROXY
+      export HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
 
 .. tab:: Windows
 
@@ -93,88 +163,44 @@ You can also save the proxy server permanently as an environment variable:
 
       set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
 
-.. _virtual-environments:
+Pinning the version numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Virtual environments
-~~~~~~~~~~~~~~~~~~~~
+… of packages
+:::::::::::::
 
-However, there is an even better option if you want to avoid installing
-libraries in the Python system. This option is called a *virtual environment*
-:term:`virtualenv`). It is a self-contained directory structure that contains
-both an installation of Python and the additional packages. Because the entire
-Python environment is contained in the virtual environment, the libraries and
-modules installed there cannot collide with those in the main system or in other
-virtual environments, so different applications can use different versions of
-Python and its packages. Creating and using a virtual environment is a two-step
-process:
+For a stable environment, it makes sense to specify the version numbers of the
+dependencies.
 
-#. First we create the environment:
+.. tip::
+   In none of our library projects does so much happen that the :doc:`Git
+   history  <Python4DataScience:productive/git/review>` should mainly consist of
+   updates. We only restrict the version numbers to be used in the event of
+   problems. For apps, however, we specify the version numbers.
 
-   .. tab:: Linux/macOS
+We use `PDM <https://pdm-project.org/en/latest>`_ to specify the versions for
+our applications and maintain cross-platform lock files. PDM also supports the
+management of virtual environments with ``pdm venv activate``.
 
-      .. code-block:: console
+… of Python
+:::::::::::
 
-         $ python3 -m venv myenv
+In contrast to applications, our packages usually support more than one Python
+version. Nevertheless, we usually add the current standard version in
+:file:`.python-version` to :doc:`packages <distribution>` as well:
 
-   .. tab:: Windows
+.. literalinclude:: ../../.python-version
+   :caption: .python-version
 
-      .. code-block:: console
+The nice thing about this is that we can use the same file in GitHub Actions as
+input for `setup-python <https://github.com/actions/setup-python>`_:
 
-         > python -m venv myenv
+.. literalinclude:: ../../.github/workflows/ci.yml
+   :caption: .github/workflows/ci.yml
+   :lines: 20-29
+   :emphasize-lines: 10
 
-   This creates the environment with Python and :term:`pip` in a directory
-   called ``myenv``.
-
-#. You can then activate this environment so that the next time you call
-   ``python``, it will use the Python from your new environment:
-
-   .. tab:: Linux/macOS
-
-      .. code-block:: console
-
-         $ source myenv/bin/activate
-
-   .. tab:: Windows
-
-      .. code-block:: console
-
-         > myenv\Scripts\activate.bat
-
-#. You can then install Python packages for this virtual environment only:
-
-   .. tab:: Linux/macOS
-
-      .. code-block:: console
-
-         (myenv) $ python -m pip install requests
-
-   .. tab:: Windows
-
-      .. code-block:: console
-
-         (myenv) > python.exe -m pip install requests
-
-#. If you want to finish your work on this project, you can deactivate the
-   virtual environment again with
-
-   .. tab:: Linux/macOS
-
-      .. code-block:: console
-
-         (myenv) $ deactivate
-
-   .. tab:: Windows
-
-      .. code-block:: console
-
-         (myenv) > deactivate
-
-.. seealso::
-   * :doc:`python3:tutorial/venv`
-
-PyPI
-~~~~
-
-The :term:`Python Package Index` (:term:`PyPI`) is the standard package index,
-but by no means the only repository for Python code. You can access it directly
-at :term:`pypi.org` and search for packages or filter the packages by category.
+In our :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd` pipelines,
+however, we use ``requires-python`` from the :ref:`pyproject-toml` file to build
+:doc:`Docker containers with the appropriate Python version
+<Python4DataScience:productive/git/advanced/gitlab/docker>`.
