@@ -60,14 +60,11 @@ getting a quick overview of a product. For the
 <https://github.com/veit/cookiecutter-namespace-template>`_ these are, for
 example:
 
-|Downloads| |Updates| |Versions| |Contributors| |License| |Docs|
+|Downloads| |Versions| |Contributors| |License| |Docs|
 
 .. |Downloads| image::
    https://static.pepy.tech/badge/cookiecutter-namespace-template
    :target: https://www.pepy.tech/projects/cookiecutter-namespace-template
-.. |Updates| image::
-   https://pyup.io/repos/github/veit/cookiecutter-namespace-template/shield.svg
-   :target: https://pyup.io/repos/github/veit/cookiecutter-namespace-template/
 .. |Versions| image::
    https://img.shields.io/pypi/pyversions/cookiecutter-namespace-template.svg
    :target: https://pypi.org/project/cookiecutter-namespace-template/

@@ -13,9 +13,6 @@ Status
 .. image:: https://readthedocs.org/projects/python-basics-tutorial/badge/?version=latest
    :alt: Docs
    :target: https://python-basics-tutorial.readthedocs.io/en/latest/
-.. image:: https://pyup.io/repos/github/veit/python-basics-tutorial/shield.svg
-   :alt: Pyup
-   :target: https://pyup.io/repos/github/veit/python-basics-tutorial/
 
 Installation
 ------------
@@ -41,7 +38,6 @@ Installation
       C:> tar -xvzf main.zip
       python-basics-tutorial-de-main/
       python-basics-tutorial-de-main/.gitignore
-      python-basics-tutorial-de-main/.pyup.yml
       …
 
 #. Install Python packages:
