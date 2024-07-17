@@ -17,12 +17,18 @@
 # relative to the documentation root, use os.path.abspath to make it
 # absolute, like shown here.
 #
-# import os
 # import sys
 # sys.path.insert(0, os.path.abspath("."))
-
 import os
 import re
+
+# Set canonical URL from the Read the Docs Domain
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+
+html_context = {}
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    html_context["READTHEDOCS"] = True
 
 # -- General configuration ---------------------------------------------
 
