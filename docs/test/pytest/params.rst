@@ -173,7 +173,7 @@ These directly match the first argument of ``@pytest.mark.parametrize()``.
 pytest performs this test once for each ``(start_summary, start_state)`` pair
 and reports each as a separate test:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
@@ -215,7 +215,7 @@ syntax changes:
 
 When we run the tests now, they focus on the change that is important to us:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
@@ -273,7 +273,7 @@ has ``start_state`` as a parameter, pytest calls it once for each value that is
 passed to the ``start_state()`` fixture. And after all this, the output looks
 exactly the same as before:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
