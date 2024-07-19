@@ -74,3 +74,9 @@ installed, this should not be a problem.
       .. warning::
          One disadvantage is that you have to return to the website regularly to
          check for security updates, as there is no integrated auto-updater.
+
+.. tip::
+   `direnv <https://direnv.net>`_ allows you to set environment variables
+   depending on the directory. This allows you to install environment variables
+   from `The twelve-factor apps <https://12factor.net>`_ and project-specific
+   environments as well as providing secrets for deployment.
