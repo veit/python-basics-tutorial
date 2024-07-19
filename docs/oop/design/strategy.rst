@@ -50,7 +50,7 @@ Let's take an online shop with the following discount rules:
   5% per order.
 * A 10% discount is applied to any item with ten or more units in the same
   order.
-- A 7% discount is granted on orders with at least ten different items.
+* A 7% discount is granted on orders with at least ten different items.
 
 Only one discount can be applied to an order.
 
