@@ -17,6 +17,10 @@ the :doc:`json <python3:library/json>` module
 the :doc:`xml <xml>` module
     you can also use to exchange data in different languages in a readable form.
 
+.. tip::
+   `cusy Seminar
+   <https://cusy.io/en/our-training-courses/read-write-and-provide-data-with-python>`_
+
 The Python Database API
 -----------------------
 
