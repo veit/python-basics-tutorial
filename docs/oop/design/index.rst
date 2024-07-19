@@ -34,6 +34,10 @@ we will refactor the strategy pattern using function objects.
 to make object-orientated designs more comprehensible, flexible and
 maintainable.
 
+.. tip::
+   `cusy seminar: Design patterns in Python
+   <https://cusy.io/en/our-training-courses/design-patterns-in-python>`_
+
 .. seealso::
    * `Architecture Patterns with Python
      <https://www.oreilly.com/library/view/architecture-patterns-with/9781492052197/>`_

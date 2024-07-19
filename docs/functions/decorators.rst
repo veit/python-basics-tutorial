@@ -61,6 +61,10 @@ Line 1
 Line 7
     The wrapped function is called after the decorator function is finished.
 
+.. tip::
+   `cusy seminar: Advanced Python
+   <https://cusy.io/en/our-training-courses/advanced-python>`_
+
 ``functools``
 -------------
 

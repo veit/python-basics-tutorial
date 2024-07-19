@@ -40,6 +40,10 @@ Basically, a distinction is made between static and dynamic test procedures.
         :doc:`unittest`, :doc:`hypothesis` can also be used in Python for such
         tests.
 
+.. tip::
+   `cusy seminar: Efficient testing with Python
+   <https://cusy.io/en/our-training-courses/efficient-testing-with-python>`_
+
 .. seealso::
    * `Python Testing and Continuous Integration
      <http://carpentries-incubator.github.io/python-testing/>`_
