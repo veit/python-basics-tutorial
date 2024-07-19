@@ -5,6 +5,10 @@ Creating a distribution package
 uploaded to a package index such as :term:`pypi.org` and installed with
 :term:`pip`.
 
+.. tip::
+   `cusy seminar: Advanced Python
+   <https://cusy.io/en/our-training-courses/advanced-python>`_
+
 Some of the following commands require a new version of pip, so you should make
 sure you have the latest version installed:
 

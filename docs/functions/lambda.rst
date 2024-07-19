@@ -36,3 +36,7 @@ In this case, the :py:func:`max` function accepts the ``key`` argument, which
 defines how the size of each entry is to be determined. Using a lambda function
 that converts each string into an integer, ``max`` can compare the numerical
 values to determine the expected result.
+
+.. tip::
+   `cusy seminar: Advanced Python
+   <https://cusy.io/en/our-training-courses/advanced-python>`_

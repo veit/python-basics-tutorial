@@ -22,6 +22,14 @@ describes how your software can be installed, operated, used and improved:
 All together need information on how the product is licensed (``LICENSE`` file
 or ``LICENSES`` folder) and how to get help if needed.
 
+.. tip::
+   cusy seminars:
+
+   * `Software documentation with Sphinx
+     <https://cusy.io/en/our-training-courses/software-documentation-with-sphinx>`_
+   * `Technical writing
+     <https://cusy.io/en/our-training-courses/technical-writing>`_
+
 .. seealso::
    * `Eric Holscher: Why You Shouldn’t Use “Markdown” for Documentation
      <https://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/>`_

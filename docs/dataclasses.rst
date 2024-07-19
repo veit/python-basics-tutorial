@@ -6,7 +6,11 @@ and are a special shortcut with which we can create classes that store data.
 Python offers a special :doc:`decorator <functions/decorators>` if we want to
 create such a class.
 
-.. note::
+.. tip::
+   `csy seminar: Advanced Python
+   <https://cusy.io/en/our-training-courses/advanced-python>`_
+
+.. tip::
    For table data I generally use :doc:`pandas Series or DataFrames
    <Python4DataScience:workspace/pandas/data-structures>` and if I need to store
    matrices with numbers I use :doc:`Numpy
