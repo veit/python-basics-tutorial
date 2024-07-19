@@ -110,10 +110,10 @@ This fulfils the open-closed principle.
    Martin Fowler
 
 .. note::
-   Safe refactoring relies on :doc:`tests <python-basics:test/index>`. If you
-   really refactor the code without changing the behaviour, the existing tests
-   should continue to succeed at every step. The tests are a safety net that
-   justifies confidence in the new arrangement of the code. If they fail,
+   Safe refactoring relies on :doc:`tests </test/index>`. If you really refactor
+   the code without changing the behaviour, the existing tests should continue
+   to succeed at every step. The tests are a safety net that justifies
+   confidence in the new arrangement of the code. If they fail,
 
    * you have inadvertently broken the code,
    * or the existing tests are flawed.
@@ -151,10 +151,10 @@ You can then move both squares and circles on the x and y axes:
    (4, 5, 2, 3)
 
 .. note::
-   Liskov’s substitution principle also applies to
-   :ref:`python-basics:duck-typing`: every object that claims to be a duck must
-   fully implement the duck’s API. Duck types should be interchangeable.
-   Applying logic across different data types of objects is called `polymorphism
+   Liskov’s substitution principle also applies to :ref:`duck-typing`: every
+   object that claims to be a duck must fully implement the duck’s API. Duck
+   types should be interchangeable. Applying logic across different data types
+   of objects is called `polymorphism
    <https://en.wikipedia.org/wiki/Polymorphism_(computer_science)>`_.
 
 .. _interface-segregation:
@@ -197,7 +197,7 @@ defined as
     abstractions.
 
 – `Robert C. Martin: The Dependency Inversion Principle
-<https://www.cs.utexas.edu/users/downing/papers/DIP-1996.pdf>`_
+<https://www.cs.utexas.edu/~downing/papers/DIP-1996.pdf>`_
 
 :func:`circumferences` should not already be defined in the :class:`Form` class,
 as there are also forms without circumferences.

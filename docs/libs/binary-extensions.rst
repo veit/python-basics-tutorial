@@ -61,7 +61,7 @@ it difficult to distribute the software. Today this disadvantage due to
 * The installation from the sources remains complicated.
 * Possibly there is no suitable :term:`wheel` for the build of the CPython
   interpreter or alternative interpreters such as `PyPy
-  <https://www.pypy.org/>`__, `IronPython <https://ironpython.net/>`_ or `Jython
+  <https://pypy.org/>`__, `IronPython <https://ironpython.net/>`_ or `Jython
   <https://ironpython.net/>`_.
 * The maintenance of the packages is more time-consuming because the maintainers
   not only have to be familiar with Python but also with another language and
@@ -88,7 +88,7 @@ alternatives should also be considered:
   create your own accelerator module.
 
 * For long-running applications, the JIT-compiled `PyPy
-  <https://www.pypy.org/>`__ interpreter can be a suitable alternative to the
+  <https://pypy.org/>`__ interpreter can be a suitable alternative to the
   standard CPython. The main difficulty with adopting PyPy is typically the
   dependence on other Binary Extensions modules. While PyPy emulates the
   CPython C API, modules that rely on it cause problems for the PyPy JIT, and
