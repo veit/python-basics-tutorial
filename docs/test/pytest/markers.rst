@@ -109,7 +109,7 @@ The marker ``@pytest.mark.skip()`` instructs pytest to skip the test. Specifying
 a reason is optional, but it helps with further development. When we execute
 skipped tests, they are displayed as ``s``:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 6
 
     $ pytest --tb=short tests/test_compare.py
@@ -123,7 +123,7 @@ skipped tests, they are displayed as ``s``:
 
 … or verbos as ``SKIPPED``:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 1, 10
 
     $ pytest -v -ra tests/test_compare.py
@@ -249,7 +249,7 @@ and the effects of using ``strict``. The first example also uses the optional
 ``condition`` parameter, which works like ``skipif``’s conditions. And this is
 what the result looks like:
 
-.. code-block:: pytest
+.. code-block::
 
     pytest -v -ra tests/test_xfail.py
     ============================= test session starts ==============================
@@ -379,7 +379,7 @@ marker section to :file:`pytest.ini`, for example:
 
 Now pytest no longer warns us of an unknown marker:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 4
 
     $ pytest -v -m smoke tests/test_start.py
@@ -613,7 +613,7 @@ Finally, we can also combine markers and keywords for the selection, for
 example, to perform smoke tests that are not part of the :class:`TestFinish`
 class:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v -m smoke -k "not TestFinish"
     ============================= test session starts ==============================
