@@ -353,7 +353,7 @@ To pass arguments to pytest, insert them between the tox arguments and the
 pytest arguments. In this case, we select ``test_version`` tests with the ``-k``
 keyword option. We also use ``--no-cov`` to disable coverage:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 1, 3
 
     $ tox -e py312 -- -k test_version --no-cov
