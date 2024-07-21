@@ -62,6 +62,8 @@ Third-party extensions
     `git <https://git-scm.com/>`_-Changelog for Sphinx
 `Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
     inserts a git datestamp into the context
+`sphinx-issues <https://pypi.org/project/sphinx-issues/>`_
+    creates links to GitHub or GitLab issues, pull requests and user profiles.
 `sphinx-intl <https://pypi.org/project/sphinx-intl/>`_
     Sphinx extension for translations
 `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_
