@@ -15,6 +15,19 @@ it is called and can access the exception object to obtain further information.
 If no suitable exception handler is found, the programme terminates with an
 error message.
 
+.. note::
+   The way Python handles error situations in general differs from some other
+   languages, for example Java. These languages check possible errors as far as
+   possible before they occur, as handling exceptions after they occur is
+   costly. This is sometimes referred to as the :abbr:`LBYL (Look before you
+   leap)` approach.
+
+   Python, on the other hand, relies more on exceptions to handle errors after
+   they occur. Although this reliance may seem risky, when exceptions are used
+   correctly, the code is less cumbersome and easier to read, and errors are
+   only handled when they occur. This Pythonic approach to error handling is
+   often described as `EAFP (Easier to ask forgiveness than permission)`.
+
 It is possible to create different types of exceptions to reflect the actual
 cause of the reported error or unusual circumstance. For an overview of the
 class hierarchy of built-in exceptions, see `Exception hierarchy
