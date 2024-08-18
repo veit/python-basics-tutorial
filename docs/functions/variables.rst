@@ -70,3 +70,9 @@ variable in an enclosing area.
 
     * :ref:`python3:nonlocal`
     * :pep:`3104`
+
+Checks
+------
+
+* Assuming ``x = 1``, what value does ``x`` have after the execution of
+  ``func()`` and ``gfunc()``?

@@ -572,3 +572,16 @@ You can then call Python and import your ``loaders`` module:
    now considered `anti-pattern
    <https://x.com/pganssle/status/1152695229105000453>`_ by parts of the
    `Python Packaging Authority (PyPA) <https://github.com/pypa/>`_.
+
+Checks
+------
+
+* If you want to create a task management package that writes the tasks to a
+  database and provides them via a Python :abbr:`API (Application Programming
+  Interface)` and a command line interface (:abbr:`CLI (Command-Line
+  Interface)`), how would you structure the files?
+
+* Think about how you want to fulfil the above tasks. Which libraries and
+  modules can you think of that could fulfil this task? Sketch the code for the
+  modules of the Python API, the command line interface and the database
+  connection.

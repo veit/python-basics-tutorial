@@ -316,3 +316,79 @@ use to manage files:
      <Python4DataScience:data-processing/serialisation-formats/toml/example>`
      und :doc:`Pickle
      <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`.
+
+Checks
+------
+
+* Uses the functions of the :mod:`python3:os` module to take a path to a file
+  named :file:`example.log` and create a new file path in the same directory for
+  a file named :file:`example.log1`.
+
+  .. code-block:: pycon
+
+     >>> import os
+     >>> path = os.path.abspath("example.log")
+     >>> print(path)
+     /Users/veit/python-basics-tutorial-de/example.log
+     >>> new_path = f"{path}2"
+     >>> print(new_path)
+     /Users/veit/python-basics-tutorial-de/example.log2
+
+* What is the significance of adding ``b`` as a parameter to
+  :func:`python3:open`?
+
+  This opens the file in binary mode, which means that bytes and not characters
+  are read and written.
+
+* Open a file :file:`my_file.txt` and insert additional text at the end of the
+  file. Which command would you use to open :file:`my_file.txt`? Which command
+  would you use to reopen the file and read it from the beginning?
+
+  .. code-block:: pycon
+
+     >>> with open("my_file", "a") as f:
+     ...     f.write("Hi, Pythinistas!\n")
+     ...
+     17
+     >>> with open("my_file") as f:
+     ...     print(f.readlines())
+     ...
+     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
+
+* What use cases can you imagine in which the :mod:`python3:struct` module would
+  be useful for reading or writing binary data?
+
+* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
+  following use cases:
+
+  #. Saving some state variables from one run to the next
+  #. Storing evaluation results
+  #. Saving user names and passwords
+  #. Saving a large dictionary with English terms
+
+* If you look at the `man page for the wc utility
+  <https://linux.die.net/man/1/wc>`_, you will see two command line options:
+
+  ``-c``
+      counts the bytes in the file
+  ``-m``
+      counts the characters, which in the case of some Unicode characters can be
+      two or more bytes long
+
+  Also, if a file is specified, our module should read from and process that
+  file, but if no file is specified, it should read from and process ``stdin``.
+
+* If a context manager is used in a script that reads and/or writes multiple
+  files, which of the following approaches do you think would be best?
+
+  #. Put the entire script in a block managed by a ``with`` statement.
+  #. Use one ``with`` statement for all reads and another for all writes.
+  #. Use a ``with`` statement every time you read or write a file, that is, for
+     every line.
+  #. Use a ``with`` statement for each file you read or write.
+
+* Archive :file:`*.txt` files from the current directory in the :file:`archive`
+  directory as :file:`*.zip` files with the current date as the file name.
+
+  * Which modules do you need for this?
+  * Write a possible solution.

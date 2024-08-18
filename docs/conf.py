@@ -68,6 +68,7 @@ linkcheck_ignore = [
     r".*/_sources/.*/*.txt",
     # 403 Client Error
     r"https://anaconda.org/",
+    r"https://linux.die.net/",
 ]
 
 # All HTTP redirections from the source URI to the canonical URI will be treated# as "working".

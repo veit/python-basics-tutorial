@@ -103,3 +103,17 @@ calculates the average of ``x`` and ``y`` and stores the result in the variable
    As of Python 3, division returns a floating point number. If you want the
    traditional integer division to return an integer, you can use ``//``
    instead.
+
+Checks
+------
+
+* Create some variables in the Python shell. What happens if you add spaces,
+  hyphens or other characters to the variable names?
+
+* Do the results change if you use brackets to group numbers in different ways?
+
+* Which of the following variable and function names do you think are not good
+  Python style, and why?
+
+  ``var*``, ``varname``, ``func_name()``, ``varName``, ``VARNAME``,r
+  ``very_very_long_var_name``

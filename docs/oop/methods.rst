@@ -159,3 +159,9 @@ Line 27
     >>> c2 = circle_cm.Circle(2)
     >>> circle_cm.Circle.circumferences()
     9.424769999999999
+
+Checks
+------
+
+* Writes a class method that is similar to :func:`circumferences`, but returns
+  the total area of all circles.

@@ -182,3 +182,23 @@ In addition, a help option ``-h`` or ``--help`` is automatically generated:
      -h, --help            show this help message and exit
      -f FILENAME, --file FILENAME
                            read data from the file
+
+Checks
+------
+
+* If you have created a :mod:`my_math` module that contains a :func:`divide`
+  function, what options are there for importing this function and then using
+  it? What are the advantages and disadvantages of each option?
+
+* A variable ``min`` is contained in the :mod:`scope.py` module. In which of the
+  following contexts can ``min`` be used?
+
+  #. With the module itself
+  #. Within the :func:`scope` function of the module
+  #. Within a script that has imported the :mod:`scope.py` module
+
+* Pack the functions that you created at the end of :doc:`/functions/decorators`
+  as an independent module. The functions should initially only be fully usable
+  from another script.
+
+* Make your module executable.

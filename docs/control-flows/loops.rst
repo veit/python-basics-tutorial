@@ -150,3 +150,21 @@ appended to the end of the expression:
    >>> squares = [i**2 for i in range(8) if i >= 4]
    >>> squares
    [16, 25, 36, 49]
+
+Checks
+------
+
+* Removes all negative numbers from the list ``x = [ -2, -1, 0, 1, 2, 3]``.
+
+* Which list comprehension would you use to achieve the same result?
+
+* How would you count the total number of negative numbers in the list ``[-[1,
+  0, 1], [-1, 1, 3], [-2, 0, 2]]``?
+
+* Creates a generator that only returns odd numbers from 1 to 10.
+
+  .. tip::
+     A number is odd if there is a remainder when it is divided by 2, in other
+     words if ``% 2`` is true.
+
+* Write a :doc:`dict </types/dicts>` with the edge lengths and volumes of cubes.

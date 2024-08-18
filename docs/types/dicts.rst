@@ -90,3 +90,59 @@ Extensions
     ``dict`` subclass with keylist/keypath/keyattr support and I/O shortcuts.
 :doc:`pandas <Python4DataScience:workspace/pandas/python-data-structures>`
     can convert Dicts into Series and DataFrames.
+
+Checks
+------
+
+* Suppose you have the two dictionaries ``x = {"a":1, "b":2, "c":3, "d":4}`` and
+  ``y = {"a":5, "e":6, "f":7}``. What would be the content of ``x`` after the
+  following code snippets have been executed?
+
+  .. code-block:: pycon
+
+     >>> del x["b"]
+     >>> z = x.setdefault("e", 8)
+     >>> x.update(y)
+
+  .. code-block:: pycon
+
+     >>> x = {"a": 1, "b": 2, "c": 3, "d": 4}
+     >>> y = {"a": 5, "e": 6, "f": 7}
+     >>> del x["b"]
+     >>> z = x.setdefault("e", 8)
+     >>> x.update(y)
+     >>> x
+     {'a': 5, 'c': 3, 'd': 4, 'e': 6, 'f': 7}
+
+* Which of the following expressions can be a key of a dictionary:  ``1``;
+  ``"Veit"``; ``("Veit", [1])``; ``[("Veit", [1])]``; ``["Veit"]``; ``("Veit",
+  "Tim", "Monique")``
+
+  .. code-block:: pycon
+
+     >>> d = {}
+     >>> d[1] = None
+     >>> d["Veit"] = None
+     >>> d[("Veit", [1])]
+     Traceback (most recent call last):
+       File "<stdin>", line 1, in <module>
+     TypeError: unhashable type: 'list'
+     >>> d[["Veit"]] = None
+     Traceback (most recent call last):
+       File "<stdin>", line 1, in <module>
+     TypeError: unhashable type: 'list'
+     >>> d[("Veit", "Tim", "Monique")] = None
+
+* You can use a :doc:`Dictionary </types/dicts>` like a spreadsheet table by
+  using :doc:`/types/tuples` as key row and column values. Write sample code to
+  add and retrieve values.
+
+  .. code-block:: pycon
+
+     >>> sheet = {}
+     >>> sheet[("A", 0)] = 1
+     >>> sheet[("A", 1)] = 2
+     >>> sheet[("B", 0)] = 3
+     >>> sheet[("B", 1)] = 4
+     >>> print(sheet[("A", 1)])
+     2

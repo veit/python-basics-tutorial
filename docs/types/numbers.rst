@@ -298,3 +298,24 @@ use to manage numbers:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`operator`    | for standard operators as functions                                           |
 +-----------------------+-------------------------------------------------------------------------------+
+
+Checks
+------
+
+* Create some number variables (integers, floating point numbers and complex
+  numbers). Experiment a little with what happens when you perform operations
+  with them, even across types.
+
+* Load the :mod:`math` module and try out some of the functions. Then load the
+  :mod:`cmath` module and do the same.
+
+* How can you restore the functions of the :mod:`math` module?
+
+* Decide whether the following statements are true or false:
+
+  * ``1``
+  * ``0``
+  * ``-1``
+  * ``[0]``
+  * ``1 and 0``
+  * ``1 > 0 or []``

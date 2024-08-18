@@ -80,3 +80,8 @@ Line 6
         >>> my_square.length = 3
         >>> print(f"The perimeter of the square is {4 * my_square.length}.")
         The perimeter of the square is 12.
+
+Checks
+------
+
+* Writes a :class:`Triangle` class that can also calculate the area.

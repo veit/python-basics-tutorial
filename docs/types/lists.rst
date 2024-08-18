@@ -157,3 +157,31 @@ Summary
 +===============+===============+===============+===============+===============+
 | list          | ✅            | ✅            | ✅            | ✅            |
 +---------------+---------------+---------------+---------------+---------------+
+
+Checks
+------
+
+* What does :func:`len` return for each of the following cases:
+
+  * ``[3]``
+  * ``[]``
+  * ``[[1, [2, 3], 4], "5 6"]``
+
+* How would you use :func:`len` and slices to determine the second half of a
+  list if you don’t know how long it is?
+
+* How could you move the last two entries of a list to the beginning without
+  changing the order of the two?
+
+* Which of the following cases triggers an exception?
+
+  * ``min(["1", "2", "3"])``
+  * ``max([1, 2, "3"])``
+  * ``[1,2,3].count("1")``
+
+* If you have a list ``l``, how can you remove a certain value ``i`` from it?
+
+.. _check-list:
+
+* Make sure that the ``my_collection`` object is a list before you try to append
+  data to it.

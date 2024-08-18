@@ -59,3 +59,12 @@ it can access and output ``__y``:
       ['_MyClass__y', '__class__', …]
 
    So this is only to prevent accidental access.
+
+Checks
+------
+
+* Modify the code of the :class:`Triangle` class to make the dimension variables
+  private. What restriction will this change impose on the use of the class?
+
+* Update the dimensions of the :class:`Triangle` class so that they are
+  properties with getters and setters that do not allow negative values.
