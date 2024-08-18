@@ -81,3 +81,27 @@ Line 17
 Line 19
     The ``finally`` clause is optional; it is executed at the end of the block,
     regardless of whether an exception was thrown or not.
+
+Checks
+------
+
+* Write code that receives two numbers and divides the first number by the
+  second. Check if the :class:`python3:ZeroDivisionError` occurs when the second
+  number is ``0`` and catch it.
+
+* If :class:`MyError` inherits from :class:`Exception`, what is the difference
+  between ``except Exception as e`` and ``except MyError as e``?
+
+  The first catches every exception that inherits from :class:`Exception`, while
+  the second only catches :class:`MyError` exceptions.
+
+* Write a simple program that receives a number and then uses the :func:`assert`
+  statement to throw an :class:`python3:Exception` if the number is ``0``.
+
+* Schreibt eine benutzerdefinierte Ausnahme :class:`Outliers`, die eine
+  :class:`Exception` auslöst, wenn die Variable ``x`` größer oder kleiner als
+  ``3`` ist?
+
+* Is checking whether an object is a list (:ref:`Check: Listen <check-list>`)
+  programming in the style of :abbr:`LBYL (look before you leap)` or
+  :abbr:`EAFP (easier to ask forgiveness than permission)`?

@@ -595,3 +595,39 @@ use to manage strings:
 .. seealso::
    * :doc:`Manipulation of strings with pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
+
+Checks
+------
+
+* For example, can you add or multiply a string with an integer, a floating
+  point number or a complex number?
+
+
+* How can you change a heading such as ``variables and expressions`` so that it
+  contains hyphens instead of spaces and can therefore be better used as a file
+  name?
+
+* Which of the following strings cannot be converted into numbers and why?
+
+ * ``int("1e2")``
+ * ``int(1e+2)``
+ * ``int("1+2")``
+ * ``int("+2")``
+
+* If you want to check whether a line begins with ``.. note::``, which method
+  would you use? Are there any other options?
+
+* Suppose you have a string with punctuation marks, inverted commas and line
+  breaks. How can these be removed from the string?
+
+* What use cases can you imagine in which the :mod:`python3:struct` module would
+  be useful for reading or writing binary data?
+
+  * when reading and writing a binary file
+  * when reading from an external interface, where the data should be stored
+    exactly as it was transmitted
+
+* Which regular expression would you use to find strings that represent the
+  numbers between -3 and +3?
+
+* Which regular expression would you use to find hexadecimal values?

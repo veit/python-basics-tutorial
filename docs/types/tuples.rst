@@ -62,3 +62,14 @@ Summary
 +===============+===============+===============+===============+===============+
 | tuple         | ❌            | ✅            | ✅            | ✅            |
 +---------------+---------------+---------------+---------------+---------------+
+
+Checks
+------
+
+* Explain why the following operations cannot be applied to the tuple ``t``:
+
+  * ``t.append(1)``
+  * ``t[2] = 2``
+  * ``del t[3]``
+
+* How can you sort the elements of a tuple?

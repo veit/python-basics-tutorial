@@ -18,8 +18,8 @@ def words_occur():
         occurs_dict[word] = occurs_dict.get(word, 0) + 1
     # Print out the results.
     print(
-        "File %s has %d words (%d are unique)"
-        % (file_name, len(word_list), len(occurs_dict))
+        f"File {file_name} has {len(word_list)} words, "
+        f"{len(occurs_dict)} are unique:"
     )
     print(occurs_dict)
 

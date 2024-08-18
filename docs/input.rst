@@ -28,3 +28,18 @@ with the :class:`python3:int` or :class:`python3:float` function, for example, f
     >>> age = year - int(year_birth)
     >>> print("Age:", age, "years")
     Age: 58 years
+
+Checks
+------
+
+* How can you get string and integer values with the :func:`input` function?
+
+* What is the effect if you do not use :func:`int` to call :func:`input` for
+  integer inputs?
+
+* Can you change the code so that it accepts a floating point number?
+
+* What happens if you enter an incorrect value type?
+
+* Write the code to ask for the names and ages of three users. After the values
+  have been entered, ask for one of the names and output the corresponding age.

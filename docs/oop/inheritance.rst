@@ -121,3 +121,14 @@ all instances of ``Circle`` can use the ``move`` method. In OOP terms, one could
 say that all Python methods are virtual – that is if a method does not exist in
 the current class, the list of superclasses is searched for the method and the
 first one found is used.
+
+Checks
+------
+
+* Rewrites the code for a :class:`Triangle` class so that it inherits from
+  :class:`Form`.
+
+* How would you write the code to add an :func:`area` method for the
+  :class:`Triangle` class? Should the :func:`area` method be moved to the
+  :class:`Form` base class and inherited by :class:`Circle`, :class:`Square` and
+  :class:`Triangle`? What problems would this change cause?

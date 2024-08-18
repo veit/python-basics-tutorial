@@ -192,3 +192,9 @@ The variable ``x`` is not changed because it is unchangeable. Instead, the
 function parameter ``n`` is set so that it refers to the new value ``6``.
 However, there is a change in ``y`` because the list it refers to has been
 changed.
+
+Checks
+------
+
+* Write a function that can take any number of unnamed arguments and output
+  their values in reverse order?

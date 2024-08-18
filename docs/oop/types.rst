@@ -174,3 +174,9 @@ only in one of the following two cases:
 * in a class that behaves almost identically to a built-in class, for example
   lists implemented as balanced trees to speed up insertion, I can define the
   special method attributes.
+
+Checks
+------
+
+* What would be the difference between using :func:`type` and :func:`isinstance`
+  in :ref:`Check: Lists <check-list>`?
