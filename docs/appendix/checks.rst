@@ -171,6 +171,14 @@ Checks
         ...
         >>> l = list(l)
 
+* If you have a nested list ``ll``, how can you get a copy ``nll`` of this list
+  in which you can change the elements without changing the contents of ``ll``?
+
+  .. code-block:: pycon
+
+      >>> import copy
+      >>> nll = copy.deepcopy(ll)
+
 * Make sure that the object ``my_collection`` is a list before you try to append
   data to it.
 
