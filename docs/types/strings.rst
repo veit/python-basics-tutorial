@@ -2,7 +2,7 @@ Strings
 =======
 
 The processing of character strings is one of Python’s strengths. There are many
-options for delimiting character strings:
+options for limiting character strings:
 
 .. code-block:: python
 
@@ -12,11 +12,20 @@ options for delimiting character strings:
    """This is a string in triple double quotes, the only string that contains
    real line breaks."""
 
-Strings can be separated by single (``' '``), double (``" "``), triple single
-(``''' '''``) or triple double (``""" """``) quotes and can contain tab (``\t``)
-and newline (``\n``) characters. In general, backslashes ``\`` can be used as
-escape characters. For example  ``\\`` can be used for a single backslash and
-``\'`` for a single quote, whereby it does not end the string:
+Character strings can be characterised by single (``' '``), double(``" "``),
+triple single (``''' '''``) or triple double (``""" """``) quotation marks.
+
+A normal character string cannot be split over several lines. The following code
+will therefore not work:
+
+.. code-block::
+
+   "This is an incorrect attempt to insert a newline into a string without
+   using \n."
+
+They can also contain tab (``\t``) and newline characters (``\n``). In general,
+backslashes ``\`` can be used as escape characters. For example ``\\`` can be used for a single backslash and ``\'`` for a single quote character, whereby it
+does not end the string:
 
 .. blacken-docs:off
 
@@ -26,6 +35,19 @@ escape characters. For example  ``\\`` can be used for a single backslash and
    'However, this wouldn\'t work without a backslash.'
 
 .. blacken-docs:on
+
+However, Python also offers character strings in triple quotation marks
+(``"""``), which make this possible and can contain single and double quotation
+marks without backslashes ``\`` as escape characters.
+
+Special characters and escape sequences
+---------------------------------------
+
+``\n`` stands for the newline character and ``\t`` for the tab character.
+Character sequences that begin with a backslash and are used to represent other
+characters are called escape sequences. Escape sequences are generally used to
+represent special characters, in other words, characters for which there is no
+single-character printable representation.
 
 Here are other characters you can get with the escape character:
 
@@ -54,21 +76,22 @@ Here are other characters you can get with the escape character:
 | :samp:`\N{{SNAKE}}`      | ``🐍``                   | Unicode Emoji name       |
 +--------------------------+--------------------------+--------------------------+
 
-A normal string cannot be split into multiple lines. The following code will not
-work:
+Lines 1–7
+    The ASCII character set, which is used by Python and is the standard
+    character set on almost all computers, defines a whole range of other
+    special characters.
+Lines 8–9
+    Unicode escape sequences.
+Line 10
+    Unicode names for specifying a Unicode character.
 
-.. code-block::
+Operators and functions
+-----------------------
 
-   "This is an incorrect attempt to insert a newline into a string without
-   using \n."
-
-However, Python provides strings in triple quotes (``"""``) that allow this and
-can contain single and double quotes without backslashes.
-
-Strings are also immutable. The operators and functions that work with them
-return new strings derived from the original. The operators (``in``, ``+`` and
-``*``) and built-in functions (``len``, ``max`` and ``min``) work with strings
-in the same way as with lists and tuples.
+The operators and functions that work with character strings return new
+character strings derived from the original. The operators (``in``, ``+`` and
+``*``) and built-in functions (``len``, ``max`` and ``min``) work with character
+strings in the same way as with lists and tuples.
 
 .. code-block:: pycon
 
@@ -84,7 +107,11 @@ in the same way as with lists and tuples.
    >>> min(welcome)
    '\n'
 
-The index and slice notation works in the same way to obtain elements or slices:
+Indexing and slicing
+--------------------
+
+The index and slice notation works in the same way to obtain individual elements
+or slices:
 
 .. code-block:: pycon
 
@@ -94,21 +121,21 @@ The index and slice notation works in the same way to obtain elements or slices:
    'pythonistas!'
 
 However, the index and slice notation cannot be used to add, remove or replace
-elements:
+elements, as character strings are immutable:
 
 .. code-block:: pycon
 
    >>> welcome[6:-1] = "everybody!"
-   raceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-   ypeError: 'str' object does not support item assignment
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+   TypeError: 'str' object does not support item assignment
 
-``string``
-----------
+String methods
+--------------
 
-For strings, the standard Python library :doc:`string <python3:library/string>`
-contains several methods for working with their content, including
-:py:meth:`str.split`, :py:meth:`str.replace` and :py:meth:`str.strip`:
+Most of the Python :ref:`string methods <python3:string-methods>` are integrated
+in the :ref:`str <python3:textseq>` type so that all ``str`` objects
+automatically have them:
 
 .. code-block:: pycon
 
@@ -188,8 +215,170 @@ Below you will find an overview of the most common :ref:`string methods
 | :py:meth:`str.removesuffix`       | name.                                                         |
 +-----------------------------------+---------------------------------------------------------------+
 
-In addition, there are several methods with which the property of a character
-string can be checked:
+``str.split`` and ``str.join``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While :meth:`python3:str.split` returns a list of strings,
+:meth:`python3:str.join` takes a list of strings and joins them into a single
+string. Normally :meth:`python3:str.split` uses whitespace as a delimiter for
+the strings to be split, but you can change this behaviour with an optional
+:doc:`parameter <../functions/params>`.
+
+.. warning::
+   Concatenating strings with ``+`` is useful but not efficient when it comes to
+   joining a large number of strings into a single string, as a new string
+   object is created each time ``+`` is applied.  :samp:`"Hello" +
+   "Pythonistas!"` creates two objects, of which one is immediately discarded.
+
+If you join strings with :meth:`python3:str.join`, you can insert any characters
+between the strings:
+
+.. code-block:: pycon
+
+   >>> " :: ".join(["License", "OSI Approved"])
+   'License :: OSI Approved'
+
+You can also use an empty string,  ``""``, for example for the CamelCase
+notation of Python classes:
+
+.. code-block:: pycon
+
+   >>> "".join(["My", "Class"])
+   'MyClass'
+
+:meth:`python3:str.split` is mostly used to split strings at spaces. However,
+you can also split a string at a specific other string by passing an optional
+:doc:`parameter <../functions/params>`:
+
+.. code-block:: pycon
+
+   >>> example = "1. You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string."
+   >>> example.split()
+   ['1.', 'You', 'can', 'have', 'whitespaces,', 'newlines', 'and', 'tabs', 'mixed', 'in', 'the', 'string.']
+   >>> license = "License :: OSI Approved"
+   >>> license.split(" :: ")
+   ['License', 'OSI Approved']
+
+Sometimes it is useful to allow the last field in a string to contain arbitrary
+text. You can do this by specifying an optional second zweiten :doc:`parameter
+<../functions/params>` for how many splits should be performed:
+
+.. code-block:: pycon
+
+   >>> example.split(" ", 1)
+   ['1.', 'You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string.']
+
+If you want to use :meth:`python3:str.split` with the optional second argument,
+you must first specify a first argument. To ensure that all spaces are split,
+use :doc:`none` as the first argument:
+
+.. code-block:: pycon
+
+   >>> example.split(None, 8)
+   ['1.', 'You', 'can', 'have', 'whitespaces,', 'newlines', 'and', 'tabs', 'mixed in\n\tthe string.']
+
+.. tip::
+   I use :meth:`python3:str.split` and :meth:`python3:str.join` extensively,
+   mostly for text files generated by other programmes. For writing
+   :doc:`Python4DataScience:data-processing/serialisation-formats/csv/index` or
+   :doc:`Python4DataScience:data-processing/serialisation-formats/json/index`
+   files, however, I usually use the associated Python libraries.
+
+Remove whitespace
+~~~~~~~~~~~~~~~~~
+
+:py:meth:`str.strip` returns a new string that differs from the original string
+only in that all spaces at the beginning or end of the string have been removed.
+:py:meth:`str.lstrip` and :py:meth:`str.rstrip` work similarly, but only remove
+the spaces at the left or right end of the original string:
+
+.. code-block:: pycon
+
+   >>> example = "    whitespaces, newlines \n\tand tabs. \n"
+   >>> example.strip()
+   'whitespaces, newlines \n\tand tabs.'
+   >>> example.lstrip()
+   'whitespaces, newlines \n\tand tabs. \n'
+   >>> example.rstrip()
+   '    whitespaces, newlines \n\tand tabs.'
+
+In this example, the newlines ``\n`` are regarded as whitespace. The exact
+assignment may differ from operating system to operating system. You can find
+out what Python considers to be whitespace by accessing the constant
+:py:data:`string.whitespace`. For me, the following is returned:
+
+.. code-block:: pycon
+
+   >>> import string
+   >>> string.whitespace
+   ' \t\n\r\x0b\x0c'
+
+The characters specified in hexadecimal format (``\x0b``, ``\x0c``) represent
+the vertical tab and feed characters.
+
+.. tip::
+   Do not change the value of these variables to influence the functionality of
+   :py:meth:`str.strip` :abbr:`etc (et cetera)`. You can pass characters as
+   additional :doc:`parameters <../functions/params>` to determine which
+   characters these methods remove:
+
+   .. code-block:: pycon
+
+      >>> url = "https://www.cusy.io/"
+      >>> url.strip("htps:/w.")
+      'cusy.io'
+
+Search in strings
+~~~~~~~~~~~~~~~~~
+
+:ref:`str <python3:textseq>` offer several methods for a simple search for
+character strings: The four basic methods for searching strings are
+:py:meth:`str.find`, :py:meth:`str.rfind`, :py:meth:`str.index` and
+:py:meth:`str.rindex`. A related method, :py:meth:`str.count`, counts how many
+times a string can be found in another string.
+
+:py:meth:`str.find` requires a single :doc:`parameter <../functions/params>`:
+the substring being searched for; the position of the first occurrence is then
+returned, or ``-1`` if there is no occurrence:
+
+.. code-block:: pycon
+
+   >>> hipy = "Hello Pythonistas!\n"
+   >>> hipy.find("\n")
+   18
+
+:py:meth:`str.find`  can also accept one or two additional :doc:`parameters
+<../functions/params>`:
+
+``start``
+    The number of characters at the beginning of the string to be searched that
+    should be ignored.
+``end``
+    The Number of characters at the end of the string to be searched that should
+    be ignored.
+
+In contrast to :py:meth:`find`, :py:meth:`rfind` starts the search at the end of
+the string and therefore returns the position of the last occurrence.
+
+:py:meth:`index` and :py:meth:`rindex` differ from :py:meth:`find` and
+:py:meth:`rfind` in that a :class:`python3:ValueError` exception is triggered
+instead of the return value ``-1``.
+
+You can use two other :ref:`string methods <python3:string-methods>` to search
+for strings: :py:meth:`str.startswith` and :py:meth:`str.endswith`. These
+methods return ``True``- or ``False``, depending on whether the string to which
+they are applied starts or ends with one of the strings specified as
+:doc:`parameters <../functions/params>`:
+
+.. code-block:: pycon
+
+   >>> hipy.endswith("\n")
+   True
+   >>> hipy.endswith(("\n", "\r"))
+   True
+
+There are also several methods that can be used to check the property of a
+character string:
 
 +---------------------------+---------------+---------------+---------------+---------------+---------------+
 | Method                    | ``[!#$%…]``   | ``[a-zA-Z]``  | ``[¼½¾]``     | ``[¹²³]``     | ``[0-9]``     |
@@ -205,15 +394,49 @@ string can be checked:
 | :py:meth:`str.isdecimal`  | ❌            | ❌            | ❌            | ❌            | ✅            |
 +---------------------------+---------------+---------------+---------------+---------------+---------------+
 
-:py:meth:`str.isspace` checks for spaces:
-``[ \t\n\r\f\v\x1c-\x1f\x85\xa0\u1680…]``.
+:py:meth:`str.isspace` checks for spaces.
+
+Changing strings
+~~~~~~~~~~~~~~~~
+
+:ref:`str <python3:textseq>` are immutable, but they have several methods that
+can return a modified version of the original string.
+
+:py:meth:`str.replace` can be used to replace occurrences of the first
+ :doc:`parameter <../functions/params>` with the second, for example:
+
+.. code-block:: pycon
+
+   >>> hipy.replace("\n", "\n\r")
+   'Hello Pythonistas!\n\r'
+
+:py:meth:`str.maketrans` and :py:meth:`str.translate` can be used together to
+translate characters in strings into other characters, for example:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> hipy = "Hello Pythonistas!\n"
+   >>> trans_map = hipy.maketrans(" ", "-", "!\n")
+   >>> hipy.translate(trans_map)
+   'Hello-Pythonistas'
+
+Line 2
+    :py:meth:`str.maketrans` is used to create a translation table from the two
+    string arguments. The two arguments must each contain the same number of
+    characters. Characters that are not to be returned are passed as the third
+    argument.
+Line 3
+    The table generated by :py:meth:`str.maketrans` is passed to
+    :py:meth:`str.translate`.
 
 ``re``
 ------
 
-The Python standard library :doc:`re <python3:library/re>` also contains
-functions for working with strings. However, ``re`` offers more sophisticated
-options for pattern extraction and replacement than ``string``.
+The Python standard library  :doc:`re <python3:library/re>` also contains
+functions for working with character strings. However, ``re`` offers more
+sophisticated options for pattern extraction and replacement than the :ref:`str
+<python3:textseq>` type.
 
 .. code-block:: pycon
 
@@ -246,10 +469,10 @@ instead, you can use the :py:meth:`re.Pattern.findall` method:
    corresponding ``'C:\\PATH\\TO\\FILE'``.
 
 :py:meth:`re.Pattern.match` and :py:meth:`re.Pattern.search` are closely related
-to :py:meth:`re.Pattern.findall`. While findall returns all matches in a string,
-``search`` only returns the first match and ``match`` only returns matches at
-the beginning of the string. As a less trivial example, consider a block of text
-and a regular expression that can identify most email addresses:
+to :py:meth:`re.Pattern.findall`. While ``findall`` returns all matches in a
+string, ``search`` only returns the first match and ``match`` only returns
+matches at the beginning of the string. As a less trivial example, consider a
+block of text and a regular expression that can identify most email addresses:
 
 .. code-block:: pycon
 
@@ -287,8 +510,8 @@ pattern to be segmented:
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` returns a :doc:`tuples` that contains all subgroups
-of the match.
+:py:meth:`re.Match.groups` returns a :doc:`tuples` containing all subgroups of
+the match.
 
 :py:meth:`re.Pattern.findall` returns a list of tuples if the pattern contains
 groups:
@@ -339,6 +562,99 @@ expressions:
    * :doc:`../../appendix/regex`
    * :doc:`python3:howto/regex`
    * :doc:`python3:library/re`
+
+Converting character strings into numbers
+-----------------------------------------
+
+You can use the :class:`python3:int` and :class:`python3:float` functions to
+convert character strings into integer or floating point numbers. If a character
+string is passed that cannot be interpreted as a number of the specified type,
+these functions trigger a :class:`python3:ValueError` exception. Exceptions are
+explained in more detail in :doc:`control flows <../control-flows/exceptions>`.
+In addition, you can pass ihr :class:`python3:int` an optional second
+:doc:`parameter <../functions/params>` that specifies the numeric base to be
+used when interpreting the string:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> float("12.34")
+   12.34
+   >>> float("12e3")
+   12000.0
+   >>> int("1000")
+   1000
+   >>> int("1000", base=10)
+   1000
+   >>> int("1000", 8)
+   512
+   >>> int("1000", 2)
+   8
+   >>> int("1234", 2)
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+   ValueError: invalid literal for int() with base 2: '1234'
+
+Lines 5–8
+    If no second :doc:`parameter <../functions/params>` is specified,
+    :class:`python3:int` calculates with a base of ``10``.
+Lines 9, 10
+    ``1000`` is interpreted as an `octal number
+    <https://en.wikipedia.org/wiki/Octal>`_.
+Lines 11, 12
+    ``1000`` is interpreted as a `binary number
+    <https://en.wikipedia.org/wiki/Binary_number>`_.
+Lines 13–16
+    ``1234`` cannot be specified as an integer on base ``2``. A
+    :class:`python3:ValueError` exception is therefore triggered.
+
+Changing character strings with list manipulations
+--------------------------------------------------
+
+Since :ref:`str <python3:textseq>` objects are immutable, there is no way to
+change them directly like :doc:`lists <lists>`. However, you can convert them
+into lists:
+
+.. code-block:: pycon
+
+   >>> palindromes = "lol level gag"
+   >>> palindromes_list = list(palindromes)
+   >>> palindromes_list.reverse()
+   >>> "".join(palindromes_list)
+   'gag level lol'
+
+Converting objects into strings
+-------------------------------
+
+In Python, almost anything can be converted into a string using the built-in
+:ref:`str <python3:textseq>` function:
+
+.. code-block:: pycon
+
+   >>> data_types = [(7, "Data types", 19), (7.1, "Numbers", 19), (7.2, "Lists", 23)]
+   >>> (
+   ...     "The title of chapter "
+   ...     + str(data_types[0][0])
+   ...     + " is «"
+   ...     + data_types[0][1]
+   ...     + "»."
+   ... )
+   'The title of chapter 7 is «Data types».'
+
+The example uses :ref:`str <python3:textseq>` to convert an integer from the
+``data_types`` list into a string, which is then concatenated again to form the
+final string.
+
+.. note::
+   While :ref:`str <python3:textseq>` is mostly used to generate human readable
+   text, :func:`python3:repr` is more commonly used for debugging output or
+   status reports, for example to get information about the built-in Python
+   function :func:`python3:len`:
+
+   .. code-block:: pycon
+
+      >>> repr(len)
+      '<built-in function len>'
 
 ``print()``
 -----------
@@ -617,8 +933,11 @@ Checks
 * If you want to check whether a line begins with ``.. note::``, which method
   would you use? Are there any other options?
 
-* Suppose you have a string with punctuation marks, inverted commas and line
+* Suppose you have a string with exclamation marks, quotation marks and line
   breaks. How can these be removed from the string?
+
+* How can you change all spaces and punctuation marks from a string to a hyphen
+  (``-``)?
 
 * What use cases can you imagine in which the :mod:`python3:struct` module would
   be useful for reading or writing binary data?
