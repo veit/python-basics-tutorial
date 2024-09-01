@@ -341,13 +341,25 @@ Checks
      >>> x[:9] == ".. note::"
      True
 
-* Suppose you have a string with punctuation marks, inverted commas and line
+* Suppose you have a string with exclamation marks, quotation marks and line
   breaks. How can these be removed from the string?
 
   .. code-block:: pycon
 
-     >>> hipy = ["‘Hello", "Pythonistas!’\n"]
-     >>> string.strip("‘’!\n")
+     >>> hipy = "„Hello Pythonistas!“\n"
+     >>> hipy.strip("„“!\n")
+     'Hello Pythonistas'
+
+* How can you change all spaces and punctuation marks from a string to a hyphen
+  (``-``)?
+
+  .. code-block:: pycon
+     >>> from string import punctuation, whitespace
+     >>> chars = punctuation + whitespace
+     >>> subs = str.maketrans(chars, len(chars) * "-")
+     >>> hipy = "Hello Pythonistas!\n"
+     >>> hipy.translate(subs)
+     'Hello-Pythonistas--'
 
 * Which regular expression would you use to find strings that represent the
   numbers between -3 and +3?
