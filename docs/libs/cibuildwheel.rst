@@ -82,6 +82,8 @@ Now you can finally upload the artefacts of both jobs to the :term:`PyPI`:
    * `Workflow syntax for GitHub Actions
      <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
 
+.. _cibuildwheel-in-gitlab-ci:
+
 GitLab CI/CD
 ------------
 
