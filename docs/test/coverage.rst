@@ -322,9 +322,12 @@ them later in other jobs:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 45-50
+   :lines: 45-51
    :lineno-start: 45
 
+``include-hidden-files``
+    has become necessary with `actions/upload-artifact v4.4.0
+    <https://github.com/actions/upload-artifact/releases/tag/v4.4.0>`_.
 ``if-no-files-found: ignore``
     is useful if you don’t want to measure the test coverage for all Python
     versions in order to get results faster. You should therefore only upload the
@@ -335,8 +338,8 @@ results:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 52-90
-   :lineno-start: 52
+   :lines: 53-91
+   :lineno-start: 53
 
 ``needs: tests``
     ensures that all tests are performed. If your job that runs the tests has a
@@ -369,8 +372,8 @@ as follows:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 92-
-   :lineno-start: 92
+   :lines: 93-
+   :lineno-start: 93
 
 Line 97
     ``GIST_TOKEN`` is a personal GitHub access token.
