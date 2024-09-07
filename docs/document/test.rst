@@ -55,6 +55,76 @@ blacken-docs currently supports the following black options:
 * `target-version
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version>`_
 
+`Vale <https://vale.sh>`_ goes beyond spelling and grammar checks. It also
+checks the language style: Is what is said repeated? Is the language too
+informal? Is the language inconsistent? Are undesirable clichés being used? Or
+is the language sexist?
+
+Vale is used by many open source projects, including
+
+* GitLab (`.vale.ini
+  <https://gitlab.com/gitlab-org/gitlab/blob/master/.vale.ini>`_, `rules
+  <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab>`__)
+* Homebrew (`.vale.ini
+  <https://github.com/Homebrew/brew/blob/master/.vale.ini>`__, `rules
+  <https://github.com/Homebrew/brew/tree/master/docs/vale-styles/Homebrew>`__)
+
+The following styles come with Vale itself:
+
+`Microsoft <https://github.com/errata-ai/Microsoft>`_
+    An implementation of the `Microsoft Writing Style Guide
+    <https://docs.microsoft.com/en-us/style-guide/welcome/>`__.
+`Google <https://github.com/errata-ai/Google>`_
+    An implementation of the style guide for the `Google developer
+    documentation
+    style guide <https://developers.google.com/style/>`__.
+`write-good <https://github.com/errata-ai/write-good>`_
+    An implementation of the guidelines enforced by the `write-good
+    <https://github.com/btford/write-good>`__ linter.
+`proselint <https://github.com/errata-ai/Joblint>`_
+    An implementation of the guidelines enforced by the `proselint
+    <https://github.com/amperser/proselint/>`__ linter.
+`Joblint <https://github.com/errata-ai/Joblint>`_
+    An implementation of the directives enforced by the `Joblint
+    <https://github.com/rowanmanning/joblint>`__ linter.
+
+Vale is configured in the :file:`.vale.ini` file:
+
+.. code-block:: ini
+   :caption: .vale.ini
+
+   StylesPath = styles
+   MinAlertLevel = suggestion
+   Packages = https://github.com/cusyio/cusy-vale/archive/refs/tags/v0.1.0.zip
+
+   [*.{md,rst}]
+   BasedOnStyles = cusy-en
+
+.. seealso::
+   * `Vale Configuration <https://vale.sh/docs/topics/config/>`_
+
+You should then update your :ref:`.gitignore <gitignore>` file if necessary:
+
+.. code-block:: ini
+   :caption: .gitignore
+
+   styles/*
+
+You can configure Vale for the :doc:`pre-commit
+<Python4DataScience:productive/git/advanced/hooks/pre-commit>` framework with:
+
+.. code-block:: yaml
+   :caption: .pre-commit-config.yaml
+
+   - repo: https://github.com/errata-ai/vale
+     rev: v3.7.1
+     hooks:
+     - id: vale sync
+       pass_filenames: false
+       args: [sync]
+     - id: vale
+       args: [--output=line, --minAlertLevel=error, .]
+
 .. _docstrings-coverage:
 
 Docstrings coverage

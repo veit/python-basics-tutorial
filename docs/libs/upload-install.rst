@@ -22,8 +22,7 @@ Now you can create the :file:`~/.pypirc` file:
     username = veit
 
 .. seealso::
-    If you’d like to automate PyPI registration, please read `Careful With That
-    PyPI
+    If you’d like to automate PyPI registration, read `Careful With That PyPI
     <https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html>`_.
 
 After you are registered, you can upload your :term:`Distribution Package` with

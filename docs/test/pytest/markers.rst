@@ -627,9 +627,9 @@ class:
 
     ======================= 3 passed, 33 deselected in 0.07s =======================
 
-When using markers and keywords, please note that the names of the markers must
-be complete with the :samp:`-m {MARKERNAME}` option, while keywords are more of
-a substring with the :samp:`-k {KEYWORD}` option.
+When using markers and keywords, note that the names of the markers must be
+complete with the :samp:`-m {MARKERNAME}` option, while keywords are more of a
+substring with the :samp:`-k {KEYWORD}` option.
 
 ``--strict-markers``
 --------------------

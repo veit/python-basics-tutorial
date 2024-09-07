@@ -278,9 +278,9 @@ values between 1 and 1000 was created.
    The `CPython Extending and Embedding guide
    <https://docs.python.org/3/extending/>`_ contains an introduction to writing
    your own extension modules in C: `Extending Python with C or C++
-   <https://docs.python.org/3/extending/extending.html>`_. However, please note
-   that this introduction only discusses the basic tools for creating extensions
-   that are provided as part of CPython. Third-party tools such as `Cython
+   <https://docs.python.org/3/extending/extending.html>`_. However, note that
+   this introduction only discusses the basic tools for creating extensions that
+   are provided as part of CPython. Third-party tools such as `Cython
    <https://cython.org/>`__, `cffi <https://cffi.readthedocs.io/>`_, `SWIG
    <https://www.swig.org/>`__, and `Numba <https://numba.pydata.org/>`__  offer
    both simpler and more sophisticated approaches to building C and C++
