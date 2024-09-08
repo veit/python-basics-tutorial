@@ -685,9 +685,8 @@ Checks
        File "<stdin>", line 1, in <module>
      AssertionError: The integer must not be zero.
 
-* Schreibt eine benutzerdefinierte Ausnahme :class:`Outliers`, die eine
-  :class:`Exception` auslöst, wenn die Variable ``x`` größer oder kleiner als
-  ``3`` ist?
+* Write a user-defined exception :class:`outliers` that throws an
+  :class:`Exception` if the variable ``x`` is greater or less than ``3``?
 
   .. code-block:: pycon
 

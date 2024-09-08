@@ -513,8 +513,7 @@ one fixture:
             items.Item("Add backend examples", "veit", "done"),
         ]
 
-Dann können wir sowohl ``empty_db`` als auch ``items_list`` in ``test_add.py``
-verwenden:
+Then we can use both ``empty_db`` and ``items_list`` in ``test_add.py``:
 
 .. code-block:: python
 

@@ -7,7 +7,7 @@ import sys
 def main():
     """Count the occurrences of lines, words and characters in a file or
     stdin."""
-    # initialze counts
+    # initialize counts
     line_count = 0
     word_count = 0
     char_count = 0

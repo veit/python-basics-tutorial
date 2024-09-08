@@ -462,5 +462,5 @@ There are also some special mocking libraries:
 
   - `pytest-rabbitmq <https://pypi.org/project/pytest-rabbitmq/>`_
   - `pytest-solr <https://pypi.org/project/pytest-solr/>`_
-  - `pytest-elasticsearch <https://pypi.org/project/pytest-elasticsearch/>`_ und
+  - `pytest-elasticsearch <https://pypi.org/project/pytest-elasticsearch/>`_ and
     `pytest-redis <https://pypi.org/project/pytest-redis/>`_.

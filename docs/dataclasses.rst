@@ -7,7 +7,7 @@ Python offers a special :doc:`decorator <functions/decorators>` if we want to
 create such a class.
 
 .. tip::
-   `csy seminar: Advanced Python
+   `cusy seminar: Advanced Python
    <https://cusy.io/en/our-training-courses/advanced-python>`_
 
 .. tip::

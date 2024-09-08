@@ -36,7 +36,7 @@ can be used in a similar way to a list:
 The operators (:ref:`in, not in <python3:in>`, ``+`` and ``*``) and the built-in
 functions (``len``, ``max`` and ``min``) work with tuples in the same way as
 with :doc:`lists`, as none of these functions change the original. However,
-there are only two tuple methods: ``count`` und ``index``.
+there are only two tuple methods: ``count`` and ``index``.
 
 You can use the ``+``- and ``*`` operators to create tuples from existing
 tuples:

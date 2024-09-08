@@ -260,7 +260,7 @@ you can also split a string at a specific other string by passing an optional
    ['License', 'OSI Approved']
 
 Sometimes it is useful to allow the last field in a string to contain arbitrary
-text. You can do this by specifying an optional second zweiten :doc:`parameter
+text. You can do this by specifying an optional second :doc:`parameter
 <../functions/params>` for how many splits should be performed:
 
 .. code-block:: pycon
@@ -571,9 +571,9 @@ convert character strings into integer or floating point numbers. If a character
 string is passed that cannot be interpreted as a number of the specified type,
 these functions trigger a :class:`python3:ValueError` exception. Exceptions are
 explained in more detail in :doc:`control flows <../control-flows/exceptions>`.
-In addition, you can pass ihr :class:`python3:int` an optional second
-:doc:`parameter <../functions/params>` that specifies the numeric base to be
-used when interpreting the string:
+You can also pass :class:`python3:int` an optional second :doc:`parameter
+<../functions/params>` that specifies the numerical base to be used when
+interpreting the string:
 
 .. code-block:: pycon
    :linenos:

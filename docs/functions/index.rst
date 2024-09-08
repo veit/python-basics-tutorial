@@ -119,7 +119,7 @@ Line 13
 Line 18
     A special parameter can be defined that combines all additional positional
     arguments in a function call into one tuple.
-Zeile 25
+Line 25
     Similarly, a special parameter can be defined that summarises all additional
     keyword arguments in a function call in a dictionary.
 

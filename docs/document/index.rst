@@ -137,7 +137,7 @@ helpful.
 
 .. note::
    If the content of ``long_description`` in ``setup()`` is written in
-   reStructured Text, it is displayed as well-formatted HTML on ther
+   reStructured Text, it is displayed as well-formatted HTML on the
    :term:`Python Package Index` (:term:`PyPI`).
 
 Other documentation tools

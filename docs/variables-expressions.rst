@@ -5,7 +5,7 @@ Variables
 ---------
 
 The most commonly used command in Python is assignment. The Python code to
-create a Vairiable called ``x`` that is to be given the value ``π`` is:
+create a variable called ``x`` that is to be given the value ``π`` is:
 
 .. code-block:: pycon
 

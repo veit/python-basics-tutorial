@@ -183,7 +183,7 @@ input argument.
     2
 
 With ``ceil`` from the standard library ``math`` and the attribute notation
-:samp:`MODUL.FUNKTION(ARGUMENT)` is rounded up:
+:samp:`MODULE.FUNCTION(ARGUMENT)` is rounded up:
 
 .. code-block:: pycon
 
