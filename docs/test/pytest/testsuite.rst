@@ -144,7 +144,7 @@ allows you to execute a subset of tests in different ways:
 | Tests that correspond to a                    | :samp:`pytest -k {pattern}`                                           |
 | name pattern                                  |                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Tests by marker                               | siehe :doc:`markers`                                                  |
+| Tests by marker                               | see :doc:`markers`                                                    |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
 Whether ``pytest`` finds your test code depends on the naming:

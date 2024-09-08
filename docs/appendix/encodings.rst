@@ -137,8 +137,7 @@ Python 3 relies fully on Unicode and specifically on UTF-8:
 
 * Python 3 source code is assumed to be UTF-8 by default.
 * Texts (:ref:`str <python3:textseq>`) are Unicode by default. Encoded Unicode
-  text is represented as binary data (:ref:`Bytes <python3:typebytes>`)
-  dargestellt.
+  text is represented as binary data (:ref:`Bytes <python3:typebytes>`).
 * Python 3 accepts many Unicode code points in :ref:`identifiers <identifiers>`.
 * Python’s :doc:`re module <python3:library/re>` uses the ``re.UNICODE`` flag by
   default, not ``re.ASCII``. This means that, for example, ``r"\w"`` matches
@@ -174,7 +173,7 @@ some way:
 Below is a more detailed look at each of these nine functions:
 
 +-----------------------+---------------+---------------------------------------+
-| Function              | RReturn type  | Description                           |
+| Function              | Return type   | Description                           |
 +=======================+===============+=======================================+
 | :func:`python3:ascii` | ``str``       | ASCII representation of an object,    |
 |                       |               | escaping non-ASCII characters.        |

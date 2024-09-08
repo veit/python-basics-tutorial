@@ -98,8 +98,8 @@ To build Linux wheels with
    * `Keyword reference for the .gitlab-ci.yml file
      <https://docs.gitlab.com/ee/ci/yaml/>`_
 
-Optionen
---------
+Options
+-------
 
 ``cibuildwheel`` can be configured either via environment variables or via a
 configuration file such as :file:`pyproject.toml`, for example:

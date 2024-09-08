@@ -266,7 +266,8 @@ Docstrings coverage
 codebase for missing documentation strings and generates a `shields.io-like
 badge <https://interrogate.readthedocs.io/en/latest/#other-usage>`_.
 
-You can configure ``interrogate`` in the :ref:`pyproject-toml` file, for examle:
+You can configure ``interrogate`` in the :ref:`pyproject-toml` file, for
+example:
 
 .. code-block:: toml
    :caption: pyproject.toml

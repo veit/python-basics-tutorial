@@ -204,7 +204,7 @@ Line 19
     list remains unchanged.
 Line 21
     The methods of a list are called using the attribute notation for the list
-    itself: :samp:`{LISTE}.{METHODE}({ARGUMENTE})`.
+    itself: :samp:`{LIST}.{METHOD}({ARGUMENTS})`.
 
 List operations
 ---------------

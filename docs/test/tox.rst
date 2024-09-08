@@ -103,7 +103,7 @@ Before you can run tox, you must ensure that you have installed it:
    .. code-block:: console
 
       $ python3 -m venv .
-      $ . bin/acitvate
+      $ . bin/activate
       $ python -m pip install tox
 
 .. tab:: Windows

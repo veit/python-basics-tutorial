@@ -98,9 +98,8 @@ Checks
 * Write a simple program that receives a number and then uses the :func:`assert`
   statement to throw an :class:`python3:Exception` if the number is ``0``.
 
-* Schreibt eine benutzerdefinierte Ausnahme :class:`Outliers`, die eine
-  :class:`Exception` auslöst, wenn die Variable ``x`` größer oder kleiner als
-  ``3`` ist?
+* Write a user-defined exception :class:`outliers` that throws an
+  :class:`Exception` if the variable ``x`` is greater or less than ``3``?
 
 * Is checking whether an object is a list (:ref:`Check: Listen <check-list>`)
   programming in the style of :abbr:`LBYL (look before you leap)` or

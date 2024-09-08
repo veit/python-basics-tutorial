@@ -221,7 +221,7 @@ as:
     with ``"Private ::"``.
 
 ``dependencies``
-    gibt die Abhängigkeiten für euer Paket in einem Array an.
+    specifies the dependencies for your package in an array.
 
     .. seealso::
        :pep:`631`
@@ -525,7 +525,7 @@ Testing
       …
       Successfully installed dataprep-0.1.0 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
 
-Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
+You can then check the :term:`Wheel` file with:
 
 .. code-block:: console
 
