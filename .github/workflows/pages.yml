@@ -39,7 +39,7 @@ jobs:
         run: |
           sudo apt install plantuml
           python -m pip install -U pip
-          python -m pip install -r docs/requirements.txt
+          python -m pip install -e ".[docs]"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build HTML

@@ -46,18 +46,19 @@ Installation
 
    .. code-block:: console
 
-      $ python3 -m venv .
-      $ source bin/activate
+      $ python3 -m venv .venv
+      $ . .venv/bin/activate
       $ python -m pip install --upgrade pip
-      $ python -m pip install -r docs/requirements.txt
+      $ python -m pip install -e ".[dev]"
 
    … on Windows:
 
    .. code-block:: ps1con
 
-      C:> python -m venv .
-      C:> Scripts\python -m pip install --upgrade pip
-      C:> Scripts\python -m pip install -r docs/requirements.txt
+      C:> py -m venv .venv
+      C:> .\.venv\Scripts\Activate
+      C:> python -m pip install --upgrade pip
+      C:> python -m pip install -e ".[dev]"
 
 #. Create HTML documentation:
 
