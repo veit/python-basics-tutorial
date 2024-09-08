@@ -37,3 +37,6 @@ dev = [
 [project.urls]
 "Homepage" = "https://github.com/veit/python-basics-tutorial/"
 "Bug Tracker" = "https://github.com/veit/python-basics-tutorial/issues"
+
+[tool.codespell]
+ignore-words-list = "ist, symbl, allo"
