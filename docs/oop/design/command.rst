@@ -52,7 +52,7 @@ The question now is whether we really need such an object-oriented replacement
 for callbacks in Python? Can’t we just give the :obj:`Caller` a function
 instead? So instead of calling :func:`Command.execute`, the caller could simply
 call :func:`command`. :class:`Command` can be a class that implements
-:func:`__call__()` and instances of :class:`Command` would be *callables*, each
+:func:`__call__` and instances of :class:`Command` would be *callables*, each
 containing a list of functions for future calls, for example:
 
 .. literalinclude:: caller.py

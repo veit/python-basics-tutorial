@@ -146,10 +146,9 @@ format can be checked with `sphinx-lint
    :caption: .pre-commit-config.yaml
 
    - repo: https://github.com/sphinx-contrib/sphinx-lint
-     rev: v0.9.1
+     rev: v1.0.0
      hooks:
        - id: sphinx-lint
-         args: [--jobs=1]
          types: [rst]
 
 .. seealso::
