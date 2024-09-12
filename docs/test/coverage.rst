@@ -197,8 +197,8 @@ rows that were not executed:
 .. image:: missing.png
    :alt: raise MissingSummary
 
-It looks like the function :func:`add_item()` has an exception
-``MissingSummary``, which is not tested yet.
+It looks like the function :func:`add_item` has an exception ``MissingSummary``,
+which is not tested yet.
 
 Exclude code from test coverage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +215,7 @@ block that looks something like this:
     if __name__ == "__main__":
         main()
 
-This command tells Python to execute :func:`main()` when we call the module
+This command tells Python to execute :func:`main` when we call the module
 directly with ``python my_module.py``, but not to execute the code when the
 module is imported. These types of code blocks are often excluded from testing
 with a simple pragma statement:

@@ -45,15 +45,15 @@ tell pytest that a function is a fixture. If you include the fixture name in the
 parameter list of a test function, pytest knows that the function should be
 executed before the test is run. Fixtures can perform work and also return data
 to the test function. In this case, ``@pytest.fixture()`` decorates the function
-:func:`some_data()`. The test :func:`test_some_data()` has the name of the
-fixture, :func:`some_data()` as a parameter. pytest recognises this and searches
-for a fixture with this name.
+:func:`some_data`. The test :func:`test_some_data` has the name of the fixture,
+:func:`some_data` as a parameter. pytest recognises this and searches for a
+fixture with this name.
 
 Test fixtures in pytest refer to the mechanism that allows the separation of
 preparation for and cleanup after code from your test functions. pytest handles
 exceptions during fixtures differently than during a test function. An
-``Exception`` or an ``assert`` error or a :func:`pytest.fail()` call that
-occurs during the actual test code leads to a ``Fail`` result. During a fixture,
+``Exception`` or an ``assert`` error or a :func:`pytest.fail` call that occurs
+during the actual test code leads to a ``Fail`` result. During a fixture,
 however, the test function is reported as an error. This distinction is helpful
 when troubleshooting if a test has failed. If a test ends with a fail, the error
 is somewhere in the test function; if a test ends with an error, the error is
@@ -85,18 +85,18 @@ area where fixtures will be of great help:
             db.close()
             assert count == 0
 
-To be able to call :func:`count()`, we need a database object, which we obtain
-by calling :func:`items.ItemsDB(db_path)`. The :func:`items.ItemsDB()` function
+To be able to call :func:`count`, we need a database object, which we obtain by
+calling :func:`items.ItemsDB(db_path)`. The :func:`items.ItemsDB` function
 returns an ``ItemsDB`` object. The parameter ``db_path`` must be a
 ``pathlib.Path`` object that points to the database directory. For testing, a
-temporary directory that we obtain with :func:`tempfile.TemporaryDirectory()`
+temporary directory that we obtain with :func:`tempfile.TemporaryDirectory`
 works.
 
 However, this test function contains some problems: The code to set up the
-database before we call :func:`count()` is not really what we want to test.
-Also, the ``assert`` statement cannot be done before calling :func:`db.close()`,
-because if the ``assert`` statement fails, the database connection will no
-longer be closed. These problems can be solved with pytest fixture:
+database before we call :func:`count` is not really what we want to test. Also,
+the ``assert`` statement cannot be done before calling :func:`db.close`, because
+if the ``assert`` statement fails, the database connection will no longer be
+closed. These problems can be solved with pytest fixture:
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ tests.
 In our example, ``yield`` takes place within a context manager with a temporary
 directory. This directory remains in place while the fixture is in use and the
 tests are running. At the end of the test, control is passed back to the
-fixture, :func:`db.close()` can be executed and the ``with`` block can close
+fixture, :func:`db.close` can be executed and the ``with`` block can close
 access to the directory.
 
 We can also use fixtures in several tests, for example in
@@ -143,12 +143,11 @@ We can also use fixtures in several tests, for example in
         items_db.add_item(items.Item("something else"))
         assert items_db.count() == 2
 
-:func:`test_count()` uses the same ``items_db`` fixture. This time we take the
+:func:`test_count` uses the same ``items_db`` fixture. This time we take the
 empty database and add two items before checking the count. We can now use
 ``items_db`` for any test that requires a configured database. The individual
-tests, such as :func:`test_empty()` and :func:`test_count()`, can be kept
-smaller and focus on what we really want to test, rather than setup and
-teardown.
+tests, such as :func:`test_empty` and :func:`test_count`, can be kept smaller
+and focus on what we really want to test, rather than setup and teardown.
 
 Show fixture execution with ``--setup-show``
 --------------------------------------------
@@ -556,10 +555,10 @@ Set fixture scope dynamically
 Let’s assume we have set up the fixtures as they are now, with ``db`` in the
 ``session`` scope and ``items_db`` in the ``function`` scope. However, there is
 now a risk that the ``items_db`` fixture is empty because it calls
-:func:`delete_all()`. We therefore want to create a way of setting up the
-database completely for each test function by dynamically defining the scope of
-the ``db`` fixture at runtime. To do this, we first change the scope of ``db``
-in the :file:`conftest.py` file:
+:func:`delete_all`. We therefore want to create a way of setting up the database
+completely for each test function by dynamically defining the scope of the
+``db`` fixture at runtime. To do this, we first change the scope of ``db`` in
+the :file:`conftest.py` file:
 
 .. code-block:: python
 

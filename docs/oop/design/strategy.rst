@@ -86,7 +86,7 @@ concrete strategies with simple functions and removing the abstract
    :lines: 1-57
 
 Line 33:
-    To calculate a discount, simply call the function :func:`self.promotion()`.
+    To calculate a discount, simply call the function :func:`self.promotion`.
 Line 40:
     Each strategy is a function, not a class.
 
@@ -130,7 +130,7 @@ In this way, :py:func:`globals` can be used to automatically find all
    :lineno-start: 60
 
 This iterates over every name in the :doc:`dictionary <../../types/dicts>`
-returned by :py:func:`globals()` and selects only those names that end with the
+returned by :py:func:`globals` and selects only those names that end with the
 ``_promo`` suffix.
 
 To find the :samp:`{special}_promo` functions in another module, the

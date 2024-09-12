@@ -82,10 +82,10 @@ interface that allows us to call our application without having to rely on
 This is good because we cannot simulate what is running in a separate process. So
 in :file:`tests/cli/conftest.py` we can just pass our application
 ``items.cli.app`` and a list of strings representing the command to the
-:func:`invoke()` function of our ``runner``: more precisely, we use
-:func:`shlex.split(command_string)()` to convert the commands, for example
-:samp:`list -o "veit"` into :samp:`["list", "-o", "veit"]` and can then intercept
-and return the output.
+:func:`invoke` function of our ``runner``: more precisely, we use
+:func:`shlex.split(command_string)` to convert the commands, for example
+:samp:`list -o "veit"` into :samp:`["list", "-o", "veit"]` and can then
+intercept and return the output.
 
 .. code-block:: python
    :emphasize-lines: 4, 8, 16-17
@@ -127,8 +127,8 @@ Mocking of attributes
 ---------------------
 
 Let’s take a look at how we can use mocking to ensure that, for example,
-three-digit version numbers of :func:`items.__version__()` are also output
-correctly via the CLI. For this we will use :func:`mock.patch.object()` as a
+three-digit version numbers of :func:`items.__version__` are also output
+correctly via the CLI. For this we will use :func:`mock.patch.object` as a
 context manager:
 
 .. code-block:: python
@@ -144,21 +144,21 @@ context manager:
             assert items_cli("version") == items.__version__
 
 In our test code, we import ``items``. The resulting items object is what we will
-patch. The call to :func:`mock.patch.object()`, which is used as a :doc:`context
+patch. The call to :func:`mock.patch.object`, which is used as a :doc:`context
 manager <../control-flows/with>` within a ``with`` block, returns a mock object
 that is cleaned up after the ``with`` block:
 
 #. In this case, the ``__version__`` attribute of ``items`` is replaced with
    ``"100.0.0"`` for the duration of the ``with`` block.
-#. We then use :func:`items_cli()` to call our CLI application with the
-   ``"version"`` command. However, when the :func:`version()` method is called,
+#. We then use :func:`items_cli` to call our CLI application with the
+   ``"version"`` command. However, when the :func:`version` method is called,
    the ``__version__`` attribute is not the original string, but the string we
-   replaced with :func:`mock.patch.object()`.
+   replaced with :func:`mock.patch.object`.
 
 Mocking classes and methods
 ---------------------------
 
-In :file:`src/items/cli.py` we have defined :func:`config()` as follows:
+In :file:`src/items/cli.py` we have defined :func:`config` as follows:
 
 .. code-block:: python
 
@@ -167,10 +167,10 @@ In :file:`src/items/cli.py` we have defined :func:`config()` as follows:
         with items_db() as db:
             print(db.path())
 
-:func:`items_db()` is a :doc:`context manager <../control-flows/with>` that
+:func:`items_db` is a :doc:`context manager <../control-flows/with>` that
 returns an ``items.ItemsDB`` object. The returned object is then used as a ``db``
-to call :func:`db.path()`. So we should mock two things here: ``items.ItemsDB``
-and one of its methods, :func:`path()`. Let’s start with the class:
+to call :func:`db.path`. So we should mock two things here: ``items.ItemsDB``
+and one of its methods, :func:`path`. Let’s start with the class:
 
 .. code-block:: python
 
@@ -219,7 +219,7 @@ that tests can use it to replace things like ``path``:
         result = runner.invoke(app, ["config"])
         assert result.stdout.rstrip() == "/foo/"
 
-Alternatively, the :func:`@mock.patch()` decorator can also be used to mock
+Alternatively, the :func:`@mock.patch` decorator can also be used to mock
 classes or objects. In the following examples, the output of ``os.listdir`` is
 mocked. This does not require ``db_path`` to be present in the file system:
 
@@ -247,9 +247,9 @@ Synchronising mocks with ``autospec``
 
 Mock objects are usually intended as objects that are used instead of the real
 implementation. By default, however, they will accept any access. For example, if
-the real object allows :func:`start(index)()`, our mock objects should also allow
-:func:`start(index)()`. However, there is a problem with this. Mock objects are
-too flexible by default: they would also accept :func:`stort()` or other
+the real object allows :func:`start(index)`, our mock objects should also allow
+:func:`start(index)`. However, there is a problem with this. Mock objects are
+too flexible by default: they would also accept :func:`stort` or other
 misspelled, renamed or deleted methods or parameters. Over time, this can lead to
 so-called mock drift if the interface you are modelling changes, but your mock in
 your test code does not. This form of mock drift can be solved by adding
@@ -271,17 +271,17 @@ attributes are added at runtime.
    The Python documentation has a large section on ``autospec``:
    :ref:`python3:auto-speccing`.
 
-Check call with :func:`assert_called_with()`
---------------------------------------------
+Check call with :func:`assert_called_with`
+------------------------------------------
 
 So far, we have used the return values of a mocking method to ensure that our
 application code handles the return values correctly. But sometimes there is no
 useful return value, for example with :samp:`items add some tasks -o veit`. In
 these cases, we can ask the mock object if it was called correctly. After calling
-:func:`items_cli("add some tasks -o veit")()`, the API is not used to check
+:func:`items_cli("add some tasks -o veit")`, the API is not used to check
 whether the item has entered the database, but a mock is used to ensure that the
 CLI has called the API method correctly. Finally, the implementation of the
-:func:`add()` function calls :func:`db.add_item()` with an ``Item`` object:
+:func:`add` function calls :func:`db.add_item` with an ``Item`` object:
 
 .. _test_add_with_owner:
 
@@ -293,7 +293,7 @@ CLI has called the API method correctly. Finally, the implementation of the
         expected = items.Item("some task", owner="veit", state="todo")
         mock_itemsdb.add_item.assert_called_with(expected)
 
-If :func:`add_item()` is not called or is called with the wrong type or the wrong
+If :func:`add_item` is not called or is called with the wrong type or the wrong
 object content, the test fails. For example, if we capitalise the string
 ``"Veit"`` in ``expected``, but not in the CLI call, we get the following output:
 
@@ -319,7 +319,7 @@ object content, the test fails. For example, if we capitalise the string
     ============================== 1 failed in 0.08s ===============================
 
 .. seealso::
-   There is a whole range of variants of :func:`assert_called()`. A complete list
+   There is a whole range of variants of :func:`assert_called`. A complete list
    and description can be found in `unittest.mock.Mock.assert_called
    <https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called>`_.
 
@@ -347,7 +347,7 @@ here is the implementation of the delete command:
                 print(f"Error: Invalid item id {item_id}")
 
 To test how the CLI handles an error condition, we can pretend that
-:func:`delete_item()` generates an exception by assigning the exception to the
+:func:`delete_item` generates an exception by assigning the exception to the
 `side_effect
 <https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect>`_
 attribute of the mock object, like this:
@@ -424,8 +424,8 @@ We could also avoid mocking in another way. We could test the behaviour
 completely via the CLI. This might require parsing the output of the items list
 to check the correct database content.
 
-In the API, :func:`add_item()` returns an index and provides a
-:func:`get_item(index)()` method to help with testing. Both methods are not
+In the API, :func:`add_item` returns an index and provides a
+:func:`get_item(index)` method to help with testing. Both methods are not
 available in the CLI, but could be. We could perhaps add the ``items get index``
 or ``items info index`` commands so we can retrieve an item instead of having to
 use ``items list`` for everything. ``list`` also already supports filtering.

@@ -13,6 +13,11 @@ repos:
     - id: check-yaml
     - id: check-added-large-files
       args: ['--maxkb=1024']
+  - repo: https://github.com/sphinx-contrib/sphinx-lint
+    rev: v1.0.0
+    hooks:
+    - id: sphinx-lint
+      types: [rst]
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
@@ -24,12 +29,6 @@ repos:
     rev: 24.8.0
     hooks:
     - id: black
-  - repo: https://github.com/sphinx-contrib/sphinx-lint
-    rev: v0.9.1
-    hooks:
-    - id: sphinx-lint
-      args: [--jobs=1]
-      types: [rst]
   - repo: https://github.com/adamchainz/blacken-docs
     rev: "1.18.0"
     hooks:

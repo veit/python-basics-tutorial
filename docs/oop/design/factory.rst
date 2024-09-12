@@ -43,9 +43,9 @@ This simple factory was successfully executed: the date returned is of type
 ``datetime.date``.
 
 .. note::
-   I chose the verb :func:`convert_date()` as the name for this function, rather
-   than a noun like :func:`date_factory()`, because it expresses what the
-   function does, rather than telling me what kind of function it is.
+   I chose the verb :func:`convert_date` as the name for this function, rather
+   than a noun like :func:`date_factory`, because it expresses what the function
+   does, rather than telling me what kind of function it is.
 
 Some legacy languages only support passing class instances, not callable
 functions. With this restriction, any simple factory would have to go from a
@@ -95,7 +95,7 @@ resulting object would have to be passed:
 Finally, the *Abstract Factory* design pattern aims to separate the
 specification from the implementation by creating an abstract class. Your
 abstract class would simply promise that the :class:`DateFactory` argument for
-:func:`load()` will be a class that matches the required interface:
+:func:`load` will be a class that matches the required interface:
 
 .. code-block:: python
 

@@ -509,7 +509,7 @@ We can also mark only certain test cases of a parameterised test:
         s = items_db.get_item(i)
         assert s.state == "done"
 
-The :func:`test_finish()` function is not directly marked, but only one of its
+The :func:`test_finish` function is not directly marked, but only one of its
 parameters: :samp:`pytest.param("in progress", marks=pytest.mark.smoke)`. You
 can use more than one marker by using the list form:
 :samp:`marks=[pytest.mark.{ONE}, pytest.mark.{TWO}]`. If you want to mark all
@@ -542,7 +542,7 @@ also mark fixtures in the same way:
         assert s.state == "done"
 
 If you want to add more than one marker to a function, you can simply stack
-them. For example, :func:`test_finish_non_existent()` is marked with both
+them. For example, :func:`test_finish_non_existent` is marked with both
 ``@pytest.mark.smoke`` and ``@pytest.mark.exception``:
 
 .. code-block:: python
@@ -795,8 +795,8 @@ have. This requires three steps:
     Here we use ``request``, more precisely ``request.node`` for the pytest
     representation of a test. ``get_closest_marker('num_items')`` returns a
     marker object if the test is marked with ``num_items``, otherwise it returns
-    ``None``. The :func:`get_closest_marker()` function returns the marker
-    closest to the test, which is usually what we want.
+    ``None``. The :func:`get_closest_marker` function returns the marker closest
+    t545o the test, which is usually what we want.
    Line 19
     The expression is true if the test is marked with ``num_items`` and an
     argument is given. The additional ``len`` check is there so that if someone
@@ -806,8 +806,8 @@ have. This requires three steps:
     Once we know how many items we need to create, we let Faker create some data
     for us. Faker provides the Faker fixture.
 
-    * For the ``summary`` field, the :func:`faker.sentence()` method works.
-    * The :func:`faker.first_name()` method works for the  ``Owner`` field.
+    * For the ``summary`` field, the :func:`faker.sentence` method works.
+    * The :func:`faker.first_name` method works for the  ``Owner`` field.
 
     .. seealso::
        * There are many other options that you can use with Faker. Have a look
@@ -834,7 +834,7 @@ Let’s run the tests now to make sure everything is working properly:
     ============================== 3 passed in 0.09s ===============================
 
 .. note::
-   You can add a ``print`` statement to :func:`test_four_items()` to get an
+   You can add a ``print`` statement to :func:`test_four_items` to get an
    impression of what the data from Faker looks like:
 
    .. code-block:: python
