@@ -31,10 +31,10 @@ Installation
 
          .. code-block:: console
 
-            $ bin/python -m pip install unittest2
+            $ python -m pip install unittest2
 
     .. tab:: Windows
 
          .. code-block:: ps1con
 
-            C:> Scripts\python -m pip install unittest2
+            C:> python -m pip install unittest2

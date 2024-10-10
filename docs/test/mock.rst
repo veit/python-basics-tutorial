@@ -11,7 +11,7 @@ it with :
 
    .. code-block:: console
 
-      $ . bin/activate
+      $ . .venv/bin/activate
       $ python -m pip install mock
 
 .. tab:: Windows

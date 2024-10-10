@@ -64,7 +64,7 @@ tests specified in a docstring are fulfilled.
 
       .. code-block:: console
 
-        C:> Scripts\python -m doctest arithmetic.py -v
+        C:> python -m doctest arithmetic.py -v
         Trying:
             add(7,6)
         Expecting:

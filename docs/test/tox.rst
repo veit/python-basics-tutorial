@@ -102,16 +102,16 @@ Before you can run tox, you must ensure that you have installed it:
 
    .. code-block:: console
 
-      $ python3 -m venv .
-      $ . bin/activate
+      $ python3 -m venv .venv
+      $ . .venv/bin/activate
       $ python -m pip install tox
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m venv .
-      C:> Scripts\activate
+      C:> python -m venv .venv
+      C:> .venv\Scripts\activate.bat
       C:> python -m pip install tox
 
 To run tox, simply start tox:

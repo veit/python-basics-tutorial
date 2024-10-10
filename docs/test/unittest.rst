@@ -72,7 +72,7 @@ Suppose you have implemented the following add method in the
 
       .. code-block:: console
 
-         $ bin/python test_arithmetic.py
+         $ python test_arithmetic.py
          ....
          ----------------------------------------------------------------------
          Ran 4 tests in 0.000s
@@ -111,7 +111,7 @@ Suppose you have implemented the following add method in the
 
       .. code-block:: ps1con
 
-         C:> Scripts\python test_arithmetic.py -v
+         C:> python test_arithmetic.py -v
          test_addition (__main__.TestArithmetic) ... ok
          test_division (__main__.TestArithmetic) ... ok
          test_multiplication (__main__.TestArithmetic) ... ok

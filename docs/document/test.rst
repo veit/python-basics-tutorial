@@ -17,13 +17,13 @@ mode for this, which can be called up with the ``-n`` option, for example with:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -nb html docs/ docs/_build/
+       $ python -m sphinx -nb html docs/ docs/_build/
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -nb html docs\ docs\_build\
+       C:> python -m sphinx -nb html docs\ docs\_build\
 
 .. _link-checks:
 
@@ -38,13 +38,13 @@ which you can call up with:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -b linkcheck docs/ docs/_build/
+       $ python -m sphinx -b linkcheck docs/ docs/_build/
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
+       C:> python -m sphinx -b linkcheck docs\ docs\_build\
 
 The output can then look like this, for example:
 
@@ -52,7 +52,7 @@ The output can then look like this, for example:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -b linkcheck docs/ docs/_build/
+       $ python -m sphinx -b linkcheck docs/ docs/_build/
        Running Sphinx v3.5.2
        loading translations [de]... done
        …
@@ -71,7 +71,7 @@ The output can then look like this, for example:
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
+       C:> python -m sphinx -b linkcheck docs\ docs\_build\
        Running Sphinx v3.5.2
        loading translations [de]... done
        …

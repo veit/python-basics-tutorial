@@ -10,13 +10,13 @@ Installation and start
 
       .. code-block:: console
 
-         $ python3 -m venv venv
+         $ python3 -m venv .venv
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> python -m venv venv
+         C:> python -m venv .venv
 
 #. Switch to the virtual environment and install Sphinx there:
 
@@ -24,9 +24,8 @@ Installation and start
 
       .. code-block:: console
 
-         $ cd !$
-         cd venv
-         $ bin/python -m pip install sphinx
+         $ . .venv/bin/activate
+         $ (.venv) python -m pip install sphinx
          Creating a virtualenv for this project…
          …
 
@@ -34,8 +33,8 @@ Installation and start
 
       .. code-block:: ps1con
 
-         C:> cd venv
-         C:> bin/python -m pip install sphinx
+         C:> .venv\Scripts\activate.bat
+         C:> (.venv) python -m pip install sphinx
          Creating a virtualenv for this project…
          …
 
@@ -45,7 +44,7 @@ Installation and start
 
       .. code-block:: console
 
-         $ bin/sphinx-quickstart docs
+         $ sphinx-quickstart docs
          Selected root path: docs
          > Separate source and build directories (y/n) [n]:
          > Name prefix for templates and static dir [_]:
@@ -77,7 +76,7 @@ Installation and start
 
       .. code-block:: ps1con
 
-         C:> Scripts\sphinx-quickstart docs
+         C:> sphinx-quickstart docs
          Selected root path: docs
          > Separate source and build directories (y/n) [n]:
          > Name prefix for templates and static dir [_]:
@@ -110,7 +109,7 @@ Sphinx layout
 
 ::
 
-    venv
+    .
     └── docs
         ├── Makefile
         ├── _static
@@ -132,13 +131,13 @@ You can now generate the documentation, for example with:
 
    .. code-block:: console
 
-      $ bin/sphinx-build -ab html docs/ docs/_build
+      $ sphinx-build -ab html docs/ docs/_build
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> Scripts\sphinx-build -ab html docs\ docs\_build
+      C:> sphinx-build -ab html docs\ docs\_build
 
 ``a``
     regenerates all pages of the documentation.

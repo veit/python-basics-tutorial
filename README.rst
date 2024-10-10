@@ -56,7 +56,7 @@ Installation
    .. code-block:: ps1con
 
       C:> py -m venv .venv
-      C:> .\.venv\Scripts\Activate
+      C:> .\.venv\Scripts\activate.bat
       C:> python -m pip install --upgrade pip
       C:> python -m pip install -e ".[dev]"
 

@@ -100,7 +100,7 @@ a new :term:`virtual environment` and install your package on *Test PyPI*:
 .. code-block:: console
 
     $ python3 -m venv test_env
-    $ source test_env/bin/activate
+    $ . test_env/bin/activate
     $ pip install -i https://test.pypi.org/simple/ minimal_example
 
 .. note::

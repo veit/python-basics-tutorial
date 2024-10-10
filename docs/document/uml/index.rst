@@ -25,13 +25,13 @@ Installation
 
       .. code-block:: console
 
-         $ bin/python -m pip install sphinxcontrib-plantuml
+         $ python -m pip install sphinxcontrib-plantuml
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> Scripts\python -m pip install sphinxcontrib-plantuml
+         C:> python -m pip install sphinxcontrib-plantuml
 
 #. We then configure the ``conf.py``:
 

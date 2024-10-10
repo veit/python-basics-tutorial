@@ -24,7 +24,7 @@ CookieCutter features
 
   .. code-block:: console
 
-    $ bin/python
+    $ python
     >>> from cookiecutter.main import cookiecutter
     >>> cookiecutter('.https://github.com/veit/cookiecutter-namespace-template.git')
     full_name [Veit Schiele]:
