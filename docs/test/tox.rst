@@ -68,7 +68,7 @@ This is a typical layout for many projects. Let’s take a look at a simple
 .. code-block:: ini
 
    [tox]
-   envlist = py311
+   envlist = py313
    isolated_build = True
 
    [testenv]
@@ -77,10 +77,10 @@ This is a typical layout for many projects. Let’s take a look at a simple
      faker
    commands = pytest
 
-In the ``[tox]`` section, we have defined ``envlist = py311``. This is a shortcut
-that tells tox to run our tests with Python version 3.11. We will be adding more
-Python versions shortly, but using one version helps to understand the flow of
-tox.
+In the ``[tox]`` section, we have defined ``envlist = py313``. This is a
+shortcut that tells tox to run our tests with Python version 3.13. We will be
+adding more Python versions shortly, but using one version helps to understand
+the flow of tox.
 
 Also note the line ``isolated_build = True``: This is required for all packages
 configured with :file:`pyproject.toml`. However, for all projects configured with
@@ -118,17 +118,16 @@ To run tox, simply start tox:
 
 .. code-block:: console
 
-    $ tox
-    .pkg: _optional_hooks> python /PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-    .pkg: get_requires_for_build_sdist> python PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-    .pkg: build_sdist> python PATH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-    py311: install_package> python -I -m pip install --force-reinstall --no-deps PATH/TO/items/.tox/.tmp/package/14/items-0.1.0.tar.gz
-    py311: commands[0]> pytest
+    $ python -m tox
+    py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
+    py313: commands[0]> coverage run -m pytest
     ============================= test session starts ==============================
-    ...
+    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
+    cachedir: .tox/py313/.pytest_cache
+    rootdir: /Users/veit/cusy/prj/items
     configfile: pyproject.toml
     testpaths: tests
-    plugins: Faker-19.11.0
+    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
     collected 49 items
 
     tests/api/test_add.py ....                                               [  8%]
@@ -151,10 +150,10 @@ To run tox, simply start tox:
     tests/cli/test_update.py .                                               [ 97%]
     tests/cli/test_version.py .                                              [100%]
 
-    ============================== 49 passed in 0.08s ==============================
-    .pkg: _exit> python /PATCH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-      py311: OK (1.48=setup[1.21]+cmd[0.27] seconds)
-      congratulations :) (1.51 seconds)
+    ============================== 49 passed in 0.16s ==============================
+    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+    py313: OK ✔ in 1.48 seconds
+      congratulations :) (1.48 seconds)
 
 Testing multiple Python versions
 --------------------------------
@@ -166,7 +165,7 @@ Python versions:
    :emphasize-lines: 2, 4
 
    [tox]
-   envlist = py38, py39, py310, py311
+   envlist = py39, py310, py311, py312, py313
    isolated_build = True
    skip_missing_interpreters = True
 
@@ -178,30 +177,43 @@ will skip versions it doesn’t find without failing. The output is very similar
 although I will only highlight the differences in the following illustration:
 
 .. code-block:: pytest
-   :emphasize-lines: 2, 4, 10, 12, 18-
+   :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
 
-    $ tox
-    py38: skipped because could not find python interpreter with spec(s): py38
-    py38: SKIP ⚠ in 2.13 seconds
-    py39: install_package> python -I -m pip install --force-reinstall --no-deps /PATCH/TO/items/.tox/.tmp/package/15/items-0.1.0.tar.gz
-    py39: commands[0]> pytest
+    $ python -m tox
+    ...
+    py39: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/17/items-0.1.0.tar.gz
+    py39: commands[0]> coverage run -m pytest
     ============================= test session starts ==============================
     ...
     ============================== 49 passed in 0.16s ==============================
-    py39: OK ✔ in 8.08 seconds
+    py39: OK ✔ in 2.17 seconds
     py310: skipped because could not find python interpreter with spec(s): py310
-    py310: SKIP ⚠ in 0 seconds
-    py311: install_package> python -I -m pip install --force-reinstall --no-deps /PATH/TO/items/.tox/.tmp/package/16/items-0.1.0.tar.gz
-    py311: commands[0]> pytest
+    py310: SKIP ⚠ in 0.01 seconds
+    py311: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/18/items-0.1.0.tar.gz
+    py311: commands[0]> coverage run -m pytest
     ============================= test session starts ==============================
     ...
-    ============================== 49 passed in 0.09s ==============================
-    .pkg: _exit> python /PYTH/TO/items/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
-      py38: SKIP (2.13 seconds)
-      py39: OK (8.08=setup[6.92]+cmd[1.16] seconds)
-      py310: SKIP (0.00 seconds)
-      py311: OK (1.24=setup[0.95]+cmd[0.29] seconds)
-      congratulations :) (11.48 seconds)
+    ============================== 49 passed in 0.15s ==============================
+    py311: OK ✔ in 1.41 seconds
+    py312: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/19/items-0.1.0.tar.gz
+    py312: commands[0]> coverage run -m pytest
+    ============================= test session starts ==============================
+    ...
+    ============================== 49 passed in 0.15s ==============================
+    py312: OK ✔ in 1.43 seconds
+    py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
+    py313: commands[0]> coverage run -m pytest
+    ============================= test session starts ==============================
+    ...
+    ============================== 49 passed in 0.16s ==============================
+    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+    py313: OK ✔ in 1.48 seconds
+      py39: OK (2.17=setup[1.54]+cmd[0.63] seconds)
+      py310: SKIP (0.01 seconds)
+      py311: OK (1.41=setup[0.81]+cmd[0.60] seconds)
+      py312: OK (1.43=setup[0.82]+cmd[0.61] seconds)
+      py313: OK (1.48=setup[0.82]+cmd[0.66] seconds)
+      congratulations :) (10.46 seconds)
 
 Running Tox environments in parallel
 ------------------------------------
@@ -212,16 +224,17 @@ other. It is also possible to run them in parallel with the ``-p`` option:
 .. code-block:: pytest
 
     $ python -m tox -p
-    py38: SKIP ⚠ in 0.07 seconds
-    py310: SKIP ⚠ in 0.07 seconds
-    py312: OK ✔ in 1.7 seconds
-    py311: OK ✔ in 1.75 seconds
-      py38: SKIP (0.07 seconds)
-      py39: OK (2.42=setup[2.01]+cmd[0.41] seconds)
-      py310: SKIP (0.07 seconds)
-      py311: OK (1.75=setup[1.35]+cmd[0.40] seconds)
-      py312: OK (1.70=setup[1.30]+cmd[0.40] seconds)
-      congratulations :) (2.47 seconds)
+    py310: SKIP ⚠ in 0.09 seconds
+    py312: OK ✔ in 2.08 seconds
+    py313: OK ✔ in 2.18 seconds
+    py311: OK ✔ in 2.23 seconds
+    py39: OK ✔ in 2.91 seconds
+      py39: OK (2.91=setup[2.17]+cmd[0.74] seconds)
+      py310: SKIP (0.09 seconds)
+      py311: OK (2.23=setup[1.27]+cmd[0.96] seconds)
+      py312: OK (2.08=setup[1.22]+cmd[0.86] seconds)
+      py313: OK (2.18=setup[1.23]+cmd[0.95] seconds)
+      congratulations :) (3.05 seconds)
 
 .. note::
    The output is not abbreviated; this is the full output you will see if
@@ -240,7 +253,7 @@ extend commands to ``pytest --cov=items``:
    :emphasize-lines: 12-
 
     [tox]
-    envlist = py3{8,9,10,11,12}
+    envlist = py3{9,10,11,12,13}
     isolated_build = True
     skip_missing_interpreters = True
 
@@ -270,7 +283,7 @@ should be considered identical:
 
 The items source code is initially located in :file:`src/items/` before tox
 creates the virtual environments and installs items in the environment. It is
-then located in :file:`.tox/py312/lib/python3.12/site-packages/items`, for
+then located in :file:`.tox/py313/lib/python3.13/site-packages/items`, for
 example.
 
 .. code-block:: console
@@ -278,25 +291,23 @@ example.
 
     $ python -m tox
     ...
-    coverage-report: install_deps> python -I -m pip install 'coverage[toml]'
     coverage-report: commands[0]> coverage combine
-    Combined data file .coverage.fay.local.74688.XgGaASxx
-    Skipping duplicate data .coverage.fay.local.74695.XmMjaOox
-    Skipping duplicate data .coverage.fay.local.74702.XUQUSgdx
+    Combined data file .coverage.fay.local.19539.XpQXpsGx
     coverage-report: commands[1]> coverage report
     Name               Stmts   Miss Branch BrPart  Cover   Missing
     --------------------------------------------------------------
-    src/items/api.py      68      1     16      1    98%   52
+    src/items/api.py      68      1     12      1    98%   88
     --------------------------------------------------------------
-    TOTAL                428      1    118      1    99%
-    27 files skipped due to complete coverage.
-      py38: SKIP (0.02 seconds)
-      py39: OK (6.24=setup[5.06]+cmd[1.18] seconds)
+    TOTAL                428      1     32      1    99%
+
+    26 files skipped due to complete coverage.
+      py39: OK (2.12=setup[1.49]+cmd[0.63] seconds)
       py310: SKIP (0.01 seconds)
-      py311: OK (3.97=setup[2.77]+cmd[1.20] seconds)
-      py312: OK (3.80=setup[2.67]+cmd[1.13] seconds)
-      coverage-report: OK (1.53=setup[0.90]+cmd[0.54,0.09] seconds)
-      congratulations :) (15.59 seconds)
+      py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
+      py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
+      py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
+      coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
+      congratulations :) (10.26 seconds)
 
 Set minimum coverage
 --------------------
@@ -306,17 +317,16 @@ level in order to recognise any coverage failures. This is achieved with the
 ``--cov-fail-under`` option:
 
 .. code-block:: console
-    :emphasize-lines: 9
+    :emphasize-lines: 8
 
-    $ python -m coverage report --fail-under=100
     Name               Stmts   Miss Branch BrPart  Cover   Missing
     --------------------------------------------------------------
-    src/items/api.py      68      1     16      1    98%   52
+    src/items/api.py      68      1     12      1    98%   88
     --------------------------------------------------------------
-    TOTAL                428      1    118      1    99%
+    TOTAL                428      1     32      1    99%
 
-    27 files skipped due to complete coverage.
-     overage failure: total of 99 is less than fail-under=100
+    26 files skipped due to complete coverage.
+    Coverage failure: total of 99 is less than fail-under=100
 
 This adds the highlighted line to the output.
 
@@ -335,7 +345,7 @@ parameters can be passed to pytest:
     envlist =
         pre-commit
         docs
-        py3{8,9,10,11,12}
+        py3{9,10,11,12,13}
         coverage-report
     isolated_build = True
     skip_missing_interpreters = True
@@ -356,23 +366,25 @@ keyword option. We also use ``--no-cov`` to disable coverage:
 .. code-block::
    :emphasize-lines: 1, 3
 
-    $ tox -e py312 -- -k test_version --no-cov
+    $ tox -e py313 -- -k test_version --no-cov
     ...
-    py312: commands[0]> coverage run -m pytest -k test_version --no-cov
+    py313: commands[0]> coverage run -m pytest -k test_version --no-cov
     ============================= test session starts ==============================
-    ...
+    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
+    cachedir: .tox/py313/.pytest_cache
+    rootdir: /Users/veit/cusy/prj/items
     configfile: pyproject.toml
     testpaths: tests
-    plugins: cov-5.0.0, Faker-25.0.0
+    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
     collected 49 items / 47 deselected / 2 selected
 
     tests/api/test_version.py .                                              [ 50%]
     tests/cli/test_version.py .                                              [100%]
 
-    ======================= 2 passed, 47 deselected in 0.09s =======================
-    .pkg: _exit> python /Users/veit/cusy/prj/items_env/lib/python3.12/site-packages/pyproject_api/_backend.py True hatchling.build
-      py312: OK (2.22=setup[1.12]+cmd[1.10] seconds)
-      congratulations :) (2.25 seconds)
+    ======================= 2 passed, 47 deselected in 0.07s =======================
+    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+      py313: OK (1.49=setup[0.96]+cmd[0.53] seconds)
+      congratulations :) (1.53 seconds)
 
 ``tox`` is not only ideal for the local automation of test processes, but also
 helps with server-based :term:`CI`. Let’s continue with the execution of pytest
@@ -408,7 +420,7 @@ of environments are available for GitHub actions:
             - uses: actions/setup-python@v5
               with:
                 cache: pip
-                python-version: 3.12
+                python-version: 3.13
             - name: Download coverage data
               uses: actions/download-artifact@v4
               with:
@@ -449,10 +461,11 @@ of environments are available for GitHub actions:
 
           [gh-actions]
           python =
-              3.8: py38
               3.9: py39
               3.10: py310
               3.11: py311
+              3.12: py312
+              3.13: py313
 
        This assigns GitHub actions to tox environments.
 

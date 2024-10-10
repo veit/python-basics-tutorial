@@ -58,9 +58,9 @@ fail and find bugs with little effort.
 
            $ bin/python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
-           platform darwin -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+           platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
            rootdir: /Users/veit/cusy/trn/python-basics/docs/test
-           plugins: hypothesis-6.23.2
+           plugins: hypothesis-6.114.1
            collected 1 item
 
            test_hypothesis.py F                                                     [100%]
@@ -98,9 +98,9 @@ fail and find bugs with little effort.
 
            C:> Scripts\python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
-           platform win32 -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+           platform win32 -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
            rootdir: C:\Users\veit\python-basics\docs\test
-           plugins: hypothesis-6.23.2
+           plugins: plugins: hypothesis-6.114.1
            collected 1 item
 
            test_hypothesis.py F                                                     [100%]

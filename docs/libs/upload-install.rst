@@ -125,7 +125,7 @@ module and referencing the ``name`` property that was previously ntered in
 .. code-block:: console
 
     $ python
-    Python 3.7.0 (default, Aug 22 2018, 15:22:29)
+    Python 3.13.0 (main, Oct  7 2024, 05:02:14) [Clang 15.0.0 (clang-1500.1.0.2.5)] on darwin
     …
     >>> import minimal_example
     >>> minimal_example.name

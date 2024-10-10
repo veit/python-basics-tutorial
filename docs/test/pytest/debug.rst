@@ -132,7 +132,7 @@ in our :file:`tox.ini` for Items:
    :emphasize-lines: 11
 
    [tox]
-   envlist = py38, py39, py310, py311
+   envlist = py39, py310, py311, py312, py313
    isolated_build = True
    skip_missing_interpreters = True
 
@@ -145,17 +145,18 @@ in our :file:`tox.ini` for Items:
 
    [gh-actions]
    python =
-     3.8: py38
      3.9: py39
      3.10: py310
      3.11: py311
+     3.12: py312
+     3.13: py313
 
-We want to run the Python 3.11 environment and start the debugger on a failed
-test with ``tox -e py311 -- --pdb --no-cov``. This will take us to the pdb,
+We want to run the Python 3.13 environment and start the debugger on a failed
+test with ``tox -e py313 -- --pdb --no-cov``. This will take us to the pdb,
 right at the assertion that failed.
 
 Once we have found and fixed the error, we can run the tox environment again
-with this one test error: ``tox -e py311 -- --lf --tb=no --no-cov``.
+with this one test error: ``tox -e py313 -- --lf --tb=no --no-cov``.
 
 Overview of the most common pytest debugger options
 ---------------------------------------------------

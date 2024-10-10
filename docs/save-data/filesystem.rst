@@ -45,7 +45,7 @@ Absolute path names
 
     .. code-block:: console
 
-        C:\Program Files\Python 3.9\
+        C:\Program Files\Python 3.13\
         D:\backup\2022\06\
 
     And here are two absolute Linux path names and one absolute macOS path name:
@@ -54,7 +54,7 @@ Absolute path names
 
         /bin/python3
         /cdrom/backup/2022/06/
-        /Applications/Python\ 3.10/
+        /Applications/Python\ 3.13/
 
 Relative pathnames
     indicate the position of a file relative to another point in the file
@@ -78,9 +78,9 @@ Relative pathnames
 
     * The relative path is appended to an existing absolute path, creating a new
       absolute path. If you have a Windows relative path
-      :samp:`{Start Menu\\Programs\\Python 3.8}` and an absolute path
+      :samp:`{Start Menu\\Programs\\Python 3.13}` and an absolute path
       :samp:`{C:\\Users\\Veit}`, then by appending the relative path a new
-      absolute path: :samp:`C:\\Users\\Veit\\Start Menu\\Programs\\Python 3.8`
+      absolute path: :samp:`C:\\Users\\Veit\\Start Menu\\Programs\\Python 3.13`
       can be created. If you append the same relative path to another absolute
       path (for example to :samp:`C:\\Users\\Tim`, you will get a new path
       referring to another :samp:`HOME` directory (:samp:`{Tim}`).

@@ -91,7 +91,7 @@ Lines 25 to 26
 
          >>> import wc, importlib
          >>> importlib.reload(wc)
-         <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
+         <module 'wc' from '/home/veit/.local/lib/python3.13/site-packages/wc.py'>
     * as a script it is executed with the name ``__main__`` and the function
       ``words_occur()```` is called:
 
