@@ -30,16 +30,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install packages
+        run: sudo apt install plantuml
       - name: Setup python
         uses: actions/setup-python@v5
         with:
           python-version-file: .python-version
           architecture: x64
-      - name: Install packages and requirements
+      - name: Setup cached uv
+        uses: hynek/setup-cached-uv@v2
+      - name: Build and activate venv
         run: |
-          sudo apt install plantuml
-          python -m pip install -U pip
-          python -m pip install -e ".[docs]"
+          uv venv
+          echo "$PWD/.venv/bin" >> $GITHUB_PATH
+          uv pip install -e ".[docs]"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build HTML
