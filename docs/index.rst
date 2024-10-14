@@ -109,6 +109,7 @@ All tutorials serve as seminar documents for our harmonised training courses:
    functions/index
    modules/index
    libs/index
+   apps
    oop/index
    save-data/index
    dataclasses
