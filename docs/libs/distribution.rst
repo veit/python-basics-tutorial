@@ -9,22 +9,6 @@ uploaded to a package index such as :term:`pypi.org` and installed with
    `cusy seminar: Advanced Python
    <https://cusy.io/en/our-training-courses/advanced-python>`_
 
-Some of the following commands require a new version of pip, so you should make
-sure you have the latest version installed:
-
-
-.. tab:: Linux/macOS
-
-   .. code-block:: console
-
-      $ python3 -m pip install --upgrade pip
-
-.. tab:: Windows
-
-   .. code-block:: ps1
-
-      > python  -m pip install --upgrade pip
-
 Structure
 ---------
 
@@ -453,53 +437,93 @@ For more instructions in :file:`Manifest.in`, see `MANIFEST.in commands
 .. note::
    If you want files and directories from :file:`MANIFEST.in` to be installed as
    well, for example if they are runtime-relevant data, you can specify this
-   with ``include_package_data=True`` in your ``setup()`` call.
+   with ``include_package_data=True`` in your :func:`setup` call.
+
+.. _uv-package-structure:
+
+Create package structure
+------------------------
+
+With :samp:`uv init --package {MYPACK}` you can easily create an initial file
+structure for packages.
+
+.. code-block:: console
+
+   $ uv init --package mypack
+   $  tree mypack -a
+   mypack
+   ├── .git
+   │   └── ...
+   ├── .gitignore
+   ├── .python-version
+   ├── README.md
+   ├── pyproject.toml
+   └── src
+       └── mypack
+           └── __init__.py
+
+:file:`mypack/pyproject.toml`
+    The file :file:`pyproject.toml` contains a ``scripts`` entry point
+    ``mypack:main``:
+
+    .. literalinclude:: mypack/pyproject.toml
+       :caption: mypack/pyproject.toml
+       :emphasize-lines: 12-13
+
+:file:`mypack/src/mypack/__init__.py`
+    The module defines a CLI function :func:`main`:
+
+    .. literalinclude:: mypack/src/mypack/__init__.py
+       :caption: mypack/src/mypack/__init__.py
+
+    It can be called with ``uv run``:
+
+    .. code-block:: console
+
+       $ uv run mypack
+       Hello from mypack!
+
+    .. note::
+       If necessary, ``uv run`` creates a :ref:`virtual Python environment
+       <venv>` in the :file:`.venv` folder before :func:`main` is executed.
+
+.. _uv-build:
 
 Build
 -----
 
 The next step is to create distribution packages for the package. These are
 archives that can be uploaded to the :term:`Python Package Index` (:term:`PyPI`)
-and installed by :term:`pip`.
-
-Make sure you have the latest version of ``build`` installed:
-
-Now run the command in the same directory where :file:`pyproject.toml` is
-located:
+and installed by :term:`pip`. Now execute the command in the same directory
+where :file:`pyproject.toml` is located:
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ python -m pip install build
-      $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
-      $ rm -rf build dist
-      $ python -m build
+      $ uv build
+      Building source distribution...
+      Building wheel from source distribution...
+        Successfully built dist/mypack-0.1.0.tar.gz and dist/mypack-0.1.0-py3-none-any.whl
 
 .. tab:: Windows
 
    .. code-block:: ps1
 
-      > python -m pip install build
-      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
-      > rm -rf build dist
-      > python -m build
+      > uv build
+      Building source distribution...
+      Building wheel from source distribution...
+        Successfully built dist/mypack-0.1.0.tar.gz and dist/mypack-0.1.0-py3-none-any.whl
 
-The second line ensures that a clean build is created without artefacts from
-previous builds. The third line should output a lot of text and create two files
-in the ``dist`` directory when finished:
+:file:`dist/mypack-0.1.0-py3-none-any.whl`
+    is a build distribution. :term:`pip` prefers to install build distributions
+    and only uses the source distributions if no suitable build distribution is
+    available. You should always upload a source distribution and provide build
+    distributions for the platforms with which your project is compatible. In
+    this case, our example package is compatible with Python on every platform,
+    so only one build distribution is required:
 
-.. code-block:: console
-
-   dist
-   ├── dataprep-0.1.0-py3-none-any.whl
-   └── dataprep-0.1.0.tar.gz
-
-:file:`dataprep-0.1.0-py3-none-any.whl`
-    is a binary distribution format with the suffix :file:`..whl`, where the
-    filename is composed as follows:
-
-    ``dataprep``
+    ``mypack``
         is the normalised package name
     ``0.1.0``
         is the version of the distribution package
@@ -514,16 +538,14 @@ in the ``dist`` directory when finished:
         other hand only for chips with the x86 instruction set and a 64-bit
         architecture
 
-:file:`dataprep-0.1.0.tar.gz`
+:file:`mypack-0.1.0.tar.gz`
     is a :term:`source distribution`.
 
 .. seealso::
-   The reference for the file names can be found in `File name convention
-   <https://peps.python.org/pep-0427/#file-name-convention>`_.
-
-   For more information on ``sdist``, see `Creating a Source Distribution
-   <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__
-   and :pep:`376`.
+   For more information on ``sdist``, see `Core metadata specifications
+   <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
+   and `PyPA specifications
+   <https://packaging.python.org/en/latest/specifications/>`_.
 
 Testing
 -------

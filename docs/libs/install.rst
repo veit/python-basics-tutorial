@@ -19,11 +19,11 @@ category.
 
 .. warning::
    Never install anything with ``pip`` into the global Python, not even with the
-   ``--user`` flag. Always use :ref:`virtual-environments`. This way you avoid
-   contaminating your Python installation with libraries that you install and
-   then forget about. Every time you need to do something new, you should create
-   a new virtual environment. This will also avoid library conflicts between
-   different projects.
+   ``--user`` flag. Always use :ref:`venv`. This way you avoid contaminating
+   your Python installation with libraries that you install and then forget
+   about. Every time you need to do something new, you should create a new
+   virtual environment. This will also avoid library conflicts between different
+   projects.
 
 .. tip::
    We recommend that you configure ``pip`` so that it is not possible to install
@@ -35,10 +35,10 @@ category.
       [global]
       require-virtualenv = true
 
-.. _virtual-environments:
+.. _venv:
 
-Virtual environments
---------------------
+``venv``
+--------
 
 A virtual environment (``virtualenv``) is a self-contained directory structure
 that contains both an installation of Python and the additional packages. Since
@@ -204,3 +204,64 @@ In our :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd` pipelines,
 however, we use ``requires-python`` from the :ref:`pyproject-toml` file to build
 :doc:`Docker containers with the appropriate Python version
 <Python4DataScience:productive/git/advanced/gitlab/docker>`.
+
+.. _uv:
+
+``uv``
+------
+
+:term:`uv` simplifies the creation of an initial project structure and the
+management of your dependencies.
+
+Installation
+~~~~~~~~~~~~
+
+``uv`` ``uv`` does not depend on Python. Pre-compiled, standalone binaries can
+be installed on Linux, macOS and Windows:
+
+.. tab:: Linux/macOS
+
+   .. code-block:: console
+
+      $ curl -LsSf https://astral.sh/uv/install.sh | sh
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      > powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+``uv``  updates itself regularly with this installation.
+
+Automatic shell completion
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To activate automatic shell completion for ``uv`` commands, carry out one of the
+following steps:
+
+.. tab:: Linux/macOS
+
+   Specify your shell, for example with ``echo $SHELL``, then execute one of the
+   following commands:
+
+   .. code-block:: console
+
+      $ echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
+      $ echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+      $ echo 'uv generate-shell-completion fish | source' >> ~/.config/fish/config.fish
+      $ echo 'eval (uv generate-shell-completion elvish | slurp)' >> ~/.elvish/rc.elv
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      Add-Content -Path $PROFILE -Value '(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression'
+      Add-Content -Path $PROFILE -Value '(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression'
+
+Then restart the shell or call up ``source`` with your shell configuration file.
+
+Create project structure
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Depending on whether you want to create a  :doc:`library <distribution>` or an
+:doc:`application<../apps>`, ``uv`` can create a suitable project structure.
