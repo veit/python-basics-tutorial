@@ -29,9 +29,13 @@ installed, this should not be a problem.
       One disadvantage is that you have to return to the website regularly to
       check for security updates as there is no integrated auto-updater.
 
-   If older Python versions are required, for example to test libraries with
-   :doc:`test/tox`, we use `deadsnakes
-   <https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa>`_.
+.. _various-python-versions:
+
+If different Python versions are required, for example to test libraries with
+:doc:`test/tox`, I use `uv <https://docs.astral.sh/uv/guides/install-python/>`_.
+This allows not only older CPython versions to be installed but also  `PyPy
+<https://pypy.org>`_ or free-threaded Python 3.13 with ``uv python install
+pypy@3.12`` or ``uv python install 3.13t``.
 
 .. tab:: macOS
 

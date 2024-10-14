@@ -566,3 +566,37 @@ example, the following code snippet would define a new ``--my`` :abbr:`CLI
 .. seealso::
    * `Extending tox <https://tox.wiki/en/latest/plugins.html>`_
    * `tox development team <https://github.com/orgs/tox-dev/repositories>`_
+
+.. _tox_uv:
+
+``tox-uv``
+----------
+
+`tox-uv <https://pypi.org/project/tox-uv/>`_ is a Tox plugin that replaces
+:term:`virtualenv` and :term:`pip` with :term:`uv` in your Tox environments.
+
+You can install ``tox`` and ``tox-uv`` with:
+
+.. code-block:: console
+
+   $ uv tool install tox --with tox-uv
+
+``uv.lock`` support
+~~~~~~~~~~~~~~~~~~~
+
+If you want to use ``uv sync`` with a ``uv.lock`` file for a Tox environment,
+you must change the runner for this Tox environment to ``uv-venv-lock-runner``.
+You should also use the extras configuration in such environments to instruct
+``uv`` to install the specified extras, for example:
+
+.. code-block:: ini
+   :caption: tox.ini
+
+   [testenv]
+   runner = uv-venv-lock-runner
+   extras =
+       dev
+   commands = pytest
+
+``dev`` uses the ``uv-venv-lock-runner`` and uses ``uv sync`` to install
+dependencies in the environment with the ``dev`` extras.
