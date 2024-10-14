@@ -64,8 +64,7 @@ Glossary
 
    distutils
        Python standard library package that provides support for bootstrapping
-       :term:`pip` into an existing Python installation or :term:`virtual
-       environment`.
+       :term:`pip` into an existing Python installation or :term:`venv`.
 
        `Docs <https://docs.python.org/3/library/ensurepip.html>`__ |
        `GitHub <https://github.com/pypa/distutils>`__
@@ -370,6 +369,14 @@ Glossary
        `GitHub <https://github.com/pypa/twine>`__ |
        `PyPI <https://pypi.org/project/twine>`__
 
+   uv
+       An extremely fast Python package and project manager, written in `Rust
+       <https://www.rust-lang.org>`_.
+
+       `Docs <https://docs.astral.sh/uv/>`__ |
+       `GitHub <https://github.com/astral-sh/uv>`__ |
+       `PyPI <https://pypi.org/project/uv/>`__
+
    venv
        Package that is in the Python standard library as of Python ≥ 3.3 and is
        intended for creating :term:`virtual environments <virtual environment>`.
@@ -391,7 +398,7 @@ Glossary
        specific application rather than system-wide.
 
        .. seealso::
-          * :ref:`virtual-environments`
+          * :ref:`venv`
           * `Creating Virtual Environments
             <https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>`_
 

@@ -17,7 +17,7 @@ Features
 Installation
 ------------
 
-You can install pytest in `virtual environments <virtuelle-umgebungen>` with:
+You can install pytest in `virtual environments <venv>` with:
 
 .. tab:: Linux/macOS
 
