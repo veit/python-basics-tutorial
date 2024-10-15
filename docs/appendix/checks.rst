@@ -354,6 +354,7 @@ Checks
   (``-``)?
 
   .. code-block:: pycon
+
      >>> from string import punctuation, whitespace
      >>> chars = punctuation + whitespace
      >>> subs = str.maketrans(chars, len(chars) * "-")
