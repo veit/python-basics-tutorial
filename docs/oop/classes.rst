@@ -84,4 +84,4 @@ Line 6
 Checks
 ------
 
-* Writes a :class:`Triangle` class that can also calculate the area.
+* Write a :class:`Triangle` class that can also calculate the area.

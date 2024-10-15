@@ -9,12 +9,12 @@ simply try the following:
 
 .. code-block:: pycon
 
-    >>> type(3)
-    <class 'int'>
-    >>> type("Hello")
-    <class 'str'>
-    >>> type(["Hello", "Pythonistas"])
-    <class 'list'>
+   >>> type(3)
+   <class 'int'>
+   >>> type("Hello")
+   <class 'str'>
+   >>> type(["Hello", "Pythonistas"])
+   <class 'list'>
 
 In these examples you can see the built-in :class:`type` function in Python. It
 can be applied to any Python object and returns the type of the object. In this
@@ -29,10 +29,10 @@ you can compare these Python objects with each other:
 
 .. code-block:: pycon
 
-    >>> type("Hello") == type("Pythonistas!")
-    True
-    >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
-    False
+   >>> type("Hello") == type("Pythonistas!")
+   True
+   >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
+   False
 
 With this technique you can, among other things, perform a type check in your
 function and method definitions. However, the most common question about the
@@ -41,47 +41,47 @@ example with a simple inheritance hierarchy makes this clearer:
 
 #. First, we define two classes with an inheritance hierarchy:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> class Form:
-        ...     pass
-        ...
-        >>> class Square(Form):
-        ...     pass
-        ...
-        >>> class Circle(Form):
-        ...     pass
-        ...
+      >>> class Form:
+      ...     pass
+      ...
+      >>> class Square(Form):
+      ...     pass
+      ...
+      >>> class Circle(Form):
+      ...     pass
+      ...
 
 #. Now you can create an instance ``c1`` of the class ``Circle``:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1 = Circle()
+      >>> c1 = Circle()
 
 #. As expected, the ``type`` function on ``c1`` outputs that ``c1`` is an
    instance of the class ``Circle`` defined in your current ``__main__``
    namespace:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> type(c1)
-        <class '__main__.Circle'>
+      >>> type(c1)
+      <class '__main__.Circle'>
 
 #. You can also get exactly the same information by accessing the ``__class__``
    attribute of the instance:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1.__class__
-        <class '__main__.Circle'>
+      >>> c1.__class__
+      <class '__main__.Circle'>
 
 #. You can also explicitly check whether the two class objects are identical:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1.__class__ == Circle
-        True
+      >>> c1.__class__ == Circle
+      True
 
 #. However, two built-in functions provide a more user-friendly way of obtaining
    most of the information normally required:
@@ -92,24 +92,24 @@ example with a simple inheritance hierarchy makes this clearer:
    :func:`python3:issubclass`
         determines whether one class is the subclass of another.
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> issubclass(Circle, Form)
-        True
-        >>> issubclass(Square, Form)
-        True
-        >>> isinstance(c1, Form)
-        True
-        >>> isinstance(c1, Square)
-        False
-        >>> isinstance(c1, Circle)
-        True
-        >>> issubclass(c1.__class__, Form)
-        True
-        >>> issubclass(c1.__class__, Square)
-        False
-        >>> issubclass(c1.__class__, Circle)
-        True
+      >>> issubclass(Circle, Form)
+      True
+      >>> issubclass(Square, Form)
+      True
+      >>> isinstance(c1, Form)
+      True
+      >>> isinstance(c1, Square)
+      False
+      >>> isinstance(c1, Circle)
+      True
+      >>> issubclass(c1.__class__, Form)
+      True
+      >>> issubclass(c1.__class__, Square)
+      False
+      >>> issubclass(c1.__class__, Circle)
+      True
 
 .. _duck-typing:
 
@@ -145,16 +145,16 @@ instances in a readable format:
 
 .. code-block:: pycon
 
-    >>> class Form:
-    ...     def __init__(self, x, y):
-    ...         self.x = x
-    ...         self.y = y
-    ...     def __str__(self):
-    ...         return "Position: x={0}, y={1}".format(self.x, self.y)
-    ...
-    >>> f = Form(2, 3)
-    >>> print(f)
-    Position: x=2, y=3
+   >>> class Form:
+   ...     def __init__(self, x, y):
+   ...         self.x = x
+   ...         self.y = y
+   ...     def __str__(self):
+   ...         return "Position: x={0}, y={1}".format(self.x, self.y)
+   ...
+   >>> f = Form(2, 3)
+   >>> print(f)
+   Position: x=2, y=3
 
 Even though our special ``__str__`` method attribute was not explicitly called
 by our code, it could still be used by Python because Python knows that the

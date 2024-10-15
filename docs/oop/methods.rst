@@ -163,5 +163,5 @@ Line 27
 Checks
 ------
 
-* Writes a class method that is similar to :func:`circumferences`, but returns
+* Write a class method that is similar to :func:`circumferences`, but returns
   the total area of all circles.

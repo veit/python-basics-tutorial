@@ -1,5 +1,5 @@
-RClasses and inheritance
-========================
+Classes and inheritance
+=======================
 
 Inheritance in Python is simpler and more flexible than inheritance in compiled
 languages such as Java and C++ because the dynamic nature of Python does not

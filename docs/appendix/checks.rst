@@ -354,6 +354,7 @@ Checks
   (``-``)?
 
   .. code-block:: pycon
+
      >>> from string import punctuation, whitespace
      >>> chars = punctuation + whitespace
      >>> subs = str.maketrans(chars, len(chars) * "-")
@@ -813,7 +814,7 @@ Checks
 :doc:`/oop/classes`
 -------------------
 
-* Writes a :class:`Triangle` class that can also calculate the area.
+* Write a :class:`Triangle` class that can also calculate the area.
 
   .. code-block:: python
 
@@ -828,7 +829,7 @@ Checks
 :doc:`/oop/methods`
 -------------------
 
-* Writes a class method that is similar to :func:`circumferences`, but returns
+* Write a class method that is similar to :func:`circumferences`, but returns
   the total area of all circles.
 
   .. code-block:: python
