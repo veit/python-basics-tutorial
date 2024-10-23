@@ -157,6 +157,32 @@ format can be checked with `sphinx-lint
    Sybil can also check code blocks in the documentation with either
    :doc:`../test/pytest/index` or :doc:`../test/unittest`.
 
+.. _test_code:
+
+Code
+----
+
+With the built-in Python library :doc:`../test/doctest`, you can also test code
+in your documentation with the :func:`doctest.testfile` method:
+
+.. code-block:: Python
+
+   import doctest
+
+   doctest.testfile("example.rst")
+
+This short script executes and checks all interactive Python examples contained
+in the :file:`example.rst` file. The content of the file is treated as if it
+were a single huge docstring.
+
+.. seealso::
+   A simple example can be found in the Python documentation: `Simple Usage:
+   Checking Examples in a Text File
+   <https://docs.python.org/3/library/doctest.html#simple-usage-checking-examples-in-a-text-file>`_.
+
+   Another way to test code in documentation is
+   `pytest-doctestplus <https://github.com/scientific-python/pytest-doctestplus>`_.
+
 Code formatting
 ---------------
 
