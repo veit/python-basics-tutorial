@@ -319,7 +319,25 @@ directory.
     project name to simplify configuration and be more recognisable to those
     installing the package.
 :file:`__init__.py`
-    is required to import the directory as a package. The file should be empty.
+    is required to import the directory as a package. This allows you to import
+    the following:
+
+    .. code-block:: python
+
+       import dataprep.loaders
+
+    or
+
+    .. code-block:: python
+
+       from dataprep import loaders
+
+    Although :file:`__init__.py` files are often empty, they can also contain
+    code.
+
+    .. seealso::
+       * :ref:`python3:tut-packages`
+
 :file:`loaders.py`
     is an example of a module within the package that could contain the logic
     (functions, classes, constants, :abbr:`etc. (et cetera)`) of your package.
