@@ -911,6 +911,7 @@ use to manage strings:
 .. seealso::
    * :doc:`Manipulation of strings with pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
+   * `humanize <https://humanize.readthedocs.io/en/stable/>`_
 
 Checks
 ------
