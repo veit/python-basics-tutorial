@@ -27,7 +27,7 @@ Python
     <https://github.com/PyCQA/isort>`_ etc.
 `cookiecutter-python-cli <https://github.com/seanluong/cookiecutter-python-cli>`_
     Template for creating a Python CLI application with `Click
-    <https://click.palletsprojects.com/>`_
+    <https://click.palletsprojects.com/en/stable/>`_
 `widget-cookiecutter <https://github.com/jupyter-widgets/widget-cookiecutter>`_
     Template for creating Jupyter widgets
 

@@ -44,7 +44,7 @@ Finally, the tests can also run against the wheels.
 
         .. seealso::
            * `release
-             <https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release>`_
+             <https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#release>`_
 
     Now the :term:`wheels <wheel>` can be built with:
 
@@ -60,7 +60,7 @@ Finally, the tests can also run against the wheels.
 
     .. seealso::
        * `Workflow syntax for GitHub Actions
-         <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
+         <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>`_
 
     Now you can finally upload the artefacts of both jobs to the :term:`PyPI`:
 

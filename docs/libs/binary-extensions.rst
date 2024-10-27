@@ -130,7 +130,7 @@ significantly reduce the maintenance effort compared to wrapper modules.
   be wrapped by hand, it is not a good choice when wrapping large APIs.
 
 * `cffi <https://cffi.readthedocs.io/>`_ is the project of some `PyPy
-  <https://www.pypy.org/>`__ developers to give developers who already know both
+  <https://pypy.org>`__ developers to give developers who already know both
   Python and C the possibility to make their C modules available for Python
   applications. It makes wrapping a C module based on its header files
   relatively easy, even if you are not familiar with C itself.

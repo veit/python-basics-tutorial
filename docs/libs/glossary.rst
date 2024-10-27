@@ -31,7 +31,7 @@ Glossary
 
    conda
        Package management tool for the `Anaconda
-       <https://docs.continuum.io/anaconda/index.html>`_ distribution from
+       <https://docs.anaconda.com/anaconda/index.html>`_ distribution from
        `Continuum Analytics <https://www.anaconda.com/>`_. It’s specifically
        aimed at the scientific community, particularly Windows, where installing
        binary extensions is often difficult.
@@ -128,7 +128,7 @@ Glossary
        system. It supports a variety of languages, including C, and is able to
        meet the requirements of most complex build configurations.
 
-       `Docs <https://meson-python.readthedocs.io/en/latest/>`__ |
+       `Docs <https://mesonbuild.com/meson-python/>`__ |
        `GitHub <https://github.com/mesonbuild/meson-python>`__ |
        `PyPI <https://pypi.org/project/meson-python/>`__
 

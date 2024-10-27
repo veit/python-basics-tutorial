@@ -221,7 +221,7 @@ Vale is used by many open source projects, including
 
 * GitLab (`.vale.ini
   <https://gitlab.com/gitlab-org/gitlab/blob/master/.vale.ini>`_, `rules
-  <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab>`__)
+  <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab_base>`__)
 * Homebrew (`.vale.ini
   <https://github.com/Homebrew/brew/blob/master/.vale.ini>`__, `rules
   <https://github.com/Homebrew/brew/tree/master/docs/vale-styles/Homebrew>`__)
@@ -230,7 +230,7 @@ The following styles come with Vale itself:
 
 `Microsoft <https://github.com/errata-ai/Microsoft>`_
     An implementation of the `Microsoft Writing Style Guide
-    <https://docs.microsoft.com/en-us/style-guide/welcome/>`__.
+    <https://learn.microsoft.com/en-us/style-guide/welcome/>`__.
 `Google <https://github.com/errata-ai/Google>`_
     An implementation of the style guide for the `Google developer
     documentation

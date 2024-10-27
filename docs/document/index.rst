@@ -108,7 +108,7 @@ look at the source code of this page by following the link `Sources
 Originally, Sphinx was developed for the documentation of Python and is now
 used in almost all Python projects, including `NumPy and SciPy
 <https://docs.scipy.org/doc/>`_, `Matplotlib
-<https://matplotlib.org/users/index.html>`_, `Pandas
+<https://matplotlib.org/stable/users/index.html>`_, `Pandas
 <https://pandas.pydata.org/docs/>`_ and `SQLAlchemy
 <https://docs.sqlalchemy.org/>`_.
 

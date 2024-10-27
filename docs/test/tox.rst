@@ -493,7 +493,7 @@ of environments are available for GitHub actions:
 
 The actions syntax is well documented. A good starting point in the GitHub
 Actions documentation is the `Building and Testing Python
-<https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_
+<https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`__
 page. The documentation also shows you how to run pytest directly without tox and
 how to extend the matrix to multiple operating systems. As soon as you have set
 up your :file:`*.yml` file and uploaded it to your GitHub repository, it will be
@@ -512,9 +512,9 @@ screenshot:
 
 .. seealso::
    * `Building and testing Python
-     <https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_
+     <https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`__
    * `Workflow syntax for GitHub Actions
-     <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
+     <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>`_
 
 Display badge
 -------------
