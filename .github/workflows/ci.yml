@@ -26,6 +26,9 @@ jobs:
       with:
         # Keep in sync with .readthedocs.yaml
         python-version-file: .python-version
+    - name: Install plantuml
+      run: |
+        sudo apt install plantuml
     - name: Setup cached uv
       uses: hynek/setup-cached-uv@v2
     - name: Create venv and install docs dependencies
