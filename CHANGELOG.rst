@@ -16,6 +16,10 @@ emergencies when we need to start branches for older versions.
 `Unreleased <https://github.com/veit/python-basics-tutorial/compare/24.3.0...HEAD>`_
 ------------------------------------------------------------------------------------
 
+Added
+~~~~~
+* 📝 Add conversion to reST
+
 Changed
 ~~~~~~~
 

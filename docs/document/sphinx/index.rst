@@ -49,6 +49,7 @@ helpful.
 
     start
     rest
+    convert
     code-blocks
     placeholder
     ui-elements
