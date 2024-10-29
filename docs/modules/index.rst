@@ -52,8 +52,8 @@ words in this file.
    :linenos:
 
 Lines 1 and 5
-    :doc:`../document/docstrings` are standard methods for documenting modules,
-    functions, methods and classes.
+    :doc:`../document/sphinx/docstrings` are standard methods for documenting
+    modules, functions, methods and classes.
 Line 10
     ``read`` returns a string containing all the characters in a file, and
     ``split`` returns a list of the words in a string using spaces.

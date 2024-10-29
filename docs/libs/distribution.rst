@@ -366,16 +366,16 @@ This file briefly tells those who are interested in the package how to use it.
     * `Make a README <https://www.makeareadme.com>`_
     * `readme.so <https://readme.so>`_
 
-If you write the document in :doc:`/document/rest`, you can also include the
-contents as a detailed description in your package:
+If you write the document in :doc:`/document/sphinx/rest`, you can also include
+the contents as a detailed description in your package:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
    :lineno-start: 5
    :lines: 5, 12
 
-You can also include them in your :doc:`Sphinx documentation </document/start>`
-with ``.. include:: ../../README.rst``.
+You can also include them in your :doc:`Sphinx documentation
+</document/sphinx/start>` with ``.. include:: ../../README.rst``.
 
 :file:`CHANGELOG.rst`
 ~~~~~~~~~~~~~~~~~~~~~

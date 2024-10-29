@@ -91,7 +91,7 @@ Continuous integration
 
 If necessary, you can also check automatically in your :term:`CI` pipeline
 whether the documentation is being built and the links are valid. In
-:doc:`../test/tox`, the configuration can be added as follows:
+:doc:`../../test/tox`, the configuration can be added as follows:
 
 .. code-block:: ini
    :caption: tox.ini
@@ -155,15 +155,15 @@ format can be checked with `sphinx-lint
    With :doc:`Sybil:index` you can not only check :doc:`rest`, but also
    :doc:`Markdown <Sybil:markdown>` and :doc:`Myst <Sybil:myst>`, for example.
    Sybil can also check code blocks in the documentation with either
-   :doc:`../test/pytest/index` or :doc:`../test/unittest`.
+   :doc:`../../test/pytest/index` or :doc:`../../test/unittest`.
 
 .. _test_code:
 
 Code
 ----
 
-With the built-in Python library :doc:`../test/doctest`, you can also test code
-in your documentation with the :func:`doctest.testfile` method:
+With the built-in Python library :doc:`../../test/doctest`, you can also test
+code in your documentation with the :func:`doctest.testfile` method:
 
 .. code-block:: Python
 
@@ -326,7 +326,7 @@ example:
 
    * `Configuration <https://interrogate.readthedocs.io/en/latest/index.html#configuration>`_
 
-You can now insert ``interrogate`` into your :doc:`../test/tox` file, for
+You can now insert ``interrogate`` into your :doc:`../../test/tox` file, for
 example with
 
 .. code-block:: ini
