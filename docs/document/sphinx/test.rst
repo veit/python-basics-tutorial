@@ -86,6 +86,8 @@ The output can then look like this, for example:
        …
        (accessibility/color: line  114) broken    https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl - 404 Client Error: Not Found for url: https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl
 
+.. _ci-docs:
+
 Continuous integration
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -162,8 +164,8 @@ format can be checked with `sphinx-lint
 Code
 ----
 
-With the built-in Python library :doc:`../../test/doctest`, you can also test
-code in your documentation with the :func:`doctest.testfile` method:
+With the built-in Python library :doc:`../doctest`, you can also test code in
+your documentation with the :func:`doctest.testfile` method:
 
 .. code-block:: Python
 

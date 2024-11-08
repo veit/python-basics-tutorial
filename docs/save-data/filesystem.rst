@@ -114,7 +114,8 @@ Relative pathnames
          above, the result is the home directory on one of my Linux machines. On
          Windows machines, additional backslashes would be added to the path:
          ``C:\\Users\\Veit``, because Windows uses the backslash ``\`` as a path
-         separator, but it has a different meaning in strings.
+         separator, but it has a different meaning in
+         :doc:`/types/strings/index`.
 
       To display the contents of the current directory, you can enter the
       following:

@@ -18,7 +18,7 @@ to test with different dependency configurations and different configurations
 for different operating systems. tox uses project information from the
 :file:`setup.py` or :file:`pyproject.toml` file for the package under test to
 create an installable :doc:`distribution of your package
-<../libs/distribution>`. It searches the :file:`tox.ini` file for a list of
+<../packs/distribution>`. It searches the :file:`tox.ini` file for a list of
 environments and then performs the following steps for each:
 
 #. creates a :term:`virtual environment <Virtual environment>`,

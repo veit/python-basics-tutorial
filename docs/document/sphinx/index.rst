@@ -44,18 +44,18 @@ helpful.
    :term:`Python Package Index` (:term:`PyPI`).
 
 .. toctree::
-    :titlesonly:
-    :hidden:
+   :titlesonly:
+   :hidden:
 
-    start
-    rest
-    convert
-    code-blocks
-    placeholder
-    ui-elements
-    directives
-    docstrings
-    intersphinx
-    uml/index
-    extensions
-    test
+   start
+   rest
+   convert
+   code-blocks
+   placeholder
+   ui-elements
+   directives
+   docstrings
+   intersphinx
+   uml/index
+   extensions
+   test

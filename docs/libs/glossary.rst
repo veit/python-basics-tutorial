@@ -19,7 +19,7 @@ Glossary
        require a build step.
 
    cibuildwheel
-       :doc:`/libs/cibuildwheel` is a Python package that creates :term:`wheels
+       :doc:`/packs/cibuildwheel` is a Python package that creates :term:`wheels
        <wheel>` for all common platforms and Python versions on most CI systems.
 
        `Docs <https://cibuildwheel.pypa.io/>`__ |
@@ -121,7 +121,7 @@ Glossary
 
    maturin
        Formerly pyo3-pack, is a :pep:`621`-compatible build tool for
-       :doc:`binary extensions <binary-extensions>` in Rust.
+       :doc:`binary extensions <../packs/binary-extensions>` in Rust.
 
    meson-python
        Build backend that uses the `Meson <https://mesonbuild.com>`_ build

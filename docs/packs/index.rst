@@ -3,8 +3,8 @@ Packages and programmes
 
 .. _wheels:
 
-wheels
-------
+Packages
+--------
 
 The current standard format for distributing Python libraries and programs is
 the use of :term:`wheels <wheel>`. wheels are designed to make the installation
@@ -17,8 +17,23 @@ details of the requirements and process for creating wheels can be found in
    * Pradyun Gedam: `Thoughts on the Python packaging ecosystem
      <https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/>`_
 
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   distribution
+   templating/index
+   upload-install
+   gitlab
+   cibuildwheel
+   binary-extensions
+   apps
+
+Programmes
+----------
+
 ``py2exe`` and ``py2app``
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `py2exe <https://www.py2exe.org/>`_ creates standalone Windows applications and
 `py2app <https://py2app.readthedocs.io/en/latest/>`_ does the same for macOS. In
@@ -28,7 +43,7 @@ ideal, as they tend to be larger and less flexible than native Python
 applications, but in some situations they can also be the best or only solution.
 
 ``freeze``
-----------
+~~~~~~~~~~
 
 The ``freeze`` tool also creates an executable Python programme that runs on
 computers that do not have Python installed. If you want to use the ``freeze``
@@ -44,7 +59,7 @@ its executables.
     * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
 
 PyInstaller and PyOxidizer
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `PyInstaller <https://pyinstaller.org/en/stable/index.html#>`_ and `PyOxidizer
 <https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bundle a
@@ -53,7 +68,7 @@ Python application and all its dependencies into a single package.
 .. _briefcase:
 
 Briefcase
----------
+~~~~~~~~~
 
 `Briefcase <https://beeware.org/project/projects/tools/briefcase/>`__ is a tool
 for converting a Python project into a stand-alone native application for Mac,
@@ -62,7 +77,7 @@ Windows, Linux, iPhone/iPad and Android.
 .. _beeware:
 
 BeeWare
--------
+~~~~~~~
 
 `BeeWare <https://beeware.org>`__ converts your Python project into a standalone
 iOS, Android, Windows, MacOS, Linux, Web and tvOS app.

@@ -3,7 +3,7 @@
 
 :doc:`dataclasses <python3:library/dataclasses>` were introduced in Python 3.7
 and are a special shortcut with which we can create classes that store data.
-Python offers a special :doc:`decorator <functions/decorators>` if we want to
+Python offers a special :doc:`decorator <../functions/decorators>` if we want to
 create such a class.
 
 .. tip::
@@ -41,7 +41,7 @@ If I display the instance of the class, I get the class name and the attributes:
 In general, data classes are used as syntactic sugar for creating classes that
 store data. You can add extra functionality to your classes by defining methods.
 We will add a method to the class that creates an Item object from a
-:doc:`Dict <types/dicts>`:
+:doc:`Dict <../types/dicts>`:
 
 .. code-block:: pycon
 

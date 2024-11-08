@@ -37,7 +37,7 @@ Comments
 
 Most of the time, anything that follows ``#`` is a comment and is ignored when
 the code is executed. The obvious exception is ``#`` in a :doc:`string
-<types/strings>`:
+<types/strings/index>`:
 
 .. code-block:: pycon
 

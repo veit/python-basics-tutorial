@@ -19,4 +19,5 @@ be the beginning of a simple shapes module for a drawing program.
    property
    namespaces
    types
+   dataclasses
    design/index

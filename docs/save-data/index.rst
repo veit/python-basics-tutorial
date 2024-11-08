@@ -26,7 +26,7 @@ The Python Database API
 
 The Python Database :abbr:`API (Application Programming Interface)` defines a
 standard interface for Python database access modules. It’s defined in
-:pep:`249` and widely used, for example by :doc:`sqlite <sqlite>`,
+:pep:`249` and widely used, for example by :doc:`sqlite <sqlite/index>`,
 :doc:`psycopg <psycopg>`, and `mysql-python
 <https://sourceforge.net/projects/mysql-python/>`_.
 
@@ -53,13 +53,5 @@ least then you should take a look at
    filesystem
    pickle
    xml
-   sqlite
-   create-db
-   create-data
-   create-data-from-csv
-   query-data
-   update-data
-   delete-data
-   normalise
-   query-normalised
+   sqlite/index
    psycopg

@@ -5,5 +5,3 @@ Appendix
    :titlesonly:
 
    checks
-   regex
-   encodings

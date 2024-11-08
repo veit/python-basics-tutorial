@@ -222,7 +222,7 @@ While :meth:`python3:str.split` returns a list of strings,
 :meth:`python3:str.join` takes a list of strings and joins them into a single
 string. Normally :meth:`python3:str.split` uses whitespace as a delimiter for
 the strings to be split, but you can change this behaviour with an optional
-:doc:`parameter <../functions/params>`.
+:doc:`parameter <../../functions/params>`.
 
 .. warning::
    Concatenating strings with ``+`` is useful but not efficient when it comes to
@@ -248,7 +248,7 @@ notation of Python classes:
 
 :meth:`python3:str.split` is mostly used to split strings at spaces. However,
 you can also split a string at a specific other string by passing an optional
-:doc:`parameter <../functions/params>`:
+:doc:`parameter <../../functions/params>`:
 
 .. code-block:: pycon
 
@@ -261,7 +261,7 @@ you can also split a string at a specific other string by passing an optional
 
 Sometimes it is useful to allow the last field in a string to contain arbitrary
 text. You can do this by specifying an optional second :doc:`parameter
-<../functions/params>` for how many splits should be performed:
+<../../functions/params>` for how many splits should be performed:
 
 .. code-block:: pycon
 
@@ -270,7 +270,7 @@ text. You can do this by specifying an optional second :doc:`parameter
 
 If you want to use :meth:`python3:str.split` with the optional second argument,
 you must first specify a first argument. To ensure that all spaces are split,
-use :doc:`none` as the first argument:
+use :doc:`../none` as the first argument:
 
 .. code-block:: pycon
 
@@ -319,7 +319,7 @@ the vertical tab and feed characters.
 .. tip::
    Do not change the value of these variables to influence the functionality of
    :py:meth:`str.strip` :abbr:`etc (et cetera)`. You can pass characters as
-   additional :doc:`parameters <../functions/params>` to determine which
+   additional :doc:`parameters <../../functions/params>` to determine which
    characters these methods remove:
 
    .. code-block:: pycon
@@ -337,7 +337,7 @@ character strings: The four basic methods for searching strings are
 :py:meth:`str.rindex`. A related method, :py:meth:`str.count`, counts how many
 times a string can be found in another string.
 
-:py:meth:`str.find` requires a single :doc:`parameter <../functions/params>`:
+:py:meth:`str.find` requires a single :doc:`parameter <../../functions/params>`:
 the substring being searched for; the position of the first occurrence is then
 returned, or ``-1`` if there is no occurrence:
 
@@ -348,7 +348,7 @@ returned, or ``-1`` if there is no occurrence:
    18
 
 :py:meth:`str.find`  can also accept one or two additional :doc:`parameters
-<../functions/params>`:
+<../../functions/params>`:
 
 ``start``
     The number of characters at the beginning of the string to be searched that
@@ -368,7 +368,7 @@ You can use two other :ref:`string methods <python3:string-methods>` to search
 for strings: :py:meth:`str.startswith` and :py:meth:`str.endswith`. These
 methods return ``True``- or ``False``, depending on whether the string to which
 they are applied starts or ends with one of the strings specified as
-:doc:`parameters <../functions/params>`:
+:doc:`parameters <../../functions/params>`:
 
 .. code-block:: pycon
 
@@ -403,7 +403,7 @@ Changing strings
 can return a modified version of the original string.
 
 :py:meth:`str.replace` can be used to replace occurrences of the first
- :doc:`parameter <../functions/params>` with the second, for example:
+ :doc:`parameter <../../functions/params>` with the second, for example:
 
 .. code-block:: pycon
 
@@ -510,8 +510,8 @@ pattern to be segmented:
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` returns a :doc:`tuples` containing all subgroups of
-the match.
+:py:meth:`re.Match.groups` returns a :doc:`../tuples` containing all subgroups
+of the match.
 
 :py:meth:`re.Pattern.findall` returns a list of tuples if the pattern contains
 groups:
@@ -559,9 +559,15 @@ expressions:
 +-----------------------+-------------------------------------------------------------------------------+
 
 .. seealso::
-   * :doc:`../../appendix/regex`
+   * :doc:`regex`
    * :doc:`python3:howto/regex`
    * :doc:`python3:library/re`
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   regex
 
 Converting character strings into numbers
 -----------------------------------------
@@ -570,10 +576,10 @@ You can use the :class:`python3:int` and :class:`python3:float` functions to
 convert character strings into integer or floating point numbers. If a character
 string is passed that cannot be interpreted as a number of the specified type,
 these functions trigger a :class:`python3:ValueError` exception. Exceptions are
-explained in more detail in :doc:`control flows <../control-flows/exceptions>`.
-You can also pass :class:`python3:int` an optional second :doc:`parameter
-<../functions/params>` that specifies the numerical base to be used when
-interpreting the string:
+explained in more detail in :doc:`control flows
+<../../control-flows/exceptions>`. You can also pass :class:`python3:int` an
+optional second :doc:`parameter  <../../functions/params>` that specifies the
+numerical base to be used when interpreting the string:
 
 .. code-block:: pycon
    :linenos:
@@ -596,7 +602,7 @@ interpreting the string:
    ValueError: invalid literal for int() with base 2: '1234'
 
 Lines 5–8
-    If no second :doc:`parameter <../functions/params>` is specified,
+    If no second :doc:`parameter <../../functions/params>` is specified,
     :class:`python3:int` calculates with a base of ``10``.
 Lines 9, 10
     ``1000`` is interpreted as an `octal number
@@ -612,7 +618,7 @@ Changing character strings with list manipulations
 --------------------------------------------------
 
 Since :ref:`str <python3:textseq>` objects are immutable, there is no way to
-change them directly like :doc:`lists <lists>`. However, you can convert them
+change them directly like :doc:`lists <../lists>`. However, you can convert them
 into lists:
 
 .. code-block:: pycon
@@ -912,6 +918,12 @@ use to manage strings:
    * :doc:`Manipulation of strings with pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
    * `humanize <https://humanize.readthedocs.io/en/stable/>`_
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   encodings
 
 Checks
 ------

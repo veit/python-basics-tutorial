@@ -4,7 +4,7 @@ Lists
 A list in Python is similar to an array in Java or C: an ordered collection of
 objects. However, unlike lists in many other languages, Python lists can contain
 different types of elements; a list element can be any Python object, including
-:doc:`strings`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
+:doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
 :doc:`../functions/index`, :doc:`files` and any kind of :doc:`numbers`. You
 create a list by enclosing no elements or elements separated by commas in square
 brackets, like this:
@@ -278,7 +278,7 @@ User-defined sorting
 
 .. note::
    You must be able to define :doc:`../functions/index` for user-defined
-   sorting. The processing of :doc:`strings` will also be covered in more
+   sorting. The processing of :doc:`strings/index` will also be covered in more
    detail later.
 
 Python usually sorts words lexicographically – upper case before lower case.

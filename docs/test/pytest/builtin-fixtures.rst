@@ -412,7 +412,7 @@ Remaining built-in fixtures
 |                               | and similar options.                          |
 +-------------------------------+-----------------------------------------------+
 | ``doctest_namespace``         | useful if you want to use pytest to perform   |
-|                               | :doc:`doctests <../doctest>`.                 |
+|                               | :doc:`doctests <../../document/doctest>`.     |
 +-------------------------------+-----------------------------------------------+
 | ``pytestconfig``              | is used to get access to configuration values,|
 |                               | plugin managers and hooks.                    |

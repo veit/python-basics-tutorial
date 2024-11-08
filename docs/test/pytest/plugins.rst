@@ -125,7 +125,7 @@ therefore not surprising that there are several plugins that fulfil this need:
 ~~~~~~~~~~~~~~~~
 
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
-    executes the  :doc:`../coverage` during testing.
+    executes the  :doc:`../pytest/coverage` during testing.
 `pytest-benchmark <https://pypi.org/project/pytest-benchmark/>`_
     performs benchmark timing for code within tests.
 `pytest-timeout <https://pypi.org/project/pytest-timeout/>`_

@@ -96,7 +96,7 @@ Support for mobile devices
     `Tier 3 <https://peps.python.org/pep-0011/#tier-3>`_ support for Windows,
     iOS and Pi OS, among others, from version 3.13. It will also be easier to
     create wheels for mobile devices in the future by extending tools such as
-    :doc:`libs/cibuildwheel` and :term:`setuptools`.
+    :doc:`packs/cibuildwheel` and :term:`setuptools`.
 
     .. seealso::
        * `The Python Language Summit 2024: Python on Mobile

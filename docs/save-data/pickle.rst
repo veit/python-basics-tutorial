@@ -41,11 +41,11 @@ this state in a file called ``data.pickle`` as follows:
 
    The pickle module can store almost anything in this way. It can handle
    :doc:`/types/numbers`, :doc:`/types/lists`, :doc:`/types/tuples`,
-   :doc:`/types/dicts`, :doc:`/types/strings` and pretty much anything made up
-   of these object types, including all class instances. It also handles shared
-   objects, cyclic references and other complex storage structures correctly by
-   storing shared objects only once and restoring them as shared objects, not as
-   identical copies.
+   :doc:`/types/dicts`, :doc:`/types/strings/index` and pretty much anything
+   made up of these object types, including all class instances. It also
+   handles shared objects, cyclic references and other complex storage
+   structures correctly by storing shared objects only once and restoring them
+   as shared objects, not as identical copies.
 
 #. Loading pickled data:
 

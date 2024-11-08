@@ -11,19 +11,27 @@ The first number of the version is the year. The second number is incremented
 with each version, starting at 1 for each year. The third number is for
 emergencies when we need to start branches for older versions.
 
-.. _changelog:
+.. unreleased
 
 `Unreleased <https://github.com/veit/python-basics-tutorial/compare/24.3.0...HEAD>`_
 ------------------------------------------------------------------------------------
 
 Added
 ~~~~~
+
 * 📝 Add conversion to reST
 
 Changed
 ~~~~~~~
 
-* 📝 Rearrange documentation section
+* 🎨 Restructure the documentation
+
+  * Move packages outside libraries
+  * Move apps in packages
+  * Remove unittest2
+  * Move doctests to Sphinx
+  * Move the sqlite database test to unittest
+  * Move Sphinx to a subchapter
 
 `24.3.0 <https://github.com/veit/python-basics-tutorial/compare/24.2.0...24.3.0>`_: 2024-10-27
 ----------------------------------------------------------------------------------------------

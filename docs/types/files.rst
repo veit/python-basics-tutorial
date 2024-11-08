@@ -271,7 +271,7 @@ use to manage files:
 | :py:mod:`json`                    | JSON encoder and decoder                                                      |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`sqlite3`                 | provides a DB-API 2.0 interface for SQLite databases, see also                |
-|                                   | :doc:`../save-data/sqlite`                                                    |
+|                                   | :doc:`../save-data/sqlite/index`                                              |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`xml`,                    | reads and writes XML files, see also R:doc:`../save-data/xml`                 |
 | :py:mod:`xml.parsers.expat`,      |                                                                               |

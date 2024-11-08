@@ -187,7 +187,7 @@ management of virtual environments with ``pdm venv activate``.
 
 In contrast to applications, our packages usually support more than one Python
 version. Nevertheless, we usually add the current standard version in
-:file:`.python-version` to :doc:`packages <distribution>` as well:
+:file:`.python-version` to :doc:`packages <../packs/distribution>` as well:
 
 .. literalinclude:: ../../.python-version
    :caption: .python-version
@@ -263,5 +263,6 @@ Then restart the shell or call up ``source`` with your shell configuration file.
 Create project structure
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on whether you want to create a  :doc:`library <distribution>` or an
-:doc:`application<../apps>`, ``uv`` can create a suitable project structure.
+Depending on whether you want to create a :doc:`library <../packs/distribution>`
+or an :doc:`application <../packs/apps>`, ``uv`` can create a suitable project
+structure.

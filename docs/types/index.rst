@@ -2,7 +2,7 @@ Data types
 ==========
 
 Python has several built-in data types, such as :doc:`numbers` (integers,
-floating point numbers, complex numbers), :doc:`strings <strings>`,
+floating point numbers, complex numbers), :doc:`strings <strings/index>`,
 :doc:`lists`, :doc:`tuples`, :doc:`dicts`, :doc:`sets` and :doc:`files`. These
 data types can be manipulated using language operators, built-in functions,
 library functions or a data type’s own methods.
@@ -30,6 +30,6 @@ values to more complex structures like lists, dictionaries and files.
    tuples
    sets
    dicts
-   strings
+   strings/index
    files
    none

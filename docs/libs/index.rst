@@ -1,5 +1,5 @@
-Programme libraries
-===================
+Libraries
+=========
 
 Several :doc:`/modules/index` can be grouped together in a programme library.
 Such libraries allow you to group modules into directories and subdirectories
@@ -13,11 +13,4 @@ creation of a possibly empty initialisation file for each package or subpackage.
 
    batteries
    install
-   packages-programmes
-   distribution
-   gitlab
-   templating/index
-   upload-install
-   cibuildwheel
-   binary-extensions
    glossary

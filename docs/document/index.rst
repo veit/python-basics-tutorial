@@ -47,5 +47,6 @@ or ``LICENSES`` folder) and how to get help if needed.
    :hidden:
 
    sphinx/index
+   doctest
    badges
    shot-scraper

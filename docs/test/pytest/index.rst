@@ -51,3 +51,4 @@ You can install pytest in `virtual environments <venv>` with:
    plugins
    config
    debug
+   coverage

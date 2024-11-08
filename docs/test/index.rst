@@ -30,7 +30,7 @@ Basically, a distinction is made between static and dynamic test procedures.
             supports you in automating tests.
         :doc:`mock`
             allows you to create and use mock objects.
-        :doc:`doctest`
+        :doc:`../document/doctest`
             allows you to test tests written in Python docstrings.
         :doc:`tox`
             allows you to test in different environments.
@@ -52,13 +52,9 @@ Basically, a distinction is made between static and dynamic test procedures.
    :titlesonly:
    :hidden:
 
-   unittest
-   sqlite
-   doctest
-   hypothesis
    pytest/index
-   coverage
+   unittest
    mock
+   hypothesis
    tox
-   unittest2
    glossary

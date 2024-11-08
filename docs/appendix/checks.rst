@@ -274,8 +274,8 @@ Checks
      >>> print(sheet[("A", 1)])
      2
 
-:doc:`/types/strings`
----------------------
+:doc:`/types/strings/index`
+---------------------------
 
 * For example, can you add or multiply a string with an integer, a floating
   point number or a complex number?
@@ -940,8 +940,8 @@ Checks
      >>> t1.x
      3
 
-:doc:`/libs/distribution`
--------------------------
+:doc:`/packs/distribution`
+--------------------------
 
 * If you want to create a task management package that writes the tasks to a
   database and provides them via a Python :abbr:`API (Application Programming

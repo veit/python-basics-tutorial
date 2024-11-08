@@ -17,8 +17,8 @@ tell you how much of the application code is being traversed by your test suite.
 
 `Coverage.py <https://coverage.readthedocs.io/en/latest/>`_ is the favourite
 Python tool that measures code coverage. And `pytest-cov
-<https://pytest-cov.readthedocs.io/en/latest/>`_ is a popular :doc:`pytest plugin
-<pytest/plugins>` that is often used in conjunction with Coverage.py.
+<https://pytest-cov.readthedocs.io/en/latest/>`_ is a popular :doc:`pytest
+plugin <plugins>` that is often used in conjunction with Coverage.py.
 
 Using Coverage.py with pytest-cov
 ---------------------------------

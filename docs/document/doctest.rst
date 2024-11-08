@@ -116,5 +116,5 @@ in a docstring or in another text file are fulfilled.
       :lineno-start: 38
 
 .. seealso::
-   :doc:`doctest <python3:library/doctest>` also has the ability to execute
-   tests in your documentation: :ref:`Document → Testing → Code <test_code>`.
+   :doc:`doctest <python3:library/doctest>` can also be used to continuous test
+   the documentation: :ref:`ci-docs`.
