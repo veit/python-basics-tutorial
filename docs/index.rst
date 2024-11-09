@@ -98,6 +98,7 @@ All tutorials serve as seminar documents for our harmonised training courses:
    :hidden:
 
    intro
+   changelog
    install
    editors
    explore

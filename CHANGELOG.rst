@@ -19,6 +19,7 @@ emergencies when we need to start branches for older versions.
 Added
 ~~~~~
 
+* 📝 Add What’s new?
 * 📝 Add conversion to reST
 
 Changed
