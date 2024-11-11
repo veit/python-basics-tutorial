@@ -109,6 +109,10 @@ Line 3
 Line 5
     A stride of ``-1`` reverses the order.
 
+    .. tip::
+       To reverse the order, however, :func:`list.reverse` should be easier to
+       read than a stride of  ``-1``, see also :ref:`list.reverse() <reverse>`.
+
 .. seealso::
    * :doc:`Select and filter data with pandas
      <Python4DataScience:workspace/pandas/select-filter>`
@@ -147,6 +151,8 @@ Line 11
 
 Some functions of the slice notation can also be executed with special
 operations, which improves the readability of the code:
+
+.. _reverse:
 
 .. code-block:: pycon
    :linenos:
