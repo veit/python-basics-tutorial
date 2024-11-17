@@ -29,14 +29,6 @@ installed, this should not be a problem.
       One disadvantage is that you have to return to the website regularly to
       check for security updates as there is no integrated auto-updater.
 
-.. _various-python-versions:
-
-If different Python versions are required, for example to test libraries with
-:doc:`test/tox`, I use `uv <https://docs.astral.sh/uv/guides/install-python/>`_.
-This allows not only older CPython versions to be installed but also  `PyPy
-<https://pypy.org>`_ or free-threaded Python 3.13 with ``uv python install
-pypy@3.12`` or ``uv python install 3.13t``.
-
 .. tab:: macOS
 
    You can obtain Python directly from https://www.python.org/downloads/macos/.
@@ -78,6 +70,14 @@ pypy@3.12`` or ``uv python install 3.13t``.
       .. warning::
          One disadvantage is that you have to return to the website regularly to
          check for security updates, as there is no integrated auto-updater.
+
+.. _various-python-versions:
+
+If different Python versions are required, for example to test libraries with
+:doc:`test/tox`, I use `uv <https://docs.astral.sh/uv/guides/install-python/>`_.
+This allows not only older CPython versions to be installed but also  `PyPy
+<https://pypy.org>`_ or free-threaded Python 3.13 with ``uv python install
+pypy@3.12`` or ``uv python install 3.13t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ allows you to set environment variables
