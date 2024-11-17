@@ -190,6 +190,8 @@ Finally, you can publish your package on PyPI:
    * `PyPI Release Checklist
      <https://cookiecutter-namespace-template.readthedocs.io/en/latest/pypi-release-checklist.html>`_
 
+.. _pypi_github_action:
+
 GitHub Action
 -------------
 
@@ -198,6 +200,7 @@ PyPI at every time a release is created. Such a
 :file:`.github/workflows/pypi.yml` file could look like this:
 
 .. code-block:: yaml
+   :caption: .github/workflows/pypi.yml
    :linenos:
    :emphasize-lines: 3-5, 12, 31, 36, 38-
 
@@ -261,6 +264,8 @@ Lines 38–41
 
    * `GitHub Actions <https://docs.github.com/en/actions>`_
 
+.. _trusted_publishers:
+
 Trusted Publishers
 ------------------
 
@@ -305,6 +310,7 @@ requires neither a password nor a token. Only the following steps are required:
    our repository:
 
    .. code-block:: diff
+      :caption: .github/workflows/pypi.yml
       :lineno-start: 10
       :emphasize-lines: 3, 4-5
 
@@ -322,16 +328,57 @@ requires neither a password nor a token. Only the following steps are required:
    Lines 13–14
        The ``write`` authorisation is required for *Trusted Publishing*.
 
-   .. code-block:: diff
-      :lineno-start: 40
-      :emphasize-lines: 3-
-
-          - name: Publish package distributions to PyPI
-            uses: pypa/gh-action-pypi-publish@release/v1
-       -    with:
-       -      username: __token__
-       -      password: ${{ secrets.PYPI_TOKEN }}
-
    Zeilen 42–44
-       ``username`` und ``password`` werden für die GitHub-Aktion
-       ``pypa/gh-action-pypi-publish`` nicht mehr benötigt.
+       ``username`` and ``password`` are no longer required for the GitHub
+       action ``pypa/gh-action-pypi-publish``.
+
+       .. code-block:: diff
+          :lineno-start: 40
+          :emphasize-lines: 3-
+
+             - name: Publish package distributions to PyPI
+               uses: pypa/gh-action-pypi-publish@release/v1
+          -    with:
+          -      username: __token__
+          -      password: ${{ secrets.PYPI_TOKEN }}
+
+.. _digital-attestations:
+
+Digital Attestations
+--------------------
+
+Since 14 November 2024, :term:`PyPI` also supports :pep:`740` with `Digital
+Attestations <https://docs.pypi.org/attestations/>`_. PyPI uses the
+`in-toto Attestation Framework <https://github.com/in-toto/attestation>`_ to
+generate the Digital Attestations `SLSA Provenance
+<https://slsa.dev/spec/v1.0/provenance>`_ and `PyPI Publish Attestation (v1)
+<https://docs.pypi.org/attestations/publish/v1/>`_.
+
+The creation and publication takes place by default, provided that
+:ref:`Trusted Publishing <trusted_publishers>` and the GitHub action
+`pypa/gh-action-pypi-publish <https://github.com/pypa/gh-action-pypi-publish>`_
+are used for publishing:
+
+.. code-block:: yaml
+   :caption: .github/workflows/pypi.yml
+
+   jobs:
+     pypi-publish:
+       name: Upload release to PyPI
+       runs-on: ubuntu-latest
+       environment:
+         name: pypi
+         url: https://pypi.org/p/{YOUR-PYPI-PROJECT-NAME}
+       permissions:
+         id-token: write
+       steps:
+       - name: Publish package distributions to PyPI
+         uses: pypa/gh-action-pypi-publish@release/v1
+
+.. note::
+   Support for the automatic creation of digital attestations and publishing
+   from other Trusted Publisher environments is planned.
+
+.. seealso::
+   `PyPI now supports digital attestations
+   <https://blog.pypi.org/posts/2024-11-14-pypi-now-supports-digital-attestations/>`_
