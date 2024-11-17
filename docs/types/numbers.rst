@@ -299,6 +299,8 @@ use to manage numbers:
 | :py:mod:`operator`    | for standard operators as functions                                           |
 +-----------------------+-------------------------------------------------------------------------------+
 
+.. _end-number-modules:
+
 Checks
 ------
 

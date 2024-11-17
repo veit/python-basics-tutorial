@@ -58,6 +58,7 @@ containing a list of functions for future calls, for example:
 .. literalinclude:: caller.py
    :language: python
    :linenos:
+   :emphasize-lines: 4-5, 7-8
 
 Lines 4–5
     creates a list from the command arguments and ensures that it is iterable.

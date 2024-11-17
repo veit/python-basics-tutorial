@@ -18,10 +18,22 @@ Installation
 
          $ brew install plantuml
 
+   .. tab:: Windows
+
+      .. code-block:: ps1
+
+         $ choco install plantuml
+
 #. Install `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
 
-   .. tab:: Linux/macOS
+   .. tab:: Linux
+
+      .. code-block:: console
+
+         $ python -m pip install sphinxcontrib-plantuml
+
+   .. tab:: macOS
 
       .. code-block:: console
 

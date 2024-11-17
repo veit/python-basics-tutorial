@@ -753,7 +753,7 @@ have. This requires three steps:
 
    .. code-block:: python
       :linenos:
-      :emphasize-lines: 5, 13-
+      :emphasize-lines: 5, 12-
 
       import os
       from pathlib import Path
@@ -787,22 +787,22 @@ have. This requires three steps:
    Line 13
     We have added ``request`` and ``faker`` to the list of ``items_db``
     parameters.
-   Line 17
+   Line 18
     This sets the randomness of faker so that we get the same data every time.
     We are not using faker here for very random data, but to avoid having to
     invent data ourselves.
-   Line 18
+   Line 19
     Here we use ``request``, more precisely ``request.node`` for the pytest
     representation of a test. ``get_closest_marker('num_items')`` returns a
     marker object if the test is marked with ``num_items``, otherwise it returns
     ``None``. The :func:`get_closest_marker` function returns the marker closest
     t545o the test, which is usually what we want.
-   Line 19
+   Line 20
     The expression is true if the test is marked with ``num_items`` and an
     argument is given. The additional ``len`` check is there so that if someone
     accidentally just uses ``pytest.mark.num_items`` without specifying the
     number of items, this part is skipped.
-   Line 20–22
+   Line 22–24
     Once we know how many items we need to create, we let Faker create some data
     for us. Faker provides the Faker fixture.
 

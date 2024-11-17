@@ -3,28 +3,29 @@ Class diagram
 
 
 ``abstract class``, ``abstract``
-
     Example:
 
     .. code-block:: rest
 
        .. uml::
 
-           abstract class  "Abstract class"
+          abstract class  "Abstract class"
 
     .. image:: abstract-class.svg
 
 ``annotation``
+    Example:
 
     .. code-block:: rest
 
        .. uml::
 
-           annotation      Annotation
+          annotation      Annotation
 
     .. image:: annotation.svg
 
 ``circle``, ``()``
+    Example:
 
     .. code-block:: rest
 
@@ -35,12 +36,13 @@ Class diagram
     .. image:: circle.svg
 
 ``class``
+    Example:
 
     .. code-block:: rest
 
        .. uml::
 
-           class           Class
+          class           Class
 
     .. image:: class.svg
 
@@ -52,21 +54,23 @@ Class diagram
 
        .. uml::
 
-           diamond         Association
+          diamond         Association
 
     .. image:: diamond.svg
 
 ``entity``
+    Example:
 
     .. code-block:: rest
 
        .. uml::
 
-           entity          Entity
+          entity          Entity
 
     .. image:: entity.svg
 
 ``enum``
+    Example:
 
     .. code-block:: rest
 
@@ -77,6 +81,7 @@ Class diagram
     .. image:: enum.svg
 
 ``interface``
+    Example:
 
     .. code-block:: rest
 

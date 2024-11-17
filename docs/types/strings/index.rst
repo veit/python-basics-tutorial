@@ -827,14 +827,14 @@ meaning:
 .. [#] The format identifier ``n`` formats a number in a locally customised way,
     for example:
 
-     .. code-block:: pycon
+    .. code-block:: pycon
 
-        >>> value = 635372
-        >>> import locale
-        >>> locale.setlocale(locale.LC_NUMERIC, "en_US.utf-8")
-        'en_US.utf-8'
-        >>> print(f"{value:n}")
-        635,372
+       >>> value = 635372
+       >>> import locale
+       >>> locale.setlocale(locale.LC_NUMERIC, "en_US.utf-8")
+       'en_US.utf-8'
+       >>> print(f"{value:n}")
+       635,372
 
 .. tip::
    A good source for F-strings is the help function:
@@ -913,6 +913,8 @@ use to manage strings:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`textwrap`    | wraps and fills text, formats text with line breaks or spaces                 |
 +-----------------------+-------------------------------------------------------------------------------+
+
+.. _end-string-modules:
 
 .. seealso::
    * :doc:`Manipulation of strings with pandas

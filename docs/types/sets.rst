@@ -78,9 +78,9 @@ Summary
 -------
 
 However, the speed advantage also comes at a price: sets do not keep the
-elements elements in the correct order, whereas :doc:`lists` and :doc:`tuples`
-do. If the order is important to you, you should use a data structure that
-remembers the order.
+elements in the correct order, whereas :doc:`lists` and :doc:`tuples` do. If the
+order is important to you, you should use a data structure that remembers the
+order.
 
 +---------------+---------------+---------------+---------------+---------------+
 | data type     | mutable       | ordered       | indexed       | duplicates    |

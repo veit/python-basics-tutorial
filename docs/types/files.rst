@@ -299,6 +299,7 @@ use to manage files:
 | :py:mod:`tarfile`                 |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
 
+.. _end-file-modules:
 
 .. seealso::
    * :doc:`Python4DataScience:data-processing/pandas-io`

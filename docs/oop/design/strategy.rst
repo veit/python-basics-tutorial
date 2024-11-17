@@ -84,6 +84,7 @@ concrete strategies with simple functions and removing the abstract
    :language: python
    :linenos:
    :lines: 1-57
+   :emphasize-lines: 33, 40
 
 Line 33:
     To calculate a discount, simply call the function :func:`self.promotion`.

@@ -92,9 +92,6 @@ Checks
 * If :class:`MyError` inherits from :class:`Exception`, what is the difference
   between ``except Exception as e`` and ``except MyError as e``?
 
-  The first catches every exception that inherits from :class:`Exception`, while
-  the second only catches :class:`MyError` exceptions.
-
 * Write a simple program that receives a number and then uses the :func:`assert`
   statement to throw an :class:`python3:Exception` if the number is ``0``.
 
