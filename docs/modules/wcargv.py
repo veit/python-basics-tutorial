@@ -8,9 +8,8 @@ def words_occur():
     # Prompt user for the name of the file to use.
     file_name = sys.argv.pop()
     # Open the file, read it and store its words in a list.
-    f = open(file_name, "r")
-    word_list = f.read().split()
-    f.close()
+    with open(file_name, "r") as f:
+        word_list = f.read().split()
     # Count the number of occurrences of each word in the file.
     occurs_dict = {}
     for word in word_list:

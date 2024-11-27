@@ -11,9 +11,8 @@ def words_occur():
     args = parser.parse_args()
     file_name = args.filename
     # Open the file, read it and store its words in a list.
-    f = open(file_name, "r")
-    word_list = f.read().split()
-    f.close()
+    with open(file_name, "r") as f:
+        word_list = f.read().split()
     # Count the number of occurrences of each word in the file.
     occurs_dict = {}
     for word in word_list:
@@ -21,8 +20,8 @@ def words_occur():
         occurs_dict[word] = occurs_dict.get(word, 0) + 1
     # Print out the results.
     print(
-        "File %s has %d words (%d are unique)"
-        % (file_name, len(word_list), len(occurs_dict))
+        f"File {file_name} has {len(word_list)} words, "
+        f"{len(occurs_dict)} are unique:"
     )
     print(occurs_dict)
 
