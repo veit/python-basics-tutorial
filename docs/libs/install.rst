@@ -48,22 +48,26 @@ virtual environments, so that different applications can use different versions
 of Python and its packages. Creating and using a virtual environment is a
 two-step process:
 
-#. First, we create the environment:
+#. First we create a project directory and then the virtual environment in it:
 
    .. tab:: Linux/macOS
 
       .. code-block:: console
 
-         $ python3 -m venv myenv
+         $ mkdir myproj
+         $ cd myproj
+         $ python3 -m venv .venv
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         > py -m venv myenv
+         > mkdir myproj
+         > cd myproj
+         > py -m venv .venv
 
    This creates the environment with Python and :term:`pip` in a directory
-   called :samp:`myenv`.
+   called :samp:`.venv`.
 
 #. You can then activate this environment so that the next time you call
    ``python``, it will use the Python from your new environment:
@@ -72,13 +76,13 @@ two-step process:
 
       .. code-block:: console
 
-         $ . myenv/bin/activate
+         $ . .venv/bin/activate
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         > myenv\Scripts\activate.bat
+         > .venv\Scripts\activate
 
 #. Install Python packages only for this virtual environment, for example the
    popular ``pandas`` library:
@@ -87,13 +91,13 @@ two-step process:
 
       .. code-block:: console
 
-         (myenv) $ python -m pip install pandas
+         (.venv) $ python -m pip install pandas
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         (myenv) > python.exe -m pip install pandas
+         (.venv) > python.exe -m pip install pandas
 
 #. If you want to finish your work on this project, you can deactivate the
    virtual environment again with
@@ -102,13 +106,13 @@ two-step process:
 
       .. code-block:: console
 
-         (myenv) $ deactivate
+         (.venv) $ deactivate
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         (myenv) > deactivate
+         (.venv) > deactivate
 
 .. seealso::
    * :doc:`python3:tutorial/venv`

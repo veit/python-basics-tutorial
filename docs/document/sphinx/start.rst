@@ -10,13 +10,17 @@ Installation and start
 
       .. code-block:: console
 
+         $ mkdir docs_proj
+         $ cd docs_proj
          $ python3 -m venv .venv
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> python -m venv .venv
+         C:> mkdir docs_proj
+         C:> cd docs_proj
+         C:> py -m venv .venv
 
 #. Switch to the virtual environment and install Sphinx there:
 
