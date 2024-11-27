@@ -69,7 +69,7 @@ to the :file:`~/.pypirc` file, for example:
     - name: Create venv and install twine
       run: |
         uv venv
-        echo "$PWD/.venv/bin" >> $GITHUB_PATH
+        echo "$PWD/.venv/bin" >> $PATH
         uv add --upgrade twine
     - name: Build
       run: |
