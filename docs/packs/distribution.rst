@@ -622,7 +622,8 @@ Then you can check the wheel with:
     $ check-wheel-contents dist/*.whl
     dist/dataprep-0.1.0-py3-none-any.whl: OK
 
-Alternatively, you can also install the package:
+Alternatively, you can also install the package in a new project, for example in
+:samp:`myapp`:
 
 .. code-block:: console
 
