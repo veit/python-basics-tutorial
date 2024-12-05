@@ -27,6 +27,7 @@ Changed
 ~~~~~~~
 
 * 📝 Expand the pytest plugins section
+* 📝 Rearrange functions section
 * 🎨 Restructure the documentation
 
   * Move packages outside libraries
