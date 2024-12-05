@@ -73,6 +73,8 @@ linkcheck_ignore = [
     r"https://sourceforge.net/",
 ]
 
+linkcheck_anchors_ignore = ["readme"]
+
 # All HTTP redirections from the source URI to the canonical URI will be treated# as "working".
 linkcheck_allowed_redirects = {
     r"https://devpi\.net/docs/$": r"https://devpi\.net/docs/[-a-z]+/(?:latest|stable|master)/$",
