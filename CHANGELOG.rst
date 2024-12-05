@@ -28,6 +28,7 @@ Changed
 
 * 📝 Expand the pytest plugins section
 * 📝 Rearrange functions section
+* 📝 Update installation of freethreaded Python
 * 🎨 Restructure the documentation
 
   * Move packages outside libraries
