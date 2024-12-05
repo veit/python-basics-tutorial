@@ -93,6 +93,12 @@ All tutorials serve as seminar documents for our harmonised training courses:
 .. _`News from Python for data science`:
    https://cusy.io/en/our-training-courses/news-from-python-for-data-science
 
+Follow us on…
+
+.. include:: ../README.rst
+   :start-after: follow-us:
+   :end-before: end-follow-us:
+
 .. toctree::
    :titlesonly:
    :hidden:

@@ -19,6 +19,10 @@ emergencies when we need to start branches for older versions.
 Added
 ~~~~~
 
+* 🔧 📝 Add social media support
+
+  * Add OpenGraph tag for mastodon
+  * Add social media links
 * 📝 Add PyPI digital attestations
 * 📝 Add What’s new?
 * 📝 Add conversion to reST
