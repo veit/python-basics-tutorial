@@ -119,6 +119,7 @@ Follow us on…
    packs/index
    oop/index
    save-data/index
+   logging/index
    test/index
    document/index
    appendix/index

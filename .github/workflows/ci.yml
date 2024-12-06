@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: pandoc/actions/setup@v1
     - uses: actions/setup-python@v5
       with:
         # Keep in sync with .readthedocs.yaml

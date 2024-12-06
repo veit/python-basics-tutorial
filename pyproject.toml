@@ -17,6 +17,9 @@ dependencies = []
 [project.optional-dependencies]
 docs = [
     "furo",
+    "ipython",
+    "ipywidgets",
+    "nbsphinx",
     "sphinxext.opengraph", # matplotlib is required for social cards
     "matplotlib",
     "sphinx_copybutton",
