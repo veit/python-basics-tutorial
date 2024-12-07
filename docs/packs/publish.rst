@@ -1,5 +1,5 @@
-Upload package
-==============
+Publish package
+===============
 
 Finally, you can deploy the package on the :term:`Python Package Index`
 (:term:`PyPI`) or another index, for example :doc:`gitlab` or :term:`devpi`.

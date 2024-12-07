@@ -23,7 +23,7 @@ details of the requirements and process for creating wheels can be found in
 
    distribution
    templating/index
-   upload-install
+   publish
    gitlab
    cibuildwheel
    binary-extensions
