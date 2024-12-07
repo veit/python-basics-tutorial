@@ -74,10 +74,10 @@ installed, this should not be a problem.
 .. _various-python-versions:
 
 If different Python versions are required, for example to test libraries with
-:doc:`test/tox`, I use `uv <https://docs.astral.sh/uv/guides/install-python/>`_.
-This allows not only older CPython versions to be installed but also  `PyPy
-<https://pypy.org>`_ or free-threaded Python 3.13 with ``uv python install
-pypy@3.12`` or ``uv python install --python-preference only-managed 3.13t``.
+:doc:`test/tox`, I use :term:`uv`. This allows not only older CPython versions
+to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded Python
+3.13 with ``uv python install pypy@3.12`` or ``uv python install
+--python-preference only-managed 3.13t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ allows you to set environment variables

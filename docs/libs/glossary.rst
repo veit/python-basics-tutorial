@@ -373,6 +373,21 @@ Glossary
        An extremely fast Python package and project manager, written in `Rust
        <https://www.rust-lang.org>`_.
 
+       uv considerably simplifies the development and deployment of Python
+       projects:
+
+       * :ref:`Installation <uv>`
+       * :doc:`Python environments
+         <Python4DataScience:productive/envs/uv/index>`
+       * :ref:`Creating a package structure <uv-package-structure>`
+       * :doc:`Developing applications <../packs/apps>`
+       * Testing libraries with different :ref:`Python versions
+         <various-python-versions>` and :ref:`tox_uv`
+       * :doc:`Publishing packages <../packs/publish>`
+       * :doc:`Python4DataScience:productive/envs/uv/cicd`
+       * :doc:`Python Docker Containers
+         <Python4DataScience:productive/envs/uv/docker>`
+
        `Docs <https://docs.astral.sh/uv/>`__ |
        `GitHub <https://github.com/astral-sh/uv>`__ |
        `PyPI <https://pypi.org/project/uv/>`__
