@@ -383,7 +383,8 @@ Glossary
        * :doc:`Developing applications <../packs/apps>`
        * Testing libraries with different :ref:`Python versions
          <various-python-versions>` and :ref:`tox_uv`
-       * :doc:`Publishing packages <../packs/publish>`
+       * Publishing packages on :doc:`PyPI <../packs/publish>` and :doc:`GitLab
+         <../packs/gitlab>`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python Docker Containers
          <Python4DataScience:productive/envs/uv/docker>`
