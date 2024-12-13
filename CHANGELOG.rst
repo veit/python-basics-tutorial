@@ -30,6 +30,7 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update conda term
 * 📝 Update GitLab package registry
 * 📝 Expand the pytest plugins section
 * 📝 Rearrange functions section

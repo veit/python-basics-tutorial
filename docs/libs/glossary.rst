@@ -30,23 +30,27 @@ Glossary
           :term:`multibuild`
 
    conda
-       Package management tool for the `Anaconda
-       <https://docs.anaconda.com/anaconda/index.html>`_ distribution from
-       `Continuum Analytics <https://www.anaconda.com/>`_. It’s specifically
+       Package management tool for the `Anaconda distribution
+       <https://docs.anaconda.com/anaconda/index.html>`_. It’s specifically
        aimed at the scientific community, particularly Windows, where installing
        binary extensions is often difficult.
 
        Conda does not install packages from PyPI and can only install from the
        official Continuum repositories or from `anaconda.org
        <https://anaconda.org/>`_ or local ( e.g. intranet) package servers.
-       Note, however, that Pip can be installed in conda and can work side by
-       side to manage distributions of PyPI.
+
+       .. note::
+          Pip can be installed in conda and can work side by side to manage
+          distributions of PyPI.
 
        .. seealso::
           * `Conda: Myths and Misconceptions
             <https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/>`_
           * `Conda build variants
             <https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html>`_
+
+       `Docs <https://docs.conda.io/en/latest/>`__ |
+       `GitHub <https://github.com/conda/conda>`__
 
    devpi
        `devpi <https://www.devpi.net>`_ is a powerful :term:`PyPI` compatible
