@@ -40,12 +40,13 @@ this state in a file called ``data.pickle`` as follows:
    instances of user-defined classes. :py:func:`pickle.dump` saves everything.
 
    The pickle module can store almost anything in this way. It can handle
-   :doc:`/types/numbers/index`, :doc:`/types/lists`, :doc:`/types/tuples`,
-   :doc:`/types/dicts`, :doc:`/types/strings/index` and pretty much anything
-   made up of these object types, including all class instances. It also
-   handles shared objects, cyclic references and other complex storage
-   structures correctly by storing shared objects only once and restoring them
-   as shared objects, not as identical copies.
+   :doc:`/types/numbers/index`, :doc:`/types/sequences-sets/lists`,
+   :doc:`/types/sequences-sets/tuples`, :doc:`/types/dicts`,
+   :doc:`/types/strings/index` and pretty much anything made up of these object
+   types, including all class instances. It also handles shared objects,
+   cyclic references and other complex storage structures correctly by storing
+   shared objects only once and restoring them as shared objects, not as
+   identical copies.
 
 #. Loading pickled data:
 

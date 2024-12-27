@@ -4,11 +4,11 @@ Dictionaries
 Python’s built-in dictionary data type provides associative array functionality
 implemented using hash tables. The built-in ``len`` function returns the number
 of key-value pairs in a dictionary. The ``del`` statement can be used to delete
-a key-value pair. As with :doc:`lists` , several dictionary methods
-(:py:meth:`clear <dict.clear>`, :py:meth:`copy <dict.copy>`, :py:meth:`get
-<dict.get>`, :py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`,
-:py:meth:`update <dict.update>` and :py:meth:`values <dict.values>`) are
-available.
+a key-value pair. As with :doc:`sequences-sets/lists` , several dictionary
+methods (:py:meth:`clear <dict.clear>`, :py:meth:`copy <dict.copy>`,
+:py:meth:`get <dict.get>`, :py:meth:`items <dict.items>`, :py:meth:`keys
+<dict.keys>`, :py:meth:`update <dict.update>` and :py:meth:`values
+<dict.values>`) are available.
 
 .. code-block:: pycon
 
@@ -25,18 +25,18 @@ available.
     'nicht vorhanden'
 
 Keys must be of immutable type, including :doc:`numbers/index`,
-:doc:`strings/index` and :doc:`tuples`.
+:doc:`strings/index` and :doc:`sequences-sets/tuples`.
 
 .. warning::
    Even if you can use different key types in a dictionary, you should avoid
    this, as it not only makes it more difficult to read, but also sorting is
    also made more difficult.
 
-Values can be any type of object, including mutable types such as :doc:`lists`
-and :doc:`dicts`. If you try to access the value of a key that is not in the
-dictionary, a ``KeyError`` exception is thrown. To avoid this error, the
-dictionary method ``get`` optionally returns a custom value if a key is not
-contained in a dictionary.
+Values can be any type of object, including mutable types such as
+:doc:`sequences-sets/lists` and :doc:`dicts`. If you try to access the value of
+a key that is not in the dictionary, a ``KeyError`` exception is thrown. To
+avoid this error, the dictionary method ``get`` optionally returns a custom
+value if a key is not contained in a dictionary.
 
 ``setdefault``
 --------------
@@ -134,8 +134,8 @@ Checks
      >>> d[("Veit", "Tim", "Monique")] = None
 
 * You can use a :doc:`Dictionary </types/dicts>` like a spreadsheet table by
-  using :doc:`/types/tuples` as key row and column values. Write sample code to
-  add and retrieve values.
+  using :doc:`/types/sequences-sets/tuples` as key row and column values. Write
+  sample code to add and retrieve values.
 
   .. code-block:: pycon
 

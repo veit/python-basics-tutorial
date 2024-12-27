@@ -150,9 +150,9 @@ Variable number of arguments
 
 Python functions can also be defined to handle a variable number of arguments.
 This is possible in two ways. One method collects an unknown number of arguments
-in a :doc:`list </types/lists>`. The other method can collect an arbitrary
-number of arguments passed with a keyword that has no correspondingly named
-parameter in the function parameter list in a :doc:`dict </types/dicts>`.
+in a :doc:`list </types/sequences-sets/lists>`. The other method can collect an
+arbitrary number of arguments passed with a keyword that has no correspondingly
+named parameter in the function parameter list in a :doc:`dict </types/dicts>`.
 
 For an indeterminate number of positional arguments, prefixing the function’s
 final parameter name with a ``*`` causes all excess non-keyword arguments in a
@@ -223,12 +223,13 @@ Mutable objects as arguments
 ----------------------------
 
 Arguments are passed by object reference. The parameter becomes a new reference
-to the object. With immutable objects such as :doc:`/types/tuples`,
-:doc:`/types/strings/index` and :doc:`/types/numbers/index`, what is done with a
-parameter has no effect outside the function. However, if you pass a mutable
-object, such as a :doc:`/types/lists`, a :doc:`/types/dicts` or a class
-instance, any change to the object changes what the argument refers to outside
-the function. Reassigning the parameter has no effect on the argument.
+to the object. With immutable objects such as
+:doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` and
+:doc:`/types/numbers/index`, what is done with a parameter has no effect
+outside the function. However, if you pass a mutable object, such as a
+:doc:`/types/sequences-sets/lists`, a :doc:`/types/dicts` or a class instance,
+any change to the object changes what the argument refers to outside the
+function. Reassigning the parameter has no effect on the argument.
 
 .. code-block:: pycon
 

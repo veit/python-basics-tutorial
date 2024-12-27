@@ -45,9 +45,7 @@ values to more complex structures like lists, dictionaries and files.
    :hidden:
 
    numbers/index
-   lists
-   tuples
-   sets
+   sequences-sets/index
    dicts
    strings/index
    files

@@ -59,8 +59,9 @@ Line 5
 The ``for`` loop is simple but powerful because it can iterate over any iterable
 type, such as a list or a tuple. Unlike many other languages, the ``for`` loop
 in Python iterates over every element in a sequence for example a :doc:`list
-<../types/lists>` or a :doc:`tuple <../types/tuples>`), which makes it more like
-a foreach loop. The following loop uses the `Modulo
+<../types/sequences-sets/lists>` or a :doc:`tuple
+<../types/sequences-sets/tuples>`), which makes it more like a foreach loop. The
+following loop uses the `Modulo
 <https://en.wikipedia.org/wiki/Modulo_operation>`_ operator ``%`` as a condition
 for the first occurrence of an integer divisible by ``5``:
 
@@ -138,9 +139,10 @@ Each list comprehension in Python contains three elements:
     is the object or the value in an :samp:`{ITERABLE}`. In the example above,
     the value is ``i``.
 :samp:`{ITERABLE}`
-    is a :doc:`list <../types/lists>`, a :doc:`set <../types/sets>`, a generator
-    or another object that can return its elements individually. In the example
-    above, the iterable is ``range(8)``.
+    is a :doc:`list <../types/sequences-sets/lists>`, a :doc:`set
+    <../types/sequences-sets/sets>`, a generator or another object that can
+    return its elements individually. In the example above, the iterable is
+    ``range(8)``.
 
 You can also use optional conditions with list comprehensions, which are usually
 appended to the end of the expression:

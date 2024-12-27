@@ -116,8 +116,8 @@ Checks
   * ``1 and 0`` → False
   * ``1 > 0 or []`` → True
 
-:doc:`/types/lists`
--------------------
+:doc:`/types/sequences-sets/lists`
+----------------------------------
 
 * What does :func:`len` return for each of the following cases:
 
@@ -167,7 +167,7 @@ Checks
   .. note::
      This code only removes the first occurrence of ``i``. To remove all
      occurrences of ``i`` from the list, the list could be converted to the
-     :doc:`set </types/sets>` type, for example:
+     :doc:`set </types/sequences-sets/sets>` type, for example:
 
      .. code-block:: pycon
 
@@ -198,8 +198,8 @@ Checks
 
 * What other options could you have besides explicitly checking the type?
 
-:doc:`/types/tuples`
---------------------
+:doc:`/types/sequences-sets/tuples`
+-----------------------------------
 
 * Explain why the following operations cannot be applied to the tuple ``t``:
 
@@ -216,8 +216,8 @@ Checks
 
      >>> sorted(t)
 
-:doc:`/types/sets`
-------------------
+:doc:`/types/sequences-sets/sets`
+---------------------------------
 
 * How many elements does a set have if it is formed from the following list
   ``[4, 2, 3, 2, 1]``?
@@ -267,8 +267,8 @@ Checks
      >>> d[("Veit", "Tim", "Monique")] = None
 
 * You can use a :doc:`Dictionary </types/dicts>` like a spreadsheet table by
-  using :doc:`/types/tuples` as key row and column values. Write sample code to
-  add and retrieve values.
+  using :doc:`/types/sequences-sets/tuples` as key row and column values. Write
+  sample code to add and retrieve values.
 
   .. code-block:: pycon
 

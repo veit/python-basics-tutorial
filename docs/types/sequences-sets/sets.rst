@@ -6,6 +6,8 @@ situations where membership and uniqueness to the set are the most important
 information of the object. The ``in`` operator runs faster with sets than with
 :doc:`lists`:
 
+.. _set:
+
 ``set``
 -------
 
@@ -53,6 +55,8 @@ Line 19
     ``^`` is used to find the symmetrical difference, meaning elements that are
     contained in one or the other set, but not in both.
 
+.. _frozenset:
+
 ``frozenset``
 -------------
 
@@ -74,21 +78,13 @@ means that they can also be members of other sets:
    >>> x
    {1, 2, 3, 4, frozenset({1, 2, 3, 4})}
 
-Summary
--------
+Order
+-----
 
 However, the speed advantage also comes at a price: sets do not keep the
 elements in the correct order, whereas :doc:`lists` and :doc:`tuples` do. If the
 order is important to you, you should use a data structure that remembers the
 order.
-
-+---------------+---------------+---------------+---------------+---------------+
-| data type     | mutable       | ordered       | indexed       | duplicates    |
-+===============+===============+===============+===============+===============+
-| Sets          | ✅            | ❌            | ❌            | ❌            |
-+---------------+---------------+---------------+---------------+---------------+
-| Frozensets    | ❌            | ❌            | ❌            | ❌            |
-+---------------+---------------+---------------+---------------+---------------+
 
 Checks
 ------

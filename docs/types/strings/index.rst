@@ -510,8 +510,8 @@ pattern to be segmented:
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` returns a :doc:`../tuples` containing all subgroups
-of the match.
+:py:meth:`re.Match.groups` returns a :doc:`../sequences-sets/tuples` containing
+all subgroups of the match.
 
 :py:meth:`re.Pattern.findall` returns a list of tuples if the pattern contains
 groups:
@@ -618,8 +618,8 @@ Changing character strings with list manipulations
 --------------------------------------------------
 
 Since :ref:`str <python3:textseq>` objects are immutable, there is no way to
-change them directly like :doc:`lists <../lists>`. However, you can convert them
-into lists:
+change them directly like :doc:`lists <../sequences-sets/lists>`. However, you
+can convert them into lists:
 
 .. code-block:: pycon
 

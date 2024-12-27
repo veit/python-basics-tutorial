@@ -4,10 +4,10 @@ Lists
 A list in Python is similar to an array in Java or C: an ordered collection of
 objects. However, unlike lists in many other languages, Python lists can contain
 different types of elements; a list element can be any Python object, including
-:doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
-:doc:`../functions/index`, :doc:`files` and any kind of :doc:`numbers/index`.
-You create a list by enclosing no elements or elements separated by commas in
-square brackets, like this:
+:doc:`../strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`../dicts`,
+:doc:`../../functions/index`, :doc:`../files` and any kind of
+:doc:`../numbers/index`. You create a list by enclosing no elements or elements
+separated by commas in square brackets, like this:
 
 .. code-block:: python
    :linenos:
@@ -283,9 +283,9 @@ User-defined sorting
 ::::::::::::::::::::
 
 .. note::
-   You must be able to define :doc:`../functions/index` for user-defined
-   sorting. The processing of :doc:`strings/index` will also be covered in more
-   detail later.
+   You must be able to define :doc:`../../functions/index` for user-defined
+   sorting. The processing of :doc:`../strings/index` will also be covered in
+   more detail later.
 
 Python usually sorts words lexicographically – upper case before lower case.
 However, we want to sort a list of words by the number of characters in each
@@ -309,11 +309,11 @@ The ``sorted`` function
 :::::::::::::::::::::::
 
 Lists have an inbuilt method for sorting themselves :meth:`python3:list.sort`.
-However, other iterables in Python, such as the keys of :doc:`dicts`, do not
+However, other iterables in Python, such as the keys of :doc:`../dicts`, do not
 have a sorting method. However, Python offers the built-in
 :func:`python3:sorted` function for this purpose, which returns a sorted list
 from any iterable. :func:`python3:sorted` uses the same
-:doc:`../functions/params` ``key`` and ``reverse`` as the
+:doc:`../../functions/params` ``key`` and ``reverse`` as the
 :meth:`python3:list.sort` method:
 
 .. code-block:: pycon
@@ -531,15 +531,6 @@ has any effect on the original list:
    [[1], 1]
    >>> sup
    [[0], 1]
-
-Summary
--------
-
-+---------------+---------------+---------------+---------------+---------------+
-| data type     | mutable       | ordered       | indexed       | duplicates    |
-+===============+===============+===============+===============+===============+
-| list          | ✅            | ✅            | ✅            | ✅            |
-+---------------+---------------+---------------+---------------+---------------+
 
 Checks
 ------

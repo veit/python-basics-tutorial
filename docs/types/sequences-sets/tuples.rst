@@ -2,7 +2,7 @@ Tuples
 ======
 
 Tuples are similar to :doc:`lists`, but can only be created and not changed.
-Tuples have the important task of efficiently creating keys for :doc:`dicts`,
+Tuples have the important task of efficiently creating keys for :doc:`../dicts`,
 for example.
 
 Tuples are created in a similar way to lists: a sequence of values is assigned
@@ -168,16 +168,7 @@ The advantages of tuples over :doc:`lists <lists>` are:
 
 * Tuples can not be modified and are therefore *write-protected*.
 
-* Tuples can be used as keys in :doc:`dicts` and values in :doc:`sets`.
-
-Summary
--------
-
-+---------------+---------------+---------------+---------------+---------------+
-| data type     | mutable       | ordered       | indexed       | duplicates    |
-+===============+===============+===============+===============+===============+
-| tuple         | ❌            | ✅            | ✅            | ✅            |
-+---------------+---------------+---------------+---------------+---------------+
+* Tuples can be used as keys in :doc:`../dicts` and values in :doc:`sets`.
 
 Checks
 ------
