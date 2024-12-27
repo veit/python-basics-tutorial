@@ -27,7 +27,7 @@ different data types: Modules for strings, datatypes and numbers.
 String modules
 ~~~~~~~~~~~~~~
 
-.. include:: ../types/strings/index.rst
+.. include:: ../types/strings/built-in-modules/index.rst
    :start-after: string-modules:
    :end-before: end-string-modules:
 
@@ -71,7 +71,7 @@ Modules for numbers
 Changing files
 --------------
 
-.. include:: ../types/files.rst
+.. include:: ../save-data/files.rst
    :start-after: file-modules:
    :end-before: end-file-modules:
 

@@ -48,5 +48,4 @@ values to more complex structures like lists, dictionaries and files.
    sequences-sets/index
    dicts
    strings/index
-   files
    none

@@ -124,7 +124,6 @@ Follow us on…
    style
    variables-expressions
    types/index
-   input
    control-flows/index
    functions/index
    modules/index

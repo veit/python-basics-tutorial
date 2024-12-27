@@ -1,6 +1,51 @@
 Unicode and character encodings
 ===============================
 
+Special characters and escape sequences
+---------------------------------------
+
+``\n`` stands for the newline character and ``\t`` for the tab character.
+Character sequences that begin with a backslash and are used to represent other
+characters are called escape sequences. Escape sequences are generally used to
+represent special characters, in other words, characters for which there is no
+single-character printable representation.
+
+Here are other characters you can get with the escape character:
+
++--------------------------+--------------------------+--------------------------+
+| Escape sequence          | Output                   | Description              |
++==========================+==========================+==========================+
+| ``\\``                   | ``\``                    | Backslash                |
++--------------------------+--------------------------+--------------------------+
+| ``\'``                   | ``'``                    | single quote character   |
++--------------------------+--------------------------+--------------------------+
+| ``\"``                   | ``"``                    | double quote character   |
++--------------------------+--------------------------+--------------------------+
+| ``\b``                   |                          | Backspace (``BS``)       |
++--------------------------+--------------------------+--------------------------+
+| ``\n``                   |                          | ASCII Linefeed ``(LF``)  |
++--------------------------+--------------------------+--------------------------+
+| ``\r``                   |                          | ASCII Carriage Return    |
+|                          |                          | (``CR``)                 |
++--------------------------+--------------------------+--------------------------+
+| ``\t``                   |                          | Tabulator (``TAB``)      |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\u{00B5}`         | ``µ``                    | Unicode 16 bit           |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\U{000000B5}`     | ``µ``                    | Unicode 32 bit           |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\N{{SNAKE}}`      | ``🐍``                   | Unicode Emoji name       |
++--------------------------+--------------------------+--------------------------+
+
+Lines 1–7
+    The ASCII character set, which is used by Python and is the standard
+    character set on almost all computers, defines a whole range of other
+    special characters.
+Lines 8–9
+    Unicode escape sequences.
+Line 10
+    Unicode names for specifying a Unicode character.
+
 There are dozens of character encodings. For an overview of Python's encodings,
 see :ref:`python3:encodings-overview`.
 
@@ -69,8 +114,8 @@ defines several different encodings from a single character set. UTF-8 is an
 encoding scheme for representing Unicode characters as binary data with one or
 more bytes per character.
 
-Encoding and decoding in Python 3
----------------------------------
+Encoding and decoding
+---------------------
 
 The :ref:`str <python3:textseq>` type is intended for the representation of
 human-readable text and can contain all Unicode characters. The :ref:`bytes

@@ -101,6 +101,9 @@ want to read up on them.
 Read and write functions
 ------------------------
 
+``readline``
+~~~~~~~~~~~~
+
 I have already introduced the most common function for reading text files,
 :mod:`python3:readline`. This function reads a single line from a file object
 and returns it, including all line breaks at the end of the line. If there is
@@ -117,6 +120,9 @@ determine, for example, the number of lines in a file:
     >>> print(lc)
     1
     >>> f.close()
+
+``readlines``
+~~~~~~~~~~~~~
 
 A shorter way to count all lines is with the ``readlines`` method, which is also
 built in, that reads all lines of a file and returns them as a list of strings
@@ -165,6 +171,9 @@ parameter when opening the file and specifying ``newline="\n"``, ``\r`` or
 In this example, only ``\n`` is considered a line break. However, if the file
 was opened in binary mode, the ``newline`` parameter is not necessary, as all
 bytes are returned exactly as they are in the file.
+
+``write`` und ``writelines``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The write methods corresponding to ``readline`` and ``readlines`` are ``write``
 and ``writelines``. Note that there is no ``writeline`` function. ``write``
@@ -232,91 +241,6 @@ Line 5
    This point is often important when dealing with network protocols, where data
    streams often behave like files, but must be interpreted as bytes and not
    strings.
-
-Built-in modules for files
---------------------------
-
-The Python standard library contains a number of built-in modules that you can
-use to manage files:
-
-.. _file-modules:
-
-+-----------------------------------+-------------------------------------------------------------------------------+
-| Module                            | Description                                                                   |
-+===================================+===============================================================================+
-| :py:mod:`os.path`                 | performs common pathname manipulations                                        |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`pathlib`                 | manipulates pathnames                                                         |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`fileinput`               | iterates over multiple input files                                            |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`filecmp`                 | compares files and directories                                                |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`tempfile`                | creates temporary files and directories                                       |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`glob`,                   | use UNIX-like path and file name patterns                                     |
-| :py:mod:`fnmatch`                 |                                                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`linecache`               | randomly accesses lines of text                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`shutil`                  | performs higher level file operations                                         |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`mimetypes`               | Assignment of file names to MIME types                                        |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`pickle`,                 | enable Python object serialisation and persistence, see also                  |
-| :py:mod:`shelve`                  | :doc:`../save-data/pickle`                                                    |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`csv`                     | reads and writes CSV files                                                    |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`json`                    | JSON encoder and decoder                                                      |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`sqlite3`                 | provides a DB-API 2.0 interface for SQLite databases, see also                |
-|                                   | :doc:`../save-data/sqlite/index`                                              |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`xml`,                    | reads and writes XML files, see also R:doc:`../save-data/xml`                 |
-| :py:mod:`xml.parsers.expat`,      |                                                                               |
-| :py:mod:`xml.dom`,                |                                                                               |
-| :py:mod:`xml.sax`,                |                                                                               |
-| :py:mod:`xml.etree.ElementTree`   |                                                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`html.parser`,            | Parsing HTML and XHTML                                                        |
-| :py:mod:`html.entities`           |                                                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`configparser`            | reads and writes Windows-like configuration files (``.ini``)                  |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`base64`,                 | encodes/decodes files or streams                                              |
-| :py:mod:`binhex`,                 |                                                                               |
-| :py:mod:`binascii`,               |                                                                               |
-| :py:mod:`quopri`,                 |                                                                               |
-| :py:mod:`uu`                      |                                                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`struct`                  | reads and writes structured data to and from files                            |
-+-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`zlib`,                   | for working with archive files and compressions                               |
-| :py:mod:`gzip`,                   |                                                                               |
-| :py:mod:`bz2`,                    |                                                                               |
-| :py:mod:`zipfile`,                |                                                                               |
-| :py:mod:`tarfile`                 |                                                                               |
-+-----------------------------------+-------------------------------------------------------------------------------+
-
-.. _end-file-modules:
-
-.. seealso::
-   * :doc:`Python4DataScience:data-processing/pandas-io`
-   * Examples of serialisation formats :doc:`CSV
-     <Python4DataScience:data-processing/serialisation-formats/csv/example>`,
-     :doc:`JSON
-     <Python4DataScience:data-processing/serialisation-formats/json/example>`,
-     :doc:`Excel
-     <Python4DataScience:data-processing/serialisation-formats/excel>`,
-     :doc:`XML/HTML
-     <Python4DataScience:data-processing/serialisation-formats/xml-html/index>`,
-     :doc:`YAML
-     <Python4DataScience:data-processing/serialisation-formats/yaml/example>`,
-     :doc:`TOML
-     <Python4DataScience:data-processing/serialisation-formats/toml/example>`
-     und :doc:`Pickle
-     <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`.
 
 Checks
 ------

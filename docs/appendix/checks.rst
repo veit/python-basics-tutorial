@@ -306,15 +306,8 @@ Checks
        File "<stdin>", line 1, in <module>
      TypeError: can't multiply sequence by non-int of type 'complex'
 
-* How can you change a heading such as ``variables and expressions`` so that it
-  contains hyphens instead of spaces and can therefore be better used as a file
-  name?
-
-  .. code-block:: pycon
-
-     >>> ve = "variables and expressions"
-     >>> "-".join(ve.split())
-     'variables-and-expressions'
+:doc:`/types/strings/operators-functions`
+-----------------------------------------
 
 * Which of the following strings cannot be converted into numbers and why?
 
@@ -336,6 +329,16 @@ Checks
      2
 
   .. blacken-docs:on
+
+* How can you change a heading such as ``variables and expressions`` so that it
+  contains hyphens instead of spaces and can therefore be better used as a file
+  name?
+
+  .. code-block:: pycon
+
+     >>> ve = "variables and expressions"
+     >>> "-".join(ve.split())
+     'variables-and-expressions'
 
 * If you want to check whether a line begins with ``.. note::``, which method
   would you use? Are there any other options?
@@ -368,6 +371,9 @@ Checks
      >>> hipy.translate(subs)
      'Hello-Pythonistas--'
 
+:doc:`/types/strings/built-in-modules/re`
+-----------------------------------------
+
 * Which regular expression would you use to find strings that represent the
   numbers between -3 and +3?
 
@@ -383,127 +389,8 @@ Checks
       upper case ``x``, followed by one or more characters in the ranges
       ``0-9``, ``a-f`` or ``A-F``.
 
-:doc:`/types/files`
--------------------
-
-* Uses the functions of the :mod:`python3:os` module to take a path to a file
-  named :file:`example.log` and create a new file path in the same directory for
-  a file named :file:`example.log1`.
-
-  .. code-block:: pycon
-
-     >>> import os
-     >>> path = os.path.abspath("example.log")
-     >>> print(path)
-     /Users/veit/python-basics-tutorial-de/example.log
-     >>> new_path = f"{path}2"
-     >>> print(new_path)
-     /Users/veit/python-basics-tutorial-de/example.log2
-
-* What is the significance of adding ``b`` as a parameter to
-  :func:`python3:open`?
-
-  This opens the file in binary mode, which means that bytes and not characters
-  are read and written.
-
-* Open a file :file:`my_file.txt` and insert additional text at the end of the
-  file. Which command would you use to open :file:`my_file.txt`? Which command
-  would you use to reopen the file and read it from the beginning?
-
-  .. code-block:: pycon
-
-     >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythinistas!\n")
-     ...
-     17
-     >>> with open("my_file") as f:
-     ...     print(f.readlines())
-     ...
-     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
-
-* What use cases can you imagine in which the :mod:`python3:struct` module would
-  be useful for reading or writing binary data?
-
-  * when reading and writing a binary file
-  * when reading from an external interface, where the data should be stored
-    exactly as it was transmitted
-
-* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
-  following use cases:
-
-  #. Saving some state variables from one run to the next ✅
-  #. Storing evaluation results ❌, as pickle is dependent on the respective
-     Python version
-  #. Saving user names and passwords ❌, as pickles are not secure
-  #. Saving a large dictionary with English terms ❌, as the entire pickle would
-     have to be loaded into memory
-
-* If you look at the `man page for the wc utility
-  <https://linux.die.net/man/1/wc>`_, you will see two command line options:
-
-  ``-c``
-      counts the bytes in the file
-  ``-m``
-      counts the characters, which in the case of some Unicode characters can be
-      two or more bytes long
-
-  Also, if a file is specified, our module should read from and process that
-  file, but if no file is specified, it should read from and process ``stdin``.
-
-  .. seealso::
-     :ref:`_wcargv_stdin.py <wcargv_stdin>`
-
-* If a context manager is used in a script that reads and/or writes multiple
-  files, which of the following approaches do you think would be best?
-
-  #. Put the entire script in a block managed by a ``with`` statement.
-  #. Use one ``with`` statement for all reads and another for all writes.
-  #. Use a ``with`` statement every time you read or write a file, that is, for
-     every line.
-  #. Use a ``with`` statement for each file you read or write.
-
-  Probably 4. is the best approach as part of the context manager’s job when
-  accessing files is to ensure that a file is closed.
-
-* Archive :file:`*.txt` files from the current directory in the :file:`archive`
-  directory as :file:`*.zip` files with the current date as the file name.
-
-  * Which modules do you need for this?
-
-    :mod:`python3:datetime`, :mod:`python3:pathlib` and :mod:`python3:zipfile`.
-
-  * Write a possible solution.
-
-    .. code-block:: pycon
-       :linenos:
-
-       >>> import datetime
-       >>> import pathlib
-       >>> import zipfile
-       >>> file_pattern = "*.txt"
-       >>> archive_path = "archive"
-       >>> today = f"{datetime.date.today():%Y-%m-%d}"
-       >>> cur_path = pathlib.Path(".")
-       >>> paths = cur_path.glob(file_pattern)
-       >>> zip_path = cur_path.joinpath(archive_path, today + ".zip")
-       >>> zip_file = zipfile.ZipFile(str(zip_path), "w")
-       >>> for path in paths:
-       ...     zip_file.write(str(path))
-       ...     path.unlink()
-       ...
-
-    Line 9
-        creates the path to the ZIP file in the archive directory.
-    Line 10
-        opens the new ZIP file object for writing; :func:`str` is required to
-        convert a path into a character string.
-    Line 12
-        writes the current file to the ZIP file.
-    Line 13
-         removes the current file from the working directory.
-
-:doc:`/input`
--------------
+:doc:`/types/strings/input`
+---------------------------
 
 * How can you get string and integer values with the :func:`input` function?
 
@@ -1083,3 +970,122 @@ Checks
   .. seealso::
      You can find a complete example at `github.com/veit/items
      <https://github.com/veit/items/>`_.
+
+:doc:`/save-data/files`
+-----------------------
+
+* Uses the functions of the :mod:`python3:os` module to take a path to a file
+  named :file:`example.log` and create a new file path in the same directory for
+  a file named :file:`example.log1`.
+
+  .. code-block:: pycon
+
+     >>> import os
+     >>> path = os.path.abspath("example.log")
+     >>> print(path)
+     /Users/veit/python-basics-tutorial-de/example.log
+     >>> new_path = f"{path}2"
+     >>> print(new_path)
+     /Users/veit/python-basics-tutorial-de/example.log2
+
+* What is the significance of adding ``b`` as a parameter to
+  :func:`python3:open`?
+
+  This opens the file in binary mode, which means that bytes and not characters
+  are read and written.
+
+* Open a file :file:`my_file.txt` and insert additional text at the end of the
+  file. Which command would you use to open :file:`my_file.txt`? Which command
+  would you use to reopen the file and read it from the beginning?
+
+  .. code-block:: pycon
+
+     >>> with open("my_file", "a") as f:
+     ...     f.write("Hi, Pythinistas!\n")
+     ...
+     17
+     >>> with open("my_file") as f:
+     ...     print(f.readlines())
+     ...
+     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
+
+* What use cases can you imagine in which the :mod:`python3:struct` module would
+  be useful for reading or writing binary data?
+
+  * when reading and writing a binary file
+  * when reading from an external interface, where the data should be stored
+    exactly as it was transmitted
+
+* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
+  following use cases:
+
+  #. Saving some state variables from one run to the next ✅
+  #. Storing evaluation results ❌, as pickle is dependent on the respective
+     Python version
+  #. Saving user names and passwords ❌, as pickles are not secure
+  #. Saving a large dictionary with English terms ❌, as the entire pickle would
+     have to be loaded into memory
+
+* If you look at the `man page for the wc utility
+  <https://linux.die.net/man/1/wc>`_, you will see two command line options:
+
+  ``-c``
+      counts the bytes in the file
+  ``-m``
+      counts the characters, which in the case of some Unicode characters can be
+      two or more bytes long
+
+  Also, if a file is specified, our module should read from and process that
+  file, but if no file is specified, it should read from and process ``stdin``.
+
+  .. seealso::
+     :ref:`_wcargv_stdin.py <wcargv_stdin>`
+
+* If a context manager is used in a script that reads and/or writes multiple
+  files, which of the following approaches do you think would be best?
+
+  #. Put the entire script in a block managed by a ``with`` statement.
+  #. Use one ``with`` statement for all reads and another for all writes.
+  #. Use a ``with`` statement every time you read or write a file, that is, for
+     every line.
+  #. Use a ``with`` statement for each file you read or write.
+
+  Probably 4. is the best approach as part of the context manager’s job when
+  accessing files is to ensure that a file is closed.
+
+* Archive :file:`*.txt` files from the current directory in the :file:`archive`
+  directory as :file:`*.zip` files with the current date as the file name.
+
+  * Which modules do you need for this?
+
+    :mod:`python3:datetime`, :mod:`python3:pathlib` and :mod:`python3:zipfile`.
+
+  * Write a possible solution.
+
+    .. code-block:: pycon
+       :linenos:
+
+       >>> import datetime
+       >>> import pathlib
+       >>> import zipfile
+       >>> file_pattern = "*.txt"
+       >>> archive_path = "archive"
+       >>> today = f"{datetime.date.today():%Y-%m-%d}"
+       >>> cur_path = pathlib.Path(".")
+       >>> paths = cur_path.glob(file_pattern)
+       >>> zip_path = cur_path.joinpath(archive_path, today + ".zip")
+       >>> zip_file = zipfile.ZipFile(str(zip_path), "w")
+       >>> for path in paths:
+       ...     zip_file.write(str(path))
+       ...     path.unlink()
+       ...
+
+    Line 9
+        creates the path to the ZIP file in the archive directory.
+    Line 10
+        opens the new ZIP file object for writing; :func:`str` is required to
+        convert a path into a character string.
+    Line 12
+        writes the current file to the ZIP file.
+    Line 13
+         removes the current file from the working directory.

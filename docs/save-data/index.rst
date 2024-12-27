@@ -1,11 +1,13 @@
 Save and access data
 ====================
 
-To store data persistently, a process called serialisation or marshalling can be
-used. In it, data structures are converted into a linear form and stored. The
-reverse process is then called deserialisation or unmarshalling. Python offers
-several modules in the standard library that you can be used to serialise and
-deserialise objects:
+You can save your data persistently in :doc:`files <files>` in the :doc:`file
+system <filesystem>`. In the Python standard library, there are also several
+modules for converting data into a linear form. This process is called
+*serialisation* or *marshalling*. The reverse process is called
+*deserialisation* or *unmarshalling*. And if the :ref:`built-in modules
+<builtin-file-modules>` are not sufficient, you can also use the
+:ref:`pandas-io-tools`.
 
 the :doc:`marshal <python3:library/marshal>` module
     is mainly used internally by Python and should not be used to store data in
@@ -20,6 +22,16 @@ the :doc:`xml <xml>` module
 .. tip::
    `cusy Seminar
    <https://cusy.io/en/our-training-courses/read-write-and-provide-data-with-python>`_
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   files
+   filesystem
+   modules
+   pickle
+   xml
 
 The Python Database API
 -----------------------
@@ -39,19 +51,16 @@ but also a generalised API for writing database-agnostic code without SQL.
 :doc:`Python4DataScience:data-processing/postgresql/alembic` is based on
 SQLAlchemy and serves as a database migration tool.
 
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   sqlite/index
+   psycopg
+
 NoSQL databases
 ---------------
 
 There is data that is difficult to transfer into a relational data model. At the
 least then you should take a look at
 :doc:`Python4DataScience:data-processing/nosql/index`.
-
-.. toctree::
-   :titlesonly:
-   :hidden:
-
-   filesystem
-   pickle
-   xml
-   sqlite/index
-   psycopg

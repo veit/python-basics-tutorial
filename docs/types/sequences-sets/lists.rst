@@ -5,7 +5,7 @@ A list in Python is similar to an array in Java or C: an ordered collection of
 objects. However, unlike lists in many other languages, Python lists can contain
 different types of elements; a list element can be any Python object, including
 :doc:`../strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`../dicts`,
-:doc:`../../functions/index`, :doc:`../files` and any kind of
+:doc:`../../functions/index`, :doc:`../../save-data/files` and any kind of
 :doc:`../numbers/index`. You create a list by enclosing no elements or elements
 separated by commas in square brackets, like this:
 
