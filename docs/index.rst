@@ -7,6 +7,19 @@ practical introduction to Python. The book is not intended to be a comprehensive
 reference guide to Python, but rather the goal is to give you a basic
 familiarity with Python and enable you to quickly write your own programs.
 
+The book is published under the `BSD-3-Clause license
+<https://github.com/veit/python-basics-tutorial-de?tab=BSD-3-Clause-1-ov-file#readme>`_,
+so you may adapt and publish the book for your own purposes, provided you
+retain the licence and copyright notice.
+
+I would like to thank `cusy GmbH <https://cusy.io/en/front-page>`_ for
+generously allowing me to spend my time writing this book. In addition, I would
+like to thank Kristian Rother not only for the support and advice he has given
+me over the years on this book, but also for the editing that has made this book
+better. I would also like to thank Steffen Dahlem for the idea and realisation
+of a more sustainable book production. Finally, my heartfelt thanks also go to
+the reviewers, whose insights and feedback were a great help.
+
 .. note::
    If you have suggestions for improvements, I would be happy to :doc:`receive
    <contribute>` them.

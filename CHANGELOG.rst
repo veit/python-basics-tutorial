@@ -19,6 +19,7 @@ emergencies when we need to start branches for older versions.
 Added
 ~~~~~
 
+* 👥 Add license and acknowledgement
 * 🔧 📝 Add social media support
 
   * Add OpenGraph tag for mastodon
