@@ -3,7 +3,7 @@ Installation
 
 Installing Python can be easy. The first step is to download the latest version
 from `www.python.org/downloads <https://www.python.org/downloads/>`_. The
-tutorial is based on Python 3.13.0, but if you have Python 3.8 or newer
+tutorial is based on Python 3.13.0, but if you have Python 3.10 or newer
 installed, this should not be a problem.
 
 .. tab:: Linux
@@ -40,8 +40,7 @@ installed, this should not be a problem.
    pip install MOPUp`` and then regularly call ``mopup`` to get the latest
    version of your Python installation.
 
-   If older Python versions are required, for example to test libraries with
-   :doc:`test/tox`, `python-build-standalone
+   If older Python versions are required, `python-build-standalone
    <https://gregoryszorc.com/docs/python-build-standalone/main/building.html#macos>`_
    can be used.
 

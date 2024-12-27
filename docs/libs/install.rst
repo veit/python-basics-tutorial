@@ -264,6 +264,14 @@ following steps:
 
 Then restart the shell or call up ``source`` with your shell configuration file.
 
+Python installation
+~~~~~~~~~~~~~~~~~~~
+
+With ``uv`` not only older CPython versions can be installed, but also, for
+example, `PyPy <https://pypy.org>`_ with  ``uv python install pypy@3.12`` or
+free-threaded Python 3.13 with  ``uv python install --python-preference
+only-managed 3.13t``.
+
 Create project structure
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
