@@ -61,9 +61,9 @@ To exit the interactive shell, simply use :kbd:`Ctrl-d` on Linux and macOS or
 IDLE
 ----
 
-IDLE is the acronym for integrated development environment and combines an
-interactive interpreter with code editing and debugging tools. It is very easy
-to execute on the various platforms:
+:doc:`python3:library/idle` is the acronym for *Integrated Development and
+Learning Environment* and combines an interactive interpreter with tools for
+code editing and debugging. It is very easy to run on the various platforms:
 
 .. tab:: Linux/macOS
 
