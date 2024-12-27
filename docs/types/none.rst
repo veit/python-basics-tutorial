@@ -2,9 +2,9 @@ None
 ====
 
 In addition to the standard types such as :doc:`strings/index` and
-:doc:`numbers`, Python has a special data type that defines a single special
-data object called ``None``. As the name suggests, ``None`` is used to represent
-an empty value. It appears in various forms in Python.
+:doc:`numbers/index`, Python has a special data type that defines a single
+special data object called ``None``. As the name suggests, ``None`` is used to
+represent an empty value. It appears in various forms in Python.
 
 ``None`` is often useful in everyday Python programming as a placeholder to
 indicate a data structure where meaningful data can eventually be found, even if

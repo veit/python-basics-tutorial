@@ -5,9 +5,9 @@ A list in Python is similar to an array in Java or C: an ordered collection of
 objects. However, unlike lists in many other languages, Python lists can contain
 different types of elements; a list element can be any Python object, including
 :doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
-:doc:`../functions/index`, :doc:`files` and any kind of :doc:`numbers`. You
-create a list by enclosing no elements or elements separated by commas in square
-brackets, like this:
+:doc:`../functions/index`, :doc:`files` and any kind of :doc:`numbers/index`.
+You create a list by enclosing no elements or elements separated by commas in
+square brackets, like this:
 
 .. code-block:: python
    :linenos:
@@ -381,8 +381,8 @@ Minimum or maximum of a list
 
 You can use :func:`max` and :func:`min` to find the largest and smallest
 element of a list. You will probably use :func:`max` and :func:`min` mainly for
-:doc:`numeric </types/numbers>` lists, but you can also use them for lists with
-arbitrary elements; however, if the comparison of these types does not make
+:doc:`numeric </types/numbers/index>` lists, but you can also use them for lists
+with arbitrary elements; however, if the comparison of these types does not make
 sense, this will result in an error:
 
 .. code-block:: pycon

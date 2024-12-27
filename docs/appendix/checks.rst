@@ -50,8 +50,8 @@ Checks
   ``very_very_long_var_name``
       ✅ ok, but very long and therefore only recommended if you want to differentiate between many very similar variables
 
-:doc:`/types/numbers`
----------------------
+:doc:`/types/numbers/index`
+---------------------------
 
 * Create some number variables (integers, floating point numbers and complex
   numbers). Experiment a little with what happens when you perform operations
@@ -81,6 +81,9 @@ Checks
 
   .. blacken-docs:on
 
+:doc:`/types/numbers/complex`
+-----------------------------
+
 * Load the :mod:`math` module and try out some of the functions. Then load the
   :mod:`cmath` module and do the same.
 
@@ -100,6 +103,9 @@ Checks
      >>> from math import sqrt
      >>> sqrt(3)
      1.7320508075688772
+
+:doc:`/types/numbers/bool`
+--------------------------
 
 * Decide whether the following statements are true or false:
 

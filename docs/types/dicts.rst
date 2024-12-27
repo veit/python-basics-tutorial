@@ -24,8 +24,8 @@ available.
     >>> x.get(5, "nicht vorhanden")
     'nicht vorhanden'
 
-Keys must be of immutable type, including :doc:`numbers`, :doc:`strings/index`
-and :doc:`tuples`.
+Keys must be of immutable type, including :doc:`numbers/index`,
+:doc:`strings/index` and :doc:`tuples`.
 
 .. warning::
    Even if you can use different key types in a dictionary, you should avoid

@@ -65,42 +65,12 @@ Examples:
      Floating-Point Arithmetic
      <https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html>`_
 
-Complex numbers
----------------
+.. toctree::
+   :titlesonly:
+   :hidden:
 
-Complex numbers consist of a real part and an `imaginary part
-<https://en.wikipedia.org/wiki/Imaginary_number>`_, which is given the suffix
-``j`` in Python.
-
-.. code-block:: pycon
-
-    >>> 7 + 2j
-    (7+2j)
-
-.. note::
-
-    Python expresses the resulting complex number in parentheses to indicate
-    that the output represents the value of a single object:
-
-.. code-block:: pycon
-
-    >>> (5 + 3j) ** (3 + 5j)
-    (-7.04464115622119-11.276062812695923j)
-
-.. code-block:: pycon
-
-    >>> x = (5 + 3j) * (6 + 8j)
-    >>> x
-    (6+58j)
-    >>> x.real
-    6.0
-    >>> x.imag
-    58.0
-
-Complex numbers consist of a real part and an imaginary part with the suffix
-``j``. In the preceding code, the variable ``x`` is assigned to a complex
-number. You can get its „real“ part with the attribute notation ``x.real`` and
-the „imaginary“ part with ``x.imag``.
+   complex
+   bool
 
 Built-in numerical functions
 ----------------------------
@@ -137,28 +107,6 @@ Several built-in functions can work with numbers:
 :func:`python3:round`
     returns a number rounded to *ndigits* after the decimal point. If *ndigits*
     is omitted or is *None*, the nearest integer to the input is returned.
-
-Boolean values
---------------
-
-Boolean values are used in the following examples:
-
-.. code-block:: pycon
-
-    >>> x = False
-    >>> x
-    False
-    >>> not x
-    True
-
-.. code-block:: pycon
-
-    >>> y = True * 2
-    >>> y
-    2
-
-Apart from their representation as ``True`` and ``False``, Boolean values
-behave like the numbers ``1`` (``True``) and ``0`` (``False``).
 
 Advanced numerical functions
 ----------------------------
@@ -207,36 +155,6 @@ The ``math`` module provides, among other things
   :func:`python3:math.sinh` and :func:`python3:math.tanh`
 * and the constants :data:`python3:math.e` and :data:`python3:math.pi`.
 
-Advanced functions for complex numbers
---------------------------------------
-
-The functions in the :doc:`math <python3:library/math>` module are not
-applicable to complex numbers; one of the reasons for this is probably that the
-square root of ``-1`` is supposed to produce an error. Therefore, similar
-functions for complex numbers have been provided in the :doc:`cmath
-<python3:library/cmath>` module:
-
-:func:`python3:cmath.acos`, :func:`python3:cmath.acosh`, :func:`python3:cmath.asin`, :func:`python3:cmath.asinh`, :func:`python3:cmath.atan`, :func:`python3:cmath.atanh`, :func:`python3:cmath.cos`, :func:`python3:cmath.cosh`, :func:`python3:cmath.e`, :func:`python3:cmath.exp`, :func:`python3:cmath.log`, :func:`python3:cmath.log10`, :func:`python3:cmath.pi`, :func:`python3:cmath.sin`, :func:`python3:cmath.sinh`, :func:`python3:cmath.sqrt`, :func:`python3:cmath.tan`, :func:`python3:cmath.tanh`.
-
-To make it clear in the code that these functions are special functions for
-complex numbers, and to avoid name conflicts with the more normal equivalents,
-it is recommended to simply import the module to explicitly refer to the
-``cmath`` package when using the function, for example:
-
-.. code-block:: pycon
-
-    >>> import cmath
-    >>> cmath.sqrt(-2)
-    1.4142135623730951j
-
-.. warning::
-
-    Now it becomes clearer why we do not recommend importing all functions of a
-    module with :samp:`from {MODULE} import \*`. If you would import the module
-    ``math`` first and then the module ``cmath``, the functions in ``cmath``
-    would have priority over those of ``math``. Also, when understanding the
-    code, it is much more tedious to find out the source of the functions used.
-
 Rounding half to even
 ---------------------
 
@@ -256,16 +174,6 @@ for `rounding half to even
     >>> rounded = num.quantize(decimal.Decimal("0"), rounding=decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
-
-Numerical calculations
-----------------------
-
-The standard Python installation is not well suited for intensive numerical
-calculations due to speed limitations. But the powerful Python extension
-:doc:`Python4DataScience:workspace/numpy/index` provide highly efficient
-implementations of many advanced numerical operations. The focus is on array
-operations, including multi-dimensional matrices and advanced functions such as
-the fast Fourier transform.
 
 Built-in modules for numbers
 ----------------------------
@@ -301,23 +209,12 @@ use to manage numbers:
 
 .. _end-number-modules:
 
+.. seealso::
+   * :doc:`Python4DataScience:workspace/numpy/index`
+
 Checks
 ------
 
 * Create some number variables (integers, floating point numbers and complex
   numbers). Experiment a little with what happens when you perform operations
   with them, even across types.
-
-* Load the :mod:`math` module and try out some of the functions. Then load the
-  :mod:`cmath` module and do the same.
-
-* How can you restore the functions of the :mod:`math` module?
-
-* Decide whether the following statements are true or false:
-
-  * ``1``
-  * ``0``
-  * ``-1``
-  * ``[0]``
-  * ``1 and 0``
-  * ``1 > 0 or []``

@@ -3,7 +3,7 @@
 
 In Python, a library can consist of several components, including built-in data
 types and constants that can be used without an import statement, such as
-:doc:`/types/numbers` and :doc:`/types/lists`, as well as some built-in
+:doc:`/types/numbers/index` and :doc:`/types/lists`, as well as some built-in
 :doc:`/functions/index` and :doc:`/control-flows/exceptions`. The largest part
 of the library is an extensive collection of :doc:`/modules/index`. If you have
 Python installed, there are also several libraries available for you to use.

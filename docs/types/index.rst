@@ -44,7 +44,7 @@ values to more complex structures like lists, dictionaries and files.
    :titlesonly:
    :hidden:
 
-   numbers
+   numbers/index
    lists
    tuples
    sets

@@ -224,7 +224,7 @@ Mutable objects as arguments
 
 Arguments are passed by object reference. The parameter becomes a new reference
 to the object. With immutable objects such as :doc:`/types/tuples`,
-:doc:`/types/strings/index` and :doc:`/types/numbers`, what is done with a
+:doc:`/types/strings/index` and :doc:`/types/numbers/index`, what is done with a
 parameter has no effect outside the function. However, if you pass a mutable
 object, such as a :doc:`/types/lists`, a :doc:`/types/dicts` or a class
 instance, any change to the object changes what the argument refers to outside
