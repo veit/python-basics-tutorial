@@ -1,11 +1,30 @@
 Data types
 ==========
 
-Python has several built-in data types, such as :doc:`numbers` (integers,
-floating point numbers, complex numbers), :doc:`strings <strings/index>`,
-:doc:`lists`, :doc:`tuples`, :doc:`dicts`, :doc:`sets` and :doc:`files`. These
-data types can be manipulated using language operators, built-in functions,
-library functions or a data type’s own methods.
+Python has several built-in data types, from scalars such as numbers and boolean
+values to more complex structures such as sequences, sets, dictionaries and
+strings.
+
++-----------------------+-----------------------------------------------+
+| Data type             | Examples                                      |
++=======================+===============================================+
+| Numeric types         | :class:`int`, :class:`float`, :class:`complex`|
++-----------------------+-----------------------------------------------+
+| Boolean type          | :class:`bool`                                 |
++-----------------------+-----------------------------------------------+
+| Sequences             | :class:`list`, :class:`tuple`                 |
++-----------------------+-----------------------------------------------+
+| Sets                  | :class:`set`, :class:`frozenset`              |
++-----------------------+-----------------------------------------------+
+| Mappings              | :class:`dict`                                 |
++-----------------------+-----------------------------------------------+
+| Strings               | :class:`str`                                  |
++-----------------------+-----------------------------------------------+
+| Files                 | :func:`open <open>`                           |
++-----------------------+-----------------------------------------------+
+
+These data types can be manipulated using language operators, built-in
+functions, library functions or a data type’s own methods.
 
 You can also define your own classes and create your own class instances. For
 these class instances, you can define methods as well as manipulate them using
