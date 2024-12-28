@@ -16,17 +16,16 @@ separate the function from the function definition. The following simple example
 inserts the code into a function so that you can call it to get the `factorial
 <https://en.wikipedia.org/wiki/Factorial>`_ of a number:
 
-.. code-block:: pycon
+.. code-block:: python
    :linenos:
 
-    >>> def fact(n):
-    ...     """Return the factorial of the given number."""
-    ...     f = 1
-    ...     while n > 0:
-    ...         f = f * n
-    ...         n = n - 1
-    ...     return f
-    ...
+    def fact(n):
+        """Return the factorial of the given number."""
+        f = 1
+        while n > 0:
+            f = f * n
+            n = n - 1
+        return f
 
 Line 2
     This is an optional documentation string, or ``docstring``. You can get its
@@ -62,9 +61,48 @@ value of a function is used:
 Line 1
     The return value is not linked to a variable.
 Line 2
-    The value of the ``fact`` function is only output in the interpreter.
+    The value of the :func:`fact` function is only output in the interpreter.
 Line 3
     The return value is linked to the variable ``x``.
+
+Inspired by  :doc:`Python4DataScience:productive/qa/mypy`, so-called *type
+hints* were introduced in Python, with which the types for :doc:`parameters
+<params>` and return values can be defined, in our :func:`fact` example with:
+
+.. blacken-docs:off
+
+.. code-block:: python
+
+   def fact(n: int) -> int:
+       ...
+
+.. blacken-docs:on
+
+or:
+
+.. blacken-docs:off
+
+.. code-block:: python
+
+   def factlist(flist: list[float]) -> list[float]:
+       ...
+
+.. blacken-docs:on
+
+We receive the types with the ``__annotations__`` attribute at runtime:
+
+.. code-block:: pycon
+
+   >>> fact.__annotations__
+   {'n': <class 'int'>, 'return': <class 'int'>}
+   >>> factlist.__annotations__
+   {'list': list[float], 'return': list[float]}
+
+However, there is **no** type check at runtime.
+
+.. seealso::
+   * :pep:`484`
+   * :doc:`python3:library/typing`
 
 .. toctree::
    :titlesonly:
