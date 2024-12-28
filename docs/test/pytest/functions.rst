@@ -158,7 +158,7 @@ Failing with ``pytest.fail()`` and exceptions
 ---------------------------------------------
 
 Failing assertions is the main way that tests fail. But this is not the only
-way. A test also fails if there is an uncaught :doc:`/control-flows/exceptions`.
+way. A test also fails if there is an uncaught :doc:`/control-flow/exceptions`.
 This can happen when
 
 * an ``assert`` statement fails, resulting in an ``AssertionError`` exception,

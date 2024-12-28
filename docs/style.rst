@@ -6,7 +6,7 @@ Indentation and blocks
 
 Python differs from most other programming languages because it uses indentation
 to determine structure (that is, to determine what the :doc:`while
-<control-flows/loops>` clause of a condition :abbr:`etc. (et cetera)`
+<control-flow/loops>` clause of a condition :abbr:`etc. (et cetera)`
 represents). Most other languages use curly braces to do this. In the following
 example, the indentation of lines 3–6 determines that they belong to the
 ``while`` statement:
@@ -75,7 +75,7 @@ Python conventions can be found in the following table:
 +-----------------------+-------------------------------+-------------------------------+
 | Compare               | not explicitly with ``True``  | ``if my_var:``,               |
 |                       | or ``False``, see also        | ``if not my_var:``            |
-|                       | :doc:`control-flows/boolean`  |                               |
+|                       | :doc:`control-flow/boolean`   |                               |
 +-----------------------+-------------------------------+-------------------------------+
 
 .. seealso::

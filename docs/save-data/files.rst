@@ -40,7 +40,7 @@ Documents\\myfile}`:
 
     This example uses the ``with`` keyword, which means that the file is opened
     with a context manager, which is explained in more detail in
-    :doc:`/control-flows/with`. This way of opening files manages possible I/O
+    :doc:`/control-flow/with`. This way of opening files manages possible I/O
     errors better and should generally be preferred.
 
 Closing files
@@ -61,7 +61,7 @@ file object is no longer needed:
     >>> line = f.readline()
     >>> f.close()
 
-However, using a :doc:`/control-flows/with` usually remains the better option to
+However, using a :doc:`/control-flow/with` usually remains the better option to
 automatically close files when you are done:
 
 .. code-block:: pycon

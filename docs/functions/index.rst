@@ -11,10 +11,10 @@ The basic syntax for a Python function definition is
     def function_name(param1, param2):
         body
 
-As with :doc:`control streams </control-flows/index>`, Python uses indentation
-to separate the function from the function definition. The following simple
-example inserts the code into a function so that you can call it to get the
-`factorial <https://en.wikipedia.org/wiki/Factorial>`_ of a number:
+As with :doc:`control streams </control-flow/index>`, Python uses indentation to
+separate the function from the function definition. The following simple example
+inserts the code into a function so that you can call it to get the `factorial
+<https://en.wikipedia.org/wiki/Factorial>`_ of a number:
 
 .. code-block:: pycon
    :linenos:

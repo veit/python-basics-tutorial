@@ -31,7 +31,7 @@ In Python, we often rely on the fact that :class:`None` is falsy:
    False
 
 For example, we can check whether :doc:`../types/strings/index` are empty in an
-:doc:`if statement <../control-flows/if-elif-else>`:
+:doc:`if statement <../control-flow/conditional>`:
 
 .. code-block:: pycon
 

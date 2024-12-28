@@ -467,8 +467,8 @@ Checks
      >>> print(personal_data[who])
      60
 
-:doc:`/control-flows/loops`
----------------------------
+:doc:`/control-flow/loops`
+--------------------------
 
 * Removes all negative numbers from the list ``x = [ -2, -1, 0, 1, 2, 3]``.
 
@@ -532,8 +532,8 @@ Checks
      >>> {x: x**3 for x in range(1, 5)}
      {1: 1, 2: 8, 3: 27, 4: 64}
 
-:doc:`/control-flows/exceptions`
---------------------------------
+:doc:`/control-flow/exceptions`
+-------------------------------
 
 * Write code that receives two numbers and divides the first number by the
   second. Check if the :class:`python3:ZeroDivisionError` occurs when the second

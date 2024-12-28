@@ -54,8 +54,8 @@ You can use the :class:`python3:int` and :class:`python3:float` functions to
 convert character strings into integer or floating point numbers. If a character
 string is passed that cannot be interpreted as a number of the specified type,
 these functions trigger a :class:`python3:ValueError` exception. Exceptions are
-explained in more detail in :doc:`control flows
-<../../control-flows/exceptions>`. You can also pass :class:`python3:int` an
+explained in more detail in :doc:`control flow
+<../../control-flow/exceptions>`. You can also pass :class:`python3:int` an
 optional second :doc:`parameter  <../../functions/params>` that specifies the
 numerical base to be used when interpreting the string:
 

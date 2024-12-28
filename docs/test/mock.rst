@@ -145,7 +145,7 @@ context manager:
 
 In our test code, we import ``items``. The resulting items object is what we will
 patch. The call to :func:`mock.patch.object`, which is used as a :doc:`context
-manager <../control-flows/with>` within a ``with`` block, returns a mock object
+manager <../control-flow/with>` within a ``with`` block, returns a mock object
 that is cleaned up after the ``with`` block:
 
 #. In this case, the ``__version__`` attribute of ``items`` is replaced with
@@ -167,10 +167,10 @@ In :file:`src/items/cli.py` we have defined :func:`config` as follows:
         with items_db() as db:
             print(db.path())
 
-:func:`items_db` is a :doc:`context manager <../control-flows/with>` that
-returns an ``items.ItemsDB`` object. The returned object is then used as a ``db``
-to call :func:`db.path`. So we should mock two things here: ``items.ItemsDB``
-and one of its methods, :func:`path`. Let’s start with the class:
+:func:`items_db` is a :doc:`context manager <../control-flow/with>` that returns
+an ``items.ItemsDB`` object. The returned object is then used as a ``db`` to
+call :func:`db.path`. So we should mock two things here: ``items.ItemsDB`` and
+one of its methods, :func:`path`. Let’s start with the class:
 
 .. code-block:: python
 
