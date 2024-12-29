@@ -11,22 +11,18 @@ What is a module?
 
 A module is a file that contains code. It defines a group of Python functions or
 other objects, and the name of the module is derived from the name of the file.
-Modules usually contain Python source code, but can also be compiled C or C++
-object files. Compiled modules and Python source modules are used in the same
-way.
-
-Modules not only group related Python objects together, but also help to avoid
-naming conflicts. You can write a module called ``mymodule`` for your programme
-that defines a function called ``my_func``. In the same programme, you may also
-want to use another module called ``othermodule``, which also defines a
-function called ``my_func``, but does something different from your ``my_func``
-function. Without modules, it would be impossible to use two different functions
-with the same name. With modules, you can refer to the functions
-``mymodule.my_func`` and ``othermodule.my_func`` in your main programme. Using
-the module names ensures that the two ``my_func`` functions are not confused, as
-Python uses so-called namespaces. A namespace is essentially a dictionary of
-names for the functions, classes, modules, :abbr:`etc. (et cetera)` available
-there.
+Modules usually contain Python source code[#]_, group related Python objects
+together and help to avoid naming conflicts. You can write a module called
+``mymodule`` for your programme that defines a function called ``my_func``. In
+the same programme, you may also want to use another module called
+``othermodule``, which also defines a function called ``my_func``, but does
+something different from your ``my_func`` function. Without modules, it would be
+impossible to use two different functions with the same name. With modules, you
+can refer to the functions ``mymodule.my_func`` and ``othermodule.my_func`` in
+your main programme. Using the module names ensures that the two ``my_func``
+functions are not confused, as Python uses so-called namespaces. A namespace is
+essentially a dictionary of names for the functions, classes, modules,
+:abbr:`etc. (et cetera)` available there.
 
 Modules are also used to make Python itself more manageable. Most of Python’s
 standard functions are not integrated into the core of the language, but are
@@ -202,3 +198,9 @@ Checks
   from another script.
 
 * Make your module executable.
+
+----
+
+.. [#] Although modules usually contain Python source code, they can also be
+   compiled C or C++ object files. Compiled modules and Python source modules
+   are used in the same way.
