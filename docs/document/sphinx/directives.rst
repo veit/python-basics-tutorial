@@ -8,12 +8,6 @@ Sphinx makes extensive use of this. Here are some examples:
 Table of Contents
 -----------------
 
-.. toctree::
-   :maxdepth: 2
-
-   start
-   docstrings
-
 .. code-block:: rest
 
    .. toctree::
