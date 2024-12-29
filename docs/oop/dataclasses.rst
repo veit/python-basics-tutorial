@@ -7,10 +7,6 @@ Python offers a special :doc:`decorator <../functions/decorators>` if we want to
 create such a class.
 
 .. tip::
-   `cusy seminar: Advanced Python
-   <https://cusy.io/en/our-training-courses/advanced-python>`_
-
-.. tip::
    For table data I generally use :doc:`pandas Series or DataFrames
    <Python4DataScience:workspace/pandas/data-structures>` and if I need to store
    matrices with numbers I use :doc:`Numpy
@@ -60,3 +56,7 @@ We will add a method to the class that creates an Item object from a
    ... }
    >>> Item.from_dict(item_dict)
    Item(summary='My first item', owner='veit', state='todo', id=1)
+
+.. tip::
+   `cusy seminar: Advanced Python
+   <https://cusy.io/en/our-training-courses/advanced-python>`_
