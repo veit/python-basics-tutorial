@@ -1,52 +1,47 @@
 UI elements and interactions
 ============================
 
-.. rst:role:: guilabel
+Sphinx provides three different roles for the documentation of the user
+interface and its interactions: ``guilabel``, ``kbd`` and ``menuselection``:
 
-   Labels that are presented as part of an interactive user interface should be
-   marked with :rst:role:`guilabel`. Any label used in the interface should be
-   identified with this role, including labels for buttons, window titles,
-   field names, menu and menu selection names, and even values in selection
-   lists.
+.. list-table::
+   :header-rows: 1
 
-   A keyboard shortcut for GUI labelling can be inserted with an ampersand (&);
-   this will underline the following letter in the output.
+   * - Input
+     - Output
+     - Annotations
+   * - .. code-block:: rest
 
-   :guilabel:`&Cancel` is achieved, for example, with the following distinction:
+          :guilabel:`Cancel`
+     -  :guilabel:`Cancel`
+     - Any label used in the user interface can be labelled with this role,
+       including the labels of buttons, window titles, field, menu and menu
+       selection names and values in selection lists.
+   * - .. code-block:: rest
 
-   .. code-block:: rest
+          :guilabel:`&Cancel`
+     -  :guilabel:`&Cancel`
+     - Keyboard shortcuts for GUI labelling can be inserted with an et character
+       (``&``); this leads to underlining of the following letter in the output.
 
-      :guilabel:`&Cancel`
+       .. note::
+          If you want to insert an et character, you can simply double it.
+   * - .. code-block:: rest
 
-   .. note::
-      If you want to insert an ampersand, you can simply double it.
+          :kbd:`Ctrl-s`
+     -  :kbd:`Ctrl-s`
+     - This represents a sequence of keystrokes. The form of the key sequence
+       may depend on platform or application-specific conventions. The names of
+       modifier keys should be written out in full to improve accessibility.
+       Keyboard labelling should be referenced.
+   * - .. code-block:: rest
 
-.. rst:role:: kbd
+          :menuselection:`File --> Save`
+     - :menuselection:`File --> Save`
+     - A menu selection is labelled with the ``menuselection`` role. This marks
+       the complete sequence, including the selection of submenus, specific
+       operations or any sub-sequences. The names of the individual selections
+       are separated by ``-->``.
 
-   This represents a sequence of keystrokes. The form of the key sequence may
-   depend on platform- or application-specific conventions. If there are no
-   corresponding conventions, the names of modifier keys should be written out
-   to improve accessibility. Also, do not reference a specific keyboard label.
-
-   You can achieve :kbd:`Ctrl-s`, for example, with the following markup:
-
-   .. code-block:: rest
-
-      :kbd:`Ctrl-s`
-
-.. rst:role:: menuselection
-
-   A menu selection should be marked with the ``menuselection`` role. This is
-   used to mark a complete sequence, including submenu selections and selections
-   of specific operations or any subsequences. The names of the individual
-   selections should be separated by ``-->``.
-
-   :menuselection:`View --> Cell Toolba r--> Slideshow` is achieved, for
-   example, with the following markup:
-
-   .. code-block:: rest
-
-      :menuselection:`View --> Cell Toolbar --> Slideshow`
-
-   :rst:role:`menuselection`, just like  :rst:role:`guilabel`, also supports
-   keyboard shortcuts with an ampersand (&).
+       Like :rst:role:`guilabel`, :rst:role:`menuselection` supports keyboard
+       shortcuts with an et character (``&``).
