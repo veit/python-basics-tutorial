@@ -43,6 +43,7 @@ extensions = [
     "pygments_pytest",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
+    "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.plantuml",
     "sphinxcontrib.cairosvgconverter",
