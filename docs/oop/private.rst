@@ -47,7 +47,7 @@ it can access and output ``__y``:
     >>> m.print_y()
     2
 
-.. note::
+.. warning::
 
    The mechanism used to ensure privacy falsifies the name of private variables
    and private methods when the code is compiled into bytecode. Specifically,
