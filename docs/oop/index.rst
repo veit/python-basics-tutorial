@@ -54,4 +54,3 @@ be the beginning of a simple shapes module for a drawing program.
    types
    namespaces
    dataclasses
-   design/index
