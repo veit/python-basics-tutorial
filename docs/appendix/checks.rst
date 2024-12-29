@@ -625,8 +625,9 @@ Checks
 :doc:`/functions/variables`
 ---------------------------
 
-* Assuming ``x = 1``, what value does ``x`` have after the execution of
-  ``func()`` and ``gfunc()``?
+* Assuming ``x = 1``, :func:`func` sets the local variable ``x`` to ``2`` and
+  :func:`gfunc` sets the global variable ``x`` to ``3``, what value does ``x``
+  assume after :func:`func` and :func:`gfunc` have been run through?
 
   .. code-block:: pycon
 

@@ -1,43 +1,59 @@
 Variables
 =========
 
-Local, non-local and global variables
--------------------------------------
+Local variables
+---------------
 
 Here you return to the definition of ``fact`` from the beginning of this
 :doc:`index` chapter:
 
-.. code-block:: pycon
+.. code-block:: python
 
-    >>> def fact(n):
-    ...     """Return the factorial of the given number."""
-    ...     f = 1
-    ...     while n > 0:
-    ...         f = f * n
-    ...         n = n - 1
-    ...     return f
-    ...
+    def fact(n):
+        """Return the factorial of the given number."""
+        f = 1
+        while n > 0:
+            f = f * n
+            n = n - 1
+        return f
 
 Both the variables ``f`` and ``n`` are local to a particular call to the
 function ``fact``; changes made to them during the execution of the function
 have no effect on variables outside the function. All variables in the parameter
 list of a function and all variables created within a function by an assignment,
-such as ``f = 1``, are local to the function.
-
-You can explicitly make a variable a global variable by declaring it with the
-``global`` statement before it is used. Global variables can be accessed and
-changed by the function. They exist outside the function and can also be
-accessed and changed by other functions that declare them as global, or by code
-that is not inside a function. Here is an example that illustrates the
-difference between local and global variables:
+such as ``f = 1``, are local to the function:
 
 .. code-block:: pycon
 
-    >>> def my_func():
-    ...     global x
-    ...     x = 1
-    ...     y = 2
-    ...
+   >>> fact(3)
+   6
+   >>> f
+   Traceback (most recent call last):
+     File "<python-input-27>", line 1, in <module>
+       f
+   NameError: name 'f' is not defined
+   >>> n
+   Traceback (most recent call last):
+     File "<python-input-28>", line 1, in <module>
+       n
+   NameError: name 'n' is not defined
+
+Global variables
+----------------
+
+You can explicitly make a variable a global variable by declaring it with the
+:ref:`global <python3:global>` statement before it is used. Global variables can
+be accessed and changed by the function. They exist outside the function and can
+also be accessed and changed by other functions that declare them as global, or
+by code that is not inside a function. Here is an example that illustrates the
+difference between local and global variables:
+
+.. code-block:: python
+
+    def my_func():
+        global x
+        x = 1
+        y = 2
 
 .. code-block:: pycon
 
@@ -59,20 +75,36 @@ true for ``y``; the local variable ``y`` inside ``my_func`` initially refers to
 the same value as the variable ``y`` outside ``my_func``, but the assignment
 causes ``y`` to refer to a new value that is local to the ``my_func`` function.
 
+Non-local variables
+-------------------
+
+While :ref:`global <python3:global>` is used for a top-level variable,
+:ref:`nonlocal <python3:nonlocal>` refers to any variable in an enclosing area:
+
+.. code-block:: python
+
+   def enclosing():
+       x = "Enclosing function variable"
+
+       def enclosed():
+           nonlocal x
+           x = "Enclosed function variable"
+
+       enclosed()
+       print(x)
+
+.. code-block:: pycon
+
+   >>> enclosing()
+   Enclosed function variable
+
 .. seealso::
 
-    * :ref:`python3:global`
-
-While ``global`` is used for a top-level variable, ``nonlocal`` refers to any
-variable in an enclosing area.
-
-.. seealso::
-
-    * :ref:`python3:nonlocal`
     * :pep:`3104`
 
 Checks
 ------
 
-* Assuming ``x = 1``, what value does ``x`` have after the execution of
-  ``func()`` and ``gfunc()``?
+* Assuming ``x = 1``, :func:`func` sets the local variable ``x`` to ``2`` and
+  :func:`gfunc` sets the global variable ``x`` to ``3``, what value does ``x``
+  assume after :func:`func` and :func:`gfunc` have been run through?
