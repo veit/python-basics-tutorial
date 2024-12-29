@@ -1,6 +1,8 @@
 Variables
 =========
 
+.. _local_variables:
+
 Local variables
 ---------------
 
@@ -38,6 +40,8 @@ such as ``f = 1``, are local to the function:
        n
    NameError: name 'n' is not defined
 
+.. _global_variables:
+
 Global variables
 ----------------
 
@@ -74,6 +78,8 @@ retains the value ``1`` instead of the value ``3``. However, the same is not
 true for ``y``; the local variable ``y`` inside ``my_func`` initially refers to
 the same value as the variable ``y`` outside ``my_func``, but the assignment
 causes ``y`` to refer to a new value that is local to the ``my_func`` function.
+
+.. _nonlocal_variables:
 
 Non-local variables
 -------------------

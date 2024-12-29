@@ -63,6 +63,7 @@ class Circle(Form):
         return csum
 
     def namespaces(self):
+        print("Builtin namespace:", dir(__builtins__))
         print("Global namespace:", list(globals().keys()))
         print("Superclass namespace:", dir(Form))
         print("Class namespace:", dir(Circle))
