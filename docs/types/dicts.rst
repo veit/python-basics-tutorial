@@ -21,9 +21,9 @@ Values can be any type of object, including mutable types such as
    >>> dict["2022-02-03"] = -0.268295
 
 If you try to access the value of a key that is not contained in the dictionary,
-a ``KeyError`` exception is thrown. To avoid this error, the dictionary method
-``get`` optionally returns a user-defined value if a key is not contained in a
-dictionary.
+a ``KeyError`` :doc:`/control-flow/exceptions` is thrown. To avoid this error,
+the dictionary method ``get`` optionally returns a user-defined value if a key
+is not contained in a dictionary.
 
 .. code-block:: pycon
 

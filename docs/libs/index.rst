@@ -13,4 +13,3 @@ creation of a possibly empty initialisation file for each package or subpackage.
 
    batteries
    install
-   glossary

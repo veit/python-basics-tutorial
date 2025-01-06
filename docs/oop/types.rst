@@ -119,13 +119,13 @@ Duck typing
 The use of :class:`python3:type`, :func:`python3:isinstance` and
 :func:`python3:issubclass` makes it fairly easy to correctly determine the
 inheritance hierarchy of an object or class. However, Python also has a feature
-that makes using objects even easier: duck typing – *„If it walks like a duck
-and it quacks like a duck, then it must be a duck“*. This refers to Python’s way
-of determining whether an object is the required type for an operation, focusing
-on the interface of an object. In short, in Python you don’t have to worry about
-type-checking function or method arguments and the like, but instead rely on
-readable and documented code in conjunction with tests to ensure that an object
-„quacks like a duck when needed.“
+that makes using objects even easier: duck typing – *‘If it looks like a duck,
+swims like a duck, and quacks like a duck, then it probably is a duck.’*. This
+refers to Python’s way of determining whether an object is the required type for
+an operation, focusing on the interface of an object. In short, in Python you
+don’t have to worry about type-checking function or method arguments and the
+like, but instead rely on readable and documented code in conjunction with tests
+to ensure that an object ‘quacks like a duck when needed’.
 
 Duck typing can increase the flexibility of well-written code and, in
 combination with advanced object-oriented functions, gives you the ability to

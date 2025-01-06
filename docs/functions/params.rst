@@ -1,7 +1,8 @@
 Parameters
 ==========
 
-Python offers flexible mechanisms for passing arguments to functions:
+Python offers flexible mechanisms for passing :term:`arguments <argument>` to
+:term:`functions <function>`:
 
 .. code-block:: pycon
     :linenos:

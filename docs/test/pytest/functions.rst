@@ -154,6 +154,8 @@ If we now run the test with Python, we get the following result:
 That doesn’t tell us much. The pytest output gives us much more information
 about why our assumptions failed.
 
+.. _pytest_fail:
+
 Failing with ``pytest.fail()`` and exceptions
 ---------------------------------------------
 

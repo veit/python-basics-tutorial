@@ -268,7 +268,7 @@ list are to be sorted.
 
 However, the standard key method used by :meth:`python3:list.sort` requires that
 all elements in the list are of comparable type. In a list that contains both
-numbers and strings, an :class:`python3:Exception` is therefore thrown:
+numbers and strings, an :term:`Exception` is therefore thrown:
 
 .. code-block:: pycon
 

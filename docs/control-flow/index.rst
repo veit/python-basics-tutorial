@@ -1,8 +1,8 @@
 Control flow
 ============
 
-Python has a whole range of structures for controlling code execution and
-programme flow, including common branches and loops:
+Python has a whole range of :term:`control flows <Control flow>` to control code
+execution and programme flow, including common branches and loops:
 
 :doc:`boolean`
     check values and identity and allow links between the two.

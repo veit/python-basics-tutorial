@@ -1,10 +1,10 @@
 Exceptions
 ==========
 
-This section deals with exceptions, which are language functions that
-specifically handle unusual circumstances during the execution of a programme.
-The most common exception is error handling, but they can also be used
-effectively for many other purposes. Python provides a comprehensive set of
+This section deals with :term:`exceptions <exception>`, which are language
+functions that specifically handle unusual circumstances during the execution of
+a programme. The most common exception is error handling, but they can also be
+used effectively for many other purposes. Python provides a comprehensive set of
 exceptions, and you can define new exceptions for your own purposes.
 
 An exception is an object that is automatically created by Python functions with
@@ -90,14 +90,13 @@ Line 19
    The way Python handles error situations in general differs from some other
    languages, such as Java. These languages check possible errors as far as
    possible before they occur, as handling exceptions after they occur is
-   costly. This is sometimes referred to as the :abbr:`LBYL (Look before you
-   leap)` approach.
+   costly. This is sometimes referred to as the :term:`LBYL` approach.
 
    Python, on the other hand, relies more on exceptions to handle errors after
    they occur. Although this reliance may seem risky, when exceptions are used
    correctly, the code is less cumbersome and easier to read, and errors are
    only handled when they occur. This Pythonic approach to error handling is
-   often described as :abbr:`EAFP (easier to ask forgiveness than permission)`.
+   often described as :term:`EAFP`.
 
 Checks
 ------
@@ -117,5 +116,4 @@ Checks
   the variable ``x`` is greater or less than ``3``?
 
 * Is the check whether an object is a list (:ref:`Check: list <check-list>`)
-  programming in the style of :abbr:`LBYL (look before you leap)` or
-  :abbr:`EAFP (easier to ask forgiveness than permission)`?
+  programming in the style of :term:`LBYL` or :term:`EAFP`?

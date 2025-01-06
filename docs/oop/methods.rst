@@ -101,6 +101,8 @@ normal function call by applying the following rules:
    ``instance.method(arg1, arg2, …)`` becomes
    ``class.method(instance, arg1, arg2, …)``.
 
+.. _staticmethod:
+
 Static methods
 --------------
 
@@ -127,6 +129,8 @@ Line 14
     >>> c2.diameter = 3
     >>> circle.Circle.circumferences()
     12.56636
+
+.. _classmethod:
 
 Class methods
 -------------
