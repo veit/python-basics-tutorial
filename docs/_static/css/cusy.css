@@ -1,3 +1,12 @@
 .accelerator {
   text-decoration: underline;
 }
+
+.field-list dt,
+.option-list dt,
+dl.footnote dt,
+dl.glossary dt,
+dl.simple dt,
+dl:not([class]) dt {
+  font-weight: 700;
+}
