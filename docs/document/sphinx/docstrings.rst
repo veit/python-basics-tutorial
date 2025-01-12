@@ -21,7 +21,7 @@ file  ``docs/conf.py``:
 
 .. code-block:: python
 
-    extensions = ["sphinx.ext.autodoc", ...]
+   extensions = ["sphinx.ext.autodoc", ...]
 
 If your package and its documentation are part of the same repository, they will
 always have the same relative position in the filesystem. In this case you can
@@ -30,21 +30,21 @@ path to the package, so:
 
 .. code-block:: python
 
-    sys.path.insert(0, os.path.abspath(".."))
-    import requests
+   sys.path.insert(0, os.path.abspath(".."))
+   import requests
 
 If you have installed your Sphinx documentation in a virtual environment, you
 can also install your package there with:
 
 .. code-block:: console
 
-    $ python -m pip install my.package
+   $ python -m pip install my.package
 
 or, if you want to develop the package further with:
 
 .. code-block:: console
 
-    $ python -m pip install -e https://github.com/veit/my.package.git
+   $ python -m pip install -e https://github.com/veit/my.package.git
 
 Examples
 --------
@@ -73,42 +73,40 @@ The variant with types according to :pep:`484` has the advantage that type
 testers and IDEs can be used for static code analysis.
 
 Python 3 type annotations:
-
     .. code-block:: python
 
-        def func(arg1: int, arg2: str) -> bool:
-            """Summary line.
+       def func(arg1: int, arg2: str) -> bool:
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1: Description of arg1
-                arg2: Description of arg2
+           Args:
+               arg1: Description of arg1
+               arg2: Description of arg2
 
-            Returns:
-                Description of return value
+           Returns:
+               Description of return value
 
-            """
-            return True
+           """
+           return True
 
 Types in Docstrings:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1 (int): Description of arg1
-                arg2 (str): Description of arg2
+           Args:
+               arg1 (int): Description of arg1
+               arg2 (str): Description of arg2
 
-            Returns:
-                bool: Description of return value
+           Returns:
+               bool: Description of return value
 
-            """
-            return True
+           """
+           return True
 
 .. note::
    :pep:`484#suggested-syntax-for-python-2-7-and-straddling-code` are currently
@@ -140,47 +138,45 @@ The main differences are that Google uses indentations and NumPy uses
 underscores:
 
 Google:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1 (int): Description of arg1
-                arg2 (str): Description of arg2
+           Args:
+               arg1 (int): Description of arg1
+               arg2 (str): Description of arg2
 
-            Returns:
-                bool: Description of return value
+           Returns:
+               bool: Description of return value
 
-            """
-            return True
+           """
+           return True
 
 NumPy:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Parameters
-            ----------
-            arg1 : int
-                Description of arg1
-            arg2 : str
-                Description of arg2
+           Parameters
+           ----------
+           arg1 : int
+               Description of arg1
+           arg2 : str
+               Description of arg2
 
-            Returns
-            -------
-            bool
-                Description of return value
+           Returns
+           -------
+           bool
+               Description of return value
 
-            """
-            return True
+           """
+           return True
 
 You can find the detailed configuration options in
 `sphinxcontrib.napoleon.Config

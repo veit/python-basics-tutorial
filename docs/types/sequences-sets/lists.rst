@@ -33,11 +33,11 @@ element, and so on. Here are a few examples:
 .. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
-    >>> x[0]
-    '1'
-    >>> x[1]
-    '2.'
+   >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
+   >>> x[0]
+   '1'
+   >>> x[1]
+   '2.'
 
 A list can be indexed from the front or the back. You can also refer to a
 sub-segment of a list by using the slice notation:
@@ -45,20 +45,20 @@ sub-segment of a list by using the slice notation:
 .. code-block:: pycon
    :lineno-start: 6
 
-    >>> x[-1]
-    (5.1, 5.2)
-    >>> x[-2]
-    ['4a', '4b']
-    >>> x[1:-1]
-    ['2.', 3.0, ['4a', '4b']]
-    >>> x[0:3]
-    [1, '2.', 3.0]
-    >>> x[:3]
-    [1, '2.', 3.0]
-    >>> x[-4:-1]
-    ['2.', 3.0, ['4a', '4b']]
-    >>> x[-4:]
-    ['2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
+   >>> x[-1]
+   (5.1, 5.2)
+   >>> x[-2]
+   ['4a', '4b']
+   >>> x[1:-1]
+   ['2.', 3.0, ['4a', '4b']]
+   >>> x[0:3]
+   [1, '2.', 3.0]
+   >>> x[:3]
+   [1, '2.', 3.0]
+   >>> x[-4:-1]
+   ['2.', 3.0, ['4a', '4b']]
+   >>> x[-4:]
+   ['2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
 
 Lines 2 and 4
     Index from the beginning using positive indices starting with ``0`` as the

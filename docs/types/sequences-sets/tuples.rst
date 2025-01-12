@@ -81,15 +81,15 @@ more elements contains one or more commas:
 
 .. code-block:: pycon
 
-    >>> y = ()
-    >>> type(y)
-    <class 'tuple'>
-    >>> z = (1 + 3.0)
-    >>> type(z)
-    <class 'float'>
-    >>> z = (1 + 3.0,)
-    >>> type(z)
-    <class 'tuple'>
+   >>> y = ()
+   >>> type(y)
+   <class 'tuple'>
+   >>> z = (1 + 3.0)
+   >>> type(z)
+   <class 'float'>
+   >>> z = (1 + 3.0,)
+   >>> type(z)
+   <class 'tuple'>
 
 .. blacken-docs:on
 
@@ -146,18 +146,18 @@ A list can be converted into a tuple using the built-in ``tuple`` function:
 
 .. code-block:: pycon
 
-    >>> x = [1, 2, 3, 5]
-    >>> tuple(x)
-    (1, 2, 3, 5)
+   >>> x = [1, 2, 3, 5]
+   >>> tuple(x)
+   (1, 2, 3, 5)
 
 Conversely, a tuple can be converted into a list using the built-in ``list``
 function:
 
 .. code-block:: pycon
 
-    >>> x = (1, 2, 3, 4)
-    >>> list(x)
-    [1, 2, 3, 4]
+   >>> x = (1, 2, 3, 4)
+   >>> list(x)
+   [1, 2, 3, 4]
 
 The advantages of tuples over :doc:`lists <lists>` are:
 

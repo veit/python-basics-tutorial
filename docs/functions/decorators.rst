@@ -10,21 +10,21 @@ new combination can then be used instead of the original function:
 .. code-block:: pycon
    :linenos:
 
-    >>> def inf(func):
-    ...     print("Information about", func.__name__)
-    ...     def details(*args):
-    ...         print("Execute function", func.__name__, "with the argument(s)")
-    ...         return func(*args)
-    ...     return details
-    ...
-    >>> def my_func(*params):
-    ...     print(params)
-    ...
-    >>> my_func = inf(my_func)
-    Information about my_func
-    >>> my_func("Hello", "Pythonistas!")
-    Execute function my_func with the argument(s)
-    ('Hello', 'Pythonistas!')
+   >>> def inf(func):
+   ...     print("Information about", func.__name__)
+   ...     def details(*args):
+   ...         print("Execute function", func.__name__, "with the argument(s)")
+   ...         return func(*args)
+   ...     return details
+   ...
+   >>> def my_func(*params):
+   ...     print(params)
+   ...
+   >>> my_func = inf(my_func)
+   Information about my_func
+   >>> my_func("Hello", "Pythonistas!")
+   Execute function my_func with the argument(s)
+   ('Hello', 'Pythonistas!')
 
 Line 2
     The ``inf`` function outputs the name of the function it wraps.
@@ -47,14 +47,14 @@ function, as follows:
 .. code-block:: pycon
    :linenos:
 
-    >>> @inf
-    ... def my_func(*params):
-    ...     print(params)
-    ...
-    Information about my_func
-    >>> my_func("Hello", "Pythonistas!")
-    Execute function my_func with the argument(s)
-    ('Hello', 'Pythonistas!')
+   >>> @inf
+   ... def my_func(*params):
+   ...     print(params)
+   ...
+   Information about my_func
+   >>> my_func("Hello", "Pythonistas!")
+   Execute function my_func with the argument(s)
+   ('Hello', 'Pythonistas!')
 
 Line 1
     The function ``my_func`` is decorated with ``@inf``.
@@ -76,17 +76,17 @@ as decorators, such as:
     function is then also smaller and faster. Example:
 
     .. code-block:: pycon
-        :linenos:
+       :linenos:
 
-        >>> from functools import cache
-        >>> @cache
-        ... def factorial(n):
-        ...     return n * factorial(n - 1) if n else 1
-        ...
-        >>> factorial(8)
-        40320
-        >>> factorial(10)
-        3628800
+       >>> from functools import cache
+       >>> @cache
+       ... def factorial(n):
+       ...     return n * factorial(n - 1) if n else 1
+       ...
+       >>> factorial(8)
+       40320
+       >>> factorial(10)
+       3628800
 
     Line 6
         Since there is no previously stored result, nine recursive calls are
@@ -100,34 +100,34 @@ as decorators, such as:
 
     .. code-block:: pycon
 
-        >>> from functools import wraps
-        >>> def my_decorator(f):
-        ...     @wraps(f)
-        ...     def wrapper(*args, **kwargs):
-        ...         """Wrapper docstring"""
-        ...         print("Call decorated function")
-        ...         return f(*args, **kwargs)
-        ...     return wrapper
-        ...
-        >>> @my_decorator
-        ... def example():
-        ...     """Example docstring"""
-        ...     print("Call example function")
-        ...
-        >>> example.__name__
-        'example'
-        >>> example.__doc__
-        'Example docstring'
+       >>> from functools import wraps
+       >>> def my_decorator(f):
+       ...     @wraps(f)
+       ...     def wrapper(*args, **kwargs):
+       ...         """Wrapper docstring"""
+       ...         print("Call decorated function")
+       ...         return f(*args, **kwargs)
+       ...     return wrapper
+       ...
+       >>> @my_decorator
+       ... def example():
+       ...     """Example docstring"""
+       ...     print("Call example function")
+       ...
+       >>> example.__name__
+       'example'
+       >>> example.__doc__
+       'Example docstring'
 
     Without ``@wraps`` decorator, the name and docstring of the wrapper method
     would have been returned instead:
 
     .. code-block:: pycon
 
-        >>> example.__name__
-        'wrapper'
-        >>> example.__doc__
-        'Wrapper docstring'
+       >>> example.__name__
+       'wrapper'
+       >>> example.__doc__
+       'Wrapper docstring'
 
 .. tip::
    `cusy seminar: Advanced Python

@@ -46,7 +46,7 @@ interfaces)`. We can also create them with ``uv init --package``:
     Alternatively, you can also build a :ref:`virtual environment <venv>` and
     then call :func:`main` from Python:
 
-    .. code-block:: console
+    .. code-block:: pycon
 
        $  uv add --dev .
        Resolved 1 package in 1ms

@@ -447,11 +447,11 @@ a file-level marker:
 .. code-block:: python
    :emphasize-lines: 5
 
-    import pytest
+   import pytest
 
-    from items import Item
+   from items import Item
 
-    pytestmark = pytest.mark.finish
+   pytestmark = pytest.mark.finish
 
 If pytest sees a ``pytestmark`` attribute in a test module, it will apply the
 marker(s) to all tests in that module. If you want to apply more than one marker
@@ -464,27 +464,27 @@ and use markers at class level:
 .. code-block:: python
    :emphasize-lines: 1
 
-    @pytest.mark.smoke
-    class TestFinish:
-        def test_finish_from_todo(self, items_db):
-            i = items_db.add_item(Item("Update pytest section", state="todo"))
-            items_db.finish(i)
-            s = items_db.get_item(i)
-            assert s.state == "done"
+   @pytest.mark.smoke
+   class TestFinish:
+       def test_finish_from_todo(self, items_db):
+           i = items_db.add_item(Item("Update pytest section", state="todo"))
+           items_db.finish(i)
+           s = items_db.get_item(i)
+           assert s.state == "done"
 
-        def test_finish_from_in_prog(self, items_db):
-            i = items_db.add_item(
-                Item("Update pytest section", state="in progress")
-            )
-            items_db.finish(i)
-            s = items_db.get_item(i)
-            assert s.state == "done"
+       def test_finish_from_in_prog(self, items_db):
+           i = items_db.add_item(
+               Item("Update pytest section", state="in progress")
+           )
+           items_db.finish(i)
+           s = items_db.get_item(i)
+           assert s.state == "done"
 
-        def test_finish_from_done(self, items_db):
-            i = items_db.add_item(Item("Update pytest section", state="done"))
-            items_db.finish(i)
-            s = items_db.get_item(i)
-            assert s.state == "done"
+       def test_finish_from_done(self, items_db):
+           i = items_db.add_item(Item("Update pytest section", state="done"))
+           items_db.finish(i)
+           s = items_db.get_item(i)
+           assert s.state == "done"
 
 The test class :class:`TestFinish` is labelled with ``@pytest.mark.smoke``. If
 you mark a test class in this way, every test method in the class will be
@@ -495,19 +495,19 @@ We can also mark only certain test cases of a parameterised test:
 .. code-block:: python
    :emphasize-lines: 5
 
-    @pytest.mark.parametrize(
-        "states",
-        [
-            "todo",
-            pytest.param("in progress", marks=pytest.mark.smoke),
-            "done",
-        ],
-    )
-    def test_finish(items_db, start_state):
-        i = items_db.add_item(Item("Update pytest section", state=states))
-        items_db.finish(i)
-        s = items_db.get_item(i)
-        assert s.state == "done"
+   @pytest.mark.parametrize(
+       "states",
+       [
+           "todo",
+           pytest.param("in progress", marks=pytest.mark.smoke),
+           "done",
+       ],
+   )
+   def test_finish(items_db, start_state):
+       i = items_db.add_item(Item("Update pytest section", state=states))
+       items_db.finish(i)
+       s = items_db.get_item(i)
+       assert s.state == "done"
 
 The :func:`test_finish` function is not directly marked, but only one of its
 parameters: :samp:`pytest.param("in progress", marks=pytest.mark.smoke)`. You
@@ -522,24 +522,24 @@ also mark fixtures in the same way:
 .. code-block:: python
    :emphasize-lines: 8-9, 12
 
-    @pytest.fixture(
-        params=[
-            "todo",
-            pytest.param("in progress", marks=pytest.mark.smoke),
-            "done",
-        ]
-    )
-    def start_state_fixture(request):
-        return request.param
+   @pytest.fixture(
+       params=[
+           "todo",
+           pytest.param("in progress", marks=pytest.mark.smoke),
+           "done",
+       ]
+   )
+   def start_state_fixture(request):
+       return request.param
 
 
-    def test_finish(items_db, start_state_fixture):
-        i = items_db.add_item(
-            Item("Update pytest section", state=start_state_fixture)
-        )
-        items_db.finish(i)
-        s = items_db.get_item(i)
-        assert s.state == "done"
+   def test_finish(items_db, start_state_fixture):
+       i = items_db.add_item(
+           Item("Update pytest section", state=start_state_fixture)
+       )
+       items_db.finish(i)
+       s = items_db.get_item(i)
+       assert s.state == "done"
 
 If you want to add more than one marker to a function, you can simply stack
 them. For example, :func:`test_finish_non_existent` is marked with both
@@ -548,32 +548,32 @@ them. For example, :func:`test_finish_non_existent` is marked with both
 .. code-block:: python
    :emphasize-lines: 4-5
 
-    from items import InvalidItemId, Item
+   from items import InvalidItemId, Item
 
 
-    @pytest.mark.smoke
-    @pytest.mark.exception
-    def test_finish_non_existent(items_db):
-        i = 44  # any_number will be invalid, db is empty
-        with pytest.raises(InvalidItemId):
-            items_db.finish(i)
+   @pytest.mark.smoke
+   @pytest.mark.exception
+   def test_finish_non_existent(items_db):
+       i = 44  # any_number will be invalid, db is empty
+       with pytest.raises(InvalidItemId):
+           items_db.finish(i)
 
 We have added a number of markers to :file:`test_finish.py` in various ways. We
 use the markers to select the tests to be executed instead of a test file:
 
 .. code-block:: pytest
 
-    $ cd tests
-    $ tests % pytest -v -m exception
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 34 deselected / 2 selected
+   $ cd tests
+   $ tests % pytest -v -m exception
+   ============================= test session starts ==============================
+   ...
+   configfile: pytest.ini
+   collected 36 items / 34 deselected / 2 selected
 
-    test_finish.py::test_finish_non_existent PASSED                          [ 50%]
-    test_start.py::test_start_non_existent PASSED                            [100%]
+   test_finish.py::test_finish_non_existent PASSED                          [ 50%]
+   test_start.py::test_start_non_existent PASSED                            [100%]
 
-    ======================= 2 passed, 34 deselected in 0.07s =======================
+   ======================= 2 passed, 34 deselected in 0.07s =======================
 
 Markers together with ``and``, ``or``, ``not`` and ``()``
 ---------------------------------------------------------
@@ -584,48 +584,48 @@ we can only select the ``finish`` tests that deal with ``exception``:
 
 .. code-block:: pytest
 
-    pytest -v -m "finish and exception"
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 35 deselected / 1 selected
+   $ pytest -v -m "finish and exception"
+   ============================= test session starts ==============================
+   ...
+   configfile: pytest.ini
+   collected 36 items / 35 deselected / 1 selected
 
-    test_finish.py::test_finish_non_existent PASSED                          [100%]
+   test_finish.py::test_finish_non_existent PASSED                          [100%]
 
-    ======================= 1 passed, 35 deselected in 0.08s =======================
+   ======================= 1 passed, 35 deselected in 0.08s =======================
 
 We can also use all logical operations together:
 
 .. code-block:: pytest
 
-     $ pytest -v -m "(exception or smoke) and (not finish)"
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 34 deselected / 2 selected
+   $ pytest -v -m "(exception or smoke) and (not finish)"
+   ============================= test session starts ==============================
+   ...
+   configfile: pytest.ini
+   collected 36 items / 34 deselected / 2 selected
 
-    test_start.py::test_start PASSED                                         [ 50%]
-    test_start.py::test_start_non_existent PASSED                            [100%]
+   test_start.py::test_start PASSED                                         [ 50%]
+   test_start.py::test_start_non_existent PASSED                            [100%]
 
-    ======================= 2 passed, 34 deselected in 0.08s =======================
+   ======================= 2 passed, 34 deselected in 0.08s =======================
 
 Finally, we can also combine markers and keywords for the selection, for
 example, to perform smoke tests that are not part of the :class:`TestFinish`
 class:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v -m smoke -k "not TestFinish"
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 33 deselected / 3 selected
+   $ pytest -v -m smoke -k "not TestFinish"
+   ============================= test session starts ==============================
+   ...
+   configfile: pytest.ini
+   collected 36 items / 33 deselected / 3 selected
 
-    test_finish.py::test_finish[in progress] PASSED                          [ 33%]
-    test_finish.py::test_finish_non_existent PASSED                          [ 66%]
-    test_start.py::test_start PASSED                                         [100%]
+   test_finish.py::test_finish[in progress] PASSED                          [ 33%]
+   test_finish.py::test_finish_non_existent PASSED                          [ 66%]
+   test_start.py::test_start PASSED                                         [100%]
 
-    ======================= 3 passed, 33 deselected in 0.07s =======================
+   ======================= 3 passed, 33 deselected in 0.07s =======================
 
 When using markers and keywords, note that the names of the markers must be
 complete with the :samp:`-m {MARKERNAME}` option, while keywords are more of a
@@ -670,34 +670,34 @@ cleans up the database for each test that wants to use it:
 
 .. code-block:: python
 
-    @pytest.fixture(scope="function")
-    def items_db(session_items_db):
-        db = session_items_db
-        db.delete_all()
-        return db
+   @pytest.fixture(scope="function")
+   def items_db(session_items_db):
+       db = session_items_db
+       db.delete_all()
+       return db
 
 For example, if we want to have four items in the database when our test starts,
 we can simply write a different but similar fixture:
 
 .. code-block:: python
 
-    @pytest.fixture(scope="session")
-    def items_list():
-        """List of different Item objects"""
-        return [
-            items.Item("Add Python 3.12 static type improvements", "veit", "todo"),
-            items.Item("Add tips for efficient testing", "veit", "wip"),
-            items.Item("Update cibuildwheel section", "veit", "done"),
-            items.Item("Add backend examples", "veit", "done"),
-        ]
+   @pytest.fixture(scope="session")
+   def items_list():
+       """List of different Item objects"""
+       return [
+           items.Item("Add Python 3.12 static type improvements", "veit", "todo"),
+           items.Item("Add tips for efficient testing", "veit", "wip"),
+           items.Item("Update cibuildwheel section", "veit", "done"),
+           items.Item("Add backend examples", "veit", "done"),
+       ]
 
 
-    @pytest.fixture(scope="function")
-    def populated_db(items_db, items_list):
-        """ItemsDB object populated with 'items_list'"""
-        for i in items_list:
-            items_db.add_item(i)
-        return items_db
+   @pytest.fixture(scope="function")
+   def populated_db(items_db, items_list):
+       """ItemsDB object populated with 'items_list'"""
+       for i in items_list:
+           items_db.add_item(i)
+       return items_db
 
 We could then use the original fixture for tests, which provides an empty
 database, and the new fixture for tests, which contains a database with four
@@ -705,12 +705,12 @@ items:
 
 .. code-block:: python
 
-    def test_zero_item(items_db):
-        assert items_db.count() == 0
+   def test_zero_item(items_db):
+       assert items_db.count() == 0
 
 
-    def test_four_items(populated_db):
-        assert populated_db.count() == 4
+   def test_four_items(populated_db):
+       assert populated_db.count() == 4
 
 We now have the option of testing either zero or four items in the database. But
 what if we want to have no, four or 13 items? Then we don’t want to write a new
@@ -722,19 +722,19 @@ have. This requires three steps:
 
    .. code-block:: python
 
-       @pytest.mark.num_items
-       def test_zero_item(items_db):
-           assert items_db.count() == 0
+      @pytest.mark.num_items
+      def test_zero_item(items_db):
+          assert items_db.count() == 0
 
 
-       @pytest.mark.num_items(4)
-       def test_four_items(items_db):
-           assert items_db.count() == 4
+      @pytest.mark.num_items(4)
+      def test_four_items(items_db):
+          assert items_db.count() == 4
 
 
-       @pytest.mark.num_items(13)
-       def test_thirteen_items(items_db):
-           assert items_db.count() == 13
+      @pytest.mark.num_items(13)
+      def test_thirteen_items(items_db):
+          assert items_db.count() == 13
 
 #. We must then declare this marker in the :file:`pytest.ini` file:
 
@@ -820,18 +820,18 @@ Let’s run the tests now to make sure everything is working properly:
 
 .. code-block:: pytest
 
-    $ pytest -v -s test_items.py
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    plugins: Faker-19.10.0
-    collected 3 items
+   $ pytest -v -s test_items.py
+   ============================= test session starts ==============================
+   ...
+   configfile: pytest.ini
+   plugins: Faker-19.10.0
+   collected 3 items
 
-    test_items.py::test_zero_item PASSED
-    test_items.py::test_four_items PASSED
-    test_items.py::test_thirteen_items PASSED
+   test_items.py::test_zero_item PASSED
+   test_items.py::test_four_items PASSED
+   test_items.py::test_thirteen_items PASSED
 
-    ============================== 3 passed in 0.09s ===============================
+   ============================== 3 passed in 0.09s ===============================
 
 .. note::
    You can add a ``print`` statement to :func:`test_four_items` to get an
@@ -879,7 +879,7 @@ and ``num_items`` and there are also a few more built-in markers. And when we
 start using :doc:`plugins`, more markers may be added. To list all available
 markers with descriptions and parameters, you can run ``pytest --markers``:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest --markers
    @pytest.mark.exception: Only run expected exceptions

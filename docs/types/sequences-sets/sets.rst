@@ -14,29 +14,29 @@ information of the object. The ``in`` operator runs faster with sets than with
 .. code-block:: pycon
    :linenos:
 
-    >>> x = set([1, 2, 3, 2, 4])
-    >>> x
-    {1, 2, 3, 4}
-    >>> 1 in x
-    True
-    >>> 5 in x
-    False
-    >>> x.add(0)
-    >>> x
-    {0, 1, 2, 3, 4}
-    >>> x.remove(4)
-    >>> x
-    {0, 1, 2, 3}
-    >>> y = set([3, 4, 5])
-    >>> x | y
-    {0, 1, 2, 3, 4, 5}
-    >>> x & y
-    {3}
-    >>> x ^ y
-    {0, 1, 2, 4, 5}
-    >>> x.update(y)
-    >>> x
-    {0, 1, 2, 3, 4, 5}
+   >>> x = set([1, 2, 3, 2, 4])
+   >>> x
+   {1, 2, 3, 4}
+   >>> 1 in x
+   True
+   >>> 5 in x
+   False
+   >>> x.add(0)
+   >>> x
+   {0, 1, 2, 3, 4}
+   >>> x.remove(4)
+   >>> x
+   {0, 1, 2, 3}
+   >>> y = set([3, 4, 5])
+   >>> x | y
+   {0, 1, 2, 3, 4, 5}
+   >>> x & y
+   {3}
+   >>> x ^ y
+   {0, 1, 2, 4, 5}
+   >>> x.update(y)
+   >>> x
+   {0, 1, 2, 3, 4, 5}
 
 Line 1
     You can create a set by applying ``set`` to a sequence, for example to a

@@ -11,7 +11,7 @@ What is a module?
 
 A module is a file that contains code. It defines a group of Python functions or
 other objects, and the name of the module is derived from the name of the file.
-Modules usually contain Python source code[#]_, group related Python objects
+Modules usually contain Python source code [#]_, group related Python objects
 together and help to avoid naming conflicts. You can write a module called
 ``mymodule`` for your programme that defines a function called ``my_func``. In
 the same programme, you may also want to use another module called
@@ -127,7 +127,7 @@ for example
 
 .. code-block:: console
 
-    $ python3 wc.py README.rst
+   $ python3 wc.py README.rst
 
 you can easily do this with the following modification of our script:
 

@@ -173,18 +173,18 @@ These directly match the first argument of ``@pytest.mark.parametrize()``.
 pytest performs this test once for each ``(start_summary, start_state)`` pair
 and reports each as a separate test:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[Update pytest section-done] PASSED    [ 33%]
-    tests/test_finish.py::test_finish[Update cibuildwheel section-in progress] PASSED [ 66%]
-    tests/test_finish.py::test_finish[Update mock tests-todo] PASSED        [100%]
+   tests/test_finish.py::test_finish[Update pytest section-done] PASSED    [ 33%]
+   tests/test_finish.py::test_finish[Update cibuildwheel section-in progress] PASSED [ 66%]
+   tests/test_finish.py::test_finish[Update mock tests-todo] PASSED        [100%]
 
-    ============================== 3 passed in 0.00s ===============================
+   ============================== 3 passed in 0.00s ===============================
 
 This use of ``parametrize()`` works for our purposes. However, it is not really
 important for this ``test start_summary`` and makes every test case more
@@ -193,40 +193,40 @@ syntax changes:
 
 .. code-block:: python
 
-    import pytest
+   import pytest
 
-    from items import Item
+   from items import Item
 
 
-    @pytest.mark.parametrize(
-        "start_state",
-        [
-            "done",
-            "in progress",
-            "todo",
-        ],
-    )
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   @pytest.mark.parametrize(
+       "start_state",
+       [
+           "done",
+           "in progress",
+           "todo",
+       ],
+   )
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 When we run the tests now, they focus on the change that is important to us:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[done] PASSED                           [ 33%]
-    tests/test_finish.py::test_finish[in progress] PASSED                    [ 66%]
-    tests/test_finish.py::test_finish[todo] PASSED                           [100%]
+   tests/test_finish.py::test_finish[done] PASSED                           [ 33%]
+   tests/test_finish.py::test_finish[in progress] PASSED                    [ 66%]
+   tests/test_finish.py::test_finish[todo] PASSED                           [100%]
 
-    ============================== 3 passed in 0.01s ===============================
+   ============================== 3 passed in 0.01s ===============================
 
 The output of the two examples differs in that now only the initial state is
 listed, namely *todo*, *in progress* and *done*. In the previous example, pytest
@@ -244,22 +244,22 @@ is called once for each fixture value. The syntax is also different:
 
 .. code-block:: python
 
-    import pytest
+   import pytest
 
-    from items import Item
-
-
-    @pytest.fixture(params=["done", "in progress", "todo"])
-    def start_state(request):
-        return request.param
+   from items import Item
 
 
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   @pytest.fixture(params=["done", "in progress", "todo"])
+   def start_state(request):
+       return request.param
+
+
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 This means that pytest calls ``start_state()`` three times, once for each of the
 values in ``params``. Each value of ``params`` is stored in ``request.param`` so
@@ -273,18 +273,18 @@ has ``start_state`` as a parameter, pytest calls it once for each value that is
 passed to the ``start_state()`` fixture. And after all this, the output looks
 exactly the same as before:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[done] PASSED                          [ 33%]
-    tests/test_finish.py::test_finish[in progress] PASSED                   [ 66%]
-    tests/test_finish.py::test_finish[todo] PASSED                          [100%]
+   tests/test_finish.py::test_finish[done] PASSED                          [ 33%]
+   tests/test_finish.py::test_finish[in progress] PASSED                   [ 66%]
+   tests/test_finish.py::test_finish[todo] PASSED                          [100%]
 
-    ============================== 3 passed in 0.01s ===============================
+   ============================== 3 passed in 0.01s ===============================
 
 At first glance, fixture parameterisation fulfils roughly the same purpose as
 function parameterisation, but with a little more code. However, fixture
@@ -310,20 +310,20 @@ looks like this:
 
 .. code-block:: python
 
-    from items import Item
+   from items import Item
 
 
-    def pytest_generate_tests(metafunc):
-        if "start_state" in metafunc.fixturenames:
-            metafunc.parametrize("start_state", ["done", "in progress", "todo"])
+   def pytest_generate_tests(metafunc):
+       if "start_state" in metafunc.fixturenames:
+           metafunc.parametrize("start_state", ["done", "in progress", "todo"])
 
 
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 The ``test_finish()`` function has not changed; we have only changed the way
 pytest enters the value for ``initial_state`` for each test call.

@@ -31,7 +31,7 @@ version.
    As of Sphinx≥1.8, curly braces can be displayed with a backslash (``\``).
 
 .. note::
-    .. rst:role:: content
+   .. rst:role:: content
 
    This role has no special meaning by default. You can therefore use it for
    anything, for example also for variable names.

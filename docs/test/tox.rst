@@ -45,22 +45,22 @@ so that the structure looks like this:
 .. code-block:: console
    :emphasize-lines: 16
 
-    items
-     ├── …
-     ├── pyproject.toml
-     ├── src
-     │   └── items
-     │       └── …
-     ├── tests
-     │   ├── api
-     │   │   ├── __init__.py
-     │   │   ├── conftest.py
-     │   │   └── test_….py
-     │   └── cli
-     │       ├── __init__.py
-     │       ├── conftest.py
-     │       └── test_….py
-     └── tox.ini
+   items
+    ├── …
+    ├── pyproject.toml
+    ├── src
+    │   └── items
+    │       └── …
+    ├── tests
+    │   ├── api
+    │   │   ├── __init__.py
+    │   │   ├── conftest.py
+    │   │   └── test_….py
+    │   └── cli
+    │       ├── __init__.py
+    │       ├── conftest.py
+    │       └── test_….py
+    └── tox.ini
 
 This is a typical layout for many projects. Let’s take a look at a simple
 :file:`tox.ini` file in the Items project:
@@ -116,44 +116,44 @@ Before you can run tox, you must ensure that you have installed it:
 
 To run tox, simply start tox:
 
-.. code-block:: console
+.. code-block:: pytest
 
-    $ python -m tox
-    py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
-    py313: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
-    cachedir: .tox/py313/.pytest_cache
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
-    collected 49 items
+   $ python -m tox
+   py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
+   py313: commands[0]> coverage run -m pytest
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
+   cachedir: .tox/py313/.pytest_cache
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
+   collected 49 items
 
-    tests/api/test_add.py ....                                               [  8%]
-    tests/api/test_config.py .                                               [ 10%]
-    tests/api/test_count.py ...                                              [ 16%]
-    tests/api/test_delete.py ...                                             [ 22%]
-    tests/api/test_finish.py ....                                            [ 30%]
-    tests/api/test_list.py .........                                         [ 48%]
-    tests/api/test_start.py ....                                             [ 57%]
-    tests/api/test_update.py ....                                            [ 65%]
-    tests/api/test_version.py .                                              [ 67%]
-    tests/cli/test_add.py ..                                                 [ 71%]
-    tests/cli/test_config.py ..                                              [ 75%]
-    tests/cli/test_count.py .                                                [ 77%]
-    tests/cli/test_delete.py .                                               [ 79%]
-    tests/cli/test_errors.py ....                                            [ 87%]
-    tests/cli/test_finish.py .                                               [ 89%]
-    tests/cli/test_list.py ..                                                [ 93%]
-    tests/cli/test_start.py .                                                [ 95%]
-    tests/cli/test_update.py .                                               [ 97%]
-    tests/cli/test_version.py .                                              [100%]
+   tests/api/test_add.py ....                                               [  8%]
+   tests/api/test_config.py .                                               [ 10%]
+   tests/api/test_count.py ...                                              [ 16%]
+   tests/api/test_delete.py ...                                             [ 22%]
+   tests/api/test_finish.py ....                                            [ 30%]
+   tests/api/test_list.py .........                                         [ 48%]
+   tests/api/test_start.py ....                                             [ 57%]
+   tests/api/test_update.py ....                                            [ 65%]
+   tests/api/test_version.py .                                              [ 67%]
+   tests/cli/test_add.py ..                                                 [ 71%]
+   tests/cli/test_config.py ..                                              [ 75%]
+   tests/cli/test_count.py .                                                [ 77%]
+   tests/cli/test_delete.py .                                               [ 79%]
+   tests/cli/test_errors.py ....                                            [ 87%]
+   tests/cli/test_finish.py .                                               [ 89%]
+   tests/cli/test_list.py ..                                                [ 93%]
+   tests/cli/test_start.py .                                                [ 95%]
+   tests/cli/test_update.py .                                               [ 97%]
+   tests/cli/test_version.py .                                              [100%]
 
-    ============================== 49 passed in 0.16s ==============================
-    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-    py313: OK ✔ in 1.48 seconds
-      congratulations :) (1.48 seconds)
+   ============================== 49 passed in 0.16s ==============================
+   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   py313: OK ✔ in 1.48 seconds
+     congratulations :) (1.48 seconds)
 
 Testing multiple Python versions
 --------------------------------
@@ -179,41 +179,41 @@ although I will only highlight the differences in the following illustration:
 .. code-block:: pytest
    :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
 
-    $ python -m tox
-    ...
-    py39: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/17/items-0.1.0.tar.gz
-    py39: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    ...
-    ============================== 49 passed in 0.16s ==============================
-    py39: OK ✔ in 2.17 seconds
-    py310: skipped because could not find python interpreter with spec(s): py310
-    py310: SKIP ⚠ in 0.01 seconds
-    py311: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/18/items-0.1.0.tar.gz
-    py311: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    ...
-    ============================== 49 passed in 0.15s ==============================
-    py311: OK ✔ in 1.41 seconds
-    py312: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/19/items-0.1.0.tar.gz
-    py312: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    ...
-    ============================== 49 passed in 0.15s ==============================
-    py312: OK ✔ in 1.43 seconds
-    py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
-    py313: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    ...
-    ============================== 49 passed in 0.16s ==============================
-    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-    py313: OK ✔ in 1.48 seconds
-      py39: OK (2.17=setup[1.54]+cmd[0.63] seconds)
-      py310: SKIP (0.01 seconds)
-      py311: OK (1.41=setup[0.81]+cmd[0.60] seconds)
-      py312: OK (1.43=setup[0.82]+cmd[0.61] seconds)
-      py313: OK (1.48=setup[0.82]+cmd[0.66] seconds)
-      congratulations :) (10.46 seconds)
+   $ python -m tox
+   ...
+   py39: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/17/items-0.1.0.tar.gz
+   py39: commands[0]> coverage run -m pytest
+   ============================= test session starts ==============================
+   ...
+   ============================== 49 passed in 0.16s ==============================
+   py39: OK ✔ in 2.17 seconds
+   py310: skipped because could not find python interpreter with spec(s): py310
+   py310: SKIP ⚠ in 0.01 seconds
+   py311: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/18/items-0.1.0.tar.gz
+   py311: commands[0]> coverage run -m pytest
+   ============================= test session starts ==============================
+   ...
+   ============================== 49 passed in 0.15s ==============================
+   py311: OK ✔ in 1.41 seconds
+   py312: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/19/items-0.1.0.tar.gz
+   py312: commands[0]> coverage run -m pytest
+   ============================= test session starts ==============================
+   ...
+   ============================== 49 passed in 0.15s ==============================
+   py312: OK ✔ in 1.43 seconds
+   py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
+   py313: commands[0]> coverage run -m pytest
+   ============================= test session starts ==============================
+   ...
+   ============================== 49 passed in 0.16s ==============================
+   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   py313: OK ✔ in 1.48 seconds
+     py39: OK (2.17=setup[1.54]+cmd[0.63] seconds)
+     py310: SKIP (0.01 seconds)
+     py311: OK (1.41=setup[0.81]+cmd[0.60] seconds)
+     py312: OK (1.43=setup[0.82]+cmd[0.61] seconds)
+     py313: OK (1.48=setup[0.82]+cmd[0.66] seconds)
+     congratulations :) (10.46 seconds)
 
 Running Tox environments in parallel
 ------------------------------------
@@ -223,18 +223,18 @@ other. It is also possible to run them in parallel with the ``-p`` option:
 
 .. code-block:: pytest
 
-    $ python -m tox -p
-    py310: SKIP ⚠ in 0.09 seconds
-    py312: OK ✔ in 2.08 seconds
-    py313: OK ✔ in 2.18 seconds
-    py311: OK ✔ in 2.23 seconds
-    py39: OK ✔ in 2.91 seconds
-      py39: OK (2.91=setup[2.17]+cmd[0.74] seconds)
-      py310: SKIP (0.09 seconds)
-      py311: OK (2.23=setup[1.27]+cmd[0.96] seconds)
-      py312: OK (2.08=setup[1.22]+cmd[0.86] seconds)
-      py313: OK (2.18=setup[1.23]+cmd[0.95] seconds)
-      congratulations :) (3.05 seconds)
+   $ python -m tox -p
+   py310: SKIP ⚠ in 0.09 seconds
+   py312: OK ✔ in 2.08 seconds
+   py313: OK ✔ in 2.18 seconds
+   py311: OK ✔ in 2.23 seconds
+   py39: OK ✔ in 2.91 seconds
+     py39: OK (2.91=setup[2.17]+cmd[0.74] seconds)
+     py310: SKIP (0.09 seconds)
+     py311: OK (2.23=setup[1.27]+cmd[0.96] seconds)
+     py312: OK (2.08=setup[1.22]+cmd[0.86] seconds)
+     py313: OK (2.18=setup[1.23]+cmd[0.95] seconds)
+     congratulations :) (3.05 seconds)
 
 .. note::
    The output is not abbreviated; this is the full output you will see if
@@ -252,25 +252,25 @@ extend commands to ``pytest --cov=items``:
 .. code-block::
    :emphasize-lines: 12-
 
-    [tox]
-    envlist = py3{9,10,11,12,13}
-    isolated_build = True
-    skip_missing_interpreters = True
+   [tox]
+   envlist = py3{9,10,11,12,13}
+   isolated_build = True
+   skip_missing_interpreters = True
 
-    [testenv]
-    deps =
-     pytest>=6.0
-     faker
-    commands = pytest
+   [testenv]
+   deps =
+    pytest>=6.0
+    faker
+   commands = pytest
 
-    [testenv:coverage-report]
-    description = Report coverage over all test runs.
-    deps = coverage[toml]
-    skip_install = true
-    allowlist_externals = coverage
-    commands =
-      coverage combine
-      coverage report
+   [testenv:coverage-report]
+   description = Report coverage over all test runs.
+   deps = coverage[toml]
+   skip_install = true
+   allowlist_externals = coverage
+   commands =
+     coverage combine
+     coverage report
 
 When using Coverage with ``tox``, it can sometimes be useful to add a section in
 the :file:`:file:`pyproject.toml`` file to tell Coverage which source code paths
@@ -278,8 +278,8 @@ should be considered identical:
 
 .. code-block:: ini
 
-    [tool.coverage.paths]
-    source = ["src", ".tox/py*/**/site-packages"]
+   [tool.coverage.paths]
+   source = ["src", ".tox/py*/**/site-packages"]
 
 The items source code is initially located in :file:`src/items/` before tox
 creates the virtual environments and installs items in the environment. It is
@@ -289,25 +289,25 @@ example.
 .. code-block:: console
    :emphasize-lines: 1
 
-    $ python -m tox
-    ...
-    coverage-report: commands[0]> coverage combine
-    Combined data file .coverage.fay.local.19539.XpQXpsGx
-    coverage-report: commands[1]> coverage report
-    Name               Stmts   Miss Branch BrPart  Cover   Missing
-    --------------------------------------------------------------
-    src/items/api.py      68      1     12      1    98%   88
-    --------------------------------------------------------------
-    TOTAL                428      1     32      1    99%
+   $ python -m tox
+   ...
+   coverage-report: commands[0]> coverage combine
+   Combined data file .coverage.fay.local.19539.XpQXpsGx
+   coverage-report: commands[1]> coverage report
+   Name               Stmts   Miss Branch BrPart  Cover   Missing
+   --------------------------------------------------------------
+   src/items/api.py      68      1     12      1    98%   88
+   --------------------------------------------------------------
+   TOTAL                428      1     32      1    99%
 
-    26 files skipped due to complete coverage.
-      py39: OK (2.12=setup[1.49]+cmd[0.63] seconds)
-      py310: SKIP (0.01 seconds)
-      py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
-      py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
-      py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
-      coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
-      congratulations :) (10.26 seconds)
+   26 files skipped due to complete coverage.
+     py39: OK (2.12=setup[1.49]+cmd[0.63] seconds)
+     py310: SKIP (0.01 seconds)
+     py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
+     py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
+     py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
+     coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
+     congratulations :) (10.26 seconds)
 
 Set minimum coverage
 --------------------
@@ -317,16 +317,16 @@ level in order to recognise any coverage failures. This is achieved with the
 ``--cov-fail-under`` option:
 
 .. code-block:: console
-    :emphasize-lines: 8
+   :emphasize-lines: 8
 
-    Name               Stmts   Miss Branch BrPart  Cover   Missing
-    --------------------------------------------------------------
-    src/items/api.py      68      1     12      1    98%   88
-    --------------------------------------------------------------
-    TOTAL                428      1     32      1    99%
+   Name               Stmts   Miss Branch BrPart  Cover   Missing
+   --------------------------------------------------------------
+   src/items/api.py      68      1     12      1    98%   88
+   --------------------------------------------------------------
+   TOTAL                428      1     32      1    99%
 
-    26 files skipped due to complete coverage.
-    Coverage failure: total of 99 is less than fail-under=100
+   26 files skipped due to complete coverage.
+   Coverage failure: total of 99 is less than fail-under=100
 
 This adds the highlighted line to the output.
 
@@ -341,50 +341,50 @@ parameters can be passed to pytest:
 .. code-block:: ini
    :emphasize-lines: 17
 
-    [tox]
-    envlist =
-        pre-commit
-        docs
-        py3{9,10,11,12,13}
-        coverage-report
-    isolated_build = True
-    skip_missing_interpreters = True
+   [tox]
+   envlist =
+       pre-commit
+       docs
+       py3{9,10,11,12,13}
+       coverage-report
+   isolated_build = True
+   skip_missing_interpreters = True
 
-    [testenv]
-    extras =
-      tests: tests
-    deps =
-      tests: coverage[toml]
-    allowlist_externals = coverage
-    commands =
-      coverage run -m pytest {posargs}
+   [testenv]
+   extras =
+     tests: tests
+   deps =
+     tests: coverage[toml]
+   allowlist_externals = coverage
+   commands =
+     coverage run -m pytest {posargs}
 
 To pass arguments to pytest, insert them between the tox arguments and the
 pytest arguments. In this case, we select ``test_version`` tests with the ``-k``
 keyword option. We also use ``--no-cov`` to disable coverage:
 
-.. code-block::
+.. code-block:: pytest
    :emphasize-lines: 1, 3
 
-    $ tox -e py313 -- -k test_version --no-cov
-    ...
-    py313: commands[0]> coverage run -m pytest -k test_version --no-cov
-    ============================= test session starts ==============================
-    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
-    cachedir: .tox/py313/.pytest_cache
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
-    collected 49 items / 47 deselected / 2 selected
+   $ tox -e py313 -- -k test_version --no-cov
+   ...
+   py313: commands[0]> coverage run -m pytest -k test_version --no-cov
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
+   cachedir: .tox/py313/.pytest_cache
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
+   collected 49 items / 47 deselected / 2 selected
 
-    tests/api/test_version.py .                                              [ 50%]
-    tests/cli/test_version.py .                                              [100%]
+   tests/api/test_version.py .                                              [ 50%]
+   tests/cli/test_version.py .                                              [100%]
 
-    ======================= 2 passed, 47 deselected in 0.07s =======================
-    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-      py313: OK (1.49=setup[0.96]+cmd[0.53] seconds)
-      congratulations :) (1.53 seconds)
+   ======================= 2 passed, 47 deselected in 0.07s =======================
+   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+     py313: OK (1.49=setup[0.96]+cmd[0.53] seconds)
+     congratulations :) (1.53 seconds)
 
 ``tox`` is not only ideal for the local automation of test processes, but also
 helps with server-based :term:`CI`. Let’s continue with the execution of pytest
@@ -522,7 +522,7 @@ Display badge
 Now you can add a badge of your :term:`CI` status to your :file:`README.rst`
 file, for example with:
 
-.. code-block::
+.. code-block:: rest
 
    .. image:: https://github.com/YOU/YOUR_PROJECT/workflows/CI/badge.svg?branch=main
       :target: https://github.com/YOU/YOUR_PROJECT/actions?workflow=CI
@@ -543,8 +543,8 @@ name ``tox``, for example in a :file:`pyproject.toml` file:
 
 .. code-block:: toml
 
-    [project.entry-points.tox]
-    my_plugin = "my_plugin.hooks"
+   [project.entry-points.tox]
+   my_plugin = "my_plugin.hooks"
 
 To use the plugin, it therefore only needs to be installed in the same
 environment in which tox is running and it is found via the defined entry point.
@@ -555,13 +555,13 @@ example, the following code snippet would define a new ``--my`` :abbr:`CLI
 
 .. code-block:: python
 
-    from tox.config.cli.parser import ToxParser
-    from tox.plugin import impl
+   from tox.config.cli.parser import ToxParser
+   from tox.plugin import impl
 
 
-    @impl
-    def tox_add_option(parser: ToxParser) -> None:
-        parser.add_argument("--my", action="store_true", help="my option")
+   @impl
+   def tox_add_option(parser: ToxParser) -> None:
+       parser.add_argument("--my", action="store_true", help="my option")
 
 .. seealso::
    * `Extending tox <https://tox.wiki/en/latest/plugins.html>`_

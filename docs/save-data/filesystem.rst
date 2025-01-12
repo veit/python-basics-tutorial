@@ -43,18 +43,18 @@ Absolute path names
 
     Two absolute Windows path names are given here as examples:
 
-    .. code-block:: console
+    .. code-block:: ps1con
 
-        C:\Program Files\Python 3.13\
-        D:\backup\2022\06\
+       C:\Program Files\Python 3.13\
+       D:\backup\2022\06\
 
     And here are two absolute Linux path names and one absolute macOS path name:
 
     .. code-block:: console
 
-        /bin/python3
-        /cdrom/backup/2022/06/
-        /Applications/Python\ 3.13/
+       /bin/python3
+       /cdrom/backup/2022/06/
+       /Applications/Python\ 3.13/
 
 Relative pathnames
     indicate the position of a file relative to another point in the file
@@ -63,15 +63,15 @@ Relative pathnames
 
     As example, a Windows relative pathname is given here:
 
-    .. code-block:: console
+    .. code-block:: ps1con
 
-        save-data\filesystem.rst
+       save-data\filesystem.rst
 
     … and here a relative Linux/macOS pathname:
 
     .. code-block:: console
 
-        save-data/filesystem.rst
+       save-data/filesystem.rst
 
     Relative paths therefore require a context in which they are anchored. This
     context is usually provided in one of two ways:
@@ -147,9 +147,9 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.join("save-data", "filesystem.rst"))
-        save-data\filesystem.rst
+       >>> import os
+       >>> print(os.path.join("save-data", "filesystem.rst"))
+       save-data\filesystem.rst
 
     Here, the arguments are interpreted as a series of directory or file names
     to be joined into a single string that is understood by the underlying
@@ -161,9 +161,9 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.join("save-data", "filesystem.rst"))
-        save-data/filesystem.rst
+       >>> import os
+       >>> print(os.path.join("save-data", "filesystem.rst"))
+       save-data/filesystem.rst
 
     You can therefore use this method to create file paths independently of the
     operating system on which your programme is running.
@@ -176,13 +176,13 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(
-        ...     os.path.join(
-        ...         "python-basics-tutorial-de\\docs", "save-data\\filesystem.rst"
-        ...     )
-        ... )
-        python-basics-tutorial-de\docs\save-data\filesystem.rst
+       >>> import os
+       >>> print(
+       ...     os.path.join(
+       ...         "python-basics-tutorial-de\\docs", "save-data\\filesystem.rst"
+       ...     )
+       ... )
+       python-basics-tutorial-de\docs\save-data\filesystem.rst
 
 :func:`os.path.split`
     returns a tuple with two elements that separates the base name of a path
@@ -190,27 +190,27 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.split(os.getcwd()))
-        ('/home/veit/python-basics-tutorial-de', 'docs')
+       >>> import os
+       >>> print(os.path.split(os.getcwd()))
+       ('/home/veit/python-basics-tutorial-de', 'docs')
 
 :func:`python3:os.path.basename`
     returns only the base name of the path:
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.basename(os.getcwd()))
-        docs
+       >>> import os
+       >>> print(os.path.basename(os.getcwd()))
+       docs
 
 :func:`python3:os.path.dirname`
     returns the path up to the base name:
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.dirname(os.getcwd()))
-        /home/veit/python-basics-tutorial-de
+       >>> import os
+       >>> print(os.path.dirname(os.getcwd()))
+       /home/veit/python-basics-tutorial-de
 
 :func:`python3:os.path.splitext`
     outputs the dotted extension notation used by most file systems to indicate
@@ -218,9 +218,9 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.splitext("filesystem.rst"))
-        ('filesystem', '.rst')
+       >>> import os
+       >>> print(os.path.splitext("filesystem.rst"))
+       ('filesystem', '.rst')
 
     The last element of the returned tuple contains the dotted extension of the
     specified file.
@@ -232,17 +232,17 @@ operating system-specific syntax.
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> print(os.path.commonpath(["save-data/filesystem.rst", "save-data/index.rst"]))
-        save-data
+       >>> import os
+       >>> print(os.path.commonpath(["save-data/filesystem.rst", "save-data/index.rst"]))
+       save-data
 
 :func:`python3:os.path.expandvars`
     expands environment variables in paths:
 
     .. code-block:: pycon
 
-        >>> os.path.expandvars("$HOME/python-basics-tutorial")
-        '/home/veit/python-basics-tutorial'
+       >>> os.path.expandvars("$HOME/python-basics-tutorial")
+       '/home/veit/python-basics-tutorial'
 
 Useful constants and functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,27 +253,27 @@ Useful constants and functions
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> os.name
-        'nt'
+       >>> import os
+       >>> os.name
+       'nt'
 
     .. note::
-        Most versions of Windows, with the exception of Windows CE, are
-        identified as ``nt``.
+       Most versions of Windows, with the exception of Windows CE, are
+       identified as ``nt``.
 
     On macOS and Linux, the answer is ``posix``. Depending on the platform, you
     can perform special operations with this answer:
 
     .. code-block:: pycon
 
-        >>> import os
-        >>> if os.name == "posix":
-        ...     root_dir = "/"
-        ... elif os.name == "nt":
-        ...     root_dir = "C:\\"
-        ... else:
-        ...     print("The operating system was not recognised!")
-        ...
+       >>> import os
+       >>> if os.name == "posix":
+       ...     root_dir = "/"
+       ... elif os.name == "nt":
+       ...     root_dir = "C:\\"
+       ... else:
+       ...     print("The operating system was not recognised!")
+       ...
 
 Getting information about files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,14 +324,14 @@ system functions are also provided.
 
     .. code-block:: pycon
 
-        >>> os.rename("filesystem.rst", "save-data/filesystem.rst")
+       >>> os.rename("filesystem.rst", "save-data/filesystem.rst")
 
 :func:`os.remove`
     deletes files, for example
 
     .. code-block:: pycon
 
-        >>> os.remove("filesystem.rst")
+       >>> os.remove("filesystem.rst")
 
 :func:`os.rmdir`
     deletes an empty directory. To remove non-empty directories, use
@@ -343,7 +343,7 @@ system functions are also provided.
 
     .. code-block:: pycon
 
-        >>> os.makedirs("save-data/filesystem")
+       >>> os.makedirs("save-data/filesystem")
 
 Processing all files in a directory
 -----------------------------------
@@ -369,20 +369,20 @@ topdown=True, onerror=None, followlinks= False)``.
     not followed unless you specify the parameter ``follow-links=True``.
 
 .. code-block:: pycon
-    :linenos:
+   :linenos:
 
-    >>> import os
-    >>> for root, dirs, files in os.walk(os.curdir):
-    ...     print("{0} has {1} files".format(root, len(files)))
-    ...     if ".ipynb_checkpoints" in dirs:
-    ...         dirs.remove(".ipynb_checkpoints")
-    ...
-    . has 13 files
-    ./control-flows has 13 files
-    ./save-data has 30 files
-    ./test has 15 files
-    ./test/coverage has 3 files
-    …
+   >>> import os
+   >>> for root, dirs, files in os.walk(os.curdir):
+   ...     print("{0} has {1} files".format(root, len(files)))
+   ...     if ".ipynb_checkpoints" in dirs:
+   ...         dirs.remove(".ipynb_checkpoints")
+   ...
+   . has 13 files
+   ./control-flows has 13 files
+   ./save-data has 30 files
+   ./test has 15 files
+   ./test/coverage has 3 files
+   …
 
 Line 4
     checks for a directory called ``.ipynb_checkpoints``.

@@ -52,11 +52,11 @@ value of a function is used:
 .. code-block:: pycon
    :linenos:
 
-    >>> fact(3)
-    6
-    >>> x = fact(3)
-    >>> x
-    6
+   >>> fact(3)
+   6
+   >>> x = fact(3)
+   >>> x
+   6
 
 Line 1
     The return value is not linked to a variable.

@@ -37,15 +37,15 @@ structure:
 .. code-block:: console
    :emphasize-lines: 3, 7, 8
 
-    items
-    ├── …
-    ├── pytest.ini
-    ├── src
-    │   └── …
-    └── tests
-        ├── __init__.py
-        ├── conftest.py
-        └── test_….py
+   items
+   ├── …
+   ├── pytest.ini
+   ├── src
+   │   └── …
+   └── tests
+       ├── __init__.py
+       ├── conftest.py
+       └── test_….py
 
 In the case of the ``items`` project that we have used for testing so far, there
 is a :file:`pytest.ini` file and a :file:`tests` directory at the top level. We
@@ -57,15 +57,15 @@ Saving settings and options in :file:`pytest.ini`
 
 .. code-block:: ini
 
-    [pytest]
-    addopts =
-        --strict-markers
-        --strict-config
-        -ra
-    testpaths = tests
-    markers =
-        smoke: Small subset of all tests
-        exception: Only run expected exceptions
+   [pytest]
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+   testpaths = tests
+   markers =
+       smoke: Small subset of all tests
+       exception: Only run expected exceptions
 
 ``[pytest]`` marks the start of the pytest section. This is followed by the
 individual settings. For configuration settings that allow more than one value,
@@ -140,19 +140,19 @@ is also slightly different:
 
 .. code-block:: toml
 
-    [tool.pytest.ini_options]
-    addopts = [
-        "--strict-markers",
-        "--strict-config",
-        "-ra"
-        ]
-    testpaths = "tests"
-    markers = [
-        "exception: Only run expected exceptions",
-        "finish: Only run finish tests",
-        "smoke: Small subset of all tests",
-        "num_items: Number of items to be pre-filled for the items_db fixture"
-        ]
+   [tool.pytest.ini_options]
+   addopts = [
+       "--strict-markers",
+       "--strict-config",
+       "-ra"
+       ]
+   testpaths = "tests"
+   markers = [
+       "exception: Only run expected exceptions",
+       "finish: Only run finish tests",
+       "smoke: Small subset of all tests",
+       "num_items: Number of items to be pre-filled for the items_db fixture"
+       ]
 
 Instead of ``[pytest]``, the section begins with ``[tool.pytest.ini_options]``,
 the values must be enclosed in quotes and lists of values must be lists of
@@ -165,15 +165,15 @@ The file format of the :file:`setup.cfg` corresponds to an :file:`.ini` file:
 
 .. code-block:: ini
 
-    [tool:pytest]
-    addopts =
-        --strict-markers
-        --strict-config
-        -ra
-    testpaths = tests
-    markers =
-        smoke: Small subset of all tests
-        exception: Only run expected exceptions
+   [tool:pytest]
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+   testpaths = tests
+   markers =
+       smoke: Small subset of all tests
+       exception: Only run expected exceptions
 
 The only difference between this and :file:`pytest.ini` is the specification of
 the ``[tool:pytest]`` section.
@@ -209,16 +209,16 @@ be sure that pytest finds the correct configuration file:
 .. code-block:: pytest
    :emphasize-lines: 5, 6
 
-    $ cd items
-    $ pytest
-    ============================= test session starts ==============================
-    ...
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: Faker-19.11.0
-    collected 39 items
-    ...
+   $ cd items
+   $ pytest
+   ============================= test session starts ==============================
+   ...
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: Faker-19.11.0
+   collected 39 items
+   ...
 
 :file:`conftest.py` for sharing local fixtures and hook functions
 -----------------------------------------------------------------
@@ -249,20 +249,20 @@ test filename in multiple directories, for example:
 .. code-block:: console
    :emphasize-lines: 8, 11
 
-    items
-    ├── …
-    ├── pytest.ini
-    ├── src
-    │   └── …
-    └── tests
-        ├── api
-        │   ├── __init__.py
-        │   └── test_add.py
-        ├── cli
-        │   ├── __init__.py
-        │   ├── conftest.py
-        │   └── test_add.py
-        └── conftest.py
+   items
+   ├── …
+   ├── pytest.ini
+   ├── src
+   │   └── …
+   └── tests
+       ├── api
+       │   ├── __init__.py
+       │   └── test_add.py
+       ├── cli
+       │   ├── __init__.py
+       │   ├── conftest.py
+       │   └── test_add.py
+       └── conftest.py
 
 Now we can test the ``add`` functionality both via the :abbr:`API (Application
 Programming Interface)` and via the :abbr:`CLI (Command Line Interface)`,
@@ -270,19 +270,19 @@ whereby a :file:`test_add.py` is located in both directories:
 
 .. code-block:: pytest
 
-    $ pytest
-    ============================= test session starts ==============================
-    ...
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: Faker-19.11.0
-    collected 6 items
+   $ pytest
+   ============================= test session starts ==============================
+   ...
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: Faker-19.11.0
+   collected 6 items
 
-    tests/api/test_add.py ....                                               [ 66%]
-    tests/cli/test_add.py ..                                                 [100%]
+   tests/api/test_add.py ....                                               [ 66%]
+   tests/cli/test_add.py ..                                                 [100%]
 
-    ============================== 6 passed in 0.03s ===============================
+   ============================== 6 passed in 0.03s ===============================
 
 
 ----

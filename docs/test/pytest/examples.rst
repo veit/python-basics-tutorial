@@ -17,7 +17,7 @@ false. Any uncaught exception thrown within a test will cause the test to fail.
 Execute pytest
 --------------
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ cd docs/test/pytest
    $ pytest test_one.py
@@ -35,7 +35,7 @@ test session have been performed so far. As there is only one test, one test
 corresponds to 100% of the tests. If you need more information, you can use
 ``-v`` or ``--verbose``:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_one.py
    ============================= test session starts ==============================
@@ -48,7 +48,7 @@ corresponds to 100% of the tests. If you need more information, you can use
 
 :file:`test_two.py` on the other hand, fails:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest test_two.py
    collected 1 item
@@ -74,7 +74,7 @@ The failed test, ``test_in``, gets its own section to show us why it failed. And
 called traceback. That’s already a lot of information, but there’s a line that
 says we get the full diff with ``-v``. Let’s do that:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_two.py
    ============================= test session starts ==============================
@@ -111,7 +111,7 @@ with :file:`test_` or end with :file:`_test`. If you start pytest in the
 directory :file:`docs/test/pytest` without options, two files with tests will be
 run:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest --tb=no
    ============================= test session starts ==============================
@@ -129,7 +129,7 @@ need the full output at the moment.
 
 We can also specify a test function within a test file to be executed by adding :samp:`::test_{name}` to the file name:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_one.py::test_sorted
    ============================= test session starts ==============================

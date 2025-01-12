@@ -11,13 +11,13 @@ Here you return to the definition of ``fact`` from the beginning of this
 
 .. code-block:: python
 
-    def fact(n):
-        """Return the factorial of the given number."""
-        f = 1
-        while n > 0:
-            f = f * n
-            n = n - 1
-        return f
+   def fact(n):
+       """Return the factorial of the given number."""
+       f = 1
+       while n > 0:
+           f = f * n
+           n = n - 1
+       return f
 
 Both the variables ``f`` and ``n`` are local to a particular call to the
 function ``fact``; changes made to them during the execution of the function
@@ -54,20 +54,20 @@ difference between local and global variables:
 
 .. code-block:: python
 
-    def my_func():
-        global x
-        x = 1
-        y = 2
+   def my_func():
+       global x
+       x = 1
+       y = 2
 
 .. code-block:: pycon
 
-    >>> x = 3
-    >>> y = 4
-    >>> my_func()
-    >>> x
-    1
-    >>> y
-    4
+   >>> x = 3
+   >>> y = 4
+   >>> my_func()
+   >>> x
+   1
+   >>> y
+   4
 
 In this example, a function is defined that treats ``x`` as a global variable
 and ``y`` as a local variable, and attempts to change both ``x`` and ``y``. The
@@ -106,7 +106,7 @@ While :ref:`global <python3:global>` is used for a top-level variable,
 
 .. seealso::
 
-    * :pep:`3104`
+   * :pep:`3104`
 
 Checks
 ------

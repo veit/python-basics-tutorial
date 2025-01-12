@@ -39,27 +39,27 @@ all instances of the ``Circle`` class:
 
 .. code-block:: pycon
 
-    >>> class Circle:
-    ...     pi = 3.14159
-    ...     def __init__(self, diameter):
-    ...         self.diameter = diameter
-    ...     def circumference(self):
-    ...         return self.diameter * Circle.pi
-    ...
+   >>> class Circle:
+   ...     pi = 3.14159
+   ...     def __init__(self, diameter):
+   ...         self.diameter = diameter
+   ...     def circumference(self):
+   ...         return self.diameter * Circle.pi
+   ...
 
 Once you have entered this definition, you can query ``pi`` with:
 
 .. code-block:: pycon
 
-    >>> Circle.pi
-    3.14159
+   >>> Circle.pi
+   3.14159
 
 .. note::
 
-    The class variable is linked to and contained within the class that defines
-    it. You access ``Circle.pi`` in this example before any ``Circle`` instances
-    have been created. It is obvious that ``Circle.pi`` exists independently of
-    specific instances of the ``Circle`` class.
+   The class variable is linked to and contained within the class that defines
+   it. You access ``Circle.pi`` in this example before any ``Circle`` instances
+   have been created. It is obvious that ``Circle.pi`` exists independently of
+   specific instances of the ``Circle`` class.
 
 You can also access a class variable from a method of a class using the class
 name. You do this in the definition of ``Circle.circumference``, where the
@@ -67,9 +67,9 @@ name. You do this in the definition of ``Circle.circumference``, where the
 
 .. code-block:: pycon
 
-    >>> c = Circle(3)
-    >>> c.circumference()
-    9.424769999999999
+   >>> c = Circle(3)
+   >>> c.circumference()
+   9.424769999999999
 
 However, it is unpleasant that the class name ``Circle`` is used in the
 ``circumference`` method to address the class variable ``pi``. You can avoid
@@ -79,10 +79,10 @@ belongs, for example:
 
 .. code-block:: pycon
 
-    >>> Circle
-    <class '__main__.Circle'>
-    >>> c.__class__
-    <class '__main__.Circle'>
+   >>> Circle
+   <class '__main__.Circle'>
+   >>> c.__class__
+   <class '__main__.Circle'>
 
 The ``Circle`` class is internally represented by an abstract data structure,
 and this data structure is exactly what is obtained by the ``__class__``
@@ -92,8 +92,8 @@ to the name of the ``Circle`` class:
 
 .. code-block:: pycon
 
-    >>> c.__class__.pi
-    3.14159
+   >>> c.__class__.pi
+   3.14159
 
 You can use this code internally in the ``circumference`` method to get rid of
 the explicit reference to the ``Circle`` class; replace ``Circle.pi`` with
@@ -104,43 +104,43 @@ not aware of it.
 
 .. warning::
 
-    If Python searches for an instance variable and does not find an instance
-    variable with that name, it will search for and return the value in a class
-    variable with the same name. Only if no matching class variable can be found
-    does Python return an error. This can be used to efficiently implement
-    default values for instance variables; however, this also easily leads to
-    accidentally referring to an instance variable instead of a class variable
-    without an error being reported.
+   If Python searches for an instance variable and does not find an instance
+   variable with that name, it will search for and return the value in a class
+   variable with the same name. Only if no matching class variable can be found
+   does Python return an error. This can be used to efficiently implement
+   default values for instance variables; however, this also easily leads to
+   accidentally referring to an instance variable instead of a class variable
+   without an error being reported.
 
-    First, you can refer to the variable ``c.pi``, even though ``c`` has no
-    associated instance variable called ``pi``. Python first tries to find such
-    an instance variable and only when it cannot find an instance variable does
-    it look for a class variable ``pi`` in ``Circle``:
+   First, you can refer to the variable ``c.pi``, even though ``c`` has no
+   associated instance variable called ``pi``. Python first tries to find such
+   an instance variable and only when it cannot find an instance variable does
+   it look for a class variable ``pi`` in ``Circle``:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1 = Circle(1)
-        >>> c1.pi
-        3.14159
+      >>> c1 = Circle(1)
+      >>> c1.pi
+      3.14159
 
-    If you now find that your specification for ``pi`` has been rounded too
-    early and you want to replace it with a more precise specification, you
-    might be inclined to change it as follows:
+   If you now find that your specification for ``pi`` has been rounded too early
+   and you want to replace it with a more precise specification, you might be
+   inclined to change it as follows:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1.pi = 3.141592653589793
-        >>> c1.pi
-        3.141592653589793
+      >>> c1.pi = 3.141592653589793
+      >>> c1.pi
+      3.141592653589793
 
-    However, you have now only added a new instance variable ``pi`` to ``c1``.
-    The class variable ``Circle.pi`` and all other instances derived from it
-    still have only five decimal places:
+   However, you have now only added a new instance variable ``pi`` to ``c1``.
+   The class variable ``Circle.pi`` and all other instances derived from it
+   still have only five decimal places:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> Circle.pi
-        3.14159
-        >>> c2 = Circle(2)
-        >>> c1.pi
-        3.14159
+      >>> Circle.pi
+      3.14159
+      >>> c2 = Circle(2)
+      >>> c1.pi
+      3.14159

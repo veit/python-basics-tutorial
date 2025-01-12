@@ -90,38 +90,38 @@ intercept and return the output.
 .. code-block:: python
    :emphasize-lines: 4, 8, 16-17
 
-    import shlex
+   import shlex
 
-    import pytest
-    from typer.testing import CliRunner
+   import pytest
+   from typer.testing import CliRunner
 
-    import items
+   import items
 
-    runner = CliRunner()
+   runner = CliRunner()
 
 
-    @pytest.fixture()
-    def items_cli(db_path, monkeypatch, items_db):
-        monkeypatch.setenv("ITEMS_DB_DIR", db_path.as_posix())
+   @pytest.fixture()
+   def items_cli(db_path, monkeypatch, items_db):
+       monkeypatch.setenv("ITEMS_DB_DIR", db_path.as_posix())
 
-        def run_cli(command_string):
-            command_list = shlex.split(command_string)
-            result = runner.invoke(items.cli.app, command_list)
-            output = result.stdout.rstrip()
-            return output
+       def run_cli(command_string):
+           command_list = shlex.split(command_string)
+           result = runner.invoke(items.cli.app, command_list)
+           output = result.stdout.rstrip()
+           return output
 
-        return run_cli
+       return run_cli
 
 We can then simply use this fixture to test the version in
 :file:`tests/cli/test_version.py`, for example:
 
 .. code-block:: python
 
-    import items
+   import items
 
 
-    def test_version(items_cli):
-        assert items_cli("version") == items.__version__
+   def test_version(items_cli):
+       assert items_cli("version") == items.__version__
 
 Mocking of attributes
 ---------------------
@@ -134,19 +134,19 @@ context manager:
 .. code-block:: python
    :emphasize-lines: 1, 7
 
-    from unittest import mock
+   from unittest import mock
 
-    import items
+   import items
 
 
-    def test_mock_version(items_cli):
-        with mock.patch.object(items, "__version__", "100.0.0"):
-            assert items_cli("version") == items.__version__
+   def test_mock_version(items_cli):
+       with mock.patch.object(items, "__version__", "100.0.0"):
+           assert items_cli("version") == items.__version__
 
-In our test code, we import ``items``. The resulting items object is what we will
-patch. The call to :func:`mock.patch.object`, which is used as a :doc:`context
-manager <../control-flow/with>` within a ``with`` block, returns a mock object
-that is cleaned up after the ``with`` block:
+In our test code, we import ``items``. The resulting items object is what we
+will patch. The call to :func:`mock.patch.object`, which is used as a
+:doc:`context manager <../control-flow/with>` within a ``with`` block, returns a
+mock object that is cleaned up after the ``with`` block:
 
 #. In this case, the ``__version__`` attribute of ``items`` is replaced with
    ``"100.0.0"`` for the duration of the ``with`` block.
@@ -162,10 +162,10 @@ In :file:`src/items/cli.py` we have defined :func:`config` as follows:
 
 .. code-block:: python
 
-    def config():
-        """List the path to the Items db."""
-        with items_db() as db:
-            print(db.path())
+   def config():
+       """List the path to the Items db."""
+       with items_db() as db:
+           print(db.path())
 
 :func:`items_db` is a :doc:`context manager <../control-flow/with>` that returns
 an ``items.ItemsDB`` object. The returned object is then used as a ``db`` to
@@ -174,50 +174,50 @@ one of its methods, :func:`path`. Let’s start with the class:
 
 .. code-block:: python
 
-    from unittest import mock
+   from unittest import mock
 
-    import items
+   import items
 
 
-    def test_mock_itemsdb(items_cli):
-        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
-            mock_db_path = MockItemsDB.return_value.path.return_value = "/foo/"
-            assert items_cli("config") == str(mock_db_path)
+   def test_mock_itemsdb(items_cli):
+       with mock.patch.object(items, "ItemsDB") as MockItemsDB:
+           mock_db_path = MockItemsDB.return_value.path.return_value = "/foo/"
+           assert items_cli("config") == str(mock_db_path)
 
 Let's make sure that it really works:
 
 .. code-block:: pytest
 
-    $ pytest -v -s tests/cli/test_config.py::test_mock_itemsdb
-    ============================= test session starts ==============================
-    ...
-    configfile: pyproject.toml
-    plugins: cov-4.1.0, Faker-19.11.0
-    collected 1 item
+   $ pytest -v -s tests/cli/test_config.py::test_mock_itemsdb
+   ============================= test session starts ==============================
+   ...
+   configfile: pyproject.toml
+   plugins: cov-4.1.0, Faker-19.11.0
+   collected 1 item
 
-    tests/cli/test_config.py::test_mock_itemsdb PASSED
+   tests/cli/test_config.py::test_mock_itemsdb PASSED
 
-    ============================== 1 passed in 0.04s ===============================
+   ============================== 1 passed in 0.04s ===============================
 
 Great, now we just have to move the mock for the database to a fixture, because
 we will need it in many test methods:
 
 .. code-block:: python
 
-    @pytest.fixture()
-    def mock_itemsdb():
-        with mock.patch.object(items="ItemsDB") as MockItemsDB:
-            yield MockItemsDB.return_value
+   @pytest.fixture()
+   def mock_itemsdb():
+       with mock.patch.object(items="ItemsDB") as MockItemsDB:
+           yield MockItemsDB.return_value
 
 This fixture mocks the ``ItemsDB`` object and returns the ``return_value`` so
 that tests can use it to replace things like ``path``:
 
 .. code-block:: python
 
-    def test_mock_itemsdb(items_cli, mock_itemsdb):
-        mock_itemsdb.path.return_value = "/foo/"
-        result = runner.invoke(app, ["config"])
-        assert result.stdout.rstrip() == "/foo/"
+   def test_mock_itemsdb(items_cli, mock_itemsdb):
+       mock_itemsdb.path.return_value = "/foo/"
+       result = runner.invoke(app, ["config"])
+       assert result.stdout.rstrip() == "/foo/"
 
 Alternatively, the :func:`@mock.patch` decorator can also be used to mock
 classes or objects. In the following examples, the output of ``os.listdir`` is
@@ -225,22 +225,22 @@ mocked. This does not require ``db_path`` to be present in the file system:
 
 .. code-block:: python
 
-    import os
-    from unittest import mock
+   import os
+   from unittest import mock
 
 
-    @mock.patch("os.listdir", mock.MagicMock(return_value="db_path"))
-    def test_listdir():
-        assert "db_path" == os.listdir()
+   @mock.patch("os.listdir", mock.MagicMock(return_value="db_path"))
+   def test_listdir():
+       assert "db_path" == os.listdir()
 
 Another alternative is to define the return value separately:
 
 .. code-block:: python
 
-    @mock.patch("os.listdir")
-    def test_listdir(mock_listdir):
-        mock_listdir.return_value = "db_path"
-        assert "db_path" == os.listdir()
+   @mock.patch("os.listdir")
+   def test_listdir(mock_listdir):
+       mock_listdir.return_value = "db_path"
+       assert "db_path" == os.listdir()
 
 Synchronising mocks with ``autospec``
 -------------------------------------
@@ -258,10 +258,10 @@ your test code does not. This form of mock drift can be solved by adding
 .. code-block:: python
    :emphasize-lines: 3
 
-    @pytest.fixture()
-    def mock_itemsdb():
-        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
-            yield MockItemsDB.return_value
+   @pytest.fixture()
+   def mock_itemsdb():
+       with mock.patch.object(items, "ItemsDB") as MockItemsDB:
+           yield MockItemsDB.return_value
 
 Usually, this protection is always built in with ``autospec``. The only exception
 I know of is if the class or object being mocked has dynamic methods or if
@@ -288,10 +288,10 @@ CLI has called the API method correctly. Finally, the implementation of the
 .. code-block:: python
    :emphasize-lines: 4
 
-    def test_add_with_owner(mock_itemsdb, items_cli):
-        items_cli("add some task -o veit")
-        expected = items.Item("some task", owner="veit", state="todo")
-        mock_itemsdb.add_item.assert_called_with(expected)
+   def test_add_with_owner(mock_itemsdb, items_cli):
+       items_cli("add some task -o veit")
+       expected = items.Item("some task", owner="veit", state="todo")
+       mock_itemsdb.add_item.assert_called_with(expected)
 
 If :func:`add_item` is not called or is called with the wrong type or the wrong
 object content, the test fails. For example, if we capitalise the string
@@ -300,23 +300,23 @@ object content, the test fails. For example, if we capitalise the string
 .. code-block:: pytest
    :emphasize-lines: 10-13, 16
 
-    $ pytest -s tests/cli/test_add.py::test_add_with_owner
-    ============================= test session starts ==============================
-    ...
-    configfile: pyproject.toml
-    plugins: cov-4.1.0, Faker-19.11.0
-    collected 1 item
+   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   ============================= test session starts ==============================
+   ...
+   configfile: pyproject.toml
+   plugins: cov-4.1.0, Faker-19.11.0
+   collected 1 item
 
-    tests/cli/test_add.py F
-    ...
-    >           raise AssertionError(_error_message()) from cause
-    E           AssertionError: expected call not found.
-    E           Expected: add_item(Item(summary='some task', owner='Veit', state='todo', id=None))
-    E           Actual: add_item(Item(summary='some task', owner='veit', state='todo', id=None))
-    ...
-    =========================== short test summary info ============================
-    FAILED tests/cli/test_add.py::test_add_with_owner - AssertionError: expected call not found.
-    ============================== 1 failed in 0.08s ===============================
+   tests/cli/test_add.py F
+   ...
+   >           raise AssertionError(_error_message()) from cause
+   E           AssertionError: expected call not found.
+   E           Expected: add_item(Item(summary='some task', owner='Veit', state='todo', id=None))
+   E           Actual: add_item(Item(summary='some task', owner='veit', state='todo', id=None))
+   ...
+   =========================== short test summary info ============================
+   FAILED tests/cli/test_add.py::test_add_with_owner - AssertionError: expected call not found.
+   ============================== 1 failed in 0.08s ===============================
 
 .. seealso::
    There is a whole range of variants of :func:`assert_called`. A complete list
@@ -337,14 +337,14 @@ here is the implementation of the delete command:
 
 .. code-block:: python
 
-    @app.command()
-    def delete(item_id: int):
-        """Remove item in db with given id."""
-        with items_db() as db:
-            try:
-                db.delete_item(item_id)
-            except items.InvalidItemId:
-                print(f"Error: Invalid item id {item_id}")
+   @app.command()
+   def delete(item_id: int):
+       """Remove item in db with given id."""
+       with items_db() as db:
+           try:
+               db.delete_item(item_id)
+           except items.InvalidItemId:
+               print(f"Error: Invalid item id {item_id}")
 
 To test how the CLI handles an error condition, we can pretend that
 :func:`delete_item` generates an exception by assigning the exception to the
@@ -354,10 +354,10 @@ attribute of the mock object, like this:
 
 .. code-block:: python
 
-    def test_delete_invalid(mock_itemsdb, items_cli):
-        mock_itemsdb.delete_item.side_effect = items.api.InvalidItemId
-        out = items_cli("delete 42")
-        assert "Error: Invalid item id 42" in out
+   def test_delete_invalid(mock_itemsdb, items_cli):
+       mock_itemsdb.delete_item.side_effect = items.api.InvalidItemId
+       out = items_cli("delete 42")
+       assert "Error: Invalid item id 42" in out
 
 That’s all we need to test the CLI: mocking return values, checking calls to mock
 functions and mocking exceptions. However, there is a whole range of other
@@ -394,12 +394,12 @@ via the CLI. We can also test the :ref:`test_add_with_owner
 
 .. code-block:: python
 
-    def test_add_with_owner(items_db, items_cli):
-        items_cli("add some task -o veit")
-        expected = items.Item("some task", owner="veit", state="todo")
-        all = items_db.list_items()
-        assert len(all) == 1
-        assert all[0] == expected
+   def test_add_with_owner(items_db, items_cli):
+       items_cli("add some task -o veit")
+       expected = items.Item("some task", owner="veit", state="todo")
+       all = items_db.list_items()
+       assert len(all) == 1
+       assert all[0] == expected
 
 Mocking tests the implementation of the command line interface and ensures that
 an API call is made with certain parameters. The mixed-layer approach tests the
@@ -409,16 +409,16 @@ refactoring. Interestingly, the tests are also about twice as fast:
 
 .. code-block:: pytest
 
-    $ pytest -s tests/cli/test_add.py::test_add_with_owner
-    ============================= test session starts ==============================
-    ...
-    configfile: pyproject.toml
-    plugins: cov-4.1.0, Faker-19.11.0
-    collected 1 item
+   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   ============================= test session starts ==============================
+   ...
+   configfile: pyproject.toml
+   plugins: cov-4.1.0, Faker-19.11.0
+   collected 1 item
 
-    tests/cli/test_add.py .
+   tests/cli/test_add.py .
 
-    ============================== 1 passed in 0.03s ===============================
+   ============================== 1 passed in 0.03s ===============================
 
 We could also avoid mocking in another way. We could test the behaviour
 completely via the CLI. This might require parsing the output of the items list

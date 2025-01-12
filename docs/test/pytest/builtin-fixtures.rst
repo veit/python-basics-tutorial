@@ -25,18 +25,18 @@ In :doc:`fixtures` we have used the standard library
 
 .. code-block:: python
 
-    from pathlib import Path
-    from tempfile import TemporaryDirectory
+   from pathlib import Path
+   from tempfile import TemporaryDirectory
 
 
-    @pytest.fixture(scope="session")
-    def db():
-        """ItemsDB object connected to a temporary database"""
-        with TemporaryDirectory() as db_dir:
-            db_path = Path(db_dir)
-            db_ = items.ItemsDB(db_path)
-            yield db_
-            db_.close()
+   @pytest.fixture(scope="session")
+   def db():
+       """ItemsDB object connected to a temporary database"""
+       with TemporaryDirectory() as db_dir:
+           db_path = Path(db_dir)
+           db_ = items.ItemsDB(db_path)
+           yield db_
+           db_.close()
 
 Let’s use one of the new built-ins instead. Since our ``db`` fixture is in the
 ``session`` scope, we can’t use ``tmp_path`` because ``session`` scope fixtures
@@ -44,13 +44,13 @@ can’t use ``function`` scope fixtures. However, we can use ``tmp_path_factory`
 
 .. code-block:: python
 
-    @pytest.fixture(scope="session")
-    def db(tmp_path_factory):
-        """ItemsDB object connected to a temporary database"""
-        db_path = tmp_path_factory.mktemp("items_db")
-        db_ = items.ItemsDB(db_path)
-        yield db_
-        db_.close()
+   @pytest.fixture(scope="session")
+   def db(tmp_path_factory):
+       """ItemsDB object connected to a temporary database"""
+       db_path = tmp_path_factory.mktemp("items_db")
+       db_ = items.ItemsDB(db_path)
+       yield db_
+       db_.close()
 
 .. note::
    We can also remove two import statements because we don’t need to import
@@ -84,16 +84,16 @@ The ``items version`` command should output the version:
 
 .. code-block:: console
 
-    $ items version
-    0.1.0
+   $ items version
+   0.1.0
 
 The version is also available via Python:
 
 .. code-block:: pycon
 
-    >>> import items
-    >>> items.__version__
-    '0.1.0'
+   >>> import items
+   >>> items.__version__
+   '0.1.0'
 
 One way to test this is
 
@@ -103,17 +103,17 @@ One way to test this is
 
 .. code-block:: python
 
-    import subprocess
+   import subprocess
 
-    import items
+   import items
 
 
-    def test_version():
-        process = subprocess.run(
-            ["items", "version"], capture_output=True, text=True
-        )
-        output = process.stdout.rstrip()
-        assert output == items.__version__
+   def test_version():
+       process = subprocess.run(
+           ["items", "version"], capture_output=True, text=True
+       )
+       output = process.stdout.rstrip()
+       assert output == items.__version__
 
 The ``rstrip()`` function is used to remove the line break.
 
@@ -125,13 +125,13 @@ use capsys to read the output:
 
 .. code-block::
 
-    import items
+   import items
 
 
-    def test_version(capsys):
-        items.cli.version()
-        output = capsys.readouterr().out.rstrip()
-        assert output == items.__version__
+   def test_version(capsys):
+       items.cli.version()
+       output = capsys.readouterr().out.rstrip()
+       assert output == items.__version__
 
 The ``capsys.readouterr()`` method returns a ``namedtuple`` that contains
 ``out`` and ``err``. We only read the ``out`` part and then we remove the line
@@ -143,25 +143,25 @@ application code. This includes ``print`` statements.
 
 .. code-block:: python
 
-    import items
+   import items
 
 
-    def test_stdout():
-        version = items.__version__
-        print("\nitems " + version)
+   def test_stdout():
+       version = items.__version__
+       print("\nitems " + version)
 
 However, when we run the test, we do not see any output:
 
 .. code-block:: pytest
 
-    $ pytest tests/test_output.py
-    ============================= test session starts ==============================
-    …
-    collected 1 item
+   $ pytest tests/test_output.py
+   ============================= test session starts ==============================
+   …
+   collected 1 item
 
-    tests/test_output.py .                                                   [100%]
+   tests/test_output.py .                                                   [100%]
 
-    ============================== 1 passed in 0.00s ===============================
+   ============================== 1 passed in 0.00s ===============================
 
 pytest captures the entire output. While this helps to keep the command line
 session clean, there may be times when we want to see the entire output, even if
@@ -170,56 +170,56 @@ the test passes. For this we can use the ``-s`` or ``--capture=no`` option:
 .. code-block:: pytest
    :emphasize-lines: 7
 
-    $ pytest -s tests/test_output.py
-    ============================= test session starts ==============================
-    …
-    collected 1 item
+   $ pytest -s tests/test_output.py
+   ============================= test session starts ==============================
+   …
+   collected 1 item
 
-    tests/test_output.py
-    items 0.1.0
-    .
+   tests/test_output.py
+   items 0.1.0
+   .
 
-    ============================== 1 passed in 0.00s ===============================
+   ============================== 1 passed in 0.00s ===============================
 
 Another way to always include the output is ``capsys.disabled()``:
 
 .. code-block:: python
 
-    import items
+   import items
 
 
-    def test_stdout(capsys):
-        with capsys.disabled():
-            version = items.__version__
-            print("\nitems " + version)
+   def test_stdout(capsys):
+       with capsys.disabled():
+           version = items.__version__
+           print("\nitems " + version)
 
 Now the output is always displayed in the ``with`` block, even without the
 ``-s`` option:
 
 .. code-block:: pytest
 
-    $ pytest tests/test_output.py
-    ============================= test session starts ==============================
-    …
-    collected 1 item
+   $ pytest tests/test_output.py
+   ============================= test session starts ==============================
+   …
+   collected 1 item
 
-    tests/test_output.py
-    items 0.1.0
-    .                                                   [100%]
+   tests/test_output.py
+   items 0.1.0
+   .                                                   [100%]
 
-    ============================== 1 passed in 0.00s ===============================
+   ============================== 1 passed in 0.00s ===============================
 
 .. seealso::
 
-    ``capfd``
-        Like ``capsys``, but captures file descriptors 1 and 2, which are
-        normally the same as ``stdout`` and ``stderr``
-    ``capsysbinary``
-        While capsys captures text, capsysbinary captures bytes
-    ``capfdbinary``
-        captures bytes in file descriptors 1 and 2
-    ``caplog``
-        captures output written with the logging package
+   ``capfd``
+       Like ``capsys``, but captures file descriptors 1 and 2, which are
+       normally the same as ``stdout`` and ``stderr``
+   ``capsysbinary``
+       While capsys captures text, capsysbinary captures bytes
+   ``capfdbinary``
+       captures bytes in file descriptors 1 and 2
+   ``caplog``
+       captures output written with the logging package
 
 .. _monkeypatch-fixture:
 
@@ -235,16 +235,16 @@ provides us with output hooks, for example:
 
 .. code-block:: python
 
-    from typer.testing import CliRunner
+   from typer.testing import CliRunner
 
-    import items
+   import items
 
 
-    def test_version():
-        runner = CliRunner()
-        result = runner.invoke(items.app, ["version"])
-        output = result.output.rstrip()
-        assert output == items.__version__
+   def test_version():
+       runner = CliRunner()
+       result = runner.invoke(items.app, ["version"])
+       output = result.output.rstrip()
+       assert output == items.__version__
 
 We will use this method of output testing as a starting point for the rest of
 the Items CLI tests. I started with the CLI tests by testing the Items version.
@@ -309,17 +309,17 @@ knowledge of the application code. Let’s take a look at the method
 
 .. code-block:: python
 
-    import os
-    import pathlib
+   import os
+   import pathlib
 
 
-    def get_path():
-        db_path_env = os.getenv("ITEMS_DB_DIR", "")
-        if db_path_env:
-            db_path = pathlib.Path(db_path_env)
-        else:
-            db_path = pathlib.Path.home() / "items_db"
-        return db_path
+   def get_path():
+       db_path_env = os.getenv("ITEMS_DB_DIR", "")
+       if db_path_env:
+           db_path = pathlib.Path(db_path_env)
+       else:
+           db_path = pathlib.Path.home() / "items_db"
+       return db_path
 
 This method tells the rest of the CLI code where the database is located. To
 display the location of the database on the command line, we now also define
@@ -327,16 +327,16 @@ display the location of the database on the command line, we now also define
 
 .. code-block:: python
 
-    @app.command()
-    def config():
-        """Return the path to the Items db."""
-        with items_db() as db:
-            print(db.path())
+   @app.command()
+   def config():
+       """Return the path to the Items db."""
+       with items_db() as db:
+           print(db.path())
 
 .. code-block:: console
 
-    $ items config
-    /Users/veit/items_db
+   $ items config
+   /Users/veit/items_db
 
 To test these methods, we can now patch either the entire ``get_path()``
 function or the ``pathlib.Path()`` attribute ``home``. To do this, we first
@@ -345,26 +345,26 @@ which outputs the same as ``items`` on the command line:
 
 .. code-block:: python
 
-    from typer.testing import CliRunner
+   from typer.testing import CliRunner
 
-    import items
+   import items
 
 
-    def run_items_cli(*params):
-        runner = CliRunner()
-        result = runner.invoke(items.app, params)
-        return result.output.rstrip()
+   def run_items_cli(*params):
+       runner = CliRunner()
+       result = runner.invoke(items.app, params)
+       return result.output.rstrip()
 
 We can then write our test, which patches the entire ``get_path()`` function:
 
 .. code-block:: python
 
-    def test_get_path(monkeypatch, tmp_path):
-        def fake_get_path():
-            return tmp_path
+   def test_get_path(monkeypatch, tmp_path):
+       def fake_get_path():
+           return tmp_path
 
-        monkeypatch.setattr(items.cli, "get_path", fake_get_path)
-        assert run_items_cli("config") == str(tmp_path)
+       monkeypatch.setattr(items.cli, "get_path", fake_get_path)
+       assert run_items_cli("config") == str(tmp_path)
 
 The ``get_path()`` function from ``items.cli`` cannot simply be replaced by
 ``tmp_path``, as this is a ``pathlib.Path`` object that cannot be called. It is
@@ -373,14 +373,14 @@ we can also patch the home attribute of ``pathlib.Path``:
 
 .. code-block:: python
 
-    def test_home(monkeypatch, tmp_path):
-        items_dir = tmp_path / "items_db"
+   def test_home(monkeypatch, tmp_path):
+       items_dir = tmp_path / "items_db"
 
-        def fake_home():
-            return tmp_path
+       def fake_home():
+           return tmp_path
 
-        monkeypatch.setattr(items.cli.pathlib.Path, "home", fake_home)
-        assert run_items_cli("config") == str(items_dir)
+       monkeypatch.setattr(items.cli.pathlib.Path, "home", fake_home)
+       assert run_items_cli("config") == str(items_dir)
 
 However, *monkey patching* and *mocking* complicate testing, so we will look for
 ways to avoid this whenever possible. In our case, it might be useful to set an
@@ -388,9 +388,9 @@ environment variable :envvar:`ITEMS_DB_DIR` that can be easily patched:
 
 .. code-block:: python
 
-    def test_env_var(monkeypatch, tmp_path):
-        monkeypatch.setenv("ITEMS_DB_DIR", str(tmp_path))
-        assert run_items_cli("config") == str(tmp_path)
+   def test_env_var(monkeypatch, tmp_path):
+       monkeypatch.setenv("ITEMS_DB_DIR", str(tmp_path))
+       assert run_items_cli("config") == str(tmp_path)
 
 Remaining built-in fixtures
 ---------------------------
