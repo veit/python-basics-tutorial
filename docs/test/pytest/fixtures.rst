@@ -529,7 +529,7 @@ And fixtures can also use several other fixtures:
     @pytest.fixture(scope="function")
     def populated_db(items_db, items_list):
         """ItemsDB object populated with 'items_list'"""
-        for i in some_items:
+        for i in items_list:
             items_db.add_item(i)
         return items_db
 

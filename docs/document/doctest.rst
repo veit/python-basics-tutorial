@@ -8,7 +8,7 @@ in a docstring or in another text file are fulfilled.
 
    .. literalinclude:: arithmetic.py
       :language: python
-      :lines: 9-18
+      :lines: 9-19
       :lineno-start: 9
 
 #. Then you can test it with:
@@ -28,12 +28,12 @@ in a docstring or in another text file are fulfilled.
         Expecting nothing
         ok
         Trying:
-            divide(x, y)
+            round(divide(x, y), 8)
         Expecting:
-            -1.1666666666666667
+            -1.16666667
         ok
         Trying:
-            divide(x, z)
+            divide(x, y)
         Expecting:
             Traceback (most recent call last):
               File "<stdin>", line 1, in <module>
@@ -75,9 +75,9 @@ in a docstring or in another text file are fulfilled.
         Expecting nothing
         ok
         Trying:
-            divide(x, y)
+            round(divide(x, y), 8)
         Expecting:
-            -1.1666666666666667
+            -1.16666667
         ok
         Trying:
             divide(x, z)
