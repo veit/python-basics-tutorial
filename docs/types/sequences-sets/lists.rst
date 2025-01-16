@@ -532,6 +532,8 @@ has any effect on the original list:
    >>> sup
    [[0], 1]
 
+.. _check-list:
+
 Checks
 ------
 
@@ -557,8 +559,6 @@ Checks
 
 * If you have a nested list ``ll``, how can you get a copy ``nll`` of this list
   in which you can change the elements without changing the contents of ``ll``?
-
-.. _check-list:
 
 * Make sure that the ``my_collection`` object is a list before you try to append
   data to it.

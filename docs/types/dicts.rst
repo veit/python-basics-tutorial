@@ -137,3 +137,6 @@ Checks
 * You can use a :doc:`dictionary </types/dicts>`  and use it like a spreadsheet
   sheet by using :doc:`tuples </types/sequences-sets/tuples>` as key row and
   column values. Write sample code to add and retrieve values.
+
+* How can you remove all duplicates from a list without changing the order of the
+  elements in the list?

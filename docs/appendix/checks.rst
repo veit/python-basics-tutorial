@@ -280,6 +280,15 @@ Checks
      >>> print(sheet[("A", 1)])
      2
 
+* How can you remove all duplicates from a list without changing the order of the
+  elements in the list?
+
+  The keys of a :doc:`/types/dicts` can be used for this:
+
+  .. code-block:: pycon
+
+     >>> list(dict.fromkeys(l))
+
 :doc:`/types/strings/index`
 ---------------------------
 
