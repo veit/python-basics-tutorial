@@ -32,6 +32,10 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update uv sections
+
+  * Reproducing and updating uv environments
+
 * 📝 Update conda term
 * 📝 Update GitLab package registry
 * 📝 Expand the pytest plugins section
