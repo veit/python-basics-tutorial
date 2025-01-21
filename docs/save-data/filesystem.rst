@@ -26,7 +26,7 @@ has a separate root directory for each drive, referred to as :samp:`{C:\\}`, and
 so on. Because of these differences, files have different path names on
 different operating systems. A file named :samp:`{C:\\DATA\\MYFILE}` on Windows
 could be :samp:`{/DATA/MYFILE}` on Linux and macOS. Python provides functions
-and constants that allow you to perform common pathname manipulations without
+and variables that allow you to perform common pathname manipulations without
 having to worry about such syntactical details. With a little care, you can
 write your Python programs to run correctly regardless of the underlying file
 system.
@@ -109,12 +109,12 @@ Relative pathnames
 
       .. note::
          ``os.getcwd()`` is used as a function call without arguments to make it
-         clear that the returned value is not a constant, but changes when you
-         change the value of the current working directory. In the example
-         above, the result is the home directory on one of my Linux machines. On
-         Windows machines, additional backslashes would be added to the path:
-         ``C:\\Users\\Veit``, because Windows uses the backslash ``\`` as a path
-         separator, but it has a different meaning in
+         clear that the returned value is not a :term:`constant`, but changes
+         when you change the value of the current working directory. In the
+         example above, the result is the home directory on one of my Linux
+         machines. On Windows machines, additional backslashes would be added to
+         the path: ``C:\\Users\\Veit``, because Windows uses the backslash ``\``
+         as a path separator, but it has a different meaning in
          :doc:`/types/strings/index`.
 
       To display the contents of the current directory, you can enter the
@@ -244,7 +244,7 @@ operating system-specific syntax.
        >>> os.path.expandvars("$HOME/python-basics-tutorial")
        '/home/veit/python-basics-tutorial'
 
-Useful constants and functions
+Useful variables and functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :data:`python3:os.name`

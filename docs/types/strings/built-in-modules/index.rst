@@ -9,7 +9,7 @@ use to manage strings:
 +-----------------------+-------------------------------------------------------------------------------+
 | Module                | Description                                                                   |
 +=======================+===============================================================================+
-| :py:mod:`string`      | compares with constants such as :py:data:`string.digits` or                   |
+| :py:mod:`string`      | compares with variables such as :py:data:`string.digits` or                   |
 |                       | :py:data:`string.whitespace`                                                  |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`re`          | searches and replaces text with regular expressions                           |

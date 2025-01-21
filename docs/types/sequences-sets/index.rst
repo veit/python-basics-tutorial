@@ -5,7 +5,8 @@ Sequences (:doc:`lists` and :doc:`tuples`) and sets (:ref:`set` and
 :ref:`frozenset`) essentially differ in the following properties:
 
 +---------------+---------------+---------------+---------------+---------------+
-| Data type     | mutable       | ordered       | indexed       | duplicates    |
+| Data type     | :term:`mutable| ordered       | indexed       | duplicates    |
+|               | <immutable>`  |               |               |               |
 +===============+===============+===============+===============+===============+
 | List          | ✅            | ✅            | ✅            | ✅            |
 +---------------+---------------+---------------+---------------+---------------+

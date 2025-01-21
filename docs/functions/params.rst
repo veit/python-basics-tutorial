@@ -224,7 +224,7 @@ Mutable objects as arguments
 ----------------------------
 
 Arguments are passed by object reference. The parameter becomes a new reference
-to the object. With immutable objects such as
+to the object. With :term:`immutable` objects such as
 :doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` and
 :doc:`/types/numbers/index`, what is done with a parameter has no effect
 outside the function. However, if you pass a mutable object, such as a
@@ -244,7 +244,7 @@ function. Reassigning the parameter has no effect on the argument.
     >>> x, y
     (5, [2, 4, 6, 1])
 
-The variable ``x`` is not changed because it is unchangeable. Instead, the
+The variable ``x`` is not changed because it is :term:`immutable`. Instead, the
 function parameter ``n`` is set so that it refers to the new value ``6``.
 However, there is a change in ``y`` because the list it refers to has been
 changed.

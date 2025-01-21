@@ -53,8 +53,10 @@ considered ``True``.
     If ``x`` and ``z[0]`` have the same ID in memory, this means that we are
     referring to the same object in two places.
 
-    Most frequently, ``is`` and ``is not`` are used in conjunction with
-    :doc:`../types/none`:
+    The ``is`` operator is mostly used for values that only exist once in
+    memory, so-called :term:`singleton objects <Singleton object>`. For example,
+    checking for :doc:`../types/none` is the most common use of the ``is``
+    operator.
 
     .. code-block:: pycon
 
@@ -63,9 +65,9 @@ considered ``True``.
        >>> x is not None
        True
 
-    The Python style guide in :pep:`8` says that you should use identity to
-    compare with :doc:`../types/none`. So you should never use ``x == None``,
-    but ``x is None`` instead.
+    The Python style guide in :pep:`8` also recommends that you should check for
+    identity with :doc:`../types/none` and not for values, so never use ``x ==
+    None``, but always use ``x is None``  instead.
 
 ``and``, ``not``, ``or``
     are logical operators that we can use to link the above checks:

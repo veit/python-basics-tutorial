@@ -172,7 +172,7 @@ the spaces at the left or right end of the original string:
 
 In this example, the newlines ``\n`` are regarded as whitespace. The exact
 assignment may differ from operating system to operating system. You can find
-out what Python considers to be whitespace by accessing the constant
+out what Python considers to be whitespace by accessing the variable
 :py:data:`string.whitespace`. For me, the following is returned:
 
 .. code-block:: pycon
@@ -268,8 +268,8 @@ character string:
 Changing strings
 ----------------
 
-:ref:`str <python3:textseq>` are immutable, but they have several methods that
-can return a modified version of the original string.
+:ref:`str <python3:textseq>` are :term:`immutable`, but they have several methods
+that can return a modified version of the original string.
 
 :py:meth:`str.replace` can be used to replace occurrences of the first
  :doc:`parameter <../../../functions/params>` with the second, for example:

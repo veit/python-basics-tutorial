@@ -32,6 +32,10 @@ Added
 Changed
 ~~~~~~~
 
+* 📝  Update glossary
+
+  * Add constant, singleton and immutable objects
+
 * 📝 Update uv sections
 
   * Reproducing and updating uv environments

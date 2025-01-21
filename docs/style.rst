@@ -67,8 +67,8 @@ Python conventions can be found in the following table:
 +-----------------------+-------------------------------+-------------------------------+
 | Class names           | CamelCase notation            | ``MyClass``                   |
 +-----------------------+-------------------------------+-------------------------------+
-| Constant names        | Capital letters with          | ``PI``                        |
-|                       | underscores                   |                               |
+| :term:`Constant`      | Capital letters with          | ``PI``                        |
+|  names                | underscores                   |                               |
 +-----------------------+-------------------------------+-------------------------------+
 | Indentation           | Four spaces per level, no     |                               |
 |                       | tabs                          |                               |

@@ -340,7 +340,7 @@ directory.
 
 :file:`loaders.py`
     is an example of a module within the package that could contain the logic
-    (functions, classes, constants, :abbr:`etc. (et cetera)`) of your package.
+    (functions, classes, variables, :abbr:`etc. (et cetera)`) of your package.
 
 Other files
 -----------

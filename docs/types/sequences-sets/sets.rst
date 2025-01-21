@@ -94,8 +94,8 @@ Difference or remainder set
 ``frozenset``
 -------------
 
-In addition to ``set``, there is also ``frozenset``, an immutable data type. This
-means that they can also be members of other sets:
+In addition to ``set``, there is also ``frozenset``, an :term:`immutable` data
+type. This means that they can also be members of other sets:
 
 .. code-block:: pycon
    :linenos:

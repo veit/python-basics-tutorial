@@ -16,6 +16,12 @@ Glossary
            at the beginning of an argument list and/or passed as elements of an
            iteration preceded by ``*``.
 
+
+   Constant
+       Python has :term:`immutable` objects, but no constant variables.
+       Variables refer to objects, but there is no way to prevent a new
+       assignment from being made.
+
    Control flow
        Time sequence of the individual commands of a computer program.
 
@@ -95,6 +101,11 @@ Glossary
        .. seealso::
           * :py:mod:`gc`
 
+   Immutable
+       An object that cannot be mutated. The value of an immutable object cannot
+       change. :doc:`Tuples <../types/sequences-sets/tuples>` are examples of
+       immutable objects.
+
    LBYL
        Look before you leap. With this style, the preconditions are explicitly
        checked before the call. This style is in contrast to the :term:`EAFP`
@@ -110,6 +121,10 @@ Glossary
 
        .. seealso::
           * :doc:`/functions/params`
+
+   Singleton object
+       A singleton class can only create one instance of itself.
+       :doc:`../types/none` is an example of a singleton class in Python.
 
    Zen of Python
        Listing of Python design principles and philosophies that are helpful for
@@ -458,7 +473,6 @@ Glossary
           * `Docs <https://scikit-build.readthedocs.io/en/latest/>`__
           * `GitHub <https://github.com/scikit-build/scikit-build>`__
           * `PyPI <https://pypi.org/project/scikit-build>`__
-
 
    setuptools
        setuptools are the classic build system, which is very powerful, but with

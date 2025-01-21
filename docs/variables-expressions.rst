@@ -42,9 +42,9 @@ for the first time.
       1 4 1
 
    In this case, after the third line, ``x``, ``y`` and ``z`` all refer to the
-   same immutable integer object with the value ``1``. The next line, ``y = 4``,
-   causes ``y`` to refer to the integer object ``4``, but this does not change
-   the references of ``x`` or ``z``.
+   same :term:`immutable` integer object with the value ``1``. The next line,
+   ``y = 4``, causes ``y`` to refer to the integer object ``4``, but this does
+   not change the references of ``x`` or ``z``.
 
 Python variables can be set to any object, whereas in many other languages
 variables can only be stored in the declared type.

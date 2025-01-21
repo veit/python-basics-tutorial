@@ -112,7 +112,7 @@ Advanced numerical functions
 ----------------------------
 
 More advanced numerical functions such as trigonometry, as well as some useful
-constants, are not built into Python, but are provided in a standard module
+variables, are not built into Python, but are provided in a standard module
 called :doc:`math <python3:library/math>`. :doc:`Module </modules/index>` will
 be explained in more detail later. For now, suffice it to say that you need to
 make the maths functions available in this section by importing ``math``:
@@ -153,7 +153,7 @@ The ``math`` module provides, among other things
   :func:`python3:math.sin`,
 * the hyperbolic functions :func:`python3:math.cosh`,
   :func:`python3:math.sinh` and :func:`python3:math.tanh`
-* and the constants :data:`python3:math.e` and :data:`python3:math.pi`.
+* and the variables :data:`python3:math.e` and :data:`python3:math.pi`.
 
 Rounding half to even
 ---------------------

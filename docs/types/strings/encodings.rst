@@ -53,24 +53,21 @@ The ``string`` module
 ---------------------
 
 Python’s :doc:`string <python3:library/string>` module distinguishes the
-following string constants, all of which fall into the ASCII character set:
+following string variables, all of which fall into the ASCII character set:
 
-.. code-block:: python
+* :py:data:`string.whitespace` ``= " \t\n\r\v\f"``
+* :py:data:`string.ascii_lowercase` ``= "abcdefghijklmnopqrstuvwxyz"``
+* :py:data:`string.ascii_uppercase` ``= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"``
+* :py:data:`string.ascii_letters` ``= ascii_lowercase + ascii_uppercase``
+* :py:data:`string.digits` ``= "0123456789"``
+* :py:data:`string.hexdigits` ``= digits + "abcdef" + "ABCDEF"``
+* :py:data:`string.octdigits` ``= "01234567"``
+* :py:data:`string.punctuation` ``= r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""``
+* :py:data:`string.printable` ``= digits + ascii_letters + punctuation + whitespace``
 
-    # Some strings for ctype-style character classification
-    whitespace = " \t\n\r\v\f"
-    ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
-    ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    ascii_letters = ascii_lowercase + ascii_uppercase
-    digits = "0123456789"
-    hexdigits = digits + "abcdef" + "ABCDEF"
-    octdigits = "01234567"
-    punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
-    printable = digits + ascii_letters + punctuation + whitespace
-
-Most of these constants should be self-explanatory in their identifier names.
+Most of these variables should be self-explanatory in their identifier names.
 ``hexdigits`` and ``octdigits`` refer to the hexadecimal and octal values
-respectively. You can use these constants for everyday string manipulation:
+respectively. You can use these variables for everyday string manipulation:
 
 .. code-block:: pycon
 

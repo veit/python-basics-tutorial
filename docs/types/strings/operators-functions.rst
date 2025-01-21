@@ -35,7 +35,7 @@ or slices:
    'pythonistas!'
 
 However, the index and slice notation cannot be used to add, remove or replace
-elements, as character strings are immutable:
+elements, as character strings are :term:`immutable`:
 
 .. code-block:: pycon
 
@@ -95,8 +95,8 @@ Lines 13–16
 Changing character strings with list manipulations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since :ref:`str <python3:textseq>` objects are immutable, there is no way to
-change them directly like :doc:`lists <../sequences-sets/lists>`. However, you
+Since :ref:`str <python3:textseq>` objects are :term:`immutable`, there is no way
+to change them directly like :doc:`lists <../sequences-sets/lists>`. However, you
 can convert them into lists:
 
 .. code-block:: pycon
