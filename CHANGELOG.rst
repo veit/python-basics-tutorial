@@ -13,8 +13,11 @@ emergencies when we need to start branches for older versions.
 
 .. unreleased
 
-`Unreleased <https://github.com/veit/python-basics-tutorial/compare/24.3.0...HEAD>`_
-------------------------------------------------------------------------------------
+`Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/25.1.0...HEAD>`_
+---------------------------------------------------------------------------------------
+
+`25.1.0 <https://github.com/veit/python-basics-tutorial/compare/24.3.0...25.1.0>`_
+----------------------------------------------------------------------------------
 
 Added
 ~~~~~
