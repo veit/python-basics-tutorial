@@ -32,6 +32,13 @@ Added
 Changed
 ~~~~~~~
 
+
+* 📝 Update cookiecutter templates
+
+  * Add badges
+  * Remove deprecated templates
+  * Add Jupyter Notebook section
+
 * 📝  Update glossary
 
   * Add constant, singleton and immutable objects
