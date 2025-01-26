@@ -16,8 +16,8 @@ GitLab project. However, the following conditions must be met:
 You can then use the package with both :term:`pip` and :term:`uv`.
 
 .. seealso::
-   `PyPI packages in the Package Registry
-   <https://docs.gitlab.com/ee/user/packages/pypi_repository/#publish-a-pypi-package-by-using-twine>`_
+   `Publish a PyPI package
+   <https://docs.gitlab.com/ee/user/packages/pypi_repository/#publish-a-pypi-package>`_
 
 Authentication
 --------------

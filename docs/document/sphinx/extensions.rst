@@ -72,7 +72,7 @@ Third-party extensions
 `Sphinx-Needs <https://sphinx-needs.readthedocs.io/en/latest/>`_
     allows the definition, linking and filtering of need-objects, for example
     requirements and test cases
-`Sphinx-pyreverse <https://github.com/alendit/sphinx-pyreverse>`_
+`Sphinx-pyreverse <https://github.com/sphinx-pyreverse/sphinx-pyreverse>`_
     generate a UML diagram from python modules
 `sphinx-jsonschema <https://github.com/lnoor/sphinx-jsonschema>`_
     display a `JSON Schema <https://json-schema.org>`_ in the Sphinx

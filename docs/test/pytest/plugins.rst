@@ -71,7 +71,7 @@ usual sequence of a test:
        :target: https://github.com/tonybaloney/pytest-freethreaded/stargazers
     .. image:: https://raster.shields.io/github/contributors/tonybaloney/pytest-freethreaded
        :alt: Contributors
-       :target: https://github.com/tonybaloney/pytest-freethreaded/contributors
+       :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/contributors
     .. image:: https://raster.shields.io/github/commit-activity/y/tonybaloney/pytest-freethreaded
        :alt: Commit activity
        :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/commit-activity
@@ -85,7 +85,7 @@ usual sequence of a test:
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-rerunfailures
        :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-dev/pytest-rerunfailures
+       :target: https://github.com/pytest-dev/pytest-rerunfailures
     .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-rerunfailures
        :alt: Contributors
        :target: https://github.com/pytest-dev/pytest-rerunfailures/graphs/contributors
@@ -178,7 +178,7 @@ result. However, there are plugins that change the output even further:
        :target: https://github.com/mrmino/pytest-edit/stargazers
     .. image:: https://raster.shields.io/github/contributors/mrmino/pytest-edit
        :alt: Contributors
-       :target: https://github.com/pytest-dev/mrmino/pytest-edit
+       :target: https://github.com/mrmino/pytest-edit
     .. image:: https://raster.shields.io/github/commit-activity/y/mrmino/pytest-edit
        :alt: Commit activity
        :target: https://github.com/mrmino/pytest-edit/graphs/commit-activity
@@ -287,7 +287,7 @@ plugins that further simplify testing:
        :target: https://github.com/ElSnoMan/pyleniumio/stargazers
     .. image:: https://raster.shields.io/github/contributors/ElSnoMan/pyleniumio
        :alt: Contributors
-       :target: https://github.com/pytest-dev/ElSnoMan/pyleniumio
+       :target: https://github.com/ElSnoMan/pyleniumio/graphs/contributors
     .. image:: https://raster.shields.io/github/commit-activity/y/ElSnoMan/pyleniumio
        :alt: Commit activity
        :target: https://github.com/ElSnoMan/pyleniumio/graphs/commit-activity
@@ -388,7 +388,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :target: https://github.com/ionelmc/pytest-benchmark/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/ionelmc/pytest-benchmark
        :alt: Lizenz
-       :target: https://github.com/pytest-dev/ionelmc/pytest-benchmark-1-ov-file#readme
+       :target: https://github.com/ionelmc/pytest-benchmark?tab=BSD-2-Clause-1-ov-file#readme
 
 `pytest-timeout <https://pypi.org/project/pytest-timeout/>`_
     prevents tests from running too long.

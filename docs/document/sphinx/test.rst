@@ -260,7 +260,7 @@ Vale is configured in the :file:`.vale.ini` file:
    BasedOnStyles = cusy-en
 
 .. seealso::
-   * `Vale Configuration <https://vale.sh/docs/topics/config/>`_
+   * `Vale Configuration <https://vale.sh/docs/vale-ini>`_
 
 You should then update your :ref:`.gitignore <gitignore>` file if necessary:
 

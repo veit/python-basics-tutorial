@@ -11,7 +11,7 @@ example:
 
 .. |Downloads| image::
    https://static.pepy.tech/badge/cookiecutter-namespace-template
-   :target: https://www.pepy.tech/projects/cookiecutter-namespace-template
+   :target: https://pepy.tech/projects/cookiecutter-namespace-template
 .. |Versions| image::
    https://img.shields.io/pypi/pyversions/cookiecutter-namespace-template.svg
    :target: https://pypi.org/project/cookiecutter-namespace-template/
