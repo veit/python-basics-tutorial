@@ -2,9 +2,9 @@ Hypothesis
 ==========
 
 `Hypothesis <https://hypothesis.readthedocs.io/>`_ is a library that allows you
-to write tests that are parameterised from a source of examples. It then
-generates simple and understandable examples that can be used to make your tests
-fail and find bugs with little effort.
+to write tests that are :term:`parameterised <Parameter>` from a source of
+examples. It then generates simple and understandable examples that can be used
+to make your tests fail and find bugs with little effort.
 
 #. Install Hypothesis:
 

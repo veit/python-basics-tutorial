@@ -333,7 +333,7 @@ exception is raised, the test fails.
 
 We have just checked the type of the exception in ``test_db_exists()``. We can
 also check if the message is correct, or any other aspect of the exception, such
-as additional parameters:
+as additional :term:`parameters <Parameter>`:
 
 .. code-block:: python
 

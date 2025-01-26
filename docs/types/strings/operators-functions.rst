@@ -148,7 +148,7 @@ Checks
 
 * Which of the following strings cannot be converted into numbers and why?
 
- * ``int("1e2")``
- * ``int(1e+2)``
- * ``int("1+2")``
- * ``int("+2")``
+  * ``int("1e2")``
+  * ``int(1e+2)``
+  * ``int("1+2")``
+  * ``int("+2")``

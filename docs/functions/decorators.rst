@@ -3,9 +3,9 @@ Decorators
 
 Functions can also be passed as arguments to other functions and return the
 results of other functions. For example, it is possible to write a Python
-function that takes another function as a parameter, embeds it in another
-function that does something similar, and then returns the new function. This
-new combination can then be used instead of the original function:
+function that takes another function as a :term:`parameter`, embeds it in
+another function that does something similar, and then returns the new function.
+This new combination can then be used instead of the original function:
 
 .. code-block:: pycon
    :linenos:
@@ -41,8 +41,8 @@ much cleaner and easier to read. Using a decorator simply consists of two parts:
 #. the use of an ``@`` followed by the decorator just before the wrapped
    function is defined.
 
-The decorator function should take a function as a parameter and return a
-function, as follows:
+The decorator function should take a function as a :term:`parameter` and return
+a function, as follows:
 
 .. code-block:: pycon
    :linenos:
@@ -71,9 +71,9 @@ as decorators, such as:
 :func:`functools.cache`
     Simple, lightweight, function cache as of Python ≥ 3.9, sometimes called
     *memoize*. It returns the same as :func:`functools.lru_cache` with the
-    parameter ``maxsize=None``, additionally creating a :doc:`/types/dicts` with
-    the function arguments. Since old values never need to be deleted, this
-    function is then also smaller and faster. Example:
+    :term:`parameter` ``maxsize=None``, additionally creating a
+    :doc:`/types/dicts` with the function arguments. Since old values never
+    need to be deleted, this function is then also smaller and faster. Example:
 
     .. code-block:: pycon
        :linenos:

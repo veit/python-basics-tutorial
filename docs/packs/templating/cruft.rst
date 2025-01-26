@@ -35,7 +35,7 @@ To create a new project with cruft, you can run :samp:`cruft create
 
 cruft uses :doc:`Cookiecutter <features>` for this and the only difference in
 the resulting output is a :file:`.cruft.json` file that contains the git hash of
-the template used as well as the specified parameters.
+the template used as well as the specified :term:`parameters <Parameter>`.
 
 .. tip::
 

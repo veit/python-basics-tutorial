@@ -196,7 +196,7 @@ an additional package. If you want to try out the example, install it first with
 If we want to run all tests, even those that we know will fail, we can use the
 marker ``xfail`` or more precisely :samp:`@pytest.mark.xfail({CONDITION}, {...
 *, {REASON}, run={True}, raises={None}, strict={True})`. The first set of
-parameters for this fixture is the same as for  ``skipif``.
+:term:`parameters <Parameter>` for this fixture is the same as for  ``skipif``.
 
 ``run``
     The test is executed by default, unless ``run=False`` is set.
@@ -246,8 +246,8 @@ Let’s take a look at an example:
 We have three tests here: one that we know will fail, and two that we know will
 pass. These tests demonstrate both the failing and passing of using ``xfail``
 and the effects of using ``strict``. The first example also uses the optional
-``condition`` parameter, which works like ``skipif``’s conditions. And this is
-what the result looks like:
+``condition`` :term:`parameter`, which works like ``skipif``’s conditions. And
+this is what the result looks like:
 
 .. code-block::
 
@@ -440,9 +440,9 @@ Markers for files, classes and parameters
 With the tests in :file:`test_start.py`, we have added
 :samp:`@pytest.mark.{MARKER_NAME}` decorators to test functions. We can also add
 markers to entire files or classes to mark multiple tests, or go into
-parameterised tests and mark individual parameterisations. We can even set
-multiple markers on a single test. First, we set in :file:`test_finish.py` with
-a file-level marker:
+:term:`parameterised <Parameter>` tests and mark individual parameterisations.
+We can even set multiple markers on a single test. First, we set in
+:file:`test_finish.py` with a file-level marker:
 
 .. code-block:: python
    :emphasize-lines: 5
@@ -490,7 +490,8 @@ The test class :class:`TestFinish` is labelled with ``@pytest.mark.smoke``. If
 you mark a test class in this way, every test method in the class will be
 labelled with the same marker.
 
-We can also mark only certain test cases of a parameterised test:
+We can also mark only certain test cases of a :term:`parameterised <Parameter>`
+test:
 
 .. code-block:: python
    :emphasize-lines: 5
@@ -510,14 +511,15 @@ We can also mark only certain test cases of a parameterised test:
        assert s.state == "done"
 
 The :func:`test_finish` function is not directly marked, but only one of its
-parameters: :samp:`pytest.param("in progress", marks=pytest.mark.smoke)`. You
-can use more than one marker by using the list form:
+:term:`parameters <Parameter>`: :samp:`pytest.param("in progress",
+marks=pytest.mark.smoke)`. You can use more than one marker by using the list
+form:
 :samp:`marks=[pytest.mark.{ONE}, pytest.mark.{TWO}]`. If you want to mark all
-test cases of a parameterised test, insert the marker either above or below the
-decorator ``parametrize``, as with a normal function.
+test cases of a :term:`parameterised <Parameter>` test, insert the marker either
+above or below the decorator ``parametrize``, as with a normal function.
 
-The previous example referred to function parameterisation. However, you can
-also mark fixtures in the same way:
+The previous example referred to function :term:`parameterisation <Parameter>`.
+However, you can also mark fixtures in the same way:
 
 .. code-block:: python
    :emphasize-lines: 8-9, 12
@@ -663,10 +665,11 @@ Combining markers with fixtures
 -------------------------------
 
 Markers can be used in conjunction with fixtures, plugins and hook functions.
-The built-in markers require parameters, while the custom markers we have used
-so far do not require parameters. Let’s create a new marker called ``num_items``
-that we can pass to the ``items_db`` fixture. The ``items_db`` fixture currently
-cleans up the database for each test that wants to use it:
+The built-in markers require :term:`parameters <Parameter>`, while the custom
+markers we have used so far do not require parameters. Let’s create a new marker
+called ``num_items`` that we can pass to the ``items_db`` fixture. The
+``items_db`` fixture currently cleans up the database for each test that wants
+to use it:
 
 .. code-block:: python
 
@@ -786,7 +789,7 @@ have. This requires three steps:
 
    Line 13
     We have added ``request`` and ``faker`` to the list of ``items_db``
-    parameters.
+    :term:`parameters <Parameter>`.
    Line 18
     This sets the randomness of faker so that we get the same data every time.
     We are not using faker here for very random data, but to avoid having to
@@ -877,7 +880,8 @@ We’ve already covered a lot of markers: the built-in markers ``skip``,
 ``skipif`` and ``xfail``, our own markers ``smoke``, ``exception``, ``finish``
 and ``num_items`` and there are also a few more built-in markers. And when we
 start using :doc:`plugins`, more markers may be added. To list all available
-markers with descriptions and parameters, you can run ``pytest --markers``:
+markers with descriptions and :term:`parameters <Parameter>`, you can run
+``pytest --markers``:
 
 .. code-block:: pytest
 

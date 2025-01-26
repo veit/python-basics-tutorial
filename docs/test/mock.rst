@@ -250,10 +250,10 @@ implementation. By default, however, they will accept any access. For example, i
 the real object allows :func:`start(index)`, our mock objects should also allow
 :func:`start(index)`. However, there is a problem with this. Mock objects are
 too flexible by default: they would also accept :func:`stort` or other
-misspelled, renamed or deleted methods or parameters. Over time, this can lead to
-so-called mock drift if the interface you are modelling changes, but your mock in
-your test code does not. This form of mock drift can be solved by adding
-``autospec=True`` to the mock during creation:
+misspelled, renamed or deleted methods or :term:`parameters <Parameter>`. Over
+time, this can lead to so-called mock drift if the interface you are modelling
+changes, but your mock in your test code does not. This form of mock drift can
+be solved by adding ``autospec=True`` to the mock during creation:
 
 .. code-block:: python
    :emphasize-lines: 3
@@ -378,7 +378,8 @@ However, sometimes mocking is the easiest way to create exceptions or error
 conditions and make sure your code handles them correctly. There are also cases
 where testing behaviour is unreasonable, such as when accessing a payment API or
 sending emails. In these cases, a good option is to test whether your code calls
-a specific API method at the right time and with the right parameters.
+a specific API method at the right time and with the right :term:`parameters
+<Parameter>`.
 
 .. seealso::
    * Hynek Schlawack: `“Don’t Mock What You Don’t Own”
@@ -402,10 +403,11 @@ via the CLI. We can also test the :ref:`test_add_with_owner
        assert all[0] == expected
 
 Mocking tests the implementation of the command line interface and ensures that
-an API call is made with certain parameters. The mixed-layer approach tests the
-behaviour to ensure that the result meets our expectations. This approach is much
-less of a change detector and has a greater chance of remaining valid during a
-refactoring. Interestingly, the tests are also about twice as fast:
+an API call is made with certain :term:`parameters <Parameter>`. The
+mixed-layer approach tests the behaviour to ensure that the result meets our
+expectations. This approach is much less of a change detector and has a greater
+chance of remaining valid during a refactoring. Interestingly, the tests are
+also about twice as fast:
 
 .. code-block:: pytest
 

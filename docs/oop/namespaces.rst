@@ -17,8 +17,8 @@ variables <nonlocal_variables>`.
 
 If you are in the method of a class, you have direct access
 
-#. to the **local namespace** with the parameters and variables declared in this
-   method,
+#. to the **local namespace** with the :term:`parameters <Parameter>` and
+   variables declared in this method,
 #. the **global namespace** with functions and variables declared at module
    level, and
 #. the **built-in namespace** with the built-in functions and built-in

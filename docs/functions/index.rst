@@ -30,13 +30,14 @@ inserts the code into a function so that you can call it to get the `factorial
 Line 2
     This is an optional documentation string, or ``docstring``. You can get its
     value by calling ``fact.__doc__``. The purpose of docstrings is to describe
-    the behaviour of a function and the parameters it takes, while comments are
-    to document internal information about how the code works. Docstrings are
-    :doc:`/types/strings/index` that immediately follow the first line of a
-    function definition and are usually enclosed in triple quotes to allow for
-    multi-line descriptions. For multi-line documentation strings, it is common
-    to give a summary of the function on the first line, follow this summary
-    with an empty line and end with the rest of the information.
+    the behaviour of a function and the :term:`parameters <Parameter>` it takes,
+    while comments are to document internal information about how the code
+    works. Docstrings are :doc:`/types/strings/index` that immediately follow
+    the first line of a function definition and are usually enclosed in triple
+    quotes to allow for multi-line descriptions. For multi-line documentation
+    strings, it is common to give a summary of the function on the first line,
+    follow this summary with an empty line and end with the rest of the
+    information.
 
     .. seealso::
         * :ref:`napoleon`

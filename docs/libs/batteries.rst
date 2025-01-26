@@ -56,7 +56,7 @@ Modules for data types
 | :py:mod:`pprint`      | prints Python data structures „pretty“.                                       |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`typing`      | supports commenting code with hints about the types of objects, especially    |
-|                       | function parameters and return values                                         |
+|                       | function :term:`parameters <Parameter>` and return values                     |
 +-----------------------+-------------------------------------------------------------------------------+
 
 Modules for numbers
@@ -175,7 +175,7 @@ Developing and debugging
 | :py:mod:`profile`,                | Python profiler                                                               |
 | :py:mod:`cProfile`                |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`sys`                     | System-specific parameters and functions                                      |
+| :py:mod:`sys`                     | System-specific :term:`parameters <Parameter>` and functions                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`gc`                      | Functions of the Python garbage collector                                     |
 +-----------------------------------+-------------------------------------------------------------------------------+

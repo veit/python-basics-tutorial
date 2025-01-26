@@ -42,12 +42,12 @@ Here is a simple fixture that returns a number:
 
 The ``@pytest.fixture()`` :doc:`decorator </functions/decorators>` is used to
 tell pytest that a function is a fixture. If you include the fixture name in the
-parameter list of a test function, pytest knows that the function should be
-executed before the test is run. Fixtures can perform work and also return data
-to the test function. In this case, ``@pytest.fixture()`` decorates the function
-:func:`some_data`. The test :func:`test_some_data` has the name of the fixture,
-:func:`some_data` as a parameter. pytest recognises this and searches for a
-fixture with this name.
+:term:`parameter` list of a test function, pytest knows that the function should
+be executed before the test is run. Fixtures can perform work and also return
+data to the test function. In this case, ``@pytest.fixture()`` decorates the
+function :func:`some_data`. The test :func:`test_some_data` has the name of the
+fixture, :func:`some_data` as a parameter. pytest recognises this and searches
+for a fixture with this name.
 
 Test fixtures in pytest refer to the mechanism that allows the separation of
 preparation for and cleanup after code from your test functions. pytest handles
@@ -87,7 +87,7 @@ area where fixtures will be of great help:
 
 To be able to call :func:`count`, we need a database object, which we obtain by
 calling :func:`items.ItemsDB(db_path)`. The :func:`items.ItemsDB` function
-returns an ``ItemsDB`` object. The parameter ``db_path`` must be a
+returns an ``ItemsDB`` object. The :term:`parameter` ``db_path`` must be a
 ``pathlib.Path`` object that points to the database directory. For testing, a
 temporary directory that we obtain with :func:`tempfile.TemporaryDirectory`
 works.
@@ -223,7 +223,8 @@ We have saved this setup time for the second test function. By changing the
 module scope, any test in this module that uses the ``items_db`` fixture can use
 the same instance of it without incurring additional setup and teardown time.
 
-However, the fixture parameter ``scope`` allows for more than just ``module``:
+However, the fixture :term:`parameter` ``scope`` allows for more than just
+``module``:
 
 +-----------------------+-----------------------------------------------+
 | ``scope`` values      | Description                                   |
@@ -455,8 +456,8 @@ zero items in the database, we can do this by adding another fixture in
 
 I have renamed the old ``items_db`` to ``db`` and moved it to the session area.
 
-The ``items_db`` fixture has ``db`` in its parameter list, which means that it
-depends on the ``db`` fixture. In addition, ``items_db`` is
+The ``items_db`` fixture has ``db`` in its :term:`parameter` list, which means
+that it depends on the ``db`` fixture. In addition, ``items_db`` is
 ``function``-orientated, which is a narrower scope than ``db``. If fixtures
 depend on other fixtures, they can only use fixtures that have the same or a
 larger scope.
@@ -656,10 +657,10 @@ The database is now set up before each test function and then dismantled again.
 ---------------------------------------------
 
 Previously, all fixtures used by tests were named by the tests or another
-fixture in a parameter list. However, you can use ``autouse=True`` to always run
-a fixture. This is good for code that needs to run at specific times, but tests
-are not really dependent on a system state or data from the fixture, for
-example:
+fixture in a :term:`parameter` list. However, you can use ``autouse=True`` to
+always run a fixture. This is good for code that needs to run at specific times,
+but tests are not really dependent on a system state or data from the fixture,
+for example:
 
 .. code-block::
 
@@ -704,10 +705,10 @@ example:
 Rename fixtures
 ---------------
 
-The name of a fixture listed in the parameter list of tests and other fixtures
-that use this fixture is normally the same as the function name of the fixture.
-However, Pytest allows you to rename fixtures with the ``name`` parameter to
-``@pytest.fixture()``:
+The name of a fixture listed in the :term:`parameter` list of tests and other
+fixtures that use this fixture is normally the same as the function name of the
+fixture. However, Pytest allows you to rename fixtures with the ``name``
+parameter to ``@pytest.fixture()``:
 
 .. code-block:: python
 

@@ -9,8 +9,8 @@ Features
 
 * More detailed information about failed ``assert`` statements
 * Automatic detection of test modules and functions
-* Modular fixtures for the management of small or parameterised, long-lived test
-  resources
+* Modular fixtures for the management of small or :term:`parameterised
+  <Parameter>`, long-lived test resources
 * Can also execute unit tests without presets
 * Extensive plug-in architecture, with over 800 external plug-ins
 

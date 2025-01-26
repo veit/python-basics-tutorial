@@ -15,12 +15,13 @@ Python. I will now illustrate these basics in a coherent example:
 
    Line 7
        The ``__init__`` method requires one instance (``self``) and two
-       parameters.
+       :term:`parameters <Parameter>`.
    Lines 8 and 9
        The two instance variables ``x`` and ``y``, which are accessed via
        ``self``.
    Line 10
-       The ``move`` method requires one instance (``self``) and two parameters.
+       The ``move`` method requires one instance (``self``) and two
+       :term:`parameters <Parameter>`.
    Lines 11 and 12
        Instance variables that are set in the ``move`` method.
 
@@ -36,7 +37,7 @@ Python. I will now illustrate these basics in a coherent example:
        The class ``Square`` inherits from the class ``Form``.
    Line 19
        ``Square``’s ``__init__`` takes one instance (``self``) and three
-       parameters, all with defaults.
+       :term:`parameters <Parameter>`, all with defaults.
    Line 20
        ``Square``’s ``__init__`` uses ``super()`` to call ``Form``’s
        ``__init__``.
@@ -56,13 +57,14 @@ Python. I will now illustrate these basics in a coherent example:
        ``circles`` list.
    Lines 37 and 38
        ``circumferences`` is a class method and takes the class itself
-       (``cls``) as a parameter.
+       (``cls``) as a :term:`parameter`.
    Line 41
-       uses the parameter ``cls`` to access the class variable ``circles``.
+       uses the :term:`parameter` ``cls`` to access the class variable
+       ``circles``.
 
 Now you can create some instances of the class ``Circle`` and analyse them.
-Since the ``__init__`` method of ``Circle`` has default parameters, you can
-create a circle without specifying any parameters:
+Since the ``__init__`` method of ``Circle`` has default :term:`parameters
+<Parameter>`, you can create a circle without specifying any parameters:
 
 .. code-block:: pycon
 
@@ -71,7 +73,8 @@ create a circle without specifying any parameters:
    >>> c1.diameter, c1.x, c1.y
    (1, 0, 0)
 
-If you specify parameters, they are used to set the values of the instance:
+If you specify :term:`parameters <Parameter>`, they are used to set the values
+of the instance:
 
 .. code-block:: pycon
 

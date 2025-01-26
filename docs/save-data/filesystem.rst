@@ -366,7 +366,7 @@ topdown=True, onerror=None, followlinks= False)``.
 ``onerror``
     can be set to a function to handle errors resulting from calls to
     :func:`os.listdir`, which are ignored by default. Usually symbolic links are
-    not followed unless you specify the parameter ``follow-links=True``.
+    not followed unless you specify the :term:`parameter` ``follow-links=True``.
 
 .. code-block:: pycon
    :linenos:

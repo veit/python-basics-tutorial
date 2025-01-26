@@ -93,10 +93,10 @@ other file modes. However, these modes are not necessary for most purposes.
 ``open`` can take an optional third argument that defines how read or write
 operations for this file are buffered. Buffering keeps data in memory until
 enough data has been requested or written to justify the time required for a
-disk access. Other parameters for ``open`` control the encoding for text files
-and the handling of line breaks in text files. Again, you don’t usually need to
-worry about these functions, but as you become more advanced with Python you may
-want to read up on them.
+disk access. Other :term:`parameters <Parameter>` for ``open`` control the
+encoding for text files and the handling of line breaks in text files. Again,
+you don’t usually need to worry about these functions, but as you become more
+advanced with Python you may want to read up on them.
 
 Read and write functions
 ------------------------
@@ -161,16 +161,16 @@ done in text mode on Windows and macOS if you use the :func:`open` command in
 text mode, that is without appending a ``b``. In text mode on macOS, each ``\r``
 is converted to ``\n``, while on Windows, ``\r\n`` pairs are converted to
 ``\n``. You can specify how line breaks are handled by using the ``newline``
-parameter when opening the file and specifying ``newline="\n"``, ``\r`` or
-``\r\n``, which will cause only that string to be used as a line break:
+:term:`parameter` when opening the file and specifying ``newline="\n"``, ``\r``
+or ``\r\n``, which will cause only that string to be used as a line break:
 
 .. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r", newline="\n")
 
 In this example, only ``\n`` is considered a line break. However, if the file
-was opened in binary mode, the ``newline`` parameter is not necessary, as all
-bytes are returned exactly as they are in the file.
+was opened in binary mode, the ``newline`` :term:`parameter` is not necessary,
+as all bytes are returned exactly as they are in the file.
 
 ``write`` und ``writelines``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,7 +182,7 @@ embedded in the string, as in the following example:
 
 .. code-block:: python
 
-    f.write("Hi, Pythinistas!\n\n")
+    f.write("Hi, Pythonistas!\n\n")
 
 The ``writelines`` method is confusing, however, because it does not necessarily
 write multiple lines; it takes a list of strings as an argument and writes them
@@ -259,7 +259,7 @@ Checks
      >>> print(new_path)
      /Users/veit/python-basics-tutorial-de/example.log2
 
-* What is the significance of adding ``b`` as a parameter to
+* What is the significance of adding ``b`` as a :term:`parameter` to
   :func:`python3:open`?
 
   This opens the file in binary mode, which means that bytes and not characters
@@ -272,13 +272,13 @@ Checks
   .. code-block:: pycon
 
      >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythinistas!\n")
+     ...     f.write("Hi, Pythonistas!\n")
      ...
      17
      >>> with open("my_file") as f:
      ...     print(f.readlines())
      ...
-     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
+     ['Hi, Pythonistas!\n', 'Hi, Pythonistas!\n']
 
 * What use cases can you imagine in which the :mod:`python3:struct` module would
   be useful for reading or writing binary data?

@@ -136,8 +136,8 @@ becomes ``'\xe2\x80\x99'``. This chaotic looking sequence represents three
 bytes, ``e2``, ``80`` and ``99`` as hexadecimal values.
 
 .. tip::
-    In ``.encode()`` and ``.decode()``, the encoding parameter is ``"utf-8"`` by
-    default; however, it is recommended to specify it explicitly.
+   In ``.encode()`` and ``.decode()``, the encoding :term:`parameter` is
+   ``"utf-8"`` by default; however, it is recommended to specify it explicitly.
 
 With :meth:`python3:bytes.fromhex` you can convert the hexadecimal values into
 bytes:

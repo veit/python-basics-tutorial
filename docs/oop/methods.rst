@@ -59,10 +59,10 @@ to set the edge length after creating a square:
     ``self.length`` and ``length`` are not the same!
 
     * ``self.length`` is the instance variable called ``length``
-    * ``length`` is the local function parameter
+    * ``length`` is the local function :term:`parameter`
 
-    In practice, you would probably refer to the local function parameter as
-    ``lng`` or ``l`` to avoid confusion.
+    In practice, you would probably refer to the local function
+    :term:`parameter` as ``lng`` or ``l`` to avoid confusion.
 
 With this definition of ``Square``, you can create squares with arbitrary edge
 lengths with a call to the ``Square`` class. In the following, a square with
@@ -138,7 +138,7 @@ Class methods
 :func:`Class methods <classmethod>` are similar to static methods in that they
 can be called before an object of the class has been instantiated. However, the
 class to which they belong is implicitly passed to the class methods as the
-first parameter:
+first :term:`parameter`:
 
 .. literalinclude:: circle_cm.py
     :language: python
@@ -149,7 +149,7 @@ first parameter:
 Line 23
     The ``@classmethod`` decorator is used before the ``def`` method.
 Line 24
-    The class parameter is traditionally ``cls``.
+    The class :term:`parameter` is traditionally ``cls``.
 Line 27
     You can use ``cls`` instead of ``self.__class__``.
 

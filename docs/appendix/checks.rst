@@ -998,7 +998,7 @@ Checks
      >>> print(new_path)
      /Users/veit/python-basics-tutorial-de/example.log2
 
-* What is the significance of adding ``b`` as a parameter to
+* What is the significance of adding ``b`` as a :term:`parameter` to
   :func:`python3:open`?
 
   This opens the file in binary mode, which means that bytes and not characters

@@ -8,9 +8,9 @@ Requirements
 
 * Path to the base directory for your Python packages
 
-  Make sure your ``bin`` bindirectory is in the path. Usually this is
-  ``~/.local/`` for Linux and Mac OS or ``%APPDATA%\Python``. on Windows. You
-  can find more information at `site.USER_BASE
+  Make sure your ``bin`` directory is in the path. Usually this is ``~/.local/``
+  for Linux and Mac OS or ``%APPDATA%\Python``. on Windows. You can find more
+  information at `site.USER_BASE
   <https://docs.python.org/3/library/site.html#site.USER_BASE>`_.
 
   .. tab:: Linux/macOS

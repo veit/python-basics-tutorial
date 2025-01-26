@@ -2,7 +2,7 @@
 ===========
 
 You can use the :func:`python3:input` function to get data input. Use the prompt
-string you want to display as a parameter for ``input``:
+string you want to display as a :term:`parameter` for ``input``:
 
 .. code-block:: pycon
 

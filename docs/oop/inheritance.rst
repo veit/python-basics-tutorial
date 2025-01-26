@@ -102,9 +102,9 @@ another method in the ``Form`` class called ``move`` that moves a shape in the
         ...         self.diameter = diameter
         ...
 
-If you take the parameters ``delta_x`` and ``delta_y`` of the method ``move`` in
-the ``__init__`` methods of ``Circle`` and ``Square``, you can for example
-execute the following interactive session:
+If you take the :term:`parameters <Parameter>` ``delta_x`` and ``delta_y`` of
+the method ``move`` in the ``__init__`` methods of ``Circle`` and ``Square``,
+you can for example execute the following interactive session:
 
 .. code-block:: pycon
 

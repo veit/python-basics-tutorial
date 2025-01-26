@@ -366,9 +366,9 @@ Badge
 -----
 
 You can use GitHub Actions to create a badge with your code coverage. A GitHub
-Gist is also required to store the parameters for the badge, which is rendered by
-`shields.io <https://shields.io>`_. To do this, we extend our :download:`ci.yaml`
-as follows:
+Gist is also required to store the :term:`parameters <Parameter>` for the badge,
+which is rendered by `shields.io <https://shields.io>`_. To do this, we extend
+our :download:`ci.yaml` as follows:
 
 .. literalinclude:: ci.yaml
    :language: yaml

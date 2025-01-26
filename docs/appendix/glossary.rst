@@ -675,7 +675,7 @@ Glossary
 
    Dummy
        Object that is passed around but never actually used. Normally dummies
-       are only used to fill parameter lists.
+       are only used to fill :term:`parameter` lists.
 
    ``except``
        Keyword used to intercept an :term:`exception` and handle it carefully.

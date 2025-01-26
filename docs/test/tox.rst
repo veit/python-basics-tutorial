@@ -336,7 +336,7 @@ Passing pytest parameters to tox
 --------------------------------
 
 We can also call individual tests with tox by making another change so that
-parameters can be passed to pytest:
+:term:`parameters <Parameter>` can be passed to pytest:
 
 .. code-block:: ini
    :emphasize-lines: 17

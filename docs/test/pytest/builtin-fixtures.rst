@@ -296,11 +296,11 @@ The ``monkeypatch`` fixture offers the following functions:
 |                                                       | working directory     |
 +-------------------------------------------------------+-----------------------+
 
-.. [1] The ``raising`` parameter tells pytest whether an exception should be
-       thrown if the element is not (yet) present.
-.. [2] The ``prepend`` parameter of ``setenv()`` can be a character. If it is
-       set, the value of the environment variable is changed to :samp:`{VALUE} +
-       prepend + {OLD_VALUE}`
+.. [1] The ``raising`` :term:`parameter` tells pytest whether an exception
+       should be thrown if the element is not (yet) present.
+.. [2] The ``prepend`` :term:`parameter` of ``setenv()`` can be a character. If
+       it is set, the value of the environment variable is changed to
+       :samp:`{VALUE} + prepend + {OLD_VALUE}`
 
 We can use ``monkeypatch`` to redirect the :abbr:`CLI (Command Line Interface)`
 to a temporary directory for the database in two ways. Both methods require
@@ -429,8 +429,8 @@ Remaining built-in fixtures
 | ``request``                   | is used to provide information about the      |
 |                               | executed test function.                       |
 |                               |                                               |
-|                               | is mostly used in the parameterisation of     |
-|                               | fixtures.                                     |
+|                               | is mostly used in the :term:`parameterisation |
+|                               | <Parameter>` fixtures.                        |
 +-------------------------------+-----------------------------------------------+
 | ``pytester``, ``testdir``     | Used to provide a temporary test directory to |
 |                               | support the execution and testing of pytest   |

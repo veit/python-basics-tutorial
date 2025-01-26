@@ -34,7 +34,7 @@ User config
 -----------
 
 If you use CookieCutter frequently, we recommend your own user config
-``~/cookiecutterrc``, e.g.:
+``~/cookiecutterrc``, for example:
 
 .. code-block:: bash
 

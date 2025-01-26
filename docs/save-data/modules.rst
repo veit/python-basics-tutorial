@@ -78,7 +78,7 @@ pandas IO tools
 
 * :doc:`Python4DataScience:data-processing/pandas-io`
 
-  Beispiele für die Serialisierungsformate:
+  Examples of serialisation formats:
 
   * :doc:`CSV
     <Python4DataScience:data-processing/serialisation-formats/csv/example>`

@@ -76,7 +76,7 @@ like this, for example:
        * :term:`scikit-build`
        * :term:`maturin`
 
-       But thatr’s not all – there are other backends:
+       But that’s not all – there are other backends:
 
        * :term:`Flit`
        * :term:`whey`

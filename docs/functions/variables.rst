@@ -21,9 +21,9 @@ Here you return to the definition of ``fact`` from the beginning of this
 
 Both the variables ``f`` and ``n`` are local to a particular call to the
 function ``fact``; changes made to them during the execution of the function
-have no effect on variables outside the function. All variables in the parameter
-list of a function and all variables created within a function by an assignment,
-such as ``f = 1``, are local to the function:
+have no effect on variables outside the function. All variables in the
+:term:`parameter` list of a function and all variables created within a function
+by an assignment, such as ``f = 1``, are local to the function:
 
 .. code-block:: pycon
 
