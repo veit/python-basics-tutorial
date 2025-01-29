@@ -4,6 +4,8 @@ Strings
 The processing of character strings is one of Python’s strengths. There are many
 options for limiting character strings:
 
+.. blacken-docs:off
+
 .. code-block:: python
 
    "A string in double quotes can contain 'single quotes'."
@@ -11,6 +13,8 @@ options for limiting character strings:
    """\tA string that starts with a tab and ends with a newline character.\n"""
    """This is a string in triple double quotes, the only string that contains
    real line breaks."""
+
+.. blacken-docs:on
 
 Character strings can be characterised by single (``' '``), double(``" "``),
 triple single (``''' '''``) or triple double (``""" """``) quotation marks.

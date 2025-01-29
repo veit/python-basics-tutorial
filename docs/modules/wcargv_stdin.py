@@ -1,5 +1,5 @@
 """Reads a file or stdin and returns the number of lines, words and characters –
-   similar to the UNIX wc utility."""
+similar to the UNIX wc utility."""
 
 import sys
 
