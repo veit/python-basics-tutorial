@@ -7,9 +7,6 @@ interfaces)`. We can also create them with ``uv init --package``:
 .. code-block:: console
 
    $ uv init --package myapp
-   tree mypack -a
-   myapp
-   $ uv init --app myapp
    $  tree myapp -a
    myapp
    ├── .git

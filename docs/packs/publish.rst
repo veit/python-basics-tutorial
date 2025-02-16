@@ -10,7 +10,7 @@ set up an account there, go to https://test.pypi.org/account/register/. Further
 information can be found at `Using
 TestPyPI <https://packaging.python.org/en/latest/guides/using-testpypi/>`_.
 
-Now you can create the :file:`~/.pypirc` file:
+Now you can create the :file:`~/.config/pip/pip.conf` file:
 
 .. code-block:: ini
 
@@ -27,55 +27,21 @@ Now you can create the :file:`~/.pypirc` file:
     <https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html>`_.
 
 After you are registered, you can upload your :term:`Distribution Package` with
-:term:`twine`. To do this, however, you must first install twine with:
+``uv publish``.
+
+You can either use ``uv publish`` with the option ``--username __token__`` or
+set the environment variable ``UV_PUBLISH_USERNAME=__token__`` to upload all
+archives under :file:`/dist` to the :term:`Python Package Index`:
 
 .. code-block:: console
 
-        $ uv add --upgrade twine
+    $ uv publish --publish-url https://test.pypi.org/legacy/ --username __token__ dist/*
 
-.. tip::
-   Run this command before each release to ensure that all release tools are up
-   to date.
+``--publish-url``
+    The URL of the upload endpoint (not the index URL).
 
-After installing ``twine`` you can upload all archives under :file:`/dist` to
-the Python Package Index with:
-
-Now you can create your :term:`Distribution Packages <Distribution Package>`
-with:
-
-.. code-block:: console
-
-    $ cd /path/to/your/distribution_package
-    $ rm -rf build dist
-    $ python -m build
-
-After installing Twine you can upload all archives in ``/dist`` to the Python
-Package Index with:
-
-.. code-block:: console
-
-    $ uv run twine upload -r test -s dist/*
-
-``-r``, ``--repository``
-    The repository to upload the package.
-
-    In our case, the ``test`` section from the :file:`~/.pypirc` file is used.
-
-``-s``, ``--sign``
-    signs the files to be uploaded with GPG.
-
-You will be asked for the password of your signature key that you used to
-register with *Test PyPI* . You should then see a similar output:
-
-.. code-block:: console
-
-    Uploading distributions to https://test.pypi.org/legacy/
-    Enter your username: veit
-    Enter your password:
-    Uploading example-0.0.1-py3-none-any.whl
-    100%|█████████████████████| 4.65k/4.65k [00:01<00:00, 2.88kB/s]
-    Uploading example-0.0.1.tar.gz
-    100%|█████████████████████| 4.25k/4.25k [00:01<00:00, 3.05kB/s]
+``--username``
+    The user name for the upload.
 
 .. note::
    If you get an error message similar to
@@ -128,8 +94,7 @@ You can test whether your package has been installed correctly by calling
 
    The packages on *Test-PyPI* are only stored temporarily. If you want to
    upload a package to the real :term:`Python Package Index` (:term:`PyPI`),
-   you can do so by creating an account on :term:`pypi.org` and following the
-   same instructions, but using ``twine upload dist/*``.
+   you can do so by creating an account on :term:`pypi.org`.
 
 README
 ~~~~~~
@@ -172,7 +137,7 @@ Finally, you can publish your package on PyPI:
 
 .. code-block:: console
 
-   $ uv run twine upload -r pypi -s dist/*
+   $ uv publish dist/*
 
 .. note::
    You cannot simply replace releases as you cannot re-upload packages with the
@@ -228,11 +193,10 @@ PyPI at every time a release is created. Such a
            cache-dependency-path: '**/pyproject.toml'
        - name: Setup cached uv
          uses: hynek/setup-cached-uv@v2
-       - name: Create venv and install twine
+       - name: Create venv
          run: |
            uv venv
            echo "$PWD/.venv/bin" >> $GITHUB_PATH
-           uv add --upgrade twine
        - name: Build
          run: |
            uv build
