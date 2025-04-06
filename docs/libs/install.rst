@@ -204,10 +204,10 @@ input for `setup-python <https://github.com/actions/setup-python>`_:
    :lines: 20-28
    :emphasize-lines: 9
 
-In our :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd` pipelines,
-however, we use ``requires-python`` from the :ref:`pyproject-toml` file to build
-:doc:`Docker containers with the appropriate Python version
-<Python4DataScience:productive/git/advanced/gitlab/docker>`.
+In our :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`
+pipelines, however, we use ``requires-python`` from the :ref:`pyproject-toml`
+file to build :doc:`Docker containers with the appropriate Python version
+<Python4DataScience:productive/git/advanced/gitlab/ci-cd/docker>`.
 
 .. _uv:
 

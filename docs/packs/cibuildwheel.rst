@@ -6,7 +6,7 @@ for the different platforms and Python versions through Continuous Integration
 (CI) workflows. More precisely it builds manylinux, macOS 10.9+, and Windows
 wheels for CPython and PyPy with GitHub Actions, Azure Pipelines, Travis CI,
 AppVeyor, CircleCI, or
-:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd`.
+:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`.
 
 In addition, it bundles shared library dependencies on Linux and macOS through
 `auditwheel <https://github.com/pypa/auditwheel>`_ and `delocate
@@ -71,8 +71,8 @@ Finally, the tests can also run against the wheels.
 .. tab:: GitLab CI/CD
 
     To build wheels for Linux, macOS, and Windows with
-    :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd`, create a
-    :file:`.gitlab-ci.yml` file in your repository:
+    :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`,
+    create a :file:`.gitlab-ci.yml` file in your repository:
 
     .. literalinclude:: .gitlab-ci.yml
        :language: yaml
