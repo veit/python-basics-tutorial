@@ -358,6 +358,29 @@ therefore not surprising that there are several plugins that fulfil this need:
 … various things
 ~~~~~~~~~~~~~~~~
 
+`pytest-testinfra <https://github.com/pytest-dev/pytest-testinfra>`_
+    is a `Serverspec <https://serverspec.org/>`_ equivalent for pytest to test
+    the current status of your servers with management tools such as `Salt
+    <https://saltproject.io>`_, `Ansible
+    <https://www.redhat.com/en/ansible-collaborative>`_, `Puppet
+    <https://www.puppet.com>`_, `Chef <https://www.chef.io>`_ and so on.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-testinfra
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-testinfra/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-testinfra
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-testinfra/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-testinfra
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-testinfra/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-testinfra
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-testinfra?tab=Apache-2.0-1-ov-file
+
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
     executes the  :doc:`../pytest/coverage` during testing.
 
