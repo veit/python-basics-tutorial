@@ -3,8 +3,6 @@ Testing
 
 Basically, a distinction is made between static and dynamic test procedures.
 
-.. glossary::
-
 .. include:: ../appendix/glossary.rst
    :start-after: start-test-procedures:
    :end-before: end-test-procedures:
