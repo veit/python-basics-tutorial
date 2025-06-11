@@ -1,8 +1,9 @@
 Hypothesis
 ==========
 
-`Hypothesis <https://hypothesis.readthedocs.io/>`_ is a library that allows you
-to write tests that are :term:`parameterised <Parameter>` from a source of
+`Hypothesis <https://hypothesis.readthedocs.io/>`_ is a library for `property
+testing <https://en.wikipedia.org/wiki/Software_testing#Property_testing>`_ that
+allows you to write :term:`parameterised <Parameter>` tests from a source of
 examples. It then generates simple and understandable examples that can be used
 to make your tests fail and find bugs with little effort.
 
