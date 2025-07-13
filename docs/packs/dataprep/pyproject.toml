@@ -21,7 +21,7 @@ dependencies = [
     "pandas",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 tests = [
     "coverage[toml]",
     "pytest>=6.0",
@@ -33,8 +33,9 @@ docs = [
     "sphinx_inline_tabs"
 ]
 dev = [
-    "dataprep[tests, docs]",
-    "pre-commit"
+    {include-group = "tests"},
+    {include-group = "docs"},
+    "pre-commit",
 ]
 
 [project.urls]

@@ -101,13 +101,13 @@ whether the documentation is being built and the links are valid. In
    [testenv:docs]
    # Keep base_python in sync with ci.yml and .readthedocs.yaml.
    base_python = py312
-   extras = docs
+   dependency_groups = docs
    commands =
      sphinx-build -n -T -W -b html -d {envtmpdir}/doctrees docs docs/_build/html
 
    [testenv:docs-linkcheck]
    base_python = {[testenv:docs]base_python}
-   extras = {[testenv:docs]extras}
+   dependency_groups = docs
    commands = sphinx-build -W -b linkcheck -d {envtmpdir}/doctrees docs docs/_build/html
 
 You can then define the following jobs for GitHub, for example:
@@ -300,7 +300,7 @@ example:
    :caption: pyproject.toml
    :emphasize-lines: 4, 8-
 
-   [project.optional-dependencies]
+   [dependency-groups]
    tests = [
        "coverage[toml]",
        "interrogate",

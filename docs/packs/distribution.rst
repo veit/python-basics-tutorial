@@ -253,11 +253,11 @@ as:
      <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
    * :pep:`345`
 
-Optional dependencies
-~~~~~~~~~~~~~~~~~~~~~
+Dependency groups
+~~~~~~~~~~~~~~~~~
 
-``project.optional-dependencies``
-    allows you to specify optional dependencies for your package. You can also
+``dependency-groups``
+    allows you to specify dependency groups for your package. You can also
     distinguish between different sets:
 
 .. literalinclude:: dataprep/pyproject.toml
@@ -265,16 +265,16 @@ Optional dependencies
    :lines: 24-34
    :lineno-start: 34
 
-Recursive optional dependencies are also possible with pip ≥ 21.2. For example,
-for ``dev`` you can take over all dependencies from ``docs`` and ``test`` in
-addition to ``pre-commit``:
+Recursive dependency groups are also possible. For example, for ``dev`` you can
+take over all dependencies from ``docs`` and ``test`` in addition to
+``pre-commit``:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
    :lines: 35-39
    :lineno-start: 35
 
-You can install these optional dependencies, for example with:
+You can install these dependency groups, for example with:
 
 .. tab:: Linux/macOS
 
@@ -284,7 +284,7 @@ You can install these optional dependencies, for example with:
       $ python3 -m venv .venv
       $ . .venv/bin/activate
       $ python -m pip install --upgrade pip
-      $ python -m pip install -e ".[dev]"
+      $ python -m pip install --group dev
 
 .. tab:: Windows
 
@@ -294,7 +294,12 @@ You can install these optional dependencies, for example with:
       > python3 -m venv .venv
       > .venv\Scripts\activate.bat
       > python -m pip install --upgrade pip
-      > python -m pip install -e ".[dev]"
+      > python -m pip install --group dev
+
+.. seealso::
+   * :pep:`735`
+   * `Dependency Groups
+     <https://packaging.python.org/en/latest/specifications/dependency-groups/>`_
 
 :file:`src` package
 -------------------
