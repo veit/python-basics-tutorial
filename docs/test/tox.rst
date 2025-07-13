@@ -21,26 +21,23 @@ create an installable :doc:`distribution of your package
 <../packs/distribution>`. It searches the :file:`tox.ini` file for a list of
 environments and then performs the following steps for each:
 
-#. creates a :term:`virtual environment <Virtual environment>`,
-#. installs some dependencies with :term:`pip`,
-#. build your package,
-#. install your package with pip,
-#. run further tests.
+#. creates a :term:`virtual environment <Virtual environment>`
+#. installs some dependencies with :term:`pip`
+#. build your package
+#. install your package with pip
+#. run further tests
 
 After all environments have been tested, tox outputs a summary of the results.
 
-.. note::
-   Although tox is used by many projects, there are alternatives that fulfil
-   similar functions. Two alternatives to tox are `nox
-   <https://nox.thea.codes/en/stable/>`_ and `invoke
-   <https://www.pyinvoke.org>`_.
+To accelerate this process with :term:`uv`, we don’t use tox directly, but
+`tox-uv <https://github.com/tox-dev/tox-uv>`_.
 
 Setting up tox
 --------------
 
 Until now, we had the items code in a :file:`src/` directory and the tests in
-:file:`tests/api/` and :file:`tests/cli/`. Now we will add a :file:`tox.ini` file
-so that the structure looks like this:
+:file:`tests/api/` and :file:`tests/cli/`. Now we will add a :file:`tox.ini`
+file so that the structure looks like this:
 
 .. code-block:: console
    :emphasize-lines: 16
@@ -83,77 +80,77 @@ adding more Python versions shortly, but using one version helps to understand
 the flow of tox.
 
 Also note the line ``isolated_build = True``: This is required for all packages
-configured with :file:`pyproject.toml`. However, for all projects configured with
-:file:`setup.py` that use the :term:`setuptools` library, this line can be
+configured with :file:`pyproject.toml`. However, for all projects configured
+with :file:`setup.py` that use the :term:`setuptools` library, this line can be
 omitted.
 
-In the ``[testenv]`` section, ``pytest`` and ``faker`` are listed as dependencies
-under ``deps``. So tox knows that we need these two tools for testing. If you
-wish, you can also specify which version should be used, for example
-``pytest>=6.0``. Finally, commands instruct tox to execute ``pytest`` in every
-environment.
+In the ``[testenv]`` section, ``pytest`` and ``faker`` are listed as
+dependencies under ``deps``. So tox knows that we need these two tools for
+testing. If you wish, you can also specify which version should be used, for
+example ``pytest>=6.0``. Finally, commands instruct tox to execute ``pytest`` in
+every environment.
 
 Executing tox
 -------------
 
-Before you can run tox, you must ensure that you have installed it:
+Before you can run tox, you must ensure that you have installed tox-uv:
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ python3 -m venv .venv
-      $ . .venv/bin/activate
-      $ python -m pip install tox
+      $ uv sync --extra dev
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m venv .venv
-      C:> .venv\Scripts\activate.bat
-      C:> python -m pip install tox
+      C:> uv sync --extra dev
 
 To run tox, simply start tox:
 
 .. code-block:: pytest
 
-   $ python -m tox
-   py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
-   py313: commands[0]> coverage run -m pytest
+   $ uv run tox
+   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/57/items-0.1.0.tar.gz
+   py313: commands[0]> python --version --version
    ============================= test session starts ==============================
-   platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
+   platform darwin -- Python 3.13.0, pytest-8.4.1, pluggy-1.6.0
    cachedir: .tox/py313/.pytest_cache
    rootdir: /Users/veit/cusy/prj/items
    configfile: pyproject.toml
    testpaths: tests
-   plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
-   collected 49 items
+   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   collected 83 items
 
-   tests/api/test_add.py ....                                               [  8%]
-   tests/api/test_config.py .                                               [ 10%]
-   tests/api/test_count.py ...                                              [ 16%]
-   tests/api/test_delete.py ...                                             [ 22%]
-   tests/api/test_finish.py ....                                            [ 30%]
-   tests/api/test_list.py .........                                         [ 48%]
-   tests/api/test_start.py ....                                             [ 57%]
-   tests/api/test_update.py ....                                            [ 65%]
-   tests/api/test_version.py .                                              [ 67%]
-   tests/cli/test_add.py ..                                                 [ 71%]
-   tests/cli/test_config.py ..                                              [ 75%]
-   tests/cli/test_count.py .                                                [ 77%]
-   tests/cli/test_delete.py .                                               [ 79%]
-   tests/cli/test_errors.py ....                                            [ 87%]
-   tests/cli/test_finish.py .                                               [ 89%]
-   tests/cli/test_list.py ..                                                [ 93%]
-   tests/cli/test_start.py .                                                [ 95%]
-   tests/cli/test_update.py .                                               [ 97%]
+   tests/api/test_add.py ......                                             [  7%]
+   tests/api/test_config.py .                                               [  8%]
+   tests/api/test_count.py ...                                              [ 12%]
+   tests/api/test_delete.py ...                                             [ 15%]
+   tests/api/test_delete_all.py ..                                          [ 18%]
+   tests/api/test_exceptions.py ..                                          [ 20%]
+   tests/api/test_finish.py ....                                            [ 25%]
+   tests/api/test_item.py ...                                               [ 28%]
+   tests/api/test_item_id.py .                                              [ 30%]
+   tests/api/test_list.py .........                                         [ 40%]
+   tests/api/test_list_edge_cases.py ........                               [ 50%]
+   tests/api/test_start.py ....                                             [ 55%]
+   tests/api/test_update.py .....                                           [ 61%]
+   tests/api/test_version.py .                                              [ 62%]
+   tests/cli/test_add.py ..                                                 [ 65%]
+   tests/cli/test_config.py ..                                              [ 67%]
+   tests/cli/test_count.py .                                                [ 68%]
+   tests/cli/test_delete.py .                                               [ 69%]
+   tests/cli/test_errors.py .......                                         [ 78%]
+   tests/cli/test_finish.py .                                               [ 79%]
+   tests/cli/test_help.py .........                                         [ 90%]
+   tests/cli/test_list.py .....                                             [ 96%]
+   tests/cli/test_start.py .                                                [ 97%]
+   tests/cli/test_update.py .                                               [ 98%]
    tests/cli/test_version.py .                                              [100%]
 
-   ============================== 49 passed in 0.16s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   py313: OK ✔ in 1.48 seconds
-     congratulations :) (1.48 seconds)
+   ============================== 83 passed in 0.27s ==============================
+   py313: OK ✔ in 1.17 seconds
 
 Testing multiple Python versions
 --------------------------------
@@ -179,7 +176,7 @@ although I will only highlight the differences in the following illustration:
 .. code-block:: pytest
    :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
 
-   $ python -m tox
+   $ uv run tox
    ...
    py39: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/17/items-0.1.0.tar.gz
    py39: commands[0]> coverage run -m pytest
@@ -223,7 +220,7 @@ other. It is also possible to run them in parallel with the ``-p`` option:
 
 .. code-block:: pytest
 
-   $ python -m tox -p
+   $ uv run tox -p
    py310: SKIP ⚠ in 0.09 seconds
    py312: OK ✔ in 2.08 seconds
    py313: OK ✔ in 2.18 seconds
@@ -273,8 +270,8 @@ extend commands to ``pytest --cov=items``:
      coverage report
 
 When using Coverage with ``tox``, it can sometimes be useful to add a section in
-the :file:`:file:`pyproject.toml`` file to tell Coverage which source code paths
-should be considered identical:
+the :file:`pyproject.toml` file to tell Coverage which source code paths should
+be considered identical:
 
 .. code-block:: ini
 
@@ -289,7 +286,7 @@ example.
 .. code-block:: console
    :emphasize-lines: 1
 
-   $ python -m tox
+   $ uv run tox
    ...
    coverage-report: commands[0]> coverage combine
    Combined data file .coverage.fay.local.19539.XpQXpsGx
@@ -366,7 +363,7 @@ keyword option. We also use ``--no-cov`` to disable coverage:
 .. code-block:: pytest
    :emphasize-lines: 1, 3
 
-   $ tox -e py313 -- -k test_version --no-cov
+   $ uv run tox -e py313 -- -k test_version --no-cov
    ...
    py313: commands[0]> coverage run -m pytest -k test_version --no-cov
    ============================= test session starts ==============================
@@ -411,30 +408,38 @@ of environments are available for GitHub actions:
 
       jobs:
         coverage:
-          name: Ensure 99% test coverage
+          name: Ensure 100% test coverage
           runs-on: ubuntu-latest
           needs: tests
           if: always()
+
           steps:
             - uses: actions/checkout@v4
+              with:
+                persist-credentials: false
             - uses: actions/setup-python@v5
               with:
-                cache: pip
-                python-version: 3.13
+                python-version-file: .python-version
+            - uses: hynek/setup-cached-uv@v2
+
             - name: Download coverage data
               uses: actions/download-artifact@v4
               with:
                 pattern: coverage-data-*
                 merge-multiple: true
-            - name: Combine coverage and fail if it’s <99%.
+
+            - name: Combine coverage and fail if it’s <100%.
               run: |
-                python -m pip install --upgrade coverage[toml]
-                python -m coverage combine
-                python -m coverage html --skip-covered --skip-empty
+                uv tool install coverage
+
+                coverage combine
+                coverage html --skip-covered --skip-empty
+
                 # Report and write to summary.
-                python -m coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
-                # Report again and fail if under 99%.
-                python -m coverage report --fail-under=99
+                coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+
+                # Report again and fail if under 100%.
+                coverage report --fail-under=100
 
    ``name``
        can be any name. It is displayed in the GitHub Actions user interface.
@@ -445,43 +450,16 @@ of environments are available for GitHub actions:
        is a GitHub actions tool that checks out our repository so that the rest
        of the workflow can access it.
    ``uses: actions/setup-python@v5``
-       is a GitHub actions tool that configures Python and installs it in a build
-       environment.
+       is a GitHub actions tool that configures Python and installs it in a
+       build environment.
    ``with: python-version: ${{ matrix.python }}``
-       says that an environment should be created for each of the Python versions
-       listed in ``matrix.python``.
-   ``run: python -m pip install tox tox-gh-actions``
-       installs tox and simplifies the execution of tox in GitHub actions with
-       `tox-gh-actions <https://pypi.org/project/tox-gh-actions/>`_ by providing
-       the environment that tox itself uses as the environment for the tests.
-       However, we still need to adjust our :file:`tox.ini` file for this, for
-       example:
+       says that an environment should be created for each of the Python
+       versions listed in ``matrix.python``.
+   ``uses: hynek/setup-cached-uv@v2``
+       uses :term:`uv` in GitHub Actions.
 
-       .. code-block:: ini
-
-          [gh-actions]
-          python =
-              3.9: py39
-              3.10: py310
-              3.11: py311
-              3.12: py312
-              3.13: py313
-
-       This assigns GitHub actions to tox environments.
-
-       .. note::
-          * You do not need to specify all variants of your environment. This
-            distinguishes ``tox-gh-actions`` from ``tox -e py``.
-          * Make sure that the versions in the ``[gh-actions]`` section match the
-            available Python versions and, if applicable, those in the
-            :ref:`GitHub actions for Git pre-commit hooks
-            <gh-action-pre-commit-example>`.
-          * Since all tests for a specific Python version are executed one after
-            the other in a container, the advantages of parallel execution are
-            lost.
-
-   ``run: python -m tox``
-       executes tox.
+       .. seealso::
+          * `setup-cached-uv <https://github.com/hynek/setup-cached-uv>`_
 
 #. You can then click on :guilabel:`Start commit`. As we want to make further
    changes before the tests are executed automatically, we select
@@ -494,18 +472,18 @@ of environments are available for GitHub actions:
 The actions syntax is well documented. A good starting point in the GitHub
 Actions documentation is the `Building and Testing Python
 <https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`__
-page. The documentation also shows you how to run pytest directly without tox and
-how to extend the matrix to multiple operating systems. As soon as you have set
-up your :file:`*.yml` file and uploaded it to your GitHub repository, it will be
-executed automatically. You can then see the runs in the :menuselection:`Actions`
-tab:
+page. The documentation also shows you how to run pytest directly without tox
+and how to extend the matrix to multiple operating systems. As soon as you have
+set up your :file:`*.yml` file and uploaded it to your GitHub repository, it
+will be executed automatically. You can then see the runs in the
+:menuselection:`Actions` tab:
 
 .. figure:: github-actions.png
    :alt: Screenshot of the GitHub actions overview
 
-The different Python environments are listed on the left-hand side. If you select
-one, the results for this environment are displayed, as shown in the following
-screenshot:
+The different Python environments are listed on the left-hand side. If you
+select one, the results for this environment are displayed, as shown in the
+following screenshot:
 
 .. figure:: github-actions-run.png
    :alt: Screenshot of a GitHub actions run for an environment
@@ -538,8 +516,8 @@ Extend tox
 ----------
 
 tox uses `pluggy <https://pluggy.readthedocs.io/en/stable/>`_ to customise the
-default behaviour. Pluggy finds a plugin by searching for an entry point with the
-name ``tox``, for example in a :file:`pyproject.toml` file:
+default behaviour. Pluggy finds a plugin by searching for an entry point with
+the name ``tox``, for example in a :file:`pyproject.toml` file:
 
 .. code-block:: toml
 
