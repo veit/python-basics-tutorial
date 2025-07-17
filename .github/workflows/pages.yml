@@ -45,11 +45,11 @@ jobs:
         run: |
           uv venv
           echo "$PWD/.venv/bin" >> $GITHUB_PATH
-          uv pip install -e ".[docs]"
+          uv pip install --group=docs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build HTML
-        run: make html
+        run: uv run make html
         working-directory: docs/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
