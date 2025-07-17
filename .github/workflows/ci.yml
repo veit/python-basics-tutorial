@@ -39,6 +39,6 @@ jobs:
         uv pip install --group=docs
     - name: Build HTML and check links
       run: |
-        make html
-        make linkcheck
+        uv run make html
+        uv run make linkcheck
       working-directory: docs/
