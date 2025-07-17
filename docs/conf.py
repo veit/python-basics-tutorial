@@ -40,16 +40,18 @@ if os.environ.get("READTHEDOCS", "") == "True":
 # extensions coming with Sphinx (named "sphinx.ext.*") or your custom ones.
 extensions = [
     "nbsphinx",
+    "notfound.extension",
     "pygments_pytest",
     "sphinx.ext.autodoc",
-    "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
-    "sphinxcontrib.plantuml",
-    "sphinxcontrib.cairosvgconverter",
-    "sphinxext.opengraph",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
+    "sphinxcontrib.cairosvgconverter",
+    "sphinxcontrib.plantuml",
+    "sphinxext.opengraph",
 ]
 
 plantuml = "plantuml"

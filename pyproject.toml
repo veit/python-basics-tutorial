@@ -19,15 +19,16 @@ docs = [
     "furo",
     "ipython",
     "ipywidgets",
+    "matplotlib", # matplotlib is required for social cards
     "nbsphinx",
-    "sphinxext.opengraph", # matplotlib is required for social cards
-    "matplotlib",
-    "sphinx_copybutton",
-    "sphinx-inline-tabs",
-    "sphinxcontrib.plantuml",
-    "sphinxcontrib-svg2pdfconverter",
-    "sphinx-lint",
     "pygments-pytest",
+    "sphinx-inline-tabs",
+    "sphinx-lint",
+    "sphinx-notfound-page",
+    "sphinx_copybutton",
+    "sphinxcontrib-svg2pdfconverter",
+    "sphinxcontrib.plantuml",
+    "sphinxext.opengraph",
 ]
 
 dev = [
