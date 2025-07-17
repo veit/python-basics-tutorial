@@ -132,7 +132,7 @@ master_doc = "index"
 # General information about the project.
 project = "Python Basics"
 author = "Veit Schiele"
-copyright = f"2021–2024, {author}"
+copyright = f"2021–2025, {author}"
 
 show_authors = True
 
