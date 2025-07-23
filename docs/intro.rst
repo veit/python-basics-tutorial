@@ -8,9 +8,9 @@ You may be asking yourself why you should learn Python. There are many
 programming languages from C and C++ to Java, Lua and Go.
 
 .. figure:: tiobe-index.svg
-   :alt: TIOBE Index for May 2025
+   :alt: TIOBE Index for July 2025
 
-   `TIOBE Index for May 2025 <https://www.tiobe.com/tiobe-index/>`_
+   `TIOBE Index for July 2025 <https://www.tiobe.com/tiobe-index/>`_
 
 Python has become very widely used and one of the reasons might be that it runs
 on many different platforms, from IoT devices to common operating systems to
