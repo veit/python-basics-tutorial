@@ -304,6 +304,28 @@ Alternatively, this can also be configured for all occurrences:
    `Configuration reference
    <https://coverage.readthedocs.io/en/latest/config.html>`_
 
+.. _coverage_tip:
+
+.. tip::
+   Many people exclude tests from test coverage: `omit tests
+   path:**/pyproject.toml
+   <https://github.com/search?q=omit+tests+path%3A**%2Fpyproject.toml&type=code>`_.
+   However, this is a bad idea. Your tests are real code, and the whole point of
+   test coverage is to give you information about your code. Why wouldn’t you
+   want this information about your tests?
+
+   You might say, *‘All my tests run the entire code, so it’s useless
+   information.’* However, if you write a new test and copy an existing test for
+   it, changing only the execution but not the function name, only one of the
+   two test functions will be executed. And are you sure that every piece of
+   helper code in your test suite is still needed? Coverage would alert you to
+   this problem in both cases.
+
+   One argument against test coverage is that it artificially inflates the
+   reports. But you can easily exclude these files from the report with
+   `[report] skip_covered
+   <https://coverage.readthedocs.io/en/latest/config.html#report-skip-covered>`_.
+
 Extensions
 ----------
 
