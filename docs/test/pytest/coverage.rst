@@ -159,7 +159,13 @@ an editor and view the missing lines. However, it is easier to look at the HTML
 report.
 
 .. seealso::
-   * `pytest-cov’s documentation <https://pytest-cov.readthedocs.io/>`_
+   * `covdefaults <https://pypi.org/project/covdefaults/>`_: A coverage plugin
+     to provide sensible default settings
+   * `coverage-conditional-plugin
+     <https://pypi.org/project/coverage-conditional-plugin/>`_: Conditional
+     coverage based on any rules you define
+   * `Coverage.py regex pragmas
+     <https://nedbatchelder.com/blog/202507/coveragepy_regex_pragmas.html>`_
 
 Generate HTML reports
 ~~~~~~~~~~~~~~~~~~~~~
@@ -304,12 +310,34 @@ Alternatively, this can also be configured for all occurrences:
    `Configuration reference
    <https://coverage.readthedocs.io/en/latest/config.html>`_
 
+.. _coverage_tip:
+
+.. tip::
+   Many people exclude tests from test coverage: `omit tests
+   path:**/pyproject.toml
+   <https://github.com/search?q=omit+tests+path%3A**%2Fpyproject.toml&type=code>`_.
+   However, this is a bad idea. Your tests are real code, and the whole point of
+   test coverage is to give you information about your code. Why wouldn’t you
+   want this information about your tests?
+
+   You might say, *‘All my tests run the entire code, so it’s useless
+   information.’* However, if you write a new test and copy an existing test for
+   it, changing only the execution but not the function name, only one of the
+   two test functions will be executed. And are you sure that every piece of
+   helper code in your test suite is still needed? Coverage would alert you to
+   this problem in both cases.
+
+   One argument against test coverage is that it artificially inflates the
+   reports. But you can easily exclude these files from the report with
+   `[report] skip_covered
+   <https://coverage.readthedocs.io/en/latest/config.html#report-skip-covered>`_.
+
 Extensions
 ----------
 
 In `Coverage.py plugins
-<https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_ you will also
-find a number of extensions for Coverage.
+<https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_, you will
+also find other extensions for Coverage.
 
 .. _coverage-github-actions:
 
