@@ -5,6 +5,7 @@ Regular expressions
 
 .. seealso::
    * `www.regular-expressions.info <https://www.regular-expressions.info/>`_
+   * `regex101 <https://regex101.com>`_
    * `AutoRegex <https://www.autoregex.xyz>`_
 
 ``[]``
@@ -14,7 +15,6 @@ Square brackets define a list or range of characters to search for:
 
 ``[abc]``
     corresponds to a, b or c
-
 ``[a-z]``
     corresponds to any lower case letter
 ``[A-Za-z]``
@@ -65,11 +65,25 @@ Escape characters and literals
     is used to search for a special character, for example to find ``.org`` you
     have to use the regular expression ``\.org`` because ``.`` is the special
     character that matches every character.
+``[\b]``
+    Backspace character
 ``\d``
     matches every single digit.
+``\D``
+    matches any non-digit.
 ``\w``
     matches any part of a word character and is equivalent to ``[A-Za-z0-9]``.
+``\W``
+    matches any non-word character.
 ``\s``
     matches any space, tab or newline.
+``\S``
+    matches any non-whitespace character.
+``\A``
+    Start of a string.
+``\Z``
+    End of a string.
 ``\b``
     matches a pattern on a word boundary.
+``\B``
+    matches any non-word boundary.
