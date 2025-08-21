@@ -6,10 +6,11 @@ authors = [
 ]
 description = "Training materials for our Python basics course: https://cusy.io/en/seminars"
 readme = "README.rst"
+License-Expression = "BSD-3-Clause"
+License-File = [ "LICENSE" ]
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
 ]
 dependencies = []
