@@ -47,20 +47,20 @@ like this, for example:
    :lineno-start: 1
 
    [build-system]
-   requires = ["hatchling"]
+   requires = ["hatchling>=1.27"]
    build-backend = "hatchling.build"
 
 ``build-system``
     defines a section describing the build system
 ``requires``
     defines a list of dependencies that must be installed for the build system
-    to work, in our case ``hatchling``.
+    to work, in our case ``hatchling>=1.27`` for :pep:`639` support.
 
     .. note::
        Dependency version numbers should usually be written in the
-       `requirements.txt
-       <https://pip.pypa.io/en/latest/user_guide/#requirements-files>`_ file,
-       not here.
+       `constraints.txt
+       <https://pip.pypa.io/en/latest/user_guide/#constraints-files>`_ file, not
+       here.
 
 ``build-backend``
     identifies the entry point for the build-backend object as a dotted path.
@@ -108,7 +108,7 @@ as:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-19, 21-23, 40-
+   :lines: 5-21, 23-25, 42-
    :lineno-start: 5
 
 ``name``
@@ -152,7 +152,7 @@ as:
     .. code-block:: toml
 
        [build-system]
-       requires = ["hatchling", "hatch-vcs"]
+       requires = ["hatchling>=1.27", "hatch-vcs"]
        ...
        [tool.hatch.version]
        source = "vcs"
@@ -163,7 +163,7 @@ as:
     .. code-block:: toml
 
        [build-system]
-       requires = ["setuptools>=61.0", "setuptools-scm"]
+       requires = ["setuptools>=77.0", "setuptools-scm"]
        build-backend = "setuptools.build_meta"
        [project]
        ...
@@ -219,6 +219,26 @@ as:
     is a path to a file containing a detailed description of the package. This
     is displayed on the package details page on :term:`Python Package Index`
     (:term:`PyPI`). In this case, the description is loaded from ``README.rst``.
+
+.. _license-expression:
+
+``License-Expression``
+    contains valid `SPDX license expressions
+    <https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/>`_.
+
+    .. seealso::
+       * `License-Expression
+         <https://packaging.python.org/en/latest/specifications/core-metadata/#license-expression>`_
+       * `Add License-Expression field
+         <https://peps.python.org/pep-0639/#add-license-expression-field>`_
+
+``license-files``
+    specifies a list of files containing licence information.
+
+    .. seealso::
+       * `License-File (multiple use)
+         <https://packaging.python.org/en/latest/specifications/core-metadata/#license-file-multiple-use>`_
+
 ``requires-python``
     specifies the versions of Python that are supported by your project. This
     will cause installers like :term:`pip` to search through older versions of
