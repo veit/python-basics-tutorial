@@ -264,6 +264,17 @@ following steps:
 
 Then restart the shell or call up ``source`` with your shell configuration file.
 
+Update
+~~~~~~
+
+You can easily update uv with:
+
+.. code:: console
+
+   $ uv self update
+   info: Checking for updates...
+   success: Upgraded uv from v0.8.12 to v0.8.13! https://github.com/astral-sh/uv/releases/tag/0.8.13
+
 Python installation
 ~~~~~~~~~~~~~~~~~~~
 
