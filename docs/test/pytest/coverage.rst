@@ -335,6 +335,23 @@ Alternatively, this can also be configured for all occurrences:
 Extensions
 ----------
 
+`diff-cover <https://github.com/Bachmann1234/diff_cover>`_
+    automatically find the percentage of new or modified lines that are covered
+    by tests.
+
+    .. image:: https://raster.shields.io/github/stars/Bachmann1234/diff_cover
+       :alt: Stars
+       :target: https://github.com/Bachmann1234/diff_cover
+    .. image:: https://raster.shields.io/github/contributors/Bachmann1234/diff_cover
+       :alt: Contributors
+       :target: https://github.com/Bachmann1234/diff_cover/graphs/contributors
+    .. image:: https://raster.shields.io/github/commit-activity/y/Bachmann1234/diff_cover
+       :alt: Commit activity
+       :target: https://github.com/Bachmann1234/diff_cover/graphs/commit-activity
+    .. image:: https://raster.shields.io/github/license/Bachmann1234/diff_cover
+       :alt: Lizenz
+       :target: https://github.com/Bachmann1234/diff_cover?tab=Apache-2.0-1-ov-file
+
 `Sphinx-Test-Reports <https://sphinx-test-reports.readthedocs.io/en/latest/>`_
     displays test results within :doc:`/document/sphinx/index` documentation.
 
