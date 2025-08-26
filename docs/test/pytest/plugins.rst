@@ -59,7 +59,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-xdist/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-xdist
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-xdist?tab=MIT-1-ov-file#readme
 
 `pytest-freethreaded <https://pypi.org/project/pytest-freethreaded/>`_
@@ -76,7 +76,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/tonybaloney/pytest-freethreaded
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/tonybaloney/pytest-freethreaded?tab=MIT-1-ov-file#readme
 
 `pytest-rerunfailures <https://pypi.org/project/pytest-rerunfailures/>`_
@@ -93,7 +93,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-rerunfailures/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-rerunfailures
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-rerunfailures?tab=License-1-ov-file#readme
 
 `pytest-repeat <https://pypi.org/project/pytest-repeat/>`_
@@ -109,7 +109,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-repeat/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-repeat
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-repeat?tab=License-1-ov-file#readme
 
 `pytest-order <https://pypi.org/project/pytest-order/>`_
@@ -125,7 +125,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-order/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-xdist
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-xdist?tab=MIT-1-ov-file#readme
 
 `pytest-randomly <https://pypi.org/project/pytest-randomly/>`_
@@ -142,7 +142,7 @@ usual sequence of a test:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-randomly/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-randomly
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-randomly?tab=MIT-1-ov-file#readme
 
 … modified output
@@ -167,7 +167,7 @@ result. However, there are plugins that change the output even further:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-instafail/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-instafail
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-rerunfailures?tab=License-1-ov-file#readme
 
 `pytest-edit <https://pypi.org/project/pytest-edit/>`_
@@ -183,7 +183,7 @@ result. However, there are plugins that change the output even further:
        :alt: Commit activity
        :target: https://github.com/mrmino/pytest-edit/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/mrmino/pytest-edit
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/mrmino/pytest-edit?tab=MIT-1-ov-file#readme
 
 `pytest-sugar <https://pypi.org/project/pytest-sugar/>`_
@@ -200,7 +200,7 @@ result. However, there are plugins that change the output even further:
        :alt: Commit activity
        :target: https://github.com/Teemu/pytest-sugar/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/Teemu/pytest-sugar
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/Teemu/pytest-sugar?tab=License-1-ov-file#readme
 
 `pytest-html <https://pypi.org/project/pytest-html/>`_
@@ -217,7 +217,7 @@ result. However, there are plugins that change the output even further:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-html/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-html
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-html?tab=License-1-ov-file#readme
 
 `pytest-icdiff <https://pypi.org/project/pytest-icdiff/>`_
@@ -234,7 +234,7 @@ result. However, there are plugins that change the output even further:
        :alt: Commit activity
        :target: https://github.com/hjwp/pytest-icdiff/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/hjwp/pytest-icdiff
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/hjwp/pytest-icdiff?tab=MIT-1-ov-file#readme
 
 … web development
@@ -258,7 +258,7 @@ plugins that further simplify testing:
        :alt: Commit activity
        :target: https://github.com/Colin-b/pytest_httpx/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/Colin-b/pytest_httpx
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/Colin-b/pytest_httpx?tab=MIT-1-ov-file#readme
 
 `Playwright for Python <https://pypi.org/project/playwright/>`_
@@ -276,7 +276,7 @@ plugins that further simplify testing:
        :alt: Commit activity
        :target: https://github.com/Microsoft/playwright-python/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/Microsoft/playwright-python
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/Microsoft/playwright-python?tab=MIT-1-ov-file#readme
 
 `pyleniumio <https://pypi.org/project/pyleniumio/>`_
@@ -292,7 +292,7 @@ plugins that further simplify testing:
        :alt: Commit activity
        :target: https://github.com/ElSnoMan/pyleniumio/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/ElSnoMan/pyleniumio
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/ElSnoMan/pyleniumio?tab=MIT-1-ov-file#readme
 
 `pytest-selenium <https://pypi.org/project/pytest-selenium/>`_
@@ -309,7 +309,7 @@ plugins that further simplify testing:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-selenium/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-selenium
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-selenium?tab=License-1-ov-file#readme
 
 .. _fake_plugins:
@@ -335,8 +335,27 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/joke2k/faker/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/joke2k/faker
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/joke2k/faker?tab=MIT-1-ov-file#readme
+
+`time-machine <https://github.com/adamchainz/time-machine>`_
+    provides both a fixture and a marker to control the time during testing.
+
+    .. image:: https://raster.shields.io/github/stars/adamchainz/time-machine
+       :alt: Stars
+       :target: https://github.com/pytest-dev/adamchainz/time-machine
+
+    .. image:: https://raster.shields.io/github/contributors/adamchainz/time-machine
+       :alt: Contributors
+       :target: https://github.com/adamchainz/time-machine/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/adamchainz/time-machine
+       :alt: Commit activity
+       :target: https://github.com/adamchainz/time-machine/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/adamchainz/time-machine
+       :alt: License
+       :target: https://github.com/adamchainz/time-machine?tab=MIT-1-ov-file
 
 `pytest-factoryboy <https://pypi.org/project/pytest-factoryboy/>`_
     contains fixtures for `factory-boy
@@ -352,7 +371,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-factoryboy/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-factoryboy
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-factoryboy?tab=MIT-1-ov-file#readme
 
 … various things
@@ -378,7 +397,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :target: https://github.com/pytest-dev/pytest-testinfra/graphs/commit-activity
 
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-testinfra
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-testinfra?tab=Apache-2.0-1-ov-file
 
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
@@ -394,7 +413,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-cov/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-cov
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-cov?tab=MIT-1-ov-file#readme
 
 `pytest-benchmark <https://pypi.org/project/pytest-benchmark/>`_
@@ -410,7 +429,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/ionelmc/pytest-benchmark/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/ionelmc/pytest-benchmark
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/ionelmc/pytest-benchmark?tab=BSD-2-Clause-1-ov-file#readme
 
 `pytest-timeout <https://pypi.org/project/pytest-timeout/>`_
@@ -426,7 +445,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-timeout/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-timeout
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-timeout?tab=MIT-1-ov-file#readme
 
 `pytest-asyncio <https://pypi.org/project/pytest-asyncio/>`_
@@ -442,7 +461,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-asyncio/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-asyncio
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-asyncio?tab=MIT-1-ov-file#readme
 
 `pytest-mock <https://pypi.org/project/pytest-mock/>`_
@@ -458,7 +477,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-mock/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-mock
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-mock?tab=MIT-1-ov-file#readme
 
 `pytest-patterns <https://pypi.org/project/pytest-patterns/>`_
@@ -474,7 +493,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/flyingcircusio/pytest-patterns/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/flyingcircusio/pytest-patterns
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/flyingcircusio/pytest-patterns?tab=MIT-1-ov-file#readme
 
 :doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
@@ -491,7 +510,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/kataev/pytest-grpc/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/kataev/pytest-grpc
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/kataev/pytest-grpc?tab=MIT-1-ov-file#readme
 
 `pytest-bdd <https://pypi.org/project/pytest-bdd/>`_
@@ -507,7 +526,7 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: Commit activity
        :target: https://github.com/pytest-dev/pytest-bdd/graphs/commit-activity
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-bdd
-       :alt: Lizenz
+       :alt: License
        :target: https://github.com/pytest-dev/pytest-bdd?tab=MIT-1-ov-file#readme
 
 Own plugins
