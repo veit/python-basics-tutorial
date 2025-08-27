@@ -123,6 +123,9 @@ We can then simply use this fixture to test the version in
    def test_version(items_cli):
        assert items_cli("version") == items.__version__
 
+.. seealso::
+   `Typer Learn Testing <https://typer.tiangolo.com/tutorial/testing/>`_
+
 Mocking of attributes
 ---------------------
 

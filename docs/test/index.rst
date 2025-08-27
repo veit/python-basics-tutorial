@@ -19,8 +19,8 @@ Basically, a distinction is made between static and dynamic test procedures.
    :titlesonly:
    :hidden:
 
-   pytest/index
    unittest
+   pytest/index
    mock
    hypothesis
    tox
