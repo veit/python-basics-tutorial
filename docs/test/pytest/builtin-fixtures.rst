@@ -270,37 +270,52 @@ code is restored and everything that was changed by the patch is undone.
 
 The ``monkeypatch`` fixture offers the following functions:
 
-+-------------------------------------------------------+-----------------------+
-| Function                                              | Description           |
-+=======================================================+=======================+
-| :samp:`setattr(TARGET, NAME, VALUE, raising=True)`    | sets an attribute     |
-| [1]_                                                  |                       |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delattr(TARGET, NAME, raising=True)` [1]_      | deletes an attribute  |
-+-------------------------------------------------------+-----------------------+
-| :samp:`setitem(DICT, NAME, VALUE)`                    | sets a dict entry     |
-|                                                       |                       |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delitem(DICT, NAME, raising=True)` [1]_        | deletes a dict entry  |
-+-------------------------------------------------------+-----------------------+
-| :samp:`setenv(NAME, VALUE, prepend=None)` [2]_        | sets an environment   |
-|                                                       | variable              |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delenv(NAME, raising=True)` [1]_               | deletes an environment|
-|                                                       | variable              |
-+-------------------------------------------------------+-----------------------+
-| :samp:`syspath_prepend(PATH)`                         | expands the path      |
-|                                                       | ``sys.path``          |
-+-------------------------------------------------------+-----------------------+
-| :samp:`chdir(PATH)`                                   | changes the current   |
-|                                                       | working directory     |
-+-------------------------------------------------------+-----------------------+
++-----------------------------------------------+-----------------------+
+| Function                                      | Description           |
++===============================================+=======================+
+| :meth:`monkeypatch.setattr(obj, name, value,  | sets an attribute     |
+| raising=True)                                 |                       |
+| <pytest.MonkeyPatch.setattr>`                 |                       |
+| [1]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.delattr(obj, name,         | deletes an attribute  |
+| raising=True)                                 |                       |
+| <pytest.MonkeyPatch.delattr>`                 |                       |
+| [1]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.setitem(mapping, name,     | sets a dict entry     |
+| value) <pytest.MonkeyPatch.setitem>`          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.delitem(obj, name,         | deletes a dict entry  |
+| raising=True) <pytest.MonkeyPatch.delitem>`   |                       |
+| [1]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.setenv(name, value,        | sets an environment   |
+| prepend=None) <pytest.MonkeyPatch.setenv>`    | variable              |
+| [2]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.delenv(name, raising=True) | deletes an environment|
+| <pytest.MonkeyPatch.delenv>`                  | variable              |
+| [1]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.syspath_prepend(path)      | expands the path      |
+| <pytest.MonkeyPatch.syspath_prepend>`         | :py:data:`sys.path`   |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.chdir(path)                | changes the current   |
+| <pytest.MonkeyPatch.chdir>`                   | working directory     |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.context()                  | changes the current   |
+| <pytest.MonkeyPatch.context>`                 | context               |
++-----------------------------------------------+-----------------------+
 
 .. [1] The ``raising`` :term:`parameter` tells pytest whether an exception
        should be thrown if the element is not (yet) present.
 .. [2] The ``prepend`` :term:`parameter` of ``setenv()`` can be a character. If
        it is set, the value of the environment variable is changed to
        :samp:`{VALUE} + prepend + {OLD_VALUE}`
+
+RMonkey patching of environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We can use ``monkeypatch`` to redirect the :abbr:`CLI (Command Line Interface)`
 to a temporary directory for the database in two ways. Both methods require
@@ -391,6 +406,44 @@ environment variable :envvar:`ITEMS_DB_DIR` that can be easily patched:
    def test_env_var(monkeypatch, tmp_path):
        monkeypatch.setenv("ITEMS_DB_DIR", str(tmp_path))
        assert run_items_cli("config") == str(tmp_path)
+
+Monkey patching dictionaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The path could also have been specified in a dictionary, for example:
+
+.. code-block:: python
+   :caption: conf.py
+
+   DEFAULT_CONFIG = {"database": "items_db"}
+
+
+   def create_connection(config=None):
+       """Create a connection string from input or defaults."""
+       config = config or DEFAULT_CONFIG
+       return f"Location={config['database']};"
+
+For testing purposes, we can change the values in the ``DEFAULT_CONFIG``
+dictionary:
+
+.. code-block:: python
+   :caption: tests/test_conf.py
+
+   from items import conf
+
+
+   def test_connection(monkeypatch):
+       monkeypatch.setitem(conf.DEFAULT_CONFIG, "database", "test_db")
+
+Alternatively, you could have defined a fixture with:
+
+.. code-block:: python
+   :caption: tests/conftest.py
+
+   @pytest.fixture
+   def mock_test_database(monkeypatch):
+       """Set the DEFAULT_CONFIG database to test_db."""
+       monkeypatch.setitem(app.DEFAULT_CONFIG, "database", "test_db")
 
 Remaining built-in fixtures
 ---------------------------

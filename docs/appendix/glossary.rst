@@ -4,6 +4,12 @@ Glossary
 .. glossary::
    :sorted:
 
+   Acceptance test
+   User Acceptance Test
+       Verification that software functions as intended from the user’s
+       perspective and that users accept the software. Acceptance tests are
+       primarily used in :term:` Extreme Programming`.
+
    Argument
        A value that is passed to a function. There are two types of arguments:
 
@@ -79,6 +85,14 @@ Glossary
             <https://python-basics-tutorial.readthedocs.io/en/latest/logging/examples.html#Logging-exceptions>`_
           * :ref:`pytest_fail`
           * :class:`python3:Exception`
+
+   Extreme Programming
+   XP
+       Software development methodology that aims to improve software quality
+       and responsiveness to changing customer requirements. As a form of agile
+       software development, it advocates frequent releases in short development
+       cycles to increase productivity and introduce control points where new
+       requirements can be taken into account.
 
    F-string
        :doc:`String </types/strings/built-in-modules/string>` literal preceded
@@ -712,8 +726,27 @@ Glossary
 
    Test-driven development
    TDD
-       A software development strategy in which the tests are written before the
-       code.
+       A technique for creating software that guides software development by
+       writing tests. It was developed in the late 1990s by Kent Beck as part of
+       Extreme Programming. Essentially, it involves repeating three simple
+       steps:
+
+       * Write a test for the next feature to be added.
+       * Write the function code until the test passes.
+       * Refactor both the new and old code to make it well structured.
+
+       Although these three steps, often summarised as *‘red – green –
+       refactor’*, form the core of the process, there is also an important
+       first step, in which a list of test cases is created. One of these tests
+       is then selected, *‘Red – Green – Refactor’* is applied to it, and the
+       next test is selected. During the process, further tests are added to
+       this list.
+
+       .. seealso::
+          * `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_ by Kent
+            Beck
+          * `Test-driven development by example
+            <https://archive.org/details/est-driven-development-by-example/test-driven-development-by-example/>`_ by Kent Beck
 
    ``try``
        A keyword that protects a part of the code that can throw an

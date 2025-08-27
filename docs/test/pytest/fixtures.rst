@@ -20,6 +20,13 @@ But before you familiarise yourself with fixtures and use them to test Items,
 let’s take a look at a small example fixture and learn how fixtures and test
 functions are connected.
 
+.. seealso::
+   * `pytest fixtures <https://docs.pytest.org/en/latest/explanation/fixtures.html>`_
+   * `pytest fixtures reference
+     <https://docs.pytest.org/en/latest/reference/fixtures.html>`_
+   * `How to use fixtures
+     <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
+
 First steps with fixtures
 -------------------------
 
