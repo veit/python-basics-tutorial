@@ -35,7 +35,7 @@ You can install pytest in `virtual environments <venv>` with:
 
       $ python -m pip install pytest
       Collecting pytest
-      …
+      ...
       Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
 
 .. tab:: Windows
@@ -44,7 +44,7 @@ You can install pytest in `virtual environments <venv>` with:
 
       C:> python -m pip install pytest
       Collecting pytest
-      …
+      ...
       Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
 
 .. toctree::
