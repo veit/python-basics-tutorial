@@ -55,7 +55,6 @@ use to manage files:
 | :py:mod:`configparser`            | reads and writes Windows-like configuration files (``.ini``)                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`base64`,                 | encodes/decodes files or streams                                              |
-| :py:mod:`binhex`,                 |                                                                               |
 | :py:mod:`binascii`,               |                                                                               |
 | :py:mod:`quopri`,                 |                                                                               |
 | :py:mod:`uu`                      |                                                                               |
