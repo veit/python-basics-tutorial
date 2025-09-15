@@ -45,7 +45,6 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
@@ -60,6 +59,7 @@ plantuml_output_format = "svg"
 
 intersphinx_mapping = {
     "python3": ("https://docs.python.org/3/", None),
+    "python3.14": ("https://docs.python.org/3.14/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/en/latest/", None),
     "Python4DataScience": ("https://www.python4data.science/en/latest/", None),
     "pytest": ("https://docs.pytest.org/en/latest/", None),

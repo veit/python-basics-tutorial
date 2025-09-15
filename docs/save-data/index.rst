@@ -1,8 +1,8 @@
 Save and access data
 ====================
 
-You can save your data persistently in :doc:`files <files>` in the :doc:`file
-system <filesystem>`. In the Python standard library, there are also several
+You can save your data persistently in :doc:`files and directories
+<files-directories>`. In the Python standard library, there are also several
 modules for converting data into a linear form. This process is called
 *serialisation* or *marshalling*. The reverse process is called
 *deserialisation* or *unmarshalling*. And if the :ref:`built-in modules
@@ -27,8 +27,7 @@ the :doc:`xml <xml>` module
    :titlesonly:
    :hidden:
 
-   files
-   filesystem
+   files-directories
    modules
    pickle
    xml

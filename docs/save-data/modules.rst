@@ -94,3 +94,23 @@ pandas IO tools
     <Python4DataScience:data-processing/serialisation-formats/toml/example>`
   * :doc:`Pickle
     <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`
+
+Checks
+------
+
+* What use cases can you imagine in which the :mod:`python3:struct` module would
+  be useful for reading or writing binary data?
+
+  * when reading and writing a binary file
+  * when reading from an external interface, where the data should be stored
+    exactly as it was transmitted
+
+* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
+  following use cases:
+
+  #. Saving some state variables from one run to the next ✅
+  #. Storing evaluation results ❌, as pickle is dependent on the respective
+     Python version
+  #. Saving user names and passwords ❌, as pickles are not secure
+  #. Saving a large dictionary with English terms ❌, as the entire pickle would
+     have to be loaded into memory

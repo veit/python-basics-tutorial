@@ -981,22 +981,20 @@ Checks
      You can find a complete example at `github.com/veit/items
      <https://github.com/veit/items/>`_.
 
-:doc:`/save-data/files`
------------------------
+:doc:`/save-data/files-directories`
+-----------------------------------
 
-* Uses the functions of the :mod:`python3:os` module to take a path to a file
-  named :file:`example.log` and create a new file path in the same directory for
-  a file named :file:`example.log1`.
+* Use the functions of the :mod:`python3:pathlib` module to take a path to a
+  file named :file:`example.log` and create a new file path in the same
+  directory for a file named :file:`example.log1`.
 
   .. code-block:: pycon
 
-     >>> import os
-     >>> path = os.path.abspath("example.log")
-     >>> print(path)
-     /Users/veit/python-basics-tutorial-de/example.log
-     >>> new_path = f"{path}2"
-     >>> print(new_path)
-     /Users/veit/python-basics-tutorial-de/example.log2
+     >>> from pathlib import Path
+     >>> l = Path("logs", "instance.log")
+     >>> l1 = Path("logs", "instance.log1")
+     >>> l.rename(l1)
+     PosixPath('logs/instance.log1')
 
 * What is the significance of adding ``b`` as a :term:`parameter` to
   :func:`python3:open`?
@@ -1010,31 +1008,12 @@ Checks
 
   .. code-block:: pycon
 
-     >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythinistas!\n")
-     ...
+     >>> from pathlib import Path
+     >>> p = Path("docs", "save-data", "myfile.txt")
+     >>> p.write_text("Hi, Pythonistas!\n")
      17
-     >>> with open("my_file") as f:
-     ...     print(f.readlines())
-     ...
-     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
-
-* What use cases can you imagine in which the :mod:`python3:struct` module would
-  be useful for reading or writing binary data?
-
-  * when reading and writing a binary file
-  * when reading from an external interface, where the data should be stored
-    exactly as it was transmitted
-
-* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
-  following use cases:
-
-  #. Saving some state variables from one run to the next ✅
-  #. Storing evaluation results ❌, as pickle is dependent on the respective
-     Python version
-  #. Saving user names and passwords ❌, as pickles are not secure
-  #. Saving a large dictionary with English terms ❌, as the entire pickle would
-     have to be loaded into memory
+     >>> p.read_text()
+     'Hi, Pythonistas!\n'
 
 * If you look at the `man page for the wc utility
   <https://linux.die.net/man/1/wc>`_, you will see two command line options:
@@ -1099,3 +1078,23 @@ Checks
         writes the current file to the ZIP file.
     Line 13
          removes the current file from the working directory.
+
+:doc:`/save-data/modules`
+-------------------------
+
+* What use cases can you imagine in which the :mod:`python3:struct` module would
+  be useful for reading or writing binary data?
+
+  * when reading and writing a binary file
+  * when reading from an external interface, where the data should be stored
+    exactly as it was transmitted
+
+* Why :doc:`pickle <python3:library/pickle>` may or may not be suitable for the
+  following use cases:
+
+  #. Saving some state variables from one run to the next ✅
+  #. Storing evaluation results ❌, as pickle is dependent on the respective
+     Python version
+  #. Saving user names and passwords ❌, as pickles are not secure
+  #. Saving a large dictionary with English terms ❌, as the entire pickle would
+     have to be loaded into memory
