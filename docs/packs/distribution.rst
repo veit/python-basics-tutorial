@@ -171,6 +171,19 @@ as:
        [tool.setuptools.dynamic]
        version = {attr = "dataprep.VERSION"}
 
+    If you would like to make this version available in your package, you can
+    use the following code:
+
+    .. code-block:: python
+       :caption: src/dataprep/__init__.py
+
+       import importlib.metadata
+
+       try:
+           __version__ = importlib.metadata.version(__name__)
+       except importlib.metadata.PackageNotFoundError:
+           __version__ = "0.1.dev0"  # Fallback for development mode
+
     .. tip::
        If the version is in several text files, the use of `Bump My Version
        <https://github.com/callowayproject/bump-my-version>`_ may be
@@ -282,8 +295,8 @@ Dependency groups
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 24-34
-   :lineno-start: 34
+   :lines: 26-36
+   :lineno-start: 26
 
 Recursive dependency groups are also possible. For example, for ``dev`` you can
 take over all dependencies from ``docs`` and ``test`` in addition to
@@ -291,8 +304,8 @@ take over all dependencies from ``docs`` and ``test`` in addition to
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 35-39
-   :lineno-start: 35
+   :lines: 37-41
+   :lineno-start: 37
 
 You can install these dependency groups, for example with:
 
