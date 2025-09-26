@@ -55,7 +55,7 @@ interfaces)`. We can also create them with ``uv init --package``:
 
     .. code-block:: pycon
 
-       $  uv add --dev .
+       $  uv add .
        Resolved 1 package in 1ms
        Audited in 0.01ms
        $ uv run python
@@ -66,9 +66,9 @@ interfaces)`. We can also create them with ``uv init --package``:
 .. _uv_lock:
 
 :file:`uv.lock` file
-    With ``uv add --dev .`` the :file:`uv.lock` file was also created alongside
-    the :file:`pyproject.toml` file. :file:`uv.lock` is a cross-platform lock
-    file that records the packages that are to be installed across all possible
+    With ``uv add .`` the :file:`uv.lock` file was also created alongside the
+    :file:`pyproject.toml` file. :file:`uv.lock` is a cross-platform lock file
+    that records the packages that are to be installed across all possible
     Python features such as operating system, architecture and Python version.
 
     Unlike :file:`pyproject.toml`, which specifies the general requirements of

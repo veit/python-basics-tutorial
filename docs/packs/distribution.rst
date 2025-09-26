@@ -281,6 +281,17 @@ as:
     :term:`Python Package Index` (:term:`PyPI`). In general, this could lead to
     source code, documentation, task managers, :abbr:`etc (et cetera)`.
 
+.. error::
+   If you receive the error in uv: :samp:`error: No \`project\` table found in:
+   \`{/PATH/TO/}pyproject.toml\``, you probably haven’t defined a ``[project]``
+   section. This can occur in repositories that only use the
+   :file:`pyproject.toml` file to configure tools such as Black and Ruff, but
+   do not define the project itself.
+
+   To resolve the issue, you can insert a ``[project]`` section that must
+   contain at least  ``name`` and ``version``. Alternatively, you can also use
+   ``uv run`` with the ``--no-project`` option.
+
 .. seealso::
    * `Declaring project metadata
      <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
@@ -518,6 +529,24 @@ structure for packages.
        └── mypack
            └── __init__.py
 
+file:`.python-version`
+   specifies which Python version should be used for developing the project.
+
+   .. error::
+      If you receive the following error message: error: :samp:`error: The
+      Python request from \`.python-version\` resolved to Python {U.V.W}, which
+      is incompatible with the project's Python requirement: \`>={X.Y}\`. Use
+      \`uv python pin\` to update the \`.python-version\` file to a compatible
+      version.`, this indicates a conflict between the version specified in the
+      :file:`.python-version` file and the ``requires-python`` specification in
+      the :file:`pyproject.toml` file. You now have three different options:
+
+      * Update your :file:`.python-version` file with :samp:`uv python pin
+        {X.Y.Z}`.
+      * Override the Python version for a single command with  :samp:`uv run
+        --python {X.Y} {COMMAND}`.
+      * Update ``requires-python``.
+
 :file:`mypack/pyproject.toml`
     The file :file:`pyproject.toml` contains a ``scripts`` entry point
     ``mypack:main``:
@@ -594,89 +623,66 @@ where :file:`pyproject.toml` is located:
         other hand only for chips with the x86 instruction set and a 64-bit
         architecture
 
+    .. seealso::
+       * :pep:`427`
+
 :file:`mypack-0.1.0.tar.gz`
-    is a :term:`source distribution`.
+    is a :term:`source distribution`
 
 .. seealso::
-   For more information on ``sdist``, see `Core metadata specifications
-   <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
-   and `PyPA specifications
-   <https://packaging.python.org/en/latest/specifications/>`_.
+   * `Core metadata specifications
+     <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
+   * `PyPA specifications
+     <https://packaging.python.org/en/latest/specifications/>`_
 
 Testing
 -------
-
-.. tab:: Linux/macOS
-
-   .. code-block:: console
-
-      $ mkdir test_env
-      $ cd test_env
-      $ python3 -m venv .venv
-      $ . .venv/bin/activate
-      $ python -m pip install dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
-      Processing ./dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
-      Collecting Cython (from dataprep==0.1.0)
-        Using cached Cython-3.0.11-py2.py3-none-any.whl.metadata (3.2 kB)
-      …
-      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
-
-.. tab:: Windows
-
-   .. code-block:: console
-
-      > mkdir test_env
-      > cd test_env
-      > python -m venv .venv
-      > .venv\Scripts\activate.bat
-      > python -m pip install dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
-      Processing ./dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
-      Collecting Cython (from dataprep==0.1.0)
-        Using cached Cython-3.0.11-cp313-cp313-win_amd64.whl.metadata (3.2 kB)
-      …
-      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
 
 You can then check the :term:`Wheel` file with:
 
 .. code-block:: console
 
-    $ mkdir test_env
-    $ cd !$
-    cd test_env
-    $ python3 -m venv .venv
-    $ . .venv/bin/activate
-    $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
-    Processing ./dist/dataprep-0.1.0-py3-none-any.whl
-    Collecting pandas
-      Using cached pandas-1.3.4-cp39-cp39-macosx_10_9_x86_64.whl (11.6 MB)
-    …
-    Successfully installed dataprep-0.1.0 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
-
-Then you can check the wheel with:
-
-.. code-block:: console
-
-    $ python -m pip install check-wheel-contents
-    $ check-wheel-contents dist/*.whl
-    dist/dataprep-0.1.0-py3-none-any.whl: OK
+   $ uv add --dev check-wheel-contents
+   Resolved 17 packages in 8ms
+      Built mypack @ file:///Users/veit/sandbox/mypack
+   Prepared 1 package in 442ms
+   Uninstalled 1 package in 0.89ms
+   Installed 10 packages in 5ms
+    + annotated-types==0.7.0
+    + attrs==24.2.0
+    + check-wheel-contents==0.6.0
+    + click==8.1.7
+    ~ mypack==0.1.0 (from file:///Users/veit/sandbox/mypack)
+    + packaging==24.1
+    + pydantic==2.9.2
+    + pydantic-core==2.23.4
+    + typing-extensions==4.12.2
+    + wheel-filename==1.4.1
+   $ uv run check-wheel-contents dist/*.whl
+   dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternatively, you can also install the package in a new project, for example in
 :samp:`myapp`:
 
 .. code-block:: console
 
-    $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
-    Processing ./dist/dataprep-0.1-py3-none-any.whl
-    Collecting pandas
-    …
-    Installing collected packages: numpy, pytz, six, python-dateutil, pandas, dataprep
-    Successfully installed dataprep-0.1 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
+   $ uv init --app myapp
+   $ cd myapp
+   $ uv add ../mypack/dist/mypack-0.1.0-py3-none-any.whl
+   Resolved 8 packages in 130ms
+   Installed 1 package in 3ms
+    + mypack==0.1.0 (from file:///Users/veit/sandbox/mypack/dist/mypack-0.1.0-py3-none-any.whl)
 
-You can then call Python and import your ``loaders`` module:
+You can then call ``mypack`` with ``uv run``:
 
-.. code-block:: python
+.. code-block:: console
 
-    from dataprep import loaders
+   $ uv run mypack
+   Hello from mypack!
+
+.. seealso::
+   * `Troubleshooting build failures
+   <https://docs.astral.sh/uv/reference/troubleshooting/build-failures/>`_
 
 .. note::
    There are still many instructions that include a step to call

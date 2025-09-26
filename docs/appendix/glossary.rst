@@ -566,6 +566,7 @@ Glossary
          <update-uv-lock>` the Python environment, if necessary also with a
          :doc:`Python4DataScience:productive/envs/uv/dependency-bot`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
+       * :doc:`Python4DataScience:productive/envs/uv/claude-cursor`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
        * Check vulnerabilities with :ref:`uv-secure <check-vulnerabilities>`
 
