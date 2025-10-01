@@ -35,7 +35,7 @@ jobs:
       - name: Setup pandoc
         uses: pandoc/actions/setup@v1
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version-file: .python-version
           architecture: x64
