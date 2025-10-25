@@ -7,7 +7,7 @@ uploaded to a package index such as :term:`pypi.org` and installed with
 
 .. tip::
    `cusy seminar: Advanced Python
-   <https://cusy.io/en/our-training-courses/advanced-python>`_
+   <https://cusy.io/en/our-training-courses/advanced-python.html>`_
 
 Structure
 ---------
@@ -529,7 +529,7 @@ structure for packages.
        └── mypack
            └── __init__.py
 
-file:`.python-version`
+:file:`.python-version`
    specifies which Python version should be used for developing the project.
 
    .. error::

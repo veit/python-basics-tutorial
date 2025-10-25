@@ -9,7 +9,7 @@ Basically, a distinction is made between static and dynamic test procedures.
 
 .. tip::
    `cusy seminar: Efficient testing with Python
-   <https://cusy.io/en/our-training-courses/efficient-testing-with-python>`_
+   <https://cusy.io/en/our-training-courses/efficient-testing-with-python.html>`_
 
 .. seealso::
    * `Python Testing and Continuous Integration

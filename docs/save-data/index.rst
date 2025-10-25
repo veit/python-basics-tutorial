@@ -21,7 +21,7 @@ the :doc:`xml <xml>` module
 
 .. tip::
    `cusy Seminar
-   <https://cusy.io/en/our-training-courses/read-write-and-provide-data-with-python>`_
+   <https://cusy.io/en/our-training-courses/read-write-and-provide-data-with-python.html>`_
 
 .. toctree::
    :titlesonly:

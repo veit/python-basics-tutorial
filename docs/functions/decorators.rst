@@ -131,4 +131,4 @@ as decorators, such as:
 
 .. tip::
    `cusy seminar: Advanced Python
-   <https://cusy.io/en/our-training-courses/advanced-python>`_
+   <https://cusy.io/en/our-training-courses/advanced-python.html>`_
