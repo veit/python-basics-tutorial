@@ -18,8 +18,8 @@ considered ``True``.
        >>> x == y
        True
 
-    However, you should never compare calculated floating point numbers with
-    each other:
+    However, you should never directly compare calculated floating point
+    numbers:
 
     .. code-block:: pycon
 
@@ -31,6 +31,21 @@ considered ``True``.
        4.2
        >>> v
        4.199999999999999
+
+    Instead, you can use :func:`math.isclose`:
+
+    .. code-block:: pycon
+
+       >>> import math
+       >>> math.isclose(u, v)
+       True
+
+    Alternatively, you can also use :func:`round`:
+
+    .. code-block:: pycon
+
+       >>> round(u, 2) == round(v, 2)
+       True
 
 ``is``, ``is not``, ``in``, ``not in``
     checks the identity:

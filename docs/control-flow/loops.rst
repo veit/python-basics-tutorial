@@ -160,7 +160,7 @@ Checks
 
 * Which list comprehension would you use to achieve the same result?
 
-* How would you count the total number of negative numbers in the list ``[-[1,
+* How would you count the total number of negative numbers in the list ``[[-1,
   0, 1], [-1, 1, 3], [-2, 0, 2]]``?
 
 * Creates a generator that only returns odd numbers from 1 to 10.

@@ -272,12 +272,12 @@ Checks
 
   .. code-block:: pycon
 
-     >>> sheet = {}
-     >>> sheet[("A", 0)] = 1
-     >>> sheet[("A", 1)] = 2
-     >>> sheet[("B", 0)] = 3
-     >>> sheet[("B", 1)] = 4
-     >>> print(sheet[("A", 1)])
+     >>> tabular = {}
+     >>> tabular[("A", 0)] = 1
+     >>> tabular[("A", 1)] = 2
+     >>> tabular[("B", 0)] = 3
+     >>> tabular[("B", 1)] = 4
+     >>> print(tabular[("A", 1)])
      2
 
 * How can you remove all duplicates from a list without changing the order of the
@@ -501,7 +501,7 @@ Checks
      >>> pos
      [0, 1, 2, 3]
 
-* How would you count the total number of negative numbers in the list ``[-[1,
+* How would you count the total number of negative numbers in the list ``[[-1,
   0, 1], [-1, 1, 3], [-2, 0, 2]]``?
 
   .. code-block:: pycon
@@ -621,15 +621,11 @@ Checks
 
   .. code-block:: pycon
 
-     >> def my_func(*params):
-     ...     for i in reversed(params):
-     ...         print(i)
-     ...
-     >>> my_func(1, 2, 3, 4)
-     4
-     3
-     2
-     1
+     >>> values = input("Values separated by commas: ")
+     Values separated by commas: 1,3,2,4
+     >>> value_list = values.split(",")
+     >>> reverse(value_list)
+     ['4', '3', '2', '1']
 
 :doc:`/functions/variables`
 ---------------------------

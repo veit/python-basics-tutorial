@@ -78,21 +78,25 @@ as decorators, such as:
     .. code-block:: pycon
        :linenos:
 
-       >>> from functools import cache
-       >>> @cache
+       >>> import timeit
+       ... from functools import cache
+       ... @cache
        ... def factorial(n):
        ...     return n * factorial(n - 1) if n else 1
-       ...
-       >>> factorial(8)
-       40320
-       >>> factorial(10)
-       3628800
+       ... timeit.timeit("factorial(8)", globals=globals())
+       0.02631620899774134
 
-    Line 6
-        Since there is no previously stored result, nine recursive calls are
-        made.
-    Line 8
-        makes only two new calls, as the other results come from the cache.
+    Line 1
+        imports the :mod:`timeit` module for measuring execution time.
+    Line 2
+        imports :func:`functools.cache`.
+    Line 5
+        The ``@cache`` decorator is used to store intermediate results, which
+        can then be reused. In our case, the execution speed is increased
+        approximately tenfold.
+    Line 10
+        :func:`timeit.timeit` measures the time of a call. Unless otherwise
+        specified, the call is made one million times.
 
 :func:`functools.wraps`
     This decorator makes the wrapper function look like the original function

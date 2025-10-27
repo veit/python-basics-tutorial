@@ -146,24 +146,34 @@ A list can be converted into a tuple using the built-in ``tuple`` function:
 
 .. code-block:: pycon
 
-   >>> x = [1, 2, 3, 5]
-   >>> tuple(x)
-   (1, 2, 3, 5)
+   >>> dates = [
+   ...     "2025-11-09",
+   ...     "2025-11-10",
+   ...     "2025-11-11",
+   ...     "2025-11-12",
+   ... ]
+   >>> tuple(dates)
+   ('2025-11-09', '2025-11-10', '2025-11-11', '2025-11-12')
 
 Conversely, a tuple can be converted into a list using the built-in ``list``
 function:
 
 .. code-block:: pycon
 
-   >>> x = (1, 2, 3, 4)
-   >>> list(x)
-   [1, 2, 3, 4]
+   >>> dates = (
+   ...     "2025-11-09",
+   ...     "2025-11-10",
+   ...     "2025-11-11",
+   ...     "2025-11-12",
+   ... )
+   >>> list(dates)
+   ['2025-11-09', '2025-11-10', '2025-11-11', '2025-11-12']
 
 The advantages of tuples over :doc:`lists <lists>` are:
 
 * Tuples are faster than lists.
 
-  If you want to define a constant set of values and just cycle through them,
+  If you want to define a constant set of values and just iterate through them,
   you should use a tuple instead of a list.
 
 * Tuples can not be modified and are therefore *write-protected*.
