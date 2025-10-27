@@ -18,19 +18,49 @@ considered ``True``.
        >>> x == y
        True
 
-    However, you should never compare calculated floating point numbers with
-    each other:
+    .. warning::
+       However, you should never directly compare calculated floating point
+       numbers:
 
-    .. code-block:: pycon
+       .. code-block:: pycon
 
-       >>> u = 0.6 * 7
-       >>> v = 0.7 * 6
-       >>> u == v
-       False
-       >>> u
-       4.2
-       >>> v
-       4.199999999999999
+          >>> u = 0.6 * 7
+          >>> v = 0.7 * 6
+          >>> u == v
+          False
+          >>> u
+          4.2
+          >>> v
+          4.199999999999999
+
+       Instead, you can use :func:`math.isclose`:
+
+       .. code-block:: pycon
+
+          >>> import math
+          >>> math.isclose(u, v)
+          True
+
+       Alternatively, you can also use :func:`round`:
+
+       .. code-block:: pycon
+
+          >>> round(u, 2) == round(v, 2)
+          True
+
+    .. warning::
+       Integers smaller than -5 or larger than 256 are recreated each time, but
+       integers in between are pre-instantiated by the interpreter and reused.
+       Therefore, :py:func:`id` should not be used for comparisons of integers:
+
+       .. code-block:: pycon
+
+          >>> x = 256
+          >>> y = 257
+          >>> id(x) == id(256)
+          True
+          >>> id(y) == id(257)
+          False
 
 ``is``, ``is not``, ``in``, ``not in``
     checks the identity:

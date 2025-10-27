@@ -1,45 +1,50 @@
 [build-system]
-requires = ["Cython", "setuptools>=77.0"]
 build-backend = "setuptools.build_meta"
+requires = [ "cython", "setuptools>=77" ]
 
 [project]
 name = "dataprep"
 version = "0.1.0"
-authors = [
-  { name="Veit Schiele", email="veit@cusy.io" },
-]
 description = "A small dataprep package"
 readme = "README.rst"
-License-Expression = "BSD-3-Clause"
-License-File = [ "LICENSE" ]
+authors = [
+  { name = "Veit Schiele", email = "veit@cusy.io" },
+]
 requires-python = ">=3.9"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "Cython",
-    "pandas",
+  "cython",
+  "pandas",
 ]
+
+urls."Bug Tracker" = "https://github.com/veit/dataprep/issues"
+urls."Homepage" = "https://github.com/veit/dataprep"
+License-Expression = "BSD-3-Clause"
+License-File = [ "LICENSE" ]
 
 [dependency-groups]
-tests = [
-    "coverage[toml]",
-    "pytest>=6.0",
+dev = [
+  "pre-commit",
+  { include-group = "docs" },
+  { include-group = "tests" },
 ]
 docs = [
-    "furo",
-    "sphinxext-opengraph",
-    "sphinx-copybutton",
-    "sphinx_inline_tabs"
+  "furo",
+  "sphinx-copybutton",
+  "sphinx-inline-tabs",
+  "sphinxext-opengraph",
 ]
-dev = [
-    {include-group = "tests"},
-    {include-group = "docs"},
-    "pre-commit",
+tests = [
+  "coverage[toml]",
+  "pytest>=6",
 ]
-
-[project.urls]
-"Homepage" = "https://github.com/veit/dataprep"
-"Bug Tracker" = "https://github.com/veit/dataprep/issues"
