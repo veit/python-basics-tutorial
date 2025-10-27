@@ -1,48 +1,51 @@
 [project]
 name = "python-basics-tutorial"
 version = "24.2.0"
-authors = [
-  { name="Veit Schiele", email="veit@cusy.io" },
-]
 description = "Training materials for our Python basics course: https://cusy.io/en/seminars"
 readme = "README.rst"
-License-Expression = "BSD-3-Clause"
-License-File = [ "LICENSE" ]
+license = "BSD-3-Clause"
+license-files = [ "LICENSE" ]
+authors = [
+  { name = "Veit Schiele", email = "veit@cusy.io" },
+]
 requires-python = ">=3.9"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
-dependencies = []
+dependencies = [  ]
+
+urls."Bug Tracker" = "https://github.com/veit/python-basics-tutorial/issues"
+urls."Homepage" = "https://github.com/veit/python-basics-tutorial/"
 
 [dependency-groups]
-docs = [
-    "furo",
-    "ipython",
-    "ipywidgets",
-    "matplotlib", # matplotlib is required for social cards
-    "nbsphinx",
-    "pygments-pytest",
-    "sphinx-inline-tabs",
-    "sphinx-lint",
-    "sphinx-notfound-page",
-    "sphinx-sitemap",
-    "sphinx_copybutton",
-    "sphinxcontrib-svg2pdfconverter",
-    "sphinxcontrib.plantuml",
-    "sphinxext.opengraph",
-]
-
 dev = [
-    { include-group = "docs" },
-    "pre-commit",
-    "codespell",
-    "vale"
+  "codespell",
+  "pre-commit",
+  "vale",
+  { include-group = "docs" },
 ]
-
-[project.urls]
-"Homepage" = "https://github.com/veit/python-basics-tutorial/"
-"Bug Tracker" = "https://github.com/veit/python-basics-tutorial/issues"
+docs = [
+  "furo",
+  "ipython",
+  "ipywidgets",
+  "matplotlib",                     # matplotlib is required for social cards
+  "nbsphinx",
+  "pygments-pytest",
+  "sphinx-copybutton",
+  "sphinx-inline-tabs",
+  "sphinx-lint",
+  "sphinx-notfound-page",
+  "sphinx-sitemap",
+  "sphinxcontrib-plantuml",
+  "sphinxcontrib-svg2pdfconverter",
+  "sphinxext-opengraph",
+]
 
 [tool.codespell]
 ignore-words-list = "ist, symbl, allo"
