@@ -238,7 +238,7 @@ as:
 
 .. _license-expression:
 
-``License-Expression``
+``license-expression``
     contains valid `SPDX license expressions
     <https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/>`_.
 

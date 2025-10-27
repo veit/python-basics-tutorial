@@ -85,8 +85,8 @@ flow control is continued with ``x`` being set to the next entry in the list.
 After the first matching integer is found, the loop is terminated with the
 ``break`` statement.
 
-Loops with an index
--------------------
+``for`` Loops with an index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also output the index in a ``for`` loop, for example with
 :py:func:`enumerate()`:
@@ -94,15 +94,15 @@ You can also output the index in a ``for`` loop, for example with
 .. code-block:: pycon
 
    >>> data_types = ["Data types", "Numbers", "Lists"]
-   >>> for index, title in enumerate(data_types):
-   ...     print(index, title)
+   >>> for key, title in enumerate(data_types):
+   ...     print(key, title)
    ...
    0 Data types
    1 Numbers
    2 Lists
 
 List Comprehensions
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 A list is usually generated as follows:
 
@@ -153,6 +153,57 @@ appended to the end of the expression:
    >>> squares
    [16, 25, 36, 49]
 
+Dict Comprehensions
+~~~~~~~~~~~~~~~~~~~
+
+:doc:`../types/sequences-sets/lists` can be converted into :doc:`../types/dicts`
+as follows:
+
+.. code-block:: pycon
+
+   >>> toc = {}
+   >>> for key, title in enumerate(data_types):
+   ...     toc[key] = title
+   ...
+   >>> toc
+   {0: 'Data types', 1: 'Numbers', 2: 'Lists'}
+
+Mit Dict Comprehensions vereinfacht sich dies:
+
+.. code-block:: pycon
+
+   >>> toc = {key: value for key, value in enumerate(data_types)}
+   >>> toc
+   {0: 'Data types', 1: 'Numbers', 2: 'Lists'}
+
+Das allgemeine Format für Dict Comprehensions ist:
+
+:samp:`{NEW_DICT} = \{{KEY}: {VALUE} for {MEMBER} in {ITERABLE}\}`
+
+Change a ``Collection``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Modifying a ``collection`` while iterating over it can be difficult. Therefore,
+a copy of the ``collection`` is often modified instead:
+
+.. code-block:: pycon
+
+   >>> for key, title in data_types.items():
+   ...     if key == 0:
+   ...         del data_types[key]
+   ...
+   Traceback (most recent call last):
+     File "<python-input-2>", line 1, in <module>
+       for key, title in data_types.items():
+                           ~~~~~~~~~~~~~~~~^^
+   RuntimeError: dictionary changed size during iteration
+   >>> for key, title in data_types.copy().items():
+   ...     if key == 0:
+   ...         del data_types[key]
+   ...
+   >>> data_types
+   {1: 'Numbers', 2: 'Lists'}
+
 Checks
 ------
 
@@ -160,7 +211,7 @@ Checks
 
 * Which list comprehension would you use to achieve the same result?
 
-* How would you count the total number of negative numbers in the list ``[-[1,
+* How would you count the total number of negative numbers in the list ``[[-1,
   0, 1], [-1, 1, 3], [-2, 0, 2]]``?
 
 * Creates a generator that only returns odd numbers from 1 to 10.
