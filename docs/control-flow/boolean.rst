@@ -31,6 +31,8 @@ considered ``True``.
        4.2
        >>> v
        4.199999999999999
+       >>> round(u, 2) == round(v, 2)
+       True
 
 ``is``, ``is not``, ``in``, ``not in``
     checks the identity:

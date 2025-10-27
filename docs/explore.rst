@@ -4,28 +4,41 @@ Exploring Python
 Whether you use :ref:`idle` or the :ref:`interactive_shell`, there are some
 useful functions to explore Python.
 
+.. code-block:: pycon
+
+   >>> x = 4.2
+
+``type()``
+----------
+
+With :py:func:`type`, you can display the object type, for example:
+
+.. code-block:: pycon
+
+   >>> type(x)
+   <class 'float'>
+
 .. _help:
 
 ``help()``
 ----------
 
-``help()`` has two different modes. When you type ``help()``, you call the help
-system, which you can use to get information about modules, keywords, and other
-topics. When you are in the help system, you will see a prompt with ``help>``.
-You can now enter a module name, for example ``float``, to search the `Python
-documentation <https://docs.python.org/>`_ for that type.
+:py:func:`help` has two different modes. When you type :func:`help`, you call
+the help system, which you can use to get information about modules, keywords,
+and other topics. When you are in the help system, you will see a prompt with
+``help>``. You can now enter a module name, for example ``float``, to search the
+`Python documentation <https://docs.python.org/>`_ for that type.
 
-``help()`` is part of the :doc:`pydoc <python3:library/pydoc>` library, which
+:func:`help` is part of the :doc:`pydoc <python3:library/pydoc>` library, which
 provides access to the documentation built into Python libraries. Since every
 Python installation comes with full documentation, you have all the
 documentation at your fingertips even offline.
 
-Alternatively, you can use ``help()`` more specifically by passing a type or
+Alternatively, you can use :func:`help` more specifically by passing a type or
 variable name as a parameter, for example:
 
 .. code-block:: pycon
 
-    >>> x = 4.2
     >>> help(x)
     Help on float object:
 
@@ -39,14 +52,27 @@ variable name as a parameter, for example:
      |  __abs__(self, /)
      |      abs(self)
     ...
+    |  is_integer(self, /)
+    |      Return True if the float is an integer.
+    ...
 
 For example, you will learn that ``x`` is of type ``float`` and has a function
-:func:`__add__` that you can use with dot notation:
+ :func:`is_integer` that you can use with dot notation:
 
 .. code-block:: pycon
 
-   >>> x.__add__(1)
-   5.2
+   >>> x.is_integer()
+   False
+
+``id()``
+--------
+
+:py:func:`id` specifies the identification number of an object, for example:
+
+.. code-block:: pycon
+
+   >>> id(x)
+   4304262800
 
 ``dir()``
 ---------
