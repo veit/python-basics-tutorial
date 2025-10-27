@@ -214,9 +214,13 @@ the :py:meth:`strftime <datetime.datetime.strftime>` method for these objects.
 .. code-block:: pycon
 
    >>> import datetime
+   >>> import locale
+   >>> locale.setlocale(locale.LC_TIME, "de_DE.utf-8")
+   ... "de_DE.utf-8"
+   'de_DE.utf-8'
    >>> today = datetime.date.today()
-   >>> print(f"Today is {today:%d %B %Y}.")
-   Today is 26 November 2023.
+   >>> print(f"Heute ist {today:%A, %d. %B %Y}.")
+   Heute ist Dienstag, 25. November 2025.
 
 The :py:mod:`ipaddress` module of Python also supports the formatting of
 ``IPv4Address`` and ``IPv6Address`` objects.

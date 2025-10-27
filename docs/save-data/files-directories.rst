@@ -46,7 +46,7 @@ Line 2:
     .. code-block:: pycon
        :lineno-start: 2
 
-       >>> p = Path("c:", "Users", "Veit", "My Documents", "myfile.txt")
+       >>> p = Path("C:/", "Users", "Veit", "My Documents", "myfile.txt")
        >>> with p.open() as f:
        ...     f.readline()
        ...

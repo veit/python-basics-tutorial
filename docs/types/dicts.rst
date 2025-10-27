@@ -13,12 +13,12 @@ Values can be any type of object, including mutable types such as
 
 .. code-block:: pycon
 
-   >>> dict = {
+   >>> timeseries = {
    ...     "2022-01-31": -0.751442,
    ...     "2022-02-01": 0.816935,
    ...     "2022-02-02": -0.272546,
    ... }
-   >>> dict["2022-02-03"] = -0.268295
+   >>> timeseries["2022-02-03"] = -0.268295
 
 If you try to access the value of a key that is not contained in the dictionary,
 a ``KeyError`` :doc:`/control-flow/exceptions` is thrown. To avoid this error,
@@ -27,17 +27,17 @@ is not contained in a dictionary.
 
 .. code-block:: pycon
 
-   >>> dict["2022-02-03"]
+   >>> timeseries["2022-02-03"]
    -0.268295
-   >>> dict["2022-02-04"]
+   >>> timeseries["2022-02-04"]
    Traceback (most recent call last):
      File "<python-input-15>", line 1, in <module>
-       dict["2022-02-04"]
+       timeseries["2022-02-04"]
        ~~~~^^^^^^^^^^^^^^
    KeyError: '2022-02-04'
-   >>> dict.get("2022-02-03", "Messwert nicht vorhanden")
+   >>> timeseries.get("2022-02-03", "Messwert nicht vorhanden")
    -0.268295
-   >>> dict.get("2022-02-04", "Messwert nicht vorhanden")
+   >>> timeseries.get("2022-02-04", "Messwert nicht vorhanden")
    'Messwert nicht vorhanden'
 
 Other Dict methods
@@ -58,7 +58,7 @@ that they become a list in these examples:
 
 .. code-block:: pycon
 
-   >>> list(dict.keys())
+   >>> list(timeseries.keys())
    ['2022-01-31', '2022-02-01', '2022-02-02', '2022-02-03']
 
 As of Python 3.6, dictionaries retain the order in which the keys were created,
@@ -135,8 +135,8 @@ Checks
   ``("Veit", "Tim", "Monique")``
 
 * You can use a :doc:`dictionary </types/dicts>`  and use it like a spreadsheet
-  sheet by using :doc:`tuples </types/sequences-sets/tuples>` as key row and
-  column values. Write sample code to add and retrieve values.
+  by using :doc:`tuples </types/sequences-sets/tuples>` as key row and column
+  values. Write sample code to add and retrieve values.
 
 * How can you remove all duplicates from a list without changing the order of the
   elements in the list?

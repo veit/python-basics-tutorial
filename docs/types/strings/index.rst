@@ -57,13 +57,6 @@ marks without backslashes ``\`` as escape characters.
 Checks
 ------
 
-* What use cases can you imagine in which the :mod:`python3:struct` module would
-  be useful for reading or writing binary data?
-
-  * when reading and writing a binary file
-  * when reading from an external interface, where the data should be stored
-    exactly as it was transmitted
-
 * Which regular expression would you use to find strings that represent the
   numbers between -3 and +3?
 

@@ -24,8 +24,8 @@ Python offers flexible mechanisms for passing :term:`arguments <argument>` to
     ...
     >>> func2(5, w=6)
     45
-    >>> def func3(u, v=1, w=1, *tup):
-    ...     print((u, v, w) + tup)
+    >>> def func3(u, v=1, w=1, *args):
+    ...     print((u, v, w) + args)
     ...
     >>> func3(7)
     (7, 1, 1)
