@@ -557,6 +557,8 @@ We have seen how different fixture scopes work and how different scopes can be
 used in different fixtures. However, you may need to define a scope at runtime.
 This is possible with dynamic scoping.
 
+.. _dynamic-fixture-scope:
+
 Set fixture scope dynamically
 -----------------------------
 
@@ -659,6 +661,9 @@ scope:
     ============================== 3 passed in 0.00s ===============================
 
 The database is now set up before each test function and then dismantled again.
+
+.. seealso::
+   * :doc:`command-line-options`
 
 ``autouse`` for fixtures that are always used
 ---------------------------------------------
