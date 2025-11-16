@@ -60,5 +60,6 @@ You can install pytest in `virtual environments <venv>` with:
    markers
    plugins
    config
+   command-line-options
    debug
    coverage
