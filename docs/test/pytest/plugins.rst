@@ -45,6 +45,8 @@ each test is executed in the order in which it appears in the file. However, it
 can sometimes be useful to change this order. The following plugins change the
 usual sequence of a test:
 
+.. _xdist-plugin:
+
 `pytest-xdist <https://pypi.org/project/pytest-xdist/>`_
     executes tests in parallel, either with several CPUs on one machine or
     several remote machines.
