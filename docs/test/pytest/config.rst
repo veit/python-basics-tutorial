@@ -76,7 +76,9 @@ marker per line is permitted.
 This example is a simple :file:`pytest.ini` file that I use in almost all my
 projects. Let’s briefly go through the individual lines:
 
-``addopts =``
+.. _addopts:
+
+``addopts``
     allows you to specify the pytest options that we always want to execute in
     this project.
 ``--strict-markers``
