@@ -58,7 +58,7 @@ plantuml = "plantuml"
 plantuml_output_format = "svg"
 
 intersphinx_mapping = {
-    "python3": ("https://docs.python.org/3/", None),
+    "python3": ("https://docs.python.org/3.15/", None),
     "python3.14": ("https://docs.python.org/3.14/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/en/latest/", None),
     "Python4DataScience": ("https://www.python4data.science/en/latest/", None),

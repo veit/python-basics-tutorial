@@ -37,6 +37,7 @@ docs = [
   "matplotlib",                     # matplotlib is required for social cards
   "nbsphinx",
   "pygments-pytest",
+  "sphinx<8.2",                     # furo requires sphinx < 8.2
   "sphinx-copybutton",
   "sphinx-inline-tabs",
   "sphinx-lint",
