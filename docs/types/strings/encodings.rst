@@ -111,6 +111,23 @@ defines several different encodings from a single character set. UTF-8 is an
 encoding scheme for representing Unicode characters as binary data with one or
 more bytes per character.
 
+.. versionadded:: 3.15
+   Python 3.15 uses UTF-8 as the default encoding, regardless of the system
+   environment. This means that I/O operations without explicit encoding, for
+   example :samp:`open("{EXAMPLE.TXT}")`, use UTF-8. This only applies if no
+   encoding is specified.
+
+   To ensure compatibility between different Python versions, an explicit
+   encoding should always be specified. Opt-in :ref:`io-encoding-warning` can be
+   used to identify code that may be affected by this change.
+
+   To keeep the previous behaviour, Python’s UTF-8 mode can be disabled with the
+   environment variable ``PYTHONUTF8=0`` or the command line option ``-X
+   utf8=0``.
+
+   .. seealso::
+      :pep:`686`
+
 Encoding and decoding
 ---------------------
 
