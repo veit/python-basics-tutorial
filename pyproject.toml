@@ -49,4 +49,4 @@ docs = [
 ]
 
 [tool.codespell]
-ignore-words-list = "ist, symbl, allo"
+ignore-words-list = "allo, ist, Juli, symbl"
