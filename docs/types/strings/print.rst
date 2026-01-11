@@ -205,11 +205,12 @@ F-string:
    >>> print(f"My name is {uid.capitalize()=}")
    My name is uid.capitalize()='Veit'
 
-Formatting date and time formats and IP addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formatting date and time formats
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :py:mod:`datetime` supports the formatting of strings using the same syntax as
-the :py:meth:`strftime <datetime.datetime.strftime>` method for these objects.
+the :py:meth:`datetime.strftime <datetime.datetime.strftime>` method for these
+objects.
 
 .. code-block:: pycon
 
@@ -220,7 +221,26 @@ the :py:meth:`strftime <datetime.datetime.strftime>` method for these objects.
    'de_DE.utf-8'
    >>> today = datetime.date.today()
    >>> print(f"Heute ist {today:%A, %d. %B %Y}.")
-   Heute ist Dienstag, 25. November 2025.
+   Heute ist Freitag, 11. Juli 2025.
+
+Conversely, you can also use :meth:`datetime.strptime
+<datetime.datetime.strptime>` to convert strings into ``datetime`` objects:
+
+.. code-block:: pycon
+
+   >>> today_string = "Fri, 11 Jul 2025 18:46:49"
+   >>> today = datetime.datetime.strptime(today_string, "%A, %d. %B %Y")
+
+.. csv-table:: Häufige Formatierungen
+   :header: "Beschreibung", "Beispiel", "Format"
+
+   ISO 8601,                "2025-07-11T18:46:49",       "%Y-%m-%dT%H:%M:%S"
+   ISO 8601 with time zone, "2025-07-11T18:46:49+0100",  "%Y-%m-%dT%H:%M:%S%z"
+   RFC 2822,                "Fr, 11 Jul 2025 18:46:49",  "%a, %d %b %Y %H:%M:%S"
+   RFC 3339 with time zone, "2025-07-11 18:46:49+0100",  "%Y-%m-%d %H:%M:%S%z"
+
+Formatting IP addresses
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The :py:mod:`ipaddress` module of Python also supports the formatting of
 ``IPv4Address`` and ``IPv6Address`` objects.
