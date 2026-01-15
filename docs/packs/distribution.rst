@@ -309,8 +309,8 @@ Dependency groups
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 26-36
-   :lineno-start: 26
+   :lines: 34, 40-45
+   :lineno-start: 34
 
 Recursive dependency groups are also possible. For example, for ``dev`` you can
 take over all dependencies from ``docs`` and ``test`` in addition to
@@ -318,8 +318,8 @@ take over all dependencies from ``docs`` and ``test`` in addition to
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 37-41
-   :lineno-start: 37
+   :lines: 35-39
+   :lineno-start: 35
 
 You can install these dependency groups, for example with:
 
@@ -423,8 +423,9 @@ the contents as a detailed description in your package:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
+   :emphasize-lines: 5
    :lineno-start: 5
-   :lines: 5, 12
+   :lines: 5-12
 
 You can also include them in your :doc:`Sphinx documentation
 </document/sphinx/start>` with ``.. include:: ../../README.rst``.
@@ -432,16 +433,183 @@ You can also include them in your :doc:`Sphinx documentation
 :file:`CHANGELOG.rst`
 ~~~~~~~~~~~~~~~~~~~~~
 
+All significant changes to a project should be documented in the
+:file:`CHANGELOG.rst`. `Keep a Changelog
+<https://keepachangelog.com/en/1.1.0/>`_ recommends the following format for
+this:
+
+.. code-block:: rest
+
+   [Unreleased]
+   ============
+
+   Added
+   -----
+
+   …
+
+   Changed
+   -------
+
+   …
+
+   Removed
+   -------
+
+   …
+
+   [x.y.z] - YYYY-MM-DD
+   ====================
+
+   Added
+   -----
+
+   …
+
 .. seealso::
-    * `Keep a Changelog <https://keepachangelog.com/>`_
-    * `Scriv <https://github.com/nedbat/scriv>`_
-    * `changelog_manager <https://github.com/masukomi/changelog_manager>`_
-    * `github-activity <https://github.com/executablebooks/github-activity>`_
-    * `Dinghy <https://github.com/nedbat/dinghy>`_
-    * `Python core-workflow blurb
-      <https://github.com/python/core-workflow/tree/main/blurb>`_
-    * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
-    * `towncrier <https://github.com/twisted/towncrier>`_
+    * `Keep a Changelog <https://keepachangelog.com/>`__
+
+There are also several Python libraries that can help you create the
+:file:`CHANGELOG` file:
+
+`Release Drafter <https://github.com/release-drafter/release-drafter>`_
+    creates drafts for your next release notes as soon as pull requests are
+    merged into the main branch. Release Drafter was developed with `Probot
+    <https://github.com/probot/probot>`_, a framework for creating GitHub apps
+    to automate and improve your workflows.
+
+    .. image:: https://raster.shields.io/github/stars/release-drafter/release-drafter
+       :alt: Stars
+       :target: https://github.com/release-drafter/release-drafter
+
+    .. image:: https://raster.shields.io/github/contributors/release-drafter/release-drafter
+       :alt: Contributors
+       :target: https://github.com/release-drafter/release-drafter/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/release-drafter/release-drafter
+       :alt: Commit activity
+       :target: https://github.com/release-drafter/release-drafter/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/release-drafter/release-drafter
+       :alt: Licence
+
+`towncrier <https://github.com/twisted/towncrier>`_
+    is a utility for creating useful, summarised news files for your project.
+
+    .. image:: https://raster.shields.io/github/stars/twisted/towncrier
+       :alt: Stars
+       :target: https://github.com/twisted/towncrier
+
+    .. image:: https://raster.shields.io/github/contributors/twisted/towncrier
+       :alt: Contributors
+       :target: https://github.com/twisted/towncrier/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/twisted/towncrier
+       :alt: Commit activity
+       :target: https://github.com/twisted/towncrier/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/twisted/towncrier
+       :alt: Licence
+
+`Scriv <https://github.com/nedbat/scriv>`_
+    is a command-line tool that helps developers keep useful change logs. It
+    manages a directory of change log fragments, which are summarised into
+    entries in a :file:`CHANGELOG.rst` file.
+
+    .. image:: https://raster.shields.io/github/stars/nedbat/scriv
+       :alt: Stars
+       :target: https://github.com/nedbat/scriv
+
+    .. image:: https://raster.shields.io/github/contributors/nedbat/scriv
+       :alt: Contributors
+       :target: https://github.com/nedbat/scriv/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/nedbat/scriv
+       :alt: Commit activity
+       :target: https://github.com/nedbat/scriv/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/nedbat/scriv
+       :alt: Licence
+
+`Dinghy <https://github.com/nedbat/dinghy>`_
+    uses the GitHub GraphQL API to find current activity on releases, issues,
+    and pull requests, and creates a compact HTML overview from this
+    information.
+
+    .. image:: https://raster.shields.io/github/stars/nedbat/dinghy
+       :alt: Stars
+       :target: https://github.com/nedbat/dinghy
+
+    .. image:: https://raster.shields.io/github/contributors/nedbat/dinghy
+       :alt: Contributors
+       :target: https://github.com/nedbat/dinghy/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/nedbat/dinghy
+       :alt: Commit activity
+       :target: https://github.com/nedbat/dinghy/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/nedbat/dinghy
+       :alt: Licence
+
+`github-activity <https://github.com/executablebooks/github-activity>`_
+    generates Markdown change logs for GitHub repositories, offering more
+    control over the types of contributions and metadata used to create the
+    change logs.
+
+    .. image:: https://raster.shields.io/github/stars/executablebooks/github-activity
+       :alt: Stars
+       :target: https://github.com/executablebooks/github-activity
+
+    .. image:: https://raster.shields.io/github/contributors/executablebooks/github-activity
+       :alt: Contributors
+       :target: https://github.com/executablebooks/github-activity/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/executablebooks/github-activity
+       :alt: Commit activity
+       :target: https://github.com/executablebooks/github-activity/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/executablebooks/github-activity
+       :alt: Licence
+
+`changelog_manager <https://github.com/masukomi/changelog_manager>`_
+    helps you create a :file:`CHANGELOG.md` file for your Git repo that complies
+    with the `Keep A Changelog <https://keepachangelog.com/en/1.1.0/>`_
+    standard.
+
+    .. image:: https://raster.shields.io/github/stars/masukomi/changelog_manager
+       :alt: Stars
+       :target: https://github.com/masukomi/changelog_manager
+
+    .. image:: https://raster.shields.io/github/contributors/masukomi/changelog_manager
+       :alt: Contributors
+       :target: https://github.com/masukomi/changelog_manager/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/masukomi/changelog_manager
+       :alt: Commit activity
+       :target: https://github.com/masukomi/changelog_manager/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/masukomi/changelog_manager
+       :alt: Licence
+
+`blurb <https://github.com/python/blurb>`_
+    is a tool for freeing CPython development from the tedious conflicts in
+    `cpython/Misc/NEWS.d/
+    <https://github.com/python/cpython/tree/main/Misc/NEWS.d>`_.
+
+    .. image:: https://raster.shields.io/github/stars/python/blurb
+       :alt: Stars
+       :target: https://github.com/python/blurb
+
+    .. image:: https://raster.shields.io/github/contributors/python/blurb
+       :alt: Contributors
+       :target: https://github.com/python/blurb/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/python/blurb
+       :alt: Commit activity
+       :target: https://github.com/python/blurb/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/python/blurb
+       :alt: Licence
 
 Historical files or files needed for binary extensions
 ------------------------------------------------------
@@ -556,7 +724,7 @@ structure for packages.
 
     .. literalinclude:: mypack/pyproject.toml
        :caption: mypack/pyproject.toml
-       :emphasize-lines: 12-13
+       :emphasize-lines: 21
 
 :file:`mypack/src/mypack/__init__.py`
     The module defines a CLI function :func:`main`:
@@ -685,7 +853,7 @@ You can then call ``mypack`` with ``uv run``:
 
 .. seealso::
    * `Troubleshooting build failures
-   <https://docs.astral.sh/uv/reference/troubleshooting/build-failures/>`_
+     <https://docs.astral.sh/uv/reference/troubleshooting/build-failures/>`_
 
 .. note::
    There are still many instructions that include a step to call
