@@ -234,7 +234,8 @@ as:
 ``readme``
     is a path to a file containing a detailed description of the package. This
     is displayed on the package details page on :term:`Python Package Index`
-    (:term:`PyPI`). In this case, the description is loaded from ``README.rst``.
+    (:term:`PyPI`). In this case, the description is loaded from
+    :file:`README.rst`.
 
 .. _license-expression:
 
@@ -397,44 +398,13 @@ directory.
 Other files
 -----------
 
-:file:`CONTRIBUTORS.rst`
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. _changelog:
 
-.. seealso::
-    * `All contributors <https://allcontributors.org/>`_
-
-:file:`LICENSE`
-~~~~~~~~~~~~~~~
-
-You can find detailed information on this in the
-:doc:`Python4DataScience:productive/licensing` section.
-
-:file:`README.rst`
-~~~~~~~~~~~~~~~~~~
-
-This file briefly tells those who are interested in the package how to use it.
-
-.. seealso::
-    * `Make a README <https://www.makeareadme.com>`_
-    * `readme.so <https://readme.so>`_
-
-If you write the document in :doc:`/document/sphinx/rest`, you can also include
-the contents as a detailed description in your package:
-
-.. literalinclude:: dataprep/pyproject.toml
-   :language: toml
-   :emphasize-lines: 5
-   :lineno-start: 5
-   :lines: 5-12
-
-You can also include them in your :doc:`Sphinx documentation
-</document/sphinx/start>` with ``.. include:: ../../README.rst``.
-
-:file:`CHANGELOG.rst`
-~~~~~~~~~~~~~~~~~~~~~
+:file:`CHANGELOG`
+~~~~~~~~~~~~~~~~~
 
 All significant changes to a project should be documented in the
-:file:`CHANGELOG.rst`. `Keep a Changelog
+:file:`CHANGELOG`. `Keep a Changelog
 <https://keepachangelog.com/en/1.1.0/>`_ recommends the following format for
 this:
 
@@ -467,7 +437,7 @@ this:
    …
 
 .. seealso::
-    * `Keep a Changelog <https://keepachangelog.com/>`__
+   * `Keep a Changelog <https://keepachangelog.com/>`__
 
 There are also several Python libraries that can help you create the
 :file:`CHANGELOG` file:
@@ -610,6 +580,85 @@ There are also several Python libraries that can help you create the
 
     .. image:: https://raster.shields.io/github/license/python/blurb
        :alt: Licence
+
+.. _coc:
+
+:file:`CODE_OF_CONDUCT`
+~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want to provide guidance on how questions can be asked or how others can
+contribute to the project, a :file:`CODE_OF_CONDUCT` file can be helpful. This
+allows you to specify what kind of interaction you expect. It also sets rules to
+protect you and others from unwanted behaviour.
+
+.. seealso::
+   * `SciPy Code of Conduct
+     <https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html>`_
+
+.. _contributing:
+
+:file:`CONTRIBUTING`
+~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+   * `Python Developer’s Guide <https://devguide.python.org/#contributing>`_
+   * `Contributing to pandas
+     <https://pandas.pydata.org/docs/development/contributing.html>`_
+
+:file:`CONTRIBUTORS`
+~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+   * `All contributors <https://allcontributors.org/>`_
+
+.. _license:
+
+:file:`LICENSE`
+~~~~~~~~~~~~~~~
+
+You can find detailed information on this in the
+:doc:`Python4DataScience:productive/licensing` section.
+
+.. _readme:
+
+:file:`README`
+~~~~~~~~~~~~~~
+
+This file briefly tells those who are interested in the package how to use it.
+
+.. seealso::
+   * `Make a README <https://www.makeareadme.com>`_
+   * `readme.so <https://readme.so>`_
+
+If you write the document in :doc:`/document/sphinx/rest`, you can also include
+the contents as a detailed description in your package:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :emphasize-lines: 5
+   :lineno-start: 5
+   :lines: 5-12
+
+You can also include them in your :doc:`Sphinx documentation
+</document/sphinx/start>` with ``.. include:: ../../README.rst``.
+
+.. _security:
+
+:file:`SECURITY`
+~~~~~~~~~~~~~~~~
+
+This file should contain information on
+
+* how to report a security vulnerability without it becoming publicly visible,
+* the process and schedule for disclosing the vulnerability,
+* links, such as URLs and emails, where support can be requested.
+
+.. seealso::
+   * GitHub DocsDokumentation: `Adding a security policy to your repository
+     <https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/adding-a-security-policy-to-your-repository>`_
+   * `github.com/veit/items/security
+     <https://github.com/veit/items/security>`_
+
 
 Historical files or files needed for binary extensions
 ------------------------------------------------------
