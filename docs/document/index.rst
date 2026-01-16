@@ -7,20 +7,22 @@ describes how your software can be installed, operated, used and improved:
 * Those who want to use your package need information,
 
   * what problems your software solves and what the main features and
-    limitations of the software are (``README``)
+    limitations of the software are (→ :ref:`readme`)
   * how the software can be used as an example
-  * what changes have come in more recent software versions (``CHANGELOG``)
+  * what changes have come in more recent software versions (→ :ref:`changelog`)
 
 * Those who want to run the software need an installation guide for your
   software and the required dependencies.
 
 * Those who want to improve the software need information about
 
-  * how to help improve the product with bug fixes (``CONTRIBUTING``)
-  * how to communicate with others (``CODE_OF_CONDUCT``)
+  * how to help improve the product with bug fixes (→ :ref:`contributing`)
+  * how to report security vulnerabilities (→ :ref:`security`)
+  * how to communicate with others (→ :ref:`coc`)
 
-All together need information on how the product is licensed (``LICENSE`` file
-or ``LICENSES`` folder) and how to get help if needed.
+All together need information on how the product is licensed (:file:`LICENSE`
+file or :file:`LICENSES` folder, → :ref:`license`) and how to get help if
+needed.
 
 .. tip::
    cusy seminars:
