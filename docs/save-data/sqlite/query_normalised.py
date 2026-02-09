@@ -6,10 +6,8 @@ cursor = conn.cursor()
 
 def select_all_records_ordered_by_language_number(cursor):
     print("All books ordered by language id and title:")
-    for row in cursor.execute(
-        """SELECT language_code, author, title FROM books
-                                 ORDER BY language_code,title"""
-    ):
+    for row in cursor.execute("""SELECT language_code, author, title FROM books
+                                 ORDER BY language_code,title"""):
         print(row)
 
 

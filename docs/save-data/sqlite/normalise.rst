@@ -16,15 +16,15 @@ published.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 6-9
+      :lines: 6-8
       :lineno-start: 6
 
 #. Then we create the values ``de`` and ``en`` in this table:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 12-18
-      :lineno-start: 12
+      :lines: 10-14
+      :lineno-start: 10
 
 #. Since SQLite does not support ``MODIFY COLUMN``, we now create a temporary
    table ``temp`` with all columns from ``books`` and a column ``language_code``
@@ -32,30 +32,30 @@ published.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 22-32
-      :lineno-start: 22
+      :lines: 16-25
+      :lineno-start: 16
 
 #. Now we transfer the values from the ``books`` table to the ``temp`` table:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 35-37
-      :lineno-start: 35
+      :lines: 27-28
+      :lineno-start: 27
 
 #. Transfer the specification of the language in ``books`` as the ``id`` of the
    data records from the ``languages`` table to ``temp``.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 40-44
-      :lineno-start: 40
+      :lines: 30-36
+      :lineno-start: 30
 
 #. Now we can delete the ``languages`` column in the ``temp`` table:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 55
-      :lineno-start: 55
+      :lines: 41
+      :lineno-start: 41
 
    .. note::
       ``DROP COLUMN`` can only be used from Python versions from 3.8 that were
@@ -69,12 +69,12 @@ published.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 57
-      :lineno-start: 57
+      :lines: 43
+      :lineno-start: 43
 
 #. And finally, the ``temp`` table can be renamed ``books``:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 59
-      :lineno-start: 59
+      :lines: 45
+      :lineno-start: 45

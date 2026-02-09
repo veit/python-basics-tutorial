@@ -19,18 +19,14 @@ class TestCommands(unittest.TestCase):
         self.conn = sqlite3.connect(":memory:")
         cursor = self.conn.cursor()
 
-        cursor.execute(
-            """CREATE TABLE books
+        cursor.execute("""CREATE TABLE books
                           (title text, language text, author text, license text,
                                   release_date text)
-                       """
-        )
+                       """)
 
-        cursor.execute(
-            """INSERT INTO books
+        cursor.execute("""INSERT INTO books
                           VALUES ('Python basics', 'en', 'Veit Schiele', 'BSD',
-                                  '2021-10-28')"""
-        )
+                                  '2021-10-28')""")
 
     def test_func_like(self):
         self.conn = sqlite3.connect(":memory:")

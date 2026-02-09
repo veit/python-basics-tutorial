@@ -4,11 +4,9 @@ conn = sqlite3.connect("library.db")
 cursor = conn.cursor()
 
 # insert a record into the database
-cursor.execute(
-    """INSERT INTO books
+cursor.execute("""INSERT INTO books
                   VALUES ('Python basics', 'en', 'Veit Schiele', 'BSD',
-                          '2021-10-28')"""
-)
+                          '2021-10-28')""")
 
 # save data to database
 conn.commit()

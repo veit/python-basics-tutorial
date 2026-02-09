@@ -5,7 +5,7 @@ Query normalised data
 
    .. literalinclude:: query_normalised.py
       :language: python
-      :lines: 7-13
+      :lines: 7-11
       :lineno-start: 7
 
    .. code-block:: pycon
@@ -27,8 +27,8 @@ Query normalised data
 
    .. literalinclude:: query_normalised.py
       :language: python
-      :lines: 16-24
-      :lineno-start: 16
+      :lines: 14-22
+      :lineno-start: 14
 
    .. code-block:: pycon
 
