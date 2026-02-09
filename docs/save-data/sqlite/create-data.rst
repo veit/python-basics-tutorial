@@ -5,20 +5,20 @@ Create data
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 7-10
+      :lines: 7-9
       :lineno-start: 7
 
 #. Save data to database:
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 14
-      :lineno-start: 14
+      :lines: 12
+      :lineno-start: 12
 
 #. Insert multiple records using the more secure ``?`` method where the number
    of  ``?`` should correspond to the number of columns:
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 17-
-      :lineno-start: 17
+      :lines: 15-
+      :lineno-start: 15
