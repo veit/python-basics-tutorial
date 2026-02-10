@@ -434,6 +434,28 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: License
        :target: https://github.com/ionelmc/pytest-benchmark?tab=BSD-2-Clause-1-ov-file#readme
 
+.. _pytest_memray:
+
+`pytest-memray <https://pypi.org/project/pytest-memray/>`_
+    pytest plugin for integrating :doc:`Python4DataScience:performance/memray`
+    into your test suite.
+
+    .. image:: https://raster.shields.io/github/stars/bloomberg/pytest-memray
+       :alt: Stars
+       :target: https://github.com/bloomberg/pytest-memray/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/bloomberg/pytest-memray
+       :alt: Contributors
+       :target: https://github.com/bloomberg/pytest-memray/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/bloomberg/pytest-memray
+       :alt: Commit activity
+       :target: https://github.com/bloomberg/pytest-memraygraphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/bloomberg/pytest-memray
+       :alt: Lizenz
+       :target: https://github.com/ionelmc/pytest-benchmark?tab=BSD-2-Clause-1-ov-file#readme
+
 `pytest-timeout <https://pypi.org/project/pytest-timeout/>`_
     prevents tests from running too long.
 
