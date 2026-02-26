@@ -18,8 +18,9 @@ to test with different dependency configurations and different configurations
 for different operating systems. tox uses project information from the
 :file:`setup.py` or :file:`pyproject.toml` file for the package under test to
 create an installable :doc:`distribution of your package
-<../packs/distribution>`. It searches the :file:`tox.ini` file for a list of
-environments and then performs the following steps for each:
+<../packs/distribution>`. It searches for a list of environments in the
+``[tool.tox]`` section of the :file:`pyproject.toml` file, and then performs the
+following steps for each one:
 
 #. creates a :term:`virtual environment <Virtual environment>`
 #. installs some dependencies with :term:`pip`
@@ -35,54 +36,30 @@ To accelerate this process with :term:`uv`, we don’t use tox directly, but
 Setting up tox
 --------------
 
-Until now, we had the items code in a :file:`src/` directory and the tests in
-:file:`tests/api/` and :file:`tests/cli/`. Now we will add a :file:`tox.ini`
-file so that the structure looks like this:
+Previously, tox was usually configured in the :file:`tox.ini` file. However,
+since tox 4.44.0, its functionality has been frozen and future configuration
+parameters will probably only be provided in a
+:doc:`Python4DataScience:data-processing/serialisation-formats/toml/index` file,
+for example in the :ref:`pyproject-toml` file. Let’s take a look at a simple
+configuration in the :file:`pyproject.toml` file:
 
-.. code-block:: console
-   :emphasize-lines: 16
+.. code-block:: toml
 
-   items
-    ├── …
-    ├── pyproject.toml
-    ├── src
-    │   └── items
-    │       └── …
-    ├── tests
-    │   ├── api
-    │   │   ├── __init__.py
-    │   │   ├── conftest.py
-    │   │   └── test_….py
-    │   └── cli
-    │       ├── __init__.py
-    │       ├── conftest.py
-    │       └── test_….py
-    └── tox.ini
+   [tool.tox]
+   env_list = ["py313"]
 
-This is a typical layout for many projects. Let’s take a look at a simple
-:file:`tox.ini` file in the Items project:
+   [tool.tox.env_run_base]
+   dependency_groups = [ "tests" ]
+   commands = [[ "pytest"]]
 
-.. code-block:: ini
+In the ``[tool.tox]`` section, we defined ``env_list = ["py313"]``. This is a
+shorthand that instructs tox to run our tests using Python version 3.13. We will
+add more Python versions shortly, but using one version helps us better
+understand how tox works.
 
-   [tox]
-   envlist = py313
-
-   [testenv]
-   deps =
-     pytest>=6.0
-     faker
-   commands = pytest
-
-In the ``[tox]`` section, we have defined ``envlist = py313``. This is a
-shortcut that tells tox to run our tests with Python version 3.13. We will be
-adding more Python versions shortly, but using one version helps to understand
-the flow of tox.
-
-In the ``[testenv]`` section, ``pytest`` and ``faker`` are listed as
-dependencies under ``deps``. So tox knows that we need these two tools for
-testing. If you wish, you can also specify which version should be used, for
-example ``pytest>=6.0``. Finally, commands instruct tox to execute ``pytest`` in
-every environment.
+In the ``[tool.tox.env_run_base]`` section, ``dependency_groups`` specifies
+``tests``. This tells tox that the corresponding libraries should be installed
+in this environment. Finally, ``commands`` instructs tox to run ``pytest``.
 
 Executing tox
 -------------
@@ -156,21 +133,22 @@ To run tox, simply start tox:
 Testing multiple Python versions
 --------------------------------
 
-To do this, we extend ``envlist`` in the :file:`tox.ini` file to add further
-Python versions:
+To do this, we extend ``envlist`` in the :file:`pyproject.toml` file to add
+further Python versions:
 
-.. code-block:: ini
+.. code-block:: toml
 
-   [tox]
-   envlist =
-     py3{10-14}
-     py3{13-14}t
-   skip_missing_interpreters = True
+   [tool.tox]
+   env_list = [
+     "py3{10-14}",
+     "py{13-14}t",
+   ]
+   skip_missing_interpreters = true
 
 We will now test Python versions from 3.10 to 3.14. In addition, we have also
-added the setting ``skip_missing_interpreters = True`` so that tox does not fail
+added the setting ``skip_missing_interpreters = true`` so that tox does not fail
 if one of the listed Python versions is missing on your system. If the value is
-set to ``True``, tox will run the tests with every available Python version, but
+set to ``true``, tox will run the tests with every available Python version, but
 will skip versions it doesn’t find without failing. The output is very similar,
 although I will only highlight the differences in the following illustration:
 
@@ -248,10 +226,10 @@ although I will only highlight the differences in the following illustration:
    Before tox 4.25.0 dated 27 March 2025, the versions had to be specified one
    by one:
 
-   .. code-block:: ini
+   .. code-block:: toml
 
-      [tox]
-      envlist = py3{10,11,12,13,14,13t,14t}
+      [tool.tox]
+      envlist = [py3{10,11,12,13,14,13t,14t}]
 
 Running Tox environments in parallel
 ------------------------------------
@@ -284,35 +262,44 @@ other. It is also possible to run them in parallel with the ``-p`` option:
 Add coverage report in tox
 --------------------------
 
-The configuration of coverage reports can easily be added to the :file:`tox.ini`
-file. To do this, we need to add ``pytest-cov`` to the ``deps`` settings so that
-the ``pytest-cov`` plugin is installed in the tox test environments. Including
-``pytest-cov`` also includes all its dependencies, such as ``coverage``. We then
-extend commands to ``pytest --cov=items``:
+The configuration of coverage reports can easily be added to the
+:file:`pyproject.toml` file. To do this, we need to add ``pytest-cov`` to the
+``tests`` dependency group so that the ``pytest-cov`` plugin is also installed
+in the tox test environments. Including ``pytest-cov`` also includes all other
+dependencies, such as ``coverage``. We then add
+:samp:`env.coverage-report.{OPTIONS}` and change ``env_run_base.commands``:
 
-.. code-block::
-   :emphasize-lines: 11-
+.. code-block:: toml
+   :emphasize-lines: 6, 16-23, 26-
 
-   [tox]
-   envlist =
-     py3{10-14}
-     py3{13-14}t
-   skip_missing_interpreters = True
+   [dependency-groups]
+   ...
+   tests = [
+     "faker",
+     "pytest>=6",
+     "pytest-cov",
+   ]
 
-   [testenv]
-   deps =
-    pytest>=6.0
-    faker
-   commands = pytest
-
-   [testenv:coverage-report]
-   description = Report coverage over all test runs.
-   deps = coverage[toml]
-   skip_install = true
-   allowlist_externals = coverage
-   commands =
-     coverage combine
-     coverage report
+   [tool.tox]
+   requires = [ "tox>=4" ]
+   env_list = [
+     "py3{10-14}",
+     "py{13-14}t",
+   ]
+   skip_missing_interpreters = true
+   env.coverage-report.description = "Report coverage over all test runs."
+   env.coverage-report.deps = [ "coverage[toml]" ]
+   env.coverage-report.depends = [ "py" ]
+   env.coverage-report.skip_install = true
+   env.coverage-report.commands = [
+     [ "coverage combine" ],
+     [ "coverage report" ],
+   ]
+   env_run_base.dependency_groups = [ "tests" ]
+   env_run_base.deps = [ "coverage[toml]" ]
+   env_run_base.commands = [
+     [ "coverage", "run", "-m", "pytest" ],
+   ]
 
 When using Coverage with ``tox``, it can sometimes be useful to add a section in
 the :file:`pyproject.toml` file to tell Coverage which source code paths should
@@ -377,25 +364,25 @@ Passing pytest parameters to tox
 We can also call individual tests with tox by making another change so that
 :term:`parameters <Parameter>` can be passed to pytest:
 
-.. code-block:: ini
-   :emphasize-lines: 15-
+.. code-block:: toml
+   :emphasize-lines: 15
 
-   [tox]
-   envlist =
-       pre-commit
-       docs
-       py3{10-14}
-       py3{13-14}t
-       coverage-report
-   skip_missing_interpreters = True
-
-   [testenv]
-   dependency_groups = tests
-   deps =
-     tests: coverage[toml]
-   allowlist_externals = coverage
-   commands =
-     coverage run -m pytest {posargs}
+   [tool.tox]
+   requires = [ "tox>=4" ]
+   env_list = [
+     "pre-commit",
+     "docs",
+     "py3{10-14}",
+     "py{13-14}t",
+     "coverage-report",
+   ]
+   skip_missing_interpreters = true
+   env_run_base.dependency_groups = [ "tests" ]
+   env_run_base.deps = [ "coverage[toml]" ]
+   env_run_base.commands = [
+     [ "python", "--version", "--version" ],
+     [ "coverage", "run", "-m", "pytest", "{posargs}" ],
+   ]
 
 To pass arguments to pytest, insert them between the tox arguments and the
 pytest arguments. In this case, we select ``test_version`` tests with the ``-k``
@@ -455,16 +442,16 @@ of environments are available for GitHub actions:
           if: always()
 
           steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
               with:
                 persist-credentials: false
-            - uses: actions/setup-python@v5
+            - uses: actions/setup-python@v6
               with:
                 python-version-file: .python-version
             - uses: hynek/setup-cached-uv@v2
 
             - name: Download coverage data
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v7
               with:
                 pattern: coverage-data-*
                 merge-multiple: true
@@ -603,18 +590,21 @@ You can install ``tox`` and ``tox-uv`` with:
 ``uv.lock`` support
 ~~~~~~~~~~~~~~~~~~~
 
-If you want to use ``uv sync`` with a ``uv.lock`` file for a Tox environment,
-you must change the runner for this Tox environment to ``uv-venv-lock-runner``.
-You should also use the dependency_groups configuration in such environments
-to instruct ``uv`` to install the specified dependency group, for example:
+If you want to use ``uv sync`` with a :file:`uv.lock` file for a Tox
+environment, you must change the runner for this Tox environment to
+``uv-venv-lock-runner``, for example:
 
-.. code-block:: ini
-   :caption: tox.ini
+.. code-block:: toml
+   :caption: pyproject.toml
 
-   [testenv]
-   runner = uv-venv-lock-runner
-   dependency_groups = dev
-   commands = pytest
+   env.app.dependency_groups = [ "tests" ]
+   env.app.runner = "uv-venv-lock-runner"
+   commands = [[ "pytest"]]
 
-``dev`` uses the ``uv-venv-lock-runner`` and uses ``uv sync`` to install
-dependencies in the environment with the ``dev`` dependency group.
+The ``app`` environment uses the ``uv-venv-lock-runner`` and utilises ``uv sync
+--locked`` to install the dependencies in the versions specified in the
+:file:`uv.lock` file.
+
+.. seealso::
+   * `uv.lock support
+     <https://github.com/tox-dev/tox-uv?tab=readme-ov-file#uvlock-support>`_
