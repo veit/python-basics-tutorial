@@ -8,7 +8,7 @@ don’t have to enter them again and again. In addition to the configuration
 files, there are a handful of other files that are helpful when using pytest to
 make writing and running tests easier:
 
-:file:`pytest.ini`
+:file:`pyproject.toml`
     This is the most important configuration file of pytest, with which you can
     change the default behaviour of pytest. It also defines the root directory
     of pytest, or ``rootdir``.
@@ -19,14 +19,14 @@ make writing and running tests easier:
     If this file is stored in test subdirectories, it enables the use of
     identical test file names in several test directories.
 
-If you already have a :file:`tox.ini`, :file:`pyproject.toml` or
-:file:`setup.cfg` in your project, they can take the place of the
-:file:`pytest.ini` file: :file:`tox.ini` is used by :doc:`../tox`,
-:file:`pyproject.toml` and :file:`setup.cfg` are used for packaging Python
-projects and can be used to store settings for various tools, including pytest.
+If you already have a :file:`tox.ini`, :file:`pytest.ini`, or :file:`setup.cfg`
+in your project, they can take the place of the configuration in the
+:file:`pyproject.toml` file: :file:`tox.ini` is used by tox, :file:`setup.cfg`
+is used for packaging Python projects and can be used to store settings for
+various tools, including pytest.
 
-You should have a configuration file, either :file:`pytest.ini`, or a ``pytest``
-section in :file:`tox.ini`, :file:`pyproject.toml` or in :file:`setup.cfg`.
+You should have a configuration file, either in :file:`pyproject.toml`,
+:file:`pytest.ini`, :file:`tox.ini`, or :file:`setup.cfg`.
 
 The configuration file defines the top-level directory from which ``pytest`` is
 started.
@@ -39,7 +39,7 @@ structure:
 
    items
    ├── …
-   ├── pytest.ini
+   ├── pyproject.toml
    ├── src
    │   └── …
    └── tests
@@ -48,12 +48,109 @@ structure:
        └── test_….py
 
 In the case of the ``items`` project that we have used for testing so far, there
-is a :file:`pytest.ini` file and a :file:`tests` directory at the top level. We
-will refer to this structure when we talk about the various files in the rest of
-this section.
+is a :file:`pyproject.toml` file and a :file:`tests` directory at the top level.
+We will refer to this structure when we talk about the various files in the rest
+of this section.
 
-Saving settings and options in :file:`pytest.ini`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Saving settings and options in :file:`pyproject.toml`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :file:`pyproject.toml` file was originally intended for packaging Python
+projects; however, it can also be used to define project settings.
+
+.. code-block:: toml
+
+   [tool.pytest]
+   minversion = "9.0"
+   addopts = [
+     "--strict-markers",
+     "--strict-config",
+     "-ra",
+   ]
+   testpaths = [
+     "tests",
+   ]
+   markers = [
+     "exception: Only run expected exceptions",
+     "finish: Only run finish tests",
+     "smoke: Small subset of all tests",
+     "num_items: Number of items to be pre-filled for the items_db fixture",
+   ]
+
+``[tool.pytest]`` marks the start of the pytest section. This is followed by the
+individual settings. For configuration settings that allow more than one value,
+the values can be written either in one or more lines in the form
+:samp:`:samp:`{EINSTELLUNG} = ["{WERT1}", "{WERT2}"]``.
+
+This example is a simple pytest configuration in the :file:`pyproject.toml`
+file, which I use in almost all of my projects in this form or a similar one.
+Let’s briefly go through the individual lines:
+
+``minversion``
+    specifies the minimum pytest version.
+
+.. _addopts:
+
+``addopts``
+    allows you to specify the pytest options that we always want to execute in
+    this project.
+
+    ``--strict-markers``
+        instructs pytest to issue an error instead of a warning for every
+        unregistered marker that appears in the test code. This allows us to
+        avoid typos in marker names.
+    ``--strict-config``
+        instructs pytest to issue an error instead of a warning if difficulties
+        arise when parsing configuration files. This prevents typing errors in
+        the configuration file from going unnoticed.
+    ``-ra``
+        instructs pytest to display not only additional information on failures
+        and errors at the end of a test run, but also a test summary.
+
+        ``-r``
+            displays additional information on the test summary.
+        ``a``
+            displays all but the passed tests. This adds the information
+            ``skipped``, ``xfailed`` or ``xpassed`` to the failures and errors.
+
+``testpaths = ["tests",]``
+    tells pytest where to look for tests if you have not specified a file or
+    directory name on the command line. In our case, pytest searches in the
+    :file:`tests` directory.
+
+    At first glance, it may seem superfluous to set ``testpaths`` to
+    :file:`tests`, as pytest searches there anyway and we do not have any
+    :file:`test_` files in our :file:`src` or :file:`docs` directories. However,
+    specifying a ``testpaths`` directory can save a little startup time,
+    especially if our :file:`src`, :file:`docs` or other directories are quite
+    large.
+
+``markers = ["exception: Only run expected exceptions", …]``
+    is used to declare markers, as described in
+    :ref:`select-tests-with-markers`.
+
+.. seealso::
+   You can specify many other configuration settings and command line options in
+   the configuration files, which you can display using the ``pytest --help``
+   command.
+
+Using other configuration files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are writing tests for a project that already has a :file:`pytest.ini`,
+:file:`tox.ini`, or :file:`setup.cfg` file, you can also store your pytest
+configuration settings in one of these alternative configuration files. The
+syntax of the :file:`*.ini` files differs slightly, so we will take a closer
+look at these files.
+
+:file:`pytest.ini`
+::::::::::::::::::
+
+The :file:`pytest.ini` file was originally intended for configuring pytest.
+
+As :doc:`Python4DataScience:data-processing/serialisation-formats/toml/index` is
+a different standard for configuration files than :file:`.ini` files, the format
+is also slightly different:
 
 .. code-block:: ini
 
@@ -66,99 +163,6 @@ Saving settings and options in :file:`pytest.ini`
    markers =
        smoke: Small subset of all tests
        exception: Only run expected exceptions
-
-``[pytest]`` marks the start of the pytest section. This is followed by the
-individual settings. For configuration settings that allow more than one value,
-the values can be written either in one or more lines in the form
-:samp:`{SETTING} = {VALUE1} {VALUE2}`. With ``markers``, however, only one
-marker per line is permitted.
-
-This example is a simple :file:`pytest.ini` file that I use in almost all my
-projects. Let’s briefly go through the individual lines:
-
-.. _addopts:
-
-``addopts``
-    allows you to specify the pytest options that we always want to execute in
-    this project.
-``--strict-markers``
-    instructs pytest to issue an error instead of a warning for every
-    unregistered marker that appears in the test code. This allows us to avoid
-    typos in marker names.
-``--strict-config``
-    instructs pytest to issue an error instead of a warning if difficulties
-    arise when parsing configuration files. This prevents typing errors in the
-    configuration file from going unnoticed.
-``-ra``
-    instructs pytest to display not only additional information on failures and
-    errors at the end of a test run, but also a test summary.
-
-    ``-r``
-        displays additional information on the test summary.
-    ``a``
-        displays all but the passed tests. This adds the information
-        ``skipped``, ``xfailed`` or ``xpassed`` to the failures and errors.
-
-``testpaths = tests``
-    tells pytest where to look for tests if you have not specified a file or
-    directory name on the command line. In our case, pytest searches in the
-    :file:`tests` directory.
-
-    At first glance, it may seem superfluous to set ``testpaths`` to
-    :file:`tests`, as pytest searches there anyway and we do not have any
-    :file:`test_` files in our :file:`src` or :file:`docs` directories. However,
-    specifying a ``testpaths`` directory can save a little startup time,
-    especially if our :file:`src`, :file:`docs` or other directories are quite
-    large.
-
-``markers =``
-    is used to declare markers, as described in
-    :ref:`select-tests-with-markers`.
-
-.. seealso::
-   You can specify many other configuration settings and command line options in
-   the configuration files, which you can display using the ``pytest --help``
-   command.
-
-Using other configuration files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you are writing tests for a project that already has a
-:file:`pyproject.toml`, :file:`tox.ini` or :file:`setup.cfg` file, you can use
-:file:`pytest.ini` to store your pytest configuration settings, or you can store
-your configuration settings in one of these alternative configuration files. The
-syntax of the two non-ini files is slightly different, so we will take a closer
-look at both files.
-
-:file:`pyproject.toml`
-::::::::::::::::::::::
-
-The :file:`pyproject.toml` file was originally intended for the packaging of
-Python projects; however, it can also be used to define project settings.
-
-As :doc:`Python4DataScience:data-processing/serialisation-formats/toml/index` is
-a different standard for configuration files than :file:`.ini` files, the format
-is also slightly different:
-
-.. code-block:: toml
-
-   [tool.pytest.ini_options]
-   addopts = [
-       "--strict-markers",
-       "--strict-config",
-       "-ra"
-       ]
-   testpaths = "tests"
-   markers = [
-       "exception: Only run expected exceptions",
-       "finish: Only run finish tests",
-       "smoke: Small subset of all tests",
-       "num_items: Number of items to be pre-filled for the items_db fixture"
-       ]
-
-Instead of ``[pytest]``, the section begins with ``[tool.pytest.ini_options]``,
-the values must be enclosed in quotes and lists of values must be lists of
-character strings in square brackets.
 
 :file:`setup.cfg`
 :::::::::::::::::
