@@ -25,7 +25,6 @@ dependencies = [
   "cython",
   "pandas",
 ]
-
 urls."Bug Tracker" = "https://github.com/veit/dataprep/issues"
 urls."Homepage" = "https://github.com/veit/dataprep"
 License-Expression = "BSD-3-Clause"

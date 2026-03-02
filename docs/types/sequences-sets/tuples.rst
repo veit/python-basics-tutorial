@@ -102,7 +102,7 @@ the right-hand side of the assignment operator. Here is a simple example:
 
 .. code-block:: pycon
 
-   >>> (v, w, x, y, z) = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+   >>> v, w, x, y, z = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
    >>> v
    1
    >>> w
