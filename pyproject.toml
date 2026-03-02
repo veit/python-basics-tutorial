@@ -18,8 +18,7 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
-dependencies = [  ]
-
+dependencies = []
 urls."Bug Tracker" = "https://github.com/veit/python-basics-tutorial/issues"
 urls."Homepage" = "https://github.com/veit/python-basics-tutorial/"
 
