@@ -46,6 +46,21 @@ for the first time.
    ``y = 4``, causes ``y`` to refer to the integer object ``4``, but this does
    not change the references of ``x`` or ``z``.
 
+When deleting variables using the :ref:`del <del>` statement, only the
+reference is deleted, not the object itself:
+
+.. code-block:: pycon
+
+   >>> del y
+   >>> print(y)
+   Traceback (most recent call last):
+     File "<python-input-10>", line 1, in <module>
+       print(y)
+             ^
+   NameError: name 'y' is not defined
+   >>> print(x, z)
+   1 1
+
 Python variables can be set to any object, whereas in many other languages
 variables can only be stored in the declared type.
 
