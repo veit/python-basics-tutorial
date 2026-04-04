@@ -182,9 +182,9 @@ dependencies.
    updates. We only restrict the version numbers to be used in the event of
    problems. For apps, however, we specify the version numbers.
 
-We use `PDM <https://pdm-project.org/en/latest>`_ to specify the versions for
-our applications and maintain cross-platform lock files. PDM also supports the
-management of virtual environments with ``pdm venv activate``.
+To pin versions for our applications and maintain cross-platform lock files, we
+use :ref:`uv`. ``uv`` also helps us maintain :ref:`reproducible Python
+environments <reproduce-virtual-env>`.
 
 … of Python
 :::::::::::
