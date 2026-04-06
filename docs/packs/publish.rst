@@ -183,16 +183,16 @@ PyPI at every time a release is created. Such a
        needs: [test]
        steps:
        - name: Checkout
-         uses: actions/checkout@v4
+         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
          with:
            fetch-depth: 0
        - name: Set up Python
-         uses: actions/setup-python@v5
+         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
          with:
            python-version-file: .python-version
            cache-dependency-path: '**/pyproject.toml'
        - name: Setup cached uv
-         uses: hynek/setup-cached-uv@v2
+         uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
        - name: Create venv
          run: |
            uv venv
@@ -203,9 +203,9 @@ PyPI at every time a release is created. Such a
        - name: Retrieve and publish
          steps:
          - name: Retrieve release distributions
-           uses: actions/download-artifact@v4
+           uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
          - name: Publish package distributions to PyPI
-           uses: pypa/gh-action-pypi-publish@release/v1
+           uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
            with:
              username: __token__
              password: ${{ secrets.PYPI_TOKEN }}
@@ -227,17 +227,52 @@ Lines 38–41
 .. seealso::
 
    * `GitHub Actions <https://docs.github.com/en/actions>`_
+   * :doc:`cibuildwheel`
+
+Securing the release workflow
+-----------------------------
+
+Continuous deployment systems used to publish Python packages are a popular
+target for attacks. You can avoid many of these risks by following a few
+security recommendations:
+
+Avoid insecure triggers
+    Workflows that can be triggered by an attacker, particularly those that rely
+    on inputs controlled by the attacker (such as :ref:`pull request
+    <merge-pull-requests>` or :doc:`branch
+    <Python4DataScience:productive/git/branch>` titles), have been used in the
+    past to inject commands. In particular, the ``pull_request_target`` trigger
+    in :ref:`github-actions` should be avoided.
+Sanitise parameters and inputs
+    Any workflow parameter or input that can be expanded into an executable
+    command has the potential to be exploited in attacks. Sanitise values by
+    passing them to commands as environment variables to prevent :abbr:`SSTI
+    (Server Side Template Injection)` attacks.
+Avoid mutable references
+    Fix your dependencies in workflows.
+
+    * Prefer Git commit `SHA
+      <https://en.wikipedia.org/wiki/Secure_Hash_Algorithms>`_ values over
+      :doc:`Git tags <Python4DataScience:productive/git/tag>`, as tags are
+      mutable.
+    * Use a :ref:`uv_lock` file for PyPI dependencies used in workflows.
+
+Use verifiable deployments
+    With :ref:`trusted_publishers`, you can use verifiable GitHub environments
+    to build your Python packages. If you use GitHub Actions for continuous
+    delivery, you should use :ref:`zizmorcore` to detect and fix insecure
+    workflows.
 
 .. _trusted_publishers:
 
 Trusted Publishers
-------------------
+~~~~~~~~~~~~~~~~~~
 
 `Trusted Publishers <https://docs.pypi.org/trusted-publishers/>`_ is a procedure
 for publishing packages on the :term:`PyPI`. It is based on OpenID Connect and
 requires neither a password nor a token. Only the following steps are required:
 
-#. Add a *Trusted Publishers* on PyPI
+#. Add a *Trusted Publisher* on PyPI
 
    Depending on whether you want to publish a new package or update an existing
    one, the process is slightly different:
@@ -276,7 +311,7 @@ requires neither a password nor a token. Only the following steps are required:
    .. code-block:: diff
       :caption: .github/workflows/pypi.yml
       :lineno-start: 10
-      :emphasize-lines: 3, 4-5
+      :emphasize-lines: 3-5
 
           package-and-deploy:
             runs-on: ubuntu-latest
@@ -292,24 +327,19 @@ requires neither a password nor a token. Only the following steps are required:
    Lines 13–14
        The ``write`` authorisation is required for *Trusted Publishing*.
 
-   Zeilen 42–44
+   Zeilen 40–44
        ``username`` and ``password`` are no longer required for the GitHub
        action ``pypa/gh-action-pypi-publish``.
 
-       .. code-block:: diff
+       .. code-block:: yaml
           :lineno-start: 40
           :emphasize-lines: 3-
 
-             - name: Publish package distributions to PyPI
-               uses: pypa/gh-action-pypi-publish@release/v1
-          -    with:
-          -      username: __token__
-          -      password: ${{ secrets.PYPI_TOKEN }}
-
-.. _digital-attestations:
-
-Digital Attestations
---------------------
+          - name: Publish package distributions to PyPI
+            uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
+            with:
+              username: __token__
+              password: ${{ secrets.PYPI_TOKEN }}
 
 Since 14 November 2024, :term:`PyPI` also supports :pep:`740` with `Digital
 Attestations <https://docs.pypi.org/attestations/>`_. PyPI uses the
@@ -337,7 +367,7 @@ are used for publishing:
          id-token: write
        steps:
        - name: Publish package distributions to PyPI
-         uses: pypa/gh-action-pypi-publish@release/v1
+         uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
 
 .. note::
    Support for the automatic creation of digital attestations and publishing
@@ -346,3 +376,57 @@ are used for publishing:
 .. seealso::
    `PyPI now supports digital attestations
    <https://blog.pypi.org/posts/2024-11-14-pypi-now-supports-digital-attestations/>`_
+
+.. _zizmorcore:
+
+zizmor
+~~~~~~
+
+`zizmor <https://docs.zizmor.sh>`_ can detect and resolve many security issues
+in typical GitHub Actions CI/CD configurations. zizmor is designed to integrate
+with GitHub Actions. A typical GitHub Action we use for zizmor looks like this:
+
+.. code-block:: yaml
+   :caption: .github/workflows/zizmor.yml
+
+   # https://github.com/woodruffw/zizmor
+   name: Zizmor
+
+   on:
+     push:
+       branches: ["main"]
+     pull_request:
+       branches: ["**"]
+
+   concurrency:
+     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+     cancel-in-progress: true
+
+   permissions: {}
+
+   jobs:
+     zizmor:
+       name: Run zizmor
+       runs-on: ubuntu-latest
+       permissions:
+         security-events: write # Required for upload-sarif (used by zizmor-action) to upload SARIF files.
+       steps:
+         - name: Checkout repository
+           uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+           with:
+             persist-credentials: false
+         - name: Run zizmor
+           uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8 # v0.5.2
+           with:
+             persona: pedantic
+
+.. _add_2fa:
+
+2FA for all development accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You should use two-factor authentication for all your accounts related to
+development – not just for :term:`PyPI`. Remember your version control accounts
+(`GitHub <https://github.com/>`_, `GitLab <https://about.gitlab.com/>`_,
+`Codeberg <https://codeberg.org/>`_, `Forgejo <https://forgejo.org/>`_) and
+email.
