@@ -121,13 +121,13 @@ You can then define the following jobs for GitHub, for example:
      runs-on: ubuntu-latest
      steps:
      - name: Download pre-built packages
-       uses: actions/download-artifact@v4
+       uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
        with:
          name: Packages
          path: dist
      - run: tar xf dist/*.tar.gz --strip-components=1
 
-     - uses: actions/setup-python@v5
+     - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
        with:
          # Keep in sync with tox.ini/docs and .readthedocs.yaml
          python-version: "3.12"
