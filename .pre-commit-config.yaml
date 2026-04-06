@@ -15,7 +15,7 @@ repos:
     - id: check-added-large-files
       args: ['--maxkb=1024']
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: v2.16.2
+    rev: v2.21.0
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
@@ -35,7 +35,7 @@ repos:
       entry: isort --profile=black
       name: isort (python)
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.1.0
+    rev: 26.3.1
     hooks:
     - id: black
   - repo: https://github.com/adamchainz/blacken-docs
@@ -46,7 +46,7 @@ repos:
       additional_dependencies:
       - black
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
+    rev: v2.4.2
     hooks:
     - id: codespell
   - repo: local
