@@ -442,16 +442,16 @@ of environments are available for GitHub actions:
           if: always()
 
           steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
               with:
                 persist-credentials: false
-            - uses: actions/setup-python@v6
+            - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
               with:
                 python-version-file: .python-version
-            - uses: hynek/setup-cached-uv@v2
+            - uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
 
             - name: Download coverage data
-              uses: actions/download-artifact@v7
+              uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
               with:
                 pattern: coverage-data-*
                 merge-multiple: true
@@ -474,16 +474,16 @@ of environments are available for GitHub actions:
    ``steps``
        is a list of steps. The name of each step can be arbitrary and is
        optional.
-   ``uses: actions/checkout@v4``
+   ``uses: actions/checkout``
        is a GitHub actions tool that checks out our repository so that the rest
        of the workflow can access it.
-   ``uses: actions/setup-python@v5``
+   ``uses: actions/setup-python``
        is a GitHub actions tool that configures Python and installs it in a
        build environment.
    ``with: python-version: ${{ matrix.python }}``
        says that an environment should be created for each of the Python
        versions listed in ``matrix.python``.
-   ``uses: hynek/setup-cached-uv@v2``
+   ``uses: hynek/setup-cached-uv``
        uses :term:`uv` in GitHub Actions.
 
        .. seealso::
