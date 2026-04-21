@@ -47,31 +47,31 @@ Skipping tests with ``@pytest.mark.skip``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``skip`` marker allows us to skip a test. Let’s say we want to add the
-ability to sort in a future version of the ``Items`` application and want the
-``Item`` class to support comparisons. We write a test for comparing ``Item``
+ability to sort in a future version of the ``Tasks`` application and want the
+``Task`` class to support comparisons. We write a test for comparing ``Task``
 objects with ``<`` as follows:
 
 .. code-block:: python
 
-    from items import Item
+    from cusy.tasks import Task
 
 
     def test_less_than():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update cibuildwheel section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update cibuildwheel section")
         assert i1 < i2
 
 
     def test_equality():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update pytest section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update pytest section")
         assert i1 == i2
 
 And it fails:
 
 .. code-block:: pytest
 
-    pytest --tb=short tests/test_compare.py
+    $ uv run pytest --tb=short tests/test_compare.py
     ============================= test session starts ==============================
     ...
     collected 2 items
@@ -82,9 +82,9 @@ And it fails:
     ________________________________ test_less_than ________________________________
     tests/test_compare.py:7: in test_less_than
         assert i1 < i2
-    E   TypeError: '<' not supported between instances of 'Item' and 'Item'
+    E   TypeError: '<' not supported between instances of 'Task' and 'Task'
     =========================== short test summary info ============================
-    FAILED tests/test_compare.py::test_less_than - TypeError: '<' not supported between instances of 'Item' and 'Item'
+    FAILED tests/test_compare.py::test_less_than - TypeError: '<' not supported between instances of 'Task' and 'Task'
     ========================= 1 failed, 1 passed in 0.03s ==========================
 
 The error is simply due to the fact that we have not yet implemented this
@@ -96,13 +96,13 @@ omit it:
 
     import pytest
 
-    from items import Item
+    from cusy.tasks import Task
 
 
-    @pytest.mark.skip(reason="Items do not yet allow a < comparison")
+    @pytest.mark.skip(reason="Tasks do not yet allow a < comparison")
     def test_less_than():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update cibuildwheel section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update cibuildwheel section")
         assert i1 < i2
 
 The marker ``@pytest.mark.skip()`` instructs pytest to skip the test. Specifying
@@ -112,7 +112,7 @@ skipped tests, they are displayed as ``s``:
 .. code-block::
    :emphasize-lines: 6
 
-    $ pytest --tb=short tests/test_compare.py
+    $ uv run pytest --tb=short tests/test_compare.py
     ============================= test session starts ==============================
     ...
     collected 2 items
@@ -126,16 +126,16 @@ skipped tests, they are displayed as ``s``:
 .. code-block::
    :emphasize-lines: 1, 10
 
-    $ pytest -v -ra tests/test_compare.py
+    $ uv run pytest -v -ra tests/test_compare.py
     ============================= test session starts ==============================
     ...
     collected 2 items
 
-    tests/test_compare.py::test_less_than SKIPPED (Items do not yet allo...) [ 50%]
+    tests/test_compare.py::test_less_than SKIPPED (Tasks do not yet allo...) [ 50%]
     tests/test_compare.py::test_equality PASSED                              [100%]
 
     =========================== short test summary info ============================
-    SKIPPED [1] tests/test_compare.py:6: Items do not yet allow a < comparison
+    SKIPPED [1] tests/test_compare.py:6: Tasks do not yet allow a < comparison
     ========================= 1 passed, 1 skipped in 0.00s =========================
 
 Since we have instructed pytest with ``-r`` to output a short summary of our
@@ -151,9 +151,9 @@ certain tests failed.
 Conditional skipping of tests with ``@pytest.mark.skipif``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Suppose we know that we will not support sorting in versions 0.1.x of the Items
+Suppose we know that we will not support sorting in versions 0.1.x of the Tasks
 app, but we will support it in version 0.2.x. Then we can instruct pytest to
-skip the test for all versions of items lower than 0.2.x as follows:
+skip the test for all versions of cusy.tasks lower than 0.2.x as follows:
 
 .. code-block:: python
    :emphasize-lines: 2, 4, 8-11
@@ -161,17 +161,17 @@ skip the test for all versions of items lower than 0.2.x as follows:
     import pytest
     from packaging.version import parse
 
-    import items
-    from items import Item
+    from cusy import tasks
+    from cusy.tasks import Task
 
 
     @pytest.mark.skipif(
-        parse(items.__version__).minor < 2,
+        parse(tasks.__version__).minor < 2,
         reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update cibuildwheel section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update cibuildwheel section")
         assert i1 < i2
 
 With the ``skipif`` marker, you can enter as many conditions as you like, and if
@@ -216,31 +216,31 @@ Let’s take a look at an example:
     import pytest
     from packaging.version import parse
 
-    import items
-    from items import Item
+    import cusy.tasks
+    from cusy.tasks import Task
 
 
     @pytest.mark.xfail(
-        parse(items.__version__).minor < 2,
+        parse(tasks.__version__).minor < 2,
         reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update cibuildwheel section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update cibuildwheel section")
         assert i1 < i2
 
 
     @pytest.mark.xfail(reason="Feature #17: not implemented yet")
     def test_xpass():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update pytest section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update pytest section")
         assert i1 == i2
 
 
     @pytest.mark.xfail(reason="Feature #17: not implemented yet", strict=True)
     def test_strict_xfail():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update pytest section")
+        i1 = Task("Update pytest section")
+        i2 = Task("Update pytest section")
         assert i1 == i2
 
 We have three tests here: one that we know will fail, and two that we know will
@@ -251,7 +251,7 @@ this is what the result looks like:
 
 .. code-block::
 
-    pytest -v -ra tests/test_xfail.py
+    $ uv run pytest -v -ra tests/test_xfail.py
     ============================= test session starts ==============================
     ...
     collected 3 items
@@ -334,24 +334,24 @@ any of the main systems. In addition, we will label some of our tests with
 
     import pytest
 
-    from items import InvalidItemId, Item
+    from cusy.tasks import InvalidTaskId, Task
 
 
     @pytest.mark.smoke
-    def test_start(items_db):
+    def test_start(tasks_db):
         """
         Change state from ‘todo’ to ‘in progress’
         """
-        i = items_db.add_item(Item("Update pytest section", state="todo"))
-        items_db.start(i)
-        s = items_db.get_item(i)
+        i = tasks_db.add_task(Task("Update pytest section", state="todo"))
+        tasks_db.start(i)
+        s = tasks_db.get_task(i)
         assert s.state == "in progress"
 
 Now we should be able to select only this test by using the ``-m smoke`` option:
 
 .. code-block:: pytest
 
-    $ pytest -v -m smoke tests/test_start.py
+    $ uv run pytest -v -m smoke tests/test_start.py
     ============================= test session starts ==============================
     ...
     collected 2 items / 1 deselected / 1 selected
@@ -360,7 +360,7 @@ Now we should be able to select only this test by using the ``-m smoke`` option:
 
     =============================== warnings summary ===============================
     tests/test_start.py:6
-      /Users/veit/items/tests/test_start.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+      /Users/veit/cusy.tasks/tests/test_start.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
         @pytest.mark.smoke
 
     -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -383,7 +383,7 @@ Now pytest no longer warns us of an unknown marker:
 .. code-block::
    :emphasize-lines: 4
 
-    $ pytest -v -m smoke tests/test_start.py
+    $ uv run pytest -v -m smoke tests/test_start.py
     ============================= test session starts ==============================
     ...
     configfile: pyproject.toml
@@ -412,21 +412,21 @@ Let's do the same with the ``exception`` marker for ``test_start_non_existent``.
       :emphasize-lines: 1
 
       @pytest.mark.exception
-      def test_start_non_existent(items_db):
+      def test_start_non_existent(tasks_db):
           """
-          Shouldn’t start a non-existent item.
+          Shouldn’t start a non-existent task.
           """
           # any_number will be invalid, db is empty
           any_number = 44
 
-          with pytest.raises(InvalidItemId):
-              items_db.start(any_number)
+          with pytest.raises(InvalidTaskId):
+              tasks_db.start(any_number)
 
 #. Finally, we run the test with ``-m exception``:
 
    .. code-block:: pytest
 
-      $ pytest -v -m exception tests/test_start.py
+      $ uv run pytest -v -m exception tests/test_start.py
       ============================= test session starts ==============================
       ...
       configfile: pyproject.toml
@@ -451,7 +451,7 @@ We can even set multiple markers on a single test. First, we set in
 
    import pytest
 
-   from items import Item
+   from cusy.tasks import Task
 
    pytestmark = pytest.mark.finish
 
@@ -468,24 +468,24 @@ and use markers at class level:
 
    @pytest.mark.smoke
    class TestFinish:
-       def test_finish_from_todo(self, items_db):
-           i = items_db.add_item(Item("Update pytest section", state="todo"))
-           items_db.finish(i)
-           s = items_db.get_item(i)
+       def test_finish_from_todo(self, tasks_db):
+           i = tasks_db.add_task(Task("Update pytest section", state="todo"))
+           tasks_db.finish(i)
+           s = tasks_db.get_task(i)
            assert s.state == "done"
 
-       def test_finish_from_in_prog(self, items_db):
-           i = items_db.add_item(
-               Item("Update pytest section", state="in progress")
+       def test_finish_from_in_prog(self, tasks_db):
+           i = tasks_db.add_task(
+               Task("Update pytest section", state="in progress")
            )
-           items_db.finish(i)
-           s = items_db.get_item(i)
+           tasks_db.finish(i)
+           s = tasks_db.get_task(i)
            assert s.state == "done"
 
-       def test_finish_from_done(self, items_db):
-           i = items_db.add_item(Item("Update pytest section", state="done"))
-           items_db.finish(i)
-           s = items_db.get_item(i)
+       def test_finish_from_done(self, tasks_db):
+           i = tasks_db.add_task(Task("Update pytest section", state="done"))
+           tasks_db.finish(i)
+           s = tasks_db.get_task(i)
            assert s.state == "done"
 
 The test class :class:`TestFinish` is labelled with ``@pytest.mark.smoke``. If
@@ -506,10 +506,10 @@ test:
            "done",
        ],
    )
-   def test_finish(items_db, start_state):
-       i = items_db.add_item(Item("Update pytest section", state=states))
-       items_db.finish(i)
-       s = items_db.get_item(i)
+   def test_finish(tasks_db, start_state):
+       i = tasks_db.add_task(Task("Update pytest section", state=states))
+       tasks_db.finish(i)
+       s = tasks_db.get_task(i)
        assert s.state == "done"
 
 The :func:`test_finish` function is not directly marked, but only one of its
@@ -537,12 +537,12 @@ However, you can also mark fixtures in the same way:
        return request.param
 
 
-   def test_finish(items_db, start_state_fixture):
-       i = items_db.add_item(
-           Item("Update pytest section", state=start_state_fixture)
+   def test_finish(tasks_db, start_state_fixture):
+       i = tasks_db.add_task(
+           Task("Update pytest section", state=start_state_fixture)
        )
-       items_db.finish(i)
-       s = items_db.get_item(i)
+       tasks_db.finish(i)
+       s = tasks_db.get_task(i)
        assert s.state == "done"
 
 If you want to add more than one marker to a function, you can simply stack
@@ -552,15 +552,15 @@ them. For example, :func:`test_finish_non_existent` is marked with both
 .. code-block:: python
    :emphasize-lines: 4-5
 
-   from items import InvalidItemId, Item
+   from cusy.tasks import InvalidTaskId, Task
 
 
    @pytest.mark.smoke
    @pytest.mark.exception
-   def test_finish_non_existent(items_db):
+   def test_finish_non_existent(tasks_db):
        i = 44  # any_number will be invalid, db is empty
-       with pytest.raises(InvalidItemId):
-           items_db.finish(i)
+       with pytest.raises(InvalidTaskId):
+           tasks_db.finish(i)
 
 We have added a number of markers to :file:`test_finish.py` in various ways. We
 use the markers to select the tests to be executed instead of a test file:
@@ -568,7 +568,7 @@ use the markers to select the tests to be executed instead of a test file:
 .. code-block:: pytest
 
    $ cd tests
-   $ tests % pytest -v -m exception
+   $ $ uv run pytest -v -m exception
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
@@ -588,7 +588,7 @@ we can only select the ``finish`` tests that deal with ``exception``:
 
 .. code-block:: pytest
 
-   $ pytest -v -m "finish and exception"
+   $ uv run pytest -v -m "finish and exception"
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
@@ -602,7 +602,7 @@ We can also use all logical operations together:
 
 .. code-block:: pytest
 
-   $ pytest -v -m "(exception or smoke) and (not finish)"
+   $ uv run pytest -v -m "(exception or smoke) and (not finish)"
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
@@ -619,7 +619,7 @@ class:
 
 .. code-block:: console
 
-   $ pytest -v -m smoke -k "not TestFinish"
+   $ uv run pytest -v -m smoke -k "not TestFinish"
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
@@ -657,7 +657,7 @@ advantages:
       :emphasize-lines: 3-4
 
       [tool.pytest]
-      …
+      ...
       addopts = [
           "--strict-markers",
       ]
@@ -670,77 +670,77 @@ Combining markers with fixtures
 Markers can be used in conjunction with fixtures, plugins and hook functions.
 The built-in markers require :term:`parameters <Parameter>`, while the custom
 markers we have used so far do not require parameters. Let’s create a new marker
-called ``num_items`` that we can pass to the ``items_db`` fixture. The
-``items_db`` fixture currently cleans up the database for each test that wants
+called ``num_tasks`` that we can pass to the ``tasks_db`` fixture. The
+``tasks_db`` fixture currently cleans up the database for each test that wants
 to use it:
 
 .. code-block:: python
 
    @pytest.fixture(scope="function")
-   def items_db(session_items_db):
-       db = session_items_db
+   def tasks_db(session_tasks_db):
+       db = session_tasks_db
        db.delete_all()
        return db
 
-For example, if we want to have four items in the database when our test starts,
+For example, if we want to have four tasks in the database when our test starts,
 we can simply write a different but similar fixture:
 
 .. code-block:: python
 
    @pytest.fixture(scope="session")
-   def items_list():
-       """List of different Item objects"""
+   def tasks_list():
+       """List of different Task objects"""
        return [
-           items.Item("Add Python 3.12 static type improvements", "veit", "todo"),
-           items.Item("Add tips for efficient testing", "veit", "wip"),
-           items.Item("Update cibuildwheel section", "veit", "done"),
-           items.Item("Add backend examples", "veit", "done"),
+           tasks.Task("Add Python 3.12 static type improvements", "veit", "todo"),
+           tasks.Task("Add tips for efficient testing", "veit", "wip"),
+           tasks.Task("Update cibuildwheel section", "veit", "done"),
+           tasks.Task("Add backend examples", "veit", "done"),
        ]
 
 
    @pytest.fixture(scope="function")
-   def populated_db(items_db, items_list):
-       """ItemsDB object populated with 'items_list'"""
-       for i in items_list:
-           items_db.add_item(i)
-       return items_db
+   def populated_db(tasks_db, tasks_list):
+       """TasksDB object populated with 'tasks_list'"""
+       for i in tasks_list:
+           tasks_db.add_task(i)
+       return tasks_db
 
 We could then use the original fixture for tests, which provides an empty
 database, and the new fixture for tests, which contains a database with four
-items:
+tasks:
 
 .. code-block:: python
 
-   def test_zero_item(items_db):
-       assert items_db.count() == 0
+   def test_zero_task(tasks_db):
+       assert tasks_db.count() == 0
 
 
-   def test_four_items(populated_db):
+   def test_four_tasks(populated_db):
        assert populated_db.count() == 4
 
-We now have the option of testing either zero or four items in the database. But
-what if we want to have no, four or 13 items? Then we don’t want to write a new
-fixture each time. Markers allow us to tell a test how many items we want to
+We now have the option of testing either zero or four tasks in the database. But
+what if we want to have no, four or 13 tasks? Then we don’t want to write a new
+fixture each time. Markers allow us to tell a test how many tasks we want to
 have. This requires three steps:
 
-#. First, we define three different tests in :file:`test_items.py` with our
-   marker ``@pytest.mark.num_items``:
+#. First, we define three different tests in :file:`test_tasks.py` with our
+   marker ``@pytest.mark.num_tasks``:
 
    .. code-block:: python
 
-      @pytest.mark.num_items
-      def test_zero_item(items_db):
-          assert items_db.count() == 0
+      @pytest.mark.num_tasks
+      def test_zero_task(tasks_db):
+          assert tasks_db.count() == 0
 
 
-      @pytest.mark.num_items(4)
-      def test_four_items(items_db):
-          assert items_db.count() == 4
+      @pytest.mark.num_tasks(4)
+      def test_four_tasks(tasks_db):
+          assert tasks_db.count() == 4
 
 
-      @pytest.mark.num_items(13)
-      def test_thirteen_items(items_db):
-          assert items_db.count() == 13
+      @pytest.mark.num_tasks(13)
+      def test_thirteen_tasks(tasks_db):
+          assert tasks_db.count() == 13
 
 #. We must then declare this marker in the :file:`pyproject.toml` file:
 
@@ -750,11 +750,11 @@ have. This requires three steps:
       [tool.pytest]
       markers = [
           "…",
-          "num_items: Number of items to be pre-filled for the items_db fixture",
+          "num_tasks: Number of tasks to be pre-filled for the tasks_db fixture",
       ]
 
-#. Now we modify the ``items_db`` fixture in the :file:`conftest.py` file to be
-   able to use the marker. To avoid having to hard-code the item information, we
+#. Now we modify the ``tasks_db`` fixture in the :file:`conftest.py` file to be
+   able to use the marker. To avoid having to hard-code the task information, we
    will use the Python package `Faker <https://faker.readthedocs.io/>`_, which
    we can install with ``python -m pip install faker``:
 
@@ -769,30 +769,30 @@ have. This requires three steps:
       import faker
       import pytest
 
-      import items
+      from cusy import tasks
 
       ...
 
 
       @pytest.fixture(scope="function")
-      def items_db(session_items_db, request, faker):
-          db = session_items_db
+      def tasks_db(session_tasks_db, request, faker):
+          db = session_tasks_db
           db.delete_all()
-          # Support for random selection "@pytest.mark.num_items({NUMBER})`.
+          # Support for random selection "@pytest.mark.num_tasks({NUMBER})`.
           faker.seed_instance(99)
-          m = request.node.get_closest_marker("num_items")
+          m = request.node.get_closest_marker("num_tasks")
           if m and len(m.args) > 0:
-              num_items = m.args[0]
-              for _ in range(num_items):
-                  db.add_item(
-                      Item(summary=faker.sentence(), owner=faker.first_name())
+              num_tasks = m.args[0]
+              for _ in range(num_tasks):
+                  db.add_task(
+                      Task(summary=faker.sentence(), owner=faker.first_name())
                   )
           return db
 
    There are a lot of changes here that we want to go through now.
 
    Line 13
-    We have added ``request`` and ``faker`` to the list of ``items_db``
+    We have added ``request`` and ``faker`` to the list of ``tasks_db``
     :term:`parameters <Parameter>`.
    Line 18
     This sets the randomness of faker so that we get the same data every time.
@@ -800,17 +800,17 @@ have. This requires three steps:
     invent data ourselves.
    Line 19
     Here we use ``request``, more precisely ``request.node`` for the pytest
-    representation of a test. ``get_closest_marker('num_items')`` returns a
-    marker object if the test is marked with ``num_items``, otherwise it returns
+    representation of a test. ``get_closest_marker('num_tasks')`` returns a
+    marker object if the test is marked with ``num_tasks``, otherwise it returns
     ``None``. The :func:`get_closest_marker` function returns the marker closest
     t545o the test, which is usually what we want.
    Line 20
-    The expression is true if the test is marked with ``num_items`` and an
+    The expression is true if the test is marked with ``num_tasks`` and an
     argument is given. The additional ``len`` check is there so that if someone
-    accidentally just uses ``pytest.mark.num_items`` without specifying the
-    number of items, this part is skipped.
+    accidentally just uses ``pytest.mark.num_tasks`` without specifying the
+    number of tasks, this part is skipped.
    Line 22–24
-    Once we know how many items we need to create, we let Faker create some data
+    Once we know how many tasks we need to create, we let Faker create some data
     for us. Faker provides the Faker fixture.
 
     * For the ``summary`` field, the :func:`faker.sentence` method works.
@@ -827,53 +827,53 @@ Let’s run the tests now to make sure everything is working properly:
 
 .. code-block:: pytest
 
-   $ pytest -v -s test_items.py
+   $ uv run pytest -v -s test_tasks.py
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
    plugins: Faker-19.10.0
    collected 3 items
 
-   test_items.py::test_zero_item PASSED
-   test_items.py::test_four_items PASSED
-   test_items.py::test_thirteen_items PASSED
+   test_tasks.py::test_zero_task PASSED
+   test_tasks.py::test_four_tasks PASSED
+   test_tasks.py::test_thirteen_tasks PASSED
 
    ============================== 3 passed in 0.09s ===============================
 
 .. note::
-   You can add a ``print`` statement to :func:`test_four_items` to get an
+   You can add a ``print`` statement to :func:`test_four_tasks` to get an
    impression of what the data from Faker looks like:
 
    .. code-block:: python
       :emphasize-lines: 4-
 
-      @pytest.mark.num_items(4)
-      def test_four_items(items_db):
-          assert items_db.count() == 4
+      @pytest.mark.num_tasks(4)
+      def test_four_tasks(tasks_db):
+          assert tasks_db.count() == 4
           print()
-          for i in items_db.list_items():
+          for i in tasks_db.list_tasks():
               print(i)
 
-   You can then call the tests in :file:`test_items.py` again:
+   You can then call the tests in :file:`test_tasks.py` again:
 
    .. code-block:: pytest
       :emphasize-lines: 10-13
 
-      $ pytest -v -s test_items.py
+      $ uv run pytest -v -s test_tasks.py
       ============================= test session starts ==============================
       ...
       configfile: pyproject.toml
       plugins: Faker-19.10.0
-      collected 3 items
+      collected 3 tasks
 
-      test_items.py::test_zero_item PASSED
-      test_items.py::test_four_items
-      Item(summary='Herself outside discover card beautiful rock.', owner='Alyssa', state='todo', id=1)
-      Item(summary='Bed perhaps current reveal open society small.', owner='Lynn', state='todo', id=2)
-      Item(summary='Charge produce sure full water.', owner='Allison', state='todo', id=3)
-      Item(summary='Light I especially account.', owner='James', state='todo', id=4)
+      test_tasks.py::test_zero_task PASSED
+      test_tasks.py::test_four_tasks
+      Task(summary='Herself outside discover card beautiful rock.', owner='Alyssa', state='todo', id=1)
+      Task(summary='Bed perhaps current reveal open society small.', owner='Lynn', state='todo', id=2)
+      Task(summary='Charge produce sure full water.', owner='Allison', state='todo', id=3)
+      Task(summary='Light I especially account.', owner='James', state='todo', id=4)
       PASSED
-      test_items.py::test_thirteen_items PASSED
+      test_tasks.py::test_thirteen_tasks PASSED
 
       ============================== 3 passed in 0.09s ===============================
 
@@ -896,9 +896,9 @@ the following:
    ALL = {"win32", "darwin", "linux"}
 
 
-   def pytest_setup(item):
+   def pytest_setup(task):
        supported_platforms = ALL.intersection(
-           mark.name for mark in item.iter_markers()
+           mark.name for mark in task.iter_markers()
        )
        pf = sys.platform
        if supported_platforms and pf not in supported_platforms:
@@ -1023,21 +1023,21 @@ List markers
 
 We’ve already covered a lot of markers: the built-in markers ``skip``,
 ``skipif`` and ``xfail``, our own markers ``smoke``, ``exception``, ``finish``
-and ``num_items`` and there are also a few more built-in markers. And when we
+and ``num_tasks`` and there are also a few more built-in markers. And when we
 start using :doc:`plugins`, more markers may be added. To list all available
 markers with descriptions and :term:`parameters <Parameter>`, you can run
 ``pytest --markers``:
 
 .. code-block:: pytest
 
-   $ pytest --markers
+   $ uv run pytest --markers
    @pytest.mark.exception: Only run expected exceptions
 
    @pytest.mark.finish: Only run finish tests
 
    @pytest.mark.smoke: Small subset of all tests
 
-   @pytest.mark.num_items: Number of items to be pre-filled for the items_db fixture
+   @pytest.mark.num_tasks: Number of tasks to be pre-filled for the tasks_db fixture
 
    @pytest.mark.filterwarnings(warning): add a warning filter to the given test. see https://docs.pytest.org/en/stable/how-to/capture-warnings.html#pytest-mark-filterwarnings
    ...

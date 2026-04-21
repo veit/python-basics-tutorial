@@ -16,9 +16,9 @@ use ``scope`` to run fixtures once across many tests and learn how tests can use
 multiple fixtures. You will also learn how to track code execution through
 fixtures and test code.
 
-But before you familiarise yourself with fixtures and use them to test Items,
-let’s take a look at a small example fixture and learn how fixtures and test
-functions are connected.
+But before you familiarise yourself with fixtures and use them to test
+cusy.tasks, let’s take a look at a small example fixture and learn how fixtures
+and test functions are connected.
 
 .. seealso::
    * `pytest fixtures <https://docs.pytest.org/en/latest/explanation/fixtures.html>`_
@@ -71,32 +71,32 @@ somewhere in a fixture.
 Using fixtures for setup and teardown
 -------------------------------------
 
-Fixtures will be a great help when testing the Items application. The Items
-application consists of an API that does most of the work and logic, a lean
-:abbr:`CLI (Command Line Interface)` and a database. Handling the database is an
-area where fixtures will be of great help:
+Fixtures will be a great help when testing the cusy.tasks application. The
+cusy.tasks application consists of an API that does most of the work and logic,
+a lean :abbr:`CLI (Command Line Interface)` and a database. Handling the
+database is an area where fixtures will be of great help:
 
 .. code-block:: python
 
-    from pathlib import Path
-    from tempfile import TemporaryDirectory
+   from pathlib import Path
+   from tempfile import TemporaryDirectory
 
-    import items
+   from cusy import tasks
 
 
-    def test_empty():
-        with TemporaryDirectory() as db_dir:
-            db_path = Path(db_dir)
-            db = items.ItemsDB(db_path)
-            count = db.count()
-            db.close()
-            assert count == 0
+   def test_empty():
+       with TemporaryDirectory() as db_dir:
+           db_path = Path(db_dir)
+           db = tasks.TasksDB(db_path)
+           count = db.count()
+           db.close()
+           assert count == 0
 
 To be able to call :func:`count`, we need a database object, which we obtain by
-calling :func:`items.ItemsDB(db_path)`. The :func:`items.ItemsDB` function
-returns an ``ItemsDB`` object. The :term:`parameter` ``db_path`` must be a
-``pathlib.Path`` object that points to the database directory. For testing, a
-temporary directory that we obtain with :func:`tempfile.TemporaryDirectory`
+calling :func:`cusy.tasks.TasksDB(db_path)`. The :func:`cusy.tasks.TasksDB`
+function returns an ``TasksDB`` object. The :term:`parameter` ``db_path`` must
+be a ``pathlib.Path`` object that points to the database directory. For testing,
+a temporary directory that we obtain with :func:`tempfile.TemporaryDirectory`
 works.
 
 However, this test function contains some problems: The code to set up the
@@ -111,20 +111,20 @@ closed. These problems can be solved with pytest fixture:
 
 
     @pytest.fixture()
-    def items_db():
+    def tasks_db():
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db = items.ItemsDB(db_path)
+            db = tasks.TasksDB(db_path)
             yield db
             db.close()
 
 
-    def test_empty(items_db):
-        assert items_db.count() == 0
+    def test_empty(tasks_db):
+        assert tasks_db.count() == 0
 
 The test function itself is now much easier to read, as we have outsourced the
-entire database initialisation to a fixture called ``items_db``. The
-``items_db`` fixture prepares the test by providing the database and then
+entire database initialisation to a fixture called ``tasks_db``. The
+``tasks_db`` fixture prepares the test by providing the database and then
 outputting the database object. Only then is the test executed. And only after
 the test has run is the database closed again.
 
@@ -145,14 +145,14 @@ We can also use fixtures in several tests, for example in
 
 .. code-block:: python
 
-    def test_count(items_db):
-        items_db.add_item(items.Item("something"))
-        items_db.add_item(items.Item("something else"))
-        assert items_db.count() == 2
+    def test_count(tasks_db):
+        tasks_db.add_task(tasks.Task("something"))
+        tasks_db.add_task(tasks.Task("something else"))
+        assert tasks_db.count() == 2
 
-:func:`test_count` uses the same ``items_db`` fixture. This time we take the
-empty database and add two items before checking the count. We can now use
-``items_db`` for any test that requires a configured database. The individual
+:func:`test_count` uses the same ``tasks_db`` fixture. This time we take the
+empty database and add two tasks before checking the count. We can now use
+``tasks_db`` for any test that requires a configured database. The individual
 tests, such as :func:`test_empty` and :func:`test_count`, can be kept smaller
 and focus on what we really want to test, rather than setup and teardown.
 
@@ -166,23 +166,23 @@ including the setup and teardown phases of the fixtures:
 
 .. code-block:: pytest
 
-    $ pytest --setup-show tests/test_count.py
+    $ uv run pytest --setup-show tests/test_count.py
     ============================= test session starts ==============================
     …
     collected 2 items
 
     tests/test_count.py
-            SETUP    F items_db
-            tests/test_count.py::test_empty (fixtures used: items_db).
-            TEARDOWN F items_db
-            SETUP    F items_db
-            tests/test_count.py::test_count (fixtures used: items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db
+            tests/test_count.py::test_empty (fixtures used: tasks_db).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db
+            tests/test_count.py::test_count (fixtures used: tasks_db).
+            TEARDOWN F tasks_db
 
     ============================== 2 passed in 0.01s ===============================
 
 We can see that our test is running, surrounded by the ``SETUP`` and
-``TEARDOWN`` parts of the ``items_db`` fixture. The ``F`` in front of the
+``TEARDOWN`` parts of the ``tasks_db`` fixture. The ``F`` in front of the
 fixture name indicates that the fixture is using the function scope, meaning
 that the fixture is called before each test function it uses, and then
 dismantled afterwards. Next, let’s take a look at the functional scope.
@@ -204,30 +204,30 @@ by adding ``scope="module"`` to the fixture decorator:
 .. code-block:: python
 
     @pytest.fixture(scope="module")
-    def items_db():
+    def tasks_db():
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db = items.ItemsDB(db_path)
+            db = tasks.TasksDB(db_path)
             yield db
             db.close()
 
 .. code-block:: pytest
 
-    $ pytest --setup-show tests/test_count.py
+    $ uv run pytest --setup-show tests/test_count.py
     ============================= test session starts ==============================
     …
     collected 2 items
 
     tests/test_count.py
-        SETUP    M items_db
-            tests/test_count.py::test_empty (fixtures used: items_db).
-            tests/test_count.py::test_count (fixtures used: items_db).
-        TEARDOWN M items_db
+        SETUP    M tasks_db
+            tests/test_count.py::test_empty (fixtures used: tasks_db).
+            tests/test_count.py::test_count (fixtures used: tasks_db).
+        TEARDOWN M tasks_db
 
     ============================== 2 passed in 0.01s ===============================
 
 We have saved this setup time for the second test function. By changing the
-module scope, any test in this module that uses the ``items_db`` fixture can use
+module scope, any test in this module that uses the ``tasks_db`` fixture can use
 the same instance of it without incurring additional setup and teardown time.
 
 However, the fixture :term:`parameter` ``scope`` allows for more than just
@@ -272,7 +272,7 @@ multiple test files, you must use a :file:`conftest.py` file either in the same
 directory as the test file that uses it or in a parent directory. The
 :file:`conftest.py` file is optional. It is considered a local plugin by pytest
 and can contain hook functions and fixtures. Let’s start by moving the
-``items_db`` fixture from :file:`test_count.py` to a :file:`conftest.py` file in
+``tasks_db`` fixture from :file:`test_count.py` to a :file:`conftest.py` file in
 the same directory:
 
 .. code-block:: python
@@ -282,15 +282,15 @@ the same directory:
 
     import pytest
 
-    import items
+    from cusy import tasks
 
 
     @pytest.fixture(scope="session")
-    def items_db():
-        """ItemsDB object connected to a temporary database"""
+    def tasks_db():
+        """TasksDB object connected to a temporary database"""
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db = items.ItemsDB(db_path)
+            db = tasks.TasksDB(db_path)
             yield db
             db.close()
 
@@ -320,7 +320,7 @@ display where the fixtures are defined:
 
 .. code-block:: pytest
 
-    pytest --fixtures
+    $ uv run pytest --fixtures
     ============================= test session starts ==============================
     …
     collected 10 items
@@ -337,8 +337,8 @@ display where the fixtures are defined:
 
 
     --------------------- fixtures defined from tests.conftest ---------------------
-    items_db [session scope] -- conftest.py:10
-        ItemsDB object connected to a temporary database
+    tasks_db [session scope] -- conftest.py:10
+        TasksDB object connected to a temporary database
 
 
     ------------------ fixtures defined from tests.test_fixtures -------------------
@@ -372,15 +372,15 @@ test and where the fixtures are defined:
 
 .. code-block:: pytest
 
-    pytest --fixtures-per-test test_count.py::test_empty
+    $ uv run pytest --fixtures-per-test test_count.py::test_empty
     ============================= test session starts ==============================
     …
     collected 1 item
 
     ------------------------- fixtures used by test_empty --------------------------
     ------------------------------ (test_count.py:5) -------------------------------
-    items_db -- conftest.py:10
-        ItemsDB object connected to a temporary database
+    tasks_db -- conftest.py:10
+        TasksDB object connected to a temporary database
 
     ============================ no tests ran in 0.00s =============================
 
@@ -396,7 +396,7 @@ add a third test:
 
 .. code-block:: pytest
 
-    $ pytest test_count.py::test_count2
+    $ uv run pytest test_count.py::test_count2
     ============================= test session starts ==============================
     …
     collected 1 item
@@ -410,7 +410,7 @@ It works when executed individually, but not when executed after
 
 .. code-block:: pytest
 
-    $ pytest test_count.py
+    $ uv run pytest test_count.py
     ============================= test session starts ==============================
     …
     collected 3 items
@@ -420,51 +420,51 @@ It works when executed individually, but not when executed after
     =================================== FAILURES ===================================
     _________________________________ test_count2 __________________________________
 
-    items_db = <items.api.ItemsDB object at 0x103d3a390>
+    tasks_db = <cusy.tasks.api.TasksDB object at 0x103d3a390>
 
-        def test_count2(items_db):
-            items_db.add_item(items.Item("something different"))
-    >       assert items_db.count() == 1
+        def test_count2(tasks_db):
+            tasks_db.add_task(tasks.Task("something different"))
+    >       assert tasks_db.count() == 1
     E       assert 3 == 1
-    E        +  where 3 = <bound method ItemsDB.count of <items.api.ItemsDB object at 0x103d3a390>>()
-    E        +    where <bound method ItemsDB.count of <items.api.ItemsDB object at 0x103d3a390>> = <items.api.ItemsDB object at 0x103d3a390>.count
+    E        +  where 3 = <bound method TasksDB.count of <cusy.tasks.api.TasksDB object at 0x103d3a390>>()
+    E        +    where <bound method TasksDB.count of <cusy.tasks.api.TasksDB object at 0x103d3a390>> = <cusy.tasks.api.TasksDB object at 0x103d3a390>.count
 
     test_count.py:15: AssertionError
     =========================== short test summary info ============================
     FAILED test_count.py::test_count2 - assert 3 == 1
     ========================= 1 failed, 2 passed in 0.03s ==========================
 
-There are three items in the database because the previous test already added
-two items before ``test_count2`` was executed. However, tests should not rely on
+There are three tasks in the database because the previous test already added
+two tasks before ``test_count2`` was executed. However, tests should not rely on
 the order of execution. ``test_count2`` only succeeds if it is executed alone,
 but fails if it is executed after ``test_count``.
 
 If we still want to try to work with an open database but start all tests with
-zero items in the database, we can do this by adding another fixture in
+zero tasks in the database, we can do this by adding another fixture in
 :file:`conftest.py`:
 
 .. code-block:: python
 
     @pytest.fixture(scope="session")
     def db():
-        """ItemsDB object connected to a temporary database"""
+        """TasksDB object connected to a temporary database"""
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db_ = items.ItemsDB(db_path)
+            db_ = tasks.TasksDB(db_path)
             yield db_
             db_.close()
 
 
     @pytest.fixture(scope="function")
-    def items_db(db):
-        """ItemsDB object that's empty"""
+    def tasks_db(db):
+        """TasksDB object that's empty"""
         db.delete_all()
         return db
 
-I have renamed the old ``items_db`` to ``db`` and moved it to the session area.
+I have renamed the old ``tasks_db`` to ``db`` and moved it to the session area.
 
-The ``items_db`` fixture has ``db`` in its :term:`parameter` list, which means
-that it depends on the ``db`` fixture. In addition, ``items_db`` is
+The ``tasks_db`` fixture has ``db`` in its :term:`parameter` list, which means
+that it depends on the ``db`` fixture. In addition, ``tasks_db`` is
 ``function``-orientated, which is a narrower scope than ``db``. If fixtures
 depend on other fixtures, they can only use fixtures that have the same or a
 larger scope.
@@ -473,28 +473,28 @@ Let’s see if it works:
 
 .. code-block:: pytest
 
-    $ pytest --setup-show test_count.py
+    $ uv run pytest --setup-show test_count.py
     ============================= test session starts ==============================
     …
     collected 3 items
 
     test_count.py
     SETUP    S db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_empty (fixtures used: db, items_db).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count (fixtures used: db, items_db).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count2 (fixtures used: db, items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_empty (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count2 (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
     TEARDOWN S db
 
     ============================== 3 passed in 0.00s ===============================
 
 We see that the setup for ``db`` is done first and has the scope of the session
-(from the ``S``). The setup for ``items_db`` happens next and before each test
+(from the ``S``). The setup for ``tasks_db`` happens next and before each test
 function call and has the scope of the function (from the ``F``). In addition,
 all three tests are passed.
 
@@ -505,44 +505,44 @@ Using multiple fixtures per test or fixture
 -------------------------------------------
 
 Another way to use multiple fixtures is to use more than one in a function or
-fixture. For example, we can put some pre-planned items together to test them in
+fixture. For example, we can put some pre-planned tasks together to test them in
 one fixture:
 
 .. code-block:: python
 
     @pytest.fixture(scope="session")
-    def items_list():
-        """List of different Item objects"""
+    def tasks_list():
+        """List of different Task objects"""
         return [
-            items.Item("Add Python 3.12 static type improvements", "veit", "todo"),
-            items.Item("Add tips for efficient testing", "veit", "wip"),
-            items.Item("Update cibuildwheel section", "veit", "done"),
-            items.Item("Add backend examples", "veit", "done"),
+            tasks.Task("Add Python 3.12 static type improvements", "veit", "todo"),
+            tasks.Task("Add tips for efficient testing", "veit", "wip"),
+            tasks.Task("Update cibuildwheel section", "veit", "done"),
+            tasks.Task("Add backend examples", "veit", "done"),
         ]
 
-Then we can use both ``empty_db`` and ``items_list`` in ``test_add.py``:
+Then we can use both ``empty_db`` and ``tasks_list`` in ``test_add.py``:
 
 .. code-block:: python
 
-    def test_add_list(items_db, items_list):
-        expected_count = len(items_list)
-        for i in items_list:
-            items_db.add_item(i)
-        assert items_db.count() == expected_count
+    def test_add_list(tasks_db, tasks_list):
+        expected_count = len(tasks_list)
+        for i in tasks_list:
+            tasks_db.add_task(i)
+        assert tasks_db.count() == expected_count
 
 And fixtures can also use several other fixtures:
 
 .. code-block:: python
 
     @pytest.fixture(scope="function")
-    def populated_db(items_db, items_list):
-        """ItemsDB object populated with 'items_list'"""
-        for i in items_list:
-            items_db.add_item(i)
-        return items_db
+    def populated_db(tasks_db, tasks_list):
+        """TasksDB object populated with 'tasks_list'"""
+        for i in tasks_list:
+            tasks_db.add_task(i)
+        return tasks_db
 
 The fixture ``populated_db`` must be in the function area, as it uses
-``items_db``, which is already in the ``function`` area. If you try to place
+``tasks_db``, which is already in the ``function`` area. If you try to place
 ``populated_db`` in the ``module`` area or a larger area, pytest will issue an
 error. Don't forget that if you don’t specify a range, you will get fixtures in
 the ``function`` area. Tests that require a populated database can now simply do
@@ -563,8 +563,8 @@ Set fixture scope dynamically
 -----------------------------
 
 Let’s assume we have set up the fixtures as they are now, with ``db`` in the
-``session`` scope and ``items_db`` in the ``function`` scope. However, there is
-now a risk that the ``items_db`` fixture is empty because it calls
+``session`` scope and ``tasks_db`` in the ``function`` scope. However, there is
+now a risk that the ``tasks_db`` fixture is empty because it calls
 :func:`delete_all`. We therefore want to create a way of setting up the database
 completely for each test function by dynamically defining the scope of the
 ``db`` fixture at runtime. To do this, we first change the scope of ``db`` in
@@ -574,10 +574,10 @@ the :file:`conftest.py` file:
 
     @pytest.fixture(scope=db_scope)
     def db():
-        """ItemsDB object connected to a temporary database"""
+        """TasksDB object connected to a temporary database"""
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db_ = items.ItemsDB(db_path)
+            db_ = tasks.TasksDB(db_path)
             yield db_
             db_.close()
 
@@ -611,22 +611,22 @@ After all this, the default behaviour is the same as before, with ``db`` in the
 
 .. code-block:: pytest
 
-    $ pytest --setup-show test_count.py
+    $ uv run pytest --setup-show test_count.py
     ============================= test session starts ==============================
     …
     collected 3 items
 
     test_count.py
     SETUP    S db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_empty (fixtures used: db, items_db).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count (fixtures used: db, items_db).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count2 (fixtures used: db, items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_empty (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count2 (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
     TEARDOWN S db
 
     ============================== 3 passed in 0.00s ===============================
@@ -636,26 +636,26 @@ scope:
 
 .. code-block:: pytest
 
-    $ pytest --fdb --setup-show test_count.py
+    $ uv run pytest --fdb --setup-show test_count.py
     ============================= test session starts ==============================
     …
     collected 3 items
 
     test_count.py
             SETUP    F db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_empty (fixtures used: db, items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_empty (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
             TEARDOWN F db
             SETUP    F db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count (fixtures used: db, items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
             TEARDOWN F db
             SETUP    F db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count2 (fixtures used: db, items_db).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count2 (fixtures used: db, tasks_db).
+            TEARDOWN F tasks_db
             TEARDOWN F db
 
     ============================== 3 passed in 0.00s ===============================
@@ -688,7 +688,7 @@ for example:
 
 .. code-block:: pytest
 
-    pytest --setup-show test_count.py
+    $ uv run pytest --setup-show test_count.py
     ============================= test session starts ==============================
     …
     collected 3 items
@@ -696,15 +696,15 @@ for example:
     test_count.py
     SETUP    S setup_test_env
     SETUP    S db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_empty (fixtures used: db, items_db, setup_test_env).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count (fixtures used: db, items_db, setup_test_env).
-            TEARDOWN F items_db
-            SETUP    F items_db (fixtures used: db)
-            test_count.py::test_count2 (fixtures used: db, items_db, setup_test_env).
-            TEARDOWN F items_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_empty (fixtures used: db, tasks_db, setup_test_env).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count (fixtures used: db, tasks_db, setup_test_env).
+            TEARDOWN F tasks_db
+            SETUP    F tasks_db (fixtures used: db)
+            test_count.py::test_count2 (fixtures used: db, tasks_db, setup_test_env).
+            TEARDOWN F tasks_db
     TEARDOWN S db
     TEARDOWN S setup_test_env
 
@@ -727,7 +727,7 @@ parameter to ``@pytest.fixture()``:
     import pytest
 
 
-    from items import cli
+    from cusy.tasks import cli
 
 
     @pytest.fixture(scope="session", name="db")
@@ -737,7 +737,7 @@ parameter to ``@pytest.fixture()``:
 
 
     def test_empty(db):
-        assert items_db.count() == 0
+        assert tasks_db.count() == 0
 
 One case in which renaming can be useful is if the most obvious fixture name
 already exists as a variable or function name.

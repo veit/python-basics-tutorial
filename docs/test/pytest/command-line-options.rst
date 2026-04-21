@@ -14,12 +14,12 @@ achieve this using the following pattern:
 .. code-block:: python
    :caption: test_example.py
 
-   def test_db(items_db, db_path, cmdopt):
+   def test_db(tasks_db, db_path, cmdopt):
        if cmdopt == "json":
            print("Save as JSON file")
        elif cmdopt == "sqlite":
            print("Save in a SQLite database")
-       assert items_db.path() == db_path
+       assert tasks_db.path() == db_path
 
 For this to work, the command line option must be added and ``cmdopt`` must be
 provided via a fixture function:
@@ -47,7 +47,7 @@ You can then call up your tests, for example, with:
 
 .. code-block:: console
 
-   $ pytest --sqlite
+   $ uv run pytest --sqlite
 
 In addition, you can add a simple validation of the input by listing the
 options:
@@ -69,7 +69,7 @@ This is how we receive feedback on an incorrect argument:
 
 .. code-block:: console
 
-   $ pytest --postgresql
+   $ uv run pytest --postgresql
    ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
    pytest: error: argument --cmdopt: invalid choice: 'postgresql' (choose from json, sqlite)
 
@@ -141,14 +141,14 @@ Below, we add a :file:`conftest.py` file with a command line option
        )
 
 
-   def pytest_collection_modifyitems(config, items):
+   def pytest_collection_modifytasks(config, tasks):
        if config.getoption("--runslow"):
            # If --runslow is specified on the CLI, slow tests are not skipped.
            return
        skip_slow = pytest.mark.skip(reason="need --runslow option to run")
-       for item in items:
-           if "slow" in item.keywords:
-               item.add_marker(skip_slow)
+       for task in tasks:
+           if "slow" in task.keywords:
+               task.add_marker(skip_slow)
 
 If we now write a test with the ``@pytest.mark.slow`` decorator, a skipped
 ‘slow’ test will be displayed when pytest is called:
@@ -188,7 +188,7 @@ Additional information can be easily provided in a ``pytest -v`` run:
    platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
    cachedir: .pytest_cache
    Is GIL enabled? False
-   rootdir: /Users/veit/sandbox/items
+   rootdir: /Users/veit/prj/cusy.tasks
    configfile: pyproject.toml
    plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
    ...

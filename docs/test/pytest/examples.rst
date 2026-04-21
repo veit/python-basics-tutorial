@@ -20,7 +20,7 @@ Execute pytest
 .. code-block:: pytest
 
    $ cd docs/test/pytest
-   $ pytest test_one.py
+   $ uv run pytest docs/test/pytest/test_one.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -37,7 +37,7 @@ corresponds to 100% of the tests. If you need more information, you can use
 
 .. code-block:: pytest
 
-   $ pytest -v test_one.py
+   $ uv run pytest -v test_one.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -76,7 +76,7 @@ says we get the full diff with ``-v``. Let’s do that:
 
 .. code-block:: pytest
 
-   $ pytest -v test_two.py
+   $ uv run pytest -v test_two.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -113,7 +113,7 @@ run:
 
 .. code-block:: pytest
 
-   $ pytest --tb=no
+   $ uv run pytest --tb=no
    ============================= test session starts ==============================
    …
 

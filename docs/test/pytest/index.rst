@@ -24,16 +24,20 @@ module that simplifies testing even further.
 * pytest has an extensive ecosystem with over 800 :doc:`plugins` for advanced
   testing requirements; unittest is more limited in its extensibility.
 
+.. seealso::
+   The :doc:`Jupyter tutorial <jupyter-tutorial:notebook/testing/ipytest>`
+   explains how pytest can also be used in Jupyter Notebooks.
+
 Installation
 ------------
 
-You can install pytest in `virtual environments <venv>` with:
+You can install pytest using :ref:`uv`:
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ python -m pip install pytest
+      $ uv add --group tests pytest
       Collecting pytest
       ...
       Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
@@ -42,7 +46,7 @@ You can install pytest in `virtual environments <venv>` with:
 
    .. code-block:: ps1con
 
-      C:> python -m pip install pytest
+      C:> uv add --group tests pytest
       Collecting pytest
       ...
       Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2

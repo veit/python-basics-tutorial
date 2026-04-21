@@ -37,7 +37,7 @@ structure:
 .. code-block:: console
    :emphasize-lines: 3, 7, 8
 
-   items
+   cusy.tasks
    ├── …
    ├── pyproject.toml
    ├── src
@@ -47,7 +47,7 @@ structure:
        ├── conftest.py
        └── test_….py
 
-In the case of the ``items`` project that we have used for testing so far, there
+In the case of the ``tasks`` project that we have used for testing so far, there
 is a :file:`pyproject.toml` file and a :file:`tests` directory at the top level.
 We will refer to this structure when we talk about the various files in the rest
 of this section.
@@ -74,7 +74,7 @@ projects; however, it can also be used to define project settings.
      "exception: Only run expected exceptions",
      "finish: Only run finish tests",
      "smoke: Small subset of all tests",
-     "num_items: Number of items to be pre-filled for the items_db fixture",
+     "num_tasks: Number of tasks to be pre-filled for the tasks_db fixture",
    ]
 
 ``[tool.pytest]`` marks the start of the pytest section. This is followed by the
@@ -215,11 +215,11 @@ be sure that pytest finds the correct configuration file:
 .. code-block:: pytest
    :emphasize-lines: 5, 6
 
-   $ cd items
-   $ pytest
+   $ cd cusy.tasks
+   $ uv run pytest
    ============================= test session starts ==============================
    ...
-   rootdir: /Users/veit/cusy/prj/items
+   rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
    plugins: Faker-19.11.0
@@ -253,11 +253,10 @@ have :file:`__init__.py` files in each test subdirectory, you can use the same
 test filename in multiple directories, for example:
 
 .. code-block:: console
-   :emphasize-lines: 8, 11
+   :emphasize-lines: 7, 10
 
-   items
+   cusy.tasks
    ├── …
-   ├── pytest.ini
    ├── src
    │   └── …
    └── tests
@@ -276,10 +275,10 @@ whereby a :file:`test_add.py` is located in both directories:
 
 .. code-block:: pytest
 
-   $ pytest
+   $ uv run pytest
    ============================= test session starts ==============================
    ...
-   rootdir: /Users/veit/cusy/prj/items
+   rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
    plugins: Faker-19.11.0

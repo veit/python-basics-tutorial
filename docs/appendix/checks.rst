@@ -112,7 +112,7 @@ Checks
   * ``1`` → True
   * ``0`` → False
   * ``-1`` → True
-  * ``[0]`` → True (List with one item)
+  * ``[0]`` → True (List with one task)
   * ``1 and 0`` → False
   * ``1 > 0 or []`` → True
 
@@ -858,18 +858,19 @@ Checks
      ├── README.rst
      ├── pyproject.toml
      └── src
-         └── items
-             ├── __init__.py
-             ├── api.py
-             ├── cli.py
-             └── db.py
+         └── cusy
+             └── tasks
+                 ├── __init__.py
+                 ├── api.py
+                 ├── cli.py
+                 └── db.py
 
 * Think about how you want to fulfil the above tasks. Which libraries and
   modules can you think of that could fulfil this task? Sketch the code for the
   modules of the Python API, the command line interface and the database
   connection.
 
-  I would create a :class:`DB` class in :file:`src/items/db.py` for
+  I would create a :class:`DB` class in :file:`src/cusy/tasks/db.py` for
   communication with the database, in the following example for `tinydb
   <https://tinydb.readthedocs.io/en/latest/>`_:
 
@@ -884,38 +885,38 @@ Checks
                  db_path / f"{db_file_prefix}.json", create_dirs=True
              )
 
-         def create(self, item: dict):
-             """Create an item
+         def create(self, task: dict):
+             """Create a task
 
              Returns:
-                 id: The items id.
+                 id: The tasks id.
              """
 
              return id
 
          def read(self, id: int):
-             """Reads an item.
+             """Reads a task.
 
              Args:
-                 id (int): The item id of an item.
+                 id (int): The task id of an task.
              Returns:
-                 item: The item object."""
-             return item
+                 task: The task object."""
+             return task
 
          def update(self, id: int, mods):
-             """Update an item in the database.
+             """Update a task in the database.
 
              Args:
-                 id (int): The item id of an item.
-                 mods (Item): The modifications to be made to this item.
+                 id (int): The task id of a task.
+                 mods (Task): The modifications to be made to this task.
              """
              self._db.update(changes, doc_ids=[id])
 
          def delete(self, id: int):
-             """Deletes an item in the database.
+             """Deletes a task in the database.
 
              Args:
-                 id (int): The item id of an item.
+                 id (int): The task id of a task.
              """
              self._db.remove(doc_ids=[id])
 
@@ -923,8 +924,8 @@ Checks
              """Closes the database connection."""
              self._db.close()
 
-  Then I would use :func:`dataclass` in :file:`src/items/api` to create an
-  :class:`Item` class:
+  Then I would use :func:`dataclass` in :file:`src/cusy/tasks/api` to create an
+  :class:`Task` class:
 
   .. code-block:: python
 
@@ -932,32 +933,32 @@ Checks
 
 
      @dataclass
-     class Item:
+     class Task:
          summary: str = None
          owner: str = None
          state: str = "todo"
          id: int = field(default=None, compare=False)
 
 
-     class ItemsException(Exception):
+     class TasksException(Exception):
          pass
 
 
-     class ItemsDB:
+     class TasksDB:
          def __init__(self, db_path):
              self._db_path = db_path
-             self._db = DB(db_path, ".items_db")
+             self._db = DB(db_path, ".tasks_db")
 
-         def add_item(self, item: Item):
+         def add_task(self, task: Task):
              return
 
-         def get_item(self, item: Item):
+         def get_task(self, task: Task):
              return
 
-         def update_item(self, item: Item):
+         def update_task(self, task: Task):
              return
 
-         def delete_item(self, item: Item):
+         def delete_task(self, task: Task):
              return
 
          def close(self):
@@ -966,16 +967,16 @@ Checks
          def path(self):
              return self._db_path
 
-  :class:`ItemsException` Item and :class:`ItemsDB` are then provided in
-  :file:`src/items/__init__.py`:
+  :class:`TasksException` Task and :class:`TasksDB` are then provided in
+  :file:`src/cusy/tasks/__init__.py`:
 
   .. code-block:: python
 
-     from .api import ItemsException, Item, ItemsDB
+     from .api import TasksException, Task, TasksDB
 
   .. seealso::
-     You can find a complete example at `github.com/veit/items
-     <https://github.com/veit/items/>`_.
+     You can find a complete example at `github.com/veit/cusy.tasks
+     <https://github.com/veit/cusy.tasks/>`_.
 
 :doc:`/save-data/files-directories`
 -----------------------------------
