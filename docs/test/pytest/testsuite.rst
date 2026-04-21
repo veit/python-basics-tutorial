@@ -37,13 +37,13 @@ Let’s apply this structure to one of our first tests as an example:
 .. code-block:: python
 
     def test_equality_fail():
-        # Given two item objects with known contents
-        i1 = Item("do something", "veit")
-        i2 = Item("do something else", "veit.schiele")
-        # WHEN the two item objects are not identical
+        # Given two task objects with known contents
+        i1 = Task("do something", "veit")
+        i2 = Task("do something else", "veit.schiele")
+        # WHEN the two task objects are not identical
         if i1 != i2:
             # THEN the result will be a string
-            pytest.fail("The items are not identical!")
+            pytest.fail("The tasks are not identical!")
 
 The structure helps you to organise the test functions and focus on testing
 **one** behaviour. The structure also helps you to think of other test cases.
@@ -59,24 +59,24 @@ Up to now, we have written test functions within test modules in a file system
 directory. This structuring of the test code actually works quite well and is
 sufficient for many projects. However, pytest also allows us to group tests with
 classes. Let’s take some of the test functions that relate to the equality of
-items and group them into a class:
+tasks and group them into a class:
 
 .. code-block:: python
 
     class TestEquality:
         def test_equality(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something", "veit", "todo", 42)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something", "veit", "todo", 42)
             assert i1 == i2
 
         def test_equality_with_diff_ids(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something", "veit", "todo", 43)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something", "veit", "todo", 43)
             assert i1 == i2
 
         def test_inequality(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something else", "veit", "done", 42)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something else", "veit", "done", 42)
             assert i1 != i2
 
 The code looks pretty much the same as before, with the exception that each
@@ -85,7 +85,7 @@ methods together by specifying the class:
 
 .. code-block:: pytest
 
-    $ pytest -v tests/test_classes.py::TestEquality
+    $ uv run pytest -v tests/test_classes.py::TestEquality
     ============================= test session starts ==============================
     …
     collected 3 items
@@ -100,7 +100,7 @@ However, we can still call a single method:
 
 .. code-block:: pytest
 
-    $ pytest -v tests/test_classes.py::TestEquality::test_equality
+    $ uv run pytest -v tests/test_classes.py::TestEquality::test_equality
     ============================= test session starts ==============================
     …
     collected 1 item
@@ -165,7 +165,7 @@ prefixes, for example all tests of class ``TestEquality``.
 
 .. code-block:: pytest
 
-    $ pytest -v -k TestEquality
+    $ uv run pytest -v -k TestEquality
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected
@@ -180,7 +180,7 @@ or all tests with ``equality`` in the name:
 
 .. code-block:: pytest
 
-    pytest -v --tb=no -k equality
+    $ uv run pytest -v --tb=no -k equality
     ============================= test session starts ==============================
     …
     collected 7 items / 3 deselected / 4 selected
@@ -188,10 +188,10 @@ or all tests with ``equality`` in the name:
     test_classes.py::TestEquality::test_equality PASSED                      [ 25%]
     test_classes.py::TestEquality::test_equality_with_diff_ids PASSED        [ 50%]
     test_classes.py::TestEquality::test_inequality PASSED                    [ 75%]
-    test_item_fail.py::test_equality_fail FAILED                             [100%]
+    test_task_fail.py::test_equality_fail FAILED                             [100%]
 
     =========================== short test summary info ============================
-    FAILED test_item_fail.py::test_equality_fail - Failed: The items are not identical!
+    FAILED test_task_fail.py::test_equality_fail - Failed: The tasks are not identical!
     ================== 1 failed, 3 passed, 3 deselected in 0.01s ===================
 
 Unfortunately, one of these is our error example. We can remove it by expanding
@@ -199,7 +199,7 @@ the expression:
 
 .. code-block:: pytest
 
-    $ pytest -v --tb=no -k "equality and not equality_fail"
+    $ uv run pytest -v --tb=no -k "equality and not equality_fail"
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected
@@ -216,7 +216,7 @@ in the "TestEquality" class:
 
 .. code-block:: pytest
 
-    $ pytest -v --tb=no -k "(inequality or id) and not _fail"
+    $ uv run pytest -v --tb=no -k "(inequality or id) and not _fail"
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected

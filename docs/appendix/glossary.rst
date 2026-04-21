@@ -8,7 +8,7 @@ Glossary
    User Acceptance Test
        Verification that software functions as intended from the user’s
        perspective and that users accept the software. Acceptance tests are
-       primarily used in :term:` Extreme Programming`.
+       primarily used in :term:`Extreme Programming`.
 
    Argument
        A value that is passed to a function. There are two types of arguments:
@@ -630,8 +630,11 @@ Glossary
           * :ref:`wheels`
 
    whey
-       Simple Python :term:`wheel` builder with automation options for
-       :term:`trove-classifiers`.
+       A simulated version of a class or method. It has a functional
+       implementation but uses a kind of shortcut, making it unsuitable for
+       production use. For example, an in-memory database might be used for
+       testing purposes but not in production. In this context, the in-memory
+       database would act as a fake.
 
    .. _end-packaging:
 
@@ -668,7 +671,7 @@ Glossary
        :doc:`/test/unittest`
            supports you in the automation of tests.
        :doc:`/test/mock`
-           allows you to create and use mock objects.
+           allows you to create and use :term:`Mock` objects.
        :doc:`../document/doctest`
            allows you to test tests written in Python :term:`docstrings
            <Docstring>`.
@@ -689,23 +692,41 @@ Glossary
        platforms.
 
    Dummy
-       Object that is passed around but never actually used. Normally dummies
-       are only used to fill :term:`parameter` lists.
+       An object that is passed along but is not intended for use in your tests.
+       It has no effect whatsoever on the behaviour of your tests. An example of
+       a dummy could be an attribute that is required to instantiate a class but
+       is not needed for the test.
 
    ``except``
        Keyword used to intercept an :term:`exception` and handle it carefully.
 
    Fake
-       Object that has an implementation that actually works, but usually takes
-       a shortcut that makes it unsuitable for production.
+       A simulated version of a class or method. It has a functional
+       implementation but uses a kind of shortcut, making it unsuitable for
+       production use. For example, an in-memory database might be used for
+       testing purposes but not in production. In this context, the in-memory
+       database would act as a fake.
 
    Integration test
        Tests that check whether the different parts of the software work
        together as expected.
 
    Mock
-       Objects programmed with :term:`exceptions <exception>` that form a
-       specification of the calls you are likely to receive.
+       A mock simulates attributes, classes and methods. This enables developers
+       to
+
+
+       * test certain aspects of their code more effectively
+       * test in a controlled environment
+       * test for external dependencies
+
+       Unlike :term:`stubs <Stub>`, a mock can be used not only to verify the
+       result, but also to check **how** the result was achieved or whether the
+       correct methods were called.
+
+       The Python library for mocks is :doc:`unittest.mock <../test/mock>`. It
+       is also supported by :doc:`../test/pytest/index`. Alternatively, however,
+       you can also use `pytest-mock <https://pypi.org/project/pytest-mock/>`_.
 
        .. seealso::
           * `Mock object <https://en.wikipedia.org/wiki/Mock_object>`_
@@ -720,30 +741,33 @@ Glossary
        Tests to protect against new errors or regressions that may occur as a
        result of new software and updates.
 
-   Stubs
-       provide ready-made responses to calls made during the test and usually
-       do not react at all to anything that has not been programmed for the
-       test.
+   Spy
+       Spies are used to wrap real objects and, by default, forward all method
+       calls to the original object. They therefore intercept all calls to a
+       real object and log them. This makes it possible to monitor calls to the
+       original object (for example, how often a particular method has been
+       called) without replacing the original object (as a :term:`mock` would
+       do, for instance).
+
+   Stub
+       A non-real object with pre-programmed behaviour. In most cases, stubs
+       simply return fixed values, known as *canned data*.
 
    Test-driven development
    TDD
-       A technique for creating software that guides software development by
+       A software development technique that guides the development process by
        writing tests. It was developed in the late 1990s by Kent Beck as part of
-       Extreme Programming. Essentially, it involves repeating three simple
-       steps:
+       :term:`Extreme Programming`. Essentially, it involves repeating three
+       simple steps:
 
        * Write a test for the next feature to be added.
        * Write the function code until the test passes.
-       * Refactor both the new and old code to make it well structured.
+       * Revise both the new and the old code to ensure it is well structured.
 
-       Although these three steps, often summarised as *‘red – green –
-       refactor’*, form the core of the process, there is also an important
-       first step, in which a list of test cases is created. One of these tests
-       is then selected, *‘Red – Green – Refactor’* is applied to it, and the
-       next test is selected. During the process, further tests are added to
-       this list.
+       These three steps are often summarised as *‘Red – Green – Refactor’*.
 
        .. seealso::
+          * :doc:`../test/tdd`
           * `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_ by Kent
             Beck
           * `Test-driven development by example

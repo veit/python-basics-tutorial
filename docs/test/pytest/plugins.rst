@@ -287,7 +287,7 @@ plugins that further simplify testing:
 ~~~~~~~~~~~
 
 We have already used `Faker <https://pypi.org/project/Faker/>`_ in
-:ref:`marker_fixtures_combined` to create multiple item instances. There are
+:ref:`marker_fixtures_combined` to create multiple Task instances. There are
 many cases in different areas where it is helpful to generate fake data. It is
 therefore not surprising that there are several plugins that fulfil this need:
 
@@ -312,7 +312,7 @@ therefore not surprising that there are several plugins that fulfil this need:
 
     .. image:: https://raster.shields.io/github/stars/adamchainz/time-machine
        :alt: Stars
-       :target: https://github.com/pytest-dev/adamchainz/time-machine
+       :target: https://github.com//adamchainz/time-machine
 
     .. image:: https://raster.shields.io/github/contributors/adamchainz/time-machine
        :alt: Contributors
@@ -465,7 +465,7 @@ therefore not surprising that there are several plugins that fulfil this need:
 
     .. image:: https://raster.shields.io/github/commit-activity/y/bloomberg/pytest-memray
        :alt: Commit activity
-       :target: https://github.com/bloomberg/pytest-memraygraphs/commit-activity
+       :target: https://github.com/bloomberg/pytest-memray/commit-activity
 
     .. image:: https://raster.shields.io/github/license/bloomberg/pytest-memray
        :alt: Lizenz

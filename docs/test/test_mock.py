@@ -13,11 +13,16 @@ def is_workingday():
 
 datetime = Mock()
 
-# Mock .today() to return Tuesday
-datetime.today.return_value = monday
-# Test Tuesday is a weekday
-assert is_workingday()
-# Mock .today() to return Saturday
-datetime.today.return_value = saturday
-# Test Saturday is not a weekday
-assert not is_workingday()
+
+def test_workinngday():
+    # Mock .today() to return Tuesday
+    datetime.today.return_value = monday
+    # Test Tuesday is a weekday
+    assert is_workingday()
+
+
+def test_no_workingday():
+    # Mock .today() to return Saturday
+    datetime.today.return_value = saturday
+    # Test Saturday is not a weekday
+    assert not is_workingday()

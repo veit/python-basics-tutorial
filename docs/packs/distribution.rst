@@ -656,8 +656,8 @@ This file should contain information on
 .. seealso::
    * GitHub DocsDokumentation: `Adding a security policy to your repository
      <https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/adding-a-security-policy-to-your-repository>`_
-   * `github.com/veit/items/security
-     <https://github.com/veit/items/security>`_
+   * `github.com/veit/cusy.tasks/security
+     <https://github.com/veit/cusy.tasks/security>`_
 
 
 Historical files or files needed for binary extensions

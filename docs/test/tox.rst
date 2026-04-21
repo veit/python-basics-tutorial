@@ -5,14 +5,14 @@ tox
 to a :term:`CI` tool, but can be run both locally and in conjunction with other
 CI tools on a server.
 
-In the following, we will set up tox for our Items application so that it helps
+In the following, we will set up tox for our Tasks application so that it helps
 us with local testing. We will then set up testing using GitHub Actions.
 
 Introduction to tox
 -------------------
 
 tox is a command line tool that allows you to run your complete test suite in
-different environments. We will use tox to test the Items project in multiple
+different environments. We will use tox to test the Tasks project in multiple
 Python versions, but tox is not limited to Python versions only. You can use it
 to test with different dependency configurations and different configurations
 for different operating systems. tox uses project information from the
@@ -70,30 +70,30 @@ Before you can run tox, you must ensure that you have installed tox-uv:
 
    .. code-block:: console
 
-      $ uv sync --group dev
+      $ uv sync --group tests
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> uv sync --group dev
+      C:> uv sync --group tests
 
 To run tox, simply start tox:
 
 .. code-block:: pytest
 
    $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/18/items-0.1.0.tar.gz
+   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
    py313: commands[0]> python --version --version
    Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
    py313: commands[1]> coverage run -m pytest
    ============================= test session starts ==============================
    platform darwin -- Python 3.13.0, pytest-9.0.2, pluggy-1.6.0
    cachedir: .tox/py313/.pytest_cache
-   rootdir: /Users/veit/cusy/prj/items
+   rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
    plugins: Faker-40.1.0, cov-7.0.0
@@ -106,8 +106,8 @@ To run tox, simply start tox:
    tests/api/test_delete_all.py ..                                          [ 18%]
    tests/api/test_exceptions.py ..                                          [ 20%]
    tests/api/test_finish.py ....                                            [ 25%]
-   tests/api/test_item.py ...                                               [ 28%]
-   tests/api/test_item_id.py .                                              [ 30%]
+   tests/api/test_task.py ...                                               [ 28%]
+   tests/api/test_task_id.py .                                              [ 30%]
    tests/api/test_list.py .........                                         [ 40%]
    tests/api/test_list_edge_cases.py ........                               [ 50%]
    tests/api/test_start.py ....                                             [ 55%]
@@ -126,7 +126,7 @@ To run tox, simply start tox:
    tests/cli/test_version.py .                                              [100%]
 
    ============================== 83 passed in 0.35s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
      py313: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
      congratulations :) (1.23 seconds)
 
@@ -157,7 +157,7 @@ although I will only highlight the differences in the following illustration:
 
     $ uv run tox
     ...
-    py310: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/19/items-0.1.0.tar.gz
+    py310: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/19/cusy.tasks-26.2.0.tar.gz
     py310: commands[0]> python --version --version
     Python 3.10.17 (main, Apr  9 2025, 03:47:39) [Clang 20.1.0 ]
     py310: commands[1]> coverage run -m pytest
@@ -165,7 +165,7 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.35s ==============================
     py310: OK ✔ in 1.3 seconds
-    py311: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
+    py311: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/20/cusy.tasks-26.2.0.tar.gz
     py311: commands[0]> python --version --version
     Python 3.11.11 (main, Feb  5 2025, 18:58:27) [Clang 19.1.6 ]
     py311: commands[1]> coverage run -m pytest
@@ -173,7 +173,7 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.36s ==============================
     py311: OK ✔ in 1.16 seconds
-    py312: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/21/items-0.1.0.tar.gz
+    py312: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/21/cusy.tasks-26.2.0.tar.gz
     py312: commands[0]> python --version --version
     Python 3.12.12 (main, Oct 14 2025, 21:38:21) [Clang 20.1.4 ]
     py312: commands[1]> coverage run -m pytest
@@ -181,7 +181,7 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.55s ==============================
     py312: OK ✔ in 1.79 seconds
-    py313: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/22/items-0.1.0.tar.gz
+    py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/22/cusy.tasks-26.2.0.tar.gz
     py313: commands[0]> python --version --version
     Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
     py313: commands[1]> coverage run -m pytest
@@ -189,7 +189,7 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.35s ==============================
     py313: OK ✔ in 1.07 seconds
-    py314: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/23/items-0.1.0.tar.gz
+    py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/23/cusy.tasks-26.2.0.tar.gz
     py314: commands[0]> python --version --version
     Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ]
     py314: commands[1]> coverage run -m pytest
@@ -197,7 +197,7 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.36s ==============================
     py314: OK ✔ in 1.28 seconds
-    py313t: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/24/items-0.1.0.tar.gz
+    py313t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/24/cusy.tasks-26.2.0.tar.gz
     py313t: commands[0]> python --version --version
     Python 3.13.0 experimental free-threading build (main, Oct 16 2024, 08:24:33) [Clang 18.1.8 ]
     py313t: commands[1]> coverage run -m pytest
@@ -205,14 +205,14 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.49s ==============================
     py313t: OK ✔ in 1.51 seconds
-    py314t: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/25/items-0.1.0.tar.gz
+    py314t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/25/cusy.tasks-26.2.0.tar.gz
     py314t: commands[0]> python --version --version
     Python 3.14.0b4 free-threading build (main, Jul  8 2025, 21:06:49) [Clang 20.1.4 ]
     py314t: commands[1]> coverage run -m pytest
     ============================= test session starts ==============================
     ...
     ============================== 83 passed in 0.39s ==============================
-    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+    .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
       py310: OK (1.30=setup[0.54]+cmd[0.01,0.75] seconds)
       py311: OK (1.16=setup[0.38]+cmd[0.01,0.76] seconds)
       py312: OK (1.79=setup[0.42]+cmd[0.01,1.36] seconds)
@@ -229,7 +229,7 @@ although I will only highlight the differences in the following illustration:
    .. code-block:: toml
 
       [tool.tox]
-      envlist = [py3{10,11,12,13,14,13t,14t}]
+      envlist = ["py3{10,11,12,13,14,13t,14t}"]
 
 Running Tox environments in parallel
 ------------------------------------
@@ -310,9 +310,9 @@ be considered identical:
    [tool.coverage.paths]
    source = ["src", ".tox/py*/**/site-packages"]
 
-The items source code is initially located in :file:`src/items/` before tox
-creates the virtual environments and installs items in the environment. It is
-then located in :file:`.tox/py313/lib/python3.13/site-packages/items`, for
+The Tasks source code is initially located in :file:`src/cusy/tasks/` before tox
+creates the virtual environments and installs tasks in the environment. It is
+then located in :file:`.tox/py313/lib/python3.13/site-packages/cusy.tasks`, for
 example.
 
 .. code-block:: console
@@ -347,7 +347,7 @@ level in order to recognise any coverage failures. This is achieved with the
 
    Name               Stmts   Miss Branch BrPart  Cover   Missing
    --------------------------------------------------------------
-   src/items/api.py      68      1     12      1    98%   88
+   src/cusy/tasks/api.py 68      1     12      1    98%   88
    --------------------------------------------------------------
    TOTAL                428      1     32      1    99%
 
@@ -397,7 +397,7 @@ keyword option. We also use ``--no-cov`` to disable coverage:
    ============================= test session starts ==============================
    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
    cachedir: .tox/py313/.pytest_cache
-   rootdir: /Users/veit/cusy/prj/items
+   rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
@@ -407,7 +407,7 @@ keyword option. We also use ``--no-cov`` to disable coverage:
    tests/cli/test_version.py .                                              [100%]
 
    ======================= 2 passed, 47 deselected in 0.07s =======================
-   .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
      py313: OK (1.49=setup[0.96]+cmd[0.53] seconds)
      congratulations :) (1.53 seconds)
 

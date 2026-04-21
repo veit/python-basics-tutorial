@@ -126,7 +126,7 @@ Combining pdb and tox
 In order to combine pdb with tox, we need to make sure that we can pass
 arguments through tox to pytest. This is done with the ``{posargs}`` function of
 tox, which was described in :ref:`posargs`. We have already set up this function
-in our :file:`tox.ini` for Items:
+in our :file:`tox.ini` for cusy.tasks:
 
 .. code-block:: ini
    :emphasize-lines: 11
@@ -141,7 +141,7 @@ in our :file:`tox.ini` for Items:
      pytest
      faker
      pytest-cov
-   commands = pytest --cov=items --cov-fail-under=99  {posargs}
+   commands = pytest --cov=cusy.tasks --cov-fail-under=99  {posargs}
 
    [gh-actions]
    python =
