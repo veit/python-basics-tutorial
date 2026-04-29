@@ -20,7 +20,7 @@ classifiers = [
 ]
 dependencies = []
 urls."Bug Tracker" = "https://github.com/veit/python-basics-tutorial/issues"
-urls."Homepage" = "https://github.com/veit/python-basics-tutorial/"
+urls.Homepage = "https://github.com/veit/python-basics-tutorial/"
 
 [dependency-groups]
 dev = [
@@ -36,7 +36,7 @@ docs = [
   "matplotlib",                     # matplotlib is required for social cards
   "nbsphinx",
   "pygments-pytest",
-  "sphinx<8.2",                     # furo requires sphinx < 8.2
+  "sphinx",
   "sphinx-copybutton",
   "sphinx-inline-tabs",
   "sphinx-lint",
@@ -46,6 +46,9 @@ docs = [
   "sphinxcontrib-svg2pdfconverter",
   "sphinxext-opengraph",
 ]
+
+[tool.uv]
+exclude-newer = "P3D"  # "3 days" in RFC 3339 format
 
 [tool.codespell]
 ignore-words-list = "allo, ist, Juli, symbl"
