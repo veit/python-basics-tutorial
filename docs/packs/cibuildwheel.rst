@@ -28,7 +28,14 @@ Finally, the tests can also run against the wheels.
     .. literalinclude:: .github/workflows/build_wheels.yml
        :caption: .github/workflows/build_wheels.yml
        :language: yaml
-       :lines: 1-7
+       :lines: 1-15
+
+    ``release``
+        is executed when a tagged version is transferred.
+
+        .. seealso::
+           * `release
+             <https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#release>`_
 
     ``workflow_dispatch``
         allows you to click a button in the graphical user interface to trigger
@@ -39,18 +46,11 @@ Finally, the tests can also run against the wheels.
            * `workflow_dispatch
              <https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/>`_
 
-    ``release``
-        is executed when a tagged version is transferred.
-
-        .. seealso::
-           * `release
-             <https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#release>`_
-
     Now the :term:`wheels <wheel>` can be built with:
 
     .. literalinclude:: .github/workflows/build_wheels.yml
        :language: yaml
-       :lines: 9-22
+       :lines: 17-32
 
     This runs the CI workflow with the following default settings:
 
@@ -66,7 +66,7 @@ Finally, the tests can also run against the wheels.
 
     .. literalinclude:: .github/workflows/build_wheels.yml
        :language: yaml
-       :lines: 24-
+       :lines: 34-
 
 .. tab:: GitLab CI/CD
 
