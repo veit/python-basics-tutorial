@@ -3,10 +3,10 @@ Context management with ``with``
 
 A more rational way to encapsulate the ``try``-``except``-``finally`` pattern is
 to use the keyword ``with`` and a context manager. Python defines context
-managers for things like accessing :doc:`files </save-data/files>` and custom
-context managers. One advantage of context managers is that they can define
-cleanup actions that are always executed, regardless of whether an exception
-occurs or not.
+managers for things like accessing :doc:`files </save-data/files-directories>`
+and custom context managers. One advantage of context managers is that they can
+define cleanup actions that are always executed, regardless of whether an
+exception occurs or not.
 
 .. seealso::
    :doc:`python3:library/contextlib`
@@ -30,7 +30,7 @@ closed. This code is equivalent to this code:
    :linenos:
 
 .. seealso::
-   * :doc:`../save-data/files`
+   * :doc:`../save-data/files-directories`
 
 Locking
 -------
