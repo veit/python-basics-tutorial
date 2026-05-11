@@ -158,14 +158,14 @@ The ``math`` module provides, among other things
 Rounding half to even
 ---------------------
 
-Usually Python calculates floating point numbers according to the `IEEE 754
-<https://en.wikipedia.org/wiki/IEEE_754>`_ standard, rounding down numbers in
-the middle half of the time and rounding up in the other half to avoid
-statistical drift in longer calculations. :class:`Decimal
-<python3:decimal.Decimal>` and :data:`ROUND_HALF_UP
-<python3:decimal.ROUND_HALF_UP>` from the decimal module are therefore needed
-for `rounding half to even
-<https://en.wikipedia.org/wiki/Rounding#Rounding_half_to_even>`_:
+Python typically performs floating-point calculations in base 2, whereby numbers
+in the middle are rounded down in half the cases and rounded up in the other
+half, in order to prevent statistical drift during lengthy calculations.
+However, the :class:`Decimal <python3:decimal.Decimal>` class also allows
+calculations to be performed in base 10. For commercial rounding,
+:data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>` from the Decimal class
+is also required for `rounding half up
+<https://en.wikipedia.org/wiki/Rounding#Rounding_half_up>`_:
 
 .. code-block:: pycon
 
@@ -174,6 +174,9 @@ for `rounding half to even
     >>> rounded = num.quantize(decimal.Decimal("0"), rounding=decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
+
+.. seealso::
+   * `IEEE 754 <https://en.wikipedia.org/wiki/IEEE_754>`_
 
 Built-in modules for numbers
 ----------------------------
