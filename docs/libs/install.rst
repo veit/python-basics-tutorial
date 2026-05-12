@@ -283,7 +283,7 @@ Alternatively, a specific version can be installed with :samp:`uv python install
 {3.12}`. However, you can install not only older CPython versions, but also
 `PyPy <https://pypy.org>`_ with :samp:`uv python install pypy@{3.12}` or
 Free-threaded Python with :samp:`uv python install --python-preferenc
-only-managed {3.13t}`. You can see the Python versions that are already
+only-managed {3.14t}`. You can see the Python versions that are already
 installed with ``uv python list``. You can call up an installed Python version
 with :samp:`uv run --python {3.12} python`.
 

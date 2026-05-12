@@ -100,7 +100,7 @@ whether the documentation is being built and the links are valid. In
 
    [testenv:docs]
    # Keep base_python in sync with ci.yml and .readthedocs.yaml.
-   base_python = py312
+   base_python = py314
    dependency_groups = docs
    commands =
      sphinx-build -n -T -W -b html -d {envtmpdir}/doctrees docs docs/_build/html
@@ -130,7 +130,7 @@ You can then define the following jobs for GitHub, for example:
      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
        with:
          # Keep in sync with tox.ini/docs and .readthedocs.yaml
-         python-version: "3.12"
+         python-version: "3.14"
          cache: pip
      - run: python -m pip install tox
      - run: python -m tox run -e docs
