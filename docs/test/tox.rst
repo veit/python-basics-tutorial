@@ -46,14 +46,14 @@ configuration in the :file:`pyproject.toml` file:
 .. code-block:: toml
 
    [tool.tox]
-   env_list = ["py313"]
+   env_list = ["py314"]
 
    [tool.tox.env_run_base]
    dependency_groups = [ "tests" ]
    commands = [[ "pytest"]]
 
-In the ``[tool.tox]`` section, we defined ``env_list = ["py313"]``. This is a
-shorthand that instructs tox to run our tests using Python version 3.13. We will
+In the ``[tool.tox]`` section, we defined ``env_list = ["py314"]``. This is a
+shorthand that instructs tox to run our tests using Python version 3.14. We will
 add more Python versions shortly, but using one version helps us better
 understand how tox works.
 
@@ -83,16 +83,16 @@ To run tox, simply start tox:
 .. code-block:: pytest
 
    $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
-   py313: commands[0]> python --version --version
-   Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
-   py313: commands[1]> coverage run -m pytest
+   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
+   py314: commands[0]> python --version --version
+   Python 3.14.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
+   py314: commands[1]> coverage run -m pytest
    ============================= test session starts ==============================
-   platform darwin -- Python 3.13.0, pytest-9.0.2, pluggy-1.6.0
-   cachedir: .tox/py313/.pytest_cache
+   platform darwin -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
+   cachedir: .tox/py314/.pytest_cache
    rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
@@ -126,8 +126,8 @@ To run tox, simply start tox:
    tests/cli/test_version.py .                                              [100%]
 
    ============================== 83 passed in 0.35s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-     py313: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+     py314: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
      congratulations :) (1.23 seconds)
 
 Testing multiple Python versions
@@ -181,14 +181,14 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.55s ==============================
     py312: OK ✔ in 1.79 seconds
-    py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/22/cusy.tasks-26.2.0.tar.gz
-    py313: commands[0]> python --version --version
-    Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
-    py313: commands[1]> coverage run -m pytest
+    py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/22/cusy.tasks-26.2.0.tar.gz
+    py314: commands[0]> python --version --version
+    Python 3.14.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
+    py314: commands[1]> coverage run -m pytest
     ============================= test session starts ==============================
     ...
     ============================== 83 passed in 0.35s ==============================
-    py313: OK ✔ in 1.07 seconds
+    py314: OK ✔ in 1.07 seconds
     py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/23/cusy.tasks-26.2.0.tar.gz
     py314: commands[0]> python --version --version
     Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ]
@@ -197,14 +197,14 @@ although I will only highlight the differences in the following illustration:
     ...
     ============================== 83 passed in 0.36s ==============================
     py314: OK ✔ in 1.28 seconds
-    py313t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/24/cusy.tasks-26.2.0.tar.gz
-    py313t: commands[0]> python --version --version
-    Python 3.13.0 experimental free-threading build (main, Oct 16 2024, 08:24:33) [Clang 18.1.8 ]
-    py313t: commands[1]> coverage run -m pytest
+    py314t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/24/cusy.tasks-26.2.0.tar.gz
+    py314t: commands[0]> python --version --version
+    Python 3.14.0 experimental free-threading build (main, Oct 16 2024, 08:24:33) [Clang 18.1.8 ]
+    py314t: commands[1]> coverage run -m pytest
     ============================= test session starts ==============================
     ...
     ============================== 83 passed in 0.49s ==============================
-    py313t: OK ✔ in 1.51 seconds
+    py314t: OK ✔ in 1.51 seconds
     py314t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/25/cusy.tasks-26.2.0.tar.gz
     py314t: commands[0]> python --version --version
     Python 3.14.0b4 free-threading build (main, Jul  8 2025, 21:06:49) [Clang 20.1.4 ]
@@ -212,7 +212,7 @@ although I will only highlight the differences in the following illustration:
     ============================= test session starts ==============================
     ...
     ============================== 83 passed in 0.39s ==============================
-    .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+    .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
       py310: OK (1.30=setup[0.54]+cmd[0.01,0.75] seconds)
       py311: OK (1.16=setup[0.38]+cmd[0.01,0.76] seconds)
       py312: OK (1.79=setup[0.42]+cmd[0.01,1.36] seconds)
@@ -312,7 +312,7 @@ be considered identical:
 
 The Tasks source code is initially located in :file:`src/cusy/tasks/` before tox
 creates the virtual environments and installs tasks in the environment. It is
-then located in :file:`.tox/py313/lib/python3.13/site-packages/cusy.tasks`, for
+then located in :file:`.tox/py314/lib/python3.14/site-packages/cusy.tasks`, for
 example.
 
 .. code-block:: console
@@ -391,12 +391,12 @@ keyword option. We also use ``--no-cov`` to disable coverage:
 .. code-block:: pytest
    :emphasize-lines: 1, 3
 
-   $ uv run tox -e py313 -- -k test_version --no-cov
+   $ uv run tox -e py314 -- -k test_version --no-cov
    ...
-   py313: commands[0]> coverage run -m pytest -k test_version --no-cov
+   py314: commands[0]> coverage run -m pytest -k test_version --no-cov
    ============================= test session starts ==============================
-   platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
-   cachedir: .tox/py313/.pytest_cache
+   platform darwin -- Python 3.14.0, pytest-8.3.3, pluggy-1.5.0
+   cachedir: .tox/py314/.pytest_cache
    rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
@@ -407,8 +407,8 @@ keyword option. We also use ``--no-cov`` to disable coverage:
    tests/cli/test_version.py .                                              [100%]
 
    ======================= 2 passed, 47 deselected in 0.07s =======================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-     py313: OK (1.49=setup[0.96]+cmd[0.53] seconds)
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+     py314: OK (1.49=setup[0.96]+cmd[0.53] seconds)
      congratulations :) (1.53 seconds)
 
 ``tox`` is not only ideal for the local automation of test processes, but also
