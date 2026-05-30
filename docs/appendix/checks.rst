@@ -339,6 +339,9 @@ Checks
 
   .. blacken-docs:on
 
+:doc:`/types/strings/built-in-modules/string`
+---------------------------------------------
+
 * How can you change a heading such as ``variables and expressions`` so that it
   contains hyphens instead of spaces and can therefore be better used as a file
   name?
@@ -349,15 +352,15 @@ Checks
      >>> "-".join(ve.split())
      'variables-and-expressions'
 
-* If you want to check whether a line begins with ``.. note::``, which method
+* If you wanted to check whether a filename starts with ``pylock``, which method
   would you use? Are there any other options?
 
   .. code-block:: pycon
 
-     >>> x.startswith(".. note::")
+     >>> filename = "pylock.prod.toml"
+     >>> filename.startswith("pylock")
      True
-     >>> x[:9] == ".. note::"
-     True
+     >>> filename[:6] == "pylock"
 
 * Suppose you have a string with exclamation marks, quotation marks and line
   breaks. How can these be removed from the string?
@@ -397,6 +400,14 @@ Checks
       corresponds to an expression starting with ``0``, followed by a lower or
       upper case ``x``, followed by one or more characters in the ranges
       ``0-9``, ``a-f`` or ``A-F``.
+
+* What regular expression would you use for a :samp:`pylock.{NAME.}toml`
+  filename?
+
+  ``pylock\.([^.]+\.)?toml$``
+
+    recognises both :file:`pylock.toml` and :file:`pylock.prod.toml`, as well as
+    similar filenames.
 
 :doc:`/types/strings/input`
 ---------------------------
@@ -475,6 +486,26 @@ Checks
      Who? Veit
      >>> print(personal_data[who])
      60
+
+:doc:`/control-flow/conditional`
+--------------------------------
+
+* If you want to check whether a filename starts with ``pylock.`` and ends with
+  ``.toml``, what method would you use to retrieve the name of the environment
+  it might contain, for example, ``prod`` in ``pylock.prod.toml``?
+
+  .. code-block:: pycon
+
+     >>> filename = "pylock.prod.toml"
+     >>> if (
+     ...     len(filename) > 11
+     ...     and filename.startswith("pylock.")
+     ...     and filename.endswith(".toml")
+     ... ):
+     ...     name = filename.removeprefix("pylock.").removesuffix(".toml")
+     ...
+     >>> name
+     'prod'
 
 :doc:`/control-flow/loops`
 --------------------------
