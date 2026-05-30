@@ -138,3 +138,6 @@ Checks
   numbers between -3 and +3?
 
 * Which regular expression would you use to find hexadecimal values?
+
+* What regular expression would you use for a :samp:`pylock.{NAME.}toml`
+  filename?

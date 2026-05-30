@@ -38,3 +38,22 @@ Line 5
 Line 8
     The optional ``else`` clause denotes a code block that is only executed if
     the other conditional blocks, ``if`` and ``elif``, are all false.
+
+Furthermore, the conditions can be linked logically, for example:
+
+.. code-block:: pycon
+
+   >>> if (
+   ...     len(filename) > 11
+   ...     and filename.startswith("pylock.")
+   ...     and filename.endswith(".toml")
+   ... ):
+   ...     name = filename.removeprefix("pylock.").removesuffix(".toml")
+   ...
+
+Checks
+------
+
+* If you want to check whether a filename starts with ``pylock.`` and ends with
+  ``.toml``, what method would you use to retrieve the name of the environment
+  it might contain, for example, ``prod`` in ``pylock.prod.toml``?

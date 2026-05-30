@@ -274,6 +274,8 @@ as:
     Upload"``. :term:`PyPI` will always reject packages whose classifier starts
     with ``"Private ::"``.
 
+.. _dependencies:
+
 ``dependencies``
     specifies the dependencies for your package in an array.
 
