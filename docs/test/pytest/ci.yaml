@@ -3,12 +3,36 @@ name: CI
 on:
   push:
     branches: [main]
+    tags: ["*"]
   pull_request:
-    branches: [main]
+  workflow_dispatch:
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PIP_NO_PYTHON_VERSION_WARNING: "1"
+
+permissions: {}
 
 jobs:
+  build-package:
+    name: Build & verify package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: hynek/build-and-inspect-python-package@d44ca7d91762de7a7d5436ddae667c6da6d1c3df # v2.18.0
+        id: baipp
+
+    outputs:
+      # Used to define the matrix for tests below. The value is based on
+      # packaging metadata (trove classifiers).
+      supported-python-versions: ${{ steps.baipp.outputs.supported_python_classifiers_json_array }}
+
   tests:
-    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    name: Tests on Python ${{ matrix.python-version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -18,29 +42,32 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-        python-version:
-          - "3.10"
-          - "3.11"
-          - "3.12"
-          - "3.13"
-          - "3.14"
+        # Created by the build-and-inspect-python-package action above.
+        python-version: ${{ fromJson(needs.build-package.outputs.supported-python-versions) }}
 
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
+      - name: Download pre-built packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: Packages
+          path: dist
+      - run: |
+          tar xf dist/*.tar.gz --strip-components=1
+          rm -rf src
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
-        run: |
-          python -m pip install tox tox-gh-actions
+          allow-prereleases: true
+      - name: Set up uv
+        uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
 
       - name: Run tox for ${{ matrix.python-version }}
-        run: |
-          python -m tox
+        run: >
+          uvx --with=tox-uv
+          tox run
+          --installpkg dist/*.whl
+          -f py$(echo $PYTHON | tr -d .)
 
       - name: Upload coverage data
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
@@ -55,36 +82,38 @@ jobs:
     needs: tests
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - name: Set up Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+      - name: Download pre-built packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          python-version: 3.12
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade coverage[toml]
+          name: Packages
+          path: dist
+      - run: tar xf dist/*.tar.gz --strip-components=1
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version-file: .python-version
+      - uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
 
       - name: Download coverage data
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          name: coverage-data
+          pattern: coverage-data-*
+          merge-multiple: true
 
-      - name: Combine coverage and fail it it’s under 100 %
+      - name: Combine coverage and fail if it's <100%.
         run: |
-          python -m coverage combine
-          python -m coverage html --skip-covered --skip-empty
+          uv tool install coverage
+
+          coverage combine
+          coverage html --skip-covered --skip-empty
 
           # Report and write to summary.
-          python -m coverage report | sed 's/^/    /' >> $GITHUB_STEP_SUMMARY
+          coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
 
           # Report again and fail if under 100%.
-          python -Im coverage report --fail-under=100
+          coverage report --fail-under=100
 
-      - name: Upload HTML report if check failed
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+      - name: Upload HTML report if check failed.
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: html-report
           path: htmlcov

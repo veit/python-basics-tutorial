@@ -44,4 +44,4 @@ Installation
 
 .. code-block:: console
 
-    $ python -m pip install --user cookiecutter
+    $ uv init --package cookiecutter_env

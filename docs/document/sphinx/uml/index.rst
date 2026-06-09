@@ -27,23 +27,9 @@ Installation
 #. Install `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
 
-   .. tab:: Linux
+   .. code-block:: console
 
-      .. code-block:: console
-
-         $ python -m pip install sphinxcontrib-plantuml
-
-   .. tab:: macOS
-
-      .. code-block:: console
-
-         $ python -m pip install sphinxcontrib-plantuml
-
-   .. tab:: Windows
-
-      .. code-block:: ps1con
-
-         C:> python -m pip install sphinxcontrib-plantuml
+      $ uv add --grpup docs sphinxcontrib-plantuml
 
 #. Configure Sphinx in the ``conf.py`` file:
 
