@@ -359,3 +359,37 @@ Using :samp:`uv add {PACKAGE}`, you can add further dependencies to your
 project. This adds the package to the ``dependencies`` section of the
 :file:`pyproject.toml` file and writes the exact variant to the :file:`uv.lock`
 file.
+
+.. _uv-audit:
+
+Vulnerability and malware checks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``uv audit`` is a new command introduced in uv≥0.11.19 that checks the
+dependencies in your project for known vulnerabilities in the `OSV
+<https://osv.dev>`_ database and ‘undesirable’ project statuses, such as
+*deprecated*:
+
+.. code-block:: console
+
+   $ uv audit
+   warning: `uv audit` is experimental and may change without warning. Pass `--preview-features audit-command` to disable this warning.
+   Resolved 115 packages in 16ms
+   Found 12 known vulnerabilities and no adverse project statuses in 114 packages
+
+   Vulnerabilities:
+
+   idna 3.12 has 1 known vulnerability:
+   - GHSA-65pc-fj4g-8rjx: Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix
+     Fixed in: 3.15
+     Advisory information: https://github.com/kjd/idna/security/advisories/GHSA-65pc-fj4g-8rjx
+   …
+
+``uv add``, ``uv sync``, and so on can now be run during every synchronisation
+process to check for previously identified malware. This feature is not enabled
+by default, but it can be easily enabled by setting  ``UV_MALWARE_CHECK=1`` in
+the shell.
+
+.. seealso::
+   * `uv audit <https://docs.astral.sh/uv/reference/cli/#uv-audit>`_
+   * `uv audit settings <https://docs.astral.sh/uv/reference/settings/#audit>`_
