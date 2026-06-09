@@ -326,25 +326,10 @@ take over all dependencies from ``docs`` and ``test`` in addition to
 
 You can install these dependency groups, for example with:
 
-.. tab:: Linux/macOS
+.. code-block:: console
 
-   .. code-block:: console
-
-      $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
-      $ python3 -m venv .venv
-      $ . .venv/bin/activate
-      $ python -m pip install --upgrade pip
-      $ python -m pip install --group dev
-
-.. tab:: Windows
-
-   .. code-block:: ps1
-
-      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
-      > python3 -m venv .venv
-      > .venv\Scripts\activate.bat
-      > python -m pip install --upgrade pip
-      > python -m pip install --group dev
+   $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
+   $ uv sync --group dev
 
 .. seealso::
    * :pep:`735`

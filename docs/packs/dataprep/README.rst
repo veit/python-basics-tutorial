@@ -19,7 +19,7 @@ Quickstart
 
    .. code-block:: console
 
-      $ python3 -m pip install datagrep
+      $ uv add datagrep
 
 #. Import the datagrep modules, for example with:
 

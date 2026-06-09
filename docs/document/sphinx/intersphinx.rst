@@ -82,7 +82,7 @@ The error can be corrected with:
 
    .. code-block:: console
 
-      $ python -m pip install sphobjinv
+      $ uv add --group docs sphobjinv
 
 #. Then the original file can be downloaded with:
 

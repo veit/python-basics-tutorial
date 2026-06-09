@@ -19,7 +19,7 @@ Installation
 
 .. code-block:: console
 
-    $ python -m pip install cruft
+    $ uv add --group dev cruft
 
 Create a new project
 --------------------

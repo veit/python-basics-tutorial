@@ -117,23 +117,26 @@ You can then define the following jobs for GitHub, for example:
 
    docs:
      name: Build docs and run doctests
-     needs: build-package
      runs-on: ubuntu-latest
-     steps:
-     - name: Download pre-built packages
-       uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-       with:
-         name: Packages
-         path: dist
-     - run: tar xf dist/*.tar.gz --strip-components=1
+     needs: build-package
 
-     - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
-       with:
-         # Keep in sync with tox.ini/docs and .readthedocs.yaml
-         python-version: "3.14"
-         cache: pip
-     - run: python -m pip install tox
-     - run: python -m tox run -e docs
+     steps:
+       - name: Download pre-built packages
+         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+         with:
+           name: Packages
+           path: dist
+       - run: tar xf dist/*.tar.gz --strip-components=1
+       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+         with:
+           # Keep in sync with tox.ini/docs & .readthedocs.yaml
+           python-version: "3.14"
+       - uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
+
+       - run: >
+           uvx --with=tox-uv
+           tox run
+           -e docs
 
 reST formatting
 ---------------
@@ -148,7 +151,7 @@ format can be checked with `sphinx-lint
    :caption: .pre-commit-config.yaml
 
    - repo: https://github.com/sphinx-contrib/sphinx-lint
-     rev: v1.0.0
+     rev: c883505f64b59c3c5c9375191e4ad9f98e727ccd # v1.0.2
      hooks:
        - id: sphinx-lint
          types: [rst]
@@ -197,7 +200,7 @@ via the :doc:`pre-commit
 .. code-block:: yaml
 
    - repo: https://github.com/adamchainz/blacken-docs
-     rev: "v1.12.1"
+     rev: 7ae9389351f4090e3993de28015a05a18ca6b8a7 # v1.12.1
      hooks:
      - id: blacken-docs
        additional_dependencies:

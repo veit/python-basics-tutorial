@@ -383,8 +383,8 @@ them later in other jobs:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 45-51
-   :lineno-start: 45
+   :lines: 72-78
+   :lineno-start: 72
 
 ``include-hidden-files``
     has become necessary with `actions/upload-artifact v4.4.0
@@ -399,8 +399,8 @@ results:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 53-91
-   :lineno-start: 53
+   :lines: 80-120
+   :lineno-start: 80
 
 ``needs: tests``
     ensures that all tests are performed. If your job that runs the tests has a
@@ -433,14 +433,14 @@ our :download:`ci.yaml` as follows:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 93-
-   :lineno-start: 93
+   :lines: 122-
+   :lineno-start: 122
 
-Line 97
-    ``GIST_TOKEN`` is a personal GitHub access token.
-Line 98
-    You should replace ``YOUR_GIST_ID`` with your own Gist ID. If you don’t have
-    a Gist ID yet, you can create one with:
+``GIST_TOKEN``
+    is a personal GitHub access token.
+``YOUR_GIST_ID``
+    You should replace this with your own Gist ID. If you don’t have a Gist ID
+    yet, you can create one with:
 
     #. Call up https://gist.github.com and create a new gist, which you can name
        :file:`test.json`, for example. The ID of the gist is the long
@@ -456,7 +456,7 @@ Line 98
        :samp:`{GIST_SECRET}` in :menuselection:`YOUR_REPO --> Settings -->
        Secrets --> Dependabot`.
 
-Lines 102-104
+``minColorRange``,  ``maxColorRange``, ``valColorRange``
     The badge is automatically coloured:
 
     * ≤ 50 % in red
