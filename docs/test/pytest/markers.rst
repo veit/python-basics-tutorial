@@ -181,7 +181,7 @@ number 2.
 
 In this example, `packaging <https://pypi.org/project/packaging/>`_ is used as
 an additional package. If you want to try out the example, install it first with
-``python -m pip install packaging``.
+``uv add --group dev packaging``.
 
 .. tip::
    ``skipif`` is also ideal if tests need to be written differently for
@@ -756,7 +756,7 @@ have. This requires three steps:
 #. Now we modify the ``tasks_db`` fixture in the :file:`conftest.py` file to be
    able to use the marker. To avoid having to hard-code the task information, we
    will use the Python package `Faker <https://faker.readthedocs.io/>`_, which
-   we can install with ``python -m pip install faker``:
+   we can install with ``uv add --group tests faker``:
 
    .. code-block:: python
       :linenos:
