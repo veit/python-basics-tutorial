@@ -1,6 +1,5 @@
 linux:
-  image: python:latest
-  # make a docker daemon available for cibuildwheel to use
+  image: python:3.13
   services:
     - name: docker:dind
       entrypoint: ["env", "-u", "DOCKER_HOST"]
@@ -10,36 +9,50 @@ linux:
     DOCKER_DRIVER: overlay2
     # See https://github.com/docker-library/docker/pull/166
     DOCKER_TLS_CERTDIR: ""
+
+    # skip all but the basic tests
+    # (comment the below line in a PR to debug a Gitlab-specific issue)
+    PYTEST_ADDOPTS: -k "unit_test or test_0_basic" --suppress-no-test-exit-code
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH =~ /^gitlab/'
+      variables:
+        CIBW_ENABLE: "all"
   script:
     - curl -sSL https://get.docker.com/ | sh
-    - python -m pip install cibuildwheel==2.21.3
-    - cibuildwheel --output-dir wheelhouse
-  artifacts:
-    paths:
-      - wheelhouse/
+    - docker run --rm --privileged docker.io/tonistiigi/binfmt:latest --install all
+    - python -m pip install -U pip
+    - python -m pip install -e. pytest-custom-exit-code --group test
+    - python ./bin/run_tests.py
 
 windows:
-  image: mcr.microsoft.com/windows/servercore:1809
-  before_script:
-    - choco install python -y --version 3.12.4
-    - choco install git.install -y
-    - py -m pip install cibuildwheel==2.21.3
+  variables:
+    PYTEST_ADDOPTS: -k "unit_test or test_0_basic" --suppress-no-test-exit-code
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH =~ /^gitlab/'
+      variables:
+        # Everything except graalpy. GraalPy is JVM-based and very slow to
+        # start; on the small (2-core) GitLab SaaS Windows runners,
+        # virtualenv's interpreter query for graalpy.exe times out, failing
+        # the build. (Other platforms run the full "all" group.)
+        CIBW_ENABLE: "cpython-prerelease pypy pypy-eol pyodide-eol pyodide-prerelease"
   script:
-    - py -m cibuildwheel --output-dir wheelhouse --platform windows
-  artifacts:
-    paths:
-      - wheelhouse/
+    - python -m pip install -U pip
+    - python -m pip install -e. pytest-custom-exit-code --group test
+    - python bin\run_tests.py
   tags:
     - saas-windows-medium-amd64
 
 macos:
-  image: macos-14-xcode-15
-  before_script:
-    - python3 -m pip install cibuildwheel==2.21.3
+  image: macos-15-xcode-16
+  variables:
+    PYTEST_ADDOPTS: -k "unit_test or test_0_basic" --suppress-no-test-exit-code
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH =~ /^gitlab/'
+      variables:
+        CIBW_ENABLE: "all"
   script:
-    - python3 -m cibuildwheel --output-dir wheelhouse
-  artifacts:
-    paths:
-      - wheelhouse/
+    - python3 -m pip install -U pip
+    - python3 -m pip install -e. pytest-custom-exit-code --group test
+    - python3 ./bin/run_tests.py
   tags:
     - saas-macos-medium-m1
