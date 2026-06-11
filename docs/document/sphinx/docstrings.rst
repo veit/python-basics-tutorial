@@ -141,6 +141,18 @@ NumPy Style Guide:
            """
            return True
 
+.. note::
+   We also frequently use the NumPy Style Guide in agent-based software
+   development:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use numpy-style docstrings for all functions and classes you create.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:documentation`
+
 .. _napoleon:
 
 ``sphinx.ext.napoleon``

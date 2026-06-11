@@ -24,6 +24,20 @@ module that simplifies testing even further.
 * pytest has an extensive ecosystem with over 800 :doc:`plugins` for advanced
   testing requirements; unittest is more limited in its extensibility.
 
+.. note::
+   We also use pytest for agent-based software development:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      # Testing
+      - Use `pytest` for testing your code.
+      - Collect pytest fixtures in a `conftest.py` file to avoid duplication.
+      - When a test fails, run the last failed test first using `uv run pytest --last-failed`.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 .. seealso::
    The :doc:`Jupyter tutorial <jupyter-tutorial:notebook/testing/ipytest>`
    explains how pytest can also be used in Jupyter Notebooks.

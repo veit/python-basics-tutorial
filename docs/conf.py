@@ -12,6 +12,8 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import os
+
 # If extensions (or modules to document with autodoc) are in another
 # directory, add these directories to sys.path here. If the directory is
 # relative to the documentation root, use os.path.abspath to make it
@@ -19,7 +21,6 @@
 #
 # import sys
 # sys.path.insert(0, os.path.abspath("."))
-import os
 import re
 
 # Set canonical URL from the Read the Docs Domain
@@ -62,6 +63,10 @@ intersphinx_mapping = {
     "python3.14": ("https://docs.python.org/3.14/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/en/latest/", None),
     "Python4DataScience": ("https://www.python4data.science/en/latest/", None),
+    "agentic-software-engineering": (
+        "https://agentic-software-engineering.readthedocs.io/en/latest/",
+        None,
+    ),
     "pytest": ("https://docs.pytest.org/en/latest/", None),
     "Sybil": ("https://sybil.readthedocs.io/en/latest/", None),
 }

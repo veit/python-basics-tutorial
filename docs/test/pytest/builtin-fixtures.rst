@@ -314,6 +314,18 @@ The ``monkeypatch`` fixture offers the following functions:
        it is set, the value of the environment variable is changed to
        :samp:`{VALUE} + prepend + {OLD_VALUE}`
 
+.. note::
+   In agent-based software development, we try to avoid monkey patching as much
+   as possible:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Prefer testing real code where possible. Use mocks and `monkeypatch` when absolute necessary. Try to avoid mocking as much as possible.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 RMonkey patching of environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

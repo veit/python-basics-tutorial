@@ -175,3 +175,16 @@ Only then does he outline the following five steps::
 #. Go back to 2 until the list is empty
 
    Test and implement until the desired behaviour is achieved.
+
+.. note::
+   We also use test-driven development when we use coding agents to assist us
+   with software development:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use Test Driven Development (TDD) for all code you write. Write tests before writing the implementation code.
+      - When you come across a bug or regression, think hard about writing a test and also how to create code that will prevent this from a happening again in the future.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
