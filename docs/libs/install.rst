@@ -262,6 +262,20 @@ different environment using:
 :term:`uv` simplifies the creation of an initial project structure and the
 management of your dependencies.
 
+.. note::
+   Many coding agents typically use ``pip`` when installing packages or running
+   scripts. We therefore need to configure them first to use ``uv``:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use `uv` to manage Python environments and dependencies.
+      - Use `uv run` to execute Python scripts and commands.
+      - Don't edit `pyproject.toml` directly. Instead, use `uv add` and `uv add --dev` to manage dependencies.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:uv`
+
 Installation
 ~~~~~~~~~~~~
 

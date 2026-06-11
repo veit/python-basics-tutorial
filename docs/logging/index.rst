@@ -37,6 +37,21 @@ What are the advantages of  ``logging`` over  ``print``?
   `logging.disabled
   <https://docs.python.org/3/library/logging.html#logging.disable>`_.
 
+
+.. note::
+   We also use logging in agent-based software development to gain a more
+   detailed insight into errors:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      # Logging
+      - Use logging to provide insight into failures. Don’t use print for debugging. Don’t use logging to hide stack traces if you are going to fail anyway.
+      - Don't hide exceptions. Let them propagate up to the caller. If you need to catch an exception, log it and re-raise it.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:logging`
+
 .. seealso::
 
    * `loguru <https://github.com/Delgan/loguru>`_, which makes logging almost as

@@ -653,6 +653,20 @@ Glossary
          :doc:`Python4DataScience:productive/qa/pysa` and
          :doc:`Python4DataScience:productive/qa/wily`.
 
+         .. note::
+            We also use static code analysis and linting for the generated code
+            in agent-based software development:
+
+            .. code-block:: md
+               :caption: AGENTS.md
+
+               # Code quality and linting
+               - Use ruff, ty, prek, wily for code quality and linting.
+               - Run appropriate tooling after making changes to your code to ensure it meets quality standards.
+
+            .. seealso::
+               * :ref:`agentic-software-engineering:code-quality`
+
    Dynamic test procedures
        are used to find errors when executing the source code. A distinction is
        made between :term:`whitebox <Whitebox test>` and :term:`blackbox

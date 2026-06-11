@@ -115,6 +115,17 @@ in a docstring or in another text file are fulfilled.
       :lines: 38-
       :lineno-start: 38
 
+.. note::
+   We also have doctests written for agent-based software development:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Include doctests in the docstrings of your functions to provide examples
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:documentation`
+
 .. seealso::
    :doc:`doctest <python3:library/doctest>` can also be used to continuous test
    the documentation: :ref:`ci-docs`.
