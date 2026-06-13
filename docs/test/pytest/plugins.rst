@@ -487,6 +487,28 @@ therefore not surprising that there are several plugins that fulfil this need:
        :alt: License
        :target: https://github.com/pytest-dev/pytest-timeout?tab=MIT-1-ov-file#readme
 
+`pytest-describe <https://github.com/pytest-dev/pytest-describe>`_
+    is a plugin for pytest that allows tests to be written in arbitrarily nested
+    ``describe`` blocks, similar to `RSpec <https://rspec.info/>`_  for Ruby and
+    `Jasmine <https://jasmine.github.io/>`_ for JavaScript.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-describe
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-describe/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-describe
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-describe/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-describe
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-describe/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-describe
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-describe?tab=MIT-1-ov-file#readme
+
+
 :doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
     is a Pytest plugin for
     :doc:`Python4DataScience:data-processing/apis/grpc/index`.
