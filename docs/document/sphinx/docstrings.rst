@@ -141,6 +141,28 @@ NumPy Style Guide:
            """
            return True
 
+.. tip::
+   You can have your docstring syntax checked using the following :doc:`ruff
+   <Python4DataScience:productive/qa/ruff>` configuration:
+
+   .. code-block:: toml
+      :caption: pyproject.toml
+
+      [tool.ruff]
+      lint.pydocstyle.convention = "google"
+
+   or:
+
+   .. code-block:: toml
+      :caption: pyproject.toml
+
+      [tool.ruff]
+      lint.pydocstyle.convention = "numpy"
+
+   .. seealso::
+      * `lint.pydocstyle.convention
+        <https://docs.astral.sh/ruff/settings/#lint_pydocstyle_convention>`_
+
 .. note::
    We also frequently use the NumPy Style Guide in agent-based software
    development:
