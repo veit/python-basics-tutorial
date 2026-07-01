@@ -9,9 +9,13 @@ Tuples are created in a similar way to lists: a sequence of values is assigned
 to a variable, but these are enclosed in round brackets rather than square
 brackets:
 
+.. blacken-docs:off
+
 .. code-block:: pycon
 
    >>> x = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+
+.. blacken-docs:on
 
 This line creates a tuple with five elements. Once a tuple has been created, it
 can be used in a similar way to a list:
@@ -100,6 +104,8 @@ Tuples can appear on the left-hand side of an assignment operator. In this case,
 the variables in the tuple receive the corresponding values from the tuple on
 the right-hand side of the assignment operator. Here is a simple example:
 
+.. blacken-docs:off
+
 .. code-block:: pycon
 
    >>> (v, w, x, y, z) = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
@@ -107,6 +113,8 @@ the right-hand side of the assignment operator. Here is a simple example:
    1
    >>> w
    '2.'
+
+.. blacken-docs:on
 
 This example can be simplified even further, as Python recognises tuples in an
 assignment context even without the round brackets:
