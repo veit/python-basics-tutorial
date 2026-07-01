@@ -217,6 +217,44 @@ blacken-docs currently supports the following black options:
 * `target-version
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version>`_
 
+Spelling
+--------
+
+You can check spelling using `codespell
+<https://github.com/codespell-project/codespell>`_. It uses an enhanced version
+of the dictionaries available on `Wikipedia
+<https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines>`_.
+However, you can also provide your own dictionaries using the ``--builtin``
+option if required.
+
+You can configure ``codespell`` in :file:`pyproject.toml`, for example:
+
+.. code-block:: toml
+   :caption: pyproject.toml
+
+   [dependency-groups]
+   docs = [
+       "...",
+       "codespell",
+   ]
+
+   [tool.codespell]
+   ignore-words-list = "uint"
+   skip = "./.*, *.po, ./docs/_build"
+   count = true
+   quiet-level = 3
+
+You can run ``codespell`` automatically before every Git commit by adding the
+following to the :file:`.pre-commit-config.yaml` file:
+
+.. code-block:: yaml
+   :caption: .pre-commit-config.yaml
+
+   - repo: https://github.com/codespell-project/codespell
+     rev: 2ccb47ff45ad361a21071a7eedda4c37e6ae8c5a # v2.4.2
+     hooks:
+       - id: codespell
+
 `Vale <https://vale.sh>`_ goes beyond spelling and grammar checks. It also
 checks the language style: Is what is said repeated? Is the language too
 informal? Is the language inconsistent? Are undesirable clichés being used? Or
