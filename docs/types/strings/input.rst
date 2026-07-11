@@ -19,9 +19,9 @@ with the :class:`python3:int` or :class:`python3:float` function, for example, f
 
 .. code-block:: pycon
 
-    >>> import datetime
+    >>> import datetime as dt
     >>>
-    >>> currentDateTime = datetime.datetime.now()
+    >>> currentDateTime = dt.datetime.now()
     >>> year = currentDateTime.year
     >>> year_birth = input("Year of birth? ")
     Year of birth? 1964
