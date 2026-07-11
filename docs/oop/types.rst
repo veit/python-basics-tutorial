@@ -89,8 +89,13 @@ example with a simple inheritance hierarchy makes this clearer:
    :func:`python3:isinstance`
         determines whether, for example, a class passed to a function or method
         is of the expected type.
+
+   .. start-issubclass
+
    :func:`python3:issubclass`
         determines whether one class is the subclass of another.
+
+   .. end-issubclass
 
    .. code-block:: pycon
 
