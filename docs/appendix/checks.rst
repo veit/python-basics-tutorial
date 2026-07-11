@@ -109,12 +109,24 @@ Checks
 
 * Decide whether the following statements are true or false:
 
-  * ``1`` → True
-  * ``0`` → False
-  * ``-1`` → True
-  * ``[0]`` → True (List with one task)
-  * ``1 and 0`` → False
-  * ``1 > 0 or []`` → True
+  .. code-block:: console
+
+     >>> bool([0])
+     True
+     >>> bool(1)
+     True
+     bool(0)
+     False
+     >>> bool(-1)
+     True
+     >>> bool([0])  # Liste mit einem Element
+     True
+     >>> bool([])   # Liste mit keinem Element
+     False
+     >>> bool(1 and 0)
+     False
+     >>> bool(1 > 0 or [])
+     True
 
 :doc:`/types/sequences-sets/lists`
 ----------------------------------
