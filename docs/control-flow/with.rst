@@ -20,11 +20,11 @@ context manager.
 .. literalinclude:: with.py
    :linenos:
 
-A context manager is set up here, which encloses the :func:`open` function and
-the subsequent block. The predefined clean-up action of the context manager
-closes the file, even if an exception occurs. As long as the expression in the
-first line is executed without triggering an exception, the file is always
-closed. This code is equivalent to this code:
+A context manager is set up here, which encloses the :func:`python3:open`
+function and the subsequent block. The predefined clean-up action of the context
+manager closes the file, even if an exception occurs. As long as the expression
+in the first line is executed without triggering an exception, the file is
+always closed. This code is equivalent to this code:
 
 .. literalinclude:: with_alt.py
    :linenos:
