@@ -1,13 +1,13 @@
-Files and directories
+Files and Directories
 =====================
 
 :mod:`python3:pathlib` implements path operations using
 :class:`python3:pathlib.PurePath` and :class:`python3:pathlib.Path` objects. The
-:mod:`python3:os`  and :mod:`python3:os.path` modules, on the other hand, offer
-functions that work at a low level with ``str``- and ``bytes`` which is more in
-line with a procedural approach. We consider the object-oriented style of
-:mod:`python3:pathlib`  be more readable and therefore present it in more detail
-here.
+:mod:`python3:os` and :mod:`python3:os.path` modules, on the other hand, provide
+functions that work at a low level with ``str`` and ``bytes``, which is more in
+line with a procedural approach. We consider :mod:`python3:pathlib`’s
+object-oriented style to be more readable and will therefore cover it in greater
+detail here.
 
 .. seealso::
    * :pep:`428`: The pathlib module – object-oriented filesystem paths
@@ -15,55 +15,126 @@ here.
    * `Why you should be using pathlib <https://treyhunner.com/2018/12/why-you-should-be-using-pathlib>`_
    * `No really, pathlib is great <https://treyhunner.com/2019/01/no-really-pathlib-is-great>`_
 
-Reading and writing files
+Reading and Writing Files
 -------------------------
 
-In Python, you open and read a file by using the
-:meth:`python3:pathlib.Path.open` function and various built-in read operations.
-:meth:`python3:pathlib.Path.open` opens the file to which the path refers, as
-the built-in :func:`python3:open` function does. The following short Python
-programme reads a line from a text file named :file:`myfile.txt` in
-:file:`docs/save-data/`:
+In Python, you can open and read a file using the :class:`python3:pathlib.Path`
+class and various built-in read operations:
+
+:meth:`python3:pathlib.Path.read_text`
+    returns the decoded contents of the file pointed to by the pointer as a
+    string.
+:meth:`python3:pathlib.Path.write_text`
+    opens the specified file in text mode, writes to it and then closes the
+    file. An existing file with the same name will be overwritten.
+
+.. note::
+   You do not need to use a :doc:`with <../control-flow/with>` statement, as the
+   file is already opened using a context manager.
+
+.. tip::
+   However, when opening, reading and writing a file, you should always specify
+   the character encoding explicitly, as Python versions prior to 3.15 will
+   otherwise select a platform-dependent default encoding. An incorrect encoding
+   can, however, trigger an :doc:`exception <../control-flow/exceptions>` or
+   result in garbled text:
 
 .. code-block:: pycon
    :linenos:
 
    >>> from pathlib import Path
-   >>> p = Path("docs", "save-data", "myfile.txt")
-   >>> f = p.open()
-   >>> headline = f.readline()
+   >>> p = Path("docs", "save-data", "python.txt")
+   >>> p.write_text("🐍", encoding="utf-8")
+   1
+   >>> p.read_text(encoding="cp1252")
+   Traceback (most recent call last):
+     File "<python-input-3>", line 1, in <module>
+       p.read_text(encoding="cp1252")
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+       return f.read()
+              ~~~~~~^^
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/encodings/cp1252.py", line 23, in decode
+       return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 2: character maps to <undefined>
 
 Line 2:
-    The arguments of :class:`python3:pathlib.Path` are path segments, either as
-    :class:`PosixPath <pathlib.PosixPath>` or :class:`WindowsPath
+    The arguments passed to :class:`python3:pathlib.Path` are path segments,
+    either as :class:`PosixPath <pathlib.PosixPath>` or :class:`WindowsPath
     <pathlib.WindowsPath>`. In the previous example, you open a file that you
-    assume is located relative to your call in
-    :file:`docs/save-data/myfile.txt`.
+    assume is located at :file:`docs/save-data/python.txt`, relative to where
+    you are calling the function.
 
-    The following example opens a file at an absolute location –
-    :file:`C:\\My Documents\\myfile.txt`:
+    The following example specifies an absolute path –
+    :file:`C:\\Users\\Veit\\My Documents\\python.txt`:
 
     .. code-block:: pycon
        :lineno-start: 2
 
-       >>> p = Path("C:/", "Users", "Veit", "My Documents", "myfile.txt")
-       >>> with p.open() as f:
-       ...     f.readline()
-       ...
+       >>> p = Path("C:/", "Users", "Veit", "My Documents", "python.txt")
 
-    .. note::
-       In this example, the keyword ``with`` is used, which means that the file
-       is opened with a context manager, as explained in more detail in
-       :doc:`/control-flow/with`. This way of opening files handles potential
-       I/O errors better and should generally be preferred.
+We can suppress this exception using the ``errors`` argument. The default value
+for ``errors`` is ``strict``, which causes an exception to be raised.
 
-Line 3:
+Any faulty byte can be replaced with the corresponding Unicode replacement
+character (``U+FFFD``, �):
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="replace")
+   'ðŸ��'
+
+.. version-added:: 3.15
+   From Python 3.15 onwards, UTF-8 is used by default everywhere. Only once
+   support for Python 3.14 and earlier versions is discontinued will specifying
+   the ``encoding`` for UTF-8 files become optional.
+
+Alternatively, errors can also be ignored:
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="ignore")
+   'ðŸ'
+
+Or you can replace the bytes with an escape character:
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="backslashreplace")
+   'ðŸ\\x90\\x8d'
+
+The pure numerical byte value is specified by the hexadecimal digits following
+``\\x``.
+
+.. note::
+   The ``errors`` argument is only useful if decoding fails. Reading a file with
+   the wrong encoding **can** raise a ``UnicodeDecodeError``. However, it can
+   also simply result in garbled text without any error message if decoding with
+   the wrong encoding appears to succeed, meaning that seemingly valid
+   characters are displayed instead of an exception being raised. The ``errors``
+   argument cannot fix garbled text.
+
+If you prefer to use `open()` – whether with a :doc:`context manager
+<../control-flow/with>` or otherwise – you can use the :meth:`pathlib.Path.open`
+method of your :class:`pathlib.Path` object instead:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> with p.open(encoding="utf-8") as f:
+   ...     f.readline()
+   ...
+   '🐍'
+
+Line 1:
     :meth:`python3:pathlib.Path.open` does not read anything from the file, but
     returns a file object that you can use to access the opened file. It keeps
-    track of a file and how much of the file has been read or written. All file
-    operations in Python are performed with file objects, not file names.
+    track of a file and how much of it has been read or written. All file
+    operations in Python are carried out using file objects rather than file
+    names.
 
-Line 4:
+Line 2:
     The first call to :meth:`readline() <codecs.StreamReader.readline>` returns
     the first line of the file object, that is, everything up to and including
     the first line break, or the entire file if there is no line break in the
@@ -72,96 +143,83 @@ Line 4:
     <codecs.StreamReader.readline>` returns an empty string.
 
 This behaviour of :meth:`readline() <codecs.StreamReader.readline>` makes it
-easy to determine, for example, the number of lines in a file:
+easy, for example, to determine the number of lines in a file:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     lc = 0
    ...     while f.readline() != "":
    ...         lc = lc + 1
    ...     print(lc)
    ...
-   2
+   1
 
-A shorter way to count all lines is to use the built-in :meth:`readlines()
-<codecs.StreamReader.readlines>` method, which reads all lines of a file and
+A quicker way to count all the lines is to use the built-in :meth:`readlines()
+<codecs.StreamReader.readlines>` method, which reads all the lines of a file and
 returns them as a list of strings, with one string per line:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     print(len(f.readlines()))
    ...
-   2
+   1
 
-However, if you count all lines in a large file, this method can cause memory to
-overflow because the entire file is read at once. It is also possible for memory
-to overflow with :meth:`readline() <codecs.StreamReader.readline>` if you try to
-read a line from a large file that does not contain line break characters. To
-better handle such situations, both methods have an optional argument that
-affects the amount of data read at a time. Another way to iterate over all lines
-of a file is to treat the file object as an iterator in a :ref:`for-loop`:
+However, if you are counting all the lines in a large file, this method may
+cause the buffer to overflow, as the entire file is read in one go. It is also
+possible for the buffer to overflow when using :meth:`readline()
+<codecs.StreamReader.readline>` if you attempt to read a line from a large file
+that contains no line-break characters. To better handle such situations, both
+methods have an optional argument that controls the amount of data read at any
+one time. Another way to iterate through all the lines of a file is to treat the
+file object as an iterator within a :ref:`for-loop`:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     lc = 0
    ...     for l in f:
    ...         lc = lc + 1
    ...     print(lc)
    ...
-   2
+   1
 
-This method has the advantage that the lines are read into memory as needed, so
-even with large files, there is no need to worry about running out of memory.
-The other advantage of this method is that it is simpler and more readable.
+The advantage of this method is that the lines are read into memory as and when
+required, so there is no risk of running out of memory, even with large files.
+Another advantage of this method is that it is simpler and easier to read.
 
-However, a potential problem with the read method can arise if translations are
-performed in text mode on Windows and macOS when you use the :func:`open`
-command in text mode, in other words, without appending a ``b``. In text mode,
-macOS converts every ``\r`` to ``\n``, while Windows converts ``\r\n`` pairs to
-``\n``. You can specify how line breaks are handled by using the newline
-parameter when opening the file and specifying ``newline="\n"``, ``\r`` or
-``\r\n``, which will only use that string as a line break:
+However, a potential problem with the read method can arise when working on
+Windows and macOS in text mode, if you use the :func:`open` command in text
+mode, meaning without appending a ``b``. In text mode, macOS converts every
+``\r`` to ``\n``, whilst Windows converts ``\r\n`` pairs to ``\n``. You can
+specify how line breaks are handled by using the newline parameter when opening
+the file and setting ``newline="\n"``, ``\r`` or ``\r\n``, which ensures that
+only that character sequence is used as a line break:
 
 .. code-block:: pycon
 
-   >>> with p.open(newline="\r\n") as f:
+   >>> with p.open(encoding="utf-8", newline="\r\n") as f:
    ...     lc = 0
    ...
 
-In this example, only ``\n`` is interpreted as a line break. However, if the
-file was opened in binary mode, the ``newline`` parameter is not necessary, as
-all bytes are returned exactly as they appear in the file.
+In this example, only ``\n`` is treated as a line break. However, if the file is
+opened in binary mode, the ``encoding`` and ``newline`` arguments are
+meaningless, as all bytes are returned exactly as they appear in the file:
 
-:meth:`python3:pathlib.Path.read_text`
-    returns the decoded content of the specified file as a string:
+.. code-block:: pycon
 
-    .. code-block:: pycon
-
-       >>> p.read_text()
-       'This is the first line of myfile.\nAnd this is another line.\n'
-
-:meth:`python3:pathlib.Path.write_text`
-    opens the specified file in text mode, writes data to it, and closes the
-    file:
-
-    .. code-block:: pycon
-
-       >>> p.write_text("New content")
-       11
-       >>> p.read_text()
-       'New content'
-
-    An existing file with the same name will be overwritten.
+   >>> with p.open(mode="rb") as f:
+   ...     print(len(f.readlines()))
+   ...
+   1
 
 Reading directories
 -------------------
 
 :meth:`python3:pathlib.Path.iterdir`
-    If the path refers to a directory, the path objects of the directory
-    contents are returned:
+    If the path points to a directory, the path objects representing the
+    directory’s contents are returned:
 
     .. code-block:: pycon
 
@@ -176,8 +234,8 @@ Reading directories
        PosixPath('docs/save-data/books.xml')
        PosixPath('docs/save-data/files.rst')
 
-The child objects are returned in arbitrary order, and the special entries ``.``
-and ``..`` are not included. If the path is not a directory or is otherwise
+The child objects are returned in any order, and the special entries ``.`` and
+``..`` are not included. If the path is not a directory or is otherwise
 inaccessible, an :exc:`python3:OSError` is raised.
 
 :meth:`python3:pathlib.Path.glob`
@@ -193,23 +251,22 @@ inaccessible, an :exc:`python3:OSError` is raised.
        :ref:`python3:pathlib-pattern-language`
 
 :meth:`python3:pathlib.Path.rglob`
-    recursively finds the specified relative pattern. This corresponds to
-    calling with ``**/`` before the pattern.
+    recursively matches the specified relative pattern. This is equivalent to
+    calling the function with ``**/`` before the pattern.
 
 :meth:`python3:pathlib.Path.walk`
-    generates the file names in a directory structure by traversing the
-    structure either from top to bottom or from bottom to top. It returns a
-    3-tuple consisting of ``(dirpath, dirnames, filenames)``.
+    generates the filenames within a directory structure by traversing the
+    structure either top-down or bottom-up. It returns a 3-tuple consisting of
+    (``dirpath, dirnames, filenames``).
 
-    With the default setting of the optional argument ``top_down=True``, the
-    triple for a directory is generated before the triples for its
-    subdirectories.
+    With the default setting for the optional argument ``top_down=True``, the
+    tuple for a directory is generated before the tuples for its subdirectories.
 
-    With ``follow_symlinks=True``, symlinks are resolved and placed in
+    When ``follow_symlinks=True``, symlinks are resolved and placed in
     ``dirnames`` and ``filenames`` according to their targets.
 
-    The following example shows the size of the files in a directory, ignoring
-    :file:`__pycache__` directories:
+    The following example displays the sizes of the files in a directory,
+    ignoring  :file:`__pycache__` directories:
 
     .. code-block:: pycon
 
@@ -230,8 +287,8 @@ inaccessible, an :exc:`python3:OSError` is raised.
 
     The next example is a simple implementation of
     :func:`python3:shutil.rmtree`, whereby the directory tree must be traversed
-    from bottom to top, as :meth:`python3:pathlib.Path.rmdir` only allows a
-    directory to be deleted if it is empty:
+    from the bottom up, as :meth:`python3:pathlib.Path.rmdir` only allows a
+    directory to be deleted once it is empty:
 
     .. code-block:: pycon
 
@@ -246,31 +303,31 @@ Creating files and directories
 ------------------------------
 
 :meth:`python3:pathlib.Path.touch`
-    creates a file at the specified path. ``mode`` can be used to specify the
-    file mode and access flags. If the file already exists, the modification
-    time is updated to the current time if ``exist_ok=True``, otherwise a
-    :class:`python3:FileExistsError` is raised.
+    creates a file at the specified path. The ``mode`` parameter can be used to
+    specify the file mode and access flags. If the file already exists, the
+    modification time is updated to the current time provided that
+    ``exist_ok=True``; otherwise, a :class:`python3:FileExistsError` is raised.
 
     .. note::
-       :meth:`python3:pathlib.Path.open` or :meth:`pathlib.Path.write_text`
-       are also often used to create files.
+      :meth:`python3:pathlib.Path.open` or :meth:`pathlib.Path.write_text` are
+      also frequently used to create files.
 
 :meth:`python3:pathlib.Path.mkdir`
-    creates a new directory under the specified path. The parameters ``mode``
-    and ``exist_ok`` work as specified in :meth:`python3:pathlib.Path.touch`.
+    creates a new directory at the specified path. The parameters ``mode`` and
+    ``exist_ok`` function as described in :meth:`python3:pathlib.Path.touch`.
 
-    If ``parents=True``, missing parent directories of the path are created as
-    needed with the default permissions. With the default setting
-    ``parents=False``, however, :class:`python3:FileNotFoundError` is triggered.
+    If ``parents=True``, any missing parent directories in the path are created
+    as required with the default permissions. With the default setting of
+    ``parents=False``, however, a :class:`python3:FileNotFoundError` is raised.
 
-Renaming, copying and deleting
-------------------------------
+Move, Copy and Delete
+---------------------
 
 :meth:`python3:pathlib.Path.rename`
     renames the file or directory to the specified destination and returns a new
     :class:`python3:pathlib.Path` instance that points to the destination. On
-    Unix, if the destination exists and is a file, it is simply replaced; on
-    Windows, a :class:`python3:FileExistsError` is raised.
+    Unix, provided the destination exists and is a file, it is simply
+    overwritten; on Windows, :class:`python3:FileExistsError` is raised.
 
     .. code-block:: pycon
 
@@ -279,32 +336,34 @@ Renaming, copying and deleting
        >>> myfile.rename(newfile)
        PosixPath('docs/newdir/newfile.txt')
 
-.. versionadded:: 3.14
-   The methods :meth:`pathlib.Path.copy`, :meth:`pathlib.Path.copy_into`,
-   :meth:`pathlib.Path.move` and :meth:`pathlib.Path.move_into` are added.
+.. version-added:: 3.14
+   Python 3.14 introduces the methods :meth:`pathlib.Path.copy`,
+   :meth:`pathlib.Path.copy_into`, :meth:`pathlib.Path.move` and
+   :meth:`pathlib.Path.move_into`.
 
    .. seealso::
       `Python 3.14 Changelog
       <https://docs.python.org/3.14/whatsnew/3.14.html#pathlib>`_
 
-Permissions and ownership
+Permissions and Ownership
 -------------------------
 
 :meth:`python3:pathlib.Path.owner`
-    returns the name of the person who owns the file. Normally, symlinks are
-    followed, but if you want to determine the person who owns the symlink, add
-    ``follow_symlinks=False``. If the user ID (UID) of the file is not found, a
-    :class:`python3:KeyError` is raised.
+    returns the name of the person who owns the file. By default, symbolic links
+    are followed; however, if you wish to determine who owns the symbolic link,
+    add ``follow_symlinks=False``. If the user ID (UID) of the file cannot be
+    found, a :class:`python3:KeyError` is raised.
 
 :meth:`python3:pathlib.Path.group`
-    returns the name of the group that owns the file. The behaviour for symlinks
-    is the same as for :meth:`python3:pathlib.Path.owner`. And if the group ID
-    (GID) of the file is not found, a :class:`python3:KeyError` is also raised.
+    returns the name of the group that owns the file. The behaviour with regard
+    to symbolic links is the same as that of :meth:`python3:pathlib.Path.owner`.
+    If the group ID (GID) of the file cannot be found, a
+    :class:`python3:KeyError` is also raised.
 
 :meth:`python3:pathlib.Path.chmod`
-    changes the file mode and permissions. Symlinks are normally followed. To
-    change the symlink permissions, you can use ``follow_symlinks=False`` or
-    :meth:`python3:pathlib.Path.lchmod`.
+    changes the file mode and permissions. By default, it follows symbolic
+    links. To change the permissions of symbolic links, you can use
+    ``follow_symlinks=False`` or :meth:`python3:pathlib.Path.lchmod`.
 
 .. _os-comparison:
 
