@@ -31,7 +31,7 @@ License-File = [ "LICENSE" ]
 
 [dependency-groups]
 dev = [
-  "pre-commit",
+  "prek",
   { include-group = "docs" },
   { include-group = "tests" },
 ]

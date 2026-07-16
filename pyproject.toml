@@ -25,7 +25,7 @@ urls.Homepage = "https://github.com/veit/python-basics-tutorial/"
 [dependency-groups]
 dev = [
   "codespell",
-  "pre-commit",
+  "prek",
   "vale",
   { include-group = "docs" },
 ]

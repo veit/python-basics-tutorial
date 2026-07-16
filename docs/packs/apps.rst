@@ -150,8 +150,8 @@ specific version.
 
 .. tip::
    You can also use the
-   :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` to
-   regularly update your :file:`uv.lock` file:
+   :doc:`Python4DataScience:productive/git/advanced/hooks/prek` to regularly
+   update your :file:`uv.lock` file:
 
    .. code-block:: yaml
       :caption: .pre-commit-config.yaml

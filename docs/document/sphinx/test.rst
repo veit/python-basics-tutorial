@@ -144,8 +144,8 @@ reST formatting
 Whether the :doc:`Sphinx <start>` documentation is written in valid :doc:`rest`
 format can be checked with `sphinx-lint
 <https://pypi.org/project/sphinx-lint/>`_. We usually include this in our
-:doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>` configuration:
+:doc:`prek <Python4DataScience:productive/git/advanced/hooks/prek>`
+configuration:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
@@ -194,10 +194,10 @@ Code formatting
 The formatting of code blocks can be checked with `blacken-docs
 <https://github.com/adamchainz/blacken-docs>`_, which uses
 :doc:`Python4DataScience:productive/qa/black`. We usually integrate the library
-via the :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>` framework:
+via :doc:`prek <Python4DataScience:productive/git/advanced/hooks/prek>`:
 
 .. code-block:: yaml
+   :caption: .pre-commit-config.yaml
 
    - repo: https://github.com/adamchainz/blacken-docs
      rev: 7ae9389351f4090e3993de28015a05a18ca6b8a7 # v1.12.1
@@ -310,8 +310,8 @@ You should then update your :ref:`.gitignore <gitignore>` file if necessary:
 
    styles/*
 
-You can configure Vale for the :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>` framework with:
+You can configure Vale for :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>` with:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
@@ -381,8 +381,8 @@ example with
    commands =
        interrogate --quiet --fail-under 95 src tests
 
-You can also use ``interrogate`` with :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>`:
+You can also use ``interrogate`` with :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>`:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
