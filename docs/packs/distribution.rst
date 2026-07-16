@@ -317,7 +317,7 @@ Dependency groups
 
 Recursive dependency groups are also possible. For example, for ``dev`` you can
 take over all dependencies from ``docs`` and ``test`` in addition to
-``pre-commit``:
+``prek``:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml

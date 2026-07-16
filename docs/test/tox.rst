@@ -370,7 +370,7 @@ We can also call individual tests with tox by making another change so that
    [tool.tox]
    requires = [ "tox>=4" ]
    env_list = [
-     "pre-commit",
+     "prek",
      "docs",
      "py3{10-14}",
      "py{13-14}t",
