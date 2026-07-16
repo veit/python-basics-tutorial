@@ -149,9 +149,8 @@ specific version.
       $ uv sync --exclude-newer-package "{PACKAGE}=P0D"
 
 .. tip::
-   You can also use the
-   :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` to
-   regularly update your :file:`uv.lock` file:
+   You can also use :doc:`Python4DataScience:productive/git/advanced/hooks/prek`
+   to regularly update your :file:`uv.lock` file:
 
    .. code-block:: yaml
       :caption: .pre-commit-config.yaml
@@ -160,6 +159,7 @@ specific version.
         rev: 6a280ba12b7901e47757c868c8c13c6a624c9ecb # 0.11.7
         hooks:
           - id: uv-lock
+            args: ["--exclude-newer = 'P3D'", "--quiet"]
 
 Restrict platform and Python versions
 -------------------------------------
