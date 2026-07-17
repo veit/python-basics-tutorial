@@ -61,6 +61,10 @@ In the ``[tool.tox.env_run_base]`` section, ``dependency_groups`` specifies
 ``tests``. This tells tox that the corresponding libraries should be installed
 in this environment. Finally, ``commands`` instructs tox to run ``pytest``.
 
+The configuration for a specific environment could be added using
+:samp:`tool.tox.env.{ENV_NAME}`, and the base configuration for packages using
+:samp:`tool.tox.env_pkg_base`.
+
 Executing tox
 -------------
 
