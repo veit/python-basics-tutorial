@@ -141,6 +141,28 @@ or
 
    (.venv) $ python -m pip install "pandas>=2"
 
+However, ``pip`` does not usually carry out any checks to protect against
+tampering and allows arbitrary code from the distributions to be executed. You
+can, however, use ``pip`` in a way that ensures more secure installation
+mechanisms:
+
+``--require-hashes``
+    enables hash verification mode.
+
+    This ensures that hashes have been provided in the requirements file. It is
+    also a convenient way to create a list of hashes yourself, as it displays
+    the hashes of the downloaded packages. However, only the preferred archive
+    is downloaded for each package, so you may still need to add hashes for
+    alternative archives using :samp:`pip hash {PACKAGE_NAME}` – for example, if
+    different operating system variants are available.
+
+``--only-binary :all:``
+    prevents source code from being provided.
+
+.. seealso::
+   * `Secure installs <https://pip.pypa.io/en/stable/topics/secure-installs/>`_
+   * `pip hash <https://pip.pypa.io/en/stable/cli/pip_hash/>`_
+
 Proxy server
 ~~~~~~~~~~~~
 
