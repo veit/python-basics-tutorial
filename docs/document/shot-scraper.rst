@@ -1,8 +1,8 @@
 shot-scraper
 ============
 
-`shot-scraper <https://simonwillison.net/2022/Mar/10/shot-scraper/>`_ is a tool
-to automate the process of updating screenshots.
+`shot-scraper <https://shot-scraper.datasette.io/en/stable/>`_ is a tool to
+automate the process of updating screenshots.
 
 Installation
 ------------
@@ -15,50 +15,77 @@ Installation
 .. note::
    The second line installs the required browser.
 
+.. seealso::
+   `shot-scraper Installation
+   <https://shot-scraper.datasette.io/en/stable/installation.html>`_
+
 Use
 ---
 
-shot-scraper can be used in two ways
+shot-scraper can be used in several ways
 
 #. …for single screenshots on the command line:
 
    .. code-block:: console
 
-        $  shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
+      $ uv run shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
 
-   …or with additional options, e.g. for JavaScript and CSS selectors:
+   …or with additional options, for example for JavaScript and CSS selectors:
 
-    .. code-block::
+   .. code-block:: console
 
-        $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
+      $ uv run shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
 
 #. …for a set of screenshots configured in a YAML file:
 
    .. code-block:: yaml
 
-        - url: https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html
-          output: ~/Downloads/clean-prep.png
-        - url: https://www.example.org/
-          width: 736
-          quality: 40
-          output: example.jpg
+      - url: https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html
+        output: ~/Downloads/clean-prep.png
+      - url: https://www.example.org/
+        width: 736
+        quality: 40
+        output: example.jpg
 
    Afterwards ``shot-scraper multi`` can be used, for example:
 
    .. code-block:: console
 
-        $ shot-scraper multi shots.yaml
-        Screenshot of 'https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html' written to '~(Downloads/clean-prep.png'
-        Screenshot of 'https://www.example.org/' written to 'example.jpg'
+      $ shot-scraper multi shots.yaml
+      Screenshot of 'https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html' written to '~(Downloads/clean-prep.png'
+      Screenshot of 'https://www.example.org/' written to 'example.jpg'
 
    .. seealso::
-      * In the `README.md
-        <https://github.com/simonw/shot-scraper/blob/main/README.md>`_ file you
-        will find a complete overview of the possible options.
-      * In the shot-scraper-demo repository you will find a much more
-        comprehensive `shots.yaml
-        <https://github.com/simonw/shot-scraper-demo/blob/main/.github/workflows/shots.yml>`_
-        file.
+      * `Taking multiple screenshots
+        <https://shot-scraper.datasette.io/en/stable/multi.html>`_
+
+#. …for videos:
+
+   The ``shot-scraper video`` command captures a WebM video based on a
+   :doc:`Python4DataScience:data-processing/serialisation-formats/yaml/index`
+   storyboard. Storyboards describe the video as a sequence of scenes. Each
+   scene can open a page, wait for content, perform actions and pause between
+   steps, for example:
+
+   .. literalinclude:: storyboard.yml
+      :caption: storyboard.yml
+      :language: yaml
+
+   Then run the following command:
+
+   .. code-block:: console
+
+      $ uv run shot-scraper video storyboard.yml
+
+   This opens ``url``, records the scenes and saves the video as
+   :file:`demo.webm`.
+
+   As long as `FFmpeg <https://www.ffmpeg.org/>`_ is installed, you can use the
+   ``--mp4`` option to convert the recorded WebM video to MP4 as well.
+
+   .. seealso::
+      * `Recording videos
+        <https://shot-scraper.datasette.io/en/stable/video.html>`_
 
 GitHub Actions
 --------------
