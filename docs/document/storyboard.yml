@@ -1,0 +1,34 @@
+output: demo.webm
+url: https://python-basics-tutorial.readthedocs.io/en/latest/
+
+viewport:
+  width: 1280
+  height: 720
+
+cursor: true
+wait_for: "text=Python für Data Science"
+
+scenes:
+- name: Home
+  do:
+  - pause: 1
+
+- name: Introduction
+  do:
+  - click: ".sidebar-tree a[href='intro.html']"
+  - wait_for: 'h1:has-text("Introduction")'
+  - screenshot: intro.png
+  - pause: 1
+
+- name: Search
+  do:
+  - click: "input.sidebar-search"
+  - type:
+      into: "input.sidebar-search"
+      text: "shot-scraper"
+      delay_ms: 25
+  - press:
+      selector: "input.sidebar-search"
+      key: Enter
+  - wait_for: "text=Search Results"
+  - pause: 2
