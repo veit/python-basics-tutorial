@@ -368,6 +368,8 @@ requires neither a password nor a token. Only the following steps are required:
               username: __token__
               password: ${{ secrets.PYPI_TOKEN }}
 
+.. _package-attestations:
+
 Since 14 November 2024, :term:`PyPI` also supports :pep:`740` with `Digital
 Attestations <https://docs.pypi.org/attestations/>`_. PyPI uses the
 `in-toto Attestation Framework <https://github.com/in-toto/attestation>`_ to
