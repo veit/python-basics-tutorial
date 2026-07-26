@@ -410,8 +410,9 @@ zizmor
 ~~~~~~
 
 `zizmor <https://docs.zizmor.sh>`_ can detect and resolve many security issues
-in typical GitHub Actions CI/CD configurations. zizmor is designed to integrate
-with GitHub Actions. A typical GitHub Action we use for zizmor looks like this:
++in typical GitHub Actions CI/CD configurations, such as
++:ref:`token_exfiltration`. zizmor is designed to integrate with GitHub Actions.
++A typical GitHub Action we’ve created for zizmor looks like this:
 
 .. code-block:: yaml
    :caption: .github/workflows/zizmor.yml
@@ -446,6 +447,22 @@ with GitHub Actions. A typical GitHub Action we use for zizmor looks like this:
            uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8 # v0.5.2
            with:
              persona: pedantic
+
+However, you can also use zizmor as a pre-commit check to identify issues before
+they are pushed:
+
+.. code-block:: yaml
+   :caption: .pre-commit-config.yaml
+
+   - repo: https://github.com/zizmorcore/zizmor-pre-commit
+     rev: 067260dc5fe6ea86b7551bfd6f8b3ba4e6c93129 # v1.28.0
+     hooks:
+       - id: zizmor
+
+zizmor also features a `VS Code integration
+<https://marketplace.visualstudio.com/items?itemName=zizmor.zizmor-vscode>`_ and
+can be run as an LSP server (``zizmor --lsp``) to provide feedback in any
+editor.
 
 .. _add_2fa:
 
