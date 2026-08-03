@@ -146,6 +146,24 @@ usual sequence of a test:
     .. image:: https://raster.shields.io/github/license/tonybaloney/pytest-freethreaded
        :alt: License
        :target: https://github.com/tonybaloney/pytest-freethreaded?tab=MIT-1-ov-file#readme
+`pytest-leak-finder <https://github.com/mgaitan/pytest-leak-finder>`_
+    for binary search of test artefacts.
+
+    .. image:: https://raster.shields.io/github/stars/mgaitan/pytest-leak-finder
+       :alt: Stars
+       :target: https://github.com/mgaitan/pytest-leak-finder/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/mgaitan/pytest-leak-finder
+       :alt: Contributors
+       :target: https://github.com/mgaitan/pytest-leak-finder/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/mgaitan/pytest-leak-finder
+       :alt: Commit activity
+       :target: https://github.com/mgaitan/pytest-leak-finder/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/mgaitan/pytest-leak-finder
+       :alt: License
+       :target: https://github.com/mgaitan/pytest-leak-finder?tab=MIT-1-ov-file
 
 … modified output
 ~~~~~~~~~~~~~~~~~
