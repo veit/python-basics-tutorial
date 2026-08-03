@@ -16,6 +16,11 @@ emergencies when we need to start branches for older versions.
 `Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/25.1.0...HEAD>`_
 ---------------------------------------------------------------------------------------
 
+Added
+~~~~~
+
+* 📝 Add pytest-leak-finder
+
 Changed
 ~~~~~~~
 
