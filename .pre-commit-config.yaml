@@ -15,7 +15,7 @@ repos:
     - id: check-added-large-files
       args: ['--maxkb=1024']
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: cf78bb920f358be6dea099e6b1fd6f67bccb0955 # v2.25.2
+    rev: d600c142bb19f521ae6a6a345f94a2efd7937759 # frozen: v2.26.0
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
@@ -46,7 +46,7 @@ repos:
       additional_dependencies:
       - black
   - repo: https://github.com/codespell-project/codespell
-    rev: 2ccb47ff45ad361a21071a7eedda4c37e6ae8c5a # v2.4.2
+    rev: 57b21406f092110c18776e39b0bda50d37c945c8 # frozen: v2.4.3
     hooks:
     - id: codespell
   - repo: local
