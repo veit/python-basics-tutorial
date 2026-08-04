@@ -4,7 +4,7 @@ Changelog
 All significant changes to this project are documented in this file.
 
 The format is based on `Keep a Changelog
-<https://keepachangelog.com/en/1.0.0/>`_ and this project adheres to `Calendar
+<https://keepachangelog.com/en/2.0.0/>`_ and this project adheres to `Calendar
 Versioning <https://calver.org>`_.
 
 The first number of the version is the year. The second number is incremented
