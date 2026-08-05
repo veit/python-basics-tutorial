@@ -18,7 +18,7 @@ Basically, a distinction is made between static and dynamic test procedures.
    unittest
    pytest/index
    tox
-   mock
+   mock/index
    hypothesis
    tdd
    bdd

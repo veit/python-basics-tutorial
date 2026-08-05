@@ -404,7 +404,8 @@ therefore not surprising that there are several plugins that fulfil this need:
        :target: https://github.com/pytest-dev/pytest-cov?tab=MIT-1-ov-file#readme
 
 `pytest-mock <https://pypi.org/project/pytest-mock/>`_
-    is a thin wrapper around the  :doc:`unittest.mock <../mock>` patching API.
+    is a thin wrapper around the  :doc:`unittest.mock <../mock/index>` patching
+    API.
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-mock
        :alt: Stars

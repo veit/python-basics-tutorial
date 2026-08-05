@@ -260,9 +260,10 @@ environment of the application code and replace either input or output
 dependencies with objects or functions that are more suitable for testing. With
 the built-in fixture ``monkeypatch`` you can do this in the context of a single
 test. It is used to change objects, dicts, environment variables, ``PYTHONPATH``
-or the current directory. It’s like a mini version of :doc:`../mock`. And when
-the test ends, regardless of whether it passes or fails, the original, unpatched
-code is restored and everything that was changed by the patch is undone.
+or the current directory. It’s like a mini version of :doc:`../mock/index`. And
+when the test ends, regardless of whether it passes or fails, the original,
+unpatched code is restored and everything that was changed by the patch is
+undone.
 
 .. seealso::
    `How to monkeypatch/mock modules and environments

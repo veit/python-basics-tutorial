@@ -684,7 +684,7 @@ Glossary
 
        :doc:`/test/unittest`
            supports you in the automation of tests.
-       :doc:`/test/mock`
+       :doc:`/test/mock/index`
            allows you to create and use :term:`Mock` objects.
        :doc:`../document/doctest`
            allows you to test tests written in Python :term:`docstrings
@@ -738,9 +738,10 @@ Glossary
        result, but also to check **how** the result was achieved or whether the
        correct methods were called.
 
-       The Python library for mocks is :doc:`unittest.mock <../test/mock>`. It
-       is also supported by :doc:`../test/pytest/index`. Alternatively, however,
-       you can also use `pytest-mock <https://pypi.org/project/pytest-mock/>`_.
+       The Python library for mocks is :doc:`unittest.mock
+       <../test/mock/index>`. It is also supported by
+       :doc:`../test/pytest/index`. Alternatively, however, you can also use
+       `pytest-mock <https://pypi.org/project/pytest-mock/>`_.
 
        .. seealso::
           * `Mock object <https://en.wikipedia.org/wiki/Mock_object>`_
