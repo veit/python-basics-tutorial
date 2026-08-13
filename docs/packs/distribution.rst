@@ -111,7 +111,7 @@ as:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-21, 23-25, 42-
+   :lines: 5-20, 22-24, 41-
    :lineno-start: 5
 
 ``name``
@@ -260,6 +260,9 @@ as:
     specifies the versions of Python that are supported by your project. This
     will cause installers like :term:`pip` to search through older versions of
     packages until they find one that has a matching Python version.
+
+.. _classifiers:
+
 ``classifiers``
     gives the :term:`Python Package Index` (:term:`PyPI`) and :term:`pip` some
     additional metadata about your package. In this case, the package is only
@@ -310,10 +313,10 @@ Dependency groups
     allows you to specify dependency groups for your package. You can also
     distinguish between different sets:
 
-.. literalinclude:: dataprep/pyproject.toml
-   :language: toml
-   :lines: 34, 40-45
-   :lineno-start: 34
+    .. literalinclude:: dataprep/pyproject.toml
+       :language: toml
+       :lines: 32, 38-43
+       :lineno-start: 32
 
 Recursive dependency groups are also possible. For example, for ``dev`` you can
 take over all dependencies from ``docs`` and ``test`` in addition to
@@ -321,8 +324,8 @@ take over all dependencies from ``docs`` and ``test`` in addition to
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 35-39
-   :lineno-start: 35
+   :lines: 33-37
+   :lineno-start: 33
 
 You can install these dependency groups, for example with:
 
