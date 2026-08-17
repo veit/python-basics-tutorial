@@ -24,6 +24,15 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update decorators
+
+  * Add functools.singledispatch
+  * Add additional decorators
+
+    * Python compilers
+    * concurrency
+    * Memory profiling
+
 * 👷🔧📝 Switch to prek
 
   * Remove pre-commit
