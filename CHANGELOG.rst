@@ -19,6 +19,7 @@ emergencies when we need to start branches for older versions.
 Added
 ~~~~~
 
+* 📝 Add timezones
 * 📝 Add pytest-leak-finder
 
 Changed

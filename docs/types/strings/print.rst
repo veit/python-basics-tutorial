@@ -205,8 +205,8 @@ F-string:
    >>> print(f"My name is {uid.capitalize()=}")
    My name is uid.capitalize()='Veit'
 
-Formatting date and time formats
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formatting date, time formats and timezones
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :py:mod:`datetime` supports the formatting of strings using the same syntax as
 the :py:meth:`datetime.strftime <datetime.datetime.strftime>` method for these
@@ -238,6 +238,28 @@ Conversely, you can also use :meth:`datetime.strptime
    ISO 8601 with time zone, "2025-07-11T18:46:49+0100",  "%Y-%m-%dT%H:%M:%S%z"
    RFC 2822,                "Fr, 11 Jul 2025 18:46:49",  "%a, %d %b %Y %H:%M:%S"
    RFC 3339 with time zone, "2025-07-11 18:46:49+0100",  "%Y-%m-%d %H:%M:%S%z"
+
+.. code-block:: pycon
+
+   >>> import datetime as dt
+   >>> from zoneinfo import ZoneInfo
+   >>> ZONES = [
+   ...     ("San Francisco", "America/Los_Angeles"),
+   ...     ("New York", "America/New_York"),
+   ...     ("London", "Europe/London"),
+   ...     ("Berlin", "Europe/Berlin"),
+   ...     ("Helsinki", "Europe/Helsinki"),
+   ... ]
+   >>> width = max(len(name) for name, _ in ZONES)
+   >>> for name, tz in ZONES:
+   ...     local = now.astimezone(ZoneInfo(tz))
+   ...     print(f"{name:<{width}}  {local:%Y-%m-%d %H:%M  UTC%z  %Z}")
+   ...
+   San Francisco  2026-08-29 08:19  UTC-0700  PDT
+   New York       2026-08-29 11:19  UTC-0400  EDT
+   London         2026-08-29 16:19  UTC+0100  BST
+   Berlin         2026-08-29 17:19  UTC+0200  CEST
+   Helsinki       2026-08-29 18:19  UTC+0300  EEST
 
 Formatting IP addresses
 ~~~~~~~~~~~~~~~~~~~~~~~
