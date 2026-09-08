@@ -11,6 +11,7 @@ What is a module?
 
 A module is a file that contains code. It defines a group of Python functions or
 other objects, and the name of the module is derived from the name of the file.
+
 Modules usually contain Python source code [#]_, group related Python objects
 together and help to avoid naming conflicts. You can write a module called
 ``mymodule`` for your programme that defines a function called ``my_func``. In
@@ -20,9 +21,25 @@ something different from your ``my_func`` function. Without modules, it would be
 impossible to use two different functions with the same name. With modules, you
 can refer to the functions ``mymodule.my_func`` and ``othermodule.my_func`` in
 your main programme. Using the module names ensures that the two ``my_func``
-functions are not confused, as Python uses so-called namespaces. A namespace is
-essentially a dictionary of names for the functions, classes, modules,
-:abbr:`etc. (et cetera)` available there.
+functions are not confused, as Python uses so-called :doc:`../oop/namespaces`. A
+namespace is essentially a :doc:`dictionary <../types/dicts>` of names for the
+functions, classes, modules, :abbr:`etc. (et cetera)` available there.
+
+    Namespaces are one honking great idea – let’s do more of those!
+
+– `The Zen of Python <https://peps.python.org/pep-0020/>`_, by Tim Peters
+
+.. code-block:: pycon
+
+   >>> import cmath, math
+   >>> math.sin(34)
+   0.5290826861200238
+   >>> cmath.sin(34)
+   (0.5290826861200238-0j)
+
+.. warning::
+   However, an import using wildcards negates this separation of namespaces:
+   ``import *`` carries over every name from one module to another.
 
 Modules are also used to make Python itself more manageable. Most of Python’s
 standard functions are not integrated into the core of the language, but are

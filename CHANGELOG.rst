@@ -25,6 +25,7 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update namespaces for modules
 * 📝 Update decorators
 
   * Add functools.singledispatch
