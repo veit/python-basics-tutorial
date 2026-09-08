@@ -56,8 +56,8 @@ Python. I will now illustrate these basics in a coherent example:
        In the ``__init__`` method, the instance inserts itself into the
        ``circles`` list.
    Lines 37 and 38
-       ``circumferences`` is a class method and takes the class itself
-       (``cls``) as a :term:`parameter`.
+       ``perimeters`` is a class method and takes the class itself (``cls``) as
+       a :term:`parameter`.
    Line 41
        uses the :term:`parameter` ``cls`` to access the class variable
        ``circles``.
@@ -92,12 +92,12 @@ the ``Circle`` class, so it goes up the inheritance hierarchy and uses the
    >>> c2.diameter, c2.x, c2.y
    (2, 8, 10)
 
-You can also call the class method ``circumferences()`` of the class ``Circle``,
+You can also call the class method ``perimeters()`` of the class ``Circle``,
 either through the class itself or through an instance:
 
 .. code-block:: pycon
 
-   >>> form.Circle.circumferences()
+   >>> form.Circle.perimeters()
    9.424769999999999
-   >>> c2.circumferences()
+   >>> c2.perimeters()
    9.424769999999999

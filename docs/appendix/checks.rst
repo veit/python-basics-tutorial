@@ -771,8 +771,8 @@ Checks
 :doc:`/oop/methods`
 -------------------
 
-* Write a class method that is similar to :func:`circumferences`, but returns
-  the total area of all circles.
+* Write a class method that is similar to :func:`perimeters`, but returns the
+  total area of all circles.
 
   .. code-block:: python
 

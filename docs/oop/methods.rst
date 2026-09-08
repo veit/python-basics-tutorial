@@ -3,23 +3,22 @@ Methods
 
 A method is a function associated with a particular class. You have already seen
 the special ``__init__`` method that is called when a new instance is created.
-In the following example, you define another method, ``circumference``, for the
+In the following example, you define another method, ``perimeter``, for the
 class ``Square``; this method can be used to calculate and return the
-circumference for any ``Square`` instance. Like most custom methods,
-``circumference`` is called with a syntax similar to accessing instance
-variables:
+perimeter for any ``Square`` instance. Like most custom methods, ``perimeter``
+is called with a syntax similar to accessing instance variables:
 
 .. code-block:: pycon
 
     >>> class Square:
     ...     def __init__(self):
     ...         self.length = 1
-    ...     def circumference(self):
+    ...     def perimeter(self):
     ...         return 4 * self.length
     ...
     >>> s = Square()
     >>> s.length = 5
-    >>> print(s.circumference())
+    >>> print(s.perimeter())
     20
 
 The syntax for method calls consists of an instance followed by a dot followed
@@ -32,13 +31,13 @@ is less clear:
 
 .. code-block:: pycon
 
-    >>> print(Square.circumference(s))
+    >>> print(Square.perimeter(s))
     20
 
-Like ``__init__``, the ``circumference`` method is defined as a function within
-the class. The first argument of each method is the instance from which or on
-which it was called, by convention called ``self``. In many languages, the
-instance is called ``this`` and is never explicitly passed.
+Like ``__init__``, the ``perimeter`` method is defined as a function within the
+class. The first argument of each method is the instance from which or on which
+it was called, by convention called ``self``. In many languages, the instance
+is called ``this`` and is never explicitly passed.
 
 Methods can be called with arguments if the method definitions accept those
 arguments. This version of ``Square`` adds an argument to the ``__init__``
@@ -50,7 +49,7 @@ to set the edge length after creating a square:
     >>> class Square:
     ...     def __init__(self, length):
     ...         self.length = length
-    ...     def circumference(self):
+    ...     def perimeter(self):
     ...         return 4 * self.length
     ...
 
@@ -124,10 +123,10 @@ Line 14
     >>> import circle
     >>> c1 = circle.Circle(1)
     >>> c2 = circle.Circle(2)
-    >>> circle.Circle.circumferences()
+    >>> circle.Circle.perimeters()
     9.424769999999999
     >>> c2.diameter = 3
-    >>> circle.Circle.circumferences()
+    >>> circle.Circle.perimeters()
     12.56636
 
 .. _classmethod:
@@ -154,18 +153,18 @@ Line 27
     You can use ``cls`` instead of ``self.__class__``.
 
     By using a class method instead of a static method, you don’t have to
-    hardcode the class name in ``circumferences``.
+    hardcode the class name in ``perimeters``.
 
 .. code-block:: pycon
 
     >>> import circle_cm
     >>> c1 = circle_cm.Circle(1)
     >>> c2 = circle_cm.Circle(2)
-    >>> circle_cm.Circle.circumferences()
+    >>> circle_cm.Circle.perimeters()
     9.424769999999999
 
 Checks
 ------
 
-* Write a class method that is similar to :func:`circumferences`, but returns
-  the total area of all circles.
+* Write a class method that is similar to :func:`perimeters`, but returns the
+  total area of all circles.

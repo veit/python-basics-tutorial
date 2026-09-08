@@ -13,13 +13,13 @@ types can easily be converted into strings and formatted, for example:
    >>> print(
    ...     "Pi is",
    ...     pi,
-   ...     "and the circumference with a diameter of",
+   ...     "and the perimeter with a diameter of",
    ...     d,
    ...     "inches is",
    ...     u,
    ...     "inches.",
    ... )
-   Pi is 3.141592653589793 and the circumference with a diameter of 28 inches is 87.96459430051421 inches.
+   Pi is 3.141592653589793 and the perimeter with a diameter of 28 inches is 87.96459430051421 inches.
 
 .. _f-strings:
 

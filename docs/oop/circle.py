@@ -17,13 +17,13 @@ class Circle:
         self.diameter = diameter
         self.__class__.circles.append(self)
 
-    def circumference(self):
+    def perimeter(self):
         return self.diameter * self.__class__.pi
 
     @staticmethod
-    def circumferences():
-        """Static method to sum all circle circumferences."""
+    def perimeters():
+        """Static method to sum all circle perimeters."""
         csum = 0
         for c in Circle.circles:
-            csum = csum + c.circumference()
+            csum = csum + c.perimeter()
         return csum

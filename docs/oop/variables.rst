@@ -43,7 +43,7 @@ all instances of the ``Circle`` class:
    ...     pi = 3.14159
    ...     def __init__(self, diameter):
    ...         self.diameter = diameter
-   ...     def circumference(self):
+   ...     def perimeter(self):
    ...         return self.diameter * Circle.pi
    ...
 
@@ -62,17 +62,17 @@ Once you have entered this definition, you can query ``pi`` with:
    specific instances of the ``Circle`` class.
 
 You can also access a class variable from a method of a class using the class
-name. You do this in the definition of ``Circle.circumference``, where the
-``circumference`` function contains a special reference to ``Circle.pi``:
+name. You do this in the definition of ``Circle.perimeter``, where the
+``perimeter`` function contains a special reference to ``Circle.pi``:
 
 .. code-block:: pycon
 
    >>> c = Circle(3)
-   >>> c.circumference()
+   >>> c.perimeter()
    9.424769999999999
 
 However, it is unpleasant that the class name ``Circle`` is used in the
-``circumference`` method to address the class variable ``pi``. You can avoid
+``perimeter`` method to address the class variable ``pi``. You can avoid
 this by using the special ``__class__`` attribute, which is available for all
 Python class instances. This attribute returns the class to which the instance
 belongs, for example:
@@ -95,8 +95,8 @@ to the name of the ``Circle`` class:
    >>> c.__class__.pi
    3.14159
 
-You can use this code internally in the ``circumference`` method to get rid of
-the explicit reference to the ``Circle`` class; replace ``Circle.pi`` with
+You can use this code internally in the ``perimeter`` method to get rid of the
+explicit reference to the ``Circle`` class; replace ``Circle.pi`` with
 ``self.__class__.pi``.
 
 There is a little oddity about class variables that might confuse you if you are

@@ -11,6 +11,7 @@ What is a module?
 
 A module is a file that contains code. It defines a group of Python functions or
 other objects, and the name of the module is derived from the name of the file.
+
 Modules usually contain Python source code [#]_, group related Python objects
 together and help to avoid naming conflicts. You can write a module called
 ``mymodule`` for your programme that defines a function called ``my_func``. In
@@ -20,9 +21,25 @@ something different from your ``my_func`` function. Without modules, it would be
 impossible to use two different functions with the same name. With modules, you
 can refer to the functions ``mymodule.my_func`` and ``othermodule.my_func`` in
 your main programme. Using the module names ensures that the two ``my_func``
-functions are not confused, as Python uses so-called namespaces. A namespace is
-essentially a dictionary of names for the functions, classes, modules,
-:abbr:`etc. (et cetera)` available there.
+functions are not confused, as Python uses so-called :doc:`../oop/namespaces`. A
+namespace is essentially a :doc:`dictionary <../types/dicts>` of names for the
+functions, classes, modules, :abbr:`etc. (et cetera)` available there.
+
+    Namespaces are one honking great idea – let’s do more of those!
+
+– `The Zen of Python <https://peps.python.org/pep-0020/>`_, by Tim Peters
+
+.. code-block:: pycon
+
+   >>> import cmath, math
+   >>> math.sin(34)
+   0.5290826861200238
+   >>> cmath.sin(34)
+   (0.5290826861200238-0j)
+
+.. warning::
+   However, an import using wildcards negates this separation of namespaces:
+   ``import *`` carries over every name from one module to another.
 
 Modules are also used to make Python itself more manageable. Most of Python’s
 standard functions are not integrated into the core of the language, but are
@@ -178,6 +195,77 @@ In addition, a help option ``-h`` or ``--help`` is automatically generated:
      -h, --help            show this help message and exit
      -f FILENAME, --file FILENAME
                            read data from the file
+
+Declaring a public API with ``__all__``
+---------------------------------------
+
+You can use ``__all__`` to expose a public API for your module, which determines
+what is imported when you use :samp:`from {MODULE} import *`. Let’s assume your
+module looks like this:
+
+.. literalinclude:: perimeter.py
+   :caption: perimeter.py
+
+You can then use this module as follows:
+
+.. code-block:: pycon
+
+   >>> from perimeter import *
+   >>> circle_perimeter(3)
+   9.42477796076938
+   >>> square_perimeter(3)
+   12
+   >>> square_length(16)
+   4.0
+
+However, you cannot use the ``pi`` variable from the module:
+
+.. code-block:: pycon
+
+   >>> pi
+   Traceback (most recent call last):
+     File "<python-input-1>", line 1, in <module>
+       pi
+   NameError: name 'pi' is not defined
+
+Even with :py:func:`dir`, you’ll still only get those two functions from
+``__all__``:
+
+.. code-block:: pycon
+
+   >>> dir()
+   ['__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'circle_perimeter', 'square_length', 'square_perimeter']
+
+The advantage of this is that internal helper functions and variables are
+encapsulated and are not accidentally exported. Without ``__all__``, any name
+not beginning with an underscore would also have been imported, including ``pi``
+and the ``sqrt`` function, which we imported from :py:mod:`math`.
+
+The  :py:func:`help` function also reads from ``__all__`` and does not document
+everything in the module; the internal variable ``pi`` and ``sqrt``, which does
+not even originate from us, are not displayed:
+
+.. code-block:: pycon
+
+   >>> import perimeter
+   >>> help(perimeter)
+
+.. code-block:: text
+
+   Help on module perimeter:
+
+   NAME
+       perimeter
+
+   FUNCTIONS
+       circle_perimeter(diameter)
+
+       square_length(area)
+
+       square_perimeter(length)
+
+   DATA
+       __all__ = ['circle_perimeter', 'square_length', 'square_perimeter']
 
 Checks
 ------

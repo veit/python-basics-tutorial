@@ -47,7 +47,7 @@ the *property* name, in our case to ``length.setter``:
 
     >>> s1 = form.Square()
     >>> s1.length = 2
-    >>> s1.circumference()
+    >>> s1.perimeter()
     8
 
 A big advantage of Python’s ability to add properties is that you can work with

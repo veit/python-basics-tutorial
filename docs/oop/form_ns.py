@@ -28,7 +28,7 @@ class Square(Form):
     def length(self, new_length):
         self.__length = new_length
 
-    def circumference(self):
+    def perimeter(self):
         return 4 * self.__length
 
 
@@ -51,15 +51,15 @@ class Circle(Form):
     def diameter(self, new_diameter):
         self.__diameter = new_diameter
 
-    def circumference(self):
+    def perimeter(self):
         return self.diameter * self.__class__.pi
 
     @classmethod
-    def circumferences(cls):
-        """Class method to sum all circle circumferences."""
+    def perimeters(cls):
+        """Class method to sum all circle perimeters."""
         csum = 0
         for c in cls.circles:
-            csum = csum + c.circumference()
+            csum = csum + c.perimeter()
         return csum
 
     def namespaces(self):
