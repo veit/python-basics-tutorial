@@ -15,11 +15,11 @@ repos:
     - id: check-added-large-files
       args: ['--maxkb=1024']
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: d600c142bb19f521ae6a6a345f94a2efd7937759 # frozen: v2.26.0
+    rev: 3b42b9776870badc9eaffdef9a4a0834b764d87c # frozen: v2.29.3
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: 4b2e70d08cb2ccd26d1fba73588de41c7a5d50b7 # v0.25
+    rev: 17e12779811926f000bdfa1795f9e3735dd71ac3 # frozen: 0.26
     hooks:
     - id: validate-pyproject
   - repo: https://github.com/sphinx-contrib/sphinx-lint
@@ -28,7 +28,7 @@ repos:
     - id: sphinx-lint
       types: [rst]
   - repo: https://github.com/pycqa/isort
-    rev: 7f321d375f31a2f03833bc9a548e8783f2b5c420 # 9.0.0b1
+    rev: 131f4adcd5582bfc53928ab0d740eceb8b506b6c # frozen: 9.0.1
     hooks:
     - id: isort
       additional_dependencies: ["toml"]
