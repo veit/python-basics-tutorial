@@ -52,7 +52,7 @@ Only then does he outline the following five steps::
       * A number of the appropriate type should be returned, which may also be
         an integer.
       * If the set or sequence is empty, an error message should be displayed.
-      * If one or more elements are :doc:`../types/strings/index`, an attempt
+      * If one or more elements are :doc:`../../types/strings/index`, an attempt
         should be made to convert them into numbers of the appropriate type.
       * If the conversion of individual elements into numbers fails, an
         appropriate error message should be displayed.
@@ -80,11 +80,11 @@ Only then does he outline the following five steps::
              assert mean(ls) == mean(tp) == mean(st) == 2
 
       We have simply defined that the function should be called :func:`mean` and
-      that it can take a :doc:`../types/sequences-sets/lists`, a
-      :doc:`../types/sequences-sets/tuples` or a
-      :doc:`../types/sequences-sets/sets` as a parameter.
+      that it can take a :doc:`../../types/sequences-sets/lists`, a
+      :doc:`../../types/sequences-sets/tuples` or a
+      :doc:`../../types/sequences-sets/sets` as a parameter.
 
-      By using the :doc:`decorator <../functions/decorators>`
+      By using the :doc:`decorator <../../functions/decorators>`
       :func:`@pytest.mark.xfail`, we expect this test to fail initially.
 
       Next, we’ll write a minimal version of :func:`mean` that should cause our

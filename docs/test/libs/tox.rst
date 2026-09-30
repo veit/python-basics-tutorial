@@ -18,7 +18,7 @@ to test with different dependency configurations and different configurations
 for different operating systems. tox uses project information from the
 :file:`setup.py` or :file:`pyproject.toml` file for the package under test to
 create an installable :doc:`distribution of your package
-<../packs/distribution>`. It searches for a list of environments in the
+<../../packs/distribution>`. It searches for a list of environments in the
 ``[tool.tox]`` section of the :file:`pyproject.toml` file, and then performs the
 following steps for each one:
 

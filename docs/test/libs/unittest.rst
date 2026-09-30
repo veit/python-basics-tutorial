@@ -5,22 +5,6 @@ Unittest
 shared setup and tear-down code as well as aggregation and independence of
 tests.
 
-It provides the following test concepts:
-
-.. glossary::
-
-   Test Case
-       tests a single scenario.
-
-   Test Fixture
-       is a consistent test environment.
-
-   Test Suite
-       is a collection of several :term:`test cases <Test Case>`.
-
-   Test Runner
-       runs through a :term:`Test Suite` and displays the results.
-
 Example
 -------
 
@@ -119,19 +103,19 @@ Example: Testing an SQLite database
 -----------------------------------
 
 #. To test whether the database ``library.db`` was created with
-   :download:`create_db.py <../save-data/sqlite/create_db.py>`, we import
-   :download:`../save-data/sqlite/create_db.py` and :doc:`os
+   :download:`create_db.py <../../save-data/sqlite/create_db.py>`, we import
+   :download:`../../save-data/sqlite/create_db.py` and :doc:`os
    <python3:library/os>` in addition to :doc:`sqlite3 <python3:library/sqlite3>`
    and :doc:`unittest <python3:library/unittest>`:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 1-5
       :lineno-start: 1
 
 #. Then we first define a test class ``TestCreateDB``:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 8
       :lineno-start: 8
@@ -140,7 +124,7 @@ Example: Testing an SQLite database
    ``assert`` to assume that the file exists in :doc:`os.path
    <python3:library/os.path>`:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 9-10
       :lineno-start: 9
@@ -149,7 +133,7 @@ Example: Testing an SQLite database
    create the table again and expect with ``assertRaises`` that ``sqlite`` is
    terminated with an ``OperationalError``:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 12-14
       :lineno-start: 12
@@ -157,7 +141,7 @@ Example: Testing an SQLite database
 #. We do not want to carry out further tests on a database in the file system
    but in an SQLite database in the working memory:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 17-20
       :lineno-start: 17

@@ -124,7 +124,7 @@ CLI. To do this, we’ll use :func:`mock.patch.object` as a context manager:
 
 In our test code, we import ``tasks``. The resulting ``tasks`` object is what we
 are going to patch. The call to :func:`mock.patch.object`, used as a
-:doc:`context manager <../../control-flow/with>` within a ``with`` block,
+:doc:`context manager <../../../control-flow/with>` within a ``with`` block,
 returns a mock object that is cleaned up after the ``with`` block:
 
 #. In this case, the ``__version__`` attribute of ``tasks`` is replaced with
@@ -146,7 +146,7 @@ In :file:`src/cusy/tasks/cli.py`, we have defined :func:`config` as follows:
         with tasks_db() as db:
             print(db.path())
 
-:func:`tasks_db` is a :doc:`context manager  <../../control-flow/with>` that
+:func:`tasks_db` is a :doc:`context manager  <../../../control-flow/with>` that
 returns a ``tasks.TasksDB`` object. The returned object is then used as ``db``
 to call :func:`db.path`. So we need to mock two things here: ``tasks.TasksDB``
 and one of its methods, :func:`path`. Let’s start with the class:
@@ -199,7 +199,7 @@ that tests can use it to substitute values for things like ``path``:
         assert result.stdout.rstrip() == "/foo/"
 
 Alternatively, the :func:`@mock.patch` :doc:`decorator
-<../../functions/decorators>` can also be used to mock classes or objects. In
+<../../../functions/decorators>` can also be used to mock classes or objects. In
 the following examples, the output of ``os.listdir`` is mocked. For this,
 ``db_path`` does not need to exist on the file system:
 
