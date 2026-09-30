@@ -15,10 +15,5 @@ Basically, a distinction is made between static and dynamic test procedures.
    :titlesonly:
    :hidden:
 
-   unittest
-   pytest/index
-   tox
-   mock/index
-   hypothesis
-   tdd
-   bdd
+   libs/index
+   methods/index

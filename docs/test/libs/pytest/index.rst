@@ -18,9 +18,9 @@ module that simplifies testing even further.
   as functions, which promotes reusability and simplifies the management of
   test dependencies.
 * Parametrised tests are possible in unittest, but require additional effort.
-  pytest, however, includes the :doc:`decorator  <../../functions/decorators>`
-  ``@pytest.mark.parametrize``, which makes it easy to run test functions with
-  different inputs and expected outputs.
+  pytest, however, includes the :doc:`decorator
+  <../../../functions/decorators>` ``@pytest.mark.parametrize``, which makes it
+  easy to run test functions with different inputs and expected outputs.
 * pytest has an extensive ecosystem with over 800 :doc:`plugins` for advanced
   testing requirements; unittest is more limited in its extensibility.
 

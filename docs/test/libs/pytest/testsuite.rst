@@ -8,7 +8,8 @@ Arrange-Act-Assert (AAA)
     became popular as part of :term:`test-driven development (TDD) <Test-driven
     development>`.
 Given-When-Then (GWT)
-    is used in the context of behaviour-driven development (BDD).
+    is used in the context of :doc:`behaviour-driven development (BDD)
+    <../../methods/bdd>`.
 
 The division into these free phases has many advantages. This separates the
 parts

@@ -682,20 +682,20 @@ Glossary
 
        Various modules are available in Python:
 
-       :doc:`/test/unittest`
+       :doc:`/test/libs/unittest`
            supports you in the automation of tests.
-       :doc:`/test/mock/index`
+       :doc:`/test/libs/mock/index`
            allows you to create and use :term:`Mock` objects.
        :doc:`../document/doctest`
            allows you to test tests written in Python :term:`docstrings
            <Docstring>`.
-       :doc:`/test/tox`
+       :doc:`/test/libs/tox`
            allows you to test in different environments.
 
    Blackbox test
        is developed without knowledge of the source code. In addition to
-       :doc:`/test/unittest`, :doc:`/test/hypothesis` can also be used for such
-       tests in Python.
+       :doc:`/test/libs/unittest`, :doc:`/test/libs/hypothesis` can also be used
+       for such tests in Python.
 
    ``assert``
        A keyword that stops code execution if its argument is false.
@@ -739,9 +739,9 @@ Glossary
        correct methods were called.
 
        The Python library for mocks is :doc:`unittest.mock
-       <../test/mock/index>`. It is also supported by
-       :doc:`../test/pytest/index`. Alternatively, however, you can also use
-       `pytest-mock <https://pypi.org/project/pytest-mock/>`_.
+       <../test/libs/mock/index>`. It is also supported by
+       :doc:`../test/libs/pytest/index`. Alternatively, however, you can also
+       use `pytest-mock <https://pypi.org/project/pytest-mock/>`_.
 
        .. seealso::
           * `Mock object <https://en.wikipedia.org/wiki/Mock_object>`_
@@ -750,7 +750,7 @@ Glossary
        A Python package with test utilities.
 
        .. seealso::
-          * :doc:`/test/pytest/index`
+          * :doc:`/test/libs/pytest/index`
 
    Regression test
        Tests to protect against new errors or regressions that may occur as a
@@ -782,7 +782,7 @@ Glossary
        These three steps are often summarised as *‘Red – Green – Refactor’*.
 
        .. seealso::
-          * :doc:`../test/tdd`
+          * :doc:`../test/methods/tdd`
           * `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_ by Kent
             Beck
           * `Test-driven development by example

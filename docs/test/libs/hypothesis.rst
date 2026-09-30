@@ -78,8 +78,8 @@ Example using ``strategies`` and ``given``
       :lineno-start: 1
 
 #. For our test, we will now use ``hypothesis.given`` as a :doc:`dekorator
-   <../functions/decorators>` to convert the test function into a parameterised
-   one, which is then executed with a wide range of suitable data:
+   <../../functions/decorators>` to convert the test function into a
+   parameterised one, which is then executed with a wide range of suitable data:
 
    .. literalinclude:: test_hypothesis.py
       :language: python
@@ -177,7 +177,7 @@ Example with regular expressions
 
 #. In the following example, we attempt to extract the ``username`` and
    ``domain`` with a :doc:`regular expression
-   <../types/strings/built-in-modules/regex>` from an email address using:
+   <../../types/strings/built-in-modules/regex>` from an email address using:
 
    .. literalinclude:: test_emails.py
       :lines: 1, 5-9

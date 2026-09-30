@@ -73,10 +73,10 @@ installed, this should not be a problem.
 .. _various-python-versions:
 
 If different Python versions are required, for example to test libraries with
-:doc:`test/tox`, I use :term:`uv`. This allows not only older CPython versions
-to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded Python
-3.14 with ``uv python install pypy@3.14`` or ``uv python install
---python-preference only-managed 3.14t``.
+:doc:`test/libs/tox`, I use :term:`uv`. This allows not only older CPython
+versions to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded
+Python 3.15 with ``uv python install pypy@3.15`` or ``uv python install
+--python-preference only-managed 3.15t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ allows you to set environment variables
