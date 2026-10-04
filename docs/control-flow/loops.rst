@@ -180,6 +180,27 @@ Das allgemeine Format für Dict Comprehensions ist:
 
 :samp:`{NEW_DICT} = \{{KEY}: {VALUE} for {MEMBER} in {ITERABLE}\}`
 
+.. _unpacking_in_comprehensions:
+
+Unpack
+~~~~~~
+
+.. versionadded:: 3.15
+
+   In line with :pep:`798`, :doc:`../types/sequences-sets/lists`,
+   :doc:`../types/sequences-sets/sets` and :doc:`../types/dicts` now support
+   comprehensions using ``*`` and ``**``:
+
+   .. code-block:: pycon
+
+      >>> nested_list = [[0, 1], [2, 3], [4, 5]]
+      >>> [*l for l in nested_list]
+      [0, 1, 2, 3, 4, 5]
+      >>>
+      >>> nested_dict = [{0: "a"}, {1: "b"}, {2: "c"}]
+      >>> {**d for d in nested_dict}
+      {0: 'a', 1: 'b', 2: 'c'}
+
 Change a ``Collection``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
