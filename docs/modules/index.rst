@@ -48,6 +48,31 @@ provided via special modules that you can load as needed.
 .. seealso::
     * :ref:`python3:py-modindex`
 
+.. _explicit-lazy-imports:
+
+.. versionadded:: 3.15
+
+   Python 3.15 introduces explicit lazy imports via :pep:`810`: if an ``import``
+   statement is prefixed with the keyword ``lazy``, the module is not loaded
+   immediately; instead, a proxy object is created. The actual module is loaded
+   the first time it is used:
+
+   .. code-block:: pycon
+
+      >>> import sys
+      >>> lazy import json
+      >>> lazy from pathlib import Path
+      >>> "json" in sys.modules
+      False
+      >>> with Path.open("books.json") as f:
+      ...     data = json.load(f)
+      ...
+      >>> "json" in sys.modules
+      True
+
+   .. seealso::
+      * :ref:`lazy-imports`
+
 Creating modules
 ----------------
 

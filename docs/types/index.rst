@@ -40,6 +40,9 @@ appropriate special method attributes.
 Python has several built-in data types, from scalars like numbers and boolean
 values to more complex structures like lists, dictionaries and files.
 
+.. seealso::
+   * :doc:`python3:builtins/stdtypes`
+
 .. toctree::
    :titlesonly:
    :hidden:
