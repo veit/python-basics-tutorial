@@ -109,6 +109,46 @@ keys of a dict, for example:
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
 
+.. _frozendict:
+
+``frozendict``
+--------------
+
+.. versionadded:: 3.15
+
+   :pep:`814` introduces :class:`python3:frozendict`, an :term:`immutable`
+   dictionary:
+
+   .. code-block:: pycon
+
+      >>> titles = frozendict({7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"})
+      >>> titles
+      frozendict({7.0: 'Data Types', 7.1: 'Lists', 7.2: 'Tuples'})
+      >>> titles[7.3] = "Sets"
+      Traceback (most recent call last):
+        File "<python-input-16>", line 1, in <module>
+          titles[7.3] = "Sets"
+          ~~~~~~^^^^^
+      TypeError: 'frozendict' object does not support item assignment
+
+   Immutable mappings are hashable, which means they can be used as keys in
+   dictionaries, as elements in :doc:`sets <sequences-sets/sets>`, or accepted
+   as arguments by functions :doc:`decorated <../functions/decorators>` with
+   :func:`@functools.lru_cache`:
+
+   .. code-block:: pycon
+
+      >>> hash(titles)
+      3827265406416199624
+
+   The merge operator (``|``) can be used to merge two ``frozendict`` objects or
+   a ``frozendict`` object with a ``dict`` object, for example:
+
+   .. code-block:: pycon
+
+      >>> titles | new_titles
+      frozendict({7.0: 'Data types', 7.1: 'Lists', 7.2: 'Tuples', 7.3: 'Sets'})
+
 Extensions
 ----------
 

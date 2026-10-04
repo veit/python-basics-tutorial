@@ -111,6 +111,8 @@ defines several different encodings from a single character set. UTF-8 is an
 encoding scheme for representing Unicode characters as binary data with one or
 more bytes per character.
 
+.. _default-encoding:
+
 .. versionadded:: 3.15
    Python 3.15 uses UTF-8 as the default encoding, regardless of the system
    environment. This means that I/O operations without explicit encoding, for

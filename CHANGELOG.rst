@@ -19,6 +19,12 @@ emergencies when we need to start branches for older versions.
 Added
 ~~~~~
 
+* 📝 Add what’s new in Python 3.15
+
+  * Add lacy imports
+  * Add frozendict
+  * Add unpacking in comprehensions
+
 * 📝 Add timezones
 * 📝 Add pytest-leak-finder
 
