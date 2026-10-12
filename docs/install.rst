@@ -3,8 +3,8 @@ Installation
 
 Installing Python can be easy. The first step is to download the latest version
 from `www.python.org/downloads <https://www.python.org/downloads/>`_. The
-tutorial is based on Python 3.14.0, but if you have Python 3.10 or newer
-installed, this should not be a problem.
+tutorial is based on Python 3.15.0, but if you have Python 3.11 or newer
+installed, this usually isn’t a problem either.
 
 .. tab:: Linux
 
@@ -19,9 +19,9 @@ installed, this should not be a problem.
 
    .. code-block:: console
 
-      $ wget https://www.python.org/ftp/python/3.14.0/Python-3.14.0.tgz
-      $ tar xf Python-3.14.0.tgz
-      $ cd Python-3.14.0
+      $ wget https://www.python.org/ftp/python/3.15.0/Python-3.15.0.tgz
+      $ tar xf Python-3.15.0.tgz
+      $ cd Python-3.15.0
       $ ./configure --enable-optimizations
       $ sudo make altinstall
 
@@ -51,11 +51,11 @@ installed, this should not be a problem.
 
    #. Download the latest Python Releases for Windows installer, for example
       `Windows installer (64-bit)
-      <https://www.python.org/ftp/python/3.14.0/python-3.14.0-amd64.exe>`_.
+      <https://www.python.org/ftp/python/3.15.0/python-3.15.0-amd64.exe>`_.
    #. Start the installation programme. If you have the necessary
       authorisations, install Python with the option *Install launcher for all
       users*. This should install Python in
-      :file:`C:\\Program Files\\Python314-64`. In addition, *Add Python 3.14 to
+      :file:`C:\\Program Files\\Python315-64`. In addition, *Add Python 3.15 to
       PATH* should be activated so that this path to the Python installation is
       also entered in the list of ``PATH`` environment variables.
    #. Finally, you can now check the installation by entering the following in
@@ -64,7 +64,7 @@ installed, this should not be a problem.
       .. code-block:: ps1con
 
          C:\> python -V
-         Python 3.14.0
+         Python 3.15.0
 
       .. warning::
          One disadvantage is that you have to return to the website regularly to
@@ -75,8 +75,8 @@ installed, this should not be a problem.
 If different Python versions are required, for example to test libraries with
 :doc:`test/tox`, I use :term:`uv`. This allows not only older CPython versions
 to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded Python
-3.14 with ``uv python install pypy@3.14`` or ``uv python install
---python-preference only-managed 3.14t``.
+3.14 with ``uv python install pypy@3.15`` or ``uv python install
+--python-preference only-managed 3.15t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ allows you to set environment variables
