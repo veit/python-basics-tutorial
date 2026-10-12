@@ -145,18 +145,18 @@ in our :file:`tox.ini` for cusy.tasks:
 
    [gh-actions]
    python =
-     3.10: py310
      3.11: py311
      3.12: py312
      3.13: py313
      3.14: py314
+     3.15: py315
 
 We want to run the Python 3.13 environment and start the debugger on a failed
-test with ``tox -e py314 -- --pdb --no-cov``. This will take us to the pdb,
+test with ``tox -e py315 -- --pdb --no-cov``. This will take us to the pdb,
 right at the assertion that failed.
 
 Once we have found and fixed the error, we can run the tox environment again
-with this one test error: ``tox -e py314 -- --lf --tb=no --no-cov``.
+with this one test error: ``tox -e py315 -- --lf --tb=no --no-cov``.
 
 Overview of the most common pytest debugger options
 ---------------------------------------------------
