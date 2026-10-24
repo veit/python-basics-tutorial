@@ -15,7 +15,7 @@ repos:
     - id: check-added-large-files
       args: ['--maxkb=1024']
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 59e7b26529dc6f15c43063064b8b06ded60d0910 # frozen: v2.29.4
+    rev: 50e0f3aee9dc5747a5f173f79a7417403c18dda6 # frozen: v2.30.3
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
@@ -35,7 +35,7 @@ repos:
       entry: isort --profile=black
       name: isort (python)
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 4160603246a6b365d4a2af661c6d71b0a0f50478 # 26.5.1
+    rev: a5439e9af2ff9371297bb1a76a01b8ad17989b88 # frozen: 26.10.1
     hooks:
     - id: black
   - repo: https://github.com/adamchainz/blacken-docs
