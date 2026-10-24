@@ -144,9 +144,9 @@ specific version.
    security vulnerabilities needs to be replaced with a more recent version as
    quickly as possible, the *dependency cooldowns* can be bypassed using
 
-   .. code-block:: console
+   .. code-block:: toml
 
-      $ uv sync --exclude-newer-package "{PACKAGE}=P0D"
+      exclude-newer-package = { PACKAGE = "P0D" }
 
 .. tip::
    You can also use :doc:`Python4DataScience:productive/git/advanced/hooks/prek`
