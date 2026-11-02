@@ -1,7 +1,7 @@
 [tool.cibuildwheel]
-test-requires = "pytest"
-test-command = "pytest {project}/tests"
 build-verbosity = 1
+test-command = "pytest {project}/tests"
+test-requires = "pytest"
 # support Universal2 for Apple Silicon:
 macos.archs = [ "auto", "universal2" ]
 macos.test-skip = [ "*universal2:arm64" ]
