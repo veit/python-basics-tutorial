@@ -425,10 +425,10 @@ First, let’s take a look at what it looks like at the time of setup:
 
    $ uv run pytest tests/test_backends.py --collect-only
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    rootdir: /Users/veit/prj/cusy.tasks
    configfile: pyproject.toml
-   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   plugins: cov-7.1.0, Faker-40.43.0, anyio-4.15.1, platformdirs-4.13.5
    collected 2 items
 
    <Dir cusy.tasks>

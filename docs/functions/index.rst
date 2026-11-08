@@ -70,25 +70,17 @@ Inspired by  :doc:`Python4DataScience:productive/qa/mypy`, so-called *type
 hints* were introduced in Python, with which the types for :doc:`parameters
 <params>` and return values can be defined, in our :func:`fact` example with:
 
-.. blacken-docs:off
-
 .. code-block:: python
 
    def fact(n: int) -> int:
-       ...
-
-.. blacken-docs:on
+       pass
 
 or:
-
-.. blacken-docs:off
 
 .. code-block:: python
 
    def factlist(flist: list[float]) -> list[float]:
-       ...
-
-.. blacken-docs:on
+       pass
 
 We receive the types with the ``__annotations__`` attribute at runtime:
 
@@ -97,7 +89,7 @@ We receive the types with the ``__annotations__`` attribute at runtime:
    >>> fact.__annotations__
    {'n': <class 'int'>, 'return': <class 'int'>}
    >>> factlist.__annotations__
-   {'list': list[float], 'return': list[float]}
+   {'flist': list[float], 'return': list[float]}
 
 However, there is **no** type check at runtime.
 

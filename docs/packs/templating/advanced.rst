@@ -77,7 +77,7 @@ Selection variables
 -------------------
 
 Selection variables offer various options when creating a project. Depending on
-the user’s choice, the template renders it differently, e.g. if in the
+the user’s choice, the template renders it differently, for example if in the
 ``cookiecutter.json`` file the following selection is offered:
 
 .. code-block:: json

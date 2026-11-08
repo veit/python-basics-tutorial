@@ -72,7 +72,7 @@ CookieCutter features
 
 * CookieCutter templates loaded from a repository are usually stored in
   ``~/.cookiecutters/``. Then they can be referenced directly via their
-  directory name, e.g. with:
+  directory name, for example with:
 
   .. code-block:: console
 

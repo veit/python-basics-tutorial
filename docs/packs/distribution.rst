@@ -763,7 +763,7 @@ structure for packages.
 
     .. literalinclude:: mypack/pyproject.toml
        :caption: mypack/pyproject.toml
-       :emphasize-lines: 21
+       :emphasize-lines: 19
 
 :file:`mypack/src/mypack/__init__.py`
     The module defines a CLI function :func:`main`:

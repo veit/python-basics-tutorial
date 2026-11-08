@@ -73,9 +73,19 @@ installed, this usually isn’t a problem either.
 .. _various-python-versions:
 
 If different Python versions are required, for example to test libraries with
+<<<<<<< HEAD
 :doc:`test/libs/tox`, I use :term:`uv`. This allows not only older CPython
 versions to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded
 Python 3.15 with ``uv python install pypy@3.15`` or ``uv python install
+||||||| parent of a6342ab (:pencil2: Minor fixes)
+:doc:`test/tox`, I use :term:`uv`. This allows not only older CPython versions
+to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded Python
+3.14 with ``uv python install pypy@3.15`` or ``uv python install
+=======
+:doc:`test/tox`, I use :term:`uv`. This allows not only older CPython versions
+to be installed but also  `PyPy <https://pypy.org>`_ or free-threaded Python
+3.15 with ``uv python install pypy@3.15`` or ``uv python install
+>>>>>>> a6342ab (:pencil2: Minor fixes)
 --python-preference only-managed 3.15t``.
 
 .. tip::

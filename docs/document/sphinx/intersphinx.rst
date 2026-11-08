@@ -16,7 +16,7 @@ In ``docs/conf.py`` Intersphinx must be indicated as an extension:
        "sphinx.ext.intersphinx",
    ]
 
-External Sphinx documentation can then be specified, e.g. with:
+External Sphinx documentation can then be specified, for example with:
 
 .. code-block:: python
 
@@ -72,7 +72,7 @@ of the following variants can be specified:
 Custom links
 ------------
 
-You can also create your own ``intersphinx`` assignments, e.g. if
+You can also create your own ``intersphinx`` assignments, for example if
 ``objects.inv`` in `Beautiful Soup
 <https://bugs.launchpad.net/beautifulsoup/+bug/1453370>`_ has errors.
 
@@ -144,7 +144,7 @@ The error can be corrected with:
 Add roles
 ---------
 
-If you get an error message that a certain text role is unknown, e.g.
+If you get an error message that a certain text role is unknown, for example
 
 .. code-block:: console
 

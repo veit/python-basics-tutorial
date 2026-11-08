@@ -937,7 +937,7 @@ Now we can run pytest and see the reasons for the skipped tests:
 
    $ uv run pytest -rs tests/test_platform.py
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items
 
@@ -953,7 +953,7 @@ or more specifically:
 
    $ uv run pytest -m darwin -rs tests/test_platform.py
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items / 3 deselected / 1 selected
 
@@ -1010,7 +1010,7 @@ Now we can use the ``-m`` option to select a set:
 
    $ uv run pytest -m darwin
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items / 3 deselected / 1 selected
 

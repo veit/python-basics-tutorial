@@ -9,8 +9,8 @@ are:
 * config free
 * transactional
 
-SQLite is used to save data locally, e.g. in mobile phones (Android, iOS) and in
-browsers (Firefox, Safari, Chrome), and many other applications.
+SQLite is used to save data locally, for example in mobile phones (Android, iOS)
+and in browsers (Firefox, Safari, Chrome), and many other applications.
 
 .. seealso::
    * `sqlite home <https://www.sqlite.org/>`_

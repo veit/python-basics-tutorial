@@ -90,6 +90,27 @@ the keywords:
    await               finally             nonlocal            yield
    break               for                 not
 
+   help> False
+   Help on bool object:
+
+   class bool(int)
+    |  bool(object=False, /)
+    |
+    |  Returns True when the argument is true, False otherwise.
+    |  The builtins True and False are the only two instances of the class bool.
+    |  The class bool is a subclass of the class int, and cannot be subclassed.
+    |
+    |  Method resolution order:
+    |      bool
+    |      int
+    |      object
+    |
+    |  Methods defined here:
+    |
+    |  __and__(self, value, /)
+    |      Return self&value.
+    …
+
 Built-in functions
 ------------------
 

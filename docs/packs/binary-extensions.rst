@@ -336,7 +336,7 @@ Binary Extensions for Mac
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Binary compatibility on macOS is determined by the target system for the minimal
-implementation, e.g. *10.9*, which is defined in the environment variable
+implementation, for example *10.9*, which is defined in the environment variable
 ``MACOSX_DEPLOYMENT_TARGET``. When creating with setuptools/distutils the
 deployment target is specified with the flag ``--plat-name``, for example
 ``macosx-10.9-x86_64``. For more information on deployment targets for Mac OS

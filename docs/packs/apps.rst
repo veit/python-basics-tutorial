@@ -35,7 +35,7 @@ interfaces)`. We can also create them with ``uv init --package``:
 
     .. literalinclude:: myapp/pyproject.toml
        :caption: myapp/pyproject.toml
-       :lines: 12-13
+       :lines: 19
 
 :file:`myapp/src/myapp/__init__.py`
     The module defines a CLI function :func:`main`:
