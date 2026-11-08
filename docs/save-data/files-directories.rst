@@ -51,10 +51,10 @@ class and various built-in read operations:
      File "<python-input-3>", line 1, in <module>
        p.read_text(encoding="cp1252")
        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.15.1-macos-aarch64-none/lib/python3.15/pathlib/__init__.py", line 788, in read_text
        return f.read()
               ~~~~~~^^
-     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/encodings/cp1252.py", line 23, in decode
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.15.1-macos-aarch64-none/lib/python3.15/encodings/cp1252.py", line 23, in decode
        return codecs.charmap_decode(input,self.errors,decoding_table)[0]
               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 2: character maps to <undefined>

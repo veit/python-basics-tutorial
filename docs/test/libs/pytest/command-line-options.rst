@@ -185,12 +185,12 @@ Additional information can be easily provided in a ``pytest -v`` run:
 
    $ uv run pytest -v
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    cachedir: .pytest_cache
    Is GIL enabled? False
    rootdir: /Users/veit/prj/cusy.tasks
    configfile: pyproject.toml
-   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   plugins: cov-7.1.0, Faker-40.43.0, anyio-4.15.1, platformdirs-4.13.5
    ...
    ============================== 2 passed in 0.04s ===============================
 

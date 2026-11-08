@@ -41,6 +41,7 @@ the code is executed. The obvious exception is ``#`` in a :doc:`string
 
 .. code-block:: pycon
 
+    >>> # This is a string and not a comment
     >>> x = "# This is a string and not a comment"
 
 Basic Python style

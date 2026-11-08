@@ -33,7 +33,7 @@ is not contained in a dictionary.
    Traceback (most recent call last):
      File "<python-input-15>", line 1, in <module>
        timeseries["2022-02-04"]
-       ~~~~^^^^^^^^^^^^^^
+       ~~~~~~~~~~^^^^^^^^^^^^^^
    KeyError: '2022-02-04'
    >>> timeseries.get("2022-02-03", "Messwert nicht vorhanden")
    -0.268295
@@ -91,6 +91,7 @@ keys of a dict, for example:
 .. code-block:: pycon
 
    >>> titles = ["Data types", "Lists", "Sets", "Lists"]
+   >>> titles_count = {}
    >>> for title in titles:
    ...     titles_count.setdefault(title, 0)
    ...     titles_count[title] += 1
@@ -106,6 +107,7 @@ keys of a dict, for example:
 
    .. code-block:: pycon
 
+      >>> import collections
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
 
@@ -178,5 +180,5 @@ Checks
   by using :doc:`tuples </types/sequences-sets/tuples>` as key row and column
   values. Write sample code to add and retrieve values.
 
-* How can you remove all duplicates from a list without changing the order of the
-  elements in the list?
+* How can you remove all duplicates from a list without changing the order of
+  the elements in the list?

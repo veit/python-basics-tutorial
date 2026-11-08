@@ -24,8 +24,8 @@ in place. Often the documentation is also stored in the same :doc:`Git
 <Python4DataScience:productive/git/index>` repository, so that the creation of
 the latest software documentation remains easy.
 
-Sphinx is also used in projects outside the Python community, e.g. for the
-documentation of the Linux kernel: `Kernel documentation update
+Sphinx is also used in projects outside the Python community, for example for
+the documentation of the Linux kernel: `Kernel documentation update
 <https://lwn.net/Articles/705224/>`_.
 
 `Read the Docs <https://about.readthedocs.com/>`_ was developed to forther

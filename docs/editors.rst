@@ -18,7 +18,7 @@ file as a module.
    .. code-block:: console
 
       $ python3
-      Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ] on linux
+      Python 3.15.1 (main, Oct 21 2026, 17:39:16) [Clang 23.1.3 ] on linux
       Type "help", "copyright", "credits" or "license" for more information.
       >>>
 
@@ -30,7 +30,7 @@ file as a module.
 
 
       $ python3
-      Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ] on darwin
+      Python 3.15.1 (main, Oct 21 2026, 17:39:16) [Clang 23.1.3 ] on darwin
       Type "help", "copyright", "credits" or "license" for more information.
       >>>
 
@@ -42,7 +42,7 @@ file as a module.
 .. tab:: Windows
 
    You can start the interactive Python shell in :menuselection:`Start -->
-   Applications --> Python 3.14`.
+   Applications --> Python 3.15`.
 
    Alternatively, you can search for the directly executable file
    :file:`Python.exe`, for example in
@@ -74,7 +74,7 @@ code editing and debugging. It is very easy to run on the various platforms:
 
    .. code-block:: console
 
-      $ idle-python3.14
+      $ idle-python3.15
 
 .. tab:: Windows
 

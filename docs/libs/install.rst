@@ -378,12 +378,12 @@ Python installation
 
 The current Python version can be installed with ``uv python install``.
 Alternatively, a specific version can be installed with :samp:`uv python install
-{3.14}`. However, you can install not only older CPython versions, but also
-`PyPy <https://pypy.org>`_ with :samp:`uv python install pypy@{3.14}` or
+{3.15}`. However, you can install not only older CPython versions, but also
+`PyPy <https://pypy.org>`_ with :samp:`uv python install pypy@{3.12}` or
 Free-threaded Python with :samp:`uv python install --python-preferenc
-only-managed {3.14t}`. You can see the Python versions that are already
+only-managed {3.15t}`. You can see the Python versions that are already
 installed with ``uv python list``. You can call up an installed Python version
-with :samp:`uv run --python {3.14} python`.
+with :samp:`uv run --python {3.15} python`.
 
 Create project structure
 ~~~~~~~~~~~~~~~~~~~~~~~~
