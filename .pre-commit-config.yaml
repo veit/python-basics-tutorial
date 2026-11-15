@@ -19,11 +19,11 @@ repos:
     hooks:
     - id: zizmor
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 50e0f3aee9dc5747a5f173f79a7417403c18dda6 # frozen: v2.30.3
+    rev: 44297c38117367c60ae9aeb270694de876ddcddf # frozen: v2.31.1
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: 17e12779811926f000bdfa1795f9e3735dd71ac3 # frozen: 0.26
+    rev: 82d21874c3242e4dc27bb47641c996902ef64eef # frozen: v0.27
     hooks:
     - id: validate-pyproject
   - repo: https://github.com/sphinx-contrib/sphinx-lint
@@ -32,7 +32,7 @@ repos:
     - id: sphinx-lint
       types: [rst]
   - repo: https://github.com/pycqa/isort
-    rev: 9f905615631c545f5aea2516508109350d1d2f7d # frozen: 9.0.2
+    rev: eb62da318ea543b82340f3d0a52bc0509c7e626e # frozen: 10.0.0b3
     hooks:
     - id: isort
       additional_dependencies: ["toml"]

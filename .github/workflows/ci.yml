@@ -27,7 +27,7 @@ jobs:
     - uses: actions/checkout@v7.0.1
       with:
         persist-credentials: false
-    - uses: j178/prek-action@v3.0.1
+    - uses: j178/prek-action@v3.1.1
 
   docs:
     name: Build docs and check links
@@ -37,7 +37,7 @@ jobs:
       with:
         persist-credentials: false
     - uses: pandoc/actions/setup@v1.1.1
-    - uses: actions/setup-python@v7.0.0
+    - uses: actions/setup-python@v7.1.0
       with:
         # Keep in sync with .readthedocs.yaml
         python-version-file: .python-version
