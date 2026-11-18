@@ -98,6 +98,47 @@ Line 19
    only handled when they occur. This Pythonic approach to error handling is
    often described as :term:`EAFP`.
 
+.. tip::
+   When handling exceptions, you should specify particular exceptions rather
+   than simply using the ``except`` clause, as a simple ``except`` clause also
+   catches the ``SystemExit`` and ``KeyboardInterrupt`` exceptions, making it
+   difficult to terminate a programme using :kbd:`Ctrl+C` and potentially
+   masking other problems.
+
+   If you wish to catch all exceptions indicating programme errors, use
+   ``except Exception:``.
+
+.. tip::
+   In most cases, simple ``except`` clauses should be limited to two scenarios:
+   if the exception handler outputs or logs a traceback, the user will at least
+   be aware that an error has occurred.
+
+.. tip::
+   In all ``try`` ``except`` statements, the ``try`` statement should be limited
+   to the absolute minimum amount of code necessary. The following ``try``
+   statement is too broad, and the ``except`` statement also catches the
+   ``KeyError``:
+
+   .. code-block:: python
+      :class: bad
+
+      try:
+          return process_value(collection[key])
+      except KeyError:
+          return key_not_found(key)
+
+   Better is:
+
+   .. code-block:: python
+      :class: good
+
+      try:
+          value = collection[key]
+      except KeyError:
+          return key_not_found(key)
+      else:
+          return process_value(value)
+
 Checks
 ------
 

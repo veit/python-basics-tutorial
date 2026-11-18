@@ -95,9 +95,22 @@ considered ``True``.
        >>> x is not None
        True
 
-    The Python style guide in :pep:`8` also recommends that you should check for
-    identity with :doc:`../types/none` and not for values, so never use ``x ==
-    None``, but always use ``x is None``  instead.
+    .. tip::
+       The Python Style Guide in :pep:`PEP 8 <8#programming-recommendations>`
+       recommends that you check for equality with :doc:`../types/none` rather
+       than for values; in other words, not
+
+       .. code-block:: pycon
+          :class: bad
+
+          >>> x == None
+
+       but
+
+       .. code-block:: pycon
+          :class: good
+
+          >>> x is None
 
 ``and``, ``not``, ``or``
     are logical operators that we can use to link the above checks:

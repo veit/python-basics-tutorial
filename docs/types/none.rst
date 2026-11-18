@@ -41,6 +41,27 @@ For example, we can check whether :doc:`../types/strings/index` are empty in an
    ...
    No value was specified.
 
+.. tip::
+   With sequences such as :doc:`strings/index`, :doc:`sequences-sets/lists` and
+   :doc:`sequences-sets/tuples`, you can make use of the fact that empty
+   sequences are ``False``:
+
+   .. code-block:: pycon
+      :class: good
+
+      >>> if seq:
+      ...     pass
+      ...
+
+   You don’t need to go around using :func:`len` for this:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if len(seq):
+      ...     pass
+      ...
+
 :class:`None` stands for emptiness
 ----------------------------------
 
@@ -48,8 +69,8 @@ For example, we can check whether :doc:`../types/strings/index` are empty in an
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
    >>> third_title = titles.get("7.3")
-   >>> print(third_title)
-   None
+   >>> type(third_title)
+   <class 'NoneType'>
 
 The default return value of a function is :class:`None`
 -------------------------------------------------------
@@ -62,5 +83,27 @@ return a value, which means that it returns ``None`` by default:
    >>> def myfunc():
    ...     pass
    ...
-   >>> print(myfunc())
-   None
+   >>> type(myfunc())
+   <class 'NoneType'>
+
+However, ``return None`` is more meaningful and is also recommended by :pep:`PEP
+8 <8#programming-recommendations>`, so don’t write
+
+.. code-block::
+   :class: bad
+
+   def myfunc(x):
+       if x >= 0:
+           return x**2
+
+but
+
+.. code-block::
+   :class: good
+   :emphasize-lines: 4-
+
+   def myfunc(x):
+       if x >= 0:
+           return x**2
+       else:
+           return None

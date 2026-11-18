@@ -30,6 +30,27 @@ automatically have them:
    >>> welcome.replace("\n", "")
    'hello pythonistas!'
 
+.. tip::
+   Use :py:meth:`str.startswith` and :py:meth:`str.endswith` instead of string
+   slicing to check for prefixes or suffixes; they are clearer and less prone to
+   errors:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if welcome[0:5] == "hello":
+      ...     print("Hi")
+      ...
+      Hi
+
+   .. code-block:: pycon
+      :class: good
+
+      >>> if welcome.startswith("hello"):
+      ...     print("Hi")
+      ...
+      Hi
+
 Below you will find an overview of the most common :ref:`string methods
 <python3:string-methods>`:
 

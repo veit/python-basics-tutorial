@@ -564,11 +564,11 @@ Glossary
          <various-python-versions>` and :ref:`tox_uv`
        * :ref:`Reproducing <reproduce-virtual-env>` and :ref:`updating
          <update-uv-lock>` the Python environment, if necessary also with a
-         :doc:`Python4DataScience:productive/envs/uv/dependency-bot`
+         :doc:`Python4DataScience:productive/envs/uv/renovate`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/claude-cursor`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
-       * Check vulnerabilities with :ref:`uv audit <check-vulnerabilities>`
+       * Check vulnerabilities with :ref:`uv audit <vulnerability_scans>`
 
        .. seealso::
           * `Docs <https://docs.astral.sh/uv/>`__
@@ -649,8 +649,8 @@ Glossary
          <https://en.wikipedia.org/wiki/Static_program_analysis>`_
 
          There are various Python packages that can help you with static code
-         analysis, including :doc:`Python4DataScience:productive/qa/flake8`,
-         :doc:`Python4DataScience:productive/qa/pysa` and
+         analysis, including :doc:`Python4DataScience:productive/qa/ruff`,
+         :doc:`Python4DataScience:productive/git/advanced/hooks/prek` and
          :doc:`Python4DataScience:productive/qa/wily`.
 
          .. note::

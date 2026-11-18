@@ -294,8 +294,10 @@ as:
    If you receive the error in uv: :samp:`error: No \`project\` table found in:
    \`{/PATH/TO/}pyproject.toml\``, you probably haven’t defined a ``[project]``
    section. This can occur in repositories that only use the
-   :file:`pyproject.toml` file to configure tools such as Black and Ruff, but
-   do not define the project itself.
+   :file:`pyproject.toml` file to configure tools such as
+   :doc:`Python4DataScience:productive/qa/black` and
+   :doc:`Python4DataScience:productive/qa/ruff`, but do not define the project
+   itself.
 
    To resolve the issue, you can insert a ``[project]`` section that must
    contain at least  ``name`` and ``version``. Alternatively, you can also use

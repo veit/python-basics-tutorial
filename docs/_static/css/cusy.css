@@ -10,3 +10,11 @@ dl.simple dt,
 dl:not([class]) dt {
   font-weight: 700;
 }
+
+.good pre {
+  border-left: 3px solid rgba(74, 182, 93, 1);
+}
+
+.bad pre {
+  border-left: 3px solid rgb(244, 76, 78);
+}

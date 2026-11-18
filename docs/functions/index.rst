@@ -9,7 +9,7 @@ The basic syntax for a Python function definition is
 .. code-block:: python
 
     def function_name(param1, param2):
-        body
+        pass
 
 As with :doc:`control streams </control-flow/index>`, Python uses indentation to
 separate the function from the function definition. The following simple example
@@ -19,13 +19,13 @@ inserts the code into a function so that you can call it to get the `factorial
 .. code-block:: python
    :linenos:
 
-    def fact(n):
-        """Return the factorial of the given number."""
-        f = 1
-        while n > 0:
-            f = f * n
-            n = n - 1
-        return f
+   def fact(n):
+       """Return the factorial of the given number."""
+       f = 1
+       while n > 0:
+           f = f * n
+           n = n - 1
+       return f
 
 Line 2
     This is an optional documentation string, or ``docstring``. You can get its
@@ -40,7 +40,8 @@ Line 2
     information.
 
     .. seealso::
-        * :ref:`napoleon`
+       * :doc:`../document/sphinx/docstrings`
+       * :pep:`257`
 
 Line 7
     The value is returned after the function is called. You can also write

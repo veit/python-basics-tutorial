@@ -39,6 +39,20 @@ Line 8
     The optional ``else`` clause denotes a code block that is only executed if
     the other conditional blocks, ``if`` and ``elif``, are all false.
 
+.. tip::
+   Do not compare Boolean values with ``True`` or ``False`` using ``==`` or
+   ``is``:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if x < 1 == True:
+      ...     pass
+      ...
+      >>> if x < 1 is True:
+      ...     pass
+      ...
+
 Furthermore, the conditions can be linked logically, for example:
 
 .. code-block:: pycon
